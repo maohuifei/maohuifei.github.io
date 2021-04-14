@@ -241,7 +241,7 @@ mark {
 }
 
 .bg-color {
-    background-image: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%);
+    background-image: linear-gradient(to right, #2828FF 0%, #000079 100%);
 }
 
 .text-color {
@@ -373,14 +373,14 @@ header .side-nav .social-link {
     text-align: center;
 }
 
-.cover-btns a {
+.cover-btns a {/*开始阅读 按键 字体样式*/
     margin: 10px 15px;
     padding: 0 35px;
     height: 45px;
     line-height: 45px;
     font-size: 1rem;
-    color: #fff;
-    border: 1px solid #fff;
+    color: #000079;
+    border: 1px solid #000079;
     background-color: transparent;
     border-radius: 30px;
     box-shadow: none;
@@ -510,7 +510,7 @@ header .side-nav .social-link {
 .cover-social-link a {
     padding: 0 15px;
     font-size: 1.35rem;
-    color: #fff;
+    color: #000079;
 }
 
 header .go-back {
@@ -564,7 +564,7 @@ header .go-back i {
     display: block;
     left: 0;
     top: 0;
-    content: "";
+    /*content: "";*/
 }
 
 .bg-cover .container {
