@@ -240,7 +240,7 @@ mark {
     margin-bottom: 0;
 }
 
-.bg-color {
+.bg-color {/*顶栏颜色*/
     background-image: linear-gradient(to right, #2828FF 0%, #000079 100%);
 }
 
