@@ -4,6 +4,91 @@
   
     
     <entry>
+      <title>给服务器安装BBR</title>
+      <link href="2021/04/15/%E7%BB%99%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85BBR/"/>
+      <url>2021/04/15/%E7%BB%99%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85BBR/</url>
+      
+        <content type="html"><![CDATA[<p>为你的服务器安装BBR，小水管秒变大水枪</p><h2 id="操作前的准备"><a href="#操作前的准备" class="headerlink" title="操作前的准备"></a>操作前的准备</h2><p>拥有一台操作系统为Linux的云主机<br>用SSH远程登录</p><h2 id="查看内核版本"><a href="#查看内核版本" class="headerlink" title="查看内核版本"></a>查看内核版本</h2><p>uname -r</p><h2 id="更新库"><a href="#更新库" class="headerlink" title="更新库"></a>更新库</h2><p>rpm –import <a href="https://www.elrepo.org/RPM-GPG-KEY-elrepo.org">https://www.elrepo.org/RPM-GPG-KEY-elrepo.org</a></p><h2 id="修改服务器的库"><a href="#修改服务器的库" class="headerlink" title="修改服务器的库"></a>修改服务器的库</h2><p>rpm -Uvh <a href="http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm">http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm</a></p><h2 id="安装内核"><a href="#安装内核" class="headerlink" title="安装内核"></a>安装内核</h2><p>yum –enablerepo=elrepo-kernel install kernel-ml -y</p><h2 id="设置内核"><a href="#设置内核" class="headerlink" title="设置内核"></a>设置内核</h2><p>grub2-set-default ‘CentOS Linux (4.12.3-1.el7.elrepo.x86_64) 7 (Core)’</p><h2 id="重启，5分钟后连接"><a href="#重启，5分钟后连接" class="headerlink" title="重启，5分钟后连接"></a>重启，5分钟后连接</h2><p>reboot</p><h2 id="查看内核"><a href="#查看内核" class="headerlink" title="查看内核"></a>查看内核</h2><p>uname -r<br>现在内核版本已经是5+了</p><h2 id="配置服务器"><a href="#配置服务器" class="headerlink" title="配置服务器"></a>配置服务器</h2><p>echo ‘net.core.default_qdisc=fq’ | sudo tee -a /etc/sysctl.conf</p><h2 id="配置服务器内核"><a href="#配置服务器内核" class="headerlink" title="配置服务器内核"></a>配置服务器内核</h2><p>echo ‘net.ipv4.tcp_congestion_control=bbr’ | sudo tee -a /etc/sysctl.conf</p><h2 id="顺序输入"><a href="#顺序输入" class="headerlink" title="顺序输入"></a>顺序输入</h2><p>sysctl -p<br>sysctl net.ipv4.tcp_available_congestion_control<br>sysctl -n net.ipv4.tcp_congestion_control</p><h2 id="查看安装结果"><a href="#查看安装结果" class="headerlink" title="查看安装结果"></a>查看安装结果</h2><p>lsmod | grep bbr<br>显示 tcp_bbr 20480 1就是安装成功了</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 教程与心得 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 云免 </tag>
+            
+            <tag> 服务器 </tag>
+            
+            <tag> 带宽 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>V2ray的配置生成</title>
+      <link href="2021/04/15/V2ray%E7%9A%84%E9%85%8D%E7%BD%AE%E7%94%9F%E6%88%90/"/>
+      <url>2021/04/15/V2ray%E7%9A%84%E9%85%8D%E7%BD%AE%E7%94%9F%E6%88%90/</url>
+      
+        <content type="html"><![CDATA[<p>本文主要讲解在有了一台Linux云服务器的情况下，如何生成V2ray配置文件并于个人终端上实现流量共享</p><h2 id="操作前的准备"><a href="#操作前的准备" class="headerlink" title="操作前的准备"></a>操作前的准备</h2><p>拥有一台操作系统为Linux的云主机，最后终端设备上的网速受限于主机的带宽<br>进入云主机详情网页，防火墙开放所有UTP、TCP端口</p><h2 id="【PC端】FinalShell的下载与安装"><a href="#【PC端】FinalShell的下载与安装" class="headerlink" title="【PC端】FinalShell的下载与安装"></a>【PC端】FinalShell的下载与安装</h2><p>Windows版下载地址:<br><a href="http://www.hostbuf.com/downloads/finalshell_install.exe">http://www.hostbuf.com/downloads/finalshell_install.exe</a><br>下载FinalShell的安装包到本地并运行</p><h2 id="【安卓手机端】JuiceSSH的下载与安装"><a href="#【安卓手机端】JuiceSSH的下载与安装" class="headerlink" title="【安卓手机端】JuiceSSH的下载与安装"></a>【安卓手机端】JuiceSSH的下载与安装</h2><p>应用商店搜索JuiceSSH，下载并安装</p><h2 id="利用FinalShell远程登录云主机"><a href="#利用FinalShell远程登录云主机" class="headerlink" title="利用FinalShell远程登录云主机"></a>利用FinalShell远程登录云主机</h2><p>①打开FinalShell，点击标签左侧文件夹标志，跳出连接管理器界面。点击添加新主机，选择新建SSH连接。<br>②为主机起个名字，主机栏填云主机的公网IP，端口22保持不变。<br>③认证方法选择密码，用户名为root，密码为云主机密码<br>④点击确定<br>⑤回到首页，双击主机运行，如果是第一次远程进入会弹出对话框，点击确认/接受即可<br>PS：JuiceSSH的操作与FinalShell相差不大，此处就不过多赘述了</p><h2 id="hcaas容器的V2ray一件搭建脚本"><a href="#hcaas容器的V2ray一件搭建脚本" class="headerlink" title="hcaas容器的V2ray一件搭建脚本"></a>hcaas容器的V2ray一件搭建脚本</h2><p>输入hcaas容器的V2ray一件搭建脚本的命令行<br>yum -y install wget &amp;&amp; wget <a href="https://shell.ihuayu8.cn/hcaas.sh">https://shell.ihuayu8.cn/hcaas.sh</a> &amp;&amp; chmod 777 hcaas.sh &amp;&amp; bash hcaas.sh<br>回车，运行安装程序<br>输入 1 确认安装</p><h2 id="生成V2ray配置文件"><a href="#生成V2ray配置文件" class="headerlink" title="生成V2ray配置文件"></a>生成V2ray配置文件</h2><p>等待一段时间，程序安装完成<br>V2ray服务自动启动，配置文件已生成</p><h2 id="更改V2ray配置文件"><a href="#更改V2ray配置文件" class="headerlink" title="更改V2ray配置文件"></a>更改V2ray配置文件</h2><p>将配置文件复制到剪贴板，更改IP为云主机的公网IP，更改适合自己的线路混淆</p><h2 id="V2rayNG-APP的下载与安装"><a href="#V2rayNG-APP的下载与安装" class="headerlink" title="V2rayNG APP的下载与安装"></a>V2rayNG APP的下载与安装</h2><p>……浏览器搜索、各大论坛寻找或者联系我</p><h2 id="导入V2ray配置文件"><a href="#导入V2ray配置文件" class="headerlink" title="导入V2ray配置文件"></a>导入V2ray配置文件</h2><p>打开V2ray APP，右上角+号，选择从剪贴板导入。<br>使用时选择线路，点击右下角标志建立新VPN</p><h2 id="运用V2ray云免的适用范围"><a href="#运用V2ray云免的适用范围" class="headerlink" title="运用V2ray云免的适用范围"></a>运用V2ray云免的适用范围</h2><p>大多数电信，联通可以使用混淆达到免流的目的，据说有些移动卡也可以<br>推荐电信使用停机卡，联通全部都可以使用手厅免流混淆</p><h2 id="线路混淆大全"><a href="#线路混淆大全" class="headerlink" title="线路混淆大全"></a>线路混淆大全</h2><p>联通<br>联通手厅直播：pull.free.video.10010.com<br>全国联通沃商店高级：game.hxll.wostore.cn#Connection: Keep-AlivenAccept-Encoding: gzip<br>新联沃阅读高级：partner.iread.wo.com.cn#Connection: Keep-AlivenAccept-Encoding: gzip通小歪卡：dm.toutiao.com<br>山东联通：m.t.17186.cn<br>小天神卡：box.10155.com<br>联通114圣子全国：114.255.201.163<br>哔哩哔哩：i1.hdslb.com<br>哔哩哔哩：i0.hdslb.com<br>浙江联通wo+：w.zj165.com<br>联通wotv全国：wotv.17wo.cn<br>河北：hb.10000shequ.com<br>湖北(优先wap接入点不免net)：box.10155.com<br>沃音乐：box.10155.com<br>沃阅读：partner.iread.wo.com.cn<br>工商e卡：v.icbc.com.cn<br>移动<br>全国移动：<a href="http://www.10086.cn/">www.10086.cn</a><br>全国移动：mm.10086.cn<br>抖音卡头条卡定向 有定向包可用：dm.toutiao.com<br>抖音卡头条卡定向 有定向包可用：v9-dy.ixigua.com<br>电信<br>电信百度大圣卡：dx-baiducdnct.inter.iqiyi.com<br>天翼视讯：h5.nty.tv189.com<br>天翼视讯：vod3.nty.tv189.cn<br>爱玩4G：open.4g.play.cn<br>爱看4G： ltetp.tv189.com<br>湖北电信：hb.10000shequ.com<br>湖北电信：hb.10000shequ.com:8081<br>电信天翼：dy3.nty.tv189.cn<br>电信天翼：ltewap.tv189.com<br>电信天翼：tp.nty.tv189.com<br>电信大王卡(可欠费使用)：lt.hn.189.cn:1082<br>阿里鱼卡：mps.amap.com#Connection: Keep-AlivenAccept-Encoding: gzipnContent-Length:680<br>电信停机卡系列<br>四川wap.sc.189.cn<br>浙江 北京 wapzt.189.cn<br>广东 gd.189.cn/TS/recharge/tzUrl.html<br>重庆Host webwebfenxi.189.cn:9000<br>广西wapgx.189.cnrnAccept: /rn<br>江苏wapjs.189.cn<br>湖南lt.hn.189.cn:1082<br>乱七八糟的免流host<br>腾讯大王卡：szminorshort.weixin.qq.com#Upgrade:mmtlsnAccept:?/nConnection:closenContent-Length: 533nContent-Type: application/octet-stream<br>腾讯大王卡：tx.flv.huya.com<br>腾讯大王卡：short.weixin.qq.com<br>腾讯大王卡：szextshort.weixin.qq.com<br>百度圣卡：data.video.qiyi.com<br>阿里宝卡：vali-dns.cp31.ott.cibntv.net<br>阿里宝卡：gw.alicdn.com<br>米粉卡混淆参数：api.ad.xiaomi.com<br>微信：mmbiz.qpic.cn<br>微信：shmmsns.qpic.cn<br>QQ：r.vip.qq.com<br>QQ：m.qpic.cn<br>王者荣耀：down-update.qq.com<br>支付宝：mdap.alipay.com<br>芒果TV：pcvideows.titan.mgtv.com<br>西瓜视频：v6-ppx.ixigua.com<br>快手：api.gifshow.com<br>快手：ali2.a.yximgs.com<br>头条:sf1-ttcdn-tos.pstatp.com<br>新浪微博:mjs.sinaimg.cn<br>快手：api.ksapisrv.com<br>QQ音乐：dl.stream.qqmusic.qq.com<br>百度：pic.rmb.bdstatic.com<br>UC：serverfile. ac.uc.cn<br>网易：s3.music.126.net<br>微云：sz-download.weiyun.com<br>微云：sh-download.weiyun.com<br>微信：mmbiz.qpic.cn<br>百度:vd3.bdstatic.com<br>微信:shmmsns.qpic.cn<br>抖音：v1-dy.ixigua.com<br>腾讯视频：livep.l.qq.com<br>QQ空间登陆页面：qzonestyle.gtimg.cn<br>抖音/头条：log.snssdk.com<br>西瓜视频：api.hu<br>QQ音乐混淆参数：dl.stream.qqmusic.com<br>梦想e卡混淆参数：imhdfs.icbc.com.cn<br>梦想e卡混淆参数(福建已免)：v.icbc.com.cn<br>爱奇艺混淆参数：data.video.qiyi.com<br>优酷混淆参数：vali-dns.cp31.ott.cibntv.net<br>高德地图混淆参数：mps.amap.com<br>央视影音混淆参数：asp.cntv.myalicdn.com<br>百度贴吧混淆参数：static.tieba.baidu.com<br>微信混淆参数：short.weixin.qq.com<br>虾米音乐混淆参数：pic.xiami.net<br>天翼视讯混淆参数：vod3.nty.tv189.cn<br>钉钉混淆参数：tms.dingtalk.com<br>微博混淆参数：tobe.vip.weibo.com<br>微博混淆参数：new.vip.weibo.cn<br>微博混淆参数：simg.s.weibo.com<br>优酷混淆参数：push.m.youku.com<br>优酷混淆参数：api.mobile.youku.com<br>书旗混淆参数：spend1.shuqireader.com<br>书旗混淆参数：c1.shuqireader.com<br>优酷混淆参数：<a href="http://www.youku.com/">www.youku.com</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 教程与心得 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 云免 </tag>
+            
+            <tag> V2ray </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>如何搭建一个属于自己的个人博客</title>
+      <link href="2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"/>
+      <url>2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</url>
+      
+        <content type="html"><![CDATA[<p>— 博客，音译，英文名为Blogger，它的正式名称为网络日记；是使用特定的软件，在网络上出版、发表和张贴个人文章的人，或者是一种通常由个人管理、不定期张贴新的文章的网站。博客是继MSN、BBS、ICQ之后出现的第4种网络交流方式，是网络时代的个人“读者文摘”，它代表着新的生活、工作和学习方式。<br>— 在本人搭建博客的过程中，发现互联网上的教程大多数的发布时间是几年甚至十几年之前，有些软件的版本和操作方式都已经有所改变。许多新手小白如果按照之前的教程来操作的话会产生各种各样的问题。教程中所使用的专业名词也会使小白们一头雾水，影响操作效率。<br>— 于是在2021年4月10日发布了这篇面向纯新手小白的保姆级搭建教程，手把手教你搭建属于自己的个人博客<br>— 教程步骤框架来自hojun.cn发布的教程，使用工具包含node.js、github、gitforwin、sublime、Hexo侵删</p><h2 id="node的下载与安装"><a href="#node的下载与安装" class="headerlink" title="node的下载与安装"></a>node的下载与安装</h2><p>① Node.js官网下载并打开安装包<br>② 更改安装位置<br>③ 是否安装必要的环境，我选的安装<br>④ 安装完成<br>⑤ Win+R打开运行窗口，输入cmd<br>⑥ node -v查看版本</p><h2 id="github注册"><a href="#github注册" class="headerlink" title="github注册"></a>github注册</h2><p>① 打开github官网 GitHub: Where the world builds software · GitHub<br>② 右上角注册<br>③ 注册流程走完后回首页，右上角加号第一个选项，传建一个新的存储库<br>④ 存储库名称为 用户名+.github+.io，其他默认，创建</p><h2 id="gitforwin的下载与安装"><a href="#gitforwin的下载与安装" class="headerlink" title="gitforwin的下载与安装"></a>gitforwin的下载与安装</h2><p>① 浏览器输入 Git for Windows，下载gitforwin安装包<br>② 安装git<br>③ 更改安装位置<br>④ 创建开始菜单快捷方式，随意，我选择不创建<br>⑤ 点下一步全部默认就可以，到这一步选择第二个<br>⑥ 安装完成<br>⑦ 桌面没有新的快捷方式不要慌，正常现象，有需要的话可以在开始菜单和软件安装路径里找到并创建快捷方式<br>⑧ 验证是否安装完成<br>Win+R，输入cmd，输入命令git</p><h2 id="githubSHH配置"><a href="#githubSHH配置" class="headerlink" title="githubSHH配置"></a>githubSHH配置</h2><p>① 打开git的安装路径，找到git bash.exe 双击运行<br>② 输入命令ssh-keygen -t rsa -C “<a href="mailto:&#x39;&#x39;&#49;&#50;&#x37;&#x30;&#x36;&#56;&#53;&#64;&#x71;&#113;&#x2e;&#x63;&#x6f;&#109;">&#x39;&#x39;&#49;&#50;&#x37;&#x30;&#x36;&#56;&#53;&#64;&#x71;&#113;&#x2e;&#x63;&#x6f;&#109;</a>“，引号内是github注册邮箱地址，回车<br>③ 无特殊提示就回车，有（y/n）就输入y回车<br>④ 打开github，点击右上角头像选择 设置<br>⑥ 选择shh和密钥选项，添加新密钥<br>⑦ 标题就用户名+tech吧（tech技术），填到第一栏<br>在C盘找到id_rsa.pub这个文件，以记事本形式打开，复制内容填到第二栏<br>⑧ 提交，创建完成</p><h2 id="hexo的本地使用"><a href="#hexo的本地使用" class="headerlink" title="hexo的本地使用"></a>hexo的本地使用</h2><p>① 浏览器输入 Hexo 进入hexo官网<br>② 在合适的位置新建一个文件夹blog，关于博客的文件基本都在这里面，我选择D盘根目录<br>③ 进入bolg文件，点击路径输入cmd，回车进入（也可以win+R，输入cmd，再用cd命令一级一级切到blog文件下）<br>④ 回到hexo官网，复制命令 npm install hexo-cli -g 到运行窗口回车<br>⑤ 网站下拉会有使用命令行，blog为你的博客名<br>⑥ 输入 hexo init +博客名 回车运行<br>⑦ 输入命令cd 博客名，进入博客文件，回到网站复制命令行 npm install 并运行<br>⑧ 完成后输入命令 hexo s 生成本地预览，最后会生成一个4000端口的网址，复制到浏览器进入，就能看到我们的博客了</p><h2 id="sublime的下载与安装"><a href="#sublime的下载与安装" class="headerlink" title="sublime的下载与安装"></a>sublime的下载与安装</h2><p>① 浏览器输入Download - Sublime Text 进去官网下载，选择自己的系统，我选择windows64位<br>② 下载完成运行，更改安装路径<br>③ 默认选项就可以，一直下一步。安装完成<br>④ 打开sublime<br>⑤ 打开sublime，在左边栏source——-posts —— hello-world.md中输入文字，ctrl+s保存<br>⑥ 在blog路径中右击运行git bash，输入命令hexo cl清理缓存，hexo g hexo s生成本地预览<br>⑦ 浏览器打开本地预览，更改已生效</p><h2 id="将hexo发布至github"><a href="#将hexo发布至github" class="headerlink" title="将hexo发布至github"></a>将hexo发布至github</h2><p>① 打开浏览器，进入github之前新建的存储库，进入库，复制地址<br>② 在sublime中打开-config.yml文件更改配置信息<br>更改参数 author：名字，我的是maohuifei<br>更改参数 ur1： 后面为github存储库的地址中的一部分（XXXX.github.io）<br>更改参数 type：git，<br>添加新参数 branch: gh-pages<br>添加新参数 repo：后面为github存储库的地址<br>保存<br>③ 进入hexo一键部署网站部署 | Hexo ，复制hexo-deployer-git的安装命令 npm install hexo-deployer-git –save 进入git bash 运行安装<br>④ 命令 hexo cl 清理hexo g生成 hexo d提交<br>⑤ 浏览器输入 用户名+github.Io 我的是maohuifei.github.io<br>⑥ 博客搭建完成!</p><h2 id="hexo主题使用"><a href="#hexo主题使用" class="headerlink" title="hexo主题使用"></a>hexo主题使用</h2><p>① 进入hexo主题官网Themes | Hexo 选择主题，以next为例<br>② 进入主题详情，有详细安装步骤教程，每个主题进入位置不同</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 教程与心得 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> 博客 </tag>
+            
+            <tag> 教程 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hello World</title>
       <link href="2021/04/14/hello-world/"/>
       <url>2021/04/14/hello-world/</url>

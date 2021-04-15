@@ -353,6 +353,83 @@
     </div>
 
     
+        
+
+        
+            
+            <div class="carousel-item amber white-text carousel-post bg-cover"
+                 style="background-image: url('https://cdn.pixabay.com/photo/2021/03/01/14/40/girl-6059889__340.jpg');">
+                <div class="container">
+                    <div class="row">
+                        <div class="col s10 offset-s1">
+                            <div class="title center-align">V2ray的配置生成</div>
+                            <div class="description center-align">
+                                
+                                    本文主要讲解在有了一台Linux云服务器的情况下，如何生成V2ray配置文件并于个人终端上实现流量共享
+操作前的准备拥有一台操作系统为Linux的云主机，最后终端设备上的网速受限于主机的带宽进入云主机详情网页，防火墙开放所有UTP、TCP端
+                                
+                            </div>
+                            <div class="cover-btns">
+                                <a href="/2021/04/15/V2ray%E7%9A%84%E9%85%8D%E7%BD%AE%E7%94%9F%E6%88%90/" class="waves-effect waves-light btn"
+                                   target="_blank">
+                                    <i class="icon fa fa-eye fa-fw"></i>阅读更多
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            
+            <div class="carousel-item amber white-text carousel-post bg-cover"
+                 style="background-image: url('https://cdn.pixabay.com/photo/2021/04/06/14/46/city-6156596_1280.jpg');">
+                <div class="container">
+                    <div class="row">
+                        <div class="col s10 offset-s1">
+                            <div class="title center-align">如何搭建一个属于自己的个人博客</div>
+                            <div class="description center-align">
+                                
+                                    — 博客，音译，英文名为Blogger，它的正式名称为网络日记；是使用特定的软件，在网络上出版、发表和张贴个人文章的人，或者是一种通常由个人管理、不定期张贴新的文章的网站。博客是继MSN、BBS、ICQ之后出现的第4种网络交流方式，是网络时
+                                
+                            </div>
+                            <div class="cover-btns">
+                                <a href="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" class="waves-effect waves-light btn"
+                                   target="_blank">
+                                    <i class="icon fa fa-eye fa-fw"></i>阅读更多
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            
+            <div class="carousel-item amber white-text carousel-post bg-cover"
+                 style="background-image: url('https://cdn.pixabay.com/photo/2021/03/07/16/31/person-6076771__340.jpg');">
+                <div class="container">
+                    <div class="row">
+                        <div class="col s10 offset-s1">
+                            <div class="title center-align">给服务器安装BBR</div>
+                            <div class="description center-align">
+                                
+                                    为你的服务器安装BBR，小水管秒变大水枪
+操作前的准备拥有一台操作系统为Linux的云主机用SSH远程登录
+查看内核版本uname -r
+更新库rpm –import https://www.elrepo.org/RPM-GPG-KEY-e
+                                
+                            </div>
+                            <div class="cover-btns">
+                                <a href="/2021/04/15/%E7%BB%99%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85BBR/" class="waves-effect waves-light btn"
+                                   target="_blank">
+                                    <i class="icon fa fa-eye fa-fw"></i>阅读更多
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+    
 </div>
 
 <script>
@@ -375,7 +452,7 @@
         coverSlider.carousel({
             duration: Number('120'),
             fullWidth: true,
-            indicators: 'true' === 'true',
+            indicators: 'false' === 'true',
             onCycleTo() {
                 if (!initUserPressedOrDraggedActive) {
                     // console.log('initUserPressedOrDraggedActive')
@@ -387,32 +464,11 @@
 
         let carouselIntervalId;
         
-        // Loop to call the next cover article picture.
-        let autoCarousel = function () {
-            carouselIntervalId = setInterval(function () {
-                coverSlider.carousel('next');
-            }, 5000);
-        };
-        autoCarousel();
-        
 
         function restartPlay() {
             
-            clearInterval(carouselIntervalId);
-            autoCarousel();
-            
         };
 
-        
-        // prev and next cover post.
-        $('#prev-cover').click(function () {
-            coverSlider.carousel('prev');
-            restartPlay();
-        });
-        $('#next-cover').click(function () {
-            coverSlider.carousel('next');
-            restartPlay();
-        });
         
     });
 </script>
@@ -452,6 +508,41 @@
 
 
 
+
+
+<div class="title"><i class="far fa-thumbs-up"></i>&nbsp;&nbsp;推荐文章</div>
+
+<div class="row">
+
+    
+    
+    <div class="col s12" >
+        
+             <div class="post-card" style="background-image: url('https://cdn.pixabay.com/photo/2021/04/06/14/46/city-6156596_1280.jpg')">
+        
+            <div class="post-body">
+                <div class="post-categories">
+                    
+                        
+                            <a href="/categories/%E6%95%99%E7%A8%8B%E4%B8%8E%E5%BF%83%E5%BE%97/" class="category">教程与心得</a>
+                        
+                    
+                </div>
+                <a href="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">
+                    <h3 class="post-title">如何搭建一个属于自己的个人博客</h3>
+                </a>
+                <p class="post-description">— 博客，音译，英文名为Blogger，它的正式名称为网络日记；是使用特定的软件，在网络上出版、发表和张贴个人文章的人，或者是一种通常由个人管理、不定期张贴新的文章的网站</p>
+                <a href="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #FF5E3A 0%, #FF2A68 100%)" target="_blank">
+                    <i class="icon far fa-eye fa-fw"></i>阅读更多
+                </a>
+            </div>
+        </div>
+    </div>
+    
+
+</div>
+
+
                     </div>
                     
                 </div>
@@ -465,6 +556,168 @@
     <!-- 所有文章卡片 -->
     <article id="articles" class="container articles">
         <div class="row article-row">
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/04/15/%E7%BB%99%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85BBR/">
+                        <div class="card-image">
+                            
+                            <img src="https://cdn.pixabay.com/photo/2021/03/07/16/31/person-6076771__340.jpg" class="responsive-img" alt="给服务器安装BBR">
+                            
+                            <span class="card-title">给服务器安装BBR</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                为你的服务器安装BBR，小水管秒变大水枪
+操作前的准备拥有一台操作系统为Linux的云主机用SSH远程登录
+查看内核版本uname -r
+更新库rpm –import https://www.elrepo.org/RPM-GPG-KEY-e
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-15
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/%E6%95%99%E7%A8%8B%E4%B8%8E%E5%BF%83%E5%BE%97/" class="post-category">
+                                    教程与心得
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/%E4%BA%91%E5%85%8D/">
+                            <span class="chip bg-color">云免</span>
+                        </a>
+                        
+                        <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+                            <span class="chip bg-color">服务器</span>
+                        </a>
+                        
+                        <a href="/tags/%E5%B8%A6%E5%AE%BD/">
+                            <span class="chip bg-color">带宽</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/04/15/V2ray%E7%9A%84%E9%85%8D%E7%BD%AE%E7%94%9F%E6%88%90/">
+                        <div class="card-image">
+                            
+                            <img src="https://cdn.pixabay.com/photo/2021/03/01/14/40/girl-6059889__340.jpg" class="responsive-img" alt="V2ray的配置生成">
+                            
+                            <span class="card-title">V2ray的配置生成</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                本文主要讲解在有了一台Linux云服务器的情况下，如何生成V2ray配置文件并于个人终端上实现流量共享
+操作前的准备拥有一台操作系统为Linux的云主机，最后终端设备上的网速受限于主机的带宽进入云主机详情网页，防火墙开放所有UTP、TCP端
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-15
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/%E6%95%99%E7%A8%8B%E4%B8%8E%E5%BF%83%E5%BE%97/" class="post-category">
+                                    教程与心得
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/%E4%BA%91%E5%85%8D/">
+                            <span class="chip bg-color">云免</span>
+                        </a>
+                        
+                        <a href="/tags/V2ray/">
+                            <span class="chip bg-color">V2ray</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">
+                        <div class="card-image">
+                            
+                            <img src="https://cdn.pixabay.com/photo/2021/04/06/14/46/city-6156596_1280.jpg" class="responsive-img" alt="如何搭建一个属于自己的个人博客">
+                            
+                            <span class="card-title">如何搭建一个属于自己的个人博客</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                — 博客，音译，英文名为Blogger，它的正式名称为网络日记；是使用特定的软件，在网络上出版、发表和张贴个人文章的人，或者是一种通常由个人管理、不定期张贴新的文章的网站。博客是继MSN、BBS、ICQ之后出现的第4种网络交流方式，是网络时
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-15
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/%E6%95%99%E7%A8%8B%E4%B8%8E%E5%BF%83%E5%BE%97/" class="post-category">
+                                    教程与心得
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/Hexo/">
+                            <span class="chip bg-color">Hexo</span>
+                        </a>
+                        
+                        <a href="/tags/%E5%8D%9A%E5%AE%A2/">
+                            <span class="chip bg-color">博客</span>
+                        </a>
+                        
+                        <a href="/tags/%E6%95%99%E7%A8%8B/">
+                            <span class="chip bg-color">教程</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
@@ -524,7 +777,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">73</span>&nbsp;字
+                class="white-color">3k</span>&nbsp;字
             
             
             
