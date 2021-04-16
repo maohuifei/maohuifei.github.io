@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="给服务器安装BBR, 猫会飞呀">
+    <meta name="keywords" content="软件下载, 猫会飞呀">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>给服务器安装BBR | 猫会飞呀</title>
+    <title>软件下载 | 猫会飞呀</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -225,12 +225,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.pixabay.com/photo/2021/03/07/16/31/person-6076771__340.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">给服务器安装BBR</h1>
+                    <h1 class="description center-align post-title">软件下载</h1>
                 </div>
             </div>
         </div>
@@ -344,33 +344,12 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/%E4%BA%91%E5%85%8D/">
-                                <span class="chip bg-color">云免</span>
-                            </a>
-                        
-                            <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">
-                                <span class="chip bg-color">服务器</span>
-                            </a>
-                        
-                            <a href="/tags/%E5%B8%A6%E5%AE%BD/">
-                                <span class="chip bg-color">带宽</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/%E6%95%99%E7%A8%8B%E4%B8%8E%E5%BF%83%E5%BE%97/" class="post-category">
-                                教程与心得
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -379,21 +358,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-04-15
+                    2021-04-16
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-04-15
+                    2021-04-16
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    208
+                    0
                 </div>
                 
 
@@ -418,20 +397,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>为你的服务器安装BBR，小水管秒变大水枪</p>
-<h2 id="操作前的准备"><a href="#操作前的准备" class="headerlink" title="操作前的准备"></a>操作前的准备</h2><p>拥有一台操作系统为Linux的云主机<br>用SSH远程登录</p>
-<h2 id="查看内核版本"><a href="#查看内核版本" class="headerlink" title="查看内核版本"></a>查看内核版本</h2><p>uname -r</p>
-<h2 id="更新库"><a href="#更新库" class="headerlink" title="更新库"></a>更新库</h2><p>rpm –import <a target="_blank" rel="noopener" href="https://www.elrepo.org/RPM-GPG-KEY-elrepo.org">https://www.elrepo.org/RPM-GPG-KEY-elrepo.org</a></p>
-<h2 id="修改服务器的库"><a href="#修改服务器的库" class="headerlink" title="修改服务器的库"></a>修改服务器的库</h2><p>rpm -Uvh <a target="_blank" rel="noopener" href="http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm">http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm</a></p>
-<h2 id="安装内核"><a href="#安装内核" class="headerlink" title="安装内核"></a>安装内核</h2><p>yum –enablerepo=elrepo-kernel install kernel-ml -y</p>
-<h2 id="设置内核"><a href="#设置内核" class="headerlink" title="设置内核"></a>设置内核</h2><p>grub2-set-default ‘CentOS Linux (4.12.3-1.el7.elrepo.x86_64) 7 (Core)’</p>
-<h2 id="重启，5分钟后连接"><a href="#重启，5分钟后连接" class="headerlink" title="重启，5分钟后连接"></a>重启，5分钟后连接</h2><p>reboot</p>
-<h2 id="查看内核"><a href="#查看内核" class="headerlink" title="查看内核"></a>查看内核</h2><p>uname -r<br>现在内核版本已经是5+了</p>
-<h2 id="配置服务器"><a href="#配置服务器" class="headerlink" title="配置服务器"></a>配置服务器</h2><p>echo ‘net.core.default_qdisc=fq’ | sudo tee -a /etc/sysctl.conf</p>
-<h2 id="配置服务器内核"><a href="#配置服务器内核" class="headerlink" title="配置服务器内核"></a>配置服务器内核</h2><p>echo ‘net.ipv4.tcp_congestion_control=bbr’ | sudo tee -a /etc/sysctl.conf</p>
-<h2 id="顺序输入"><a href="#顺序输入" class="headerlink" title="顺序输入"></a>顺序输入</h2><p>sysctl -p<br>sysctl net.ipv4.tcp_available_congestion_control<br>sysctl -n net.ipv4.tcp_congestion_control</p>
-<h2 id="查看安装结果"><a href="#查看安装结果" class="headerlink" title="查看安装结果"></a>查看安装结果</h2><p>lsmod | grep bbr<br>显示 tcp_bbr 20480 1就是安装成功了</p>
-
+                
                 
             </div>
             <hr/>
@@ -457,7 +423,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://maohuifei.github.io/2021/04/15/%E7%BB%99%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85BBR/">https://maohuifei.github.io/2021/04/15/%E7%BB%99%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85BBR/</a>
+                    <a href="https://maohuifei.github.io/2021/04/16/%E8%BD%AF%E4%BB%B6%E4%B8%8B%E8%BD%BD/">https://maohuifei.github.io/2021/04/16/%E8%BD%AF%E4%BB%B6%E4%B8%8B%E8%BD%BD/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -494,19 +460,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/%E4%BA%91%E5%85%8D/">
-                                    <span class="chip bg-color">云免</span>
-                                </a>
-                            
-                                <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">
-                                    <span class="chip bg-color">服务器</span>
-                                </a>
-                            
-                                <a href="/tags/%E5%B8%A6%E5%AE%BD/">
-                                    <span class="chip bg-color">带宽</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -673,9 +627,48 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2021/04/16/%E8%BD%AF%E4%BB%B6%E4%B8%8B%E8%BD%BD/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="软件下载">
+                        
+                        <span class="card-title">软件下载</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-16
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            猫会飞呀
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2021/04/16/%E8%AE%BE%E8%AE%A1%E7%B4%A0%E6%9D%90/">
                     <div class="card-image">
@@ -692,9 +685,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-16
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-16
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -720,58 +713,6 @@
                     
                     <a href="/tags/%E5%B9%B3%E9%9D%A2%E8%AE%BE%E8%AE%A1/">
                         <span class="chip bg-color">平面设计</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/04/15/V2ray%E7%9A%84%E9%85%8D%E7%BD%AE%E7%94%9F%E6%88%90/">
-                    <div class="card-image">
-                        
-                        <img src="https://cdn.pixabay.com/photo/2021/03/01/14/40/girl-6059889__340.jpg" class="responsive-img" alt="V2ray的配置生成">
-                        
-                        <span class="card-title">V2ray的配置生成</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-15
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E6%95%99%E7%A8%8B%E4%B8%8E%E5%BF%83%E5%BE%97/" class="post-category">
-                                    教程与心得
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E4%BA%91%E5%85%8D/">
-                        <span class="chip bg-color">云免</span>
-                    </a>
-                    
-                    <a href="/tags/V2ray/">
-                        <span class="chip bg-color">V2ray</span>
                     </a>
                     
                 </div>
