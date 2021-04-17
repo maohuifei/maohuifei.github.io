@@ -364,7 +364,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-04-16
+                    2021-04-17
                 </div>
                 
 
@@ -402,15 +402,15 @@
 <h2 id="操作前的准备"><a href="#操作前的准备" class="headerlink" title="操作前的准备"></a>操作前的准备</h2><p>拥有一台操作系统为Linux的云主机<br>用SSH远程登录</p>
 <h2 id="查看内核版本"><a href="#查看内核版本" class="headerlink" title="查看内核版本"></a>查看内核版本</h2><p>uname -r</p>
 <h2 id="更新库"><a href="#更新库" class="headerlink" title="更新库"></a>更新库</h2><p>rpm –import <a target="_blank" rel="noopener" href="https://www.elrepo.org/RPM-GPG-KEY-elrepo.org">https://www.elrepo.org/RPM-GPG-KEY-elrepo.org</a></p>
-<h2 id="修改服务器的库"><a href="#修改服务器的库" class="headerlink" title="修改服务器的库"></a>修改服务器的库</h2><p>rpm -Uvh <a target="_blank" rel="noopener" href="http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm">http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm</a></p>
-<h2 id="安装内核"><a href="#安装内核" class="headerlink" title="安装内核"></a>安装内核</h2><p>yum –enablerepo=elrepo-kernel install kernel-ml -y</p>
-<h2 id="设置内核"><a href="#设置内核" class="headerlink" title="设置内核"></a>设置内核</h2><p>grub2-set-default ‘CentOS Linux (4.12.3-1.el7.elrepo.x86_64) 7 (Core)’</p>
+<h2 id="修改服务器的库"><a href="#修改服务器的库" class="headerlink" title="修改服务器的库"></a>修改服务器的库</h2><p>rpm -Uvh <a target="_blank" rel="noopener" href="http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm">http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm</a><br><img src="/2021/04/15/%E7%BB%99%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85BBR/1-1.jpg"></p>
+<h2 id="安装内核"><a href="#安装内核" class="headerlink" title="安装内核"></a>安装内核</h2><p>yum –enablerepo=elrepo-kernel install kernel-ml -y<br><img src="/2021/04/15/%E7%BB%99%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85BBR/2-1.jpg"><br><img src="/2021/04/15/%E7%BB%99%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85BBR/2-2.jpg"></p>
+<h2 id="设置内核"><a href="#设置内核" class="headerlink" title="设置内核"></a>设置内核</h2><p>grub2-set-default ‘CentOS Linux (4.12.3-1.el7.elrepo.x86_64) 7 (Core)’<br><img src="/2021/04/15/%E7%BB%99%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85BBR/3-1.jpg"></p>
 <h2 id="重启，5分钟后连接"><a href="#重启，5分钟后连接" class="headerlink" title="重启，5分钟后连接"></a>重启，5分钟后连接</h2><p>reboot</p>
 <h2 id="查看内核"><a href="#查看内核" class="headerlink" title="查看内核"></a>查看内核</h2><p>uname -r<br>现在内核版本已经是5+了</p>
-<h2 id="配置服务器"><a href="#配置服务器" class="headerlink" title="配置服务器"></a>配置服务器</h2><p>echo ‘net.core.default_qdisc=fq’ | sudo tee -a /etc/sysctl.conf</p>
-<h2 id="配置服务器内核"><a href="#配置服务器内核" class="headerlink" title="配置服务器内核"></a>配置服务器内核</h2><p>echo ‘net.ipv4.tcp_congestion_control=bbr’ | sudo tee -a /etc/sysctl.conf</p>
-<h2 id="顺序输入"><a href="#顺序输入" class="headerlink" title="顺序输入"></a>顺序输入</h2><p>sysctl -p<br>sysctl net.ipv4.tcp_available_congestion_control<br>sysctl -n net.ipv4.tcp_congestion_control</p>
-<h2 id="查看安装结果"><a href="#查看安装结果" class="headerlink" title="查看安装结果"></a>查看安装结果</h2><p>lsmod | grep bbr<br>显示 tcp_bbr 20480 1就是安装成功了</p>
+<h2 id="配置服务器"><a href="#配置服务器" class="headerlink" title="配置服务器"></a>配置服务器</h2><p>echo ‘net.core.default_qdisc=fq’ | sudo tee -a /etc/sysctl.conf<br><img src="/2021/04/15/%E7%BB%99%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85BBR/4-1.jpg"></p>
+<h2 id="配置服务器内核"><a href="#配置服务器内核" class="headerlink" title="配置服务器内核"></a>配置服务器内核</h2><p>echo ‘net.ipv4.tcp_congestion_control=bbr’ | sudo tee -a /etc/sysctl.conf<br><img src="/2021/04/15/%E7%BB%99%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85BBR/5-1.jpg"></p>
+<h2 id="顺序输入"><a href="#顺序输入" class="headerlink" title="顺序输入"></a>顺序输入</h2><p>sysctl -p<br>sysctl net.ipv4.tcp_available_congestion_control<br>sysctl -n net.ipv4.tcp_congestion_control<br><img src="/2021/04/15/%E7%BB%99%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85BBR/6-1.jpg"></p>
+<h2 id="查看安装结果"><a href="#查看安装结果" class="headerlink" title="查看安装结果"></a>查看安装结果</h2><p>lsmod | grep bbr<br>显示 tcp_bbr 20480 1就是安装成功了<br><img src="/2021/04/15/%E7%BB%99%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85BBR/7-1.jpg"></p>
 
                 
             </div>
