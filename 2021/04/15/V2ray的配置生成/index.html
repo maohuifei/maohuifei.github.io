@@ -304,7 +304,7 @@
 <h2 id="操作前的准备"><a href="#操作前的准备" class="headerlink" title="操作前的准备"></a>操作前的准备</h2><p>拥有一台操作系统为Linux的云主机，最后终端设备上的网速受限于主机的带宽<br>进入云主机详情网页，防火墙开放所有UTP、TCP端口</p>
 <h2 id="【PC端】FinalShell的下载与安装"><a href="#【PC端】FinalShell的下载与安装" class="headerlink" title="【PC端】FinalShell的下载与安装"></a>【PC端】FinalShell的下载与安装</h2><p>Windows版下载地址:<br><a target="_blank" rel="noopener" href="http://www.hostbuf.com/downloads/finalshell_install.exe">http://www.hostbuf.com/downloads/finalshell_install.exe</a><br>下载FinalShell的安装包到本地并运行</p>
 <h2 id="【安卓手机端】JuiceSSH的下载与安装"><a href="#【安卓手机端】JuiceSSH的下载与安装" class="headerlink" title="【安卓手机端】JuiceSSH的下载与安装"></a>【安卓手机端】JuiceSSH的下载与安装</h2><p>应用商店搜索JuiceSSH，下载并安装</p>
-<h2 id="利用FinalShell远程登录云主机"><a href="#利用FinalShell远程登录云主机" class="headerlink" title="利用FinalShell远程登录云主机"></a>利用FinalShell远程登录云主机</h2><p>①打开FinalShell，点击标签左侧文件夹标志，跳出连接管理器界面。点击添加新主机，选择新建SSH连接。<br>②为主机起个名字，主机栏填云主机的公网IP，端口22保持不变。<br>③认证方法选择密码，用户名为root，密码为云主机密码<br><img src="/2021/04/15/V2ray%E7%9A%84%E9%85%8D%E7%BD%AE%E7%94%9F%E6%88%90/1.jpg"><br>④点击确定<br>⑤回到首页，双击主机运行，如果是第一次远程进入会弹出对话框，点击确认/接受即可<br>PS：JuiceSSH的操作与FinalShell相差不大，此处就不过多赘述了</p>
+<h2 id="利用FinalShell远程登录云主机"><a href="#利用FinalShell远程登录云主机" class="headerlink" title="利用FinalShell远程登录云主机"></a>利用FinalShell远程登录云主机</h2><p>①打开FinalShell，点击标签左侧文件夹标志，跳出连接管理器界面。点击添加新主机，选择新建SSH连接。<br>②为主机起个名字，主机栏填云主机的公网IP，端口22保持不变。<br>③认证方法选择密码，用户名为root，密码为云主机密码<br>④点击确定<br>⑤回到首页，双击主机运行，如果是第一次远程进入会弹出对话框，点击确认/接受即可<br>PS：JuiceSSH的操作与FinalShell相差不大，此处就不过多赘述了</p>
 <h2 id="hcaas容器的V2ray一件搭建脚本"><a href="#hcaas容器的V2ray一件搭建脚本" class="headerlink" title="hcaas容器的V2ray一件搭建脚本"></a>hcaas容器的V2ray一件搭建脚本</h2><p>输入hcaas容器的V2ray一件搭建脚本的命令行<br>yum -y install wget &amp;&amp; wget <a target="_blank" rel="noopener" href="https://shell.ihuayu8.cn/hcaas.sh">https://shell.ihuayu8.cn/hcaas.sh</a> &amp;&amp; chmod 777 hcaas.sh &amp;&amp; bash hcaas.sh<br>回车，运行安装程序<br>输入 1 确认安装</p>
 <h2 id="生成V2ray配置文件"><a href="#生成V2ray配置文件" class="headerlink" title="生成V2ray配置文件"></a>生成V2ray配置文件</h2><p>等待一段时间，程序安装完成<br>V2ray服务自动启动，配置文件已生成</p>
 <h2 id="更改V2ray配置文件"><a href="#更改V2ray配置文件" class="headerlink" title="更改V2ray配置文件"></a>更改V2ray配置文件</h2><p>将配置文件复制到剪贴板，更改IP为云主机的公网IP，更改适合自己的线路混淆</p>
@@ -740,7 +740,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">3.3k</span>&nbsp;字
+                class="white-color">3.7k</span>&nbsp;字
             
             
             
