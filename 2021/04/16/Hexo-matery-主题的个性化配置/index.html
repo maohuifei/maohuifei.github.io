@@ -375,7 +375,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    545
+                    565
                 </div>
                 
 
@@ -406,24 +406,24 @@
 <h2 id="顶部栏颜色的更改"><a href="#顶部栏颜色的更改" class="headerlink" title="顶部栏颜色的更改"></a>顶部栏颜色的更改</h2><p>打开 matery/source/css/matery.css 文件 搜索 .bg-color<br>修改background-image属性中linear-gradient内的颜色色值（具体色值可以百度或者用PS查看）<br>色值相同是单色效果，两个色值不同就是渐变效果</p>
 <h2 id="顶部Banner的图片和文章特色图的更改"><a href="#顶部Banner的图片和文章特色图的更改" class="headerlink" title="顶部Banner的图片和文章特色图的更改"></a>顶部Banner的图片和文章特色图的更改</h2><p>在 /source/medias/banner 文件夹中，把喜欢的图片重命名覆盖原来的图片即可，主题代码中默认是每天切换<br>在图片网站中找到喜欢的图片，右击复制图片链接。粘贴图片链接到新建文章的头文件img参数后面即可</p>
 <h2 id="顶部Banner颜色滤镜的删除"><a href="#顶部Banner颜色滤镜的删除" class="headerlink" title="顶部Banner颜色滤镜的删除"></a>顶部Banner颜色滤镜的删除</h2><h2 id="字体的更改"><a href="#字体的更改" class="headerlink" title="字体的更改"></a>字体的更改</h2><p>在博客根目录下的 source 文件夹内创建一个名字 font 的文件夹，放入字体ttf文件。<br>找到 /themes/matery/source/css/my.css 文件，填入下面的代码：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ @font-face<span class="token punctuation">&#123;</span>
-    font-family: <span class="token string">'myFont'</span><span class="token punctuation">;</span>
-    src: url<span class="token punctuation">(</span><span class="token string">'../font/myFont.ttf'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
+<pre class="line-numbers language-makedown" data-language="makedown"><code class="language-makedown">$ @font-face&#123;
+    font-family: &#39;myFont&#39;;
+    src: url(&#39;..&#x2F;font&#x2F;myFont.ttf&#39;);
+&#125;
 
-.diyfont<span class="token punctuation">&#123;</span>
-    font-family: <span class="token string">'myFont'</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
+.diyfont&#123;
+    font-family: &#39;myFont&#39;;
+&#125;
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>这里是创建了一个 diyFont 的类<br>将上面的 myFont 改成你自己的字体名称<br>在网站中右击检索，找到对应字体所使用的样式关键词<br><img src="/2021/04/16/Hexo-matery-%E4%B8%BB%E9%A2%98%E7%9A%84%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE/1.jpg"><br>局部样式更改在 matery/source/css/matery.css 中 ctrl+F 搜索关键词<br>标题样式更改在 /themes/matery/layout/_partial/bg-cover-content.ejs 中</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token operator">&lt;</span>div <span class="token assign-left variable">class</span><span class="token operator">=</span><span class="token string">"title center-align diy-font"</span><span class="token operator">></span>
-     <span class="token operator">&lt;</span>% <span class="token keyword">if</span> <span class="token punctuation">(</span>config.subtitle <span class="token operator">&amp;&amp;</span> config.subtitle.length <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> %<span class="token operator">></span>
-         <span class="token operator">&lt;</span>%<span class="token operator">=</span> config.subtitle %<span class="token operator">></span>
-      <span class="token operator">&lt;</span>% <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span> %<span class="token operator">></span>
+<pre class="line-numbers language-makedown" data-language="makedown"><code class="language-makedown">$ &lt;div class&#x3D;&quot;title center-align diy-font&quot;&gt;
+     &lt;% if (config.subtitle &amp;&amp; config.subtitle.length &gt; 0) &#123; %&gt;
+         &lt;%&#x3D; config.subtitle %&gt;
+      &lt;% &#125; else &#123; %&gt;
              subtitle
-      <span class="token operator">&lt;</span>% <span class="token punctuation">&#125;</span> %<span class="token operator">></span>
- <span class="token operator">&lt;</span>/div<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+      &lt;% &#125; %&gt;
+ &lt;&#x2F;div&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>在样式代码的 class=“” 中更改之前定义的样式名字 diy-font<br>打包上传测试</p>
 <h2 id="Banner上的“开始阅读”按钮和下方图标的颜色更改"><a href="#Banner上的“开始阅读”按钮和下方图标的颜色更改" class="headerlink" title="Banner上的“开始阅读”按钮和下方图标的颜色更改"></a>Banner上的“开始阅读”按钮和下方图标的颜色更改</h2><p>在网站中右击检索，找到对应位置所使用的样式关键词<br>局部样式更改在 matery/source/css/matery.css 中 ctrl+F 搜索关键词</p>
