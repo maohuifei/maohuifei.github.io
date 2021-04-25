@@ -1,9 +1,0 @@
-/* Here is your custom css styles. */
-@font-face{
-    font-family: 'myfont';
-    src: url('../font/华文行楷.ttf');
-}
-
-.diy-font{
-    font-family: '华文行楷';
-}
