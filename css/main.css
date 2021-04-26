@@ -1169,7 +1169,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #4bcd4b;
+  background: #dfffb5;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2181,7 +2181,7 @@ ul.breadcrumb li + li:last-child {
 }
 .header-inner {
   background: var(--content-bg-color);
-  border-radius: 20px 20px 20px 20px;
+  border-radius: initial;
   box-shadow: initial;
   overflow: hidden;
   padding: 0;
@@ -2214,7 +2214,7 @@ ul.breadcrumb li + li:last-child {
 }
 .content-wrap {
   background: var(--content-bg-color);
-  border-radius: 20px 20px 20px 20px;
+  border-radius: initial;
   box-shadow: initial;
   box-sizing: border-box;
   padding: 40px;
@@ -2372,7 +2372,7 @@ ul.breadcrumb li + li:last-child {
 }
 .sidebar-inner {
   background: var(--content-bg-color);
-  border-radius: 20px;
+  border-radius: initial;
   box-shadow: initial;
   box-sizing: border-box;
   color: var(--text-color);
@@ -2456,25 +2456,4 @@ ul.breadcrumb li + li:last-child {
 }
 .links-of-blogroll-item {
   padding: 0;
-}
-.content-wrap {
-  opacity: 0.8;
-}
-.sidebar {
-  opacity: 0.8;
-}
-.header-inner {
-  background: rgba(255,255,255,0.8);
-}
-.popup {
-  opacity: 0.8;
-}
-.post-block {
-  background: rgba(255,255,255,0.7) none repeat scroll !important;
-}
-body {
-  background: url("/images/background.jpg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: 100% 100%;
 }
