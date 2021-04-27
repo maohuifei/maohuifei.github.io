@@ -20,26 +20,24 @@
     var CONFIG = {"hostname":"maohuifei.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="个人收录整理的 Hexo matery 主题 官方教程之外的 进阶实用个性化配置(不定时更新)">
+  <meta name="description" content="本文主要讲解在有了一台Linux云服务器的情况下，如何生成V2ray配置文件并于个人终端上实现流量共享">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo matery 主题的个性化配置">
-<meta property="og:url" content="https://maohuifei.github.io/2021/04/16/Hexo-matery-%E4%B8%BB%E9%A2%98%E7%9A%84%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE/index.html">
+<meta property="og:title" content="V2ray的配置生成">
+<meta property="og:url" content="https://maohuifei.github.io/2021/04/15/V2ray%E7%9A%84%E9%85%8D%E7%BD%AE%E7%94%9F%E6%88%90/index.html">
 <meta property="og:site_name" content="猫会飞呀">
-<meta property="og:description" content="个人收录整理的 Hexo matery 主题 官方教程之外的 进阶实用个性化配置(不定时更新)">
+<meta property="og:description" content="本文主要讲解在有了一台Linux云服务器的情况下，如何生成V2ray配置文件并于个人终端上实现流量共享">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://maohuifei.github.io/2021/04/16/Hexo-matery-%E4%B8%BB%E9%A2%98%E7%9A%84%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE/2.jpg">
-<meta property="og:image" content="https://maohuifei.github.io/2021/04/16/Hexo-matery-%E4%B8%BB%E9%A2%98%E7%9A%84%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE/1.jpg">
-<meta property="article:published_time" content="2021-04-16T09:34:18.000Z">
-<meta property="article:modified_time" content="2021-04-18T01:49:46.681Z">
+<meta property="og:image" content="https://maohuifei.github.io/2021/04/15/V2ray%E7%9A%84%E9%85%8D%E7%BD%AE%E7%94%9F%E6%88%90/1.jpg">
+<meta property="og:image" content="https://maohuifei.github.io/2021/04/15/V2ray%E7%9A%84%E9%85%8D%E7%BD%AE%E7%94%9F%E6%88%90/2.jpg">
+<meta property="article:published_time" content="2021-04-15T09:08:09.000Z">
+<meta property="article:modified_time" content="2021-04-27T05:41:00.539Z">
 <meta property="article:author" content="猫会飞呀">
-<meta property="article:tag" content="Hexo">
-<meta property="article:tag" content="博客">
-<meta property="article:tag" content="主题">
-<meta property="article:tag" content="matery">
+<meta property="article:tag" content="云免">
+<meta property="article:tag" content="V2ray">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://maohuifei.github.io/2021/04/16/Hexo-matery-%E4%B8%BB%E9%A2%98%E7%9A%84%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE/2.jpg">
+<meta name="twitter:image" content="https://maohuifei.github.io/2021/04/15/V2ray%E7%9A%84%E9%85%8D%E7%BD%AE%E7%94%9F%E6%88%90/1.jpg">
 
-<link rel="canonical" href="https://maohuifei.github.io/2021/04/16/Hexo-matery-%E4%B8%BB%E9%A2%98%E7%9A%84%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE/">
+<link rel="canonical" href="https://maohuifei.github.io/2021/04/15/V2ray%E7%9A%84%E9%85%8D%E7%BD%AE%E7%94%9F%E6%88%90/">
 
 
 <script id="page-configurations">
@@ -52,7 +50,7 @@
   };
 </script>
 
-  <title>Hexo matery 主题的个性化配置 | 猫会飞呀</title>
+  <title>V2ray的配置生成 | 猫会飞呀</title>
   
 
 
@@ -169,7 +167,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://maohuifei.github.io/2021/04/16/Hexo-matery-%E4%B8%BB%E9%A2%98%E7%9A%84%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE/">
+    <link itemprop="mainEntityOfPage" href="https://maohuifei.github.io/2021/04/15/V2ray%E7%9A%84%E9%85%8D%E7%BD%AE%E7%94%9F%E6%88%90/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -182,7 +180,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Hexo matery 主题的个性化配置
+          V2ray的配置生成
         </h1>
 
         <div class="post-meta">
@@ -192,14 +190,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2021-04-16 17:34:18" itemprop="dateCreated datePublished" datetime="2021-04-16T17:34:18+08:00">2021-04-16</time>
+              <time title="创建时间：2021-04-15 17:08:09" itemprop="dateCreated datePublished" datetime="2021-04-15T17:08:09+08:00">2021-04-15</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-04-18 09:49:46" itemprop="dateModified" datetime="2021-04-18T09:49:46+08:00">2021-04-18</time>
+                <time title="修改时间：2021-04-27 13:41:00" itemprop="dateModified" datetime="2021-04-27T13:41:00+08:00">2021-04-27</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -207,7 +205,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hexo%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/" itemprop="url" rel="index"><span itemprop="name">Hexo博客主题配置</span></a>
+                  <a href="/categories/%E6%95%99%E7%A8%8B%E4%B8%8E%E5%BF%83%E5%BE%97/" itemprop="url" rel="index"><span itemprop="name">教程与心得</span></a>
                 </span>
             </span>
 
@@ -217,7 +215,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.3k</span>
+              <span>774</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -236,36 +234,21 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>个人收录整理的 Hexo matery 主题 官方教程之外的 进阶实用个性化配置(不定时更新)</p>
+        <p>本文主要讲解在有了一台Linux云服务器的情况下，如何生成V2ray配置文件并于个人终端上实现流量共享</p>
 <span id="more"></span>
 
-<h2 id="顶部栏颜色的更改"><a href="#顶部栏颜色的更改" class="headerlink" title="顶部栏颜色的更改"></a>顶部栏颜色的更改</h2><p>打开 matery/source/css/matery.css 文件 搜索 .bg-color<br>修改background-image属性中linear-gradient内的颜色色值（具体色值可以百度或者用PS查看）<br>色值相同是单色效果，两个色值不同就是渐变效果</p>
-<h2 id="顶部Banner的图片和文章特色图的更改"><a href="#顶部Banner的图片和文章特色图的更改" class="headerlink" title="顶部Banner的图片和文章特色图的更改"></a>顶部Banner的图片和文章特色图的更改</h2><p>在 /source/medias/banner 文件夹中，把喜欢的图片重命名覆盖原来的图片即可，主题代码中默认是每天切换<br>在图片网站中找到喜欢的图片，右击复制图片链接。粘贴图片链接到新建文章的头文件img参数后面即可</p>
-<h2 id="顶部Banner颜色滤镜的删除"><a href="#顶部Banner颜色滤镜的删除" class="headerlink" title="顶部Banner颜色滤镜的删除"></a>顶部Banner颜色滤镜的删除</h2><p>打开 matery/source/css/matery.css 文件 搜索 .bg-color<br><img src="/2021/04/16/Hexo-matery-%E4%B8%BB%E9%A2%98%E7%9A%84%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE/2.jpg"><br>注释掉图中灰色部分</p>
-<h2 id="字体的更改"><a href="#字体的更改" class="headerlink" title="字体的更改"></a>字体的更改</h2><p>在博客根目录下的 source 文件夹内创建一个名字 font 的文件夹，放入字体ttf文件。<br>找到 /themes/matery/source/css/my.css 文件，填入下面的代码：</p>
-<pre class="line-numbers language-makedown" data-language="makedown"><code class="language-makedown">$ @font-face&#123;
-    font-family: &#39;myFont&#39;;
-    src: url(&#39;..&#x2F;font&#x2F;myFont.ttf&#39;);
-&#125;
+<h2 id="操作前的准备"><a href="#操作前的准备" class="headerlink" title="操作前的准备"></a>操作前的准备</h2><p>拥有一台操作系统为Linux的云主机，最后终端设备上的网速受限于主机的带宽<br>进入云主机详情网页，防火墙开放所有UTP、TCP端口</p>
+<h2 id="【PC端】FinalShell的下载与安装"><a href="#【PC端】FinalShell的下载与安装" class="headerlink" title="【PC端】FinalShell的下载与安装"></a>【PC端】FinalShell的下载与安装</h2><p>Windows版下载地址:<br><a target="_blank" rel="noopener" href="http://www.hostbuf.com/downloads/finalshell_install.exe">http://www.hostbuf.com/downloads/finalshell_install.exe</a><br>下载FinalShell的安装包到本地并运行</p>
+<h2 id="【安卓手机端】JuiceSSH的下载与安装"><a href="#【安卓手机端】JuiceSSH的下载与安装" class="headerlink" title="【安卓手机端】JuiceSSH的下载与安装"></a>【安卓手机端】JuiceSSH的下载与安装</h2><p>应用商店搜索JuiceSSH，下载并安装</p>
+<h2 id="利用FinalShell远程登录云主机"><a href="#利用FinalShell远程登录云主机" class="headerlink" title="利用FinalShell远程登录云主机"></a>利用FinalShell远程登录云主机</h2><p>①打开FinalShell，点击标签左侧文件夹标志，跳出连接管理器界面。点击添加新主机，选择新建SSH连接。<br>②为主机起个名字，主机栏填云主机的公网IP，端口22保持不变。<br>③认证方法选择密码，用户名为root，密码为云主机密码<br>④点击确定<br>⑤回到首页，双击主机运行，如果是第一次远程进入会弹出对话框，点击确认/接受即可<br>PS：JuiceSSH的操作与FinalShell相差不大，此处就不过多赘述了<br><img src="/2021/04/15/V2ray%E7%9A%84%E9%85%8D%E7%BD%AE%E7%94%9F%E6%88%90/1.jpg"></p>
+<h2 id="安装V2ray生成配置文件"><a href="#安装V2ray生成配置文件" class="headerlink" title="安装V2ray生成配置文件"></a>安装V2ray生成配置文件</h2><p>一键安装（协议TCP，默认端口8888，不生成sw）</p>
+<pre class="line-numbers language-linux" data-language="linux"><code class="language-linux">$ bash &lt;(curl -s -L https:&#x2F;&#x2F;git.io&#x2F;v2ray-setup.sh)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>自定义安装</p>
+<pre class="line-numbers language-linux" data-language="linux"><code class="language-linux">$ bash &lt;(curl -s -L https:&#x2F;&#x2F;git.io&#x2F;v2rayinstall.sh)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>等待一段时间，程序安装完成<br>V2ray服务自动启动，配置文件已生成<br>如果显示克隆失败，请自行安装git，则进行下一步下载git<br><img src="/2021/04/15/V2ray%E7%9A%84%E9%85%8D%E7%BD%AE%E7%94%9F%E6%88%90/2.jpg"></p>
+<h2 id="git的下载"><a href="#git的下载" class="headerlink" title="git的下载"></a>git的下载</h2><pre class="line-numbers language-linux" data-language="linux"><code class="language-linux">$ yum -y install git<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-.diyfont&#123;
-    font-family: &#39;myFont&#39;;
-&#125;
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>这里是创建了一个 diyFont 的类<br>将上面的 myFont 改成你自己的字体名称<br>在网站中右击检索，找到对应字体所使用的样式关键词<br><img src="/2021/04/16/Hexo-matery-%E4%B8%BB%E9%A2%98%E7%9A%84%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE/1.jpg"><br>局部样式更改在 matery/source/css/matery.css 中 ctrl+F 搜索关键词<br>标题样式更改在 /themes/matery/layout/_partial/bg-cover-content.ejs 中</p>
-<pre class="line-numbers language-makedown" data-language="makedown"><code class="language-makedown">$ &lt;div class&#x3D;&quot;title center-align diy-font&quot;&gt;
-     &lt;% if (config.subtitle &amp;&amp; config.subtitle.length &gt; 0) &#123; %&gt;
-         &lt;%&#x3D; config.subtitle %&gt;
-      &lt;% &#125; else &#123; %&gt;
-             subtitle
-      &lt;% &#125; %&gt;
- &lt;&#x2F;div&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>在样式代码的 class=“” 中更改之前定义的样式名字 diy-font<br>打包上传测试</p>
-<h2 id="Banner上的“开始阅读”按钮和下方图标的颜色更改"><a href="#Banner上的“开始阅读”按钮和下方图标的颜色更改" class="headerlink" title="Banner上的“开始阅读”按钮和下方图标的颜色更改"></a>Banner上的“开始阅读”按钮和下方图标的颜色更改</h2><p>在网站中右击检索，找到对应位置所使用的样式关键词<br>局部样式更改在 matery/source/css/matery.css 中 ctrl+F 搜索关键词</p>
-<h2 id="更改新建文章时自动生成的各项头文件参数"><a href="#更改新建文章时自动生成的各项头文件参数" class="headerlink" title="更改新建文章时自动生成的各项头文件参数"></a>更改新建文章时自动生成的各项头文件参数</h2><p>在博客根目录下，找到 scaffolds 文件夹中的 post.md<br>更改模板内容，以后每次新建文章时就会自动生成添加的参数</p>
-<h2 id="在你的博客文章末尾添加版权声明"><a href="#在你的博客文章末尾添加版权声明" class="headerlink" title="在你的博客文章末尾添加版权声明"></a>在你的博客文章末尾添加版权声明</h2><p>打开主题配置文件 /themes/next/_config.yml 。Ctrl+F搜索，找到 creative_commons，将 post 参数改为true。</p>
+<h2 id="更改V2ray配置文件"><a href="#更改V2ray配置文件" class="headerlink" title="更改V2ray配置文件"></a>更改V2ray配置文件</h2><p>将配置文件复制到剪贴板，更改适合自己的线路混淆</p>
 
     </div>
 
@@ -281,7 +264,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://maohuifei.github.io/2021/04/16/Hexo-matery-%E4%B8%BB%E9%A2%98%E7%9A%84%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE/" title="Hexo matery 主题的个性化配置">https://maohuifei.github.io/2021/04/16/Hexo-matery-主题的个性化配置/</a>
+    <a href="https://maohuifei.github.io/2021/04/15/V2ray%E7%9A%84%E9%85%8D%E7%BD%AE%E7%94%9F%E6%88%90/" title="V2ray的配置生成">https://maohuifei.github.io/2021/04/15/V2ray的配置生成/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -292,10 +275,8 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Hexo/" rel="tag"># Hexo</a>
-              <a href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag"># 博客</a>
-              <a href="/tags/%E4%B8%BB%E9%A2%98/" rel="tag"># 主题</a>
-              <a href="/tags/matery/" rel="tag"># matery</a>
+              <a href="/tags/%E4%BA%91%E5%85%8D/" rel="tag"># 云免</a>
+              <a href="/tags/V2ray/" rel="tag"># V2ray</a>
           </div>
 
         
@@ -304,12 +285,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/04/16/Hexo-Next-%E4%B8%BB%E9%A2%98%E7%9A%84%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE/" rel="prev" title="Hexo Next 主题的个性化配置">
-      <i class="fa fa-chevron-left"></i> Hexo Next 主题的个性化配置
+    <a href="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" rel="prev" title="如何搭建一个属于自己的个人博客">
+      <i class="fa fa-chevron-left"></i> 如何搭建一个属于自己的个人博客
     </a></div>
       <div class="post-nav-item">
-    <a href="/2021/04/18/V2ray%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86%E9%9D%A2%E6%9D%BFV2ui%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/" rel="next" title="V2ray用户管理面板V2ui的安装与使用">
-      V2ray用户管理面板V2ui的安装与使用 <i class="fa fa-chevron-right"></i>
+    <a href="/2021/04/15/%E7%BB%99%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85BBR/" rel="next" title="给服务器安装BBR">
+      给服务器安装BBR <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -369,7 +350,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%B6%E9%83%A8%E6%A0%8F%E9%A2%9C%E8%89%B2%E7%9A%84%E6%9B%B4%E6%94%B9"><span class="nav-number">1.</span> <span class="nav-text">顶部栏颜色的更改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%B6%E9%83%A8Banner%E7%9A%84%E5%9B%BE%E7%89%87%E5%92%8C%E6%96%87%E7%AB%A0%E7%89%B9%E8%89%B2%E5%9B%BE%E7%9A%84%E6%9B%B4%E6%94%B9"><span class="nav-number">2.</span> <span class="nav-text">顶部Banner的图片和文章特色图的更改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%B6%E9%83%A8Banner%E9%A2%9C%E8%89%B2%E6%BB%A4%E9%95%9C%E7%9A%84%E5%88%A0%E9%99%A4"><span class="nav-number">3.</span> <span class="nav-text">顶部Banner颜色滤镜的删除</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E4%BD%93%E7%9A%84%E6%9B%B4%E6%94%B9"><span class="nav-number">4.</span> <span class="nav-text">字体的更改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Banner%E4%B8%8A%E7%9A%84%E2%80%9C%E5%BC%80%E5%A7%8B%E9%98%85%E8%AF%BB%E2%80%9D%E6%8C%89%E9%92%AE%E5%92%8C%E4%B8%8B%E6%96%B9%E5%9B%BE%E6%A0%87%E7%9A%84%E9%A2%9C%E8%89%B2%E6%9B%B4%E6%94%B9"><span class="nav-number">5.</span> <span class="nav-text">Banner上的“开始阅读”按钮和下方图标的颜色更改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E6%94%B9%E6%96%B0%E5%BB%BA%E6%96%87%E7%AB%A0%E6%97%B6%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E7%9A%84%E5%90%84%E9%A1%B9%E5%A4%B4%E6%96%87%E4%BB%B6%E5%8F%82%E6%95%B0"><span class="nav-number">6.</span> <span class="nav-text">更改新建文章时自动生成的各项头文件参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8%E4%BD%A0%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0%E6%9C%AB%E5%B0%BE%E6%B7%BB%E5%8A%A0%E7%89%88%E6%9D%83%E5%A3%B0%E6%98%8E"><span class="nav-number">7.</span> <span class="nav-text">在你的博客文章末尾添加版权声明</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E5%89%8D%E7%9A%84%E5%87%86%E5%A4%87"><span class="nav-number">1.</span> <span class="nav-text">操作前的准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E3%80%90PC%E7%AB%AF%E3%80%91FinalShell%E7%9A%84%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85"><span class="nav-number">2.</span> <span class="nav-text">【PC端】FinalShell的下载与安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E3%80%90%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E7%AB%AF%E3%80%91JuiceSSH%E7%9A%84%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85"><span class="nav-number">3.</span> <span class="nav-text">【安卓手机端】JuiceSSH的下载与安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A9%E7%94%A8FinalShell%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95%E4%BA%91%E4%B8%BB%E6%9C%BA"><span class="nav-number">4.</span> <span class="nav-text">利用FinalShell远程登录云主机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85V2ray%E7%94%9F%E6%88%90%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">5.</span> <span class="nav-text">安装V2ray生成配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git%E7%9A%84%E4%B8%8B%E8%BD%BD"><span class="nav-number">6.</span> <span class="nav-text">git的下载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E6%94%B9V2ray%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">7.</span> <span class="nav-text">更改V2ray配置文件</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
