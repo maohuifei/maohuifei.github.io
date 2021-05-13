@@ -20,19 +20,22 @@
     var CONFIG = {"hostname":"maohuifei.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+  <meta name="description" content="系统状态监控支持多用户多协议，浏览器可视化操作，无需敲命令支持的协议：vmess、shadowsocks、dokodemo-door、socks、httpvmess 支持的传输配置：tcp（http伪装、tls）、kcp（伪装）、ws（tls）、http（tls）、quic（tls）支持账号流量统计支持自定义 v2ray 配置模板支持 https 访问面板（需自备域名 + ssl 证书）更多功能，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://maohuifei.github.io/2021/04/14/hello-world/index.html">
+<meta property="og:title" content="【V2Ray篇】v2-ui多协议多用户 v2ray 面板">
+<meta property="og:url" content="https://maohuifei.github.io/2021/05/13/%E3%80%90V2Ray%E7%AF%87%E3%80%91v2-ui%E5%A4%9A%E5%8D%8F%E8%AE%AE%E5%A4%9A%E7%94%A8%E6%88%B7-v2ray-%E9%9D%A2%E6%9D%BF/index.html">
 <meta property="og:site_name" content="猫会飞呀">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+<meta property="og:description" content="系统状态监控支持多用户多协议，浏览器可视化操作，无需敲命令支持的协议：vmess、shadowsocks、dokodemo-door、socks、httpvmess 支持的传输配置：tcp（http伪装、tls）、kcp（伪装）、ws（tls）、http（tls）、quic（tls）支持账号流量统计支持自定义 v2ray 配置模板支持 https 访问面板（需自备域名 + ssl 证书）更多功能，">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-04-14T08:34:48.734Z">
-<meta property="article:modified_time" content="2021-04-25T07:09:12.273Z">
+<meta property="article:published_time" content="2021-05-13T02:15:37.000Z">
+<meta property="article:modified_time" content="2021-05-13T02:29:58.370Z">
 <meta property="article:author" content="猫会飞呀">
+<meta property="article:tag" content="V2Ray">
+<meta property="article:tag" content="代理工具">
+<meta property="article:tag" content="云免">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://maohuifei.github.io/2021/04/14/hello-world/">
+<link rel="canonical" href="https://maohuifei.github.io/2021/05/13/%E3%80%90V2Ray%E7%AF%87%E3%80%91v2-ui%E5%A4%9A%E5%8D%8F%E8%AE%AE%E5%A4%9A%E7%94%A8%E6%88%B7-v2ray-%E9%9D%A2%E6%9D%BF/">
 
 
 <script id="page-configurations">
@@ -45,7 +48,7 @@
   };
 </script>
 
-  <title>Hello World | 猫会飞呀</title>
+  <title>【V2Ray篇】v2-ui多协议多用户 v2ray 面板 | 猫会飞呀</title>
   
 
 
@@ -161,7 +164,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://maohuifei.github.io/2021/04/14/hello-world/">
+    <link itemprop="mainEntityOfPage" href="https://maohuifei.github.io/2021/05/13/%E3%80%90V2Ray%E7%AF%87%E3%80%91v2-ui%E5%A4%9A%E5%8D%8F%E8%AE%AE%E5%A4%9A%E7%94%A8%E6%88%B7-v2ray-%E9%9D%A2%E6%9D%BF/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -174,7 +177,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Hello World
+          【V2Ray篇】v2-ui多协议多用户 v2ray 面板
         </h1>
 
         <div class="post-meta">
@@ -185,16 +188,19 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2021-04-14 16:34:48" itemprop="dateCreated datePublished" datetime="2021-04-14T16:34:48+08:00">2021-04-14</time>
+              <time title="创建时间：2021-05-13 10:15:37 / 修改时间：10:29:58" itemprop="dateCreated datePublished" datetime="2021-05-13T10:15:37+08:00">2021-05-13</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-04-25 15:09:12" itemprop="dateModified" datetime="2021-04-25T15:09:12+08:00">2021-04-25</time>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
               </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E8%83%BD%E6%94%B6%E5%BD%95/" itemprop="url" rel="index"><span itemprop="name">技能收录</span></a>
+                </span>
+            </span>
 
           <br>
             <span class="post-meta-item" title="本文字数">
@@ -202,7 +208,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>353</span>
+              <span>1.5k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -221,21 +227,48 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+        <p>系统状态监控<br>支持多用户多协议，浏览器可视化操作，无需敲命令<br>支持的协议：vmess、shadowsocks、dokodemo-door、socks、http<br>vmess 支持的传输配置：tcp（http伪装、tls）、kcp（伪装）、ws（tls）、http（tls）、quic（tls）<br>支持账号流量统计<br>支持自定义 v2ray 配置模板<br>支持 https 访问面板（需自备域名 + ssl 证书）<br>更多功能，详见面板</p>
 <span id="more"></span>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="操作前的准备"><a href="#操作前的准备" class="headerlink" title="操作前的准备"></a>操作前的准备</h2><p>VPS防火墙开放65432端口<br>VPS操作系统Centos7+</p>
+<h2 id="一键安装与升级命令"><a href="#一键安装与升级命令" class="headerlink" title="一键安装与升级命令"></a>一键安装与升级命令</h2><pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ bash &lt;(curl -Ls https:&#x2F;&#x2F;blog.sprov.xyz&#x2F;v2-ui.sh)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>若出现 bash curl: command not found 等错误，请先安装 curl<br>CentOS 系统：</p>
+<pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ yum install curl -y<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>全新安装后，在浏览器中打开 http://&lt;服务器IP&gt;:65432 即可访问面板，默认用户名和密码都是 admin。</p>
+<h2 id="无法访问面板请检查防火墙是否开放端口"><a href="#无法访问面板请检查防火墙是否开放端口" class="headerlink" title="无法访问面板请检查防火墙是否开放端口"></a>无法访问面板请检查防火墙是否开放端口</h2><p>查看防火墙状态</p>
+<pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ systemctl status firewalld.service<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>开启防火墙</p>
+<pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ systemctl start firewalld.service<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>关闭防火墙</p>
+<pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ systemctl stop firewalld.service<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>禁用防火墙</p>
+<pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ systemctl disable firewalld.service<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>端口控制</p>
+<pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$  
+ firewall-cmd --query-port&#x3D;8080&#x2F;tcp                                   #查询端口是否开放
+ firewall-cmd --add-port&#x3D;8080&#x2F;tcp --permanent                         #永久添加8080端口例外(全局)
+ firewall-cmd --remove-port&#x3D;8800&#x2F;tcp --permanent                      #永久删除8080端口例外(全局)
+ firewall-cmd --add-port&#x3D;65001-65010&#x2F;tcp --permanent                  #永久增加65001-65010例外(全局)  
+ firewall-cmd  --zone&#x3D;public --add-port&#x3D;8080&#x2F;tcp --permanent          #永久添加8080端口例外(区域public)
+ firewall-cmd  --zone&#x3D;public --remove-port&#x3D;8080&#x2F;tcp --permanent       #永久删除8080端口例外(区域public)
+ firewall-cmd  --zone&#x3D;public --add-port&#x3D;65001-65010&#x2F;tcp --permanent   #永久增加65001-65010例外(区域public)
+ systemctl disable firewalld                                          #禁止防火墙随系统启动
+ firewall-cmd --state                                                 #查看防火墙状态  
+ firewall-cmd --reload                                                #更新防火墙规则   
+ firewall-cmd --list-ports                                            #查看所有打开的端口<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
+<h2 id="面板的其他操作"><a href="#面板的其他操作" class="headerlink" title="面板的其他操作"></a>面板的其他操作</h2><pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$
+v2-ui                  # 显示管理菜单 (功能更多)
+v2-ui start            # 启动 v2-ui 面板
+v2-ui stop             # 停止 v2-ui 面板
+v2-ui restart          # 重启 v2-ui 面板
+v2-ui status           # 查看 v2-ui 状态
+v2-ui enable           # 设置 v2-ui 开机自启
+v2-ui disable          # 取消 v2-ui 开机自启
+v2-ui log              # 查看 v2-ui 日志
+v2-ui update           # 更新 v2-ui 面板
+v2-ui install          # 安装 v2-ui 面板
+v2-ui uninstall        # 卸载 v2-ui 面板<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
     </div>
 
     
@@ -250,7 +283,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://maohuifei.github.io/2021/04/14/hello-world/" title="Hello World">https://maohuifei.github.io/2021/04/14/hello-world/</a>
+    <a href="https://maohuifei.github.io/2021/05/13/%E3%80%90V2Ray%E7%AF%87%E3%80%91v2-ui%E5%A4%9A%E5%8D%8F%E8%AE%AE%E5%A4%9A%E7%94%A8%E6%88%B7-v2ray-%E9%9D%A2%E6%9D%BF/" title="【V2Ray篇】v2-ui多协议多用户 v2ray 面板">https://maohuifei.github.io/2021/05/13/【V2Ray篇】v2-ui多协议多用户-v2ray-面板/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -260,17 +293,22 @@
 
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/V2Ray/" rel="tag"># V2Ray</a>
+              <a href="/tags/%E4%BB%A3%E7%90%86%E5%B7%A5%E5%85%B7/" rel="tag"># 代理工具</a>
+              <a href="/tags/%E4%BA%91%E5%85%8D/" rel="tag"># 云免</a>
+          </div>
 
         
 
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" rel="next" title="如何搭建一个属于自己的个人博客">
-      如何搭建一个属于自己的个人博客 <i class="fa fa-chevron-right"></i>
+    <a href="/2021/05/13/%E3%80%90V2Ray%E7%AF%87%E3%80%91V2Ray%E9%85%8D%E7%BD%AE%E7%9A%84%E7%94%9F%E6%88%90/" rel="prev" title="【V2Ray篇】V2Ray配置的生成">
+      <i class="fa fa-chevron-left"></i> 【V2Ray篇】V2Ray配置的生成
     </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -329,7 +367,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E5%89%8D%E7%9A%84%E5%87%86%E5%A4%87"><span class="nav-number">1.</span> <span class="nav-text">操作前的准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8D%87%E7%BA%A7%E5%91%BD%E4%BB%A4"><span class="nav-number">2.</span> <span class="nav-text">一键安装与升级命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%E9%9D%A2%E6%9D%BF%E8%AF%B7%E6%A3%80%E6%9F%A5%E9%98%B2%E7%81%AB%E5%A2%99%E6%98%AF%E5%90%A6%E5%BC%80%E6%94%BE%E7%AB%AF%E5%8F%A3"><span class="nav-number">3.</span> <span class="nav-text">无法访问面板请检查防火墙是否开放端口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%A2%E6%9D%BF%E7%9A%84%E5%85%B6%E4%BB%96%E6%93%8D%E4%BD%9C"><span class="nav-number">4.</span> <span class="nav-text">面板的其他操作</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

@@ -20,19 +20,22 @@
     var CONFIG = {"hostname":"maohuifei.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+  <meta name="description" content="在拥有一台Linux Centos系统VPS的前提下，通过远程SSH生成V2Ray配置">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://maohuifei.github.io/2021/04/14/hello-world/index.html">
+<meta property="og:title" content="【V2Ray篇】V2Ray配置的生成">
+<meta property="og:url" content="https://maohuifei.github.io/2021/05/13/%E3%80%90V2Ray%E7%AF%87%E3%80%91V2Ray%E9%85%8D%E7%BD%AE%E7%9A%84%E7%94%9F%E6%88%90/index.html">
 <meta property="og:site_name" content="猫会飞呀">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+<meta property="og:description" content="在拥有一台Linux Centos系统VPS的前提下，通过远程SSH生成V2Ray配置">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-04-14T08:34:48.734Z">
-<meta property="article:modified_time" content="2021-04-25T07:09:12.273Z">
+<meta property="article:published_time" content="2021-05-13T02:01:54.000Z">
+<meta property="article:modified_time" content="2021-05-13T02:14:57.171Z">
 <meta property="article:author" content="猫会飞呀">
+<meta property="article:tag" content="V2Ray">
+<meta property="article:tag" content="代理工具">
+<meta property="article:tag" content="云免">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://maohuifei.github.io/2021/04/14/hello-world/">
+<link rel="canonical" href="https://maohuifei.github.io/2021/05/13/%E3%80%90V2Ray%E7%AF%87%E3%80%91V2Ray%E9%85%8D%E7%BD%AE%E7%9A%84%E7%94%9F%E6%88%90/">
 
 
 <script id="page-configurations">
@@ -45,7 +48,7 @@
   };
 </script>
 
-  <title>Hello World | 猫会飞呀</title>
+  <title>【V2Ray篇】V2Ray配置的生成 | 猫会飞呀</title>
   
 
 
@@ -161,7 +164,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://maohuifei.github.io/2021/04/14/hello-world/">
+    <link itemprop="mainEntityOfPage" href="https://maohuifei.github.io/2021/05/13/%E3%80%90V2Ray%E7%AF%87%E3%80%91V2Ray%E9%85%8D%E7%BD%AE%E7%9A%84%E7%94%9F%E6%88%90/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -174,7 +177,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Hello World
+          【V2Ray篇】V2Ray配置的生成
         </h1>
 
         <div class="post-meta">
@@ -185,16 +188,19 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2021-04-14 16:34:48" itemprop="dateCreated datePublished" datetime="2021-04-14T16:34:48+08:00">2021-04-14</time>
+              <time title="创建时间：2021-05-13 10:01:54 / 修改时间：10:14:57" itemprop="dateCreated datePublished" datetime="2021-05-13T10:01:54+08:00">2021-05-13</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-04-25 15:09:12" itemprop="dateModified" datetime="2021-04-25T15:09:12+08:00">2021-04-25</time>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
               </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E8%83%BD%E6%94%B6%E5%BD%95/" itemprop="url" rel="index"><span itemprop="name">技能收录</span></a>
+                </span>
+            </span>
 
           <br>
             <span class="post-meta-item" title="本文字数">
@@ -202,7 +208,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>353</span>
+              <span>1k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -221,20 +227,34 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+        <p>在拥有一台Linux Centos系统VPS的前提下，通过远程SSH生成V2Ray配置</p>
 <span id="more"></span>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h2 id="操作前的准备"><a href="#操作前的准备" class="headerlink" title="操作前的准备"></a>操作前的准备</h2><p>一台Centos7以上系统的VPS，VPS的公网IP及root密码<br>远程登录软件PC端FinalShell/Xshell、安卓端JuiceSSH</p>
+<h2 id="远程登录服务器"><a href="#远程登录服务器" class="headerlink" title="远程登录服务器"></a>远程登录服务器</h2><h3 id="JuiceSSH"><a href="#JuiceSSH" class="headerlink" title="JuiceSSH"></a>JuiceSSH</h3><p>(1）进入JuiceSSH<br>(2）点上侧连接<br>(3）点右下角+<br>(4）昵称随意，类型SSH，地址你的服务器ip（外网IP），端口默认22不变（映射端口和自设端口除外）<br>(5）认证选新建<br>(6）昵称随意，用户名一般为root，密码填你的服务器密码<br>(7）点右上角√<br>(8）再点右上角√<br>(9）点你设置的配置，如无昵称就是以服务器ip命名<br>(10）如无意外，这时就自动登陆服务器了，如果提示你输入密码，再输一遍就行了，输入后记得点保存</p>
+<h3 id="Xshell"><a href="#Xshell" class="headerlink" title="Xshell"></a>Xshell</h3><p>(1）进入XShell<br>(2）点左上角文件<br>(3）点新建<br>(4）名称随意，协议SSH，主机你的服务器IP（外网IP），端口默认22不变（映射端口和自设端口除外）<br>(5）确定<br>(6）在左侧会话管理器，选中设置的配置双击打开<br>(7）提示输入账号和密码，输入后记得点保存(没有提示可能IP被墙)</p>
+<h2 id="输入安装命令"><a href="#输入安装命令" class="headerlink" title="输入安装命令"></a>输入安装命令</h2><p>一键安装</p>
+<pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ bash &lt;(curl -s -L https:&#x2F;&#x2F;git.io&#x2F;v2ray-setup.sh)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>自定义安装</p>
+<pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ bash &lt;(curl -s -L https:&#x2F;&#x2F;git.io&#x2F;v2rayinstall.sh)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>出现配置信息无报错即为安装成功</p>
+<h2 id="相关命令"><a href="#相关命令" class="headerlink" title="相关命令"></a>相关命令</h2><pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ v2ray info 查看 V2Ray 配置信息
+v2ray config 修改 V2Ray 配置
+v2ray link 生成 V2Ray 配置文件链接
+v2ray infolink 生成 V2Ray 配置信息链接
+v2ray qr 生成 V2Ray 配置二维码链接
+v2ray ss 修改 Shadowsocks 配置
+v2ray ssinfo 查看 Shadowsocks 配置信息
+v2ray ssqr 生成 Shadowsocks 配置二维码链接
+v2ray status 查看 V2Ray 运行状态
+v2ray start 启动 V2Ray
+v2ray stop 停止 V2Ray
+v2ray restart 重启 V2Ray
+v2ray log 查看 V2Ray 运行日志
+v2ray update 更新 V2Ray
+v2ray update.sh 更新 V2Ray 管理脚本
+v2ray uninstall 卸载 V2Ray<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="V2Ray-配置文件的本地更改"><a href="#V2Ray-配置文件的本地更改" class="headerlink" title="V2Ray 配置文件的本地更改"></a>V2Ray 配置文件的本地更改</h2><p>文件路径 cat /etc/v2ray/config.json</p>
 
     </div>
 
@@ -250,7 +270,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://maohuifei.github.io/2021/04/14/hello-world/" title="Hello World">https://maohuifei.github.io/2021/04/14/hello-world/</a>
+    <a href="https://maohuifei.github.io/2021/05/13/%E3%80%90V2Ray%E7%AF%87%E3%80%91V2Ray%E9%85%8D%E7%BD%AE%E7%9A%84%E7%94%9F%E6%88%90/" title="【V2Ray篇】V2Ray配置的生成">https://maohuifei.github.io/2021/05/13/【V2Ray篇】V2Ray配置的生成/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -260,16 +280,24 @@
 
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/V2Ray/" rel="tag"># V2Ray</a>
+              <a href="/tags/%E4%BB%A3%E7%90%86%E5%B7%A5%E5%85%B7/" rel="tag"># 代理工具</a>
+              <a href="/tags/%E4%BA%91%E5%85%8D/" rel="tag"># 云免</a>
+          </div>
 
         
 
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" rel="next" title="如何搭建一个属于自己的个人博客">
-      如何搭建一个属于自己的个人博客 <i class="fa fa-chevron-right"></i>
+    <a href="/2021/05/13/%E3%80%90V2Ray%E7%AF%87%E3%80%91V2Ray%E4%BB%8B%E7%BB%8D/" rel="prev" title="【V2Ray篇】V2Ray介绍">
+      <i class="fa fa-chevron-left"></i> 【V2Ray篇】V2Ray介绍
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/05/13/%E3%80%90V2Ray%E7%AF%87%E3%80%91v2-ui%E5%A4%9A%E5%8D%8F%E8%AE%AE%E5%A4%9A%E7%94%A8%E6%88%B7-v2ray-%E9%9D%A2%E6%9D%BF/" rel="next" title="【V2Ray篇】v2-ui多协议多用户 v2ray 面板">
+      【V2Ray篇】v2-ui多协议多用户 v2ray 面板 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -329,7 +357,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E5%89%8D%E7%9A%84%E5%87%86%E5%A4%87"><span class="nav-number">1.</span> <span class="nav-text">操作前的准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-number">2.</span> <span class="nav-text">远程登录服务器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JuiceSSH"><span class="nav-number">2.1.</span> <span class="nav-text">JuiceSSH</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Xshell"><span class="nav-number">2.2.</span> <span class="nav-text">Xshell</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E5%AE%89%E8%A3%85%E5%91%BD%E4%BB%A4"><span class="nav-number">3.</span> <span class="nav-text">输入安装命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4"><span class="nav-number">4.</span> <span class="nav-text">相关命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#V2Ray-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E6%9C%AC%E5%9C%B0%E6%9B%B4%E6%94%B9"><span class="nav-number">5.</span> <span class="nav-text">V2Ray 配置文件的本地更改</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
