@@ -1,73 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>如何搭建一个属于自己的个人博客</title>
-    <url>/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</url>
-    <content><![CDATA[<p>— 博客，音译，英文名为Blogger，它的正式名称为网络日记；是使用特定的软件，在网络上出版、发表和张贴个人文章的人，或者是一种通常由个人管理、不定期张贴新的文章的网站。博客是继MSN、BBS、ICQ之后出现的第4种网络交流方式，是网络时代的个人“读者文摘”，它代表着新的生活、工作和学习方式。</p>
-<span id="more"></span>
-
-<p>— 在本人搭建博客的过程中，发现互联网上的教程大多数的发布时间是几年甚至十几年之前，有些软件的版本和操作方式都已经有所改变。许多新手小白如果按照之前的教程来操作的话会产生各种各样的问题。教程中所使用的专业名词也会使小白们一头雾水，影响操作效率。<br>— 于是在2021年4月10日发布了这篇面向纯新手小白的保姆级搭建教程，手把手教你搭建属于自己的个人博客<br>— 教程步骤框架来自hojun.cn发布的教程，使用工具包含node.js、github、gitforwin、sublime、Hexo侵删</p>
-<h2 id="node的下载与安装"><a href="#node的下载与安装" class="headerlink" title="node的下载与安装"></a>node的下载与安装</h2><p>① Node.js官网下载并打开安装包<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/1-1-1.jpg"><br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/1-1-2.jpg"><br>② 更改安装位置<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/1-2-1.jpg"><br>③ 是否安装必要的环境，我选的安装<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/1-3-1.jpg"><br>④ 安装完成<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/1-4-1.jpg"><br>⑤ Win+R打开运行窗口，输入cmd<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/1-5-1.jpg"><br>⑥ node -v查看版本<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/1-6-1.jpg"></p>
-<h2 id="github注册"><a href="#github注册" class="headerlink" title="github注册"></a>github注册</h2><p>① 打开github官网 GitHub: Where the world builds software · GitHub<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/2-1-1.jpg"><br>② 右上角注册<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/2-2-1.jpg"><br>③ 注册流程走完后回首页，右上角加号第一个选项，传建一个新的存储库<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/2-3-1.jpg"><br>④ 存储库名称为 用户名+.github+.io，其他默认，创建<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/2-4-1.jpg"></p>
-<h2 id="gitforwin的下载与安装"><a href="#gitforwin的下载与安装" class="headerlink" title="gitforwin的下载与安装"></a>gitforwin的下载与安装</h2><p>① 浏览器输入 Git for Windows，下载gitforwin安装包<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/3-1-1.jpg"><br>② 安装git<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/3-2-1.jpg"><br>③ 更改安装位置<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/3-3-1.jpg"><br>④ 创建开始菜单快捷方式，随意，我选择不创建<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/3-4-1.jpg"><br>⑤ 点下一步全部默认就可以，到这一步选择第二个<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/3-5-1.jpg"><br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/3-5-2.jpg"><br>⑥ 安装完成<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/3-6-1.jpg"><br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/3-6-2.jpg"><br>⑦ 桌面没有新的快捷方式不要慌，正常现象，有需要的话可以在开始菜单和软件安装路径里找到并创建快捷方式<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/3-7-1.jpg"><br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/3-7-2.jpg"><br>⑧ 验证是否安装完成<br>Win+R，输入cmd，输入命令git<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/3-8-1.jpg"></p>
-<h2 id="githubSHH配置"><a href="#githubSHH配置" class="headerlink" title="githubSHH配置"></a>githubSHH配置</h2><p>① 打开git的安装路径，找到git bash.exe 双击运行<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/4-1-1.jpg"><br>② 输入命令ssh-keygen -t rsa -C “<a href="mailto:&#57;&#57;&#x31;&#50;&#55;&#48;&#x36;&#x38;&#x35;&#x40;&#113;&#113;&#46;&#99;&#111;&#x6d;">&#57;&#57;&#x31;&#50;&#55;&#48;&#x36;&#x38;&#x35;&#x40;&#113;&#113;&#46;&#99;&#111;&#x6d;</a>“，引号内是github注册邮箱地址，回车<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/4-2-1.jpg"><br>③ 无特殊提示就回车，有（y/n）就输入y回车<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/4-3-1.jpg"><br>④ 打开github，点击右上角头像选择 设置<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/4-4-1.jpg"><br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/4-4-2.jpg"><br>⑤ 选择shh和密钥选项，添加新密钥<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/4-5-1.jpg"><br>⑥ 标题就用户名+tech吧（tech技术），填到第一栏<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/4-6-1.jpg"><br>在C盘找到id_rsa.pub这个文件，以记事本形式打开，复制内容填到第二栏<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/4-6-2.jpg"><br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/4-6-3.jpg"><br>⑦ 提交，创建完成<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/4-7-1.jpg"></p>
-<h2 id="hexo的本地使用"><a href="#hexo的本地使用" class="headerlink" title="hexo的本地使用"></a>hexo的本地使用</h2><p>① 浏览器输入 Hexo 进入hexo官网<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/5-1-1.jpg"><br>② 在合适的位置新建一个文件夹blog，关于博客的文件基本都在这里面，我选择D盘根目录<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/5-2-1.jpg"><br>③ 进入bolg文件，点击路径输入cmd，回车进入（也可以win+R，输入cmd，再用cd命令一级一级切到blog文件下）<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/5-3-1.jpg"><br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/5-3-2.jpg"><br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/5-3-3.jpg"><br>④ 回到hexo官网，复制命令 npm install hexo-cli -g 到运行窗口回车<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/5-4-1.jpg"><br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/5-4-2.jpg"><br>⑤ 网站下拉会有使用命令行，blog为你的博客名<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/5-5-1.jpg"><br>⑥ 输入 hexo init +博客名 回车运行<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/5-6-1.jpg"><br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/5-6-2.jpg"><br>⑦ 输入命令cd 博客名，进入博客文件，回到网站复制命令行 npm install 并运行<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/5-7-1.jpg"><br>⑧ 完成后输入命令 hexo s 生成本地预览，最后会生成一个4000端口的网址，复制到浏览器进入，就能看到我们的博客了<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/5-8-1.jpg"><br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/5-8-2.jpg"></p>
-<h2 id="sublime的下载与安装"><a href="#sublime的下载与安装" class="headerlink" title="sublime的下载与安装"></a>sublime的下载与安装</h2><p>① 浏览器输入Download - Sublime Text 进去官网下载，选择自己的系统，我选择windows64位<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/6-1-1.jpg"><br>② 下载完成运行，更改安装路径<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/6-2-1.jpg"><br>③ 默认选项就可以，一直下一步。安装完成<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/6-3-1.jpg"><br>④ 打开sublime<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/6-4-1.jpg"><br>⑤ 打开sublime，在左边栏source——-posts —— hello-world.md中输入文字，ctrl+s保存<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/6-5-1.jpg"><br>⑥ 在blog路径中右击运行git bash，输入命令hexo cl清理缓存，hexo g hexo s生成本地预览<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/6-6-1.jpg"><br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/6-6-2.jpg"><br>⑦ 浏览器打开本地预览，更改已生效<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/6-7-1.jpg"></p>
-<h2 id="将hexo发布至github"><a href="#将hexo发布至github" class="headerlink" title="将hexo发布至github"></a>将hexo发布至github</h2><p>① 打开浏览器，进入github之前新建的存储库，进入库，复制地址<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/7-1-1.jpg"><br>② 在sublime中打开-config.yml文件更改配置信息<br>更改参数 author：名字，我的是maohuifei<br>更改参数 ur1： 后面为github存储库的地址中的一部分（XXXX.github.io）<br>更改参数 type：git，<br>添加新参数 branch: gh-pages<br>添加新参数 repo：后面为github存储库的地址<br>保存<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/7-2-1.jpg"><br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/7-2-2.jpg"><br>③ 进入hexo一键部署网站部署 | Hexo ，复制hexo-deployer-git的安装命令 npm install hexo-deployer-git –save 进入git bash 运行安装<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/7-3-1.jpg"><br>④ 命令 hexo cl 清理hexo g生成 hexo d提交<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/7-4-1.jpg"><br>⑤ 浏览器输入 用户名+github.Io 我的是maohuifei.github.io<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/7-5-1.jpg"><br>⑥ 博客搭建完成!</p>
-<h2 id="hexo主题使用"><a href="#hexo主题使用" class="headerlink" title="hexo主题使用"></a>hexo主题使用</h2><p>① 进入hexo主题官网Themes | Hexo 选择主题，以next为例<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/8-1-1.jpg"><br>② 进入主题详情，有详细安装步骤教程，每个主题进入位置不同<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/8-2-1.jpg"></p>
-]]></content>
-      <categories>
-        <category>教程与心得</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>博客</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>手机使用tinyproxy给电脑开热点（共享代理网络）</title>
-    <url>/2021/04/29/%E6%89%8B%E6%9C%BA%E4%BD%BF%E7%94%A8tinyproxy%E7%BB%99%E7%94%B5%E8%84%91%E5%BC%80%E7%83%AD%E7%82%B9%EF%BC%88%E5%85%B1%E4%BA%AB%E4%BB%A3%E7%90%86%E7%BD%91%E7%BB%9C%EF%BC%89/</url>
-    <content><![CDATA[<p>SSTap全称SOCKSTap, 是一款利用虚拟网卡技术在网络层实现的代理工具。</p>
-<p>SSTap能在网络层拦截所有连接并转发给HTTP，SOCKS4，5，SHADOWSOCKS代理.</p>
-<p>而无需对被代理的应用程序做任何修改或设置。</p>
-<p>它能同时转发TCP, UDP数据包。</p>
-<span id="more"></span>
-
-<h2 id="下载sstap"><a href="#下载sstap" class="headerlink" title="下载sstap"></a>下载sstap</h2><p>win下载链接<br>链接：<a href="https://pan.baidu.com/s/1pIEUD2sPAeFOFfRQeGJhjw">https://pan.baidu.com/s/1pIEUD2sPAeFOFfRQeGJhjw</a><br>提取码：6666 </p>
-<h2 id="使用教程"><a href="#使用教程" class="headerlink" title="使用教程"></a>使用教程</h2><p>打开手机端tinyproxy，左上角菜单栏，点击热点分享<br><img src="/2021/04/29/%E6%89%8B%E6%9C%BA%E4%BD%BF%E7%94%A8tinyproxy%E7%BB%99%E7%94%B5%E8%84%91%E5%BC%80%E7%83%AD%E7%82%B9%EF%BC%88%E5%85%B1%E4%BA%AB%E4%BB%A3%E7%90%86%E7%BD%91%E7%BB%9C%EF%BC%89/4.jpg"><br>点击分享热点无ROOT<br><img src="/2021/04/29/%E6%89%8B%E6%9C%BA%E4%BD%BF%E7%94%A8tinyproxy%E7%BB%99%E7%94%B5%E8%84%91%E5%BC%80%E7%83%AD%E7%82%B9%EF%BC%88%E5%85%B1%E4%BA%AB%E4%BB%A3%E7%90%86%E7%BD%91%E7%BB%9C%EF%BC%89/5.jpg"></p>
-<p>双击运行电脑端sstap软件<br>点击右侧加号添加HTTP/SOCKS4/SOCKS5代理<br><img src="/2021/04/29/%E6%89%8B%E6%9C%BA%E4%BD%BF%E7%94%A8tinyproxy%E7%BB%99%E7%94%B5%E8%84%91%E5%BC%80%E7%83%AD%E7%82%B9%EF%BC%88%E5%85%B1%E4%BA%AB%E4%BB%A3%E7%90%86%E7%BD%91%E7%BB%9C%EF%BC%89/1.jpg"><img src="/2021/04/29/%E6%89%8B%E6%9C%BA%E4%BD%BF%E7%94%A8tinyproxy%E7%BB%99%E7%94%B5%E8%84%91%E5%BC%80%E7%83%AD%E7%82%B9%EF%BC%88%E5%85%B1%E4%BA%AB%E4%BB%A3%E7%90%86%E7%BD%91%E7%BB%9C%EF%BC%89/2.jpg"><br>填写手机端显示的代理IP和端口，分组默认即可<br><img src="/2021/04/29/%E6%89%8B%E6%9C%BA%E4%BD%BF%E7%94%A8tinyproxy%E7%BB%99%E7%94%B5%E8%84%91%E5%BC%80%E7%83%AD%E7%82%B9%EF%BC%88%E5%85%B1%E4%BA%AB%E4%BB%A3%E7%90%86%E7%BD%91%E7%BB%9C%EF%BC%89/3.jpg"></p>
-<p>点击右侧闪电标识测试当前代理<br><img src="/2021/04/29/%E6%89%8B%E6%9C%BA%E4%BD%BF%E7%94%A8tinyproxy%E7%BB%99%E7%94%B5%E8%84%91%E5%BC%80%E7%83%AD%E7%82%B9%EF%BC%88%E5%85%B1%E4%BA%AB%E4%BB%A3%E7%90%86%E7%BD%91%E7%BB%9C%EF%BC%89/6.jpg"></p>
-<p>测试成功，点击链接</p>
-]]></content>
-      <categories>
-        <category>教程与心得</category>
-      </categories>
-      <tags>
-        <tag>代理</tag>
-        <tag>sstap</tag>
-        <tag>网络共享</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ios小火箭shadowrocket下载与使用</title>
-    <url>/2021/04/29/ios%E5%B0%8F%E7%81%AB%E7%AE%ADshadowrocket%E4%B8%8B%E8%BD%BD%E4%B8%8E%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<p>ios小火箭shadowrocket下载与使用</p>
-<span id="more"></span>
-
-<h2 id="下载网站（测试）"><a href="#下载网站（测试）" class="headerlink" title="下载网站（测试）"></a>下载网站（测试）</h2><p>1.<a href="https://shadowsockshelp.github.io/ios/">https://shadowsockshelp.github.io/ios/</a></p>
-<p>2.<a href="https://app.aneeo.com/show?id=71">https://app.aneeo.com/show?id=71</a></p>
-<p>3.<a href="https://free.shadowrocket.online/">https://free.shadowrocket.online/</a></p>
-<h2 id="使用教程"><a href="#使用教程" class="headerlink" title="使用教程"></a>使用教程</h2>]]></content>
-      <categories>
-        <category>教程与心得</category>
-      </categories>
-      <tags>
-        <tag>云免</tag>
-        <tag>shadowrocket</tag>
-        <tag>ios</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>泰戈尔《飞鸟集》读后感</title>
     <url>/2021/04/28/%E6%B3%B0%E6%88%88%E5%B0%94%E3%80%8A%E9%A3%9E%E9%B8%9F%E9%9B%86%E3%80%8B%E8%AF%BB%E5%90%8E%E6%84%9F/</url>
     <content><![CDATA[<p>夏天的飞鸟，飞到我窗前唱歌，又飞去了。<br>秋天的黄叶，他们没有什么可唱，只叹息一声，飞落在哪里。</p>
@@ -110,81 +43,6 @@
       <tags>
         <tag>平面设计</tag>
         <tag>读书</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>tinyproxy的下载与使用</title>
-    <url>/2021/04/27/tinyproxy%E7%9A%84%E4%B8%8B%E8%BD%BD%E4%B8%8E%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<p>安卓客户端 tinyproxy 的下载与使用</p>
-<span id="more"></span>
-
-<h2 id="下载链接"><a href="#下载链接" class="headerlink" title="下载链接"></a>下载链接</h2><p>百度网盘<br>链接:<a href="https://pan.baidu.com/s/1hPRb5W-UNXCTRJev9Uvyog">https://pan.baidu.com/s/1hPRb5W-UNXCTRJev9Uvyog</a><br>提取码:henj</p>
-<h2 id="软件设置"><a href="#软件设置" class="headerlink" title="软件设置"></a>软件设置</h2><p>安装中出现的任何弹窗都点击 确认/允许<br><img src="/2021/04/27/tinyproxy%E7%9A%84%E4%B8%8B%E8%BD%BD%E4%B8%8E%E4%BD%BF%E7%94%A8/1.jpg"><br><img src="/2021/04/27/tinyproxy%E7%9A%84%E4%B8%8B%E8%BD%BD%E4%B8%8E%E4%BD%BF%E7%94%A8/2.jpg"><br><img src="/2021/04/27/tinyproxy%E7%9A%84%E4%B8%8B%E8%BD%BD%E4%B8%8E%E4%BD%BF%E7%94%A8/3.jpg"><br><img src="/2021/04/27/tinyproxy%E7%9A%84%E4%B8%8B%E8%BD%BD%E4%B8%8E%E4%BD%BF%E7%94%A8/4.jpg"></p>
-<h2 id="配置的导入与使用"><a href="#配置的导入与使用" class="headerlink" title="配置的导入与使用"></a>配置的导入与使用</h2><p>复制配置信息到剪切板<br>点击右上角三个点<br>黏贴配置<br>随意起个名字<br>导入配置成功</p>
-<h2 id="验证代理是是否成功"><a href="#验证代理是是否成功" class="headerlink" title="验证代理是是否成功"></a>验证代理是是否成功</h2><p>浏览器输入“ IP ” 搜索，查询当前IP地址<br>显示服务器地址和IP即为成功<br><img src="/2021/04/27/tinyproxy%E7%9A%84%E4%B8%8B%E8%BD%BD%E4%B8%8E%E4%BD%BF%E7%94%A8/5.jpg"><img src="/2021/04/27/tinyproxy%E7%9A%84%E4%B8%8B%E8%BD%BD%E4%B8%8E%E4%BD%BF%E7%94%A8/6.jpg"></p>
-]]></content>
-      <categories>
-        <category>教程与心得</category>
-      </categories>
-      <tags>
-        <tag>云免</tag>
-        <tag>tinyproxy</tag>
-        <tag>服务器</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>购买须知</title>
-    <url>/2021/04/26/%E8%B4%AD%E4%B9%B0%E9%A1%BB%E7%9F%A5/</url>
-    <content><![CDATA[<p>合租服务器免流量购买须知</p>
-<span id="more"></span>
-
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>流量分为通用流量和定向流量<br>所有联通卡都有一个固定的定向套餐，所以是张联通卡就能用<br>软件可以设置放行某个应用，放行后走正常流量</p>
-<h2 id="免流效果"><a href="#免流效果" class="headerlink" title="免流效果"></a>免流效果</h2><p>日常消耗的所有流量算在定向流量套餐里，联通的定向是手厅直播<br><img src="/2021/04/26/%E8%B4%AD%E4%B9%B0%E9%A1%BB%E7%9F%A5/1.jpg"></p>
-<h2 id="要求"><a href="#要求" class="headerlink" title="要求"></a>要求</h2><p>任意联通电话卡，大部分电信卡（停机保号），使用流量时后台开软件</p>
-<h2 id="优点（最后能达到的效果）"><a href="#优点（最后能达到的效果）" class="headerlink" title="优点（最后能达到的效果）"></a>优点（最后能达到的效果）</h2><ol>
-<li>   真正的流量不限量，一台服务器2T（2048G）流量千兆带宽，5人左右分，正常运营商网速</li>
-<li>   随意访问外网（翻墙），但是不能发布政治敏感言论</li>
-<li>   月租便宜，五人分每人每月10元左右。建议搭配低月租联通电话卡</li>
-</ol>
-<p>我目前电话卡8元/月，服务器6元左右/月，一月话费不到15，无限流量随意翻墙</p>
-<h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><ol>
-<li>   使用时手机ip地址在国外，扫描个人收款码时会显示弹窗，暂时关掉软件或者放行应用即可</li>
-<li>   国外服务器打游戏有一定延迟，可以设置放行游戏。</li>
-<li>   每使用几个G流量可能会消耗一点的通用流量，所以推荐有月租包用户使用</li>
-<li>   开热点有点麻烦，第一次需要改代理IP端口等信息，之后就不需要了</li>
-</ol>
-<h2 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h2><p>① 付钱<br>② 测试：发软件 —— 发测试代码 —— 复制到软件 —— 开启软件 —— 使用流量测试能否成功<br>③ 不成功退款<br>④ 成功：发专属代码 —— 复制到软件 —— 开启软件 —— 免流</p>
-<h2 id="PS"><a href="#PS" class="headerlink" title="PS"></a>PS</h2><p>推荐自己找几个人一起用一个服务器<br>国外服务器：能翻墙、打游戏延迟大、配置高、便宜<br>国内服务器：不能翻墙、打游戏延迟小、配置低、贵</p>
-]]></content>
-      <categories>
-        <category>购买须知</category>
-      </categories>
-      <tags>
-        <tag>云免</tag>
-        <tag>服务器</tag>
-        <tag>V2ray</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>V2ray用户管理面板V2ui的安装与使用</title>
-    <url>/2021/04/18/V2ray%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86%E9%9D%A2%E6%9D%BFV2ui%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<p>V2ray用户管理面板V2ui的安装与使用</p>
-<span id="more"></span>
-
-<h2 id="功能介绍"><a href="#功能介绍" class="headerlink" title="功能介绍"></a>功能介绍</h2><p>系统状态监控<br>支持多用户多协议，浏览器可视化操作，无需敲命令<br>支持的协议：vmess、shadowsocks、dokodemo-door、socks、http<br>vmess 支持的传输配置：tcp（http伪装、tls）、kcp（伪装）、ws（tls）、http（tls）、quic（tls）<br>支持账号流量统计<br>支持自定义 v2ray 配置模板<br>支持 https 访问面板（需自备域名 + ssl 证书）<br>更多高级配置项，详见面板</p>
-<h2 id="建议系统"><a href="#建议系统" class="headerlink" title="建议系统"></a>建议系统</h2><p>面板建议以下系统安装，建议尽量使用新版的系统：</p>
-<p>CentOS 7+<br>Ubuntu 16+<br>Debian 8+</p>
-<h2 id="一件安装-升级命令"><a href="#一件安装-升级命令" class="headerlink" title="一件安装/升级命令"></a>一件安装/升级命令</h2><pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ bash &lt;(curl -Ls https:&#x2F;&#x2F;blog.sprov.xyz&#x2F;v2-ui.sh)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>安装后，在浏览器中打开 http://&lt;服务器IP&gt;:65432 即可访问面板，默认用户名和密码都是 admin</p>
-<h2 id="添加用户"><a href="#添加用户" class="headerlink" title="添加用户"></a>添加用户</h2><p>点击账号列表，上方蓝色加号添加用户信息</p>
-]]></content>
-      <categories>
-        <category>教程与心得</category>
-      </categories>
-      <tags>
-        <tag>云免</tag>
-        <tag>V2ray</tag>
-        <tag>V2ui</tag>
       </tags>
   </entry>
   <entry>
@@ -253,88 +111,27 @@
       </tags>
   </entry>
   <entry>
-    <title>软件下载</title>
-    <url>/2021/04/16/%E8%BD%AF%E4%BB%B6%E4%B8%8B%E8%BD%BD/</url>
-    <content><![CDATA[<p>个人收录整理的各类实用软件下载与安装教程(不定时更新)</p>
+    <title>如何搭建一个属于自己的个人博客</title>
+    <url>/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<p>— 博客，音译，英文名为Blogger，它的正式名称为网络日记；是使用特定的软件，在网络上出版、发表和张贴个人文章的人，或者是一种通常由个人管理、不定期张贴新的文章的网站。博客是继MSN、BBS、ICQ之后出现的第4种网络交流方式，是网络时代的个人“读者文摘”，它代表着新的生活、工作和学习方式。</p>
 <span id="more"></span>
 
-<h2 id><a href="#" class="headerlink" title></a></h2>]]></content>
-  </entry>
-  <entry>
-    <title>设计素材</title>
-    <url>/2021/04/16/%E8%AE%BE%E8%AE%A1%E7%B4%A0%E6%9D%90/</url>
-    <content><![CDATA[<p>分享一些个人收集的实用PS素材资源(不定时更新)</p>
-<span id="more"></span>
-
-<h2 id="PS材质纹理合集"><a href="#PS材质纹理合集" class="headerlink" title="PS材质纹理合集"></a>PS材质纹理合集</h2><p>链接：<a href="https://pan.baidu.com/s/1gPztQb5AZQwpCzNu0T2yKA">https://pan.baidu.com/s/1gPztQb5AZQwpCzNu0T2yKA</a><br>提取码：6666 </p>
-<h2 id="笔刷合集"><a href="#笔刷合集" class="headerlink" title="笔刷合集"></a>笔刷合集</h2><p>链接：<a href="https://pan.baidu.com/s/1ViSefRuA5F90wdvU8umHBg">https://pan.baidu.com/s/1ViSefRuA5F90wdvU8umHBg</a><br>提取码：6666 </p>
-<h2 id="配色排版设计PDF电子书"><a href="#配色排版设计PDF电子书" class="headerlink" title="配色排版设计PDF电子书"></a>配色排版设计PDF电子书</h2><p>链接：<a href="https://pan.baidu.com/s/1MGgFbxgnljWNzi2dOUwnmA">https://pan.baidu.com/s/1MGgFbxgnljWNzi2dOUwnmA</a><br>提取码：6666 </p>
-<h2 id="LOGO设计展示样机"><a href="#LOGO设计展示样机" class="headerlink" title="LOGO设计展示样机"></a>LOGO设计展示样机</h2><p>链接：<a href="https://pan.baidu.com/s/1Css8nt1rHvyY6Q0Dzn3iOw">https://pan.baidu.com/s/1Css8nt1rHvyY6Q0Dzn3iOw</a><br>提取码：6666 </p>
-<h2 id="PS制作立体字效果动作"><a href="#PS制作立体字效果动作" class="headerlink" title="PS制作立体字效果动作"></a>PS制作立体字效果动作</h2><p>链接：<a href="https://pan.baidu.com/s/1X3zqUA4GtdDRA-cQFHlXkw">https://pan.baidu.com/s/1X3zqUA4GtdDRA-cQFHlXkw</a><br>提取码：6666 </p>
-<h2 id="1000-动作合集"><a href="#1000-动作合集" class="headerlink" title="1000+动作合集"></a>1000+动作合集</h2><p>一键修图、一键生成证件照……<br>链接：<a href="https://pan.baidu.com/s/1gdC7mzQhH-cc9JU8fLPMMQ">https://pan.baidu.com/s/1gdC7mzQhH-cc9JU8fLPMMQ</a><br>提取码：6666 </p>
-]]></content>
-      <categories>
-        <category>资源分享</category>
-      </categories>
-      <tags>
-        <tag>平面设计</tag>
-        <tag>PS</tag>
-        <tag>素材</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>给服务器安装BBR</title>
-    <url>/2021/04/15/%E7%BB%99%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85BBR/</url>
-    <content><![CDATA[<p>为你的服务器安装BBR，小水管秒变大水枪</p>
-<span id="more"></span>
-
-<h2 id="操作前的准备"><a href="#操作前的准备" class="headerlink" title="操作前的准备"></a>操作前的准备</h2><p>拥有一台操作系统为Linux的云主机<br>用SSH远程登录</p>
-<h2 id="查看内核版本"><a href="#查看内核版本" class="headerlink" title="查看内核版本"></a>查看内核版本</h2><p>uname -r</p>
-<h2 id="更新库"><a href="#更新库" class="headerlink" title="更新库"></a>更新库</h2><p>rpm –import <a href="https://www.elrepo.org/RPM-GPG-KEY-elrepo.org">https://www.elrepo.org/RPM-GPG-KEY-elrepo.org</a></p>
-<h2 id="修改服务器的库"><a href="#修改服务器的库" class="headerlink" title="修改服务器的库"></a>修改服务器的库</h2><p>rpm -Uvh <a href="http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm">http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm</a><br><img src="/2021/04/15/%E7%BB%99%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85BBR/1-1.jpg"></p>
-<h2 id="安装内核"><a href="#安装内核" class="headerlink" title="安装内核"></a>安装内核</h2><p>yum –enablerepo=elrepo-kernel install kernel-ml -y<br><img src="/2021/04/15/%E7%BB%99%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85BBR/2-1.jpg"><br><img src="/2021/04/15/%E7%BB%99%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85BBR/2-2.jpg"></p>
-<h2 id="设置内核"><a href="#设置内核" class="headerlink" title="设置内核"></a>设置内核</h2><p>grub2-set-default ‘CentOS Linux (4.12.3-1.el7.elrepo.x86_64) 7 (Core)’<br><img src="/2021/04/15/%E7%BB%99%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85BBR/3-1.jpg"></p>
-<h2 id="重启，5分钟后连接"><a href="#重启，5分钟后连接" class="headerlink" title="重启，5分钟后连接"></a>重启，5分钟后连接</h2><p>reboot</p>
-<h2 id="查看内核"><a href="#查看内核" class="headerlink" title="查看内核"></a>查看内核</h2><p>uname -r<br>现在内核版本已经是5+了</p>
-<h2 id="配置服务器"><a href="#配置服务器" class="headerlink" title="配置服务器"></a>配置服务器</h2><p>echo ‘net.core.default_qdisc=fq’ | sudo tee -a /etc/sysctl.conf<br><img src="/2021/04/15/%E7%BB%99%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85BBR/4-1.jpg"></p>
-<h2 id="配置服务器内核"><a href="#配置服务器内核" class="headerlink" title="配置服务器内核"></a>配置服务器内核</h2><p>echo ‘net.ipv4.tcp_congestion_control=bbr’ | sudo tee -a /etc/sysctl.conf<br><img src="/2021/04/15/%E7%BB%99%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85BBR/5-1.jpg"></p>
-<h2 id="顺序输入"><a href="#顺序输入" class="headerlink" title="顺序输入"></a>顺序输入</h2><p>sysctl -p<br>sysctl net.ipv4.tcp_available_congestion_control<br>sysctl -n net.ipv4.tcp_congestion_control<br><img src="/2021/04/15/%E7%BB%99%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85BBR/6-1.jpg"></p>
-<h2 id="查看安装结果"><a href="#查看安装结果" class="headerlink" title="查看安装结果"></a>查看安装结果</h2><p>lsmod | grep bbr<br>显示 tcp_bbr 20480 1就是安装成功了<br><img src="/2021/04/15/%E7%BB%99%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85BBR/7-1.jpg"></p>
+<p>— 在本人搭建博客的过程中，发现互联网上的教程大多数的发布时间是几年甚至十几年之前，有些软件的版本和操作方式都已经有所改变。许多新手小白如果按照之前的教程来操作的话会产生各种各样的问题。教程中所使用的专业名词也会使小白们一头雾水，影响操作效率。<br>— 于是在2021年4月10日发布了这篇面向纯新手小白的保姆级搭建教程，手把手教你搭建属于自己的个人博客<br>— 教程步骤框架来自hojun.cn发布的教程，使用工具包含node.js、github、gitforwin、sublime、Hexo侵删</p>
+<h2 id="node的下载与安装"><a href="#node的下载与安装" class="headerlink" title="node的下载与安装"></a>node的下载与安装</h2><p>① Node.js官网下载并打开安装包<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/1-1-1.jpg"><br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/1-1-2.jpg"><br>② 更改安装位置<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/1-2-1.jpg"><br>③ 是否安装必要的环境，我选的安装<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/1-3-1.jpg"><br>④ 安装完成<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/1-4-1.jpg"><br>⑤ Win+R打开运行窗口，输入cmd<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/1-5-1.jpg"><br>⑥ node -v查看版本<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/1-6-1.jpg"></p>
+<h2 id="github注册"><a href="#github注册" class="headerlink" title="github注册"></a>github注册</h2><p>① 打开github官网 GitHub: Where the world builds software · GitHub<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/2-1-1.jpg"><br>② 右上角注册<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/2-2-1.jpg"><br>③ 注册流程走完后回首页，右上角加号第一个选项，传建一个新的存储库<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/2-3-1.jpg"><br>④ 存储库名称为 用户名+.github+.io，其他默认，创建<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/2-4-1.jpg"></p>
+<h2 id="gitforwin的下载与安装"><a href="#gitforwin的下载与安装" class="headerlink" title="gitforwin的下载与安装"></a>gitforwin的下载与安装</h2><p>① 浏览器输入 Git for Windows，下载gitforwin安装包<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/3-1-1.jpg"><br>② 安装git<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/3-2-1.jpg"><br>③ 更改安装位置<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/3-3-1.jpg"><br>④ 创建开始菜单快捷方式，随意，我选择不创建<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/3-4-1.jpg"><br>⑤ 点下一步全部默认就可以，到这一步选择第二个<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/3-5-1.jpg"><br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/3-5-2.jpg"><br>⑥ 安装完成<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/3-6-1.jpg"><br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/3-6-2.jpg"><br>⑦ 桌面没有新的快捷方式不要慌，正常现象，有需要的话可以在开始菜单和软件安装路径里找到并创建快捷方式<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/3-7-1.jpg"><br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/3-7-2.jpg"><br>⑧ 验证是否安装完成<br>Win+R，输入cmd，输入命令git<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/3-8-1.jpg"></p>
+<h2 id="githubSHH配置"><a href="#githubSHH配置" class="headerlink" title="githubSHH配置"></a>githubSHH配置</h2><p>① 打开git的安装路径，找到git bash.exe 双击运行<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/4-1-1.jpg"><br>② 输入命令ssh-keygen -t rsa -C “<a href="mailto:&#x39;&#57;&#x31;&#x32;&#55;&#x30;&#x36;&#x38;&#x35;&#x40;&#x71;&#113;&#x2e;&#x63;&#x6f;&#x6d;">&#x39;&#57;&#x31;&#x32;&#55;&#x30;&#x36;&#x38;&#x35;&#x40;&#x71;&#113;&#x2e;&#x63;&#x6f;&#x6d;</a>“，引号内是github注册邮箱地址，回车<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/4-2-1.jpg"><br>③ 无特殊提示就回车，有（y/n）就输入y回车<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/4-3-1.jpg"><br>④ 打开github，点击右上角头像选择 设置<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/4-4-1.jpg"><br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/4-4-2.jpg"><br>⑤ 选择shh和密钥选项，添加新密钥<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/4-5-1.jpg"><br>⑥ 标题就用户名+tech吧（tech技术），填到第一栏<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/4-6-1.jpg"><br>在C盘找到id_rsa.pub这个文件，以记事本形式打开，复制内容填到第二栏<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/4-6-2.jpg"><br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/4-6-3.jpg"><br>⑦ 提交，创建完成<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/4-7-1.jpg"></p>
+<h2 id="hexo的本地使用"><a href="#hexo的本地使用" class="headerlink" title="hexo的本地使用"></a>hexo的本地使用</h2><p>① 浏览器输入 Hexo 进入hexo官网<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/5-1-1.jpg"><br>② 在合适的位置新建一个文件夹blog，关于博客的文件基本都在这里面，我选择D盘根目录<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/5-2-1.jpg"><br>③ 进入bolg文件，点击路径输入cmd，回车进入（也可以win+R，输入cmd，再用cd命令一级一级切到blog文件下）<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/5-3-1.jpg"><br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/5-3-2.jpg"><br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/5-3-3.jpg"><br>④ 回到hexo官网，复制命令 npm install hexo-cli -g 到运行窗口回车<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/5-4-1.jpg"><br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/5-4-2.jpg"><br>⑤ 网站下拉会有使用命令行，blog为你的博客名<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/5-5-1.jpg"><br>⑥ 输入 hexo init +博客名 回车运行<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/5-6-1.jpg"><br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/5-6-2.jpg"><br>⑦ 输入命令cd 博客名，进入博客文件，回到网站复制命令行 npm install 并运行<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/5-7-1.jpg"><br>⑧ 完成后输入命令 hexo s 生成本地预览，最后会生成一个4000端口的网址，复制到浏览器进入，就能看到我们的博客了<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/5-8-1.jpg"><br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/5-8-2.jpg"></p>
+<h2 id="sublime的下载与安装"><a href="#sublime的下载与安装" class="headerlink" title="sublime的下载与安装"></a>sublime的下载与安装</h2><p>① 浏览器输入Download - Sublime Text 进去官网下载，选择自己的系统，我选择windows64位<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/6-1-1.jpg"><br>② 下载完成运行，更改安装路径<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/6-2-1.jpg"><br>③ 默认选项就可以，一直下一步。安装完成<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/6-3-1.jpg"><br>④ 打开sublime<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/6-4-1.jpg"><br>⑤ 打开sublime，在左边栏source——-posts —— hello-world.md中输入文字，ctrl+s保存<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/6-5-1.jpg"><br>⑥ 在blog路径中右击运行git bash，输入命令hexo cl清理缓存，hexo g hexo s生成本地预览<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/6-6-1.jpg"><br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/6-6-2.jpg"><br>⑦ 浏览器打开本地预览，更改已生效<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/6-7-1.jpg"></p>
+<h2 id="将hexo发布至github"><a href="#将hexo发布至github" class="headerlink" title="将hexo发布至github"></a>将hexo发布至github</h2><p>① 打开浏览器，进入github之前新建的存储库，进入库，复制地址<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/7-1-1.jpg"><br>② 在sublime中打开-config.yml文件更改配置信息<br>更改参数 author：名字，我的是maohuifei<br>更改参数 ur1： 后面为github存储库的地址中的一部分（XXXX.github.io）<br>更改参数 type：git，<br>添加新参数 branch: gh-pages<br>添加新参数 repo：后面为github存储库的地址<br>保存<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/7-2-1.jpg"><br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/7-2-2.jpg"><br>③ 进入hexo一键部署网站部署 | Hexo ，复制hexo-deployer-git的安装命令 npm install hexo-deployer-git –save 进入git bash 运行安装<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/7-3-1.jpg"><br>④ 命令 hexo cl 清理hexo g生成 hexo d提交<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/7-4-1.jpg"><br>⑤ 浏览器输入 用户名+github.Io 我的是maohuifei.github.io<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/7-5-1.jpg"><br>⑥ 博客搭建完成!</p>
+<h2 id="hexo主题使用"><a href="#hexo主题使用" class="headerlink" title="hexo主题使用"></a>hexo主题使用</h2><p>① 进入hexo主题官网Themes | Hexo 选择主题，以next为例<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/8-1-1.jpg"><br>② 进入主题详情，有详细安装步骤教程，每个主题进入位置不同<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/8-2-1.jpg"></p>
 ]]></content>
       <categories>
         <category>教程与心得</category>
       </categories>
       <tags>
-        <tag>云免</tag>
-        <tag>服务器</tag>
-        <tag>带宽</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>V2ray的配置生成</title>
-    <url>/2021/04/15/V2ray%E7%9A%84%E9%85%8D%E7%BD%AE%E7%94%9F%E6%88%90/</url>
-    <content><![CDATA[<p>本文主要讲解在有了一台Linux云服务器的情况下，如何生成V2ray配置文件并于个人终端上实现流量共享</p>
-<span id="more"></span>
-
-<h2 id="操作前的准备"><a href="#操作前的准备" class="headerlink" title="操作前的准备"></a>操作前的准备</h2><p>拥有一台操作系统为Linux的云主机，最后终端设备上的网速受限于主机的带宽<br>进入云主机详情网页，防火墙开放所有UTP、TCP端口</p>
-<h2 id="【PC端】FinalShell的下载与安装"><a href="#【PC端】FinalShell的下载与安装" class="headerlink" title="【PC端】FinalShell的下载与安装"></a>【PC端】FinalShell的下载与安装</h2><p>Windows版下载地址:<br><a href="http://www.hostbuf.com/downloads/finalshell_install.exe">http://www.hostbuf.com/downloads/finalshell_install.exe</a><br>下载FinalShell的安装包到本地并运行</p>
-<h2 id="【安卓手机端】JuiceSSH的下载与安装"><a href="#【安卓手机端】JuiceSSH的下载与安装" class="headerlink" title="【安卓手机端】JuiceSSH的下载与安装"></a>【安卓手机端】JuiceSSH的下载与安装</h2><p>应用商店搜索JuiceSSH，下载并安装</p>
-<h2 id="利用FinalShell远程登录云主机"><a href="#利用FinalShell远程登录云主机" class="headerlink" title="利用FinalShell远程登录云主机"></a>利用FinalShell远程登录云主机</h2><p>①打开FinalShell，点击标签左侧文件夹标志，跳出连接管理器界面。点击添加新主机，选择新建SSH连接。<br>②为主机起个名字，主机栏填云主机的公网IP，端口22保持不变。<br>③认证方法选择密码，用户名为root，密码为云主机密码<br>④点击确定<br>⑤回到首页，双击主机运行，如果是第一次远程进入会弹出对话框，点击确认/接受即可<br>PS：JuiceSSH的操作与FinalShell相差不大，此处就不过多赘述了<br><img src="/2021/04/15/V2ray%E7%9A%84%E9%85%8D%E7%BD%AE%E7%94%9F%E6%88%90/1.jpg"></p>
-<h2 id="安装V2ray生成配置文件"><a href="#安装V2ray生成配置文件" class="headerlink" title="安装V2ray生成配置文件"></a>安装V2ray生成配置文件</h2><p>一键安装（协议TCP，默认端口8888，不生成sw）</p>
-<pre class="line-numbers language-linux" data-language="linux"><code class="language-linux">$ bash &lt;(curl -s -L https:&#x2F;&#x2F;git.io&#x2F;v2ray-setup.sh)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>自定义安装</p>
-<pre class="line-numbers language-linux" data-language="linux"><code class="language-linux">$ bash &lt;(curl -s -L https:&#x2F;&#x2F;git.io&#x2F;v2rayinstall.sh)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>等待一段时间，程序安装完成<br>V2ray服务自动启动，配置文件已生成<br>如果显示克隆失败，请自行安装git，则进行下一步下载git<br><img src="/2021/04/15/V2ray%E7%9A%84%E9%85%8D%E7%BD%AE%E7%94%9F%E6%88%90/2.jpg"></p>
-<h2 id="git的下载"><a href="#git的下载" class="headerlink" title="git的下载"></a>git的下载</h2><pre class="line-numbers language-linux" data-language="linux"><code class="language-linux">$ yum -y install git<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h2 id="更改V2ray配置文件"><a href="#更改V2ray配置文件" class="headerlink" title="更改V2ray配置文件"></a>更改V2ray配置文件</h2><p>将配置文件复制到剪贴板，更改适合自己的线路混淆</p>
-]]></content>
-      <categories>
-        <category>教程与心得</category>
-      </categories>
-      <tags>
-        <tag>云免</tag>
-        <tag>V2ray</tag>
+        <tag>Hexo</tag>
+        <tag>博客</tag>
       </tags>
   </entry>
   <entry>
