@@ -28,7 +28,7 @@
 <meta property="og:description" content="TCP BBR（Bottleneck Bandwidth and Round-trip propagation time）是由Google设计，于2016年发布的拥塞算法。以往大部分拥塞算法是基于丢包来作为降低传输速率的信号，而BBR则基于模型主动探测。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-05-13T02:38:59.000Z">
-<meta property="article:modified_time" content="2021-05-13T05:49:55.271Z">
+<meta property="article:modified_time" content="2021-05-20T09:20:38.265Z">
 <meta property="article:author" content="猫会飞呀">
 <meta property="article:tag" content="V2Ray">
 <meta property="article:tag" content="云免">
@@ -193,10 +193,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-05-13 10:38:59 / 修改时间：13:49:55" itemprop="dateCreated datePublished" datetime="2021-05-13T10:38:59+08:00">2021-05-13</time>
+              <time title="创建时间：2021-05-13 10:38:59" itemprop="dateCreated datePublished" datetime="2021-05-13T10:38:59+08:00">2021-05-13</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-05-20 17:20:38" itemprop="dateModified" datetime="2021-05-20T17:20:38+08:00">2021-05-20</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -213,14 +219,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.1k</span>
+              <span>2.5k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>2 分钟</span>
             </span>
 
         </div>
@@ -239,7 +245,7 @@
 <p>BBR效率很高，速度也很快，但是它与非BBR的流的公平性有争议。虽然谷歌的展示显示 BBR 与 CUBIC 共存良好，但像杰夫·休斯顿和霍克、布利斯和齐特巴特等研究者发现它对其他流不公平，并且不可扩展。霍克等人还发现，在Linux 4.9的BBR实现中“存在一些严重的固有问题，如排队延迟增加、不公平和大量数据包丢失”。</p>
 <p>索海尔·阿巴斯洛等人(C2TCP的作者)指出，BBR在动态环境中表现不佳，比如蜂窝网络。他们还表明BBR存在不公平问题。例如，当一个CUBIC流(在Linux、Android和MacOS中是默认的TCP实现)与网络中的BBR流共存时，BBR流可以支配 CUBIC 流并从中获得整个链路带宽</p>
 <p>简介参考维基百科，侵删</p>
-<h2 id="CentOS-8-开启-BBR"><a href="#CentOS-8-开启-BBR" class="headerlink" title="CentOS 8 开启 BBR"></a>CentOS 8 开启 BBR</h2><p>CentOS 8 默认内核版本为 4.18.x，内核版本高于 4.9 就可以直接开启 BBR，所以 CentOS 8 启用 BBR 非常简单。</p>
+<h1 id="CentOS-8-开启-BBR"><a href="#CentOS-8-开启-BBR" class="headerlink" title="CentOS 8 开启 BBR"></a>CentOS 8 开启 BBR</h1><p>CentOS 8 默认内核版本为 4.18.x，内核版本高于 4.9 就可以直接开启 BBR，所以 CentOS 8 启用 BBR 非常简单。</p>
 <pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ 
 echo &quot;net.core.default_qdisc&#x3D;fq&quot; &gt;&gt; &#x2F;etc&#x2F;sysctl.conf
 echo &quot;net.ipv4.tcp_congestion_control&#x3D;bbr&quot; &gt;&gt; &#x2F;etc&#x2F;sysctl.conf
@@ -248,7 +254,51 @@ sysctl -p<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
 <pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ 
 sysctl -n net.ipv4.tcp_congestion_control
 lsmod | grep bbr<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h1 id="CentOS-7-开启-BBR"><a href="#CentOS-7-开启-BBR" class="headerlink" title="CentOS 7 开启 BBR"></a>CentOS 7 开启 BBR</h1><h2 id="升级内核"><a href="#升级内核" class="headerlink" title="升级内核"></a>升级内核</h2><p>开启 BBR 要求 4.10 以上版本 Linux 内核，可使用如下命令查看当前内核版本：</p>
+<pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ 
+uname -r<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>如果当前内核版本低于 4.10，可使用 ELRepo 源更新：</p>
+<pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ 
+sudo rpm --import https:&#x2F;&#x2F;www.elrepo.org&#x2F;RPM-GPG-KEY-elrepo.org
+sudo rpm -Uvh http:&#x2F;&#x2F;www.elrepo.org&#x2F;elrepo-release-7.0-2.el7.elrepo.noarch.rpm
+sudo yum --enablerepo&#x3D;elrepo-kernel install kernel-ml -y<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>安装完成后，查看已安装的内核：</p>
+<pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ 
+rpm -qa | grep kernel<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>在输出中看到 kernel-ml-4.11.0-1.el7.elrepo.x86_64 类似的内容，表示安装成功。</p>
+<h2 id="修改grub2引导"><a href="#修改grub2引导" class="headerlink" title="修改grub2引导"></a>修改grub2引导</h2><p>输入</p>
+<pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ 
+sudo egrep ^menuentry &#x2F;etc&#x2F;grub2.cfg | cut -f 2 -d \&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>得到类似如下结果</p>
+<pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ 
+CentOS Linux 7 Rescue a0cbf86a6ef1416a8812657bb4f2b860 (4.11.0-1.el7.elrepo.x86_64)
+CentOS Linux (4.11.0-1.el7.elrepo.x86_64) 7 (Core)
+CentOS Linux (3.10.0-514.16.1.el7.x86_64) 7 (Core)
+CentOS Linux (3.10.0-123.el7.x86_64) 7 (Core)
+CentOS Linux (0-rescue-2d3f9371c20d3e90a544ccc814d485e3) 7 (Core)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>由于序号从0开始，设置默认启动项为1并重启系统：</p>
+<pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ 
+sudo grub2-set-default 1
+reboot<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>重启完成后，重新登录并重新运行uname命令来确认你是否使用了正确的内核：</p>
+<pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ 
+uname -r<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
+<h2 id="开启BBR"><a href="#开启BBR" class="headerlink" title="开启BBR"></a>开启BBR</h2><p>执行：</p>
+<pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ 
+echo &#39;net.core.default_qdisc&#x3D;fq&#39; | sudo tee -a &#x2F;etc&#x2F;sysctl.conf
+echo &#39;net.ipv4.tcp_congestion_control&#x3D;bbr&#39; | sudo tee -a &#x2F;etc&#x2F;sysctl.conf
+sudo sysctl -p<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>完成后，分别执行如下命令来检查 BBR 是否开启成功：</p>
+<pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ 
+sudo sysctl net.ipv4.tcp_available_congestion_control
+# 输出应为 net.ipv4.tcp_available_congestion_control &#x3D; bbr cubic reno
+sudo sysctl -n net.ipv4.tcp_congestion_control
+# 输出应为 bbr
+lsmod | grep bbr
+# 输出应类似 tcp_bbr  16384  28<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="一键开启脚本（狗头）"><a href="#一键开启脚本（狗头）" class="headerlink" title="一键开启脚本（狗头）"></a>一键开启脚本（狗头）</h2><pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ 
+wget --no-check-certificate https:&#x2F;&#x2F;github.com&#x2F;teddysun&#x2F;across&#x2F;raw&#x2F;master&#x2F;bbr.sh &amp;&amp; chmod +x bbr.sh &amp;&amp; .&#x2F;bbr.sh<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
     </div>
 
     
@@ -350,7 +400,7 @@ lsmod | grep bbr<span aria-hidden="true" class="line-numbers-rows"><span></span>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#CentOS-8-%E5%BC%80%E5%90%AF-BBR"><span class="nav-number">1.</span> <span class="nav-text">CentOS 8 开启 BBR</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CentOS-8-%E5%BC%80%E5%90%AF-BBR"><span class="nav-number">1.</span> <span class="nav-text">CentOS 8 开启 BBR</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CentOS-7-%E5%BC%80%E5%90%AF-BBR"><span class="nav-number">2.</span> <span class="nav-text">CentOS 7 开启 BBR</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8"><span class="nav-number">2.1.</span> <span class="nav-text">升级内核</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9grub2%E5%BC%95%E5%AF%BC"><span class="nav-number">2.2.</span> <span class="nav-text">修改grub2引导</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E5%90%AFBBR"><span class="nav-number">2.3.</span> <span class="nav-text">开启BBR</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E9%94%AE%E5%BC%80%E5%90%AF%E8%84%9A%E6%9C%AC%EF%BC%88%E7%8B%97%E5%A4%B4%EF%BC%89"><span class="nav-number">2.4.</span> <span class="nav-text">一键开启脚本（狗头）</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -432,12 +482,12 @@ lsmod | grep bbr<span aria-hidden="true" class="line-numbers-rows"><span></span>
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">11k</span>
+    <span title="站点总字数">12k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">10 分钟</span>
+    <span title="站点阅读时长">11 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
   </div>
