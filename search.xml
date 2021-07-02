@@ -31,7 +31,79 @@
   <entry>
     <title>【网页设计】HTML的学习笔记</title>
     <url>/2021/06/04/%E3%80%90%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1%E3%80%91HTML%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<span id="more"></span>
+    <content><![CDATA[<p>超文本标记语言（英语：HyperText Markup Language，简称：HTML）是一种用于创建网页的标准标记语言。<br>可以使用 HTML 来建立自己的 WEB 站点，HTML 运行在浏览器上，由浏览器来解析。</p>
+<span id="more"></span>
+
+<h2 id="HTML简介"><a href="#HTML简介" class="headerlink" title="HTML简介"></a>HTML简介</h2><h3 id="什么是HTML？"><a href="#什么是HTML？" class="headerlink" title="什么是HTML？"></a>什么是HTML？</h3><p>HTML 是用来描述网页的一种语言。<br>HTML 指的是超文本标记语言: HyperText Markup Language<br>HTML 不是一种编程语言，而是一种标记语言<br>标记语言是一套标记标签 (markup tag)<br>HTML 使用标记标签来描述网页<br>HTML 文档包含了HTML 标签及文本内容<br>HTML文档也叫做 web 页面</p>
+<h3 id="HTML-实例"><a href="#HTML-实例" class="headerlink" title="HTML 实例"></a>HTML 实例</h3><p><img src="/2021/06/04/%E3%80%90%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1%E3%80%91HTML%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/001.jpg"></p>
+<pre class="line-numbers language-none"><code class="language-none">$ 
+&lt;!DOCTYPE html&gt; 声明为 HTML5 文档
+&lt;html&gt; 元素是 HTML 页面的根元素
+&lt;head&gt; 元素包含了文档的元（meta）数据，如 &lt;meta charset&#x3D;&quot;utf-8&quot;&gt; 定义网页编码格式为 utf-8。
+&lt;title&gt; 元素描述了文档的标题
+&lt;body&gt; 元素包含了可见的页面内容
+&lt;h1&gt; 元素定义一个大标题
+&lt;p&gt; 元素定义一个段落<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="HTML-标签"><a href="#HTML-标签" class="headerlink" title="HTML 标签"></a>HTML 标签</h3><p>HTML 标记标签通常被称为 HTML 标签 (HTML tag)。<br>HTML 标签是由尖括号包围的关键词，比如 <html><br>HTML 标签通常是成对出现的，比如 <b> 和 </b><br>标签对中的第一个标签是开始标签，第二个标签是结束标签<br>开始和结束标签也被称为开放标签和闭合标签</html></p>
+<h2 id="HTML基础（标题、段落、水平线、链接、图片、注释）"><a href="#HTML基础（标题、段落、水平线、链接、图片、注释）" class="headerlink" title="HTML基础（标题、段落、水平线、链接、图片、注释）"></a>HTML基础（标题、段落、水平线、链接、图片、注释）</h2><h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><pre class="line-numbers language-none"><code class="language-none">$ 
+&lt;h1&gt;一级标题&lt;&#x2F;h1&gt;
+&lt;h2&gt;一级标题&lt;&#x2F;h2&gt;
+&lt;h3&gt;一级标题&lt;&#x2F;h3&gt;
+&lt;h4&gt;一级标题&lt;&#x2F;h4&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="段落"><a href="#段落" class="headerlink" title="段落"></a>段落</h3><pre class="line-numbers language-none"><code class="language-none">$ 
+&lt;p&gt;一个段落&lt;&#x2F;p&gt;
+&lt;br&gt;换行<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="水平线"><a href="#水平线" class="headerlink" title="水平线"></a>水平线</h3><p>hr 元素可用于分隔内容。</p>
+<pre class="line-numbers language-none"><code class="language-none">$ 
+&lt;hr&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><p>网页链接（当前页面打开）</p>
+<pre class="line-numbers language-none"><code class="language-none">$ 
+&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;www.baodu.com&quot;&gt;百度链接&lt;&#x2F;a&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>网页链接（新建页面打开）</p>
+<pre class="line-numbers language-none"><code class="language-none">$ 
+&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;www.baodu.com&quot; target&#x3D;&quot;_blank&quot; rel&#x3D;&quot;noopener noreferrer&quot;&gt;百度链接&lt;&#x2F;a&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><pre class="line-numbers language-none"><code class="language-none">$ 
+&lt;img loading&#x3D;&quot;lazy&quot; src&#x3D;&quot;&#x2F;images&#x2F;logo.png&quot; width&#x3D;&quot;258&quot; height&#x3D;&quot;39&quot; &#x2F;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><pre class="line-numbers language-none"><code class="language-none">$ 
+&lt;!--注释文本--&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="HTML-元素"><a href="#HTML-元素" class="headerlink" title="HTML 元素"></a>HTML 元素</h2><h3 id="元素语法"><a href="#元素语法" class="headerlink" title="元素语法"></a>元素语法</h3><p>HTML 元素以开始标签起始<br>HTML 元素以结束标签终止<br>元素的内容是开始标签与结束标签之间的内容<br>某些 HTML 元素具有空内容（empty content）<br>空元素在开始标签中进行关闭（以开始标签的结束而结束）<br>大多数 HTML 元素可拥有属性</p>
+<h3 id="嵌套的-HTML-元素"><a href="#嵌套的-HTML-元素" class="headerlink" title="嵌套的 HTML 元素"></a>嵌套的 HTML 元素</h3><p>大多数 HTML 元素可以嵌套（HTML 元素可以包含其他 HTML 元素）。<br>HTML 文档由相互嵌套的 HTML 元素构成。</p>
+<h3 id="元素实例解析"><a href="#元素实例解析" class="headerlink" title="元素实例解析"></a>元素实例解析</h3><pre class="line-numbers language-none"><code class="language-none">$ 
+&lt;p&gt; 元素:
+
+&lt;p&gt;这是第一个段落。&lt;&#x2F;p&gt;
+这个 &lt;p&gt; 元素定义了 HTML 文档中的一个段落。
+这个元素拥有一个开始标签 &lt;p&gt; 以及一个结束标签 &lt;&#x2F;p&gt;.
+元素内容是: 这是第一个段落。
+
+&lt;body&gt; 元素:
+
+&lt;body&gt;
+&lt;p&gt;这是第一个段落。&lt;&#x2F;p&gt;
+&lt;&#x2F;body&gt;
+&lt;body&gt; 元素定义了 HTML 文档的主体。
+这个元素拥有一个开始标签 &lt;body&gt; 以及一个结束标签 &lt;&#x2F;body&gt;。
+元素内容是另一个 HTML 元素（p 元素）。
+
+&lt;html&gt; 元素：
+
+&lt;html&gt;
+
+&lt;body&gt;
+&lt;p&gt;这是第一个段落。&lt;&#x2F;p&gt;
+&lt;&#x2F;body&gt;
+
+&lt;&#x2F;html&gt;
+&lt;html&gt; 元素定义了整个 HTML 文档。
+这个元素拥有一个开始标签 &lt;html&gt; ，以及一个结束标签 &lt;&#x2F;html&gt;.
+元素内容是另一个 HTML 元素（body 元素）。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="HTML-属性"><a href="#HTML-属性" class="headerlink" title="HTML 属性"></a>HTML 属性</h2><p>属性是 HTML 元素提供的附加信息。</p>
+<p>HTML 元素可以设置属性<br>属性可以在元素中添加附加信息<br>属性一般描述于开始标签<br>属性总是以名称/值对的形式出现，比如：name=”value”。</p>
+<h3 id="属性实例"><a href="#属性实例" class="headerlink" title="属性实例"></a>属性实例</h3><p>HTML 链接由 <a> 标签定义。链接的地址在 href 属性中指定：</a></p>
+<pre class="line-numbers language-none"><code class="language-none">$ 
+&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;www.baodu.com&quot;&gt;百度链接&lt;&#x2F;a&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 ]]></content>
       <categories>
         <category>技能收录</category>
