@@ -230,12 +230,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%AD%A6%E4%B9%A0/">
-                                <span class="chip bg-color">学习</span>
-                            </a>
-                        
                             <a href="/tags/%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1/">
                                 <span class="chip bg-color">网页设计</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%AD%A6%E4%B9%A0/">
+                                <span class="chip bg-color">学习</span>
                             </a>
                         
                             <a href="/tags/HTML/">
@@ -270,14 +270,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-07-02
+                    2021-07-10
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.1k
+                    5.4k
                 </div>
                 
 
@@ -301,8 +301,7 @@
 <span id="more"></span>
 
 <h2 id="HTML简介"><a href="#HTML简介" class="headerlink" title="HTML简介"></a>HTML简介</h2><h3 id="什么是HTML？"><a href="#什么是HTML？" class="headerlink" title="什么是HTML？"></a>什么是HTML？</h3><p>HTML 是用来描述网页的一种语言。<br>HTML 指的是超文本标记语言: HyperText Markup Language<br>HTML 不是一种编程语言，而是一种标记语言<br>标记语言是一套标记标签 (markup tag)<br>HTML 使用标记标签来描述网页<br>HTML 文档包含了HTML 标签及文本内容<br>HTML文档也叫做 web 页面</p>
-<h3 id="HTML-实例"><a href="#HTML-实例" class="headerlink" title="HTML 实例"></a>HTML 实例</h3><p><img src="/2021/06/04/%E3%80%90%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1%E3%80%91HTML%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/001.jpg"></p>
-<pre class="line-numbers language-none"><code class="language-none">$ 
+<h3 id="HTML-实例"><a href="#HTML-实例" class="headerlink" title="HTML 实例"></a>HTML 实例</h3><pre class="line-numbers language-none"><code class="language-none">$ 
 &lt;!DOCTYPE html&gt; 声明为 HTML5 文档
 &lt;html&gt; 元素是 HTML 页面的根元素
 &lt;head&gt; 元素包含了文档的元（meta）数据，如 &lt;meta charset&#x3D;&quot;utf-8&quot;&gt; 定义网页编码格式为 utf-8。
@@ -312,28 +311,6 @@
 &lt;p&gt; 元素定义一个段落<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="HTML-标签"><a href="#HTML-标签" class="headerlink" title="HTML 标签"></a>HTML 标签</h3><p>HTML 标记标签通常被称为 HTML 标签 (HTML tag)。<br>HTML 标签是由尖括号包围的关键词，比如 <html><br>HTML 标签通常是成对出现的，比如 <b> 和 </b><br>标签对中的第一个标签是开始标签，第二个标签是结束标签<br>开始和结束标签也被称为开放标签和闭合标签</html></p>
-<h2 id="HTML基础（标题、段落、水平线、链接、图片、注释）"><a href="#HTML基础（标题、段落、水平线、链接、图片、注释）" class="headerlink" title="HTML基础（标题、段落、水平线、链接、图片、注释）"></a>HTML基础（标题、段落、水平线、链接、图片、注释）</h2><h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><pre class="line-numbers language-none"><code class="language-none">$ 
-&lt;h1&gt;一级标题&lt;&#x2F;h1&gt;
-&lt;h2&gt;一级标题&lt;&#x2F;h2&gt;
-&lt;h3&gt;一级标题&lt;&#x2F;h3&gt;
-&lt;h4&gt;一级标题&lt;&#x2F;h4&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="段落"><a href="#段落" class="headerlink" title="段落"></a>段落</h3><pre class="line-numbers language-none"><code class="language-none">$ 
-&lt;p&gt;一个段落&lt;&#x2F;p&gt;
-&lt;br&gt;换行<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h3 id="水平线"><a href="#水平线" class="headerlink" title="水平线"></a>水平线</h3><p>hr 元素可用于分隔内容。</p>
-<pre class="line-numbers language-none"><code class="language-none">$ 
-&lt;hr&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><p>网页链接（当前页面打开）</p>
-<pre class="line-numbers language-none"><code class="language-none">$ 
-&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;www.baodu.com&quot;&gt;百度链接&lt;&#x2F;a&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>网页链接（新建页面打开）</p>
-<pre class="line-numbers language-none"><code class="language-none">$ 
-&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;www.baodu.com&quot; target&#x3D;&quot;_blank&quot; rel&#x3D;&quot;noopener noreferrer&quot;&gt;百度链接&lt;&#x2F;a&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><pre class="line-numbers language-none"><code class="language-none">$ 
-&lt;img loading&#x3D;&quot;lazy&quot; src&#x3D;&quot;&#x2F;images&#x2F;logo.png&quot; width&#x3D;&quot;258&quot; height&#x3D;&quot;39&quot; &#x2F;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><pre class="line-numbers language-none"><code class="language-none">$ 
-&lt;!--注释文本--&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <h2 id="HTML-元素"><a href="#HTML-元素" class="headerlink" title="HTML 元素"></a>HTML 元素</h2><h3 id="元素语法"><a href="#元素语法" class="headerlink" title="元素语法"></a>元素语法</h3><p>HTML 元素以开始标签起始<br>HTML 元素以结束标签终止<br>元素的内容是开始标签与结束标签之间的内容<br>某些 HTML 元素具有空内容（empty content）<br>空元素在开始标签中进行关闭（以开始标签的结束而结束）<br>大多数 HTML 元素可拥有属性</p>
 <h3 id="嵌套的-HTML-元素"><a href="#嵌套的-HTML-元素" class="headerlink" title="嵌套的 HTML 元素"></a>嵌套的 HTML 元素</h3><p>大多数 HTML 元素可以嵌套（HTML 元素可以包含其他 HTML 元素）。<br>HTML 文档由相互嵌套的 HTML 元素构成。</p>
 <h3 id="元素实例解析"><a href="#元素实例解析" class="headerlink" title="元素实例解析"></a>元素实例解析</h3><pre class="line-numbers language-none"><code class="language-none">$ 
@@ -367,9 +344,273 @@
 元素内容是另一个 HTML 元素（body 元素）。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="HTML-属性"><a href="#HTML-属性" class="headerlink" title="HTML 属性"></a>HTML 属性</h2><p>属性是 HTML 元素提供的附加信息。</p>
 <p>HTML 元素可以设置属性<br>属性可以在元素中添加附加信息<br>属性一般描述于开始标签<br>属性总是以名称/值对的形式出现，比如：name=”value”。</p>
-<h3 id="属性实例"><a href="#属性实例" class="headerlink" title="属性实例"></a>属性实例</h3><p>HTML 链接由 <a> 标签定义。链接的地址在 href 属性中指定：</a></p>
+<h3 id="属性实例"><a href="#属性实例" class="headerlink" title="属性实例"></a>属性实例</h3><p>HTML 链接由 a标签定义。链接的地址在 href 属性中指定：</p>
 <pre class="line-numbers language-none"><code class="language-none">$ 
 &lt;a href&#x3D;&quot;https:&#x2F;&#x2F;www.baodu.com&quot;&gt;百度链接&lt;&#x2F;a&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="HTML基础语法"><a href="#HTML基础语法" class="headerlink" title="HTML基础语法"></a>HTML基础语法</h2><h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><pre class="line-numbers language-none"><code class="language-none">$ 
+&lt;h1&gt;一级标题&lt;&#x2F;h1&gt;
+&lt;h2&gt;一级标题&lt;&#x2F;h2&gt;
+&lt;h3&gt;一级标题&lt;&#x2F;h3&gt;
+&lt;h4&gt;一级标题&lt;&#x2F;h4&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="段落"><a href="#段落" class="headerlink" title="段落"></a>段落</h3><pre class="line-numbers language-none"><code class="language-none">$ 
+&lt;p&gt;一个段落&lt;&#x2F;p&gt;
+&lt;br&gt;换行<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="水平线"><a href="#水平线" class="headerlink" title="水平线"></a>水平线</h3><p>hr 元素可用于分隔内容。</p>
+<pre class="line-numbers language-none"><code class="language-none">$ 
+&lt;hr&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><p>网页链接（当前页面打开）</p>
+<pre class="line-numbers language-none"><code class="language-none">$ 
+&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;www.baodu.com&quot;&gt;百度链接&lt;&#x2F;a&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>网页链接（新建页面打开）</p>
+<pre class="line-numbers language-none"><code class="language-none">$ 
+&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;www.baodu.com&quot; target&#x3D;&quot;_blank&quot; rel&#x3D;&quot;noopener noreferrer&quot;&gt;百度链接&lt;&#x2F;a&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><pre class="line-numbers language-none"><code class="language-none">$ 
+&lt;img loading&#x3D;&quot;lazy&quot; src&#x3D;&quot;&#x2F;images&#x2F;logo.png&quot; width&#x3D;&quot;258&quot; height&#x3D;&quot;39&quot; &#x2F;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h2><p>使用font-family（字体），color（颜色），和font-size（字体大小）属性来定义字体的样式</p>
+<pre class="line-numbers language-none"><code class="language-none">$ 
+&lt;h1 style&#x3D;&quot;font-family:arial;color:red;font-size:20px;&quot;&gt;一个标题&lt;&#x2F;h1&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><pre class="line-numbers language-none"><code class="language-none">$ 
+&lt;!--注释文本--&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><pre class="line-numbers language-none"><code class="language-none">$ 
+&lt;table border&#x3D;&quot;1&quot;&gt;      &lt;!--表框粗细--&gt;
+			&lt;tr&gt;
+				&lt;th&gt;表头1&lt;&#x2F;th&gt;
+				&lt;th&gt;表头2&lt;&#x2F;th&gt;
+				&lt;th&gt;表头3&lt;&#x2F;th&gt;
+			&lt;&#x2F;tr&gt;
+			&lt;tr&gt;
+				&lt;td&gt;内容1&lt;&#x2F;td&gt;
+				&lt;td&gt;内容2&lt;&#x2F;td&gt;
+				&lt;td&gt;内容3&lt;&#x2F;td&gt;
+			&lt;&#x2F;tr&gt;
+			&lt;tr&gt;
+				&lt;td&gt;内容4&lt;&#x2F;td&gt;
+				&lt;td&gt;内容5&lt;&#x2F;td&gt;
+				&lt;td&gt;内容6&lt;&#x2F;td&gt;
+			&lt;&#x2F;tr&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><p>HTML 支持有序、无序和定义列表</p>
+<h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><p>使用粗体圆圈进行标记<br>使用ul标签</p>
+<pre class="line-numbers language-none"><code class="language-none">$ 
+&lt;ul&gt;
+&lt;li&gt;Coffee&lt;&#x2F;li&gt;
+&lt;li&gt;Milk&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h3><p>使用数字进行标记<br>使用ol标签</p>
+<pre class="line-numbers language-none"><code class="language-none">$ 
+&lt;ol&gt;
+&lt;li&gt;Coffee&lt;&#x2F;li&gt;
+&lt;li&gt;Milk&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="自定义列表"><a href="#自定义列表" class="headerlink" title="自定义列表"></a>自定义列表</h3><p>使用自定义标记<br>使用dl标签，dt为列表项，dd为内容</p>
+<pre class="line-numbers language-none"><code class="language-none">$ 
+&lt;dl&gt;
+&lt;dt&gt;Coffee&lt;&#x2F;dt&gt;
+&lt;dd&gt;- black hot drink&lt;&#x2F;dd&gt;
+&lt;dt&gt;Milk&lt;&#x2F;dt&gt;
+&lt;dd&gt;- white cold drink&lt;&#x2F;dd&gt;
+&lt;&#x2F;dl&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>列表项内部可以使用段落、换行符、图片、链接以及其他列表等等。</p>
+<h2 id="区块"><a href="#区块" class="headerlink" title="区块"></a>区块</h2><p>大多数 HTML 元素被定义为块级元素或内联元素。</p>
+<h3 id="块级元素"><a href="#块级元素" class="headerlink" title="块级元素"></a>块级元素</h3><pre class="line-numbers language-none"><code class="language-none">$ 
+块级元素在浏览器显示时，通常会以新行来开始（和结束）。
+
+常用的块级元素: &lt;h1&gt;, &lt;p&gt;, &lt;ul&gt;, &lt;table&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="内联元素"><a href="#内联元素" class="headerlink" title="内联元素"></a>内联元素</h3><pre class="line-numbers language-none"><code class="language-none">$ 
+内联元素在显示时通常不会以新行开始。
+
+常用的内联元素: &lt;b&gt;, &lt;td&gt;, &lt;a&gt;, &lt;img&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="div元素"><a href="#div元素" class="headerlink" title="div元素"></a>div元素</h3><pre class="line-numbers language-none"><code class="language-none">$ 
+&lt;div&gt; 元素是块级元素，是用于组合其他 HTML 元素的容器。
+
+&lt;div&gt; 元素没有特定的含义。它属于块级元素，浏览器会在其前后显示折行。
+
+如果与 CSS 一同使用，&lt;div&gt; 元素可用于对大的内容块设置样式属性。
+
+&lt;div&gt; 元素的另一个常见的用途是文档布局。它取代了使用表格定义布局的老式方法。
+使用 &lt;table&gt; 元素进行文档布局不是表格的正确用法。&lt;table&gt; 元素的作用是显示表格化的数据。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="span元素"><a href="#span元素" class="headerlink" title="span元素"></a>span元素</h3><pre class="line-numbers language-none"><code class="language-none">$ 
+&lt;span&gt; 元素是内联元素，可用作文本的容器
+
+&lt;span&gt; 元素也没有特定的含义。
+
+当与 CSS 一同使用时，&lt;span&gt; 元素可用于为部分文本设置样式属性。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h2><p>大多数网站会把内容安排到多个列中（就像杂志或报纸那样）。<br>大多数网站可以使用 div 或者 table 元素来创建多列。<br>CSS 用于对元素进行定位，或者为页面创建背景以及色彩丰富的外观。</p>
+<h3 id="使用div元素布局"><a href="#使用div元素布局" class="headerlink" title="使用div元素布局"></a>使用div元素布局</h3><pre class="line-numbers language-none"><code class="language-none">$ 
+&lt;div id&#x3D;&quot;menu&quot; style&#x3D;&quot;background-color:#FFD700;height:200px;width:100px;float:left;&quot;&gt;
+&lt;b&gt;菜单&lt;&#x2F;b&gt;&lt;br&gt;
+HTML&lt;br&gt;
+CSS&lt;br&gt;
+JavaScript
+&lt;&#x2F;div&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="使用table元素布局"><a href="#使用table元素布局" class="headerlink" title="使用table元素布局"></a>使用table元素布局</h3><p>下面的例子使用三行两列的表格 - 第一和最后一行使用 colspan 属性来横跨两列<br>实例摘自<a target="_blank" rel="noopener" href="https://www.runoob.com/html/html-layouts.html">菜鸟教程</a></p>
+<pre class="line-numbers language-none"><code class="language-none">$ 
+&lt;table width&#x3D;&quot;500&quot; border&#x3D;&quot;0&quot;&gt;
+&lt;tr&gt;
+&lt;td colspan&#x3D;&quot;2&quot; style&#x3D;&quot;background-color:#FFA500;&quot;&gt;
+&lt;h1&gt;主要的网页标题&lt;&#x2F;h1&gt;
+&lt;&#x2F;td&gt;
+&lt;&#x2F;tr&gt;
+ 
+&lt;tr&gt;
+&lt;td style&#x3D;&quot;background-color:#FFD700;width:100px;&quot;&gt;
+&lt;b&gt;菜单&lt;&#x2F;b&gt;&lt;br&gt;
+HTML&lt;br&gt;
+CSS&lt;br&gt;
+JavaScript
+&lt;&#x2F;td&gt;
+&lt;td style&#x3D;&quot;background-color:#eeeeee;height:200px;width:400px;&quot;&gt;
+内容在这里&lt;&#x2F;td&gt;
+&lt;&#x2F;tr&gt;
+ 
+&lt;tr&gt;
+&lt;td colspan&#x3D;&quot;2&quot; style&#x3D;&quot;background-color:#FFA500;text-align:center;&quot;&gt;
+版权 © runoob.com&lt;&#x2F;td&gt;
+&lt;&#x2F;tr&gt;
+&lt;&#x2F;table&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h2><p>表单是一个包含表单元素的区域。<br>表单元素是允许用户在表单中输入内容,<br>比如：文本域(textarea)、下拉列表、单选框(radio-buttons)、复选框(checkboxes)等等。<br>表单使用表单标签form来设置:</p>
+<pre class="line-numbers language-none"><code class="language-none">$ 
+&lt;form&gt;
+.
+input 元素
+.
+&lt;&#x2F;form&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="输入元素"><a href="#输入元素" class="headerlink" title="输入元素"></a>输入元素</h3><h4 id="文本域-文本框"><a href="#文本域-文本框" class="headerlink" title="文本域/文本框"></a>文本域/文本框</h4><p>文本域通过input type=”text”标签来设定，当用户要在表单中键入字母、数字等内容时，就会用到文本域。</p>
+<pre class="line-numbers language-none"><code class="language-none">$ 
+&lt;form&gt;
+账号: &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;账号&quot;&gt;&lt;br&gt;
+密码: &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;密码&quot;&gt;
+&lt;&#x2F;form&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>PS:表单本身并不可见。同时，在大多数浏览器中，文本域的默认宽度是 20 个字符。</p>
+<h4 id="密码框"><a href="#密码框" class="headerlink" title="密码框"></a>密码框</h4><pre class="line-numbers language-none"><code class="language-none">$ 
+&lt;form&gt;
+密码： &lt;input type&#x3D;&quot;password&quot;&gt;
+&lt;&#x2F;form&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>PS:密码字段字符不会明文显示，而是以星号或圆点替代。</p>
+<h4 id="圆形单选-多选按钮"><a href="#圆形单选-多选按钮" class="headerlink" title="圆形单选/多选按钮"></a>圆形单选/多选按钮</h4><p>input type=”radio”标签定义了表单单选框选项<br>name字段相同为单选，不同为多选</p>
+<pre class="line-numbers language-none"><code class="language-none">$ 
+请选择：&lt;br&gt;
+&lt;input type&#x3D;&quot;radio&quot; name&#x3D;&quot;xuanze&quot; value&#x3D;&quot;denglu&quot;&gt;登录
+&lt;input type&#x3D;&quot;radio&quot; name&#x3D;&quot;xuanze&quot; value&#x3D;&quot;zhuce&quot;&gt;注册<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="方形复选按钮"><a href="#方形复选按钮" class="headerlink" title="方形复选按钮"></a>方形复选按钮</h4><p>input type=”checkbox”标签定义了表单单选框选项</p>
+<pre class="line-numbers language-none"><code class="language-none">$ 
+&lt;form&gt;
+&lt;input type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;vehicle&quot; value&#x3D;denglu&quot;&gt;登录&lt;br&gt;
+&lt;input type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;vehicle&quot; value&#x3D;&quot;zhuce&quot;&gt;注册
+&lt;&#x2F;form&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="提交按钮"><a href="#提交按钮" class="headerlink" title="提交按钮"></a>提交按钮</h4><p>input type=”submit”标签定义了表单单选框选项<br>当用户单击确认按钮时，表单的内容会被传送到另一个文件。表单的动作属性定义了目的文件的文件名。由动作属性定义的这个文件通常会对接收到的输入数据进行相关的处理。:</p>
+<pre class="line-numbers language-none"><code class="language-none">$ 
+&lt;form name&#x3D;&quot;input&quot; action&#x3D;&quot;html_form_action.php&quot; method&#x3D;&quot;get&quot;&gt;
+确认: &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;user&quot;&gt;
+&lt;input type&#x3D;&quot;submit&quot; value&#x3D;&quot;Submit&quot;&gt;
+&lt;&#x2F;form&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="简单的下拉列表"><a href="#简单的下拉列表" class="headerlink" title="简单的下拉列表"></a>简单的下拉列表</h4><p>可在option中添加selected来设置列表默认的预选值</p>
+<pre class="line-numbers language-none"><code class="language-none">$ 
+&lt;form action&#x3D;&quot;&quot;&gt;
+&lt;select name&#x3D;&quot;cars&quot;&gt;
+&lt;option value&#x3D;&quot;volvo&quot;&gt;Volvo&lt;&#x2F;option&gt;
+&lt;option value&#x3D;&quot;saab&quot;&gt;Saab&lt;&#x2F;option&gt;
+&lt;option value&#x3D;&quot;fiat&quot;&gt;Fiat&lt;&#x2F;option&gt;
+&lt;option value&#x3D;&quot;audi&quot;&gt;Audi&lt;&#x2F;option&gt;
+&lt;&#x2F;select&gt;
+&lt;&#x2F;form&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="创建按钮"><a href="#创建按钮" class="headerlink" title="创建按钮"></a>创建按钮</h4><p>使用button来定义按钮<br>使用value来定义按钮内的文字</p>
+<pre class="line-numbers language-none"><code class="language-none">$ 
+&lt;form action&#x3D;&quot;&quot;&gt;
+&lt;input type&#x3D;&quot;button&quot; value&#x3D;&quot;Hello world!&quot;&gt;
+&lt;&#x2F;form&gt;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="框架"><a href="#框架" class="headerlink" title="框架"></a>框架</h2><p>通过使用框架，你可以在同一个浏览器窗口中显示不止一个页面。</p>
+<pre class="line-numbers language-none"><code class="language-none">$ 
+&lt;iframe src&#x3D;&quot;URL&quot;&gt;&lt;&#x2F;iframe&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>URL指向不同的网页</p>
+<h3 id="自定义样式"><a href="#自定义样式" class="headerlink" title="自定义样式"></a>自定义样式</h3><p>1.height 和 width 属性用来定义iframe标签的高度与宽度。<br>属性默认以像素为单位, 但是你可以指定其按比例显示 (如：”80%”)。</p>
+<pre class="line-numbers language-none"><code class="language-none">$ 
+&lt;iframe loading&#x3D;&quot;lazy&quot; src&#x3D;&quot;demo_iframe.htm&quot; width&#x3D;&quot;200&quot; height&#x3D;&quot;200&quot;&gt;&lt;&#x2F;iframe&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>2.frameborder 属性用于定义iframe表示是否显示边框。<br>设置属性值为 “0” 移除iframe的边框:</p>
+<pre class="line-numbers language-none"><code class="language-none">$ 
+&lt;iframe src&#x3D;&quot;demo_iframe.htm&quot; frameborder&#x3D;&quot;0&quot;&gt;&lt;&#x2F;iframe&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>3.使用iframe来显示目标链接页面<br>目标链接的属性必须使用iframe的属性</p>
+<h2 id="颜色和颜色名"><a href="#颜色和颜色名" class="headerlink" title="颜色和颜色名"></a>颜色和颜色名</h2><p>HTML 颜色由红色、绿色、蓝色混合而成。<br>HTML 颜色由一个十六进制符号来定义，这个符号由红色、绿色和蓝色的值组成（RGB）。<br>每种颜色的最小值是0（十六进制：#00）。最大值是255（十六进制：#FF）。<br>各种颜色的色值百度即可</p>
+<pre class="line-numbers language-none"><code class="language-none">$ 
+div &#123;
+
+background:rgb(255,0,0);
+
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="颜色的透明"><a href="#颜色的透明" class="headerlink" title="颜色的透明"></a>颜色的透明</h3><p>RGBA 的意思是（Red-Green-Blue-Alpha）它是在 RGB 上扩展包括了 “alpha” 通道，运行对颜色值设置透明度。</p>
+<pre class="line-numbers language-none"><code class="language-none">$ 
+div &#123;
+
+background:rgba(255,0,0,0.5);
+
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>相对于使用 rgb(255,255,0)，使用 rgba(255,255,0,0.5) 可以实现设置颜色透明度的功能，这里的 0.5 表示透明度，范围 0~1，0 表示全透明。</p>
+<h3 id="WEB安全色？"><a href="#WEB安全色？" class="headerlink" title="WEB安全色？"></a>WEB安全色？</h3><p>数年以前，当大多数计算机仅支持 256 种颜色的时候，一系列 216 种 Web 安全色作为 Web 标准被建议使用。其中的原因是，微软和 Mac 操作系统使用了 40 种不同的保留的固定系统颜色（双方大约各使用 20 种）。<br>我们不确定如今这么做的意义有多大，因为越来越多的计算机有能力处理数百万种颜色，不过做选择还是你自己。<br>最初，216 跨平台 web 安全色被用来确保：当计算机使用 256 色调色板时，所有的计算机能够正确地显示所有的颜色</p>
+<h3 id="颜色名"><a href="#颜色名" class="headerlink" title="颜色名"></a>颜色名</h3><p>141个颜色名称是在HTML和CSS颜色规范定义的（17标准颜色，再加124）。<br>具体可百度，暂时认为实用意义不大</p>
+<h2 id="HTML引用脚本"><a href="#HTML引用脚本" class="headerlink" title="HTML引用脚本"></a>HTML引用脚本</h2><h3 id="script标签"><a href="#script标签" class="headerlink" title="script标签"></a>script标签</h3><p>script标签用于定义客户端脚本，比如 JavaScript。<br>script 元素既可包含脚本语句，也可通过 src 属性指向外部脚本文件。<br>JavaScript 最常用于图片操作、表单验证以及内容动态更新。<br>下面的脚本会向浏览器输出”Hello World!”：</p>
+<pre class="line-numbers language-none"><code class="language-none">$ 
+&lt;script&gt;
+document.write(&quot;Hello World!&quot;);
+&lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="noscript标签"><a href="#noscript标签" class="headerlink" title="noscript标签"></a>noscript标签</h3><p>noscript 标签提供无法使用脚本时的替代内容，比方在浏览器禁用脚本时，或浏览器不支持客户端脚本时。<br>noscript元素可包含普通 HTML 页面的 body 元素中能够找到的所有元素。<br>只有在浏览器不支持脚本或者禁用脚本时，才会显示 noscript 元素中的内容：</p>
+<pre class="line-numbers language-none"><code class="language-none">$ 
+&lt;script&gt;
+document.write(&quot;Hello World!&quot;)
+&lt;&#x2F;script&gt;
+&lt;noscript&gt;抱歉，你的浏览器不支持 JavaScript!&lt;&#x2F;noscript&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="字符实体（特殊字符的显示）"><a href="#字符实体（特殊字符的显示）" class="headerlink" title="字符实体（特殊字符的显示）"></a>字符实体（特殊字符的显示）</h2><p>HTML 中的预留字符必须被替换为字符实体。<br>一些在键盘上找不到的字符也可以使用字符实体来替换。</p>
+<h3 id="实体"><a href="#实体" class="headerlink" title="实体"></a>实体</h3><p>在 HTML 中，某些字符是预留的。<br>在 HTML 中不能使用小于号（&lt;）和大于号（&gt;），这是因为浏览器会误认为它们是标签。<br>如果希望正确地显示预留字符，我们必须在 HTML 源代码中使用字符实体（character entities）。 字符实体类似这样：</p>
+<pre class="line-numbers language-none"><code class="language-none">$ 
+&amp;entity_name;
+或
+&amp;#entity_number;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>如需显示小于号，我们必须这样写：</p>
+<pre class="line-numbers language-none"><code class="language-none">$ 
+&lt; 或 &amp;#60; 或 &amp;#060;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>PS：使用实体名而不是数字的好处是，名称易于记忆。不过坏处是，浏览器也许并不支持所有实体名称（对实体数字的支持却很好）。</p>
+<h3 id="不间断空格"><a href="#不间断空格" class="headerlink" title="不间断空格"></a>不间断空格</h3><p>HTML 中的常用字符实体是不间断空格</p>
+<pre class="line-numbers language-none"><code class="language-none">$ 
+(&amp;nbsp;)。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>浏览器总是会截短 HTML 页面中的空格。如果您在文本中写 10 个空格，在显示该页面之前，浏览器会删除它们中的 9 个。如需在页面中增加空格的数量，您需要使用此字符实体。</p>
+<p>PS：虽然 html 不区分大小写，但实体字符对大小写敏感<br>其他的特殊字符就不一一赘述了，详情自行参考<a target="_blank" rel="noopener" href="https://www.runoob.com/html/html-entities.html">菜鸟教程</a>或者百度</p>
+<h2 id="URL（HTML统一资源定位器）"><a href="#URL（HTML统一资源定位器）" class="headerlink" title="URL（HTML统一资源定位器）"></a>URL（HTML统一资源定位器）</h2><p>URL 是一个网页地址。<br>URL可以由字母组成，如”runoob.com”，或互联网协议（IP）地址： 192.68.20.50。大多数人进入网站使用网站域名来访问，因为 名字比数字更容易记住。</p>
+<h3 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h3><p>Web浏览器通过URL从Web服务器请求页面。<br>当您点击 HTML 页面中的某个链接时，对应的 <a> 标签指向万维网上的一个地址。<br>一个统一资源定位器(URL) 用于定位万维网上的文档。<br>一个网页地址实例: <a target="_blank" rel="noopener" href="http://www.runoob.com/html/html-tutorial.html">http://www.runoob.com/html/html-tutorial.html</a> 语法规则:</a></p>
+<pre class="line-numbers language-none"><code class="language-none">$ 
+scheme:&#x2F;&#x2F;host.domain:port&#x2F;path&#x2F;filename<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>scheme - 定义因特网服务的类型。最常见的类型是 http<br>host - 定义域主机（http 的默认主机是 www）<br>domain - 定义因特网域名，比如 runoob.com<br>:port - 定义主机上的端口号（http 的默认端口号是 80）<br>path - 定义服务器上的路径（如果省略，则文档必须位于网站的根目录中）。<br>filename - 定义文档/资源的名称</p>
+<h3 id="常见的-URL-Scheme"><a href="#常见的-URL-Scheme" class="headerlink" title="常见的 URL Scheme"></a>常见的 URL Scheme</h3><p>常见的 URL Scheme:</p>
+<table border="1">
+            <tr>
+                <td>http</td>
+                <td>超文本传输协议</td>
+                <td>以 http:// 开头的普通网页。不加密。</td>
+            </tr>
+            <tr>
+                <td>https</td>
+                <td>安全超文本传输协议</td>
+                <td>安全网页，加密所有信息交换。</td>
+            </tr>
+                <tr>
+                <td>ftp</td>
+                <td>文件传输协议 </td>
+                <td>用于将文件下载或上传至网站。</td>
+            </tr>
+            <tr>
+                </tr><tr>
+                <td>file</td>
+                <td></td>
+                <td>您计算机上的文件。</td>
+            </tr>
+</table>
+
+<h3 id="URL-字符编码"><a href="#URL-字符编码" class="headerlink" title="URL 字符编码"></a>URL 字符编码</h3><p>URL 只能使用 ASCII 字符集.<br>来通过因特网进行发送。由于 URL 常常会包含 ASCII 集合之外的字符，URL 必须转换为有效的 ASCII 格式。<br>URL 编码使用 “%” 其后跟随两位的十六进制数来替换非 ASCII 字符。<br>URL 不能包含空格。URL 编码通常使用 + 来替换空格。</p>
+<h2 id="常用-HTML-标签简写及全称"><a href="#常用-HTML-标签简写及全称" class="headerlink" title="常用 HTML 标签简写及全称"></a>常用 HTML 标签简写及全称</h2><p>来自菜鸟教程的<a target="_blank" rel="noopener" href="https://www.runoob.com/html/html-tag-name.html">常用 HTML 标签简写及全称</a></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>###你已经完成了 HTML 的学习，下一步该学习什么呢？<br>####HTML 总结<br>本教程已教你如何使用 HTML 创建站点。<br>HTML 是一种在 Web 上使用的通用标记语言。HTML 允许你格式化文本，添加图片，创建链接、输入表单、框架和表格等等，并可将之存为文本文件，浏览器即可读取和显示。<br>HTML 的关键是标签，其作用是指示将出现的内容。<br>###现在，你已学完HTML，接下来该学习什么呢？<br>####学习 CSS<br>CSS被用来同时控制多重网页的样式和布局。<br>通过使用 CSS，所有的格式化均可从 HTML 中剥离出来，并存储于一个独立的文件中。<br>####学习 JavaScript<br>JavaScript 可以让你的网页更加生动。<br>如果你只想展示内容，静态网站是很好的展示形象，如果你想与用户进行交换或者让网页更加生动那就需要使用到Javascript。<br>JavaScript是互联网上最流行的脚本语言，目前所有主流浏览器都支持Javascript。<br>###站点服务器<br>在自己的服务器上托管网站始终是一个选项。有几点需要考虑：<br>硬件支出<br>如果要运行”真正”的网站，您不得不购买强大的服务器硬件。不要指望低价的 PC 能够应付这些工作。您还需要稳定的（一天 24 小时）高速连接。<br>软件支出<br>请记住，服务器授权通常比客户端授权更昂贵。同时请注意，服务器授权也许有用户数量限制。<br>人工费<br>不要指望低廉的人工费用。您必须安装自己的硬件和软件。您同时要处理漏洞和病毒，以确保您的服务器时刻正常地运行于一个”任何事都可能发生”的环境中。<br>###使用因特网服务提供商（ISP）<br>从 ISP 租用服务器也很常见。<br>大多数小公司会把网站存放到由 ISP 提供的服务器上。其优势有以下几点：<br>连接速度<br>大多数 ISP 都拥有连接因特网的高速连接。<br>强大的硬件<br>ISP 的 web 服务器通常强大到能够由若干网站分享资源。您还要看一下 ISP 是否提供高效的负载平衡，以及必要的备份服务器。<br>安全性和可靠性<br>ISP 是网站托管方面的专家。他们应该提供 99% 以上的在线时间，最新的软件补丁，以及最好的病毒防护。<br>选择 ISP 时的注意事项<br>24 小时支持<br>确保 ISP 提供 24 小时支持。不要使自己置于无法解决严重问题的尴尬境地，同时还必须等待第二个工作日。如果您不希望支付长途电话费，那么免费电话服务也是必要的。<br>每日备份<br>确保 ISP 会执行每日备份的例行工作，否则您有可能损失有价值的数据。<br>流量<br>研究一下 ISP 的流量限制。如果出现由于网站受欢迎而激增的不可预期的访问量，那么您要确保不会因此支付额外费用。<br>带宽或内容限制<br>研究一下 ISP 的带宽和内容限制。如果您计划发布图片或播出视频或音频，请确保您有此权限。<br>E-mail 功能<br>请确保 ISP 支持您需要的 e-mail 功能。<br>数据库访问<br>如果您计划使用网站数据库中的数据，那么请确保您的 ISP 支持您需要的数据库访问。</p>
 
                 
             </div>
@@ -434,12 +675,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%AD%A6%E4%B9%A0/">
-                                    <span class="chip bg-color">学习</span>
-                                </a>
-                            
                                 <a href="/tags/%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1/">
                                     <span class="chip bg-color">网页设计</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%AD%A6%E4%B9%A0/">
+                                    <span class="chip bg-color">学习</span>
                                 </a>
                             
                                 <a href="/tags/HTML/">
@@ -653,12 +894,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%AD%A6%E4%B9%A0/">
-                        <span class="chip bg-color">学习</span>
-                    </a>
-                    
                     <a href="/tags/%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1/">
                         <span class="chip bg-color">网页设计</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">学习</span>
                     </a>
                     
                     <a href="/tags/CSS/">

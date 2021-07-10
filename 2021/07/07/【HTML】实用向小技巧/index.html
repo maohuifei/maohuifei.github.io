@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="【网页设计】JavaScript的学习笔记, 猫会飞呀">
+    <meta name="keywords" content="【HTML】实用向小技巧, 猫会飞呀">
     <meta name="description" content="视觉设计师/商业插画/编程爱好者">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>【网页设计】JavaScript的学习笔记 | 猫会飞呀</title>
+    <title>【HTML】实用向小技巧 | 猫会飞呀</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -203,12 +203,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.pixabay.com/photo/2021/04/06/14/46/city-6156596_1280.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">【网页设计】JavaScript的学习笔记</h1>
+                    <h1 class="description center-align post-title">【HTML】实用向小技巧</h1>
                 </div>
             </div>
         </div>
@@ -234,12 +234,12 @@
                                 <span class="chip bg-color">网页设计</span>
                             </a>
                         
-                            <a href="/tags/%E5%AD%A6%E4%B9%A0/">
-                                <span class="chip bg-color">学习</span>
+                            <a href="/tags/HTML5/">
+                                <span class="chip bg-color">HTML5</span>
                             </a>
                         
-                            <a href="/tags/JavaScript/">
-                                <span class="chip bg-color">JavaScript</span>
+                            <a href="/tags/%E6%8A%80%E5%B7%A7/">
+                                <span class="chip bg-color">技巧</span>
                             </a>
                         
                     </div>
@@ -250,8 +250,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%8A%80%E8%83%BD%E6%94%B6%E5%BD%95/" class="post-category">
-                                技能收录
+                            <a href="/categories/%E6%95%99%E7%A8%8B%E4%B8%8E%E5%BF%83%E5%BE%97/" class="post-category">
+                                教程与心得
                             </a>
                         
                     </div>
@@ -263,21 +263,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-06-04
+                    2021-07-07
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-06-04
+                    2021-07-10
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    226
                 </div>
                 
 
@@ -297,8 +297,32 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <span id="more"></span>
+                <p>HTML5学习过程中收录整理的各种使用小技巧</p>
+<span id="more"></span>
 
+<h2 id="自定义超链接文本下划线"><a href="#自定义超链接文本下划线" class="headerlink" title="自定义超链接文本下划线"></a>自定义超链接文本下划线</h2><p>教程收录来自<a target="_blank" rel="noopener" href="https://www.w3cschool.cn/html5/question-10231595.html">原文链接</a></p>
+<h3 id="用CSS语法来控制超链接的形式、颜色变化"><a href="#用CSS语法来控制超链接的形式、颜色变化" class="headerlink" title="用CSS语法来控制超链接的形式、颜色变化"></a>用CSS语法来控制超链接的形式、颜色变化</h3><p>在herd中添加</p>
+<pre class="line-numbers language-none"><code class="language-none">$ 
+&lt;style type&#x3D;&quot;text&#x2F;css&quot;&gt;
+　　 &lt;!--
+　　 a:link &#123; text-decoration: none;color: blue&#125;
+　　 a:active &#123; text-decoration:blink&#125;
+　　 a:hover &#123; text-decoration:underline;color: red&#125; 
+　　 a:visited &#123; text-decoration: none;color: green&#125;
+　　 -－&gt; 
+&lt;&#x2F;style&gt;
+
+a:link 指正常的未被访问过的链接；
+a:active 指正在点的链接；
+a:hover 指鼠标在链接上；
+a:visited 指已经访问过的链接；
+text-decoration是文字修饰效果的意思；
+none参数表示超链接文字不显示下划线；
+underline参数表示超链接的文字有下划线<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="一次性去掉超链接下划线"><a href="#一次性去掉超链接下划线" class="headerlink" title="一次性去掉超链接下划线"></a>一次性去掉超链接下划线</h3><p>在herd中添加</p>
+<pre class="line-numbers language-none"><code class="language-none">$ 
+&lt;style&gt;a&#123;TEXT-DECORATION:none&#125;&lt;&#x2F;style&gt; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id><a href="#" class="headerlink" title></a></h3><h2 id="-1"><a href="#-1" class="headerlink" title></a></h2>
                 
             </div>
             <hr/>
@@ -324,7 +348,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://maohuifei.github.io/2021/06/04/%E3%80%90%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1%E3%80%91JavaScript%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">https://maohuifei.github.io/2021/06/04/%E3%80%90%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1%E3%80%91JavaScript%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</a>
+                    <a href="https://maohuifei.github.io/2021/07/07/%E3%80%90HTML%E3%80%91%E5%AE%9E%E7%94%A8%E5%90%91%E5%B0%8F%E6%8A%80%E5%B7%A7/">https://maohuifei.github.io/2021/07/07/%E3%80%90HTML%E3%80%91%E5%AE%9E%E7%94%A8%E5%90%91%E5%B0%8F%E6%8A%80%E5%B7%A7/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -366,12 +390,12 @@
                                     <span class="chip bg-color">网页设计</span>
                                 </a>
                             
-                                <a href="/tags/%E5%AD%A6%E4%B9%A0/">
-                                    <span class="chip bg-color">学习</span>
+                                <a href="/tags/HTML5/">
+                                    <span class="chip bg-color">HTML5</span>
                                 </a>
                             
-                                <a href="/tags/JavaScript/">
-                                    <span class="chip bg-color">JavaScript</span>
+                                <a href="/tags/%E6%8A%80%E5%B7%A7/">
+                                    <span class="chip bg-color">技巧</span>
                                 </a>
                             
                         </div>
@@ -543,9 +567,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/07/07/%E3%80%90HTML%E3%80%91%E5%AE%9E%E7%94%A8%E5%90%91%E5%B0%8F%E6%8A%80%E5%B7%A7/">
                     <div class="card-image">
@@ -562,9 +587,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-07
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-07
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -577,6 +602,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -603,13 +629,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/06/04/%E3%80%90%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1%E3%80%91CSS%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                <a href="/2021/06/04/%E3%80%90%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1%E3%80%91JavaScript%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="【网页设计】CSS的学习笔记">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="【网页设计】JavaScript的学习笔记">
                         
-                        <span class="card-title">【网页设计】CSS的学习笔记</span>
+                        <span class="card-title">【网页设计】JavaScript的学习笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -645,8 +671,8 @@
                         <span class="chip bg-color">学习</span>
                     </a>
                     
-                    <a href="/tags/CSS/">
-                        <span class="chip bg-color">CSS</span>
+                    <a href="/tags/JavaScript/">
+                        <span class="chip bg-color">JavaScript</span>
                     </a>
                     
                 </div>
