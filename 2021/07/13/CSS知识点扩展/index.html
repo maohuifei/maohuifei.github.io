@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="泰戈尔《飞鸟集》阅读笔记, 猫会飞呀">
+    <meta name="keywords" content="CSS知识点扩展, 猫会飞呀">
     <meta name="description" content="视觉设计师/商业插画/编程爱好者">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>泰戈尔《飞鸟集》阅读笔记 | 猫会飞呀</title>
+    <title>CSS知识点扩展 | 猫会飞呀</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -203,12 +203,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">泰戈尔《飞鸟集》阅读笔记</h1>
+                    <h1 class="description center-align post-title">CSS知识点扩展</h1>
                 </div>
             </div>
         </div>
@@ -324,16 +324,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E8%AF%BB%E4%B9%A6/">
-                                <span class="chip bg-color">读书</span>
+                            <a href="/tags/CSS/">
+                                <span class="chip bg-color">CSS</span>
                             </a>
                         
-                            <a href="/tags/%E6%B3%B0%E6%88%88%E5%B0%94/">
-                                <span class="chip bg-color">泰戈尔</span>
+                            <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                                <span class="chip bg-color">学习笔记</span>
                             </a>
                         
-                            <a href="/tags/%E5%8D%B0%E5%BA%A6%E6%96%87%E5%AD%A6/">
-                                <span class="chip bg-color">印度文学</span>
+                            <a href="/tags/Web%E5%89%8D%E7%AB%AF/">
+                                <span class="chip bg-color">Web前端</span>
                             </a>
                         
                     </div>
@@ -344,8 +344,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E4%B8%8E%E6%84%9F%E6%82%9F/" class="post-category">
-                                读书笔记与感悟
+                            <a href="/categories/%E6%8A%80%E8%83%BD%E6%94%B6%E5%BD%95/" class="post-category">
+                                技能收录
                             </a>
                         
                     </div>
@@ -357,21 +357,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-04-28
+                    2021-07-13
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-05-26
+                    2021-07-13
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    39
+                    575
                 </div>
                 
 
@@ -391,8 +391,65 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>夏天的飞鸟，飞到我窗前唱歌，又飞去了。<br>秋天的黄叶，他们没有什么可唱，只叹息一声，飞落在哪里。</p>
+                <p>收录总结CSS学习中的知识点扩展</p>
 <span id="more"></span>
+
+<h2 id="多重样式优先级深入概念"><a href="#多重样式优先级深入概念" class="headerlink" title="多重样式优先级深入概念"></a>多重样式优先级深入概念</h2><p>优先级是浏览器是通过判断哪些属性值与元素最相关以决定并应用到该元素上的。优先级仅由选择器组成的匹配规则决定的。<br>优先级就是分配给指定的CSS声明的一个权重，它由匹配的选择器中的每一种选择器类型的数值决定。</p>
+<p>下列是一份优先级逐级增加的选择器列表：</p>
+<ul>
+    <li>通用选择器（*)</li>
+    <li>元素(类型)选择器</li>
+    <li>类选择器</li>
+    <li>属性选择器</li>
+    <li>伪类</li>
+    <li>ID 选择器</li>
+    <li>内联样式</li>
+</ul>
+
+<p><b>!important 规则例外<br>当 !important 规则被应用在一个样式声明中时,该样式声明会覆盖CSS中任何其他的声明, 无论它处在声明列表中的哪里. 尽管如此, !important规则还是与优先级毫无关系.使用 !important 不是一个好习惯，因为它改变了你样式表本来的级联规则，从而使其难以调试。</b><br>一些经验法则：</p>
+<ul>
+    <li>Always 要优化考虑使用样式规则的优先级来解决问题而不是 <i>!important</i></li>
+    <li>Only 只在需要覆盖全站或外部 css（例如引用的 ExtJs 或者 YUI ）的特定页面中使用<i>!important</i></li>
+    <li>Never 永远不要在全站范围的 css 上使用<i>!important</i></li>
+    <li>Never 永远不要在你的插件中使用<i>!important</i></li>
+</ul>
+<b>权重计算</b>
+
+<p><img src="/2021/07/13/CSS%E7%9F%A5%E8%AF%86%E7%82%B9%E6%89%A9%E5%B1%95/001.png"><br>解释：</p>
+<ul>
+    <li>内联样式表的权值最高 1000</li>
+    <li>ID 选择器的权值为 100</li>
+    <li>Class 类选择器的权值为 10</li>
+    <li>HTML 标签选择器的权值为 1</li>
+</ul>
+
+<h3 id="CSS样式优先级"><a href="#CSS样式优先级" class="headerlink" title="CSS样式优先级"></a>CSS样式优先级</h3><p>内联样式 &gt; 内部样式表 &gt; 外部样式表 &gt; 浏览器样式表</p>
+<h4 id="css-7-种选择器："><a href="#css-7-种选择器：" class="headerlink" title="css 7 种选择器："></a>css 7 种选择器：</h4><ul>
+    <li> id 选择器</li>
+    <li> 类选择器</li>
+    <li> 伪类选择器</li>
+    <li> 属性选择器</li>
+    <li> 伪元素选择器</li>
+    <li> 通配选择器</li>
+    <li> 标签选择器</li>
+</ul>
+
+<h4 id="css选择器优先规则"><a href="#css选择器优先规则" class="headerlink" title="css选择器优先规则"></a>css选择器优先规则</h4><p>内联样式 &gt; id 选择器 &gt; 类选择器 = 伪类选择器 = 属性选择器 &gt; 标签选择器 = 伪元素选择器</p>
+<h4 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h4><p>HTML:</p>
+<pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">$ 
+&lt;div class&#x3D;&quot;content-class&quot; id&#x3D;&quot;content-id&quot;&gt;&lt;&#x2F;div&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>CSS:</p>
+<pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+#content-id &#123;
+    color: red;
+&#125;
+.content-class &#123;
+    color: blue;
+&#125;
+div &#123;
+    color: grey;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>div的最终显示结果为红色</p>
 
                 
             </div>
@@ -419,7 +476,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://maohuifei.github.io/2021/04/28/%E6%B3%B0%E6%88%88%E5%B0%94%E3%80%8A%E9%A3%9E%E9%B8%9F%E9%9B%86%E3%80%8B%E8%AF%BB%E5%90%8E%E6%84%9F/">https://maohuifei.github.io/2021/04/28/%E6%B3%B0%E6%88%88%E5%B0%94%E3%80%8A%E9%A3%9E%E9%B8%9F%E9%9B%86%E3%80%8B%E8%AF%BB%E5%90%8E%E6%84%9F/</a>
+                    <a href="https://maohuifei.github.io/2021/07/13/CSS%E7%9F%A5%E8%AF%86%E7%82%B9%E6%89%A9%E5%B1%95/">https://maohuifei.github.io/2021/07/13/CSS%E7%9F%A5%E8%AF%86%E7%82%B9%E6%89%A9%E5%B1%95/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -457,16 +514,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E8%AF%BB%E4%B9%A6/">
-                                    <span class="chip bg-color">读书</span>
+                                <a href="/tags/CSS/">
+                                    <span class="chip bg-color">CSS</span>
                                 </a>
                             
-                                <a href="/tags/%E6%B3%B0%E6%88%88%E5%B0%94/">
-                                    <span class="chip bg-color">泰戈尔</span>
+                                <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                                    <span class="chip bg-color">学习笔记</span>
                                 </a>
                             
-                                <a href="/tags/%E5%8D%B0%E5%BA%A6%E6%96%87%E5%AD%A6/">
-                                    <span class="chip bg-color">印度文学</span>
+                                <a href="/tags/Web%E5%89%8D%E7%AB%AF/">
+                                    <span class="chip bg-color">Web前端</span>
                                 </a>
                             
                         </div>
@@ -642,24 +699,24 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/05/13/%E3%80%90V2Ray%E7%AF%87%E3%80%91V2Ray%E4%BB%8B%E7%BB%8D/">
+                <a href="/2021/07/13/HTML%E7%9F%A5%E8%AF%86%E7%82%B9%E6%89%A9%E5%B1%95/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="【V2Ray篇】V2Ray介绍">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="HTML知识点扩展">
                         
-                        <span class="card-title">【V2Ray篇】V2Ray介绍</span>
+                        <span class="card-title">HTML知识点扩展</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            V2Ray（也简称V2），是Victoria Raymond开发的Project V下的一个工具。Project V是一个工具集合，号称可以帮助其使用者打造专属的基础通信网络。Project V的核心工具称为V2Ray，其主要负责网络协议和
+                            收录总结HTML学习中的知识点扩展
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-05-13
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-13
                         </span>
                         <span class="publish-author">
                             
@@ -676,16 +733,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/V2Ray/">
-                        <span class="chip bg-color">V2Ray</span>
+                    <a href="/tags/HTML/">
+                        <span class="chip bg-color">HTML</span>
                     </a>
                     
-                    <a href="/tags/%E4%BB%A3%E7%90%86%E5%B7%A5%E5%85%B7/">
-                        <span class="chip bg-color">代理工具</span>
+                    <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">学习笔记</span>
                     </a>
                     
-                    <a href="/tags/%E4%BA%91%E5%85%8D/">
-                        <span class="chip bg-color">云免</span>
+                    <a href="/tags/Web%E5%89%8D%E7%AB%AF/">
+                        <span class="chip bg-color">Web前端</span>
                     </a>
                     
                 </div>
@@ -699,31 +756,31 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/04/28/%E6%B3%B0%E6%88%88%E5%B0%94%E3%80%8A%E6%96%B0%E6%9C%88%E9%9B%86%E3%80%8B%E8%AF%BB%E5%90%8E%E6%84%9F/">
+                <a href="/2021/06/04/%E3%80%90%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1%E3%80%91JavaScript%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="泰戈尔《新月集》阅读笔记">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="【网页设计】JavaScript的学习笔记">
                         
-                        <span class="card-title">泰戈尔《新月集》阅读笔记</span>
+                        <span class="card-title">【网页设计】JavaScript的学习笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            我独自在横跨过田地的路上走着，夕阳像一个守财奴似的，正藏起它的最后的金子。白昼更加深沉地投入黑暗之中，那已经收割了的孤寂的田地，默默地躺在那里。天空里突然升起了一个男孩子的尖锐的歌声。他穿过看不见的黑暗，留下他的歌声的辙痕跨过黄昏的静谧。他
+                            JavaScript（简称“JS”） 是一种具有函数优先的轻量级，解释型或即时编译型的编程语言。虽然它是作为开发Web页面的脚本语言而出名，但是它也被用到了很多非浏览器环境中，JavaScript 基于原型编程、多范式的动态脚本语言，并且支
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-28
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-04
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E4%B8%8E%E6%84%9F%E6%82%9F/" class="post-category">
-                                    读书笔记与感悟
+                            <a href="/categories/%E6%8A%80%E8%83%BD%E6%94%B6%E5%BD%95/" class="post-category">
+                                    技能收录
                                 </a>
                             
                             
@@ -733,16 +790,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%AF%BB%E4%B9%A6/">
-                        <span class="chip bg-color">读书</span>
+                    <a href="/tags/%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1/">
+                        <span class="chip bg-color">网页设计</span>
                     </a>
                     
-                    <a href="/tags/%E6%B3%B0%E6%88%88%E5%B0%94/">
-                        <span class="chip bg-color">泰戈尔</span>
+                    <a href="/tags/%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">学习</span>
                     </a>
                     
-                    <a href="/tags/%E5%8D%B0%E5%BA%A6%E6%96%87%E5%AD%A6/">
-                        <span class="chip bg-color">印度文学</span>
+                    <a href="/tags/JavaScript/">
+                        <span class="chip bg-color">JavaScript</span>
                     </a>
                     
                 </div>

@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="【HTML】实用向小技巧, 猫会飞呀">
+    <meta name="keywords" content="HTML知识点扩展, 猫会飞呀">
     <meta name="description" content="视觉设计师/商业插画/编程爱好者">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>【HTML】实用向小技巧 | 猫会飞呀</title>
+    <title>HTML知识点扩展 | 猫会飞呀</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -203,12 +203,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.pixabay.com/photo/2021/04/06/14/46/city-6156596_1280.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">【HTML】实用向小技巧</h1>
+                    <h1 class="description center-align post-title">HTML知识点扩展</h1>
                 </div>
             </div>
         </div>
@@ -218,10 +218,104 @@
 
 
 
-<main class="container content">
+<main class="post-container content">
 
     
-    <!-- 文章内容详情 -->
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
 <div id="artDetail">
     <div class="card">
         <div class="card-content article-info">
@@ -230,16 +324,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1/">
-                                <span class="chip bg-color">网页设计</span>
+                            <a href="/tags/HTML/">
+                                <span class="chip bg-color">HTML</span>
                             </a>
                         
-                            <a href="/tags/HTML5/">
-                                <span class="chip bg-color">HTML5</span>
+                            <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                                <span class="chip bg-color">学习笔记</span>
                             </a>
                         
-                            <a href="/tags/%E6%8A%80%E5%B7%A7/">
-                                <span class="chip bg-color">技巧</span>
+                            <a href="/tags/Web%E5%89%8D%E7%AB%AF/">
+                                <span class="chip bg-color">Web前端</span>
                             </a>
                         
                     </div>
@@ -250,8 +344,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%95%99%E7%A8%8B%E4%B8%8E%E5%BF%83%E5%BE%97/" class="post-category">
-                                教程与心得
+                            <a href="/categories/%E6%8A%80%E8%83%BD%E6%94%B6%E5%BD%95/" class="post-category">
+                                技能收录
                             </a>
                         
                     </div>
@@ -263,21 +357,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-07-07
+                    2021-07-13
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-07-10
+                    2021-07-13
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    226
+                    14
                 </div>
                 
 
@@ -297,32 +391,9 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>HTML5学习过程中收录整理的各种使用小技巧</p>
+                <p>收录总结HTML学习中的知识点扩展</p>
 <span id="more"></span>
 
-<h2 id="自定义超链接文本下划线"><a href="#自定义超链接文本下划线" class="headerlink" title="自定义超链接文本下划线"></a>自定义超链接文本下划线</h2><p>教程收录来自<a target="_blank" rel="noopener" href="https://www.w3cschool.cn/html5/question-10231595.html">原文链接</a></p>
-<h3 id="用CSS语法来控制超链接的形式、颜色变化"><a href="#用CSS语法来控制超链接的形式、颜色变化" class="headerlink" title="用CSS语法来控制超链接的形式、颜色变化"></a>用CSS语法来控制超链接的形式、颜色变化</h3><p>在herd中添加</p>
-<pre class="line-numbers language-none"><code class="language-none">$ 
-&lt;style type&#x3D;&quot;text&#x2F;css&quot;&gt;
-　　 &lt;!--
-　　 a:link &#123; text-decoration: none;color: blue&#125;
-　　 a:active &#123; text-decoration:blink&#125;
-　　 a:hover &#123; text-decoration:underline;color: red&#125; 
-　　 a:visited &#123; text-decoration: none;color: green&#125;
-　　 -－&gt; 
-&lt;&#x2F;style&gt;
-
-a:link 指正常的未被访问过的链接；
-a:active 指正在点的链接；
-a:hover 指鼠标在链接上；
-a:visited 指已经访问过的链接；
-text-decoration是文字修饰效果的意思；
-none参数表示超链接文字不显示下划线；
-underline参数表示超链接的文字有下划线<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="一次性去掉超链接下划线"><a href="#一次性去掉超链接下划线" class="headerlink" title="一次性去掉超链接下划线"></a>一次性去掉超链接下划线</h3><p>在herd中添加</p>
-<pre class="line-numbers language-none"><code class="language-none">$ 
-&lt;style&gt;a&#123;TEXT-DECORATION:none&#125;&lt;&#x2F;style&gt; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h3 id><a href="#" class="headerlink" title></a></h3><h2 id="-1"><a href="#-1" class="headerlink" title></a></h2>
                 
             </div>
             <hr/>
@@ -348,7 +419,7 @@ underline参数表示超链接的文字有下划线<span aria-hidden="true" clas
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://maohuifei.github.io/2021/07/07/%E3%80%90HTML%E3%80%91%E5%AE%9E%E7%94%A8%E5%90%91%E5%B0%8F%E6%8A%80%E5%B7%A7/">https://maohuifei.github.io/2021/07/07/%E3%80%90HTML%E3%80%91%E5%AE%9E%E7%94%A8%E5%90%91%E5%B0%8F%E6%8A%80%E5%B7%A7/</a>
+                    <a href="https://maohuifei.github.io/2021/07/13/HTML%E7%9F%A5%E8%AF%86%E7%82%B9%E6%89%A9%E5%B1%95/">https://maohuifei.github.io/2021/07/13/HTML%E7%9F%A5%E8%AF%86%E7%82%B9%E6%89%A9%E5%B1%95/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -386,16 +457,16 @@ underline参数表示超链接的文字有下划线<span aria-hidden="true" clas
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1/">
-                                    <span class="chip bg-color">网页设计</span>
+                                <a href="/tags/HTML/">
+                                    <span class="chip bg-color">HTML</span>
                                 </a>
                             
-                                <a href="/tags/HTML5/">
-                                    <span class="chip bg-color">HTML5</span>
+                                <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                                    <span class="chip bg-color">学习笔记</span>
                                 </a>
                             
-                                <a href="/tags/%E6%8A%80%E5%B7%A7/">
-                                    <span class="chip bg-color">技巧</span>
+                                <a href="/tags/Web%E5%89%8D%E7%AB%AF/">
+                                    <span class="chip bg-color">Web前端</span>
                                 </a>
                             
                         </div>
@@ -572,30 +643,31 @@ underline参数表示超链接的文字有下划线<span aria-hidden="true" clas
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2021/07/07/%E3%80%90HTML%E3%80%91%E5%AE%9E%E7%94%A8%E5%90%91%E5%B0%8F%E6%8A%80%E5%B7%A7/">
+                <a href="/2021/07/13/HTML%E7%9F%A5%E8%AF%86%E7%82%B9%E6%89%A9%E5%B1%95/">
                     <div class="card-image">
                         
-                        <img src="https://cdn.pixabay.com/photo/2021/04/06/14/46/city-6156596_1280.jpg" class="responsive-img" alt="【HTML】实用向小技巧">
                         
-                        <span class="card-title">【HTML】实用向小技巧</span>
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="HTML知识点扩展">
+                        
+                        <span class="card-title">HTML知识点扩展</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            HTML5学习过程中收录整理的各种使用小技巧
+                            收录总结HTML学习中的知识点扩展
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-07
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-13
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%95%99%E7%A8%8B%E4%B8%8E%E5%BF%83%E5%BE%97/" class="post-category">
-                                    教程与心得
+                            <a href="/categories/%E6%8A%80%E8%83%BD%E6%94%B6%E5%BD%95/" class="post-category">
+                                    技能收录
                                 </a>
                             
                             
@@ -606,16 +678,16 @@ underline参数表示超链接的文字有下划线<span aria-hidden="true" clas
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1/">
-                        <span class="chip bg-color">网页设计</span>
+                    <a href="/tags/HTML/">
+                        <span class="chip bg-color">HTML</span>
                     </a>
                     
-                    <a href="/tags/HTML5/">
-                        <span class="chip bg-color">HTML5</span>
+                    <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">学习笔记</span>
                     </a>
                     
-                    <a href="/tags/%E6%8A%80%E5%B7%A7/">
-                        <span class="chip bg-color">技巧</span>
+                    <a href="/tags/Web%E5%89%8D%E7%AB%AF/">
+                        <span class="chip bg-color">Web前端</span>
                     </a>
                     
                 </div>
@@ -629,24 +701,24 @@ underline参数表示超链接的文字有下划线<span aria-hidden="true" clas
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/06/04/%E3%80%90%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1%E3%80%91JavaScript%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                <a href="/2021/07/13/CSS%E7%9F%A5%E8%AF%86%E7%82%B9%E6%89%A9%E5%B1%95/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="【网页设计】JavaScript的学习笔记">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="CSS知识点扩展">
                         
-                        <span class="card-title">【网页设计】JavaScript的学习笔记</span>
+                        <span class="card-title">CSS知识点扩展</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            收录总结CSS学习中的知识点扩展
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-04
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-13
                             </span>
                         <span class="publish-author">
                             
@@ -663,16 +735,16 @@ underline参数表示超链接的文字有下划线<span aria-hidden="true" clas
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1/">
-                        <span class="chip bg-color">网页设计</span>
+                    <a href="/tags/CSS/">
+                        <span class="chip bg-color">CSS</span>
                     </a>
                     
-                    <a href="/tags/%E5%AD%A6%E4%B9%A0/">
-                        <span class="chip bg-color">学习</span>
+                    <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">学习笔记</span>
                     </a>
                     
-                    <a href="/tags/JavaScript/">
-                        <span class="chip bg-color">JavaScript</span>
+                    <a href="/tags/Web%E5%89%8D%E7%AB%AF/">
+                        <span class="chip bg-color">Web前端</span>
                     </a>
                     
                 </div>
@@ -741,6 +813,100 @@ underline参数表示超链接的文字有下划线<span aria-hidden="true" clas
 
 <script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
 
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
 
     
 

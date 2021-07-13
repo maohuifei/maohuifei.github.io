@@ -218,10 +218,104 @@
 
 
 
-<main class="container content">
+<main class="post-container content">
 
     
-    <!-- 文章内容详情 -->
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
 <div id="artDetail">
     <div class="card">
         <div class="card-content article-info">
@@ -270,14 +364,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-06-04
+                    2021-07-13
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    1.7k
                 </div>
                 
 
@@ -297,8 +391,135 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <span id="more"></span>
+                <p>层叠样式表(英文全称：Cascading Style Sheets)<br>是一种用来表现HTML（标准通用标记语言的一个应用）或XML（标准通用标记语言的一个子集）等文件样式的计算机语言。<br>CSS不仅可以静态地修饰网页，还可以配合各种脚本语言动态地对网页各元素进行格式化。</p>
+<span id="more"></span>
 
+<h2 id="什么是CSS？"><a href="#什么是CSS？" class="headerlink" title="什么是CSS？"></a>什么是CSS？</h2><ol>
+    <li>叠层样式表Cascading Style Sheets</li>
+    <li>样式定义如何显示HTML元素</li>
+    <li>样式通常存储在样式表中、外部样式表通常存储在CSS文件中</li>
+    <li>外部样式表可以极大的提高工作效率</li>
+    <li>多个样式定义可层叠为一个</li>
+</ol>
+样式解决了很大一个问题
+样式表定义如何显示 HTML 元素，就像 HTML 中的字体标签和颜色属性所起的作用那样。
+样式通常保存在外部的 .css 文件中。
+我们只需要编辑一个简单的 CSS 文档就可以改变所有页面的布局和外观。
+
+<h2 id="CSS语法"><a href="#CSS语法" class="headerlink" title="CSS语法"></a>CSS语法</h2><p>CSS规则由两个主要的部分构成：<b>选择器、一条或者多条声明</b><br><img src="/2021/06/04/%E3%80%90%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1%E3%80%91CSS%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/001.jpg"><br>选择器是需要修改的HTML元素<br>声明是由一个属性和一个值组成<br>属性是样式的属性，每个属性有一个值，属性间用冒号隔开</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+mycss
+	&#123;
+		color：#000000;
+		text-aling：center;
+	&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>以分号；结束，声明部分用大括号{}括起来</p>
+<h3 id="CSS注释"><a href="#CSS注释" class="headerlink" title="CSS注释"></a>CSS注释</h3><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+&#x2F;*这是一行注释*&#x2F;
+mycss
+	&#123;
+		color：#000000;
+		text-aling：center;
+	&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="id和class"><a href="#id和class" class="headerlink" title="id和class"></a>id和class</h2><p>如果你要在HTML元素中设置CSS样式，你需要在元素中设置”id” 和 “class”选择器。</p>
+<h3 id="id选择器"><a href="#id选择器" class="headerlink" title="id选择器"></a>id选择器</h3><p>id 选择器可以为标有特定 id 的 HTML 元素指定特定的样式。<br>HTML元素以id属性来设置id选择器,CSS 中 id 选择器以 “#” 来定义。<br>以下的样式规则应用于元素属性 id=”mycss1”:</p>
+<pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+#mycss
+	&#123;
+		color：#000000;
+		text-aling：center;
+	&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>PS:ID属性不要以数字开头，数字开头的ID在 Mozilla/Firefox 浏览器中不起作用。</p>
+<h3 id="class选择器"><a href="#class选择器" class="headerlink" title="class选择器"></a>class选择器</h3><p>class 选择器用于描述一组元素的样式，class 选择器有别于id选择器，class可以在多个元素中使用。<br>class 选择器在HTML中以class属性表示, 在 CSS 中，类选择器以一个点”.”号显示：<br>在以下的例子中，所有拥有 center 类的 HTML 元素均为居中。</p>
+<pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+.center&#123;text-aling:center;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>在以下实例中, 所有的 p 元素使用 class=”center” 让该元素的文本居中:</p>
+<pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+p.center&#123;text&#x3D;aling:center;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>PS:类名的第一个字符不能使用数字！它无法在 Mozilla 或 Firefox 中起作用。</p>
+<p>##CSS创建</p>
+<h3 id="如何插入样式表"><a href="#如何插入样式表" class="headerlink" title="如何插入样式表"></a>如何插入样式表</h3><p>插入样式表的方法有三种：</p>
+<ol>
+    <li>外部样式表 External style sheet</li>
+    <li>内部样式表 Internal style sheet</li>
+    <li>内联样式 Inline style</li>
+</ol>
+
+<h4 id="外部样式表"><a href="#外部样式表" class="headerlink" title="外部样式表"></a>外部样式表</h4><p>当样式需要应用于很多页面时，外部样式表时最理想的选择。<br>可以通过改变一个文件来改变整个站点的样式<br>每个界面使用 link 标签连接到样式表，link 标签在文档的头部</p>
+<pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+&lt;head&gt;
+	&lt;link rel&#x3D;&quot;stylesheet&quot; type&#x3D;&quot;text&#x2F;css&quot; href&#x3D;&quot;mystyle.css&quot;&gt;
+&lt;&#x2F;head&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>浏览器会从文件 mystyle.css 中读到样式声明，并根据它来格式文档。<br>外部样式表可以在任何文本编辑器中进行编辑。<br>文件不能包含任何的 html 标签。样式表应该以 .css 扩展名进行保存。<br>下面是一个样式表文件的例子：</p>
+<pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+hr &#123;color:sienna;&#125;
+p &#123;margin-left:20px;&#125;
+body &#123;background-image:url(&quot;&#x2F;images&#x2F;back40.gif&quot;);&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>PS：不要在属性值与单位之间留有空格（如：”margin-left: 20 px” ），正确的写法是 “margin-left: 20px” 。</p>
+<h4 id="内部样式表"><a href="#内部样式表" class="headerlink" title="内部样式表"></a>内部样式表</h4><p>当单个文档需要特殊的样式时，就应该使用内部样式表。你可以使用 style 标签在文档头部定义内部样式表，就像这样:</p>
+<pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+&lt;head&gt;
+	&lt;style&gt;
+		hr &#123;color:sienna;&#125;
+		p &#123;margin-left:20px;&#125;
+		body &#123;background-image:url(&quot;&#x2F;images&#x2F;back40.gif&quot;);&#125;
+	&lt;&#x2F;style&gt;
+&lt;&#x2F;head&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="内联样式"><a href="#内联样式" class="headerlink" title="内联样式"></a>内联样式</h4><p>请慎用这种方法，例如当样式仅需要在一个元素上应用一次时。<br>由于要将表现和内容混杂在一起，内联样式会损失掉样式表的许多优势。<br>要使用内联样式，需要在相关的标签内使用样式（style）属性。<br>Style 属性可以包含任何 CSS 属性。<br>本例展示如何改变段落的颜色和左外边距：</p>
+<pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+&lt;p style&#x3D;&quot;color:sienna;margin-left:20px&quot;&gt;这是一个段落。&lt;&#x2F;p&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h4 id="多重样式"><a href="#多重样式" class="headerlink" title="多重样式"></a>多重样式</h4><p>如果某些属性在不同的样式表中被同样的选择器定义，那么属性值将从更具体的样式表中被继承过来。<br>例如，外部样式表拥有针对 h3 选择器的三个属性：</p>
+<pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+h3
+&#123;
+    color:red;
+    text-align:left;
+    font-size:8pt;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>而内部样式表拥有针对 h3 选择器的两个属性：</p>
+<pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+h3
+&#123;
+    text-align:right;
+    font-size:20pt;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>假如拥有内部样式表的这个页面同时与外部样式表链接，那么 h3 得到的样式是：</p>
+<pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+color:red;
+text-align:right;
+font-size:20pt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>即颜色属性将被继承于外部样式表，而文字排列（text-alignment）和字体尺寸（font-size）会被内部样式表中的规则取代。<br><b>多重样式的优先级一般为：<br>（内联样式）Inline style &gt; （内部样式）Internal style sheet &gt;（外部样式）External style sheet &gt; 浏览器样式表</b></p>
+<pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+&lt;head&gt;
+    &lt;!-- 外部样式 style.css --&gt;
+    &lt;link rel&#x3D;&quot;stylesheet&quot; type&#x3D;&quot;text&#x2F;css&quot; href&#x3D;&quot;style.css&quot;&#x2F;&gt;
+    &lt;!-- 设置：h3&#123;color:blue;&#125; --&gt;
+    &lt;style type&#x3D;&quot;text&#x2F;css&quot;&gt;
+      &#x2F;* 内部样式 *&#x2F;
+      h3&#123;color:green;&#125;
+    &lt;&#x2F;style&gt;
+&lt;&#x2F;head&gt;
+&lt;body&gt;
+    &lt;h3&gt;测试！&lt;&#x2F;h3&gt;
+&lt;&#x2F;body&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>如果内部样式在外部样式后面，外部样式将覆盖内部样式<br><b>关于多重样式优先级，可参考本站文章：<a href="https://maohuifei.github.io/2021/07/13/CSS%E7%9F%A5%E8%AF%86%E7%82%B9%E6%89%A9%E5%B1%95/">多重样式优先级深入概念</a></b></p>
+<h2 id="背景-backgrounds"><a href="#背景-backgrounds" class="headerlink" title="背景(backgrounds)"></a>背景(backgrounds)</h2><p>CSS 背景属性用于定义HTML元素的背景。<br><di><br>    <dt><b>1.background-color    设置元素的背景颜色。</b></dt><br>    <dt><b>2.background-image    把图像设置为背景。</b></dt><br>    <dd>①background-repeat    设置背景图像是否及如何重复。</dd><br>    <dd>②background-attachment    背景图像是否固定或者随着页面的其余部分滚动。</dd><br>    <dd>③background-position    设置背景图像的起始位置。</dd><br></di></p>
+<h3 id="背景颜色-background-color"><a href="#背景颜色-background-color" class="headerlink" title="背景颜色(background-color)"></a>背景颜色(background-color)</h3><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+h1 &#123;background-color:#b0c4de;&#125;
+p &#123;background-color:#b0c4de;&#125;
+div &#123;background-color:#b0c4de;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>CSS中颜色通常以以下方式定义:</p>
+<ul>
+    <li>十六进制 - 如："#ff0000"</li>
+    <li>RGB - 如："rgb(255,0,0)"</li>
+    <li>颜色名称 - 如："red"</li>
+</ul>
+
+<h3 id="背景图片-background-image"><a href="#背景图片-background-image" class="headerlink" title="背景图片(background-image)"></a>背景图片(background-image)</h3><p>默认情况下，背景图像进行平铺重复显示，以覆盖整个元素实体</p>
+<pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+body &#123;background-image:url(&#39;paper.gif&#39;);&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h4 id><a href="#" class="headerlink" title></a></h4>
                 
             </div>
             <hr/>
@@ -559,7 +780,7 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            JavaScript（简称“JS”） 是一种具有函数优先的轻量级，解释型或即时编译型的编程语言。虽然它是作为开发Web页面的脚本语言而出名，但是它也被用到了很多非浏览器环境中，JavaScript 基于原型编程、多范式的动态脚本语言，并且支
                         
                     </div>
                     <div class="publish-info">
@@ -716,6 +937,100 @@
 
 <script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
 
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
 
     
 
