@@ -1,475 +1,162 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hexo Next 主题的个性化配置</title>
-    <url>/2021/04/16/Hexo-Next-%E4%B8%BB%E9%A2%98%E7%9A%84%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<p>个人收录整理的 Hexo Next 主题 官方教程之外的 进阶实用个性化配置(不定时更新)</p>
+    <title>如何搭建一个属于自己的个人博客</title>
+    <url>/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<p>— 博客，音译，英文名为Blogger，它的正式名称为网络日记；是使用特定的软件，在网络上出版、发表和张贴个人文章的人，或者是一种通常由个人管理、不定期张贴新的文章的网站。博客是继MSN、BBS、ICQ之后出现的第4种网络交流方式，是网络时代的个人“读者文摘”，它代表着新的生活、工作和学习方式。</p>
 <span id="more"></span>
 
-<h2 id="添加动态背景"><a href="#添加动态背景" class="headerlink" title="添加动态背景"></a>添加动态背景</h2><p>找到themes\next\layout_layout.swig文件，添加内容：<br>在 &lt; /body&gt;之前添加：</p>
-
-
-<p>打开主题配置文件 /next/_config.yml,在里面添加（可以在最后）：<br>canvas_nest: true<br>完成</p>
-<h2 id="设置边框圆角"><a href="#设置边框圆角" class="headerlink" title="设置边框圆角"></a>设置边框圆角</h2><h2 id="设置板块半透明"><a href="#设置板块半透明" class="headerlink" title="设置板块半透明"></a>设置板块半透明</h2><h2 id><a href="#" class="headerlink" title></a></h2>]]></content>
-      <categories>
-        <category>Hexo博客主题配置</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>Next</tag>
-        <tag>博客</tag>
-        <tag>主题</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo matery 主题的个性化配置</title>
-    <url>/2021/04/16/Hexo-matery-%E4%B8%BB%E9%A2%98%E7%9A%84%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<p>个人收录整理的 Hexo matery 主题 官方教程之外的 进阶实用个性化配置(不定时更新)</p>
-<span id="more"></span>
-
-<h2 id="顶部栏颜色的更改"><a href="#顶部栏颜色的更改" class="headerlink" title="顶部栏颜色的更改"></a>顶部栏颜色的更改</h2><p>打开 matery/source/css/matery.css 文件 搜索 .bg-color<br>修改background-image属性中linear-gradient内的颜色色值（具体色值可以百度或者用PS查看）<br>色值相同是单色效果，两个色值不同就是渐变效果</p>
-<h2 id="顶部Banner的图片和文章特色图的更改"><a href="#顶部Banner的图片和文章特色图的更改" class="headerlink" title="顶部Banner的图片和文章特色图的更改"></a>顶部Banner的图片和文章特色图的更改</h2><p>在 /source/medias/banner 文件夹中，把喜欢的图片重命名覆盖原来的图片即可，主题代码中默认是每天切换<br>在图片网站中找到喜欢的图片，右击复制图片链接。粘贴图片链接到新建文章的头文件img参数后面即可</p>
-<h2 id="顶部Banner颜色滤镜的删除"><a href="#顶部Banner颜色滤镜的删除" class="headerlink" title="顶部Banner颜色滤镜的删除"></a>顶部Banner颜色滤镜的删除</h2><p>打开 matery/source/css/matery.css 文件 搜索 .bg-color<br><img src="/2021/04/16/Hexo-matery-%E4%B8%BB%E9%A2%98%E7%9A%84%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE/2.jpg"><br>注释掉图中灰色部分</p>
-<h2 id="字体的更改"><a href="#字体的更改" class="headerlink" title="字体的更改"></a>字体的更改</h2><p>在博客根目录下的 source 文件夹内创建一个名字 font 的文件夹，放入字体ttf文件。<br>找到 /themes/matery/source/css/my.css 文件，填入下面的代码：</p>
-<pre class="line-numbers language-makedown" data-language="makedown"><code class="language-makedown">$ @font-face&#123;
-    font-family: &#39;myFont&#39;;
-    src: url(&#39;..&#x2F;font&#x2F;myFont.ttf&#39;);
-&#125;
-
-.diyfont&#123;
-    font-family: &#39;myFont&#39;;
-&#125;
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>这里是创建了一个 diyFont 的类<br>将上面的 myFont 改成你自己的字体名称<br>在网站中右击检索，找到对应字体所使用的样式关键词<br><img src="/2021/04/16/Hexo-matery-%E4%B8%BB%E9%A2%98%E7%9A%84%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE/1.jpg"><br>局部样式更改在 matery/source/css/matery.css 中 ctrl+F 搜索关键词<br>标题样式更改在 /themes/matery/layout/_partial/bg-cover-content.ejs 中</p>
-<pre class="line-numbers language-makedown" data-language="makedown"><code class="language-makedown">$ &lt;div class&#x3D;&quot;title center-align diyfont&quot;&gt;
-     &lt;% if (config.subtitle &amp;&amp; config.subtitle.length &gt; 0) &#123; %&gt;
-         &lt;%&#x3D; config.subtitle %&gt;
-      &lt;% &#125; else &#123; %&gt;
-             subtitle
-      &lt;% &#125; %&gt;
- &lt;&#x2F;div&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>在样式代码的 class=“” 中更改之前定义的样式名字 diy-font<br>打包上传测试</p>
-<h2 id="Banner上的“开始阅读”按钮和下方图标的颜色更改"><a href="#Banner上的“开始阅读”按钮和下方图标的颜色更改" class="headerlink" title="Banner上的“开始阅读”按钮和下方图标的颜色更改"></a>Banner上的“开始阅读”按钮和下方图标的颜色更改</h2><p>在网站中右击检索，找到对应位置所使用的样式关键词<br>局部样式更改在 matery/source/css/matery.css 中 ctrl+F 搜索关键词</p>
-<h2 id="更改新建文章时自动生成的各项头文件参数"><a href="#更改新建文章时自动生成的各项头文件参数" class="headerlink" title="更改新建文章时自动生成的各项头文件参数"></a>更改新建文章时自动生成的各项头文件参数</h2><p>在博客根目录下，找到 scaffolds 文件夹中的 post.md<br>更改模板内容，以后每次新建文章时就会自动生成添加的参数</p>
-<h2 id="在你的博客文章末尾添加版权声明"><a href="#在你的博客文章末尾添加版权声明" class="headerlink" title="在你的博客文章末尾添加版权声明"></a>在你的博客文章末尾添加版权声明</h2><p>打开主题配置文件 /themes/next/_config.yml 。Ctrl+F搜索，找到 creative_commons，将 post 参数改为true。</p>
-<h2 id="更改首页Benner屏幕的占比"><a href="#更改首页Benner屏幕的占比" class="headerlink" title="更改首页Benner屏幕的占比"></a>更改首页Benner屏幕的占比</h2><p>在 /css/my.css 中添加代码</p>
-<pre class="line-numbers language-Markdown" data-language="Markdown"><code class="language-Markdown">$ 
-@media only screen and (min-width: 993px) &#123;
-  #articleContent img &#123;
-    zoom: 50%;
-    max-width: 80%;
-    min-width: 60%;
-  &#125;
-
-  .index-cover&#123;
-    max-height: 70vh;
-  &#125;
-
-  .index-card &#123;
-    margin-top: -50px;
-  &#125;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>index-cover 的值为比列</p>
+<p>— 在本人搭建博客的过程中，发现互联网上的教程大多数的发布时间是几年甚至十几年之前，有些软件的版本和操作方式都已经有所改变。许多新手小白如果按照之前的教程来操作的话会产生各种各样的问题。教程中所使用的专业名词也会使小白们一头雾水，影响操作效率。<br>— 于是在2021年4月10日发布了这篇面向纯新手小白的保姆级搭建教程，手把手教你搭建属于自己的个人博客<br>— 教程步骤框架来自hojun.cn发布的教程，使用工具包含node.js、github、gitforwin、sublime、Hexo侵删</p>
+<h2 id="node的下载与安装"><a href="#node的下载与安装" class="headerlink" title="node的下载与安装"></a>node的下载与安装</h2><p>① Node.js官网下载并打开安装包<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/1-1-1.jpg"><br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/1-1-2.jpg"><br>② 更改安装位置<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/1-2-1.jpg"><br>③ 是否安装必要的环境，我选的安装<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/1-3-1.jpg"><br>④ 安装完成<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/1-4-1.jpg"><br>⑤ Win+R打开运行窗口，输入cmd<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/1-5-1.jpg"><br>⑥ node -v查看版本<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/1-6-1.jpg"></p>
+<h2 id="github注册"><a href="#github注册" class="headerlink" title="github注册"></a>github注册</h2><p>① 打开github官网 GitHub: Where the world builds software · GitHub<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/2-1-1.jpg"><br>② 右上角注册<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/2-2-1.jpg"><br>③ 注册流程走完后回首页，右上角加号第一个选项，传建一个新的存储库<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/2-3-1.jpg"><br>④ 存储库名称为 用户名+.github+.io，其他默认，创建<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/2-4-1.jpg"></p>
+<h2 id="gitforwin的下载与安装"><a href="#gitforwin的下载与安装" class="headerlink" title="gitforwin的下载与安装"></a>gitforwin的下载与安装</h2><p>① 浏览器输入 Git for Windows，下载gitforwin安装包<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/3-1-1.jpg"><br>② 安装git<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/3-2-1.jpg"><br>③ 更改安装位置<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/3-3-1.jpg"><br>④ 创建开始菜单快捷方式，随意，我选择不创建<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/3-4-1.jpg"><br>⑤ 点下一步全部默认就可以，到这一步选择第二个<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/3-5-1.jpg"><br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/3-5-2.jpg"><br>⑥ 安装完成<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/3-6-1.jpg"><br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/3-6-2.jpg"><br>⑦ 桌面没有新的快捷方式不要慌，正常现象，有需要的话可以在开始菜单和软件安装路径里找到并创建快捷方式<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/3-7-1.jpg"><br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/3-7-2.jpg"><br>⑧ 验证是否安装完成<br>Win+R，输入cmd，输入命令git<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/3-8-1.jpg"></p>
+<h2 id="githubSHH配置"><a href="#githubSHH配置" class="headerlink" title="githubSHH配置"></a>githubSHH配置</h2><p>① 打开git的安装路径，找到git bash.exe 双击运行<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/4-1-1.jpg"><br>② 输入命令ssh-keygen -t rsa -C “<a href="mailto:&#x39;&#57;&#x31;&#x32;&#55;&#x30;&#54;&#x38;&#x35;&#x40;&#x71;&#x71;&#x2e;&#99;&#111;&#x6d;">&#x39;&#57;&#x31;&#x32;&#55;&#x30;&#54;&#x38;&#x35;&#x40;&#x71;&#x71;&#x2e;&#99;&#111;&#x6d;</a>“，引号内是github注册邮箱地址，回车<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/4-2-1.jpg"><br>③ 无特殊提示就回车，有（y/n）就输入y回车<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/4-3-1.jpg"><br>④ 打开github，点击右上角头像选择 设置<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/4-4-1.jpg"><br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/4-4-2.jpg"><br>⑤ 选择shh和密钥选项，添加新密钥<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/4-5-1.jpg"><br>⑥ 标题就用户名+tech吧（tech技术），填到第一栏<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/4-6-1.jpg"><br>在C盘找到id_rsa.pub这个文件，以记事本形式打开，复制内容填到第二栏<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/4-6-2.jpg"><br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/4-6-3.jpg"><br>⑦ 提交，创建完成<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/4-7-1.jpg"></p>
+<h2 id="hexo的本地使用"><a href="#hexo的本地使用" class="headerlink" title="hexo的本地使用"></a>hexo的本地使用</h2><p>① 浏览器输入 Hexo 进入hexo官网<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/5-1-1.jpg"><br>② 在合适的位置新建一个文件夹blog，关于博客的文件基本都在这里面，我选择D盘根目录<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/5-2-1.jpg"><br>③ 进入bolg文件，点击路径输入cmd，回车进入（也可以win+R，输入cmd，再用cd命令一级一级切到blog文件下）<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/5-3-1.jpg"><br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/5-3-2.jpg"><br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/5-3-3.jpg"><br>④ 回到hexo官网，复制命令 npm install hexo-cli -g 到运行窗口回车<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/5-4-1.jpg"><br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/5-4-2.jpg"><br>⑤ 网站下拉会有使用命令行，blog为你的博客名<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/5-5-1.jpg"><br>⑥ 输入 hexo init +博客名 回车运行<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/5-6-1.jpg"><br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/5-6-2.jpg"><br>⑦ 输入命令cd 博客名，进入博客文件，回到网站复制命令行 npm install 并运行<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/5-7-1.jpg"><br>⑧ 完成后输入命令 hexo s 生成本地预览，最后会生成一个4000端口的网址，复制到浏览器进入，就能看到我们的博客了<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/5-8-1.jpg"><br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/5-8-2.jpg"></p>
+<h2 id="sublime的下载与安装"><a href="#sublime的下载与安装" class="headerlink" title="sublime的下载与安装"></a>sublime的下载与安装</h2><p>① 浏览器输入Download - Sublime Text 进去官网下载，选择自己的系统，我选择windows64位<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/6-1-1.jpg"><br>② 下载完成运行，更改安装路径<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/6-2-1.jpg"><br>③ 默认选项就可以，一直下一步。安装完成<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/6-3-1.jpg"><br>④ 打开sublime<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/6-4-1.jpg"><br>⑤ 打开sublime，在左边栏source——-posts —— hello-world.md中输入文字，ctrl+s保存<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/6-5-1.jpg"><br>⑥ 在blog路径中右击运行git bash，输入命令hexo cl清理缓存，hexo g hexo s生成本地预览<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/6-6-1.jpg"><br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/6-6-2.jpg"><br>⑦ 浏览器打开本地预览，更改已生效<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/6-7-1.jpg"></p>
+<h2 id="将hexo发布至github"><a href="#将hexo发布至github" class="headerlink" title="将hexo发布至github"></a>将hexo发布至github</h2><p>① 打开浏览器，进入github之前新建的存储库，进入库，复制地址<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/7-1-1.jpg"><br>② 在sublime中打开-config.yml文件更改配置信息<br>更改参数 author：名字，我的是maohuifei<br>更改参数 ur1： 后面为github存储库的地址中的一部分（XXXX.github.io）<br>更改参数 type：git，<br>添加新参数 branch: gh-pages<br>添加新参数 repo：后面为github存储库的地址<br>保存<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/7-2-1.jpg"><br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/7-2-2.jpg"><br>③ 进入hexo一键部署网站部署 | Hexo ，复制hexo-deployer-git的安装命令 npm install hexo-deployer-git –save 进入git bash 运行安装<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/7-3-1.jpg"><br>④ 命令 hexo cl 清理hexo g生成 hexo d提交<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/7-4-1.jpg"><br>⑤ 浏览器输入 用户名+github.Io 我的是maohuifei.github.io<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/7-5-1.jpg"><br>⑥ 博客搭建完成!</p>
+<h2 id="hexo主题使用"><a href="#hexo主题使用" class="headerlink" title="hexo主题使用"></a>hexo主题使用</h2><p>① 进入hexo主题官网Themes | Hexo 选择主题，以next为例<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/8-1-1.jpg"><br>② 进入主题详情，有详细安装步骤教程，每个主题进入位置不同<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/8-2-1.jpg"></p>
 ]]></content>
       <categories>
-        <category>Hexo博客主题配置</category>
+        <category>教程与心得</category>
       </categories>
       <tags>
         <tag>Hexo</tag>
         <tag>博客</tag>
-        <tag>主题</tag>
-        <tag>matery</tag>
       </tags>
   </entry>
   <entry>
-    <title>Markdown语法</title>
-    <url>/2021/05/13/Markdown%E8%AF%AD%E6%B3%95/</url>
-    <content><![CDATA[<p>Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档。</p>
-<p>Markdown 语言在 2004 由约翰·格鲁伯（英语：John Gruber）创建。</p>
-<p>Markdown 编写的文档可以导出 HTML 、Word、图像、PDF、Epub 等多种格式的文档。</p>
-<p>Markdown 编写的文档后缀为 .md, .markdown。</p>
+    <title>HTML知识点扩展</title>
+    <url>/2021/07/13/HTML%E7%9F%A5%E8%AF%86%E7%82%B9%E6%89%A9%E5%B1%95/</url>
+    <content><![CDATA[<p>收录总结HTML学习中的知识点扩展</p>
 <span id="more"></span>
 
-<h1 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h1><h2 id="使用-和-标记一级和二级标题"><a href="#使用-和-标记一级和二级标题" class="headerlink" title="使用=和-标记一级和二级标题"></a>使用=和-标记一级和二级标题</h2><pre class="line-numbers language-Markdown" data-language="Markdown"><code class="language-Markdown">$ 
-一级标题
-&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;
+<h2 id="路径（于img标签中src属性的应用）"><a href="#路径（于img标签中src属性的应用）" class="headerlink" title="路径（于img标签中src属性的应用）"></a>路径（于img标签中src属性的应用）</h2><h3 id="相对路径"><a href="#相对路径" class="headerlink" title="相对路径"></a>相对路径</h3><p>以引用文件所在位置为参考基础，而建立出的目录路径<br>简单来说：图片相对于HTML文件的位置<br><b>相对路径分类：</b></p>
+<table>
+    <tr>
+        <th>相对路径分类</th>
+        <th>符号</th>
+        <th>说明</th>
+    </tr>
+    <tr>
+        <td>同一级路径</td>
+        <td> </td>
+        <td>图像文件和HTML处于同一级</td>
+    </tr>
+        <tr>
+        <td>下一级路径</td>
+        <td>/</td>
+        <td>图像文件位于HTML文件下一级，src="images/001.jpg"</td>
+    </tr>
+        
+        <tr>
+        <td>上一级路径</td>
+        <td>../</td>
+        <td>图像文件位于HTML文件上一级,src="../001.jpg"</td>
+    </tr>
+</table>
 
-二级标题
------------------<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="使用-标记1-6级标题"><a href="#使用-标记1-6级标题" class="headerlink" title="使用#标记1-6级标题"></a>使用#标记1-6级标题</h2><pre class="line-numbers language-Markdown" data-language="Markdown"><code class="language-Markdown">$ 
-# 一级标题
-## 二级标题
-### 三级标题
-#### 四级标题
-##### 五级标题
-###### 六级标题<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="绝对路径"><a href="#绝对路径" class="headerlink" title="绝对路径"></a>绝对路径</h3><p>是指目录下的绝对位置，直接到达目标的位置，通常是从盘符开始的路径</p>
+<pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">$ 
+本地绝对路径：
+D:\用户文件\Desktop\Web1\images\001.jpg
+或者完整的网络地址：
+https:&#x2F;&#x2F;www.mhf.ink&#x2F;medias&#x2F;featureimages&#x2F;6.jpg<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h1 id="段落和字体"><a href="#段落和字体" class="headerlink" title="段落和字体"></a>段落和字体</h1><h2 id="换行："><a href="#换行：" class="headerlink" title="换行："></a>换行：</h2><p>两个以上的空格加回车  </p>
-<h2 id="字体："><a href="#字体：" class="headerlink" title="字体："></a>字体：</h2><p><em>斜体文本</em><br><em>斜体文本</em><br><strong>粗体文本</strong><br><strong>粗体文本</strong><br><em><strong>粗斜体文本</strong></em><br><em><strong>粗斜体文本</strong></em></p>
-<pre class="line-numbers language-Markdown" data-language="Markdown"><code class="language-Markdown">$ 
-*斜体文本*
-_斜体文本_
-**粗体文本**
-__粗体文本__
-***粗斜体文本***
-___粗斜体文本___<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="分隔线"><a href="#分隔线" class="headerlink" title="分隔线"></a>分隔线</h2><p>可以在一行中用三个以上的星号、减号、底线来建立一个分隔线，行内不能有其他东西。你也可以在星号或是减号中间插入空格。下面每种写法都可以建立分隔线：</p>
-<hr>
-<pre class="line-numbers language-Markdown" data-language="Markdown"><code class="language-Markdown">$ 
-***
-
-* * *
-
-*****
-
-- - -
-
-----------<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h2><p>文字两端加两个波浪线<br><del>文本</del></p>
-<pre class="line-numbers language-Markdown" data-language="Markdown"><code class="language-Markdown">$ 
-~~文本~~
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h2 id="下划线"><a href="#下划线" class="headerlink" title="下划线"></a>下划线</h2><p><u>文本</u></p>
-<pre class="line-numbers language-Markdown" data-language="Markdown"><code class="language-Markdown">$ 
-&lt;u&gt;文本&lt;&#x2F;u&gt;
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h2 id="脚注"><a href="#脚注" class="headerlink" title="脚注"></a>脚注</h2><p>文本1[^文本2]</p>
-<pre class="line-numbers language-Markdown" data-language="Markdown"><code class="language-Markdown">$ 
-文本1[^文本2]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><p>Markdown 支持有序列表和无序列表。</p>
-<h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><p>使用星号(*)、加号(+)或是减号(-)作为列表标记，这些标记后面要添加一个空格，然后再填写内容：</p>
-<pre class="line-numbers language-Markdown" data-language="Markdown"><code class="language-Markdown">$ 
-* 第一项
-* 第二项
-* 第三项
-
-+ 第一项
-+ 第二项
-+ 第三项
-
-
-- 第一项
-- 第二项
-- 第三项<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="无序列表-1"><a href="#无序列表-1" class="headerlink" title="无序列表"></a>无序列表</h3><p>有序列表使用数字并加上 . 号来表示：</p>
-<pre class="line-numbers language-Markdown" data-language="Markdown"><code class="language-Markdown">$ 
-1. 第一项
-2. 第二项
-3. 第三项<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="列表嵌套"><a href="#列表嵌套" class="headerlink" title="列表嵌套"></a>列表嵌套</h3><p>列表嵌套只需在子列表中的选项前面添加四个空格即可：</p>
-<pre class="line-numbers language-Markdown" data-language="Markdown"><code class="language-Markdown">$ 
-1. 第一项：
-    - 第一项嵌套的第一个元素
-    - 第一项嵌套的第二个元素
-2. 第二项：
-    - 第二项嵌套的第一个元素
-    - 第二项嵌套的第二个元素<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h1 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h1><pre class="line-numbers language-Markdown" data-language="Markdown"><code class="language-Markdown">$ 
-[链接名称](链接地址)
-
-或者
-
-&lt;链接地址&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>这是一个链接 <a href="https://www.runoob.com/">菜鸟教程</a></p>
-<h1 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h1><p>开头一个感叹号 !<br>接着一个方括号，里面放上图片的替代文字<br>接着一个普通括号，里面放上图片的网址，最后还可以用引号包住并加上选择性的 ‘title’ 属性的文字。</p>
-<pre class="line-numbers language-Markdown" data-language="Markdown"><code class="language-Markdown">$ 
-![alt 属性文本](图片地址)
-
-![alt 属性文本](图片地址 &quot;可选标题&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h1 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h1><p>Markdown 制作表格使用 | 来分隔不同的单元格，使用 - 来分隔表头和其他行<br>|  表头   | 表头  |<br>|  —-  | —-  |<br>| 单元格  | 单元格 |<br>| 单元格  | 单元格 |</p>
-]]></content>
+<h2 id><a href="#" class="headerlink" title></a></h2>]]></content>
       <categories>
-        <category>语法</category>
+        <category>技能收录</category>
       </categories>
       <tags>
-        <tag>Markdown</tag>
-        <tag>语法</tag>
-        <tag>Blog</tag>
+        <tag>HTML</tag>
+        <tag>学习笔记</tag>
+        <tag>Web前端</tag>
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2021/05/13/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<span id="more"></span>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-      <categories>
-        <category>语法</category>
-      </categories>
-      <tags>
-        <tag>语法</tag>
-        <tag>Blog</tag>
-        <tag>bash</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【V2Ray篇】V2Ray介绍</title>
-    <url>/2021/05/13/%E3%80%90V2Ray%E7%AF%87%E3%80%91V2Ray%E4%BB%8B%E7%BB%8D/</url>
-    <content><![CDATA[<p>V2Ray（也简称V2），是Victoria Raymond开发的Project V下的一个工具。Project V是一个工具集合，号称可以帮助其使用者打造专属的基础通信网络。Project V的核心工具称为V2Ray，其主要负责网络协议和功能的实现，与其它Project V通信。V2Ray可以单独运行，也可以和其它工具配合，以提供简便的操作流程。开发过程主要使用Go语言，Core采用MIT许可证并开放源代码。</p>
-<p>在中国大陆，本工具广泛用于突破防火长城（GFW）以访问被封锁和屏蔽的内容以及流量伪装达到免流的效果。</p>
-<p>文章参考维基百科，侵删</p>
+    <title>CSS知识点扩展</title>
+    <url>/2021/07/13/CSS%E7%9F%A5%E8%AF%86%E7%82%B9%E6%89%A9%E5%B1%95/</url>
+    <content><![CDATA[<p>收录总结CSS学习中的知识点扩展</p>
 <span id="more"></span>
 
-<h2 id="运行原理"><a href="#运行原理" class="headerlink" title="运行原理"></a>运行原理</h2><p>V2Ray的运行原理与其他代理工具基本相同，使用特定的中转服务器完成数据传输。例如，用户无法直接访问Google，YouTube等网站，但代理服务器可以访问，且用户可以直接连接代理服务器，那么用户就可以通过特定软件连接代理服务器，然后由代理服务器获取网站内容并回传给用户，从而实现代理上网的效果。服务器和客户端软件会要求提供密码和加密方式，双方一致后才能成功连接。连接到服务器后，客户端会在本机构建一个本地Socks5代理（或VPN、透明代理等）。浏览网络时，客户端通过这个Socks5（或其他形式）代理收集网络流量，然后再经混淆加密发送到服务器端，以防网络流量被识别和拦截，反之亦然。其他代理工具定位只是一个简单的代理工具，而 V2Ray 定位为一个平台，任何开发者都可以利用 V2Ray 提供的模块开发出新的代理软件。</p>
-<h2 id="主要特性"><a href="#主要特性" class="headerlink" title="主要特性"></a>主要特性</h2><p>多入口多出口：一个 V2Ray 进程可并发支持多个入站和出站协议，每个协议可独立工作。</p>
-<p>定制化路由：入站流量可按配置由不同地出口发出。轻松实现按区域或按域名分流，以达到最优的网络性能。</p>
-<p>多协议支持：V2Ray 可同时开启多个协议支持，包括 Socks、HTTP、Shadowsocks 和 VMess 等。每个协议可单独设置传输载体，比如 TCP、mKCP 和 WebSocket 等。</p>
-<p>隐蔽性：V2Ray 的节点可以伪装成正常的网站（HTTPS），将其流量与正常的网页流量混淆，以避开第三方干扰。</p>
-<p>反向代理：通用的反向代理支持，可实现内网穿透功能。</p>
-<p>多平台支持：原生支持所有常见平台，如 Windows、macOS 和 Linux，并已有第三方支持移动平台。</p>
+<h2 id="多重样式优先级深入概念"><a href="#多重样式优先级深入概念" class="headerlink" title="多重样式优先级深入概念"></a>多重样式优先级深入概念</h2><p>优先级是浏览器是通过判断哪些属性值与元素最相关以决定并应用到该元素上的。优先级仅由选择器组成的匹配规则决定的。<br>优先级就是分配给指定的CSS声明的一个权重，它由匹配的选择器中的每一种选择器类型的数值决定。</p>
+<p>下列是一份优先级逐级增加的选择器列表：</p>
+<ul>
+    <li>通用选择器（*)</li>
+    <li>元素(类型)选择器</li>
+    <li>类选择器</li>
+    <li>属性选择器</li>
+    <li>伪类</li>
+    <li>ID 选择器</li>
+    <li>内联样式</li>
+</ul>
+
+<p><b>!important 规则例外<br>当 !important 规则被应用在一个样式声明中时,该样式声明会覆盖CSS中任何其他的声明, 无论它处在声明列表中的哪里. 尽管如此, !important规则还是与优先级毫无关系.使用 !important 不是一个好习惯，因为它改变了你样式表本来的级联规则，从而使其难以调试。</b><br>一些经验法则：</p>
+<ul>
+    <li>Always 要优化考虑使用样式规则的优先级来解决问题而不是 <i>!important</i></li>
+    <li>Only 只在需要覆盖全站或外部 css（例如引用的 ExtJs 或者 YUI ）的特定页面中使用<i>!important</i></li>
+    <li>Never 永远不要在全站范围的 css 上使用<i>!important</i></li>
+    <li>Never 永远不要在你的插件中使用<i>!important</i></li>
+</ul>
+<b>权重计算</b>
+
+<p><img src="/2021/07/13/CSS%E7%9F%A5%E8%AF%86%E7%82%B9%E6%89%A9%E5%B1%95/001.png"><br>解释：</p>
+<ul>
+    <li>内联样式表的权值最高 1000</li>
+    <li>ID 选择器的权值为 100</li>
+    <li>Class 类选择器的权值为 10</li>
+    <li>HTML 标签选择器的权值为 1</li>
+</ul>
+
+<h3 id="CSS样式优先级"><a href="#CSS样式优先级" class="headerlink" title="CSS样式优先级"></a>CSS样式优先级</h3><p>内联样式 &gt; 内部样式表 &gt; 外部样式表 &gt; 浏览器样式表</p>
+<h4 id="css-7-种选择器："><a href="#css-7-种选择器：" class="headerlink" title="css 7 种选择器："></a>css 7 种选择器：</h4><ul>
+    <li> id 选择器</li>
+    <li> 类选择器</li>
+    <li> 伪类选择器</li>
+    <li> 属性选择器</li>
+    <li> 伪元素选择器</li>
+    <li> 通配选择器</li>
+    <li> 标签选择器</li>
+</ul>
+
+<h4 id="css选择器优先规则"><a href="#css选择器优先规则" class="headerlink" title="css选择器优先规则"></a>css选择器优先规则</h4><p>内联样式 &gt; id 选择器 &gt; 类选择器 = 伪类选择器 = 属性选择器 &gt; 标签选择器 = 伪元素选择器</p>
+<h4 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h4><p>HTML:</p>
+<pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">$ 
+&lt;div class&#x3D;&quot;content-class&quot; id&#x3D;&quot;content-id&quot;&gt;&lt;&#x2F;div&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>CSS:</p>
+<pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+#content-id &#123;
+    color: red;
+&#125;
+.content-class &#123;
+    color: blue;
+&#125;
+div &#123;
+    color: grey;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>div的最终显示结果为红色</p>
 ]]></content>
       <categories>
         <category>技能收录</category>
       </categories>
       <tags>
-        <tag>V2Ray</tag>
-        <tag>代理工具</tag>
-        <tag>云免</tag>
+        <tag>CSS</tag>
+        <tag>学习笔记</tag>
+        <tag>Web前端</tag>
       </tags>
   </entry>
   <entry>
-    <title>【V2Ray篇】V2Ray配置的生成</title>
-    <url>/2021/05/13/%E3%80%90V2Ray%E7%AF%87%E3%80%91V2Ray%E9%85%8D%E7%BD%AE%E7%9A%84%E7%94%9F%E6%88%90/</url>
-    <content><![CDATA[<p>在拥有一台Linux Centos系统VPS的前提下，通过远程SSH生成V2Ray配置</p>
+    <title>【网页设计】JavaScript的学习笔记</title>
+    <url>/2021/06/04/%E3%80%90%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1%E3%80%91JavaScript%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p>JavaScript（简称“JS”） 是一种具有函数优先的轻量级，解释型或即时编译型的编程语言。虽然它是作为开发Web页面的脚本语言而出名，但是它也被用到了很多非浏览器环境中，JavaScript 基于原型编程、多范式的动态脚本语言，并且支持面向对象、命令式、声明式、函数式编程范式。</p>
 <span id="more"></span>
-
-<h2 id="操作前的准备"><a href="#操作前的准备" class="headerlink" title="操作前的准备"></a>操作前的准备</h2><p>一台Centos7以上系统的VPS，VPS的公网IP及root密码<br>远程登录软件PC端FinalShell/Xshell、安卓端JuiceSSH</p>
-<h2 id="远程登录服务器"><a href="#远程登录服务器" class="headerlink" title="远程登录服务器"></a>远程登录服务器</h2><h3 id="JuiceSSH"><a href="#JuiceSSH" class="headerlink" title="JuiceSSH"></a>JuiceSSH</h3><p>(1）进入JuiceSSH<br>(2）点上侧连接<br>(3）点右下角+<br>(4）昵称随意，类型SSH，地址你的服务器ip（外网IP），端口默认22不变（映射端口和自设端口除外）<br>(5）认证选新建<br>(6）昵称随意，用户名一般为root，密码填你的服务器密码<br>(7）点右上角√<br>(8）再点右上角√<br>(9）点你设置的配置，如无昵称就是以服务器ip命名<br>(10）如无意外，这时就自动登陆服务器了，如果提示你输入密码，再输一遍就行了，输入后记得点保存</p>
-<h3 id="Xshell"><a href="#Xshell" class="headerlink" title="Xshell"></a>Xshell</h3><p>(1）进入XShell<br>(2）点左上角文件<br>(3）点新建<br>(4）名称随意，协议SSH，主机你的服务器IP（外网IP），端口默认22不变（映射端口和自设端口除外）<br>(5）确定<br>(6）在左侧会话管理器，选中设置的配置双击打开<br>(7）提示输入账号和密码，输入后记得点保存(没有提示可能IP被墙)</p>
-<h2 id="输入安装命令"><a href="#输入安装命令" class="headerlink" title="输入安装命令"></a>输入安装命令</h2><p>一键安装</p>
-<pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ bash &lt;(curl -s -L https:&#x2F;&#x2F;git.io&#x2F;v2ray-setup.sh)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>自定义安装</p>
-<pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ bash &lt;(curl -s -L https:&#x2F;&#x2F;git.io&#x2F;v2rayinstall.sh)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>出现配置信息无报错即为安装成功</p>
-<h2 id="相关命令"><a href="#相关命令" class="headerlink" title="相关命令"></a>相关命令</h2><pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ v2ray info 查看 V2Ray 配置信息
-v2ray config 修改 V2Ray 配置
-v2ray link 生成 V2Ray 配置文件链接
-v2ray infolink 生成 V2Ray 配置信息链接
-v2ray qr 生成 V2Ray 配置二维码链接
-v2ray ss 修改 Shadowsocks 配置
-v2ray ssinfo 查看 Shadowsocks 配置信息
-v2ray ssqr 生成 Shadowsocks 配置二维码链接
-v2ray status 查看 V2Ray 运行状态
-v2ray start 启动 V2Ray
-v2ray stop 停止 V2Ray
-v2ray restart 重启 V2Ray
-v2ray log 查看 V2Ray 运行日志
-v2ray update 更新 V2Ray
-v2ray update.sh 更新 V2Ray 管理脚本
-v2ray uninstall 卸载 V2Ray<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="V2Ray-配置文件的本地更改"><a href="#V2Ray-配置文件的本地更改" class="headerlink" title="V2Ray 配置文件的本地更改"></a>V2Ray 配置文件的本地更改</h2><p>文件路径 cat /etc/v2ray/config.json</p>
 ]]></content>
       <categories>
         <category>技能收录</category>
       </categories>
       <tags>
-        <tag>V2Ray</tag>
-        <tag>代理工具</tag>
-        <tag>云免</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【V2Ray篇】v2-ui多协议多用户 v2ray 面板</title>
-    <url>/2021/05/13/%E3%80%90V2Ray%E7%AF%87%E3%80%91v2-ui%E5%A4%9A%E5%8D%8F%E8%AE%AE%E5%A4%9A%E7%94%A8%E6%88%B7-v2ray-%E9%9D%A2%E6%9D%BF/</url>
-    <content><![CDATA[<p>系统状态监控<br>支持多用户多协议，浏览器可视化操作，无需敲命令<br>支持的协议：vmess、shadowsocks、dokodemo-door、socks、http<br>vmess 支持的传输配置：tcp（http伪装、tls）、kcp（伪装）、ws（tls）、http（tls）、quic（tls）<br>支持账号流量统计<br>支持自定义 v2ray 配置模板<br>支持 https 访问面板（需自备域名 + ssl 证书）<br>更多功能，详见面板</p>
-<span id="more"></span>
-
-<h2 id="操作前的准备"><a href="#操作前的准备" class="headerlink" title="操作前的准备"></a>操作前的准备</h2><p>VPS防火墙开放65432端口<br>VPS操作系统Centos7+</p>
-<h2 id="一键安装与升级命令"><a href="#一键安装与升级命令" class="headerlink" title="一键安装与升级命令"></a>一键安装与升级命令</h2><pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ bash &lt;(curl -Ls https:&#x2F;&#x2F;blog.sprov.xyz&#x2F;v2-ui.sh)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>若出现 bash curl: command not found 等错误，请先安装 curl<br>CentOS 系统：</p>
-<pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ yum install curl -y<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>全新安装后，在浏览器中打开 http://&lt;服务器IP&gt;:65432 即可访问面板，默认用户名和密码都是 admin。</p>
-<h2 id="无法访问面板请检查防火墙是否开放端口"><a href="#无法访问面板请检查防火墙是否开放端口" class="headerlink" title="无法访问面板请检查防火墙是否开放端口"></a>无法访问面板请检查防火墙是否开放端口</h2><p>重启防火墙</p>
-<pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ systemctl restart firewalld<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>查看防火墙状态</p>
-<pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ systemctl status firewalld.service<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>开启防火墙</p>
-<pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ systemctl start firewalld.service<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>关闭防火墙</p>
-<pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ systemctl stop firewalld.service<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>禁用防火墙</p>
-<pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ systemctl disable firewalld.service<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>端口控制</p>
-<pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$  
- firewall-cmd --query-port&#x3D;8080&#x2F;tcp                                   #查询端口是否开放
- firewall-cmd --add-port&#x3D;8080&#x2F;tcp --permanent                         #永久添加8080端口例外(全局)
- firewall-cmd --remove-port&#x3D;8800&#x2F;tcp --permanent                      #永久删除8080端口例外(全局)
- firewall-cmd --add-port&#x3D;65001-65010&#x2F;tcp --permanent                  #永久增加65001-65010例外(全局)  
- firewall-cmd  --zone&#x3D;public --add-port&#x3D;8080&#x2F;tcp --permanent          #永久添加8080端口例外(区域public)
- firewall-cmd  --zone&#x3D;public --remove-port&#x3D;8080&#x2F;tcp --permanent       #永久删除8080端口例外(区域public)
- firewall-cmd  --zone&#x3D;public --add-port&#x3D;65001-65010&#x2F;tcp --permanent   #永久增加65001-65010例外(区域public)
- systemctl disable firewalld                                          #禁止防火墙随系统启动
- firewall-cmd --state                                                 #查看防火墙状态  
- firewall-cmd --reload                                                #更新防火墙规则   
- firewall-cmd --list-ports                                            #查看所有打开的端口<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="面板的其他操作"><a href="#面板的其他操作" class="headerlink" title="面板的其他操作"></a>面板的其他操作</h2><pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$
-v2-ui                  # 显示管理菜单 (功能更多)
-v2-ui start            # 启动 v2-ui 面板
-v2-ui stop             # 停止 v2-ui 面板
-v2-ui restart          # 重启 v2-ui 面板
-v2-ui status           # 查看 v2-ui 状态
-v2-ui enable           # 设置 v2-ui 开机自启
-v2-ui disable          # 取消 v2-ui 开机自启
-v2-ui log              # 查看 v2-ui 日志
-v2-ui update           # 更新 v2-ui 面板
-v2-ui install          # 安装 v2-ui 面板
-v2-ui uninstall        # 卸载 v2-ui 面板<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="WEB面板相关操作"><a href="#WEB面板相关操作" class="headerlink" title="WEB面板相关操作"></a>WEB面板相关操作</h2><h3 id="账户管理"><a href="#账户管理" class="headerlink" title="账户管理"></a>账户管理</h3><p>可以建立和管理用户<br>用来生成V2Ray配置链接和二维码<br>联通免流需要端口为8080/80，打开http伪装Host值为混淆网址</p>
-<h3 id="面板设置"><a href="#面板设置" class="headerlink" title="面板设置"></a>面板设置</h3><p>更改WEB面板登陆账户密码<br>手动更改V2Ray配置信息</p>
-]]></content>
-      <categories>
-        <category>技能收录</category>
-      </categories>
-      <tags>
-        <tag>V2Ray</tag>
-        <tag>代理工具</tag>
-        <tag>云免</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【V2Ray篇】为VPS安装BBR加速</title>
-    <url>/2021/05/13/%E3%80%90V2Ray%E7%AF%87%E3%80%91%E4%B8%BAVPS%E5%AE%89%E8%A3%85BBR%E5%8A%A0%E9%80%9F/</url>
-    <content><![CDATA[<p>TCP BBR（Bottleneck Bandwidth and Round-trip propagation time）是由Google设计，于2016年发布的拥塞算法。以往大部分拥塞算法是基于丢包来作为降低传输速率的信号，而BBR则基于模型主动探测。</p>
-<span id="more"></span>
-<p>该算法使用网络最近出站数据分组当时的最大带宽和往返时间来创建网络的显式模型。数据包传输的每个累积或选择性确认用于生成记录在数据包传输过程和确认返回期间的时间内所传送数据量的采样率。该算法认为随着网络接口控制器逐渐进入千兆速度时，与缓冲膨胀相关的延迟相比丢包更应该被认为是识别拥塞的主要决定因素，所以基于延迟模型的拥塞控制算法（如BBR）会有更高的吞吐量和更低的延迟，可以用BBR来替代其他流行的拥塞算法，例如CUBIC。Google在YouTube上应用该算法，将全球平均的YouTube网络吞吐量提高了4%，在一些国家超过了14%。</p>
-<p>BBR之后移植入Linux内核4.9版本，并且对于QUIC可用。</p>
-<p>BBR效率很高，速度也很快，但是它与非BBR的流的公平性有争议。虽然谷歌的展示显示 BBR 与 CUBIC 共存良好，但像杰夫·休斯顿和霍克、布利斯和齐特巴特等研究者发现它对其他流不公平，并且不可扩展。霍克等人还发现，在Linux 4.9的BBR实现中“存在一些严重的固有问题，如排队延迟增加、不公平和大量数据包丢失”。</p>
-<p>索海尔·阿巴斯洛等人(C2TCP的作者)指出，BBR在动态环境中表现不佳，比如蜂窝网络。他们还表明BBR存在不公平问题。例如，当一个CUBIC流(在Linux、Android和MacOS中是默认的TCP实现)与网络中的BBR流共存时，BBR流可以支配 CUBIC 流并从中获得整个链路带宽</p>
-<p>简介参考维基百科，侵删</p>
-<h1 id="CentOS-8-开启-BBR"><a href="#CentOS-8-开启-BBR" class="headerlink" title="CentOS 8 开启 BBR"></a>CentOS 8 开启 BBR</h1><p>CentOS 8 默认内核版本为 4.18.x，内核版本高于 4.9 就可以直接开启 BBR，所以 CentOS 8 启用 BBR 非常简单。</p>
-<pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ 
-echo &quot;net.core.default_qdisc&#x3D;fq&quot; &gt;&gt; &#x2F;etc&#x2F;sysctl.conf
-echo &quot;net.ipv4.tcp_congestion_control&#x3D;bbr&quot; &gt;&gt; &#x2F;etc&#x2F;sysctl.conf
-sysctl -p<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>reboot 重启系统<br>检查BBR是否开启成功，返回值未报错包含bbr即为成功</p>
-<pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ 
-sysctl -n net.ipv4.tcp_congestion_control
-lsmod | grep bbr<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h1 id="CentOS-7-开启-BBR"><a href="#CentOS-7-开启-BBR" class="headerlink" title="CentOS 7 开启 BBR"></a>CentOS 7 开启 BBR</h1><h2 id="升级内核"><a href="#升级内核" class="headerlink" title="升级内核"></a>升级内核</h2><p>开启 BBR 要求 4.10 以上版本 Linux 内核，可使用如下命令查看当前内核版本：</p>
-<pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ 
-uname -r<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>如果当前内核版本低于 4.10，可使用 ELRepo 源更新：</p>
-<pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ 
-sudo rpm --import https:&#x2F;&#x2F;www.elrepo.org&#x2F;RPM-GPG-KEY-elrepo.org
-sudo rpm -Uvh http:&#x2F;&#x2F;www.elrepo.org&#x2F;elrepo-release-7.0-2.el7.elrepo.noarch.rpm
-sudo yum --enablerepo&#x3D;elrepo-kernel install kernel-ml -y<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>安装完成后，查看已安装的内核：</p>
-<pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ 
-rpm -qa | grep kernel<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>在输出中看到 kernel-ml-4.11.0-1.el7.elrepo.x86_64 类似的内容，表示安装成功。</p>
-<h2 id="修改grub2引导"><a href="#修改grub2引导" class="headerlink" title="修改grub2引导"></a>修改grub2引导</h2><p>输入</p>
-<pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ 
-sudo egrep ^menuentry &#x2F;etc&#x2F;grub2.cfg | cut -f 2 -d \&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>得到类似如下结果</p>
-<pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ 
-CentOS Linux 7 Rescue a0cbf86a6ef1416a8812657bb4f2b860 (4.11.0-1.el7.elrepo.x86_64)
-CentOS Linux (4.11.0-1.el7.elrepo.x86_64) 7 (Core)
-CentOS Linux (3.10.0-514.16.1.el7.x86_64) 7 (Core)
-CentOS Linux (3.10.0-123.el7.x86_64) 7 (Core)
-CentOS Linux (0-rescue-2d3f9371c20d3e90a544ccc814d485e3) 7 (Core)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>由于序号从0开始，设置默认启动项为1并重启系统：</p>
-<pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ 
-sudo grub2-set-default 1
-reboot<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>重启完成后，重新登录并重新运行uname命令来确认你是否使用了正确的内核：</p>
-<pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ 
-uname -r<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h2 id="开启BBR"><a href="#开启BBR" class="headerlink" title="开启BBR"></a>开启BBR</h2><p>执行：</p>
-<pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ 
-echo &#39;net.core.default_qdisc&#x3D;fq&#39; | sudo tee -a &#x2F;etc&#x2F;sysctl.conf
-echo &#39;net.ipv4.tcp_congestion_control&#x3D;bbr&#39; | sudo tee -a &#x2F;etc&#x2F;sysctl.conf
-sudo sysctl -p<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>完成后，分别执行如下命令来检查 BBR 是否开启成功：</p>
-<pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ 
-sudo sysctl net.ipv4.tcp_available_congestion_control
-# 输出应为 net.ipv4.tcp_available_congestion_control &#x3D; bbr cubic reno
-sudo sysctl -n net.ipv4.tcp_congestion_control
-# 输出应为 bbr
-lsmod | grep bbr
-# 输出应类似 tcp_bbr  16384  28<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="一键开启脚本（狗头）"><a href="#一键开启脚本（狗头）" class="headerlink" title="一键开启脚本（狗头）"></a>一键开启脚本（狗头）</h2><pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ 
-wget --no-check-certificate https:&#x2F;&#x2F;github.com&#x2F;teddysun&#x2F;across&#x2F;raw&#x2F;master&#x2F;bbr.sh &amp;&amp; chmod +x bbr.sh &amp;&amp; .&#x2F;bbr.sh<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>]]></content>
-      <categories>
-        <category>技能收录</category>
-      </categories>
-      <tags>
-        <tag>V2Ray</tag>
-        <tag>云免</tag>
-        <tag>拥塞控制算法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【日常练习】字体设计</title>
-    <url>/2021/05/22/%E3%80%90%E6%97%A5%E5%B8%B8%E7%BB%83%E4%B9%A0%E3%80%91%E5%AD%97%E4%BD%93%E8%AE%BE%E8%AE%A1/</url>
-    <content><![CDATA[<p>你当像鸟飞往你的山</p>
-<span id="more"></span>
-
-<h1 id="practice-1"><a href="#practice-1" class="headerlink" title="practice 1"></a>practice 1</h1><h1 id="practice-2"><a href="#practice-2" class="headerlink" title="practice 2"></a>practice 2</h1><h1 id="practice-3"><a href="#practice-3" class="headerlink" title="practice 3"></a>practice 3</h1>]]></content>
-      <categories>
-        <category>日常练习</category>
-      </categories>
-      <tags>
-        <tag>平面设计</tag>
-        <tag>日常练习</tag>
+        <tag>网页设计</tag>
         <tag>学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【日常练习】海报排版</title>
-    <url>/2021/05/17/%E3%80%90%E6%97%A5%E5%B8%B8%E7%BB%83%E4%B9%A0%E3%80%91%E6%8E%92%E7%89%88-%E6%B5%B7%E6%8A%A5%E4%B8%B4%E6%91%B9/</url>
-    <content><![CDATA[<p>好问的人，只做了五分种的愚人；耻于发问的人，终身为愚人</p>
-<span id="more"></span>
-
-<h1 id="practice-1"><a href="#practice-1" class="headerlink" title="practice 1"></a>practice 1</h1><p><img src="/2021/05/17/%E3%80%90%E6%97%A5%E5%B8%B8%E7%BB%83%E4%B9%A0%E3%80%91%E6%8E%92%E7%89%88-%E6%B5%B7%E6%8A%A5%E4%B8%B4%E6%91%B9/1.jpg"></p>
-<h1 id="practice-2"><a href="#practice-2" class="headerlink" title="practice 2"></a>practice 2</h1><p><img src="/2021/05/17/%E3%80%90%E6%97%A5%E5%B8%B8%E7%BB%83%E4%B9%A0%E3%80%91%E6%8E%92%E7%89%88-%E6%B5%B7%E6%8A%A5%E4%B8%B4%E6%91%B9/2.jpg"></p>
-<h1 id="practice-3"><a href="#practice-3" class="headerlink" title="practice 3"></a>practice 3</h1><p><img src="/2021/05/17/%E3%80%90%E6%97%A5%E5%B8%B8%E7%BB%83%E4%B9%A0%E3%80%91%E6%8E%92%E7%89%88-%E6%B5%B7%E6%8A%A5%E4%B8%B4%E6%91%B9/3.jpg"></p>
-<h1 id="practice-4"><a href="#practice-4" class="headerlink" title="practice 4"></a>practice 4</h1><p><img src="/2021/05/17/%E3%80%90%E6%97%A5%E5%B8%B8%E7%BB%83%E4%B9%A0%E3%80%91%E6%8E%92%E7%89%88-%E6%B5%B7%E6%8A%A5%E4%B8%B4%E6%91%B9/4.jpg"></p>
-<h1 id="practice-5"><a href="#practice-5" class="headerlink" title="practice 5"></a>practice 5</h1><p><img src="/2021/05/17/%E3%80%90%E6%97%A5%E5%B8%B8%E7%BB%83%E4%B9%A0%E3%80%91%E6%8E%92%E7%89%88-%E6%B5%B7%E6%8A%A5%E4%B8%B4%E6%91%B9/5.jpg"></p>
-]]></content>
-      <categories>
-        <category>日常练习</category>
-      </categories>
-      <tags>
-        <tag>平面设计</tag>
-        <tag>日常练习</tag>
-        <tag>学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【日常练习】插画板绘</title>
-    <url>/2021/05/17/%E3%80%90%E6%97%A5%E5%B8%B8%E7%BB%83%E4%B9%A0%E3%80%91%E6%9D%BF%E7%BB%98-%E6%8F%92%E7%94%BB%E4%B8%B4%E6%91%B9/</url>
-    <content><![CDATA[<p> 我们愈是学习，愈觉得自己的贫乏</p>
-<span id="more"></span>
-
-<h1 id="practice-1"><a href="#practice-1" class="headerlink" title="practice 1"></a>practice 1</h1><p><img src="/2021/05/17/%E3%80%90%E6%97%A5%E5%B8%B8%E7%BB%83%E4%B9%A0%E3%80%91%E6%9D%BF%E7%BB%98-%E6%8F%92%E7%94%BB%E4%B8%B4%E6%91%B9/1.jpg"></p>
-<h1 id="practice-2"><a href="#practice-2" class="headerlink" title="practice 2"></a>practice 2</h1><p><img src="/2021/05/17/%E3%80%90%E6%97%A5%E5%B8%B8%E7%BB%83%E4%B9%A0%E3%80%91%E6%9D%BF%E7%BB%98-%E6%8F%92%E7%94%BB%E4%B8%B4%E6%91%B9/2.jpg"></p>
-<h1 id="practice-3"><a href="#practice-3" class="headerlink" title="practice 3"></a>practice 3</h1>]]></content>
-      <categories>
-        <category>日常练习</category>
-      </categories>
-      <tags>
-        <tag>平面设计</tag>
-        <tag>日常练习</tag>
-        <tag>学习</tag>
+        <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>
@@ -611,90 +298,6 @@ body &#123;background-image:url(&#39;paper.gif&#39;);&#125;<span aria-hidden="tr
         <tag>网页设计</tag>
         <tag>学习</tag>
         <tag>CSS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【网页设计】JavaScript的学习笔记</title>
-    <url>/2021/06/04/%E3%80%90%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1%E3%80%91JavaScript%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p>JavaScript（简称“JS”） 是一种具有函数优先的轻量级，解释型或即时编译型的编程语言。虽然它是作为开发Web页面的脚本语言而出名，但是它也被用到了很多非浏览器环境中，JavaScript 基于原型编程、多范式的动态脚本语言，并且支持面向对象、命令式、声明式、函数式编程范式。</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>技能收录</category>
-      </categories>
-      <tags>
-        <tag>网页设计</tag>
-        <tag>学习</tag>
-        <tag>JavaScript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>冯家敏《中国职业设计指南》阅读笔记</title>
-    <url>/2021/04/28/%E5%86%AF%E5%AE%B6%E6%95%8F%E3%80%8A%E4%B8%AD%E5%9B%BD%E8%81%8C%E4%B8%9A%E8%AE%BE%E8%AE%A1%E6%8C%87%E5%8D%97%E3%80%8B%E8%AF%BB%E5%90%8E%E6%84%9F/</url>
-    <content><![CDATA[<p>我们，以万物为友，以苍生为念<br>我们，拒绝平庸和重复，颠覆自我和传统<br>我们，在平淡中创造惊喜，在荒芜中发掘财富，在磨砺中打造经典和时尚<br>我们是设计师<br>我们对自身的职业身怀热爱和敬畏</p>
-<span id="more"></span>
-
-<h1 id="职业分类-定位"><a href="#职业分类-定位" class="headerlink" title="职业分类/定位"></a>职业分类/定位</h1><h2 id="设计职业的分类"><a href="#设计职业的分类" class="headerlink" title="设计职业的分类"></a>设计职业的分类</h2><h2 id="设计师的职业特征"><a href="#设计师的职业特征" class="headerlink" title="设计师的职业特征"></a>设计师的职业特征</h2><h2 id="设计师的自身之本是知识产权"><a href="#设计师的自身之本是知识产权" class="headerlink" title="设计师的自身之本是知识产权"></a>设计师的自身之本是知识产权</h2><h2 id="设计师的从业方式"><a href="#设计师的从业方式" class="headerlink" title="设计师的从业方式"></a>设计师的从业方式</h2><h2 id="设计师职业定位"><a href="#设计师职业定位" class="headerlink" title="设计师职业定位"></a>设计师职业定位</h2><h2 id="设计职业的定位罗盘"><a href="#设计职业的定位罗盘" class="headerlink" title="设计职业的定位罗盘"></a>设计职业的定位罗盘</h2><h2 id="孙磊：驻场设计师的职业发展方向"><a href="#孙磊：驻场设计师的职业发展方向" class="headerlink" title="孙磊：驻场设计师的职业发展方向"></a>孙磊：驻场设计师的职业发展方向</h2><h2 id="驻场设计师的职务与职责"><a href="#驻场设计师的职务与职责" class="headerlink" title="驻场设计师的职务与职责"></a>驻场设计师的职务与职责</h2><h2 id="驻场设计师的绩效考核"><a href="#驻场设计师的绩效考核" class="headerlink" title="驻场设计师的绩效考核"></a>驻场设计师的绩效考核</h2><h2 id="跨入设计行业的三个转变"><a href="#跨入设计行业的三个转变" class="headerlink" title="跨入设计行业的三个转变"></a>跨入设计行业的三个转变</h2><h2 id="应聘设计师的注意事项"><a href="#应聘设计师的注意事项" class="headerlink" title="应聘设计师的注意事项"></a>应聘设计师的注意事项</h2><h2 id="创业常识"><a href="#创业常识" class="headerlink" title="创业常识"></a>创业常识</h2><h2 id="创业之前的准备"><a href="#创业之前的准备" class="headerlink" title="创业之前的准备"></a>创业之前的准备</h2><h1 id="职业素质"><a href="#职业素质" class="headerlink" title="职业素质"></a>职业素质</h1><h2 id="设计师的职业素质"><a href="#设计师的职业素质" class="headerlink" title="设计师的职业素质"></a>设计师的职业素质</h2><h2 id="王粤飞：功夫在设计之外"><a href="#王粤飞：功夫在设计之外" class="headerlink" title="王粤飞：功夫在设计之外"></a>王粤飞：功夫在设计之外</h2><h2 id="体验设计师的素质与发展"><a href="#体验设计师的素质与发展" class="headerlink" title="体验设计师的素质与发展"></a>体验设计师的素质与发展</h2><h2 id="职业设计师的思维方式"><a href="#职业设计师的思维方式" class="headerlink" title="职业设计师的思维方式"></a>职业设计师的思维方式</h2><h2 id="职业设计师的素质模型及成长路线"><a href="#职业设计师的素质模型及成长路线" class="headerlink" title="职业设计师的素质模型及成长路线"></a>职业设计师的素质模型及成长路线</h2><h2 id="柴俊峰：汲骨养心-润今立业"><a href="#柴俊峰：汲骨养心-润今立业" class="headerlink" title="柴俊峰：汲骨养心 润今立业"></a>柴俊峰：汲骨养心 润今立业</h2><h2 id="任清泉：室内设计的职业困惑"><a href="#任清泉：室内设计的职业困惑" class="headerlink" title="任清泉：室内设计的职业困惑"></a>任清泉：室内设计的职业困惑</h2><h2 id="权磊：展示设计师的优秀素质"><a href="#权磊：展示设计师的优秀素质" class="headerlink" title="权磊：展示设计师的优秀素质"></a>权磊：展示设计师的优秀素质</h2><h2 id="设计师的心理健康"><a href="#设计师的心理健康" class="headerlink" title="设计师的心理健康"></a>设计师的心理健康</h2><h1 id="知识产权"><a href="#知识产权" class="headerlink" title="知识产权"></a>知识产权</h1><h2 id="知识产权是设计师的必修课"><a href="#知识产权是设计师的必修课" class="headerlink" title="知识产权是设计师的必修课"></a>知识产权是设计师的必修课</h2><h2 id="设计与专利"><a href="#设计与专利" class="headerlink" title="设计与专利"></a>设计与专利</h2><h2 id="设计与著作权"><a href="#设计与著作权" class="headerlink" title="设计与著作权"></a>设计与著作权</h2><h2 id="设计与商标权"><a href="#设计与商标权" class="headerlink" title="设计与商标权"></a>设计与商标权</h2><h2 id="著作权纠纷的解决方式"><a href="#著作权纠纷的解决方式" class="headerlink" title="著作权纠纷的解决方式"></a>著作权纠纷的解决方式</h2><h2 id="设计作品知识产权保护防御体系"><a href="#设计作品知识产权保护防御体系" class="headerlink" title="设计作品知识产权保护防御体系"></a>设计作品知识产权保护防御体系</h2><h2 id="设计师“六招”防欠款防侵权"><a href="#设计师“六招”防欠款防侵权" class="headerlink" title="设计师“六招”防欠款防侵权"></a>设计师“六招”防欠款防侵权</h2><h2 id="保护创意权益"><a href="#保护创意权益" class="headerlink" title="保护创意权益"></a>保护创意权益</h2><h2 id="数字作品备案的重要性和必要性"><a href="#数字作品备案的重要性和必要性" class="headerlink" title="数字作品备案的重要性和必要性"></a>数字作品备案的重要性和必要性</h2><h2 id="美术摄影作品的合法使用"><a href="#美术摄影作品的合法使用" class="headerlink" title="美术摄影作品的合法使用"></a>美术摄影作品的合法使用</h2><h2 id="电脑字体的合法使用"><a href="#电脑字体的合法使用" class="headerlink" title="电脑字体的合法使用"></a>电脑字体的合法使用</h2><h2 id="肖像作品的合法使用"><a href="#肖像作品的合法使用" class="headerlink" title="肖像作品的合法使用"></a>肖像作品的合法使用</h2><h2 id="语言文字的合法使用"><a href="#语言文字的合法使用" class="headerlink" title="语言文字的合法使用"></a>语言文字的合法使用</h2><h1 id="行业规范-合同"><a href="#行业规范-合同" class="headerlink" title="行业规范/合同"></a>行业规范/合同</h1><h2 id="设计师职业道德公约"><a href="#设计师职业道德公约" class="headerlink" title="设计师职业道德公约"></a>设计师职业道德公约</h2><h2 id="设计行业服务公约"><a href="#设计行业服务公约" class="headerlink" title="设计行业服务公约"></a>设计行业服务公约</h2><h2 id="深圳平面设计作品委托合同"><a href="#深圳平面设计作品委托合同" class="headerlink" title="深圳平面设计作品委托合同"></a>深圳平面设计作品委托合同</h2><h2 id="一份合同中不要涉及多个项目"><a href="#一份合同中不要涉及多个项目" class="headerlink" title="一份合同中不要涉及多个项目"></a>一份合同中不要涉及多个项目</h2><h2 id="解决送达作品的签收难题"><a href="#解决送达作品的签收难题" class="headerlink" title="解决送达作品的签收难题"></a>解决送达作品的签收难题</h2><h2 id="约定“评审验收”的期限"><a href="#约定“评审验收”的期限" class="headerlink" title="约定“评审验收”的期限"></a>约定“评审验收”的期限</h2><h2 id="提案会议和修改次数的约定"><a href="#提案会议和修改次数的约定" class="headerlink" title="提案会议和修改次数的约定"></a>提案会议和修改次数的约定</h2><h2 id="关于著作权归属的约定"><a href="#关于著作权归属的约定" class="headerlink" title="关于著作权归属的约定"></a>关于著作权归属的约定</h2><h2 id="关于侵权赔偿数额的约定"><a href="#关于侵权赔偿数额的约定" class="headerlink" title="关于侵权赔偿数额的约定"></a>关于侵权赔偿数额的约定</h2><h2 id="付清全款才能获得著作权或使用权"><a href="#付清全款才能获得著作权或使用权" class="headerlink" title="付清全款才能获得著作权或使用权"></a>付清全款才能获得著作权或使用权</h2><h2 id="关于设计行业的一般交易惯例"><a href="#关于设计行业的一般交易惯例" class="headerlink" title="关于设计行业的一般交易惯例"></a>关于设计行业的一般交易惯例</h2><h2 id="插画交易惯例"><a href="#插画交易惯例" class="headerlink" title="插画交易惯例"></a>插画交易惯例</h2><h1 id="客户沟通"><a href="#客户沟通" class="headerlink" title="客户沟通"></a>客户沟通</h1><h1 id="设计价格"><a href="#设计价格" class="headerlink" title="设计价格"></a>设计价格</h1><h1 id="经营-流程"><a href="#经营-流程" class="headerlink" title="经营/流程"></a>经营/流程</h1><h1 id="职业发展"><a href="#职业发展" class="headerlink" title="职业发展"></a>职业发展</h1>]]></content>
-      <categories>
-        <category>读书笔记与感悟</category>
-      </categories>
-      <tags>
-        <tag>平面设计</tag>
-        <tag>读书</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>如何搭建一个属于自己的个人博客</title>
-    <url>/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</url>
-    <content><![CDATA[<p>— 博客，音译，英文名为Blogger，它的正式名称为网络日记；是使用特定的软件，在网络上出版、发表和张贴个人文章的人，或者是一种通常由个人管理、不定期张贴新的文章的网站。博客是继MSN、BBS、ICQ之后出现的第4种网络交流方式，是网络时代的个人“读者文摘”，它代表着新的生活、工作和学习方式。</p>
-<span id="more"></span>
-
-<p>— 在本人搭建博客的过程中，发现互联网上的教程大多数的发布时间是几年甚至十几年之前，有些软件的版本和操作方式都已经有所改变。许多新手小白如果按照之前的教程来操作的话会产生各种各样的问题。教程中所使用的专业名词也会使小白们一头雾水，影响操作效率。<br>— 于是在2021年4月10日发布了这篇面向纯新手小白的保姆级搭建教程，手把手教你搭建属于自己的个人博客<br>— 教程步骤框架来自hojun.cn发布的教程，使用工具包含node.js、github、gitforwin、sublime、Hexo侵删</p>
-<h2 id="node的下载与安装"><a href="#node的下载与安装" class="headerlink" title="node的下载与安装"></a>node的下载与安装</h2><p>① Node.js官网下载并打开安装包<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/1-1-1.jpg"><br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/1-1-2.jpg"><br>② 更改安装位置<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/1-2-1.jpg"><br>③ 是否安装必要的环境，我选的安装<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/1-3-1.jpg"><br>④ 安装完成<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/1-4-1.jpg"><br>⑤ Win+R打开运行窗口，输入cmd<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/1-5-1.jpg"><br>⑥ node -v查看版本<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/1-6-1.jpg"></p>
-<h2 id="github注册"><a href="#github注册" class="headerlink" title="github注册"></a>github注册</h2><p>① 打开github官网 GitHub: Where the world builds software · GitHub<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/2-1-1.jpg"><br>② 右上角注册<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/2-2-1.jpg"><br>③ 注册流程走完后回首页，右上角加号第一个选项，传建一个新的存储库<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/2-3-1.jpg"><br>④ 存储库名称为 用户名+.github+.io，其他默认，创建<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/2-4-1.jpg"></p>
-<h2 id="gitforwin的下载与安装"><a href="#gitforwin的下载与安装" class="headerlink" title="gitforwin的下载与安装"></a>gitforwin的下载与安装</h2><p>① 浏览器输入 Git for Windows，下载gitforwin安装包<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/3-1-1.jpg"><br>② 安装git<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/3-2-1.jpg"><br>③ 更改安装位置<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/3-3-1.jpg"><br>④ 创建开始菜单快捷方式，随意，我选择不创建<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/3-4-1.jpg"><br>⑤ 点下一步全部默认就可以，到这一步选择第二个<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/3-5-1.jpg"><br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/3-5-2.jpg"><br>⑥ 安装完成<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/3-6-1.jpg"><br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/3-6-2.jpg"><br>⑦ 桌面没有新的快捷方式不要慌，正常现象，有需要的话可以在开始菜单和软件安装路径里找到并创建快捷方式<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/3-7-1.jpg"><br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/3-7-2.jpg"><br>⑧ 验证是否安装完成<br>Win+R，输入cmd，输入命令git<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/3-8-1.jpg"></p>
-<h2 id="githubSHH配置"><a href="#githubSHH配置" class="headerlink" title="githubSHH配置"></a>githubSHH配置</h2><p>① 打开git的安装路径，找到git bash.exe 双击运行<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/4-1-1.jpg"><br>② 输入命令ssh-keygen -t rsa -C “<a href="mailto:&#57;&#x39;&#49;&#50;&#x37;&#x30;&#54;&#x38;&#53;&#x40;&#x71;&#113;&#x2e;&#99;&#111;&#109;">&#57;&#x39;&#49;&#50;&#x37;&#x30;&#54;&#x38;&#53;&#x40;&#x71;&#113;&#x2e;&#99;&#111;&#109;</a>“，引号内是github注册邮箱地址，回车<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/4-2-1.jpg"><br>③ 无特殊提示就回车，有（y/n）就输入y回车<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/4-3-1.jpg"><br>④ 打开github，点击右上角头像选择 设置<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/4-4-1.jpg"><br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/4-4-2.jpg"><br>⑤ 选择shh和密钥选项，添加新密钥<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/4-5-1.jpg"><br>⑥ 标题就用户名+tech吧（tech技术），填到第一栏<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/4-6-1.jpg"><br>在C盘找到id_rsa.pub这个文件，以记事本形式打开，复制内容填到第二栏<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/4-6-2.jpg"><br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/4-6-3.jpg"><br>⑦ 提交，创建完成<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/4-7-1.jpg"></p>
-<h2 id="hexo的本地使用"><a href="#hexo的本地使用" class="headerlink" title="hexo的本地使用"></a>hexo的本地使用</h2><p>① 浏览器输入 Hexo 进入hexo官网<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/5-1-1.jpg"><br>② 在合适的位置新建一个文件夹blog，关于博客的文件基本都在这里面，我选择D盘根目录<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/5-2-1.jpg"><br>③ 进入bolg文件，点击路径输入cmd，回车进入（也可以win+R，输入cmd，再用cd命令一级一级切到blog文件下）<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/5-3-1.jpg"><br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/5-3-2.jpg"><br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/5-3-3.jpg"><br>④ 回到hexo官网，复制命令 npm install hexo-cli -g 到运行窗口回车<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/5-4-1.jpg"><br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/5-4-2.jpg"><br>⑤ 网站下拉会有使用命令行，blog为你的博客名<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/5-5-1.jpg"><br>⑥ 输入 hexo init +博客名 回车运行<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/5-6-1.jpg"><br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/5-6-2.jpg"><br>⑦ 输入命令cd 博客名，进入博客文件，回到网站复制命令行 npm install 并运行<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/5-7-1.jpg"><br>⑧ 完成后输入命令 hexo s 生成本地预览，最后会生成一个4000端口的网址，复制到浏览器进入，就能看到我们的博客了<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/5-8-1.jpg"><br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/5-8-2.jpg"></p>
-<h2 id="sublime的下载与安装"><a href="#sublime的下载与安装" class="headerlink" title="sublime的下载与安装"></a>sublime的下载与安装</h2><p>① 浏览器输入Download - Sublime Text 进去官网下载，选择自己的系统，我选择windows64位<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/6-1-1.jpg"><br>② 下载完成运行，更改安装路径<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/6-2-1.jpg"><br>③ 默认选项就可以，一直下一步。安装完成<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/6-3-1.jpg"><br>④ 打开sublime<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/6-4-1.jpg"><br>⑤ 打开sublime，在左边栏source——-posts —— hello-world.md中输入文字，ctrl+s保存<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/6-5-1.jpg"><br>⑥ 在blog路径中右击运行git bash，输入命令hexo cl清理缓存，hexo g hexo s生成本地预览<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/6-6-1.jpg"><br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/6-6-2.jpg"><br>⑦ 浏览器打开本地预览，更改已生效<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/6-7-1.jpg"></p>
-<h2 id="将hexo发布至github"><a href="#将hexo发布至github" class="headerlink" title="将hexo发布至github"></a>将hexo发布至github</h2><p>① 打开浏览器，进入github之前新建的存储库，进入库，复制地址<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/7-1-1.jpg"><br>② 在sublime中打开-config.yml文件更改配置信息<br>更改参数 author：名字，我的是maohuifei<br>更改参数 ur1： 后面为github存储库的地址中的一部分（XXXX.github.io）<br>更改参数 type：git，<br>添加新参数 branch: gh-pages<br>添加新参数 repo：后面为github存储库的地址<br>保存<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/7-2-1.jpg"><br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/7-2-2.jpg"><br>③ 进入hexo一键部署网站部署 | Hexo ，复制hexo-deployer-git的安装命令 npm install hexo-deployer-git –save 进入git bash 运行安装<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/7-3-1.jpg"><br>④ 命令 hexo cl 清理hexo g生成 hexo d提交<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/7-4-1.jpg"><br>⑤ 浏览器输入 用户名+github.Io 我的是maohuifei.github.io<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/7-5-1.jpg"><br>⑥ 博客搭建完成!</p>
-<h2 id="hexo主题使用"><a href="#hexo主题使用" class="headerlink" title="hexo主题使用"></a>hexo主题使用</h2><p>① 进入hexo主题官网Themes | Hexo 选择主题，以next为例<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/8-1-1.jpg"><br>② 进入主题详情，有详细安装步骤教程，每个主题进入位置不同<br><img src="/2021/04/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/8-2-1.jpg"></p>
-]]></content>
-      <categories>
-        <category>教程与心得</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>博客</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>泰戈尔《新月集》阅读笔记</title>
-    <url>/2021/04/28/%E6%B3%B0%E6%88%88%E5%B0%94%E3%80%8A%E6%96%B0%E6%9C%88%E9%9B%86%E3%80%8B%E8%AF%BB%E5%90%8E%E6%84%9F/</url>
-    <content><![CDATA[<p>我独自在横跨过田地的路上走着，夕阳像一个守财奴似的，正藏起它的最后的金子。<br>白昼更加深沉地投入黑暗之中，那已经收割了的孤寂的田地，默默地躺在那里。<br>天空里突然升起了一个男孩子的尖锐的歌声。他穿过看不见的黑暗，留下他的歌声的辙痕跨过黄昏的静谧。<br>他的乡村的家坐落在荒凉的边上，在甘蔗田的后面，躲藏在香蕉树，瘦长的槟榔树，椰子树和深绿色的贾克果树的阴影里。<br>我在星光下独自走着的路上停留了一会，我看见黑沉沉的大地展开在我的面前，用她的手臂拥抱着无量数的家庭，在那些家庭里有着摇篮和床铺，母亲们的心和夜晚的灯，还有年轻轻的生命，他们满心欢乐，却浑然不知这样的欢乐对于世界的价值。</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>读书笔记与感悟</category>
-      </categories>
-      <tags>
-        <tag>读书</tag>
-        <tag>泰戈尔</tag>
-        <tag>印度文学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>泰戈尔《飞鸟集》阅读笔记</title>
-    <url>/2021/04/28/%E6%B3%B0%E6%88%88%E5%B0%94%E3%80%8A%E9%A3%9E%E9%B8%9F%E9%9B%86%E3%80%8B%E8%AF%BB%E5%90%8E%E6%84%9F/</url>
-    <content><![CDATA[<p>夏天的飞鸟，飞到我窗前唱歌，又飞去了。<br>秋天的黄叶，他们没有什么可唱，只叹息一声，飞落在哪里。</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>读书笔记与感悟</category>
-      </categories>
-      <tags>
-        <tag>读书</tag>
-        <tag>泰戈尔</tag>
-        <tag>印度文学</tag>
       </tags>
   </entry>
   <entry>
@@ -1059,123 +662,520 @@ scheme:&#x2F;&#x2F;host.domain:port&#x2F;path&#x2F;filename<span aria-hidden="tr
       </tags>
   </entry>
   <entry>
-    <title>CSS知识点扩展</title>
-    <url>/2021/07/13/CSS%E7%9F%A5%E8%AF%86%E7%82%B9%E6%89%A9%E5%B1%95/</url>
-    <content><![CDATA[<p>收录总结CSS学习中的知识点扩展</p>
+    <title>【日常练习】字体设计</title>
+    <url>/2021/05/22/%E3%80%90%E6%97%A5%E5%B8%B8%E7%BB%83%E4%B9%A0%E3%80%91%E5%AD%97%E4%BD%93%E8%AE%BE%E8%AE%A1/</url>
+    <content><![CDATA[<p>你当像鸟飞往你的山</p>
 <span id="more"></span>
 
-<h2 id="多重样式优先级深入概念"><a href="#多重样式优先级深入概念" class="headerlink" title="多重样式优先级深入概念"></a>多重样式优先级深入概念</h2><p>优先级是浏览器是通过判断哪些属性值与元素最相关以决定并应用到该元素上的。优先级仅由选择器组成的匹配规则决定的。<br>优先级就是分配给指定的CSS声明的一个权重，它由匹配的选择器中的每一种选择器类型的数值决定。</p>
-<p>下列是一份优先级逐级增加的选择器列表：</p>
-<ul>
-    <li>通用选择器（*)</li>
-    <li>元素(类型)选择器</li>
-    <li>类选择器</li>
-    <li>属性选择器</li>
-    <li>伪类</li>
-    <li>ID 选择器</li>
-    <li>内联样式</li>
-</ul>
+<h1 id="practice-1"><a href="#practice-1" class="headerlink" title="practice 1"></a>practice 1</h1><h1 id="practice-2"><a href="#practice-2" class="headerlink" title="practice 2"></a>practice 2</h1><h1 id="practice-3"><a href="#practice-3" class="headerlink" title="practice 3"></a>practice 3</h1>]]></content>
+      <categories>
+        <category>日常练习</category>
+      </categories>
+      <tags>
+        <tag>平面设计</tag>
+        <tag>日常练习</tag>
+        <tag>学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【日常练习】海报排版</title>
+    <url>/2021/05/17/%E3%80%90%E6%97%A5%E5%B8%B8%E7%BB%83%E4%B9%A0%E3%80%91%E6%8E%92%E7%89%88-%E6%B5%B7%E6%8A%A5%E4%B8%B4%E6%91%B9/</url>
+    <content><![CDATA[<p>好问的人，只做了五分种的愚人；耻于发问的人，终身为愚人</p>
+<span id="more"></span>
 
-<p><b>!important 规则例外<br>当 !important 规则被应用在一个样式声明中时,该样式声明会覆盖CSS中任何其他的声明, 无论它处在声明列表中的哪里. 尽管如此, !important规则还是与优先级毫无关系.使用 !important 不是一个好习惯，因为它改变了你样式表本来的级联规则，从而使其难以调试。</b><br>一些经验法则：</p>
-<ul>
-    <li>Always 要优化考虑使用样式规则的优先级来解决问题而不是 <i>!important</i></li>
-    <li>Only 只在需要覆盖全站或外部 css（例如引用的 ExtJs 或者 YUI ）的特定页面中使用<i>!important</i></li>
-    <li>Never 永远不要在全站范围的 css 上使用<i>!important</i></li>
-    <li>Never 永远不要在你的插件中使用<i>!important</i></li>
-</ul>
-<b>权重计算</b>
+<h1 id="practice-1"><a href="#practice-1" class="headerlink" title="practice 1"></a>practice 1</h1><p><img src="/2021/05/17/%E3%80%90%E6%97%A5%E5%B8%B8%E7%BB%83%E4%B9%A0%E3%80%91%E6%8E%92%E7%89%88-%E6%B5%B7%E6%8A%A5%E4%B8%B4%E6%91%B9/1.jpg"></p>
+<h1 id="practice-2"><a href="#practice-2" class="headerlink" title="practice 2"></a>practice 2</h1><p><img src="/2021/05/17/%E3%80%90%E6%97%A5%E5%B8%B8%E7%BB%83%E4%B9%A0%E3%80%91%E6%8E%92%E7%89%88-%E6%B5%B7%E6%8A%A5%E4%B8%B4%E6%91%B9/2.jpg"></p>
+<h1 id="practice-3"><a href="#practice-3" class="headerlink" title="practice 3"></a>practice 3</h1><p><img src="/2021/05/17/%E3%80%90%E6%97%A5%E5%B8%B8%E7%BB%83%E4%B9%A0%E3%80%91%E6%8E%92%E7%89%88-%E6%B5%B7%E6%8A%A5%E4%B8%B4%E6%91%B9/3.jpg"></p>
+<h1 id="practice-4"><a href="#practice-4" class="headerlink" title="practice 4"></a>practice 4</h1><p><img src="/2021/05/17/%E3%80%90%E6%97%A5%E5%B8%B8%E7%BB%83%E4%B9%A0%E3%80%91%E6%8E%92%E7%89%88-%E6%B5%B7%E6%8A%A5%E4%B8%B4%E6%91%B9/4.jpg"></p>
+<h1 id="practice-5"><a href="#practice-5" class="headerlink" title="practice 5"></a>practice 5</h1><p><img src="/2021/05/17/%E3%80%90%E6%97%A5%E5%B8%B8%E7%BB%83%E4%B9%A0%E3%80%91%E6%8E%92%E7%89%88-%E6%B5%B7%E6%8A%A5%E4%B8%B4%E6%91%B9/5.jpg"></p>
+]]></content>
+      <categories>
+        <category>日常练习</category>
+      </categories>
+      <tags>
+        <tag>平面设计</tag>
+        <tag>日常练习</tag>
+        <tag>学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【日常练习】插画板绘</title>
+    <url>/2021/05/17/%E3%80%90%E6%97%A5%E5%B8%B8%E7%BB%83%E4%B9%A0%E3%80%91%E6%9D%BF%E7%BB%98-%E6%8F%92%E7%94%BB%E4%B8%B4%E6%91%B9/</url>
+    <content><![CDATA[<p> 我们愈是学习，愈觉得自己的贫乏</p>
+<span id="more"></span>
 
-<p><img src="/2021/07/13/CSS%E7%9F%A5%E8%AF%86%E7%82%B9%E6%89%A9%E5%B1%95/001.png"><br>解释：</p>
-<ul>
-    <li>内联样式表的权值最高 1000</li>
-    <li>ID 选择器的权值为 100</li>
-    <li>Class 类选择器的权值为 10</li>
-    <li>HTML 标签选择器的权值为 1</li>
-</ul>
+<h1 id="practice-1"><a href="#practice-1" class="headerlink" title="practice 1"></a>practice 1</h1><p><img src="/2021/05/17/%E3%80%90%E6%97%A5%E5%B8%B8%E7%BB%83%E4%B9%A0%E3%80%91%E6%9D%BF%E7%BB%98-%E6%8F%92%E7%94%BB%E4%B8%B4%E6%91%B9/1.jpg"></p>
+<h1 id="practice-2"><a href="#practice-2" class="headerlink" title="practice 2"></a>practice 2</h1><p><img src="/2021/05/17/%E3%80%90%E6%97%A5%E5%B8%B8%E7%BB%83%E4%B9%A0%E3%80%91%E6%9D%BF%E7%BB%98-%E6%8F%92%E7%94%BB%E4%B8%B4%E6%91%B9/2.jpg"></p>
+<h1 id="practice-3"><a href="#practice-3" class="headerlink" title="practice 3"></a>practice 3</h1>]]></content>
+      <categories>
+        <category>日常练习</category>
+      </categories>
+      <tags>
+        <tag>平面设计</tag>
+        <tag>日常练习</tag>
+        <tag>学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Markdown语法</title>
+    <url>/2021/05/13/Markdown%E8%AF%AD%E6%B3%95/</url>
+    <content><![CDATA[<p>Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档。</p>
+<p>Markdown 语言在 2004 由约翰·格鲁伯（英语：John Gruber）创建。</p>
+<p>Markdown 编写的文档可以导出 HTML 、Word、图像、PDF、Epub 等多种格式的文档。</p>
+<p>Markdown 编写的文档后缀为 .md, .markdown。</p>
+<span id="more"></span>
 
-<h3 id="CSS样式优先级"><a href="#CSS样式优先级" class="headerlink" title="CSS样式优先级"></a>CSS样式优先级</h3><p>内联样式 &gt; 内部样式表 &gt; 外部样式表 &gt; 浏览器样式表</p>
-<h4 id="css-7-种选择器："><a href="#css-7-种选择器：" class="headerlink" title="css 7 种选择器："></a>css 7 种选择器：</h4><ul>
-    <li> id 选择器</li>
-    <li> 类选择器</li>
-    <li> 伪类选择器</li>
-    <li> 属性选择器</li>
-    <li> 伪元素选择器</li>
-    <li> 通配选择器</li>
-    <li> 标签选择器</li>
-</ul>
+<h1 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h1><h2 id="使用-和-标记一级和二级标题"><a href="#使用-和-标记一级和二级标题" class="headerlink" title="使用=和-标记一级和二级标题"></a>使用=和-标记一级和二级标题</h2><pre class="line-numbers language-Markdown" data-language="Markdown"><code class="language-Markdown">$ 
+一级标题
+&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;
 
-<h4 id="css选择器优先规则"><a href="#css选择器优先规则" class="headerlink" title="css选择器优先规则"></a>css选择器优先规则</h4><p>内联样式 &gt; id 选择器 &gt; 类选择器 = 伪类选择器 = 属性选择器 &gt; 标签选择器 = 伪元素选择器</p>
-<h4 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h4><p>HTML:</p>
-<pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">$ 
-&lt;div class&#x3D;&quot;content-class&quot; id&#x3D;&quot;content-id&quot;&gt;&lt;&#x2F;div&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>CSS:</p>
-<pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
-#content-id &#123;
-    color: red;
-&#125;
-.content-class &#123;
-    color: blue;
-&#125;
-div &#123;
-    color: grey;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>div的最终显示结果为红色</p>
+二级标题
+-----------------<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="使用-标记1-6级标题"><a href="#使用-标记1-6级标题" class="headerlink" title="使用#标记1-6级标题"></a>使用#标记1-6级标题</h2><pre class="line-numbers language-Markdown" data-language="Markdown"><code class="language-Markdown">$ 
+# 一级标题
+## 二级标题
+### 三级标题
+#### 四级标题
+##### 五级标题
+###### 六级标题<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h1 id="段落和字体"><a href="#段落和字体" class="headerlink" title="段落和字体"></a>段落和字体</h1><h2 id="换行："><a href="#换行：" class="headerlink" title="换行："></a>换行：</h2><p>两个以上的空格加回车  </p>
+<h2 id="字体："><a href="#字体：" class="headerlink" title="字体："></a>字体：</h2><p><em>斜体文本</em><br><em>斜体文本</em><br><strong>粗体文本</strong><br><strong>粗体文本</strong><br><em><strong>粗斜体文本</strong></em><br><em><strong>粗斜体文本</strong></em></p>
+<pre class="line-numbers language-Markdown" data-language="Markdown"><code class="language-Markdown">$ 
+*斜体文本*
+_斜体文本_
+**粗体文本**
+__粗体文本__
+***粗斜体文本***
+___粗斜体文本___<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="分隔线"><a href="#分隔线" class="headerlink" title="分隔线"></a>分隔线</h2><p>可以在一行中用三个以上的星号、减号、底线来建立一个分隔线，行内不能有其他东西。你也可以在星号或是减号中间插入空格。下面每种写法都可以建立分隔线：</p>
+<hr>
+<pre class="line-numbers language-Markdown" data-language="Markdown"><code class="language-Markdown">$ 
+***
+
+* * *
+
+*****
+
+- - -
+
+----------<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h2><p>文字两端加两个波浪线<br><del>文本</del></p>
+<pre class="line-numbers language-Markdown" data-language="Markdown"><code class="language-Markdown">$ 
+~~文本~~
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="下划线"><a href="#下划线" class="headerlink" title="下划线"></a>下划线</h2><p><u>文本</u></p>
+<pre class="line-numbers language-Markdown" data-language="Markdown"><code class="language-Markdown">$ 
+&lt;u&gt;文本&lt;&#x2F;u&gt;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="脚注"><a href="#脚注" class="headerlink" title="脚注"></a>脚注</h2><p>文本1[^文本2]</p>
+<pre class="line-numbers language-Markdown" data-language="Markdown"><code class="language-Markdown">$ 
+文本1[^文本2]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><p>Markdown 支持有序列表和无序列表。</p>
+<h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><p>使用星号(*)、加号(+)或是减号(-)作为列表标记，这些标记后面要添加一个空格，然后再填写内容：</p>
+<pre class="line-numbers language-Markdown" data-language="Markdown"><code class="language-Markdown">$ 
+* 第一项
+* 第二项
+* 第三项
+
++ 第一项
++ 第二项
++ 第三项
+
+
+- 第一项
+- 第二项
+- 第三项<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="无序列表-1"><a href="#无序列表-1" class="headerlink" title="无序列表"></a>无序列表</h3><p>有序列表使用数字并加上 . 号来表示：</p>
+<pre class="line-numbers language-Markdown" data-language="Markdown"><code class="language-Markdown">$ 
+1. 第一项
+2. 第二项
+3. 第三项<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="列表嵌套"><a href="#列表嵌套" class="headerlink" title="列表嵌套"></a>列表嵌套</h3><p>列表嵌套只需在子列表中的选项前面添加四个空格即可：</p>
+<pre class="line-numbers language-Markdown" data-language="Markdown"><code class="language-Markdown">$ 
+1. 第一项：
+    - 第一项嵌套的第一个元素
+    - 第一项嵌套的第二个元素
+2. 第二项：
+    - 第二项嵌套的第一个元素
+    - 第二项嵌套的第二个元素<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h1 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h1><pre class="line-numbers language-Markdown" data-language="Markdown"><code class="language-Markdown">$ 
+[链接名称](链接地址)
+
+或者
+
+&lt;链接地址&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这是一个链接 <a href="https://www.runoob.com/">菜鸟教程</a></p>
+<h1 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h1><p>开头一个感叹号 !<br>接着一个方括号，里面放上图片的替代文字<br>接着一个普通括号，里面放上图片的网址，最后还可以用引号包住并加上选择性的 ‘title’ 属性的文字。</p>
+<pre class="line-numbers language-Markdown" data-language="Markdown"><code class="language-Markdown">$ 
+![alt 属性文本](图片地址)
+
+![alt 属性文本](图片地址 &quot;可选标题&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h1 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h1><p>Markdown 制作表格使用 | 来分隔不同的单元格，使用 - 来分隔表头和其他行<br>|  表头   | 表头  |<br>|  —-  | —-  |<br>| 单元格  | 单元格 |<br>| 单元格  | 单元格 |</p>
+]]></content>
+      <categories>
+        <category>语法</category>
+      </categories>
+      <tags>
+        <tag>Markdown</tag>
+        <tag>语法</tag>
+        <tag>Blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2021/05/13/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<span id="more"></span>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>语法</category>
+      </categories>
+      <tags>
+        <tag>语法</tag>
+        <tag>Blog</tag>
+        <tag>bash</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【V2Ray篇】为VPS安装BBR加速</title>
+    <url>/2021/05/13/%E3%80%90V2Ray%E7%AF%87%E3%80%91%E4%B8%BAVPS%E5%AE%89%E8%A3%85BBR%E5%8A%A0%E9%80%9F/</url>
+    <content><![CDATA[<p>TCP BBR（Bottleneck Bandwidth and Round-trip propagation time）是由Google设计，于2016年发布的拥塞算法。以往大部分拥塞算法是基于丢包来作为降低传输速率的信号，而BBR则基于模型主动探测。</p>
+<span id="more"></span>
+<p>该算法使用网络最近出站数据分组当时的最大带宽和往返时间来创建网络的显式模型。数据包传输的每个累积或选择性确认用于生成记录在数据包传输过程和确认返回期间的时间内所传送数据量的采样率。该算法认为随着网络接口控制器逐渐进入千兆速度时，与缓冲膨胀相关的延迟相比丢包更应该被认为是识别拥塞的主要决定因素，所以基于延迟模型的拥塞控制算法（如BBR）会有更高的吞吐量和更低的延迟，可以用BBR来替代其他流行的拥塞算法，例如CUBIC。Google在YouTube上应用该算法，将全球平均的YouTube网络吞吐量提高了4%，在一些国家超过了14%。</p>
+<p>BBR之后移植入Linux内核4.9版本，并且对于QUIC可用。</p>
+<p>BBR效率很高，速度也很快，但是它与非BBR的流的公平性有争议。虽然谷歌的展示显示 BBR 与 CUBIC 共存良好，但像杰夫·休斯顿和霍克、布利斯和齐特巴特等研究者发现它对其他流不公平，并且不可扩展。霍克等人还发现，在Linux 4.9的BBR实现中“存在一些严重的固有问题，如排队延迟增加、不公平和大量数据包丢失”。</p>
+<p>索海尔·阿巴斯洛等人(C2TCP的作者)指出，BBR在动态环境中表现不佳，比如蜂窝网络。他们还表明BBR存在不公平问题。例如，当一个CUBIC流(在Linux、Android和MacOS中是默认的TCP实现)与网络中的BBR流共存时，BBR流可以支配 CUBIC 流并从中获得整个链路带宽</p>
+<p>简介参考维基百科，侵删</p>
+<h1 id="CentOS-8-开启-BBR"><a href="#CentOS-8-开启-BBR" class="headerlink" title="CentOS 8 开启 BBR"></a>CentOS 8 开启 BBR</h1><p>CentOS 8 默认内核版本为 4.18.x，内核版本高于 4.9 就可以直接开启 BBR，所以 CentOS 8 启用 BBR 非常简单。</p>
+<pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ 
+echo &quot;net.core.default_qdisc&#x3D;fq&quot; &gt;&gt; &#x2F;etc&#x2F;sysctl.conf
+echo &quot;net.ipv4.tcp_congestion_control&#x3D;bbr&quot; &gt;&gt; &#x2F;etc&#x2F;sysctl.conf
+sysctl -p<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>reboot 重启系统<br>检查BBR是否开启成功，返回值未报错包含bbr即为成功</p>
+<pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ 
+sysctl -n net.ipv4.tcp_congestion_control
+lsmod | grep bbr<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h1 id="CentOS-7-开启-BBR"><a href="#CentOS-7-开启-BBR" class="headerlink" title="CentOS 7 开启 BBR"></a>CentOS 7 开启 BBR</h1><h2 id="升级内核"><a href="#升级内核" class="headerlink" title="升级内核"></a>升级内核</h2><p>开启 BBR 要求 4.10 以上版本 Linux 内核，可使用如下命令查看当前内核版本：</p>
+<pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ 
+uname -r<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>如果当前内核版本低于 4.10，可使用 ELRepo 源更新：</p>
+<pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ 
+sudo rpm --import https:&#x2F;&#x2F;www.elrepo.org&#x2F;RPM-GPG-KEY-elrepo.org
+sudo rpm -Uvh http:&#x2F;&#x2F;www.elrepo.org&#x2F;elrepo-release-7.0-2.el7.elrepo.noarch.rpm
+sudo yum --enablerepo&#x3D;elrepo-kernel install kernel-ml -y<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>安装完成后，查看已安装的内核：</p>
+<pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ 
+rpm -qa | grep kernel<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>在输出中看到 kernel-ml-4.11.0-1.el7.elrepo.x86_64 类似的内容，表示安装成功。</p>
+<h2 id="修改grub2引导"><a href="#修改grub2引导" class="headerlink" title="修改grub2引导"></a>修改grub2引导</h2><p>输入</p>
+<pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ 
+sudo egrep ^menuentry &#x2F;etc&#x2F;grub2.cfg | cut -f 2 -d \&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>得到类似如下结果</p>
+<pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ 
+CentOS Linux 7 Rescue a0cbf86a6ef1416a8812657bb4f2b860 (4.11.0-1.el7.elrepo.x86_64)
+CentOS Linux (4.11.0-1.el7.elrepo.x86_64) 7 (Core)
+CentOS Linux (3.10.0-514.16.1.el7.x86_64) 7 (Core)
+CentOS Linux (3.10.0-123.el7.x86_64) 7 (Core)
+CentOS Linux (0-rescue-2d3f9371c20d3e90a544ccc814d485e3) 7 (Core)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>由于序号从0开始，设置默认启动项为1并重启系统：</p>
+<pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ 
+sudo grub2-set-default 1
+reboot<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>重启完成后，重新登录并重新运行uname命令来确认你是否使用了正确的内核：</p>
+<pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ 
+uname -r<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="开启BBR"><a href="#开启BBR" class="headerlink" title="开启BBR"></a>开启BBR</h2><p>执行：</p>
+<pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ 
+echo &#39;net.core.default_qdisc&#x3D;fq&#39; | sudo tee -a &#x2F;etc&#x2F;sysctl.conf
+echo &#39;net.ipv4.tcp_congestion_control&#x3D;bbr&#39; | sudo tee -a &#x2F;etc&#x2F;sysctl.conf
+sudo sysctl -p<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>完成后，分别执行如下命令来检查 BBR 是否开启成功：</p>
+<pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ 
+sudo sysctl net.ipv4.tcp_available_congestion_control
+# 输出应为 net.ipv4.tcp_available_congestion_control &#x3D; bbr cubic reno
+sudo sysctl -n net.ipv4.tcp_congestion_control
+# 输出应为 bbr
+lsmod | grep bbr
+# 输出应类似 tcp_bbr  16384  28<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="一键开启脚本（狗头）"><a href="#一键开启脚本（狗头）" class="headerlink" title="一键开启脚本（狗头）"></a>一键开启脚本（狗头）</h2><pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ 
+wget --no-check-certificate https:&#x2F;&#x2F;github.com&#x2F;teddysun&#x2F;across&#x2F;raw&#x2F;master&#x2F;bbr.sh &amp;&amp; chmod +x bbr.sh &amp;&amp; .&#x2F;bbr.sh<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>]]></content>
+      <categories>
+        <category>技能收录</category>
+      </categories>
+      <tags>
+        <tag>V2Ray</tag>
+        <tag>云免</tag>
+        <tag>拥塞控制算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【V2Ray篇】v2-ui多协议多用户 v2ray 面板</title>
+    <url>/2021/05/13/%E3%80%90V2Ray%E7%AF%87%E3%80%91v2-ui%E5%A4%9A%E5%8D%8F%E8%AE%AE%E5%A4%9A%E7%94%A8%E6%88%B7-v2ray-%E9%9D%A2%E6%9D%BF/</url>
+    <content><![CDATA[<p>系统状态监控<br>支持多用户多协议，浏览器可视化操作，无需敲命令<br>支持的协议：vmess、shadowsocks、dokodemo-door、socks、http<br>vmess 支持的传输配置：tcp（http伪装、tls）、kcp（伪装）、ws（tls）、http（tls）、quic（tls）<br>支持账号流量统计<br>支持自定义 v2ray 配置模板<br>支持 https 访问面板（需自备域名 + ssl 证书）<br>更多功能，详见面板</p>
+<span id="more"></span>
+
+<h2 id="操作前的准备"><a href="#操作前的准备" class="headerlink" title="操作前的准备"></a>操作前的准备</h2><p>VPS防火墙开放65432端口<br>VPS操作系统Centos7+</p>
+<h2 id="一键安装与升级命令"><a href="#一键安装与升级命令" class="headerlink" title="一键安装与升级命令"></a>一键安装与升级命令</h2><pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ bash &lt;(curl -Ls https:&#x2F;&#x2F;blog.sprov.xyz&#x2F;v2-ui.sh)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>若出现 bash curl: command not found 等错误，请先安装 curl<br>CentOS 系统：</p>
+<pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ yum install curl -y<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>全新安装后，在浏览器中打开 http://&lt;服务器IP&gt;:65432 即可访问面板，默认用户名和密码都是 admin。</p>
+<h2 id="无法访问面板请检查防火墙是否开放端口"><a href="#无法访问面板请检查防火墙是否开放端口" class="headerlink" title="无法访问面板请检查防火墙是否开放端口"></a>无法访问面板请检查防火墙是否开放端口</h2><p>重启防火墙</p>
+<pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ systemctl restart firewalld<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>查看防火墙状态</p>
+<pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ systemctl status firewalld.service<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>开启防火墙</p>
+<pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ systemctl start firewalld.service<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>关闭防火墙</p>
+<pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ systemctl stop firewalld.service<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>禁用防火墙</p>
+<pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ systemctl disable firewalld.service<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>端口控制</p>
+<pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$  
+ firewall-cmd --query-port&#x3D;8080&#x2F;tcp                                   #查询端口是否开放
+ firewall-cmd --add-port&#x3D;8080&#x2F;tcp --permanent                         #永久添加8080端口例外(全局)
+ firewall-cmd --remove-port&#x3D;8800&#x2F;tcp --permanent                      #永久删除8080端口例外(全局)
+ firewall-cmd --add-port&#x3D;65001-65010&#x2F;tcp --permanent                  #永久增加65001-65010例外(全局)  
+ firewall-cmd  --zone&#x3D;public --add-port&#x3D;8080&#x2F;tcp --permanent          #永久添加8080端口例外(区域public)
+ firewall-cmd  --zone&#x3D;public --remove-port&#x3D;8080&#x2F;tcp --permanent       #永久删除8080端口例外(区域public)
+ firewall-cmd  --zone&#x3D;public --add-port&#x3D;65001-65010&#x2F;tcp --permanent   #永久增加65001-65010例外(区域public)
+ systemctl disable firewalld                                          #禁止防火墙随系统启动
+ firewall-cmd --state                                                 #查看防火墙状态  
+ firewall-cmd --reload                                                #更新防火墙规则   
+ firewall-cmd --list-ports                                            #查看所有打开的端口<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="面板的其他操作"><a href="#面板的其他操作" class="headerlink" title="面板的其他操作"></a>面板的其他操作</h2><pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$
+v2-ui                  # 显示管理菜单 (功能更多)
+v2-ui start            # 启动 v2-ui 面板
+v2-ui stop             # 停止 v2-ui 面板
+v2-ui restart          # 重启 v2-ui 面板
+v2-ui status           # 查看 v2-ui 状态
+v2-ui enable           # 设置 v2-ui 开机自启
+v2-ui disable          # 取消 v2-ui 开机自启
+v2-ui log              # 查看 v2-ui 日志
+v2-ui update           # 更新 v2-ui 面板
+v2-ui install          # 安装 v2-ui 面板
+v2-ui uninstall        # 卸载 v2-ui 面板<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="WEB面板相关操作"><a href="#WEB面板相关操作" class="headerlink" title="WEB面板相关操作"></a>WEB面板相关操作</h2><h3 id="账户管理"><a href="#账户管理" class="headerlink" title="账户管理"></a>账户管理</h3><p>可以建立和管理用户<br>用来生成V2Ray配置链接和二维码<br>联通免流需要端口为8080/80，打开http伪装Host值为混淆网址</p>
+<h3 id="面板设置"><a href="#面板设置" class="headerlink" title="面板设置"></a>面板设置</h3><p>更改WEB面板登陆账户密码<br>手动更改V2Ray配置信息</p>
 ]]></content>
       <categories>
         <category>技能收录</category>
       </categories>
       <tags>
-        <tag>CSS</tag>
-        <tag>学习笔记</tag>
-        <tag>Web前端</tag>
+        <tag>V2Ray</tag>
+        <tag>代理工具</tag>
+        <tag>云免</tag>
       </tags>
   </entry>
   <entry>
-    <title>HTML知识点扩展</title>
-    <url>/2021/07/13/HTML%E7%9F%A5%E8%AF%86%E7%82%B9%E6%89%A9%E5%B1%95/</url>
-    <content><![CDATA[<p>收录总结HTML学习中的知识点扩展</p>
+    <title>【V2Ray篇】V2Ray配置的生成</title>
+    <url>/2021/05/13/%E3%80%90V2Ray%E7%AF%87%E3%80%91V2Ray%E9%85%8D%E7%BD%AE%E7%9A%84%E7%94%9F%E6%88%90/</url>
+    <content><![CDATA[<p>在拥有一台Linux Centos系统VPS的前提下，通过远程SSH生成V2Ray配置</p>
 <span id="more"></span>
 
-<h2 id="路径（于img标签中src属性的应用）"><a href="#路径（于img标签中src属性的应用）" class="headerlink" title="路径（于img标签中src属性的应用）"></a>路径（于img标签中src属性的应用）</h2><h3 id="相对路径"><a href="#相对路径" class="headerlink" title="相对路径"></a>相对路径</h3><p>以引用文件所在位置为参考基础，而建立出的目录路径<br>简单来说：图片相对于HTML文件的位置<br><b>相对路径分类：</b></p>
-<table>
-    <tr>
-        <th>相对路径分类</th>
-        <th>符号</th>
-        <th>说明</th>
-    </tr>
-    <tr>
-        <td>同一级路径</td>
-        <td> </td>
-        <td>图像文件和HTML处于同一级</td>
-    </tr>
-        <tr>
-        <td>下一级路径</td>
-        <td>/</td>
-        <td>图像文件位于HTML文件下一级，src="images/001.jpg"</td>
-    </tr>
-        
-        <tr>
-        <td>上一级路径</td>
-        <td>../</td>
-        <td>图像文件位于HTML文件上一级,src="../001.jpg"</td>
-    </tr>
-</table>
-
-<h3 id="绝对路径"><a href="#绝对路径" class="headerlink" title="绝对路径"></a>绝对路径</h3><p>是指目录下的绝对位置，直接到达目标的位置，通常是从盘符开始的路径</p>
-<pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">$ 
-本地绝对路径：
-D:\用户文件\Desktop\Web1\images\001.jpg
-或者完整的网络地址：
-https:&#x2F;&#x2F;www.mhf.ink&#x2F;medias&#x2F;featureimages&#x2F;6.jpg<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id><a href="#" class="headerlink" title></a></h2>]]></content>
+<h2 id="操作前的准备"><a href="#操作前的准备" class="headerlink" title="操作前的准备"></a>操作前的准备</h2><p>一台Centos7以上系统的VPS，VPS的公网IP及root密码<br>远程登录软件PC端FinalShell/Xshell、安卓端JuiceSSH</p>
+<h2 id="远程登录服务器"><a href="#远程登录服务器" class="headerlink" title="远程登录服务器"></a>远程登录服务器</h2><h3 id="JuiceSSH"><a href="#JuiceSSH" class="headerlink" title="JuiceSSH"></a>JuiceSSH</h3><p>(1）进入JuiceSSH<br>(2）点上侧连接<br>(3）点右下角+<br>(4）昵称随意，类型SSH，地址你的服务器ip（外网IP），端口默认22不变（映射端口和自设端口除外）<br>(5）认证选新建<br>(6）昵称随意，用户名一般为root，密码填你的服务器密码<br>(7）点右上角√<br>(8）再点右上角√<br>(9）点你设置的配置，如无昵称就是以服务器ip命名<br>(10）如无意外，这时就自动登陆服务器了，如果提示你输入密码，再输一遍就行了，输入后记得点保存</p>
+<h3 id="Xshell"><a href="#Xshell" class="headerlink" title="Xshell"></a>Xshell</h3><p>(1）进入XShell<br>(2）点左上角文件<br>(3）点新建<br>(4）名称随意，协议SSH，主机你的服务器IP（外网IP），端口默认22不变（映射端口和自设端口除外）<br>(5）确定<br>(6）在左侧会话管理器，选中设置的配置双击打开<br>(7）提示输入账号和密码，输入后记得点保存(没有提示可能IP被墙)</p>
+<h2 id="输入安装命令"><a href="#输入安装命令" class="headerlink" title="输入安装命令"></a>输入安装命令</h2><p>一键安装</p>
+<pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ bash &lt;(curl -s -L https:&#x2F;&#x2F;git.io&#x2F;v2ray-setup.sh)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>自定义安装</p>
+<pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ bash &lt;(curl -s -L https:&#x2F;&#x2F;git.io&#x2F;v2rayinstall.sh)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>出现配置信息无报错即为安装成功</p>
+<h2 id="相关命令"><a href="#相关命令" class="headerlink" title="相关命令"></a>相关命令</h2><pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ v2ray info 查看 V2Ray 配置信息
+v2ray config 修改 V2Ray 配置
+v2ray link 生成 V2Ray 配置文件链接
+v2ray infolink 生成 V2Ray 配置信息链接
+v2ray qr 生成 V2Ray 配置二维码链接
+v2ray ss 修改 Shadowsocks 配置
+v2ray ssinfo 查看 Shadowsocks 配置信息
+v2ray ssqr 生成 Shadowsocks 配置二维码链接
+v2ray status 查看 V2Ray 运行状态
+v2ray start 启动 V2Ray
+v2ray stop 停止 V2Ray
+v2ray restart 重启 V2Ray
+v2ray log 查看 V2Ray 运行日志
+v2ray update 更新 V2Ray
+v2ray update.sh 更新 V2Ray 管理脚本
+v2ray uninstall 卸载 V2Ray<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="V2Ray-配置文件的本地更改"><a href="#V2Ray-配置文件的本地更改" class="headerlink" title="V2Ray 配置文件的本地更改"></a>V2Ray 配置文件的本地更改</h2><p>文件路径 cat /etc/v2ray/config.json</p>
+]]></content>
       <categories>
         <category>技能收录</category>
       </categories>
       <tags>
-        <tag>HTML</tag>
-        <tag>学习笔记</tag>
-        <tag>Web前端</tag>
+        <tag>V2Ray</tag>
+        <tag>代理工具</tag>
+        <tag>云免</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【V2Ray篇】V2Ray介绍</title>
+    <url>/2021/05/13/%E3%80%90V2Ray%E7%AF%87%E3%80%91V2Ray%E4%BB%8B%E7%BB%8D/</url>
+    <content><![CDATA[<p>V2Ray（也简称V2），是Victoria Raymond开发的Project V下的一个工具。Project V是一个工具集合，号称可以帮助其使用者打造专属的基础通信网络。Project V的核心工具称为V2Ray，其主要负责网络协议和功能的实现，与其它Project V通信。V2Ray可以单独运行，也可以和其它工具配合，以提供简便的操作流程。开发过程主要使用Go语言，Core采用MIT许可证并开放源代码。</p>
+<p>在中国大陆，本工具广泛用于突破防火长城（GFW）以访问被封锁和屏蔽的内容以及流量伪装达到免流的效果。</p>
+<p>文章参考维基百科，侵删</p>
+<span id="more"></span>
+
+<h2 id="运行原理"><a href="#运行原理" class="headerlink" title="运行原理"></a>运行原理</h2><p>V2Ray的运行原理与其他代理工具基本相同，使用特定的中转服务器完成数据传输。例如，用户无法直接访问Google，YouTube等网站，但代理服务器可以访问，且用户可以直接连接代理服务器，那么用户就可以通过特定软件连接代理服务器，然后由代理服务器获取网站内容并回传给用户，从而实现代理上网的效果。服务器和客户端软件会要求提供密码和加密方式，双方一致后才能成功连接。连接到服务器后，客户端会在本机构建一个本地Socks5代理（或VPN、透明代理等）。浏览网络时，客户端通过这个Socks5（或其他形式）代理收集网络流量，然后再经混淆加密发送到服务器端，以防网络流量被识别和拦截，反之亦然。其他代理工具定位只是一个简单的代理工具，而 V2Ray 定位为一个平台，任何开发者都可以利用 V2Ray 提供的模块开发出新的代理软件。</p>
+<h2 id="主要特性"><a href="#主要特性" class="headerlink" title="主要特性"></a>主要特性</h2><p>多入口多出口：一个 V2Ray 进程可并发支持多个入站和出站协议，每个协议可独立工作。</p>
+<p>定制化路由：入站流量可按配置由不同地出口发出。轻松实现按区域或按域名分流，以达到最优的网络性能。</p>
+<p>多协议支持：V2Ray 可同时开启多个协议支持，包括 Socks、HTTP、Shadowsocks 和 VMess 等。每个协议可单独设置传输载体，比如 TCP、mKCP 和 WebSocket 等。</p>
+<p>隐蔽性：V2Ray 的节点可以伪装成正常的网站（HTTPS），将其流量与正常的网页流量混淆，以避开第三方干扰。</p>
+<p>反向代理：通用的反向代理支持，可实现内网穿透功能。</p>
+<p>多平台支持：原生支持所有常见平台，如 Windows、macOS 和 Linux，并已有第三方支持移动平台。</p>
+]]></content>
+      <categories>
+        <category>技能收录</category>
+      </categories>
+      <tags>
+        <tag>V2Ray</tag>
+        <tag>代理工具</tag>
+        <tag>云免</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>泰戈尔《飞鸟集》阅读笔记</title>
+    <url>/2021/04/28/%E6%B3%B0%E6%88%88%E5%B0%94%E3%80%8A%E9%A3%9E%E9%B8%9F%E9%9B%86%E3%80%8B%E8%AF%BB%E5%90%8E%E6%84%9F/</url>
+    <content><![CDATA[<p>夏天的飞鸟，飞到我窗前唱歌，又飞去了。<br>秋天的黄叶，他们没有什么可唱，只叹息一声，飞落在哪里。</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>读书笔记与感悟</category>
+      </categories>
+      <tags>
+        <tag>读书</tag>
+        <tag>泰戈尔</tag>
+        <tag>印度文学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>泰戈尔《新月集》阅读笔记</title>
+    <url>/2021/04/28/%E6%B3%B0%E6%88%88%E5%B0%94%E3%80%8A%E6%96%B0%E6%9C%88%E9%9B%86%E3%80%8B%E8%AF%BB%E5%90%8E%E6%84%9F/</url>
+    <content><![CDATA[<p>我独自在横跨过田地的路上走着，夕阳像一个守财奴似的，正藏起它的最后的金子。<br>白昼更加深沉地投入黑暗之中，那已经收割了的孤寂的田地，默默地躺在那里。<br>天空里突然升起了一个男孩子的尖锐的歌声。他穿过看不见的黑暗，留下他的歌声的辙痕跨过黄昏的静谧。<br>他的乡村的家坐落在荒凉的边上，在甘蔗田的后面，躲藏在香蕉树，瘦长的槟榔树，椰子树和深绿色的贾克果树的阴影里。<br>我在星光下独自走着的路上停留了一会，我看见黑沉沉的大地展开在我的面前，用她的手臂拥抱着无量数的家庭，在那些家庭里有着摇篮和床铺，母亲们的心和夜晚的灯，还有年轻轻的生命，他们满心欢乐，却浑然不知这样的欢乐对于世界的价值。</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>读书笔记与感悟</category>
+      </categories>
+      <tags>
+        <tag>读书</tag>
+        <tag>泰戈尔</tag>
+        <tag>印度文学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>冯家敏《中国职业设计指南》阅读笔记</title>
+    <url>/2021/04/28/%E5%86%AF%E5%AE%B6%E6%95%8F%E3%80%8A%E4%B8%AD%E5%9B%BD%E8%81%8C%E4%B8%9A%E8%AE%BE%E8%AE%A1%E6%8C%87%E5%8D%97%E3%80%8B%E8%AF%BB%E5%90%8E%E6%84%9F/</url>
+    <content><![CDATA[<p>我们，以万物为友，以苍生为念<br>我们，拒绝平庸和重复，颠覆自我和传统<br>我们，在平淡中创造惊喜，在荒芜中发掘财富，在磨砺中打造经典和时尚<br>我们是设计师<br>我们对自身的职业身怀热爱和敬畏</p>
+<span id="more"></span>
+
+<h1 id="职业分类-定位"><a href="#职业分类-定位" class="headerlink" title="职业分类/定位"></a>职业分类/定位</h1><h2 id="设计职业的分类"><a href="#设计职业的分类" class="headerlink" title="设计职业的分类"></a>设计职业的分类</h2><h2 id="设计师的职业特征"><a href="#设计师的职业特征" class="headerlink" title="设计师的职业特征"></a>设计师的职业特征</h2><h2 id="设计师的自身之本是知识产权"><a href="#设计师的自身之本是知识产权" class="headerlink" title="设计师的自身之本是知识产权"></a>设计师的自身之本是知识产权</h2><h2 id="设计师的从业方式"><a href="#设计师的从业方式" class="headerlink" title="设计师的从业方式"></a>设计师的从业方式</h2><h2 id="设计师职业定位"><a href="#设计师职业定位" class="headerlink" title="设计师职业定位"></a>设计师职业定位</h2><h2 id="设计职业的定位罗盘"><a href="#设计职业的定位罗盘" class="headerlink" title="设计职业的定位罗盘"></a>设计职业的定位罗盘</h2><h2 id="孙磊：驻场设计师的职业发展方向"><a href="#孙磊：驻场设计师的职业发展方向" class="headerlink" title="孙磊：驻场设计师的职业发展方向"></a>孙磊：驻场设计师的职业发展方向</h2><h2 id="驻场设计师的职务与职责"><a href="#驻场设计师的职务与职责" class="headerlink" title="驻场设计师的职务与职责"></a>驻场设计师的职务与职责</h2><h2 id="驻场设计师的绩效考核"><a href="#驻场设计师的绩效考核" class="headerlink" title="驻场设计师的绩效考核"></a>驻场设计师的绩效考核</h2><h2 id="跨入设计行业的三个转变"><a href="#跨入设计行业的三个转变" class="headerlink" title="跨入设计行业的三个转变"></a>跨入设计行业的三个转变</h2><h2 id="应聘设计师的注意事项"><a href="#应聘设计师的注意事项" class="headerlink" title="应聘设计师的注意事项"></a>应聘设计师的注意事项</h2><h2 id="创业常识"><a href="#创业常识" class="headerlink" title="创业常识"></a>创业常识</h2><h2 id="创业之前的准备"><a href="#创业之前的准备" class="headerlink" title="创业之前的准备"></a>创业之前的准备</h2><h1 id="职业素质"><a href="#职业素质" class="headerlink" title="职业素质"></a>职业素质</h1><h2 id="设计师的职业素质"><a href="#设计师的职业素质" class="headerlink" title="设计师的职业素质"></a>设计师的职业素质</h2><h2 id="王粤飞：功夫在设计之外"><a href="#王粤飞：功夫在设计之外" class="headerlink" title="王粤飞：功夫在设计之外"></a>王粤飞：功夫在设计之外</h2><h2 id="体验设计师的素质与发展"><a href="#体验设计师的素质与发展" class="headerlink" title="体验设计师的素质与发展"></a>体验设计师的素质与发展</h2><h2 id="职业设计师的思维方式"><a href="#职业设计师的思维方式" class="headerlink" title="职业设计师的思维方式"></a>职业设计师的思维方式</h2><h2 id="职业设计师的素质模型及成长路线"><a href="#职业设计师的素质模型及成长路线" class="headerlink" title="职业设计师的素质模型及成长路线"></a>职业设计师的素质模型及成长路线</h2><h2 id="柴俊峰：汲骨养心-润今立业"><a href="#柴俊峰：汲骨养心-润今立业" class="headerlink" title="柴俊峰：汲骨养心 润今立业"></a>柴俊峰：汲骨养心 润今立业</h2><h2 id="任清泉：室内设计的职业困惑"><a href="#任清泉：室内设计的职业困惑" class="headerlink" title="任清泉：室内设计的职业困惑"></a>任清泉：室内设计的职业困惑</h2><h2 id="权磊：展示设计师的优秀素质"><a href="#权磊：展示设计师的优秀素质" class="headerlink" title="权磊：展示设计师的优秀素质"></a>权磊：展示设计师的优秀素质</h2><h2 id="设计师的心理健康"><a href="#设计师的心理健康" class="headerlink" title="设计师的心理健康"></a>设计师的心理健康</h2><h1 id="知识产权"><a href="#知识产权" class="headerlink" title="知识产权"></a>知识产权</h1><h2 id="知识产权是设计师的必修课"><a href="#知识产权是设计师的必修课" class="headerlink" title="知识产权是设计师的必修课"></a>知识产权是设计师的必修课</h2><h2 id="设计与专利"><a href="#设计与专利" class="headerlink" title="设计与专利"></a>设计与专利</h2><h2 id="设计与著作权"><a href="#设计与著作权" class="headerlink" title="设计与著作权"></a>设计与著作权</h2><h2 id="设计与商标权"><a href="#设计与商标权" class="headerlink" title="设计与商标权"></a>设计与商标权</h2><h2 id="著作权纠纷的解决方式"><a href="#著作权纠纷的解决方式" class="headerlink" title="著作权纠纷的解决方式"></a>著作权纠纷的解决方式</h2><h2 id="设计作品知识产权保护防御体系"><a href="#设计作品知识产权保护防御体系" class="headerlink" title="设计作品知识产权保护防御体系"></a>设计作品知识产权保护防御体系</h2><h2 id="设计师“六招”防欠款防侵权"><a href="#设计师“六招”防欠款防侵权" class="headerlink" title="设计师“六招”防欠款防侵权"></a>设计师“六招”防欠款防侵权</h2><h2 id="保护创意权益"><a href="#保护创意权益" class="headerlink" title="保护创意权益"></a>保护创意权益</h2><h2 id="数字作品备案的重要性和必要性"><a href="#数字作品备案的重要性和必要性" class="headerlink" title="数字作品备案的重要性和必要性"></a>数字作品备案的重要性和必要性</h2><h2 id="美术摄影作品的合法使用"><a href="#美术摄影作品的合法使用" class="headerlink" title="美术摄影作品的合法使用"></a>美术摄影作品的合法使用</h2><h2 id="电脑字体的合法使用"><a href="#电脑字体的合法使用" class="headerlink" title="电脑字体的合法使用"></a>电脑字体的合法使用</h2><h2 id="肖像作品的合法使用"><a href="#肖像作品的合法使用" class="headerlink" title="肖像作品的合法使用"></a>肖像作品的合法使用</h2><h2 id="语言文字的合法使用"><a href="#语言文字的合法使用" class="headerlink" title="语言文字的合法使用"></a>语言文字的合法使用</h2><h1 id="行业规范-合同"><a href="#行业规范-合同" class="headerlink" title="行业规范/合同"></a>行业规范/合同</h1><h2 id="设计师职业道德公约"><a href="#设计师职业道德公约" class="headerlink" title="设计师职业道德公约"></a>设计师职业道德公约</h2><h2 id="设计行业服务公约"><a href="#设计行业服务公约" class="headerlink" title="设计行业服务公约"></a>设计行业服务公约</h2><h2 id="深圳平面设计作品委托合同"><a href="#深圳平面设计作品委托合同" class="headerlink" title="深圳平面设计作品委托合同"></a>深圳平面设计作品委托合同</h2><h2 id="一份合同中不要涉及多个项目"><a href="#一份合同中不要涉及多个项目" class="headerlink" title="一份合同中不要涉及多个项目"></a>一份合同中不要涉及多个项目</h2><h2 id="解决送达作品的签收难题"><a href="#解决送达作品的签收难题" class="headerlink" title="解决送达作品的签收难题"></a>解决送达作品的签收难题</h2><h2 id="约定“评审验收”的期限"><a href="#约定“评审验收”的期限" class="headerlink" title="约定“评审验收”的期限"></a>约定“评审验收”的期限</h2><h2 id="提案会议和修改次数的约定"><a href="#提案会议和修改次数的约定" class="headerlink" title="提案会议和修改次数的约定"></a>提案会议和修改次数的约定</h2><h2 id="关于著作权归属的约定"><a href="#关于著作权归属的约定" class="headerlink" title="关于著作权归属的约定"></a>关于著作权归属的约定</h2><h2 id="关于侵权赔偿数额的约定"><a href="#关于侵权赔偿数额的约定" class="headerlink" title="关于侵权赔偿数额的约定"></a>关于侵权赔偿数额的约定</h2><h2 id="付清全款才能获得著作权或使用权"><a href="#付清全款才能获得著作权或使用权" class="headerlink" title="付清全款才能获得著作权或使用权"></a>付清全款才能获得著作权或使用权</h2><h2 id="关于设计行业的一般交易惯例"><a href="#关于设计行业的一般交易惯例" class="headerlink" title="关于设计行业的一般交易惯例"></a>关于设计行业的一般交易惯例</h2><h2 id="插画交易惯例"><a href="#插画交易惯例" class="headerlink" title="插画交易惯例"></a>插画交易惯例</h2><h1 id="客户沟通"><a href="#客户沟通" class="headerlink" title="客户沟通"></a>客户沟通</h1><h1 id="设计价格"><a href="#设计价格" class="headerlink" title="设计价格"></a>设计价格</h1><h1 id="经营-流程"><a href="#经营-流程" class="headerlink" title="经营/流程"></a>经营/流程</h1><h1 id="职业发展"><a href="#职业发展" class="headerlink" title="职业发展"></a>职业发展</h1>]]></content>
+      <categories>
+        <category>读书笔记与感悟</category>
+      </categories>
+      <tags>
+        <tag>平面设计</tag>
+        <tag>读书</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo matery 主题的个性化配置</title>
+    <url>/2021/04/16/Hexo-matery-%E4%B8%BB%E9%A2%98%E7%9A%84%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<p>个人收录整理的 Hexo matery 主题 官方教程之外的 进阶实用个性化配置(不定时更新)</p>
+<span id="more"></span>
+
+<h2 id="顶部栏颜色的更改"><a href="#顶部栏颜色的更改" class="headerlink" title="顶部栏颜色的更改"></a>顶部栏颜色的更改</h2><p>打开 matery/source/css/matery.css 文件 搜索 .bg-color<br>修改background-image属性中linear-gradient内的颜色色值（具体色值可以百度或者用PS查看）<br>色值相同是单色效果，两个色值不同就是渐变效果</p>
+<h2 id="顶部Banner的图片和文章特色图的更改"><a href="#顶部Banner的图片和文章特色图的更改" class="headerlink" title="顶部Banner的图片和文章特色图的更改"></a>顶部Banner的图片和文章特色图的更改</h2><p>在 /source/medias/banner 文件夹中，把喜欢的图片重命名覆盖原来的图片即可，主题代码中默认是每天切换<br>在图片网站中找到喜欢的图片，右击复制图片链接。粘贴图片链接到新建文章的头文件img参数后面即可</p>
+<h2 id="顶部Banner颜色滤镜的删除"><a href="#顶部Banner颜色滤镜的删除" class="headerlink" title="顶部Banner颜色滤镜的删除"></a>顶部Banner颜色滤镜的删除</h2><p>打开 matery/source/css/matery.css 文件 搜索 .bg-color<br><img src="/2021/04/16/Hexo-matery-%E4%B8%BB%E9%A2%98%E7%9A%84%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE/2.jpg"><br>注释掉图中灰色部分</p>
+<h2 id="字体的更改"><a href="#字体的更改" class="headerlink" title="字体的更改"></a>字体的更改</h2><p>在博客根目录下的 source 文件夹内创建一个名字 font 的文件夹，放入字体ttf文件。<br>找到 /themes/matery/source/css/my.css 文件，填入下面的代码：</p>
+<pre class="line-numbers language-makedown" data-language="makedown"><code class="language-makedown">$ @font-face&#123;
+    font-family: &#39;myFont&#39;;
+    src: url(&#39;..&#x2F;font&#x2F;myFont.ttf&#39;);
+&#125;
+
+.diyfont&#123;
+    font-family: &#39;myFont&#39;;
+&#125;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>这里是创建了一个 diyFont 的类<br>将上面的 myFont 改成你自己的字体名称<br>在网站中右击检索，找到对应字体所使用的样式关键词<br><img src="/2021/04/16/Hexo-matery-%E4%B8%BB%E9%A2%98%E7%9A%84%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE/1.jpg"><br>局部样式更改在 matery/source/css/matery.css 中 ctrl+F 搜索关键词<br>标题样式更改在 /themes/matery/layout/_partial/bg-cover-content.ejs 中</p>
+<pre class="line-numbers language-makedown" data-language="makedown"><code class="language-makedown">$ &lt;div class&#x3D;&quot;title center-align diyfont&quot;&gt;
+     &lt;% if (config.subtitle &amp;&amp; config.subtitle.length &gt; 0) &#123; %&gt;
+         &lt;%&#x3D; config.subtitle %&gt;
+      &lt;% &#125; else &#123; %&gt;
+             subtitle
+      &lt;% &#125; %&gt;
+ &lt;&#x2F;div&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>在样式代码的 class=“” 中更改之前定义的样式名字 diy-font<br>打包上传测试</p>
+<h2 id="Banner上的“开始阅读”按钮和下方图标的颜色更改"><a href="#Banner上的“开始阅读”按钮和下方图标的颜色更改" class="headerlink" title="Banner上的“开始阅读”按钮和下方图标的颜色更改"></a>Banner上的“开始阅读”按钮和下方图标的颜色更改</h2><p>在网站中右击检索，找到对应位置所使用的样式关键词<br>局部样式更改在 matery/source/css/matery.css 中 ctrl+F 搜索关键词</p>
+<h2 id="更改新建文章时自动生成的各项头文件参数"><a href="#更改新建文章时自动生成的各项头文件参数" class="headerlink" title="更改新建文章时自动生成的各项头文件参数"></a>更改新建文章时自动生成的各项头文件参数</h2><p>在博客根目录下，找到 scaffolds 文件夹中的 post.md<br>更改模板内容，以后每次新建文章时就会自动生成添加的参数</p>
+<h2 id="在你的博客文章末尾添加版权声明"><a href="#在你的博客文章末尾添加版权声明" class="headerlink" title="在你的博客文章末尾添加版权声明"></a>在你的博客文章末尾添加版权声明</h2><p>打开主题配置文件 /themes/next/_config.yml 。Ctrl+F搜索，找到 creative_commons，将 post 参数改为true。</p>
+<h2 id="更改首页Benner屏幕的占比"><a href="#更改首页Benner屏幕的占比" class="headerlink" title="更改首页Benner屏幕的占比"></a>更改首页Benner屏幕的占比</h2><p>在 /css/my.css 中添加代码</p>
+<pre class="line-numbers language-Markdown" data-language="Markdown"><code class="language-Markdown">$ 
+@media only screen and (min-width: 993px) &#123;
+  #articleContent img &#123;
+    zoom: 50%;
+    max-width: 80%;
+    min-width: 60%;
+  &#125;
+
+  .index-cover&#123;
+    max-height: 70vh;
+  &#125;
+
+  .index-card &#123;
+    margin-top: -50px;
+  &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>index-cover 的值为比列</p>
+]]></content>
+      <categories>
+        <category>Hexo博客主题配置</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>博客</tag>
+        <tag>主题</tag>
+        <tag>matery</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo Next 主题的个性化配置</title>
+    <url>/2021/04/16/Hexo-Next-%E4%B8%BB%E9%A2%98%E7%9A%84%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<p>个人收录整理的 Hexo Next 主题 官方教程之外的 进阶实用个性化配置(不定时更新)</p>
+<span id="more"></span>
+
+<h2 id="添加动态背景"><a href="#添加动态背景" class="headerlink" title="添加动态背景"></a>添加动态背景</h2><p>找到themes\next\layout_layout.swig文件，添加内容：<br>在 &lt; /body&gt;之前添加：</p>
+
+
+<p>打开主题配置文件 /next/_config.yml,在里面添加（可以在最后）：<br>canvas_nest: true<br>完成</p>
+<h2 id="设置边框圆角"><a href="#设置边框圆角" class="headerlink" title="设置边框圆角"></a>设置边框圆角</h2><h2 id="设置板块半透明"><a href="#设置板块半透明" class="headerlink" title="设置板块半透明"></a>设置板块半透明</h2><h2 id><a href="#" class="headerlink" title></a></h2>]]></content>
+      <categories>
+        <category>Hexo博客主题配置</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Next</tag>
+        <tag>博客</tag>
+        <tag>主题</tag>
       </tags>
   </entry>
 </search>
