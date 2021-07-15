@@ -364,14 +364,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-07-10
+                    2021-07-15
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    5.4k
+                    6.1k
                 </div>
                 
 
@@ -453,20 +453,31 @@
 <h3 id="水平线"><a href="#水平线" class="headerlink" title="水平线"></a>水平线</h3><p>hr 元素可用于分隔内容。</p>
 <pre class="line-numbers language-none"><code class="language-none">$ 
 &lt;hr&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><p>网页链接（当前页面打开）</p>
-<pre class="line-numbers language-none"><code class="language-none">$ 
-&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;www.baodu.com&quot;&gt;百度链接&lt;&#x2F;a&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>网页链接（新建页面打开）</p>
-<pre class="line-numbers language-none"><code class="language-none">$ 
-&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;www.baodu.com&quot; target&#x3D;&quot;_blank&quot; rel&#x3D;&quot;noopener noreferrer&quot;&gt;百度链接&lt;&#x2F;a&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><pre class="line-numbers language-none"><code class="language-none">$ 
-&lt;img loading&#x3D;&quot;lazy&quot; src&#x3D;&quot;&#x2F;images&#x2F;logo.png&quot; width&#x3D;&quot;258&quot; height&#x3D;&quot;39&quot; &#x2F;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><h4 id="内部链接"><a href="#内部链接" class="headerlink" title="内部链接"></a>内部链接</h4><pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">$ 
+&lt;a href&#x3D;&quot;网页2&quot;&gt;网页2&lt;&#x2F;a&gt;   html文件处于同一级时，路径直接写文件名+后缀即可<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h4 id="外部链接"><a href="#外部链接" class="headerlink" title="外部链接"></a>外部链接</h4><p>可添加target属性设置为新建页面打开</p>
+<pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">$ 
+&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;www.baodu.com&quot; target&#x3D;&quot;_blank&quot;&gt;百度链接&lt;&#x2F;a&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h4 id="空连接"><a href="#空连接" class="headerlink" title="空连接"></a>空连接</h4><p>href属性值为#</p>
+<pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">$ 
+&lt;a href&#x3D;&quot;#&quot; target&#x3D;&quot;_blank&quot;&gt;空连接&lt;&#x2F;a&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h4 id="下载链接"><a href="#下载链接" class="headerlink" title="下载链接"></a>下载链接</h4><p>地址链接的是要下载的文件（exe、zip）<br>href属性值为下载文件的<a herf="https://www.mhf.ink/2021/07/13/HTML%E7%9F%A5%E8%AF%86%E7%82%B9%E6%89%A9%E5%B1%95/" target="_blank">路径</a></p>
+<pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">$ 
+&lt;a href&#x3D;&quot;文件路径&quot; target&#x3D;&quot;_blank&quot;&gt;下载链接&lt;&#x2F;a&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h4 id="锚点链接"><a href="#锚点链接" class="headerlink" title="锚点链接"></a>锚点链接</h4><p>同界面的跳转，快速定位到界面的某个位置<br>1.href属性值为”#名字”<br>2.在目标位置添加id属性，值为名字。</p>
+<pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">$ 
+&lt;a href&#x3D;&quot;#name&quot;&gt;第一季&lt;&#x2F;a&gt;
+&lt;h1 id&#x3D;&quot;name&quot;&gt;第一季第一集&lt;&#x2F;h1&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><p>img标签定义图像<br>常用属性：<br>1.src 为必须的属性表示图像<a herf="https://www.mhf.ink/2021/07/13/HTML%E7%9F%A5%E8%AF%86%E7%82%B9%E6%89%A9%E5%B1%95/" target="_blank">路径</a><br>2.alt 为当图片不显示时用文字替换<br>3.title 当鼠标指向时的提示文本<br>4.width/height 指定图片宽高，仅修改一个属性时自动调整比例<br>5.border 指定图片的边框粗细</p>
+<pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">$ 
+&lt;img src&#x3D;&quot;&#x2F;images&#x2F;logo.png&quot; alt&#x3D;&quot;图片001&quot; title&#x3D;&quot;提示文本&quot; width&#x3D;&quot;258&quot;  &#x2F;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h2 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h2><p>使用font-family（字体），color（颜色），和font-size（字体大小）属性来定义字体的样式</p>
-<pre class="line-numbers language-none"><code class="language-none">$ 
+<pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">$ 
 &lt;h1 style&#x3D;&quot;font-family:arial;color:red;font-size:20px;&quot;&gt;一个标题&lt;&#x2F;h1&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><pre class="line-numbers language-none"><code class="language-none">$ 
+<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">$ 
 &lt;!--注释文本--&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><pre class="line-numbers language-none"><code class="language-none">$ 
+<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">$ 
 &lt;table border&#x3D;&quot;1&quot;&gt;      &lt;!--表框粗细--&gt;
 			&lt;tr&gt;
 				&lt;th&gt;表头1&lt;&#x2F;th&gt;
@@ -485,13 +496,13 @@
 			&lt;&#x2F;tr&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><p>HTML 支持有序、无序和定义列表</p>
 <h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><p>使用粗体圆圈进行标记<br>使用ul标签</p>
-<pre class="line-numbers language-none"><code class="language-none">$ 
+<pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">$ 
 &lt;ul&gt;
 &lt;li&gt;Coffee&lt;&#x2F;li&gt;
 &lt;li&gt;Milk&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h3><p>使用数字进行标记<br>使用ol标签</p>
-<pre class="line-numbers language-none"><code class="language-none">$ 
+<pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">$ 
 &lt;ol&gt;
 &lt;li&gt;Coffee&lt;&#x2F;li&gt;
 &lt;li&gt;Milk&lt;&#x2F;li&gt;
@@ -515,7 +526,8 @@
 内联元素在显示时通常不会以新行开始。
 
 常用的内联元素: &lt;b&gt;, &lt;td&gt;, &lt;a&gt;, &lt;img&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="div元素"><a href="#div元素" class="headerlink" title="div元素"></a>div元素</h3><pre class="line-numbers language-none"><code class="language-none">$ 
+<h3 id="div元素"><a href="#div元素" class="headerlink" title="div元素"></a>div元素</h3><p>大盒子，占一整行</p>
+<pre class="line-numbers language-none"><code class="language-none">$ 
 &lt;div&gt; 元素是块级元素，是用于组合其他 HTML 元素的容器。
 
 &lt;div&gt; 元素没有特定的含义。它属于块级元素，浏览器会在其前后显示折行。
@@ -524,7 +536,8 @@
 
 &lt;div&gt; 元素的另一个常见的用途是文档布局。它取代了使用表格定义布局的老式方法。
 使用 &lt;table&gt; 元素进行文档布局不是表格的正确用法。&lt;table&gt; 元素的作用是显示表格化的数据。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="span元素"><a href="#span元素" class="headerlink" title="span元素"></a>span元素</h3><pre class="line-numbers language-none"><code class="language-none">$ 
+<h3 id="span元素"><a href="#span元素" class="headerlink" title="span元素"></a>span元素</h3><p>小盒子，一行可以有多个</p>
+<pre class="line-numbers language-none"><code class="language-none">$ 
 &lt;span&gt; 元素是内联元素，可用作文本的容器
 
 &lt;span&gt; 元素也没有特定的含义。
@@ -540,7 +553,7 @@ CSS&lt;br&gt;
 JavaScript
 &lt;&#x2F;div&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="使用table元素布局"><a href="#使用table元素布局" class="headerlink" title="使用table元素布局"></a>使用table元素布局</h3><p>下面的例子使用三行两列的表格 - 第一和最后一行使用 colspan 属性来横跨两列<br>实例摘自<a target="_blank" rel="noopener" href="https://www.runoob.com/html/html-layouts.html">菜鸟教程</a></p>
-<pre class="line-numbers language-none"><code class="language-none">$ 
+<pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">$ 
 &lt;table width&#x3D;&quot;500&quot; border&#x3D;&quot;0&quot;&gt;
 &lt;tr&gt;
 &lt;td colspan&#x3D;&quot;2&quot; style&#x3D;&quot;background-color:#FFA500;&quot;&gt;
@@ -564,79 +577,100 @@ JavaScript
 版权 © runoob.com&lt;&#x2F;td&gt;
 &lt;&#x2F;tr&gt;
 &lt;&#x2F;table&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h2><p>表单是一个包含表单元素的区域。<br>表单元素是允许用户在表单中输入内容,<br>比如：文本域(textarea)、下拉列表、单选框(radio-buttons)、复选框(checkboxes)等等。<br>表单使用表单标签form来设置:</p>
-<pre class="line-numbers language-none"><code class="language-none">$ 
-&lt;form&gt;
-.
-input 元素
-.
-&lt;&#x2F;form&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="输入元素"><a href="#输入元素" class="headerlink" title="输入元素"></a>输入元素</h3><h4 id="文本域-文本框"><a href="#文本域-文本框" class="headerlink" title="文本域/文本框"></a>文本域/文本框</h4><p>文本域通过input type=”text”标签来设定，当用户要在表单中键入字母、数字等内容时，就会用到文本域。</p>
-<pre class="line-numbers language-none"><code class="language-none">$ 
+<h2 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h2><p>表单是一个包含表单元素的区域，主要用来实现用户信息的搜集<br>表单元素是允许用户在表单中输入内容,<br>比如：文本域(textarea)、下拉列表、单选框(radio-buttons)、复选框(checkboxes)等等。<br>表单使用表单标签form来设置,form会把范围内的信息送到服务器<br><b>有三个重要属性：</b><br>1.action：url地址，用于接收表单所提交的信息的服务器url地址<br>2.method：提交方式，用于设置表单的提交方式，其取值为get或post<br>3.name：表单的名称，用来区分同界面中的多个表单域</p>
+<pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">$ 
+&lt;form action&#x3D;&quot;url地址&quot; method&#x3D;&quot;提交方式&quot; name&#x3D;&quot;表单名&quot;&gt;
+各种表单元素控件
+&lt;&#x2F;form&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="input输入表单元素"><a href="#input输入表单元素" class="headerlink" title="input输入表单元素"></a>input输入表单元素</h3><h4 id="文本框-type-”text”"><a href="#文本框-type-”text”" class="headerlink" title="文本框(type=”text”)"></a>文本框(type=”text”)</h4><p>文本框通过input type=”text”标签来设定，当用户要在表单中键入字母、数字等内容时，就会用到文本框。</p>
+<pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">$ 
 &lt;form&gt;
 账号: &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;账号&quot;&gt;&lt;br&gt;
 密码: &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;密码&quot;&gt;
 &lt;&#x2F;form&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>PS:表单本身并不可见。同时，在大多数浏览器中，文本域的默认宽度是 20 个字符。</p>
-<h4 id="密码框"><a href="#密码框" class="headerlink" title="密码框"></a>密码框</h4><pre class="line-numbers language-none"><code class="language-none">$ 
+<p>PS:表单本身并不可见。同时，在大多数浏览器中，文本框的默认宽度是 20 个字符。</p>
+<h4 id="密码框-type-”password”"><a href="#密码框-type-”password”" class="headerlink" title="密码框(type=”password”)"></a>密码框(type=”password”)</h4><pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">$ 
 &lt;form&gt;
 密码： &lt;input type&#x3D;&quot;password&quot;&gt;
 &lt;&#x2F;form&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>PS:密码字段字符不会明文显示，而是以星号或圆点替代。</p>
-<h4 id="圆形单选-多选按钮"><a href="#圆形单选-多选按钮" class="headerlink" title="圆形单选/多选按钮"></a>圆形单选/多选按钮</h4><p>input type=”radio”标签定义了表单单选框选项<br>name字段相同为单选，不同为多选</p>
-<pre class="line-numbers language-none"><code class="language-none">$ 
-请选择：&lt;br&gt;
-&lt;input type&#x3D;&quot;radio&quot; name&#x3D;&quot;xuanze&quot; value&#x3D;&quot;denglu&quot;&gt;登录
-&lt;input type&#x3D;&quot;radio&quot; name&#x3D;&quot;xuanze&quot; value&#x3D;&quot;zhuce&quot;&gt;注册<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="方形复选按钮"><a href="#方形复选按钮" class="headerlink" title="方形复选按钮"></a>方形复选按钮</h4><p>input type=”checkbox”标签定义了表单单选框选项</p>
-<pre class="line-numbers language-none"><code class="language-none">$ 
+<h4 id="表单显示默认值-value-”请输入用户名”"><a href="#表单显示默认值-value-”请输入用户名”" class="headerlink" title="表单显示默认值(value=”请输入用户名”)"></a>表单显示默认值(value=”请输入用户名”)</h4><pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">$ 
 &lt;form&gt;
-&lt;input type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;vehicle&quot; value&#x3D;denglu&quot;&gt;登录&lt;br&gt;
-&lt;input type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;vehicle&quot; value&#x3D;&quot;zhuce&quot;&gt;注册
+账号： &lt;input type&#x3D;&quot;text&quot; value&#x3D;&quot;请输入用户名&quot;&gt;
+&lt;&#x2F;form&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>PS：给input添加maxiength，maxiength=”10”可以为规定输入字符的最大长度</p>
+<h4 id="圆形单选-多选按钮-type-”radio”"><a href="#圆形单选-多选按钮-type-”radio”" class="headerlink" title="圆形单选/多选按钮(type=”radio”)"></a>圆形单选/多选按钮(type=”radio”)</h4><p>input type=”radio”标签定义了表单单选框选项<br><b>name的值相同为单选，值不同为多选</b></p>
+<pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">$ 
+请选择：&lt;br&gt;
+&lt;input type&#x3D;&quot;radio&quot; name&#x3D;&quot;xingbie&quot; value&#x3D;&quot;男&quot;&gt;男
+&lt;input type&#x3D;&quot;radio&quot; name&#x3D;&quot;xingbie&quot; value&#x3D;&quot;女&quot;&gt;女<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="方形复选按钮-type-”checkbox”"><a href="#方形复选按钮-type-”checkbox”" class="headerlink" title="方形复选按钮(type=”checkbox”)"></a>方形复选按钮(type=”checkbox”)</h4><p>input type=”checkbox”标签定义了表单单选框选项</p>
+<pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">$ 
+&lt;form&gt;
+&lt;input type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;aihao&quot; value&#x3D;吃饭&quot;&gt;吃饭&lt;br&gt;
+&lt;input type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;aihao&quot; value&#x3D;&quot;睡觉&quot;&gt;睡觉
 &lt;&#x2F;form&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="提交按钮"><a href="#提交按钮" class="headerlink" title="提交按钮"></a>提交按钮</h4><p>input type=”submit”标签定义了表单单选框选项<br>当用户单击确认按钮时，表单的内容会被传送到另一个文件。表单的动作属性定义了目的文件的文件名。由动作属性定义的这个文件通常会对接收到的输入数据进行相关的处理。:</p>
-<pre class="line-numbers language-none"><code class="language-none">$ 
-&lt;form name&#x3D;&quot;input&quot; action&#x3D;&quot;html_form_action.php&quot; method&#x3D;&quot;get&quot;&gt;
-确认: &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;user&quot;&gt;
-&lt;input type&#x3D;&quot;submit&quot; value&#x3D;&quot;Submit&quot;&gt;
-&lt;&#x2F;form&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="简单的下拉列表"><a href="#简单的下拉列表" class="headerlink" title="简单的下拉列表"></a>简单的下拉列表</h4><p>可在option中添加selected来设置列表默认的预选值</p>
-<pre class="line-numbers language-none"><code class="language-none">$ 
-&lt;form action&#x3D;&quot;&quot;&gt;
-&lt;select name&#x3D;&quot;cars&quot;&gt;
-&lt;option value&#x3D;&quot;volvo&quot;&gt;Volvo&lt;&#x2F;option&gt;
-&lt;option value&#x3D;&quot;saab&quot;&gt;Saab&lt;&#x2F;option&gt;
-&lt;option value&#x3D;&quot;fiat&quot;&gt;Fiat&lt;&#x2F;option&gt;
-&lt;option value&#x3D;&quot;audi&quot;&gt;Audi&lt;&#x2F;option&gt;
-&lt;&#x2F;select&gt;
-&lt;&#x2F;form&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="创建按钮"><a href="#创建按钮" class="headerlink" title="创建按钮"></a>创建按钮</h4><p>使用button来定义按钮<br>使用value来定义按钮内的文字</p>
-<pre class="line-numbers language-none"><code class="language-none">$ 
+<p>PS：给input添加checked属性：checked=”checked”，为首次加载时默认的选中状态</p>
+<h4 id="提交按钮-type-”submit”"><a href="#提交按钮-type-”submit”" class="headerlink" title="提交按钮(type=”submit”)"></a>提交按钮(type=”submit”)</h4><p>input type=”submit”标签定义了表单单选框选项<br>当用户单击确认按钮时，表单的内容会被传送到后台。<br>表单的动作属性定义了目的文件的文件名<br>由动作属性定义的这个文件通常会对接收到的输入数据进行相关的处理:</p>
+<pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">$ 
+&lt;form name&#x3D;&quot;名字&quot; action&#x3D;&quot;URL链接&quot; method&#x3D;&quot;提交方式&quot;&gt;
+&lt;input type&#x3D;&quot;submit&quot; value&#x3D;&quot;提交&quot;&gt;
+&lt;&#x2F;form&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="重置-清除按钮-type-”reset”"><a href="#重置-清除按钮-type-”reset”" class="headerlink" title="重置/清除按钮(type=”reset”)"></a>重置/清除按钮(type=”reset”)</h4><p>还原表单元素为初始状态</p>
+<pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">$ 
+&lt;form&gt;
+&lt;input type&#x3D;&quot;reset&quot; value&#x3D;&quot;重置&quot;&gt;
+&lt;&#x2F;form&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="可点击按钮-type-”button”"><a href="#可点击按钮-type-”button”" class="headerlink" title="可点击按钮(type=”button”)"></a>可点击按钮(type=”button”)</h4><p>使用button来定义按钮，一般用于启动.js脚本<br>使用value来定义按钮内的文字</p>
+<pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">$ 
 &lt;form action&#x3D;&quot;&quot;&gt;
 &lt;input type&#x3D;&quot;button&quot; value&#x3D;&quot;Hello world!&quot;&gt;
 &lt;&#x2F;form&gt;
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
+<h4 id="绑定表单元素-lable"><a href="#绑定表单元素-lable" class="headerlink" title="绑定表单元素 lable"></a>绑定表单元素 lable</h4><p>input定义标签，当用户点击文本/图标时，光标自动转到输入框/选项上。用于提升用户体验<br>语法：</p>
+<pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">$ 
+&lt;form&gt;
+&lt;input type&#x3D;&quot;button&quot;  id&#x3D;&quot;xingbie&quot;&gt;
+&lt;lable for&#x3D;&quot;xingbie&quot;&gt;男&lt;&#x2F;lable&gt;
+&lt;&#x2F;form&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="下拉列表-select"><a href="#下拉列表-select" class="headerlink" title="下拉列表 select"></a>下拉列表 select</h3><p>1.select中至少包含一个option<br>2.可在option中添加selected=”selected”来设置列表默认的预选值</p>
+<pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">$ 
+&lt;form&gt;
+&lt;select&gt;
+&lt;option&gt;001&lt;&#x2F;option&gt;
+&lt;option&gt;002&lt;&#x2F;option&gt;
+&lt;option selected&#x3D;&quot;selected&quot;&gt;003&lt;&#x2F;option&gt;
+&lt;option&gt;004&lt;&#x2F;option&gt;
+&lt;&#x2F;select&gt;
+&lt;&#x2F;form&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="文本域-textarea"><a href="#文本域-textarea" class="headerlink" title="文本域 textarea"></a>文本域 textarea</h3><p>用于定义大量输入文本的控件，和文本框的区别是可输入的文本行数<br>语法规范：</p>
+<pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">$ 
+&lt;form&gt;
+	&lt;textarea rows&#x3D;&quot;3&quot; cols&#x3D;&quot;10&quot;&gt;
+	默认显示的文本
+	&lt;&#x2F;textarea&gt;
+&lt;&#x2F;form&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>cols：每行的字符数<br>rows：显示的行数</p>
 <h2 id="框架"><a href="#框架" class="headerlink" title="框架"></a>框架</h2><p>通过使用框架，你可以在同一个浏览器窗口中显示不止一个页面。</p>
-<pre class="line-numbers language-none"><code class="language-none">$ 
+<pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">$ 
 &lt;iframe src&#x3D;&quot;URL&quot;&gt;&lt;&#x2F;iframe&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>URL指向不同的网页</p>
 <h3 id="自定义样式"><a href="#自定义样式" class="headerlink" title="自定义样式"></a>自定义样式</h3><p>1.height 和 width 属性用来定义iframe标签的高度与宽度。<br>属性默认以像素为单位, 但是你可以指定其按比例显示 (如：”80%”)。</p>
-<pre class="line-numbers language-none"><code class="language-none">$ 
+<pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">$ 
 &lt;iframe loading&#x3D;&quot;lazy&quot; src&#x3D;&quot;demo_iframe.htm&quot; width&#x3D;&quot;200&quot; height&#x3D;&quot;200&quot;&gt;&lt;&#x2F;iframe&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>2.frameborder 属性用于定义iframe表示是否显示边框。<br>设置属性值为 “0” 移除iframe的边框:</p>
-<pre class="line-numbers language-none"><code class="language-none">$ 
+<pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">$ 
 &lt;iframe src&#x3D;&quot;demo_iframe.htm&quot; frameborder&#x3D;&quot;0&quot;&gt;&lt;&#x2F;iframe&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>3.使用iframe来显示目标链接页面<br>目标链接的属性必须使用iframe的属性</p>
 <h2 id="颜色和颜色名"><a href="#颜色和颜色名" class="headerlink" title="颜色和颜色名"></a>颜色和颜色名</h2><p>HTML 颜色由红色、绿色、蓝色混合而成。<br>HTML 颜色由一个十六进制符号来定义，这个符号由红色、绿色和蓝色的值组成（RGB）。<br>每种颜色的最小值是0（十六进制：#00）。最大值是255（十六进制：#FF）。<br>各种颜色的色值百度即可</p>
-<pre class="line-numbers language-none"><code class="language-none">$ 
+<pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">$ 
 div &#123;
 
 background:rgb(255,0,0);
 
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="颜色的透明"><a href="#颜色的透明" class="headerlink" title="颜色的透明"></a>颜色的透明</h3><p>RGBA 的意思是（Red-Green-Blue-Alpha）它是在 RGB 上扩展包括了 “alpha” 通道，运行对颜色值设置透明度。</p>
-<pre class="line-numbers language-none"><code class="language-none">$ 
+<pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">$ 
 div &#123;
 
 background:rgba(255,0,0,0.5);
@@ -646,12 +680,12 @@ background:rgba(255,0,0,0.5);
 <h3 id="WEB安全色？"><a href="#WEB安全色？" class="headerlink" title="WEB安全色？"></a>WEB安全色？</h3><p>数年以前，当大多数计算机仅支持 256 种颜色的时候，一系列 216 种 Web 安全色作为 Web 标准被建议使用。其中的原因是，微软和 Mac 操作系统使用了 40 种不同的保留的固定系统颜色（双方大约各使用 20 种）。<br>我们不确定如今这么做的意义有多大，因为越来越多的计算机有能力处理数百万种颜色，不过做选择还是你自己。<br>最初，216 跨平台 web 安全色被用来确保：当计算机使用 256 色调色板时，所有的计算机能够正确地显示所有的颜色</p>
 <h3 id="颜色名"><a href="#颜色名" class="headerlink" title="颜色名"></a>颜色名</h3><p>141个颜色名称是在HTML和CSS颜色规范定义的（17标准颜色，再加124）。<br>具体可百度，暂时认为实用意义不大</p>
 <h2 id="HTML引用脚本"><a href="#HTML引用脚本" class="headerlink" title="HTML引用脚本"></a>HTML引用脚本</h2><h3 id="script标签"><a href="#script标签" class="headerlink" title="script标签"></a>script标签</h3><p>script标签用于定义客户端脚本，比如 JavaScript。<br>script 元素既可包含脚本语句，也可通过 src 属性指向外部脚本文件。<br>JavaScript 最常用于图片操作、表单验证以及内容动态更新。<br>下面的脚本会向浏览器输出”Hello World!”：</p>
-<pre class="line-numbers language-none"><code class="language-none">$ 
+<pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">$ 
 &lt;script&gt;
 document.write(&quot;Hello World!&quot;);
 &lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="noscript标签"><a href="#noscript标签" class="headerlink" title="noscript标签"></a>noscript标签</h3><p>noscript 标签提供无法使用脚本时的替代内容，比方在浏览器禁用脚本时，或浏览器不支持客户端脚本时。<br>noscript元素可包含普通 HTML 页面的 body 元素中能够找到的所有元素。<br>只有在浏览器不支持脚本或者禁用脚本时，才会显示 noscript 元素中的内容：</p>
-<pre class="line-numbers language-none"><code class="language-none">$ 
+<pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">$ 
 &lt;script&gt;
 document.write(&quot;Hello World!&quot;)
 &lt;&#x2F;script&gt;
@@ -659,22 +693,22 @@ document.write(&quot;Hello World!&quot;)
 
 <h2 id="字符实体（特殊字符的显示）"><a href="#字符实体（特殊字符的显示）" class="headerlink" title="字符实体（特殊字符的显示）"></a>字符实体（特殊字符的显示）</h2><p>HTML 中的预留字符必须被替换为字符实体。<br>一些在键盘上找不到的字符也可以使用字符实体来替换。</p>
 <h3 id="实体"><a href="#实体" class="headerlink" title="实体"></a>实体</h3><p>在 HTML 中，某些字符是预留的。<br>在 HTML 中不能使用小于号（&lt;）和大于号（&gt;），这是因为浏览器会误认为它们是标签。<br>如果希望正确地显示预留字符，我们必须在 HTML 源代码中使用字符实体（character entities）。 字符实体类似这样：</p>
-<pre class="line-numbers language-none"><code class="language-none">$ 
+<pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">$ 
 &amp;entity_name;
 或
 &amp;#entity_number;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>如需显示小于号，我们必须这样写：</p>
-<pre class="line-numbers language-none"><code class="language-none">$ 
+<pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">$ 
 &lt; 或 &amp;#60; 或 &amp;#060;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>PS：使用实体名而不是数字的好处是，名称易于记忆。不过坏处是，浏览器也许并不支持所有实体名称（对实体数字的支持却很好）。</p>
 <h3 id="不间断空格"><a href="#不间断空格" class="headerlink" title="不间断空格"></a>不间断空格</h3><p>HTML 中的常用字符实体是不间断空格</p>
-<pre class="line-numbers language-none"><code class="language-none">$ 
+<pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">$ 
 (&amp;nbsp;)。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>浏览器总是会截短 HTML 页面中的空格。如果您在文本中写 10 个空格，在显示该页面之前，浏览器会删除它们中的 9 个。如需在页面中增加空格的数量，您需要使用此字符实体。</p>
 <p>PS：虽然 html 不区分大小写，但实体字符对大小写敏感<br>其他的特殊字符就不一一赘述了，详情自行参考<a target="_blank" rel="noopener" href="https://www.runoob.com/html/html-entities.html">菜鸟教程</a>或者百度</p>
 <h2 id="URL（HTML统一资源定位器）"><a href="#URL（HTML统一资源定位器）" class="headerlink" title="URL（HTML统一资源定位器）"></a>URL（HTML统一资源定位器）</h2><p>URL 是一个网页地址。<br>URL可以由字母组成，如”runoob.com”，或互联网协议（IP）地址： 192.68.20.50。大多数人进入网站使用网站域名来访问，因为 名字比数字更容易记住。</p>
 <h3 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h3><p>Web浏览器通过URL从Web服务器请求页面。<br>当您点击 HTML 页面中的某个链接时，对应的 <a> 标签指向万维网上的一个地址。<br>一个统一资源定位器(URL) 用于定位万维网上的文档。<br>一个网页地址实例: <a target="_blank" rel="noopener" href="http://www.runoob.com/html/html-tutorial.html">http://www.runoob.com/html/html-tutorial.html</a> 语法规则:</a></p>
-<pre class="line-numbers language-none"><code class="language-none">$ 
+<pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">$ 
 scheme:&#x2F;&#x2F;host.domain:port&#x2F;path&#x2F;filename<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>scheme - 定义因特网服务的类型。最常见的类型是 http<br>host - 定义域主机（http 的默认主机是 www）<br>domain - 定义因特网域名，比如 runoob.com<br>:port - 定义主机上的端口号（http 的默认端口号是 80）<br>path - 定义服务器上的路径（如果省略，则文档必须位于网站的根目录中）。<br>filename - 定义文档/资源的名称</p>
 <h3 id="常见的-URL-Scheme"><a href="#常见的-URL-Scheme" class="headerlink" title="常见的 URL Scheme"></a>常见的 URL Scheme</h3><p>常见的 URL Scheme:</p>
