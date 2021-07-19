@@ -149,7 +149,14 @@ div &#123;
     <url>/2021/06/04/%E3%80%90%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1%E3%80%91JavaScript%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<p>JavaScript（简称“JS”） 是一种具有函数优先的轻量级，解释型或即时编译型的编程语言。虽然它是作为开发Web页面的脚本语言而出名，但是它也被用到了很多非浏览器环境中，JavaScript 基于原型编程、多范式的动态脚本语言，并且支持面向对象、命令式、声明式、函数式编程范式。</p>
 <span id="more"></span>
-]]></content>
+
+<h2 id="什么是JavaScript？"><a href="#什么是JavaScript？" class="headerlink" title="什么是JavaScript？"></a>什么是JavaScript？</h2><ul>
+<li>JavaScript 是最流行的语言之一。</li>
+<li>JavaScript 是属于 web 的语言，它适用于 PC、笔记本电脑、平板电脑和移动电话。</li>
+<li>JavaScript可以使您的网站更具活力。</li>
+<li>许多 HTML 开发者都不是程序员，但是 JavaScript 却拥有非常简单的语法。几乎每个人都有能力将小的 JavaScript 片段添加到网页中。</li>
+</ul>
+<h2 id><a href="#" class="headerlink" title></a></h2>]]></content>
       <categories>
         <category>技能收录</category>
       </categories>
@@ -209,8 +216,7 @@ mycss
 <pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
 p.center&#123;text&#x3D;aling:center;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>PS:类名的第一个字符不能使用数字！它无法在 Mozilla 或 Firefox 中起作用。</p>
-<p>##CSS创建</p>
-<h3 id="如何插入样式表"><a href="#如何插入样式表" class="headerlink" title="如何插入样式表"></a>如何插入样式表</h3><p>插入样式表的方法有三种：</p>
+<h2 id="CSS创建"><a href="#CSS创建" class="headerlink" title="CSS创建"></a>CSS创建</h2><h3 id="如何插入样式表"><a href="#如何插入样式表" class="headerlink" title="如何插入样式表"></a>如何插入样式表</h3><p>插入样式表的方法有三种：</p>
 <ol>
     <li>外部样式表 External style sheet</li>
     <li>内部样式表 Internal style sheet</li>
@@ -275,7 +281,7 @@ font-size:20pt;<span aria-hidden="true" class="line-numbers-rows"><span></span><
     &lt;h3&gt;测试！&lt;&#x2F;h3&gt;
 &lt;&#x2F;body&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>如果内部样式在外部样式后面，外部样式将覆盖内部样式<br><b>关于多重样式优先级，可参考本站文章：<a href="https://maohuifei.github.io/2021/07/13/CSS%E7%9F%A5%E8%AF%86%E7%82%B9%E6%89%A9%E5%B1%95/">多重样式优先级深入概念</a></b></p>
-<h2 id="背景-backgrounds"><a href="#背景-backgrounds" class="headerlink" title="背景(backgrounds)"></a>背景(backgrounds)</h2><p>CSS 背景属性用于定义HTML元素的背景。<br><di><br>    <dt><b>1.background-color    设置元素的背景颜色。</b></dt><br>    <dt><b>2.background-image    把图像设置为背景。</b></dt><br>    <dd>①background-repeat    设置背景图像是否及如何重复。</dd><br>    <dd>②background-attachment    背景图像是否固定或者随着页面的其余部分滚动。</dd><br>    <dd>③background-position    设置背景图像的起始位置。</dd><br></di></p>
+<h2 id="CSS背景-backgrounds"><a href="#CSS背景-backgrounds" class="headerlink" title="CSS背景(backgrounds)"></a>CSS背景(backgrounds)</h2><p>CSS 背景属性用于定义HTML元素的背景。<br><di><br>    <dt><b>1.background-color    设置元素的背景颜色。</b></dt><br>    <dt><b>2.background-image    把图像设置为背景。</b></dt><br>    <dd>①background-repeat    设置背景图像是否及如何重复。</dd><br>    <dd>②background-attachment    背景图像是否固定或者随着页面的其余部分滚动。</dd><br>    <dd>③background-position    设置背景图像的起始位置。</dd><br></di></p>
 <h3 id="背景颜色-background-color"><a href="#背景颜色-background-color" class="headerlink" title="背景颜色(background-color)"></a>背景颜色(background-color)</h3><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
 h1 &#123;background-color:#b0c4de;&#125;
 p &#123;background-color:#b0c4de;&#125;
@@ -290,7 +296,158 @@ div &#123;background-color:#b0c4de;&#125;<span aria-hidden="true" class="line-nu
 <h3 id="背景图片-background-image"><a href="#背景图片-background-image" class="headerlink" title="背景图片(background-image)"></a>背景图片(background-image)</h3><p>默认情况下，背景图像进行平铺重复显示，以覆盖整个元素实体</p>
 <pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
 body &#123;background-image:url(&#39;paper.gif&#39;);&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h4 id><a href="#" class="headerlink" title></a></h4>]]></content>
+<h4 id="背景图像的水平或垂直平铺"><a href="#背景图像的水平或垂直平铺" class="headerlink" title="背景图像的水平或垂直平铺"></a>背景图像的水平或垂直平铺</h4><p>默认情况下 background-image 属性会在页面的水平或者垂直方向平铺。<br>一些图像如果在水平方向与垂直方向平铺，这样看起来很不协调<br>将background-repeat值设置<br>为repeat-x时水平方向平铺/y竖直方向平铺<br>为no-repeat时图像不平铺</p>
+<pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+body
+&#123;
+background-image:url(&#39;001.png&#39;);
+background-repeat:repeat-x;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="改变图像在背景中的位置"><a href="#改变图像在背景中的位置" class="headerlink" title="改变图像在背景中的位置"></a>改变图像在背景中的位置</h4><p>添加 background-position 属性来改变图像在背景中的位置</p>
+<pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+body
+&#123;
+	background-image:url(&#39;https:&#x2F;&#x2F;001.png&#39;);
+	background-repeat:no-repeat;
+	background-position:right top;
+	margin-right:200px;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="背景的简写属性"><a href="#背景的简写属性" class="headerlink" title="背景的简写属性"></a>背景的简写属性</h4><p>在以上可以看到页面的背景颜色通过了很多的属性来控制。<br>为了简化这些属性的代码，我们可以将这些属性合并在同一个属性中.<br>背景颜色的简写属性为 “background”:</p>
+<pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+body &#123;background:#ffffff url(&#39;img_tree.png&#39;) no-repeat right top;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>默认顺序：</p>
+<ul>
+<li>background-color</li>
+<li>background-image</li>
+<li>background-repeat</li>
+<li>background-attachment</li>
+<li>background-position</li>
+</ul>
+<h2 id="CSS文本"><a href="#CSS文本" class="headerlink" title="CSS文本"></a>CSS文本</h2><h3 id="文本-颜色"><a href="#文本-颜色" class="headerlink" title="文本-颜色"></a>文本-颜色</h3><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+body &#123;color:red;&#125;
+h1 &#123;color:#00ff00;&#125;
+h2 &#123;color:rgb(255,0,0);&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="文本-对齐方式"><a href="#文本-对齐方式" class="headerlink" title="文本-对齐方式"></a>文本-对齐方式</h3><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+h1 &#123;text-align:center;&#125;  居中
+p.date &#123;text-align:right;&#125;  右对齐
+p.main &#123;text-align:justify;&#125; 每一行被展开为宽度相等，左，右外边距是对齐（如杂志和报纸）。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="文本-修饰"><a href="#文本-修饰" class="headerlink" title="文本-修饰"></a>文本-修饰</h3><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+a &#123;text-decoration:none;&#125;   删除链接下划线
+h1 &#123;text-decoration:overline;&#125;  上划线
+h2 &#123;text-decoration:line-through;&#125; 字体中间添加横线，删除线
+h3 &#123;text-decoration:underline;&#125; 下划线<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>PS：不建议强调指出不是链接的文本，因为这常常混淆用户</p>
+<h3 id="文本-转换"><a href="#文本-转换" class="headerlink" title="文本-转换"></a>文本-转换</h3><p>文本转换属性是用来指定在一个文本中的大写和小写字母。</p>
+<pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+p.uppercase &#123;text-transform:uppercase;&#125;  全部大写
+p.lowercase &#123;text-transform:lowercase;&#125;  全部小写
+p.capitalize &#123;text-transform:capitalize;&#125; 每个单词首字母大写<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="文本-缩进"><a href="#文本-缩进" class="headerlink" title="文本-缩进"></a>文本-缩进</h3><p>文本缩进属性是用来指定文本的第一行的缩进。</p>
+<pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+p &#123;text-indent:50px;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="CSS字体"><a href="#CSS字体" class="headerlink" title="CSS字体"></a>CSS字体</h2><h3 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h3><p>font-family 属性设置文本的字体系列。<br>font-family 属性应该设置几个字体名称作为一种”后备”机制，如果浏览器不支持第一种字体，他将尝试下一种字体。<br>多个字体系列是用一个逗号分隔指明：</p>
+<pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+p&#123;font-family:&quot;Times New Roman&quot;, Times, serif;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="字体样式"><a href="#字体样式" class="headerlink" title="字体样式"></a>字体样式</h3><h4 id="正常"><a href="#正常" class="headerlink" title="正常"></a>正常</h4><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+p.normal &#123;font-style:normal;&#125;  正常<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h4 id="斜体"><a href="#斜体" class="headerlink" title="斜体"></a>斜体</h4><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+p.italic &#123;font-style:italic;&#125;  斜体
+p.oblique &#123;font-style:oblique;&#125; 倾斜字<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h4 id="加粗"><a href="#加粗" class="headerlink" title="加粗"></a>加粗</h4><p>使用font-weight属性设置字体加粗</p>
+<pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+p.normal &#123;font-weight:normal;&#125; 
+p.light &#123;font-weight:lighter;&#125;
+p.thick &#123;font-weight:bold;&#125;
+p.thicker &#123;font-weight:900;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="字体大小"><a href="#字体大小" class="headerlink" title="字体大小"></a>字体大小</h3><p>font-size 属性设置文本的大小。<br>能否管理文字的大小，在网页设计中是非常重要的。<br>字体大小的值可以是绝对或相对的大小<br>绝对大小：</p>
+<ul>
+<li>设置一个指定大小的文本</li>
+<li>不允许用户在所有浏览器中改变文本大小</li>
+<li>确定了输出的物理尺寸时绝对大小很有用<br>相对大小：</li>
+<li>相对于周围的元素来设置大小</li>
+<li>允许用户在浏览器中改变文字大小<br>PS：如果你不指定一个字体的大小，默认大小和普通文本段落一样，是16像素（16px=1em）。<h4 id="使用像素控制字体大小"><a href="#使用像素控制字体大小" class="headerlink" title="使用像素控制字体大小"></a>使用像素控制字体大小</h4><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+h1 &#123;font-size:40px;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h4 id="使用em控制字体大小"><a href="#使用em控制字体大小" class="headerlink" title="使用em控制字体大小"></a>使用em控制字体大小</h4>为了避免Internet Explorer 中无法调整文本的问题，许多开发者使用 em 单位代替像素。<br>em的尺寸单位由W3C建议。<br>1em和当前字体大小相等。在浏览器中默认的文字大小是16px。<br>因此，1em的默认大小是16px。可以通过下面这个公式将像素转换为em：<b>px/16=em</b><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+h1 &#123;font-size:2.5em;&#125; &#x2F;* 40px&#x2F;16&#x3D;2.5em *&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h4 id="使用百分比控制字体大小"><a href="#使用百分比控制字体大小" class="headerlink" title="使用百分比控制字体大小"></a>使用百分比控制字体大小</h4><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+body &#123;font-size:100%;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+</ul>
+<h2 id="CSS链接"><a href="#CSS链接" class="headerlink" title="CSS链接"></a>CSS链接</h2><h3 id="语法规则"><a href="#语法规则" class="headerlink" title="语法规则"></a>语法规则</h3><p>链接的样式，可以用任何CSS属性（如颜色，字体，背景等）。<br>特别的链接，可以有不同的样式，这取决于他们是什么状态。</p>
+<pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+a:link &#123;color:#000000;&#125;      &#x2F;* 未访问链接*&#x2F;
+a:visited &#123;color:#00FF00;&#125;  &#x2F;* 已访问链接 *&#x2F;
+a:hover &#123;color:#FF00FF;&#125;  &#x2F;* 鼠标移动到链接上 *&#x2F;
+a:active &#123;color:#0000FF;&#125;  &#x2F;* 鼠标点击时 *&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>PS:当设置为若干链路状态的样式，也有一些顺序规则：<br>a:hover 必须跟在 a:link 和 a:visited后面<br>a:active 必须跟在 a:hover后面</p>
+<h3 id="常见样式"><a href="#常见样式" class="headerlink" title="常见样式"></a>常见样式</h3><h4 id="不同状态链接字体的颜色"><a href="#不同状态链接字体的颜色" class="headerlink" title="不同状态链接字体的颜色"></a>不同状态链接字体的颜色</h4><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+a.one:link &#123;color:#ff0000;&#125;
+a.one:visited &#123;color:#0000ff;&#125;
+a.one:hover &#123;color:#ffcc00;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="不同状态链接的背景颜色"><a href="#不同状态链接的背景颜色" class="headerlink" title="不同状态链接的背景颜色"></a>不同状态链接的背景颜色</h4><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+a:link &#123;background-color:#B2FF99;&#125;
+a:visited &#123;background-color:#FFFF85;&#125;
+a:hover &#123;background-color:#FF704D;&#125;
+a:active &#123;background-color:#FF704D;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="删除链接中的下划线"><a href="#删除链接中的下划线" class="headerlink" title="删除链接中的下划线"></a>删除链接中的下划线</h4><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+a:link &#123;text-decoration:none;&#125;
+a:visited &#123;text-decoration:none;&#125;
+a:hover &#123;text-decoration:underline;&#125;
+a:active &#123;text-decoration:underline;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="不同状态链接的字体大小"><a href="#不同状态链接的字体大小" class="headerlink" title="不同状态链接的字体大小"></a>不同状态链接的字体大小</h4><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+a.two:link &#123;color:#ff0000;&#125;
+a.two:visited &#123;color:#0000ff;&#125;
+a.two:hover &#123;font-size:150%;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><p>在 HTML中，有两种类型的列表：</p>
+<ul>
+<li>无序列表 ul - 列表项标记用特殊图形（如小黑点、小方框等）</li>
+<li>有序列表 ol - 列表项的标记有数字或字母<br>使用 CSS，可以列出进一步的样式，并可用图像作列表项标记。<h3 id="默认的列表标记"><a href="#默认的列表标记" class="headerlink" title="默认的列表标记"></a>默认的列表标记</h3>设置 list-style-type 属性的值来使用默认的列表标记<pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+无序列表
+ul.a &#123;list-style-type: circle;&#125; 空心圆
+ul.b &#123;list-style-type: square;&#125; 实心方块
+有序列表
+ol.c &#123;list-style-type: upper-roman;&#125; 罗马数字
+ol.d &#123;list-style-type: lower-alpha;&#125; 字母a-z<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="自定义的图像列表标记"><a href="#自定义的图像列表标记" class="headerlink" title="自定义的图像列表标记"></a>自定义的图像列表标记</h3>设置 list-style-image 属性的值来使用自定义的图片的列表标记<pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+ul
+&#123;
+    list-style-image: url(&#39;sqpurple.gif&#39;);
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+上面的例子在所有浏览器中显示并不相同，IE 和 Opera 显示图像标记比火狐，Chrome 和 Safari更高一点点。<br>如果你想在所有的浏览器放置同样的形象标志，就应使用浏览器兼容性解决方案，过程如下<h3 id="浏览器兼容解决方案"><a href="#浏览器兼容解决方案" class="headerlink" title="浏览器兼容解决方案"></a>浏览器兼容解决方案</h3><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+ul
+&#123;
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+&#125;
+ul li
+&#123;
+    background-image: url(sqpurple.gif);
+    background-repeat: no-repeat;
+    background-position: 0px 5px; 
+    padding-left: 14px; 
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+例子解释：<br>ul:</li>
+<li>设置列表类型为没有列表项标记</li>
+<li>设置填充和边距 0px（浏览器兼容性）<br>ul 中所有 li:</li>
+<li>设置图像的 URL，并设置它只显示一次（无重复）</li>
+<li>您需要的定位图像位置（左 0px 和上下 5px）</li>
+<li>用 padding-left 属性把文本置于列表中<h3 id="简写属性"><a href="#简写属性" class="headerlink" title="简写属性"></a>简写属性</h3>顺序：</li>
+<li>list-style-type</li>
+<li>list-style-position (有关说明，请参见下面的CSS属性表)</li>
+<li>list-style-image</li>
+</ul>
+<h2 id="CSS表格"><a href="#CSS表格" class="headerlink" title="CSS表格"></a>CSS表格</h2><h2 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h2><img src="https://www.runoob.com/images/box-model.gif">
+
+<p>不同部分的说明：</p>
+<ul>
+<li>Margin(外边距) - 清除边框外的区域，外边距是透明的。</li>
+<li>Border(边框) - 围绕在内边距和内容外的边框。</li>
+<li>Padding(内边距) - 清除内容周围的区域，内边距是透明的。</li>
+<li>Content(内容) - 盒子的内容，显示文本和图像。</li>
+</ul>
+<h2 id="CSS边框"><a href="#CSS边框" class="headerlink" title="CSS边框"></a>CSS边框</h2>]]></content>
       <categories>
         <category>技能收录</category>
       </categories>
@@ -688,6 +845,8 @@ scheme:&#x2F;&#x2F;host.domain:port&#x2F;path&#x2F;filename<span aria-hidden="tr
 <h1 id="practice-3"><a href="#practice-3" class="headerlink" title="practice 3"></a>practice 3</h1><p><img src="/2021/05/17/%E3%80%90%E6%97%A5%E5%B8%B8%E7%BB%83%E4%B9%A0%E3%80%91%E6%8E%92%E7%89%88-%E6%B5%B7%E6%8A%A5%E4%B8%B4%E6%91%B9/3.jpg"></p>
 <h1 id="practice-4"><a href="#practice-4" class="headerlink" title="practice 4"></a>practice 4</h1><p><img src="/2021/05/17/%E3%80%90%E6%97%A5%E5%B8%B8%E7%BB%83%E4%B9%A0%E3%80%91%E6%8E%92%E7%89%88-%E6%B5%B7%E6%8A%A5%E4%B8%B4%E6%91%B9/4.jpg"></p>
 <h1 id="practice-5"><a href="#practice-5" class="headerlink" title="practice 5"></a>practice 5</h1><p><img src="/2021/05/17/%E3%80%90%E6%97%A5%E5%B8%B8%E7%BB%83%E4%B9%A0%E3%80%91%E6%8E%92%E7%89%88-%E6%B5%B7%E6%8A%A5%E4%B8%B4%E6%91%B9/5.jpg"></p>
+<h1 id="practice-6"><a href="#practice-6" class="headerlink" title="practice 6"></a>practice 6</h1><p><img src="/2021/05/17/%E3%80%90%E6%97%A5%E5%B8%B8%E7%BB%83%E4%B9%A0%E3%80%91%E6%8E%92%E7%89%88-%E6%B5%B7%E6%8A%A5%E4%B8%B4%E6%91%B9/%E7%99%BE%E5%8F%98%E8%90%8C%E5%AE%A0.jpg"></p>
+<h1 id="practice-7"><a href="#practice-7" class="headerlink" title="practice 7"></a>practice 7</h1><p><img src="/2021/05/17/%E3%80%90%E6%97%A5%E5%B8%B8%E7%BB%83%E4%B9%A0%E3%80%91%E6%8E%92%E7%89%88-%E6%B5%B7%E6%8A%A5%E4%B8%B4%E6%91%B9/%E9%AB%98%E8%80%83%E5%8A%A0%E6%B2%B9.jpg"></p>
 ]]></content>
       <categories>
         <category>日常练习</category>
