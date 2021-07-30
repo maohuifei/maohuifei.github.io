@@ -6,7 +6,8 @@
     <content><![CDATA[<p>好问的人，只做了五分种的愚人；耻于发问的人，终身为愚人</p>
 <span id="more"></span>
 
-<h2 id="活动"><a href="#活动" class="headerlink" title="活动"></a>活动</h2><h3 id="国潮盛典"><a href="#国潮盛典" class="headerlink" title="国潮盛典"></a>国潮盛典</h3><p><img src="/2021/05/17/%E3%80%90%E6%97%A5%E5%B8%B8%E7%BB%83%E4%B9%A0%E3%80%91%E6%8E%92%E7%89%88-%E6%B5%B7%E6%8A%A5%E4%B8%B4%E6%91%B9/2.jpg"></p>
+<h2 id="活动"><a href="#活动" class="headerlink" title="活动"></a>活动</h2><h3 id="盛世霓裳"><a href="#盛世霓裳" class="headerlink" title="盛世霓裳"></a>盛世霓裳</h3><p><img src="/2021/05/17/%E3%80%90%E6%97%A5%E5%B8%B8%E7%BB%83%E4%B9%A0%E3%80%91%E6%8E%92%E7%89%88-%E6%B5%B7%E6%8A%A5%E4%B8%B4%E6%91%B9/%E7%9B%9B%E4%B8%96%E9%9C%93%E8%A3%B3.jpg"></p>
+<h3 id="国潮盛典"><a href="#国潮盛典" class="headerlink" title="国潮盛典"></a>国潮盛典</h3><p><img src="/2021/05/17/%E3%80%90%E6%97%A5%E5%B8%B8%E7%BB%83%E4%B9%A0%E3%80%91%E6%8E%92%E7%89%88-%E6%B5%B7%E6%8A%A5%E4%B8%B4%E6%91%B9/2.jpg"></p>
 <h3 id="潮流穿搭、全场满减"><a href="#潮流穿搭、全场满减" class="headerlink" title="潮流穿搭、全场满减"></a>潮流穿搭、全场满减</h3><p><img src="/2021/05/17/%E3%80%90%E6%97%A5%E5%B8%B8%E7%BB%83%E4%B9%A0%E3%80%91%E6%8E%92%E7%89%88-%E6%B5%B7%E6%8A%A5%E4%B8%B4%E6%91%B9/5.jpg"></p>
 <h3 id="秋冬新品、抢先购"><a href="#秋冬新品、抢先购" class="headerlink" title="秋冬新品、抢先购"></a>秋冬新品、抢先购</h3><p><img src="/2021/05/17/%E3%80%90%E6%97%A5%E5%B8%B8%E7%BB%83%E4%B9%A0%E3%80%91%E6%8E%92%E7%89%88-%E6%B5%B7%E6%8A%A5%E4%B8%B4%E6%91%B9/4.jpg"></p>
 <h2 id="餐饮"><a href="#餐饮" class="headerlink" title="餐饮"></a>餐饮</h2><h3 id="美式丁骨"><a href="#美式丁骨" class="headerlink" title="美式丁骨"></a>美式丁骨</h3><p><img src="/2021/05/17/%E3%80%90%E6%97%A5%E5%B8%B8%E7%BB%83%E4%B9%A0%E3%80%91%E6%8E%92%E7%89%88-%E6%B5%B7%E6%8A%A5%E4%B8%B4%E6%91%B9/1.jpg"></p>
@@ -185,7 +186,22 @@ div &#123;
     color: grey;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>div的最终显示结果为红色</p>
-]]></content>
+<h2 id="行内元素转块元素"><a href="#行内元素转块元素" class="headerlink" title="行内元素转块元素"></a>行内元素转块元素</h2><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+display: inline-block;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="文字的垂直居中"><a href="#文字的垂直居中" class="headerlink" title="文字的垂直居中"></a>文字的垂直居中</h2><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+添加 line-height属性，值等于容器高度<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="CSS继承性——行高的继承"><a href="#CSS继承性——行高的继承" class="headerlink" title="CSS继承性——行高的继承"></a>CSS继承性——行高的继承</h2><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+body &#123;
+	font：12px&#x2F;1.5 ；这里的1.5 为当前元素文字大小的1.5倍，所以body的行高为
+&#125;
+div &#123;
+	font-size：14px；子元素div继承父元素body的行高1.5，行高为14*1.5&#x3D;21
+&#125;
+p &#123;
+	font-size：16px；行高为16*1.5&#x3D;24
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
       <categories>
         <category>技能收录</category>
       </categories>
@@ -369,6 +385,9 @@ div &#123;background-color:#b0c4de;&#125;<span aria-hidden="true" class="line-nu
     <li>颜色名称 - 如："red"</li>
 </ul>
 
+<h5 id="背景颜色半透明"><a href="#背景颜色半透明" class="headerlink" title="背景颜色半透明"></a>背景颜色半透明</h5><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+background: rgba(0,0,0,0.3)；<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>rgb对应RGB，a对应alpha透明度，取值范围0-1</p>
 <h4 id="背景图片-background-image"><a href="#背景图片-background-image" class="headerlink" title="背景图片(background-image)"></a>背景图片(background-image)</h4><p>默认情况下，背景图像进行平铺重复显示，以覆盖整个元素实体</p>
 <pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
 body &#123;background-image:url(&#39;paper.gif&#39;);&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
@@ -400,6 +419,14 @@ body
         <td>top上、center中、bottom下、left左、center中、right右 方位名词</td>
     </tr>
 </table>
+
+<p><img src="/2021/06/04/%E3%80%90%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1%E3%80%91CSS%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E8%83%8C%E6%99%AF%E4%BD%8D%E7%BD%AE.jpg"></p>
+<h5 id="背景固定-跟随滚动（背景附着）"><a href="#背景固定-跟随滚动（背景附着）" class="headerlink" title="背景固定/跟随滚动（背景附着）"></a>背景固定/跟随滚动（背景附着）</h5><p>添加 background-attachment 属性来改变图像在背景中的位置。多用于制作滚动视差效果</p>
+<pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+body
+&#123;
+	background-attachment:scroll（跟随对象内容滚动）&#x2F;fixed（固定）；
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h5 id="背景的简写属性"><a href="#背景的简写属性" class="headerlink" title="背景的简写属性"></a>背景的简写属性</h5><p>在以上可以看到页面的背景颜色通过了很多的属性来控制。<br>为了简化这些属性的代码，我们可以将这些属性合并在同一个属性中.<br>背景颜色的简写属性为 “background”:</p>
 <pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
@@ -527,7 +554,16 @@ ul li
 <li>list-style-position (有关说明，请参见下面的CSS属性表)</li>
 <li>list-style-image</li>
 </ul>
-<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><h2 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h2><img src="https://www.runoob.com/images/box-model.gif">
+<h2 id="CSS三大特性"><a href="#CSS三大特性" class="headerlink" title="CSS三大特性"></a>CSS三大特性</h2><h3 id="层叠性"><a href="#层叠性" class="headerlink" title="层叠性"></a>层叠性</h3><p>给相同的选择器设置相同的样式，此时一个样式就会覆盖掉冲突的样式<br>覆盖规则为<b>就近原则</b>,哪个样式离结构近就执行哪个样式</p>
+<h3 id="继承性"><a href="#继承性" class="headerlink" title="继承性"></a>继承性</h3><p>子标签会继承父标签的某些样式，比如文本颜色和字号<br>text，font，line开头的元素以及color</p>
+<h3 id="优先级"><a href="#优先级" class="headerlink" title="优先级"></a>优先级</h3><ul>
+<li>选择器相同，执行层叠性</li>
+<li>选择器不同，根据选择器权重执行<br><img src="/2021/06/04/%E3%80%90%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1%E3%80%91CSS%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E9%80%89%E6%8B%A9%E5%99%A8%E6%9D%83%E9%87%8D.jpg"></li>
+<li>继承的权重是0，不管父元素的权重有多高，子元素的权重都是0<br><img src="/2021/06/04/%E3%80%90%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1%E3%80%91CSS%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%BB%A7%E6%89%BF%E7%9A%84%E6%9D%83%E9%87%8D%E4%B8%BA0.jpg"></li>
+<li>标签a 浏览器默认指定蓝色的样式，想要修改需单独指定</li>
+<li>权重会叠加，但永远不会进位<br><b>更详细的多重样式优先级深入概念及权重计算请参考本站文章<a href="https://www.mhf.ink/2021/07/13/CSS%E7%9F%A5%E8%AF%86%E7%82%B9%E6%89%A9%E5%B1%95/">CSS知识点扩展</a></b></li>
+</ul>
+<h2 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h2><img src="https://www.runoob.com/images/box-model.gif">
 
 <p>不同部分的说明：</p>
 <ul>
@@ -536,7 +572,7 @@ ul li
 <li>Padding(内边距) - 清除内容周围的区域，内边距是透明的。</li>
 <li>Content(内容) - 盒子的内容，显示文本和图像。</li>
 </ul>
-<h2 id="CSS边框"><a href="#CSS边框" class="headerlink" title="CSS边框"></a>CSS边框</h2>]]></content>
+]]></content>
       <categories>
         <category>技能收录</category>
       </categories>

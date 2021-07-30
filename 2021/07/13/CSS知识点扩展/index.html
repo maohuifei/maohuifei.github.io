@@ -364,14 +364,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-07-13
+                    2021-07-30
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    575
+                    689
                 </div>
                 
 
@@ -450,7 +450,22 @@ div &#123;
     color: grey;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>div的最终显示结果为红色</p>
+<h2 id="行内元素转块元素"><a href="#行内元素转块元素" class="headerlink" title="行内元素转块元素"></a>行内元素转块元素</h2><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+display: inline-block;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
+<h2 id="文字的垂直居中"><a href="#文字的垂直居中" class="headerlink" title="文字的垂直居中"></a>文字的垂直居中</h2><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+添加 line-height属性，值等于容器高度<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="CSS继承性——行高的继承"><a href="#CSS继承性——行高的继承" class="headerlink" title="CSS继承性——行高的继承"></a>CSS继承性——行高的继承</h2><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+body &#123;
+	font：12px&#x2F;1.5 ；这里的1.5 为当前元素文字大小的1.5倍，所以body的行高为
+&#125;
+div &#123;
+	font-size：14px；子元素div继承父元素body的行高1.5，行高为14*1.5&#x3D;21
+&#125;
+p &#123;
+	font-size：16px；行高为16*1.5&#x3D;24
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
