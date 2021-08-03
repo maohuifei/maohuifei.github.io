@@ -65,7 +65,32 @@
   <entry>
     <title>CSS传统网页布局之浮动</title>
     <url>/2021/08/03/CSS%E4%BC%A0%E7%BB%9F%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80%E4%B9%8B%E6%B5%AE%E5%8A%A8/</url>
-    <content><![CDATA[<span id="more"></span>
+    <content><![CDATA[<p>很多网页布局标准流不能实现的，可以用浮动来做，因为浮动可以改变元素标签的默认排列方式。<br>浮动最典型应用，可以让多个块元素一行内排列显示。<br>网页布局第一准则：多个块级元素 <b>纵向排列找标准流，横向排列找浮动。</b></p>
+<span id="more"></span>
+
+<h2 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h2><p>float 属性用于创建浮动框，将其移动到一边，直到左边缘或右边缘触及包含块或另一个浮动框的边缘</p>
+<pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+div &#123;
+  float:属性值；
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><p>1.浮动元素会脱离标准流（脱标）</p>
+<ul>
+<li>脱离标准流的控制（浮）移动到指定位置（动），（俗称<b>脱标</b>）</li>
+<li>浮动的盒子<b>不再保留原先的位置</b>，会被其他的标准流的盒子所占有</li>
+</ul>
+<p>2.浮动的元素会一行内显示并且元素顶部对齐</p>
+<ul>
+<li>如果多个盒子都设置了浮动，则它们会按照属性值一行内显示并且顶端对齐排列。</li>
+<li>浮动的元素相互靠在一起，没有缝隙，如果父级元素装不下这些浮动的盒子，会自动换行。</li>
+</ul>
+<p>3.浮动元素会具有行内块元素的特性<br>任何元素添加浮动后都具有行内块元素相似的特性。</p>
+<ul>
+<li>如果块元素没有设置宽度，默认和父级相同，<b>添加浮动后，宽度由内容决定。</b></li>
+<li>浮动的盒子中间是没有缝隙的，紧挨着的</li>
+<li>行内元素同理<h2 id="浮动元素经常和标准流父级搭配使用"><a href="#浮动元素经常和标准流父级搭配使用" class="headerlink" title="浮动元素经常和标准流父级搭配使用"></a>浮动元素经常和标准流父级搭配使用</h2><b>先用标准流的父元素排列上下位置，之后内部子元素采取浮动排列左右位置</b>，符合网页布局第一准则。</li>
+<li>浮动如果一个元素浮动了。理论上来讲其余的兄弟元素也要浮动。</li>
+<li>浮动的盒子只会影响它后面的标准流，不会影响前面的标准流。<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2>一个盒子里面有多个盒子，其中一个盒子浮动了，理论上其他兄弟也要跟着浮动，以防出现问题<br>浮动的盒子只会影响浮动盒子后面的标准流，不会影响前面的标准流<h2 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h2></li>
+</ul>
 ]]></content>
       <categories>
         <category>读书笔记与感悟</category>
@@ -139,6 +164,22 @@ div &#123;
   margin:0;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="行内元素的兼容性问题"><a href="#行内元素的兼容性问题" class="headerlink" title="行内元素的兼容性问题"></a>行内元素的兼容性问题</h4><p>行内元素照顾兼容性问题，尽量只设置左右内外边距，不设置上下内外边距。转化为块级或者行内块级元素即可</p>
+<h3 id="圆角边框"><a href="#圆角边框" class="headerlink" title="圆角边框"></a>圆角边框</h3><h4 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h4><p>CSS3中，新增圆角边框样式</p>
+<pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+&#123;
+  border-radius:10px;  ||数值为四角圆的半径，可以是数值或者百分比
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="进阶-1"><a href="#进阶-1" class="headerlink" title="进阶"></a>进阶</h4><p>如果要生成圆形盒子，数值设为正方形盒子宽度的一半或者50%即可<br>常用圆角矩形数值为盒子高度的一半</p>
+<h4 id="简写-3"><a href="#简写-3" class="headerlink" title="简写"></a>简写</h4><p>左上、右上、右下、左下（顺时针）</p>
+<pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+&#123;
+border-top-left-radius:10px;
+border-top-right-radius:10px;
+border-bottom-left-radius:10px;
+border-bottom-right-radius:10px;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="盒子阴影"><a href="#盒子阴影" class="headerlink" title="盒子阴影"></a>盒子阴影</h3><p>CSS3中新增盒子阴影样式，使用 box-shadow 为盒子添加阴影<br><img src="/2021/08/03/CSS%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/%E7%9B%92%E5%AD%90%E9%98%B4%E5%BD%B1.jpg"><br>PS：默认的是外阴影outset，但是这个单词不允许出现，否则阴影无效<br>阴影不占用空间，不影响盒子布局排列</p>
+<h3 id="文字阴影"><a href="#文字阴影" class="headerlink" title="文字阴影"></a>文字阴影</h3><p>CSS3中新增文字阴影样式，使用 text-shadow 为文本添加阴影<br><img src="/2021/08/03/CSS%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/%E6%96%87%E5%AD%97%E9%98%B4%E5%BD%B1.jpg"></p>
 ]]></content>
       <categories>
         <category>读书笔记与感悟</category>
@@ -304,7 +345,8 @@ p &#123;
 	font-size：16px；行高为16*1.5&#x3D;24
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="页面布局三大核心"><a href="#页面布局三大核心" class="headerlink" title="页面布局三大核心"></a>页面布局三大核心</h2><h3 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h3><h3 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h3><h3 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h3>]]></content>
+<h2 id="页面布局三大核心"><a href="#页面布局三大核心" class="headerlink" title="页面布局三大核心"></a>页面布局三大核心</h2><h3 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h3><h3 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h3><h3 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h3><h2 id="列表去掉圆点"><a href="#列表去掉圆点" class="headerlink" title="列表去掉圆点"></a>列表去掉圆点</h2><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+list-style：none<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>]]></content>
       <categories>
         <category>技能收录</category>
       </categories>

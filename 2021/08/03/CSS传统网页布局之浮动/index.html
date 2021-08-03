@@ -371,7 +371,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    573
                 </div>
                 
 
@@ -391,7 +391,32 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <span id="more"></span>
+                <p>很多网页布局标准流不能实现的，可以用浮动来做，因为浮动可以改变元素标签的默认排列方式。<br>浮动最典型应用，可以让多个块元素一行内排列显示。<br>网页布局第一准则：多个块级元素 <b>纵向排列找标准流，横向排列找浮动。</b></p>
+<span id="more"></span>
+
+<h2 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h2><p>float 属性用于创建浮动框，将其移动到一边，直到左边缘或右边缘触及包含块或另一个浮动框的边缘</p>
+<pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+div &#123;
+  float:属性值；
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><p>1.浮动元素会脱离标准流（脱标）</p>
+<ul>
+<li>脱离标准流的控制（浮）移动到指定位置（动），（俗称<b>脱标</b>）</li>
+<li>浮动的盒子<b>不再保留原先的位置</b>，会被其他的标准流的盒子所占有</li>
+</ul>
+<p>2.浮动的元素会一行内显示并且元素顶部对齐</p>
+<ul>
+<li>如果多个盒子都设置了浮动，则它们会按照属性值一行内显示并且顶端对齐排列。</li>
+<li>浮动的元素相互靠在一起，没有缝隙，如果父级元素装不下这些浮动的盒子，会自动换行。</li>
+</ul>
+<p>3.浮动元素会具有行内块元素的特性<br>任何元素添加浮动后都具有行内块元素相似的特性。</p>
+<ul>
+<li>如果块元素没有设置宽度，默认和父级相同，<b>添加浮动后，宽度由内容决定。</b></li>
+<li>浮动的盒子中间是没有缝隙的，紧挨着的</li>
+<li>行内元素同理<h2 id="浮动元素经常和标准流父级搭配使用"><a href="#浮动元素经常和标准流父级搭配使用" class="headerlink" title="浮动元素经常和标准流父级搭配使用"></a>浮动元素经常和标准流父级搭配使用</h2><b>先用标准流的父元素排列上下位置，之后内部子元素采取浮动排列左右位置</b>，符合网页布局第一准则。</li>
+<li>浮动如果一个元素浮动了。理论上来讲其余的兄弟元素也要浮动。</li>
+<li>浮动的盒子只会影响它后面的标准流，不会影响前面的标准流。<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2>一个盒子里面有多个盒子，其中一个盒子浮动了，理论上其他兄弟也要跟着浮动，以防出现问题<br>浮动的盒子只会影响浮动盒子后面的标准流，不会影响前面的标准流<h2 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h2></li>
+</ul>
 
                 
             </div>

@@ -371,7 +371,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    748
+                    963
                 </div>
                 
 
@@ -451,6 +451,22 @@ div &#123;
   margin:0;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="行内元素的兼容性问题"><a href="#行内元素的兼容性问题" class="headerlink" title="行内元素的兼容性问题"></a>行内元素的兼容性问题</h4><p>行内元素照顾兼容性问题，尽量只设置左右内外边距，不设置上下内外边距。转化为块级或者行内块级元素即可</p>
+<h3 id="圆角边框"><a href="#圆角边框" class="headerlink" title="圆角边框"></a>圆角边框</h3><h4 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h4><p>CSS3中，新增圆角边框样式</p>
+<pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+&#123;
+  border-radius:10px;  ||数值为四角圆的半径，可以是数值或者百分比
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="进阶-1"><a href="#进阶-1" class="headerlink" title="进阶"></a>进阶</h4><p>如果要生成圆形盒子，数值设为正方形盒子宽度的一半或者50%即可<br>常用圆角矩形数值为盒子高度的一半</p>
+<h4 id="简写-3"><a href="#简写-3" class="headerlink" title="简写"></a>简写</h4><p>左上、右上、右下、左下（顺时针）</p>
+<pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+&#123;
+border-top-left-radius:10px;
+border-top-right-radius:10px;
+border-bottom-left-radius:10px;
+border-bottom-right-radius:10px;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="盒子阴影"><a href="#盒子阴影" class="headerlink" title="盒子阴影"></a>盒子阴影</h3><p>CSS3中新增盒子阴影样式，使用 box-shadow 为盒子添加阴影<br><img src="/2021/08/03/CSS%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/%E7%9B%92%E5%AD%90%E9%98%B4%E5%BD%B1.jpg"><br>PS：默认的是外阴影outset，但是这个单词不允许出现，否则阴影无效<br>阴影不占用空间，不影响盒子布局排列</p>
+<h3 id="文字阴影"><a href="#文字阴影" class="headerlink" title="文字阴影"></a>文字阴影</h3><p>CSS3中新增文字阴影样式，使用 text-shadow 为文本添加阴影<br><img src="/2021/08/03/CSS%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/%E6%96%87%E5%AD%97%E9%98%B4%E5%BD%B1.jpg"></p>
 
                 
             </div>
@@ -712,7 +728,7 @@ div &#123;
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            很多网页布局标准流不能实现的，可以用浮动来做，因为浮动可以改变元素标签的默认排列方式。浮动最典型应用，可以让多个块元素一行内排列显示。网页布局第一准则：多个块级元素 纵向排列找标准流，横向排列找浮动。
                         
                     </div>
                     <div class="publish-info">
