@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Emmet语法, 猫会飞呀">
+    <meta name="keywords" content="CSS盒子模型, 猫会飞呀">
     <meta name="description" content="视觉设计师/商业插画/编程爱好者">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Emmet语法 | 猫会飞呀</title>
+    <title>CSS盒子模型 | 猫会飞呀</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -203,12 +203,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Emmet语法</h1>
+                    <h1 class="description center-align post-title">CSS盒子模型</h1>
                 </div>
             </div>
         </div>
@@ -324,16 +324,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E8%AF%AD%E6%B3%95/">
-                                <span class="chip bg-color">语法</span>
+                            <a href="/tags/CSS/">
+                                <span class="chip bg-color">CSS</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                                <span class="chip bg-color">学习笔记</span>
                             </a>
                         
                             <a href="/tags/Web%E5%89%8D%E7%AB%AF/">
                                 <span class="chip bg-color">Web前端</span>
-                            </a>
-                        
-                            <a href="/tags/Emmet/">
-                                <span class="chip bg-color">Emmet</span>
                             </a>
                         
                     </div>
@@ -344,8 +344,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E8%AF%AD%E6%B3%95/" class="post-category">
-                                语法
+                            <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E4%B8%8E%E6%84%9F%E6%82%9F/" class="post-category">
+                                读书笔记与感悟
                             </a>
                         
                     </div>
@@ -357,21 +357,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-07-27
+                    2021-08-03
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-07-28
+                    2021-08-03
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    385
+                    748
                 </div>
                 
 
@@ -391,21 +391,66 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Emmet (前身为 Zen Coding) 是一个能大幅度提高前端开发效率的一个工具。<br>基本上，大多数的文本编辑器都会允许你存储和重用一些代码块，我们称之为“片段”。<br>虽然片段能很好地推动你得生产力，但大多数的实现都有这样一个缺点：你必须先定义你得代码片段，并且不能再运行时进行拓展。<br>Emmet把片段这个概念提高到了一个新的层次：你可以设置CSS形式的能够动态被解析的表达式，然后根据你所输入的缩写来得到相应的内容。<br>Emmet是很成熟的并且非常适用于编写HTML/XML 和 CSS 代码的前端开发人员，但也可以用于编程语言。</p>
+                <p>所有HTML元素可以看作盒子，在CSS中，”box model”这一术语是用来设计和布局时使用。<br>CSS盒模型本质上是一个盒子，封装周围的HTML元素，它包括：边距，边框，填充，和实际内容。<br>盒模型允许我们在其它元素和周围元素边框之间的空间放置元素。</p>
 <span id="more"></span>
 
-<h2 id="Emmet语法于HTML中的应用"><a href="#Emmet语法于HTML中的应用" class="headerlink" title="Emmet语法于HTML中的应用"></a>Emmet语法于HTML中的应用</h2><h3 id="生成标签"><a href="#生成标签" class="headerlink" title="生成标签"></a>生成标签</h3><p>直接输入标签名 按tab键</p>
-<h3 id="生成多个相同标签"><a href="#生成多个相同标签" class="headerlink" title="生成多个相同标签"></a>生成多个相同标签</h3><p>在标签名后加 * 比如：div* 3为生成三个div标签</p>
-<h3 id="父子级标签"><a href="#父子级标签" class="headerlink" title="父子级标签"></a>父子级标签</h3><p>标签名间加”&gt;”，如：ul&gt;li</p>
-<h3 id="兄弟级标签"><a href="#兄弟级标签" class="headerlink" title="兄弟级标签"></a>兄弟级标签</h3><p>标签名间加”+”，如：div+p</p>
-<h3 id="生成带有类名或者id名字的"><a href="#生成带有类名或者id名字的" class="headerlink" title="生成带有类名或者id名字的"></a>生成带有类名或者id名字的</h3><p>直接写 .name 或者 #name 再按tab键</p>
-<h3 id="生成有顺序的"><a href="#生成有顺序的" class="headerlink" title="生成有顺序的"></a>生成有顺序的</h3><p>使用自增符号”$”，如：div$ + tab键</p>
-<h3 id="在生成的标签里写内容"><a href="#在生成的标签里写内容" class="headerlink" title="在生成的标签里写内容"></a>在生成的标签里写内容</h3><p>标签名后面加花括号：”{}”，花括号里写内容</p>
-<h2 id="Emmet语法于CSS中的应用"><a href="#Emmet语法于CSS中的应用" class="headerlink" title="Emmet语法于CSS中的应用"></a>Emmet语法于CSS中的应用</h2><ul>
-<li>CSS基本采取简写形式即可</li>
-<li>如：w100 按tab键 生成 width：100px</li>
-<li>lh100 按tab键 生成 line-height：100px</li>
+<h2 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h2><img src="https://www.runoob.com/images/box-model.gif">
+
+<p>不同部分的说明：</p>
+<ul>
+<li>Margin(外边距) - 清除边框外的区域，外边距是透明的。</li>
+<li>Border(边框) - 围绕在内边距和内容外的边框。</li>
+<li>Padding(内边距) - 清除内容周围的区域，内边距是透明的。</li>
+<li>Content(内容) - 盒子的内容，显示文本和图像。</li>
 </ul>
+<h3 id="内容content"><a href="#内容content" class="headerlink" title="内容content"></a>内容content</h3><p>没啥好说的，就是内容</p>
+<h3 id="边框-border"><a href="#边框-border" class="headerlink" title="边框 border"></a>边框 border</h3><h4 id="语法规则"><a href="#语法规则" class="headerlink" title="语法规则"></a>语法规则</h4><p>border可以设置元素的边框，边框有三部分组成：边框宽度、边框样式、边框颜色<br><img src="/2021/08/03/CSS%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B%E2%80%94%E2%80%94%E8%BE%B9%E6%A1%86.jpg"></p>
+<pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+div &#123;
+  border-width:10px;   ||粗细10像素
+  border-style:solid   ||solid实线&#x2F;dashed虚线&#x2F;dotted点线；
+  border-color:#fff;   ||白色
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="简写"><a href="#简写" class="headerlink" title="简写"></a>简写</h4><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+div &#123;
+  border:1px solid red; 没有先后顺序，只有通俗约定规范
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="进阶"><a href="#进阶" class="headerlink" title="进阶"></a>进阶</h4><h5 id="分开定义样式"><a href="#分开定义样式" class="headerlink" title="分开定义样式"></a>分开定义样式</h5><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+div &#123;
+  border-top: 1px solid red;
+  border-bottom: 
+  border-left: 1px dashed green;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="合并相邻的边框"><a href="#合并相邻的边框" class="headerlink" title="合并相邻的边框"></a>合并相邻的边框</h5><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+div &#123;
+  border-collapse:collapse;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="边框会影响实际盒子大小"><a href="#边框会影响实际盒子大小" class="headerlink" title="边框会影响实际盒子大小"></a>边框会影响实际盒子大小</h5><p>即我们所看到的区域大小=盒子大小+边框大小</p>
+<ul>
+<li>测量盒子大小时候不量边框</li>
+<li>如果测量时包含边框，后面需要减去width/height</li>
+</ul>
+<h3 id="内边距padding"><a href="#内边距padding" class="headerlink" title="内边距padding"></a>内边距padding</h3><h4 id="语法规则-1"><a href="#语法规则-1" class="headerlink" title="语法规则"></a>语法规则</h4><p>padding可以设置元素的内边距<br><img src="/2021/08/03/CSS%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B%E2%80%94%E2%80%94%E5%86%85%E8%BE%B9%E8%B7%9D.jpg"></p>
+<h4 id="简写-1"><a href="#简写-1" class="headerlink" title="简写"></a>简写</h4><p><img src="/2021/08/03/CSS%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/%E5%86%85%E8%BE%B9%E8%B7%9D%E7%AE%80%E5%86%99.jpg"></p>
+<h4 id="内边距也会影响盒子实际大小"><a href="#内边距也会影响盒子实际大小" class="headerlink" title="内边距也会影响盒子实际大小"></a>内边距也会影响盒子实际大小</h4><p>如果盒子已有大小，添加内边距盒子会被撑大<br>解决方法参考边框</p>
+<h3 id="外边距margin"><a href="#外边距margin" class="headerlink" title="外边距margin"></a>外边距margin</h3><h4 id="语法规则-2"><a href="#语法规则-2" class="headerlink" title="语法规则"></a>语法规则</h4><p>margin可以设置元素的外边距，控制盒子和盒子间的距离<br><img src="/2021/08/03/CSS%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B%E2%80%94%E2%80%94%E5%A4%96%E8%BE%B9%E8%B7%9D.jpg"></p>
+<h4 id="简写-2"><a href="#简写-2" class="headerlink" title="简写"></a>简写</h4><p>margin简写意义顺序和pading完全一样</p>
+<h3 id="盒子模型的典型应用"><a href="#盒子模型的典型应用" class="headerlink" title="盒子模型的典型应用"></a>盒子模型的典型应用</h3><h4 id="外边距——块级盒子水平居中对齐"><a href="#外边距——块级盒子水平居中对齐" class="headerlink" title="外边距——块级盒子水平居中对齐"></a>外边距——块级盒子水平居中对齐</h4><p>外边距可以让块级盒子居中，但必须满足两个条件：<br>1.块级盒子必须指定了宽度<br>2.盒子<b>左右外边距</b>都设置为auto</p>
+<pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+div &#123;
+  常见三种写法：
+  margin:0 auto; ||推荐
+  margin: auto;
+  margin-left:auto;margin-right:auto;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="行内元素和行内块元素的水平居中"><a href="#行内元素和行内块元素的水平居中" class="headerlink" title="行内元素和行内块元素的水平居中"></a>行内元素和行内块元素的水平居中</h4><p>给其父元素添加text-align:center即可</p>
+<h4 id="外边距合并，嵌套块元素的塌陷问题"><a href="#外边距合并，嵌套块元素的塌陷问题" class="headerlink" title="外边距合并，嵌套块元素的塌陷问题"></a>外边距合并，嵌套块元素的塌陷问题</h4><p>对于两个嵌套关系（父子关系）的块元素，父元素有上外边距的同时子元素也有上外边距，此时父元素会塌陷较大的外边距值<br><img src="/2021/08/03/CSS%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/%E5%A1%8C%E9%99%B7%E9%97%AE%E9%A2%98.jpg"><br><img src="/2021/08/03/CSS%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/%E5%A1%8C%E9%99%B7%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88.jpg"><br>其他方法：使用浮动、固定、绝对定位的盒子不会有塌陷问题</p>
+<h4 id="清除内外边距"><a href="#清除内外边距" class="headerlink" title="清除内外边距"></a>清除内外边距</h4><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+* &#123;
+  padding:0;
+  margin:0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="行内元素的兼容性问题"><a href="#行内元素的兼容性问题" class="headerlink" title="行内元素的兼容性问题"></a>行内元素的兼容性问题</h4><p>行内元素照顾兼容性问题，尽量只设置左右内外边距，不设置上下内外边距。转化为块级或者行内块级元素即可</p>
 
                 
             </div>
@@ -432,7 +477,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://maohuifei.github.io/2021/07/27/Emmet%E8%AF%AD%E6%B3%95/">https://maohuifei.github.io/2021/07/27/Emmet%E8%AF%AD%E6%B3%95/</a>
+                    <a href="https://maohuifei.github.io/2021/08/03/CSS%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/">https://maohuifei.github.io/2021/08/03/CSS%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -470,16 +515,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E8%AF%AD%E6%B3%95/">
-                                    <span class="chip bg-color">语法</span>
+                                <a href="/tags/CSS/">
+                                    <span class="chip bg-color">CSS</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                                    <span class="chip bg-color">学习笔记</span>
                                 </a>
                             
                                 <a href="/tags/Web%E5%89%8D%E7%AB%AF/">
                                     <span class="chip bg-color">Web前端</span>
-                                </a>
-                            
-                                <a href="/tags/Emmet/">
-                                    <span class="chip bg-color">Emmet</span>
                                 </a>
                             
                         </div>
@@ -655,19 +700,19 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/08/03/CSS%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/">
+                <a href="/2021/08/03/CSS%E4%BC%A0%E7%BB%9F%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80%E4%B9%8B%E6%B5%AE%E5%8A%A8/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="CSS盒子模型">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="CSS传统网页布局之浮动">
                         
-                        <span class="card-title">CSS盒子模型</span>
+                        <span class="card-title">CSS传统网页布局之浮动</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            所有HTML元素可以看作盒子，在CSS中，”box model”这一术语是用来设计和布局时使用。CSS盒模型本质上是一个盒子，封装周围的HTML元素，它包括：边距，边框，填充，和实际内容。盒模型允许我们在其它元素和周围元素边框之间的空间放置
+                            
                         
                     </div>
                     <div class="publish-info">
@@ -712,31 +757,31 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/07/13/HTML%E7%9F%A5%E8%AF%86%E7%82%B9%E6%89%A9%E5%B1%95/">
+                <a href="/2021/07/27/Emmet%E8%AF%AD%E6%B3%95/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="HTML知识点扩展">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Emmet语法">
                         
-                        <span class="card-title">HTML知识点扩展</span>
+                        <span class="card-title">Emmet语法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            收录总结HTML学习中的知识点扩展
+                            Emmet (前身为 Zen Coding) 是一个能大幅度提高前端开发效率的一个工具。基本上，大多数的文本编辑器都会允许你存储和重用一些代码块，我们称之为“片段”。虽然片段能很好地推动你得生产力，但大多数的实现都有这样一个缺点：你必须先定
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-13
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-27
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%8A%80%E8%83%BD%E6%94%B6%E5%BD%95/" class="post-category">
-                                    技能收录
+                            <a href="/categories/%E8%AF%AD%E6%B3%95/" class="post-category">
+                                    语法
                                 </a>
                             
                             
@@ -746,16 +791,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/HTML/">
-                        <span class="chip bg-color">HTML</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                        <span class="chip bg-color">学习笔记</span>
+                    <a href="/tags/%E8%AF%AD%E6%B3%95/">
+                        <span class="chip bg-color">语法</span>
                     </a>
                     
                     <a href="/tags/Web%E5%89%8D%E7%AB%AF/">
                         <span class="chip bg-color">Web前端</span>
+                    </a>
+                    
+                    <a href="/tags/Emmet/">
+                        <span class="chip bg-color">Emmet</span>
                     </a>
                     
                 </div>

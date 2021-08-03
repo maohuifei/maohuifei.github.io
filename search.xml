@@ -49,6 +49,107 @@
       </tags>
   </entry>
   <entry>
+    <title>CSS传统网页布局之定位</title>
+    <url>/2021/08/03/CSS%E4%BC%A0%E7%BB%9F%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80%E4%B9%8B%E5%AE%9A%E4%BD%8D/</url>
+    <content><![CDATA[<span id="more"></span>
+]]></content>
+      <categories>
+        <category>读书笔记与感悟</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+        <tag>学习笔记</tag>
+        <tag>Web前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CSS传统网页布局之浮动</title>
+    <url>/2021/08/03/CSS%E4%BC%A0%E7%BB%9F%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80%E4%B9%8B%E6%B5%AE%E5%8A%A8/</url>
+    <content><![CDATA[<span id="more"></span>
+]]></content>
+      <categories>
+        <category>读书笔记与感悟</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+        <tag>学习笔记</tag>
+        <tag>Web前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CSS盒子模型</title>
+    <url>/2021/08/03/CSS%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/</url>
+    <content><![CDATA[<p>所有HTML元素可以看作盒子，在CSS中，”box model”这一术语是用来设计和布局时使用。<br>CSS盒模型本质上是一个盒子，封装周围的HTML元素，它包括：边距，边框，填充，和实际内容。<br>盒模型允许我们在其它元素和周围元素边框之间的空间放置元素。</p>
+<span id="more"></span>
+
+<h2 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h2><img src="https://www.runoob.com/images/box-model.gif">
+
+<p>不同部分的说明：</p>
+<ul>
+<li>Margin(外边距) - 清除边框外的区域，外边距是透明的。</li>
+<li>Border(边框) - 围绕在内边距和内容外的边框。</li>
+<li>Padding(内边距) - 清除内容周围的区域，内边距是透明的。</li>
+<li>Content(内容) - 盒子的内容，显示文本和图像。</li>
+</ul>
+<h3 id="内容content"><a href="#内容content" class="headerlink" title="内容content"></a>内容content</h3><p>没啥好说的，就是内容</p>
+<h3 id="边框-border"><a href="#边框-border" class="headerlink" title="边框 border"></a>边框 border</h3><h4 id="语法规则"><a href="#语法规则" class="headerlink" title="语法规则"></a>语法规则</h4><p>border可以设置元素的边框，边框有三部分组成：边框宽度、边框样式、边框颜色<br><img src="/2021/08/03/CSS%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B%E2%80%94%E2%80%94%E8%BE%B9%E6%A1%86.jpg"></p>
+<pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+div &#123;
+  border-width:10px;   ||粗细10像素
+  border-style:solid   ||solid实线&#x2F;dashed虚线&#x2F;dotted点线；
+  border-color:#fff;   ||白色
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="简写"><a href="#简写" class="headerlink" title="简写"></a>简写</h4><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+div &#123;
+  border:1px solid red; 没有先后顺序，只有通俗约定规范
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="进阶"><a href="#进阶" class="headerlink" title="进阶"></a>进阶</h4><h5 id="分开定义样式"><a href="#分开定义样式" class="headerlink" title="分开定义样式"></a>分开定义样式</h5><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+div &#123;
+  border-top: 1px solid red;
+  border-bottom: 
+  border-left: 1px dashed green;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="合并相邻的边框"><a href="#合并相邻的边框" class="headerlink" title="合并相邻的边框"></a>合并相邻的边框</h5><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+div &#123;
+  border-collapse:collapse;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="边框会影响实际盒子大小"><a href="#边框会影响实际盒子大小" class="headerlink" title="边框会影响实际盒子大小"></a>边框会影响实际盒子大小</h5><p>即我们所看到的区域大小=盒子大小+边框大小</p>
+<ul>
+<li>测量盒子大小时候不量边框</li>
+<li>如果测量时包含边框，后面需要减去width/height</li>
+</ul>
+<h3 id="内边距padding"><a href="#内边距padding" class="headerlink" title="内边距padding"></a>内边距padding</h3><h4 id="语法规则-1"><a href="#语法规则-1" class="headerlink" title="语法规则"></a>语法规则</h4><p>padding可以设置元素的内边距<br><img src="/2021/08/03/CSS%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B%E2%80%94%E2%80%94%E5%86%85%E8%BE%B9%E8%B7%9D.jpg"></p>
+<h4 id="简写-1"><a href="#简写-1" class="headerlink" title="简写"></a>简写</h4><p><img src="/2021/08/03/CSS%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/%E5%86%85%E8%BE%B9%E8%B7%9D%E7%AE%80%E5%86%99.jpg"></p>
+<h4 id="内边距也会影响盒子实际大小"><a href="#内边距也会影响盒子实际大小" class="headerlink" title="内边距也会影响盒子实际大小"></a>内边距也会影响盒子实际大小</h4><p>如果盒子已有大小，添加内边距盒子会被撑大<br>解决方法参考边框</p>
+<h3 id="外边距margin"><a href="#外边距margin" class="headerlink" title="外边距margin"></a>外边距margin</h3><h4 id="语法规则-2"><a href="#语法规则-2" class="headerlink" title="语法规则"></a>语法规则</h4><p>margin可以设置元素的外边距，控制盒子和盒子间的距离<br><img src="/2021/08/03/CSS%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B%E2%80%94%E2%80%94%E5%A4%96%E8%BE%B9%E8%B7%9D.jpg"></p>
+<h4 id="简写-2"><a href="#简写-2" class="headerlink" title="简写"></a>简写</h4><p>margin简写意义顺序和pading完全一样</p>
+<h3 id="盒子模型的典型应用"><a href="#盒子模型的典型应用" class="headerlink" title="盒子模型的典型应用"></a>盒子模型的典型应用</h3><h4 id="外边距——块级盒子水平居中对齐"><a href="#外边距——块级盒子水平居中对齐" class="headerlink" title="外边距——块级盒子水平居中对齐"></a>外边距——块级盒子水平居中对齐</h4><p>外边距可以让块级盒子居中，但必须满足两个条件：<br>1.块级盒子必须指定了宽度<br>2.盒子<b>左右外边距</b>都设置为auto</p>
+<pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+div &#123;
+  常见三种写法：
+  margin:0 auto; ||推荐
+  margin: auto;
+  margin-left:auto;margin-right:auto;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="行内元素和行内块元素的水平居中"><a href="#行内元素和行内块元素的水平居中" class="headerlink" title="行内元素和行内块元素的水平居中"></a>行内元素和行内块元素的水平居中</h4><p>给其父元素添加text-align:center即可</p>
+<h4 id="外边距合并，嵌套块元素的塌陷问题"><a href="#外边距合并，嵌套块元素的塌陷问题" class="headerlink" title="外边距合并，嵌套块元素的塌陷问题"></a>外边距合并，嵌套块元素的塌陷问题</h4><p>对于两个嵌套关系（父子关系）的块元素，父元素有上外边距的同时子元素也有上外边距，此时父元素会塌陷较大的外边距值<br><img src="/2021/08/03/CSS%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/%E5%A1%8C%E9%99%B7%E9%97%AE%E9%A2%98.jpg"><br><img src="/2021/08/03/CSS%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/%E5%A1%8C%E9%99%B7%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88.jpg"><br>其他方法：使用浮动、固定、绝对定位的盒子不会有塌陷问题</p>
+<h4 id="清除内外边距"><a href="#清除内外边距" class="headerlink" title="清除内外边距"></a>清除内外边距</h4><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+* &#123;
+  padding:0;
+  margin:0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="行内元素的兼容性问题"><a href="#行内元素的兼容性问题" class="headerlink" title="行内元素的兼容性问题"></a>行内元素的兼容性问题</h4><p>行内元素照顾兼容性问题，尽量只设置左右内外边距，不设置上下内外边距。转化为块级或者行内块级元素即可</p>
+]]></content>
+      <categories>
+        <category>读书笔记与感悟</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+        <tag>学习笔记</tag>
+        <tag>Web前端</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Emmet语法</title>
     <url>/2021/07/27/Emmet%E8%AF%AD%E6%B3%95/</url>
     <content><![CDATA[<p>Emmet (前身为 Zen Coding) 是一个能大幅度提高前端开发效率的一个工具。<br>基本上，大多数的文本编辑器都会允许你存储和重用一些代码块，我们称之为“片段”。<br>虽然片段能很好地推动你得生产力，但大多数的实现都有这样一个缺点：你必须先定义你得代码片段，并且不能再运行时进行拓展。<br>Emmet把片段这个概念提高到了一个新的层次：你可以设置CSS形式的能够动态被解析的表达式，然后根据你所输入的缩写来得到相应的内容。<br>Emmet是很成熟的并且非常适用于编写HTML/XML 和 CSS 代码的前端开发人员，但也可以用于编程语言。</p>
@@ -201,7 +302,9 @@ div &#123;
 &#125;
 p &#123;
 	font-size：16px；行高为16*1.5&#x3D;24
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="页面布局三大核心"><a href="#页面布局三大核心" class="headerlink" title="页面布局三大核心"></a>页面布局三大核心</h2><h3 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h3><h3 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h3><h3 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h3>]]></content>
       <categories>
         <category>技能收录</category>
       </categories>
@@ -562,15 +665,6 @@ ul li
 <li>继承的权重是0，不管父元素的权重有多高，子元素的权重都是0<br><img src="/2021/06/04/%E3%80%90%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1%E3%80%91CSS%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%BB%A7%E6%89%BF%E7%9A%84%E6%9D%83%E9%87%8D%E4%B8%BA0.jpg"></li>
 <li>标签a 浏览器默认指定蓝色的样式，想要修改需单独指定</li>
 <li>权重会叠加，但永远不会进位<br><b>更详细的多重样式优先级深入概念及权重计算请参考本站文章<a href="https://www.mhf.ink/2021/07/13/CSS%E7%9F%A5%E8%AF%86%E7%82%B9%E6%89%A9%E5%B1%95/">CSS知识点扩展</a></b></li>
-</ul>
-<h2 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h2><img src="https://www.runoob.com/images/box-model.gif">
-
-<p>不同部分的说明：</p>
-<ul>
-<li>Margin(外边距) - 清除边框外的区域，外边距是透明的。</li>
-<li>Border(边框) - 围绕在内边距和内容外的边框。</li>
-<li>Padding(内边距) - 清除内容周围的区域，内边距是透明的。</li>
-<li>Content(内容) - 盒子的内容，显示文本和图像。</li>
 </ul>
 ]]></content>
       <categories>
