@@ -51,8 +51,44 @@
   <entry>
     <title>CSS传统网页布局之定位</title>
     <url>/2021/08/03/CSS%E4%BC%A0%E7%BB%9F%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80%E4%B9%8B%E5%AE%9A%E4%BD%8D/</url>
-    <content><![CDATA[<span id="more"></span>
-]]></content>
+    <content><![CDATA[<p>在CSS中，通过CSS定位(CSS position)可以实现网页元素的精确定位。CSS定位和CSS浮动类似，也是控制网页布局的操作，CSS定位更加灵活，可以针对更多个性化的布局方案来使用。<br>定位分为静态定位，相对定位，绝对定位，固定定位这四种</p>
+<span id="more"></span>
+
+<h2 id="为什么需要定位"><a href="#为什么需要定位" class="headerlink" title="为什么需要定位"></a>为什么需要定位</h2><ul>
+<li>浮动可以让多个块级盒子没有缝隙的排列显示，经常用于横向排列盒子</li>
+<li>定位可以让盒子自由的在某个盒子内移动位置或者固定在屏幕中的某个位置，并且可以盖住其他盒子</li>
+</ul>
+<h2 id="定位的组成"><a href="#定位的组成" class="headerlink" title="定位的组成"></a>定位的组成</h2><p><b>定位 = 定位模式 + 边偏移</b></p>
+<h3 id="定位模式（position）"><a href="#定位模式（position）" class="headerlink" title="定位模式（position）"></a>定位模式（position）</h3><p>用于指定一个元素在文档中的定位方式，通过 position 属性来设置，有四个值：<br><img src="/2021/08/03/CSS%E4%BC%A0%E7%BB%9F%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80%E4%B9%8B%E5%AE%9A%E4%BD%8D/%E5%AE%9A%E4%BD%8D%E6%A8%A1%E5%BC%8F.jpg"></p>
+<h3 id="边偏移"><a href="#边偏移" class="headerlink" title="边偏移"></a>边偏移</h3><p>决定该元素的最终位置，有top、bottom、left、right 四个属性：<br><img src="/2021/08/03/CSS%E4%BC%A0%E7%BB%9F%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80%E4%B9%8B%E5%AE%9A%E4%BD%8D/%E8%BE%B9%E5%81%8F%E7%A7%BB.jpg"></p>
+<h2 id="静态定位（static）"><a href="#静态定位（static）" class="headerlink" title="静态定位（static）"></a>静态定位（static）</h2><p>静态定位是元素的<b>默认定位方式，无定位的意思</b></p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+div &#123;
+  position: static;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>静态定位按照标准流特性摆放位置，没有边偏移</li>
+<li>在实际布局中很少用</li>
+</ul>
+<h2 id="相对定位（relative）"><a href="#相对定位（relative）" class="headerlink" title="相对定位（relative）"></a>相对定位（relative）</h2><p>元素在移动位置的时候，是相对于它原来的位置来说的</p>
+<h3 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h3><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+div &#123;
+  position: relative;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ol>
+<li>相对于自己原来的位置来移动的（移动位置的参照点是他原来的位置）</li>
+<li>原来在标准流的位置继续占有，后面的盒子当它仍然在（不脱标，继续保留原来位置）<br>因此，相对定位没有脱标，主要用来限制绝对定位的</li>
+</ol>
+<h2 id="绝对定位（absolute）"><a href="#绝对定位（absolute）" class="headerlink" title="绝对定位（absolute）"></a>绝对定位（absolute）</h2><p>元素在移动位置的时候，是相对于它的祖先元素来说的</p>
+<h3 id="语法-2"><a href="#语法-2" class="headerlink" title="语法"></a>语法</h3><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+div &#123;
+  position: absolute;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h3><ol>
+<li>如果没有祖先元素或者祖先元素没有定位，则以浏览器为准定位（Document文档）</li>
+<li></li>
+</ol>
+<h2 id="固定定位（fixed）"><a href="#固定定位（fixed）" class="headerlink" title="固定定位（fixed）"></a>固定定位（fixed）</h2>]]></content>
       <categories>
         <category>读书笔记与感悟</category>
       </categories>
@@ -89,7 +125,36 @@ div &#123;
 <li>浮动的盒子中间是没有缝隙的，紧挨着的</li>
 <li>行内元素同理<h2 id="浮动元素经常和标准流父级搭配使用"><a href="#浮动元素经常和标准流父级搭配使用" class="headerlink" title="浮动元素经常和标准流父级搭配使用"></a>浮动元素经常和标准流父级搭配使用</h2><b>先用标准流的父元素排列上下位置，之后内部子元素采取浮动排列左右位置</b>，符合网页布局第一准则。</li>
 <li>浮动如果一个元素浮动了。理论上来讲其余的兄弟元素也要浮动。</li>
-<li>浮动的盒子只会影响它后面的标准流，不会影响前面的标准流。<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2>一个盒子里面有多个盒子，其中一个盒子浮动了，理论上其他兄弟也要跟着浮动，以防出现问题<br>浮动的盒子只会影响浮动盒子后面的标准流，不会影响前面的标准流<h2 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h2></li>
+<li>浮动的盒子只会影响它后面的标准流，不会影响前面的标准流。<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2>一个盒子里面有多个盒子，其中一个盒子浮动了，理论上其他兄弟也要跟着浮动，以防出现问题<br>浮动的盒子只会影响浮动盒子后面的标准流，不会影响前面的标准流<h2 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h2><h3 id="为什么要清除浮动"><a href="#为什么要清除浮动" class="headerlink" title="为什么要清除浮动"></a>为什么要清除浮动</h3>由于父级盒子在很多情况下，不方便给高度，但是盒子浮动后不占位置，浮动后父盒子的高度会变成0，影响夏哥哥标准流盒子<br><img src="/2021/08/03/CSS%E4%BC%A0%E7%BB%9F%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80%E4%B9%8B%E6%B5%AE%E5%8A%A8/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8.jpg"><h3 id="清除浮动的本质"><a href="#清除浮动的本质" class="headerlink" title="清除浮动的本质"></a>清除浮动的本质</h3></li>
+<li>清除浮动的本质是清除元素浮动后造成的影响</li>
+<li>如果父元素本身有高度，则不需要清除浮动</li>
+<li>清除浮动之后，父级就会根据浮动的子级盒子自动检测高度，父级有高度之后就不会影响下面的标准流盒子了<h3 id="语法规范"><a href="#语法规范" class="headerlink" title="语法规范"></a>语法规范</h3><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+div &#123;
+  clear:both;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<img src="/2021/08/03/CSS%E4%BC%A0%E7%BB%9F%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80%E4%B9%8B%E6%B5%AE%E5%8A%A8/clear%E5%B1%9E%E6%80%A7%E5%80%BC.jpg"><br>实际工作中一般只用 both<br>清除浮动的策略是 <b>闭合浮动</b><h3 id="清除浮动的方法"><a href="#清除浮动的方法" class="headerlink" title="清除浮动的方法"></a>清除浮动的方法</h3><h4 id="额外标签法（隔墙法），W3C推荐做法"><a href="#额外标签法（隔墙法），W3C推荐做法" class="headerlink" title="额外标签法（隔墙法），W3C推荐做法"></a>额外标签法（隔墙法），W3C推荐做法</h4>在最后一个浮动元素后面加一个空标签，例如div或其他标签（必须是块元素，不能是行内元素）<br>再新建一个css属性为 clear:both; 并调用<br><b>优点：通俗易懂，书写方便<br>缺点：添加无意义标签，结构性差（乱）</b><h4 id="父级添加overflow-属性"><a href="#父级添加overflow-属性" class="headerlink" title="父级添加overflow 属性"></a>父级添加overflow 属性</h4>给父级添加 overflow属性，值为 hidden、auto、scroll<br><b>优点：代码简洁<br>缺点：无法显示溢出部分</b><h4 id="父级添加after伪元素"><a href="#父级添加after伪元素" class="headerlink" title="父级添加after伪元素"></a>父级添加after伪元素</h4>额外标签法的升级版，给父元素添加 clearfix 值为：<pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+.clearfix:after &#123;
+  conter: &quot;&quot;;
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+&#125;
+.clearfix &#123;
+  *zoom: 1;      || IE6.7专有
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<b>优点：结构简单<br>缺点：照顾低版本浏览器</b><h4 id="父级添加双伪元素"><a href="#父级添加双伪元素" class="headerlink" title="父级添加双伪元素"></a>父级添加双伪元素</h4>额外标签法的升级版的升级版，after是在浮动元素后面加一堵墙，before是在前面加一堵墙，使之完全闭合<pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+clearfix:before,.clearfix:after &#123;
+  conter: &quot;&quot;;
+  display: table;
+&#125;
+clear:after &#123;
+  clear: both;
+&#125;
+.clearfix &#123;
+  *zoom: 1;      || IE6.7专有
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<b>优点：代码更简洁<br>缺点：照顾低版本浏览器</b></li>
 </ul>
 ]]></content>
       <categories>
@@ -301,7 +366,7 @@ https:&#x2F;&#x2F;www.mhf.ink&#x2F;medias&#x2F;featureimages&#x2F;6.jpg<span ari
     <li>HTML 标签选择器的权值为 1</li>
 </ul>
 
-<h3 id="CSS样式优先级"><a href="#CSS样式优先级" class="headerlink" title="CSS样式优先级"></a>CSS样式优先级</h3><p>内联样式 &gt; 内部样式表 &gt; 外部样式表 &gt; 浏览器样式表</p>
+<h2 id="CSS样式优先级"><a href="#CSS样式优先级" class="headerlink" title="CSS样式优先级"></a>CSS样式优先级</h2><p>内联样式 &gt; 内部样式表 &gt; 外部样式表 &gt; 浏览器样式表</p>
 <h4 id="css-7-种选择器："><a href="#css-7-种选择器：" class="headerlink" title="css 7 种选择器："></a>css 7 种选择器：</h4><ul>
     <li> id 选择器</li>
     <li> 类选择器</li>
@@ -345,7 +410,7 @@ p &#123;
 	font-size：16px；行高为16*1.5&#x3D;24
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="页面布局三大核心"><a href="#页面布局三大核心" class="headerlink" title="页面布局三大核心"></a>页面布局三大核心</h2><h3 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h3><h3 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h3><h3 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h3><h2 id="列表去掉圆点"><a href="#列表去掉圆点" class="headerlink" title="列表去掉圆点"></a>列表去掉圆点</h2><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+<h2 id="li列表去掉前面圆点"><a href="#li列表去掉前面圆点" class="headerlink" title="li列表去掉前面圆点"></a>li列表去掉前面圆点</h2><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
 list-style：none<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>]]></content>
       <categories>
         <category>技能收录</category>
@@ -416,13 +481,21 @@ mycss
 <li>相邻的行内元素在一行上，一行可以显示多个</li>
 <li>高、宽直接设置是无效的</li>
 <li>默认宽度就是本身内容的宽度</li>
-<li>行内元素只能容纳文本和其他行内元素<h4 id="常见行内元素"><a href="#常见行内元素" class="headerlink" title="常见行内元素"></a>常见行内元素</h4>a、b、em、i、u、span<h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4></li>
+<li>行内元素只能容纳文本和其他行内元素</li>
+</ul>
+<h4 id="常见行内元素"><a href="#常见行内元素" class="headerlink" title="常见行内元素"></a>常见行内元素</h4><p>a、b、em、i、u、span</p>
+<h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><ul>
 <li>链接里不能放链接</li>
-<li>特殊情况链接a里面可以放块级元素，但是给a转换一下块级模式更安全<h3 id="块元素"><a href="#块元素" class="headerlink" title="块元素"></a>块元素</h3><h4 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h4></li>
+<li>特殊情况链接a里面可以放块级元素，但是给a转换一下块级模式更安全</li>
+</ul>
+<h3 id="块元素"><a href="#块元素" class="headerlink" title="块元素"></a>块元素</h3><h4 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h4><ul>
 <li>比较霸道，自己独占一行</li>
 <li>高、宽、内外边距都可以控制</li>
 <li>默认宽度就是容器/父级的100%</li>
-<li>是一个容器/盒子，里面可以放行内元素或者块级元素<h4 id="常见块元素"><a href="#常见块元素" class="headerlink" title="常见块元素"></a>常见块元素</h4>div、h1、p、ul、ol、li<h4 id="注意-1"><a href="#注意-1" class="headerlink" title="注意"></a>注意</h4></li>
+<li>是一个容器/盒子，里面可以放行内元素或者块级元素</li>
+</ul>
+<h4 id="常见块元素"><a href="#常见块元素" class="headerlink" title="常见块元素"></a>常见块元素</h4><p>div、h1、p、ul、ol、li</p>
+<h4 id="注意-1"><a href="#注意-1" class="headerlink" title="注意"></a>注意</h4><ul>
 <li>文字类元素内不能使用块元素</li>
 <li>p、h1-h6等标签主要放文字，不能放块元素</li>
 </ul>
@@ -627,13 +700,16 @@ p.thicker &#123;font-weight:900;&#125;<span aria-hidden="true" class="line-numbe
 <li>不允许用户在所有浏览器中改变文本大小</li>
 <li>确定了输出的物理尺寸时绝对大小很有用<br>相对大小：</li>
 <li>相对于周围的元素来设置大小</li>
-<li>允许用户在浏览器中改变文字大小<br>PS：如果你不指定一个字体的大小，默认大小和普通文本段落一样，是16像素（16px=1em）。<h5 id="使用像素控制字体大小"><a href="#使用像素控制字体大小" class="headerlink" title="使用像素控制字体大小"></a>使用像素控制字体大小</h5><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+<li>允许用户在浏览器中改变文字大小<br>PS：如果你不指定一个字体的大小，默认大小和普通文本段落一样，是16像素（16px=1em）。</li>
+</ul>
+<h5 id="使用像素控制字体大小"><a href="#使用像素控制字体大小" class="headerlink" title="使用像素控制字体大小"></a>使用像素控制字体大小</h5><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
 h1 &#123;font-size:40px;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h5 id="使用em控制字体大小"><a href="#使用em控制字体大小" class="headerlink" title="使用em控制字体大小"></a>使用em控制字体大小</h5>为了避免Internet Explorer 中无法调整文本的问题，许多开发者使用 em 单位代替像素。<br>em的尺寸单位由W3C建议。<br>1em和当前字体大小相等。在浏览器中默认的文字大小是16px。<br>因此，1em的默认大小是16px。可以通过下面这个公式将像素转换为em：<b>px/16=em</b><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+<h5 id="使用em控制字体大小"><a href="#使用em控制字体大小" class="headerlink" title="使用em控制字体大小"></a>使用em控制字体大小</h5><p>为了避免Internet Explorer 中无法调整文本的问题，许多开发者使用 em 单位代替像素。<br>em的尺寸单位由W3C建议。<br>1em和当前字体大小相等。在浏览器中默认的文字大小是16px。<br>因此，1em的默认大小是16px。可以通过下面这个公式将像素转换为em：<b>px/16=em</b></p>
+<pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
 h1 &#123;font-size:2.5em;&#125; &#x2F;* 40px&#x2F;16&#x3D;2.5em *&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h5 id="使用百分比控制字体大小"><a href="#使用百分比控制字体大小" class="headerlink" title="使用百分比控制字体大小"></a>使用百分比控制字体大小</h5><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
-body &#123;font-size:100%;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
-</ul>
+body &#123;font-size:100%;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><h4 id="语法规则"><a href="#语法规则" class="headerlink" title="语法规则"></a>语法规则</h4><p>链接的样式，可以用任何CSS属性（如颜色，字体，背景等）。<br>特别的链接，可以有不同的样式，这取决于他们是什么状态。</p>
 <pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
 a:link &#123;color:#000000;&#125;      &#x2F;* 未访问链接*&#x2F;
@@ -663,19 +739,24 @@ a.two:hover &#123;font-size:150%;&#125;<span aria-hidden="true" class="line-numb
 <h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><p>在 HTML中，有两种类型的列表：</p>
 <ul>
 <li>无序列表 ul - 列表项标记用特殊图形（如小黑点、小方框等）</li>
-<li>有序列表 ol - 列表项的标记有数字或字母<br>使用 CSS，可以列出进一步的样式，并可用图像作列表项标记。<h4 id="默认的列表标记"><a href="#默认的列表标记" class="headerlink" title="默认的列表标记"></a>默认的列表标记</h4>设置 list-style-type 属性的值来使用默认的列表标记<pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+<li>有序列表 ol - 列表项的标记有数字或字母<br>使用 CSS，可以列出进一步的样式，并可用图像作列表项标记。</li>
+</ul>
+<h4 id="默认的列表标记"><a href="#默认的列表标记" class="headerlink" title="默认的列表标记"></a>默认的列表标记</h4><p>设置 list-style-type 属性的值来使用默认的列表标记</p>
+<pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
 无序列表
 ul.a &#123;list-style-type: circle;&#125; 空心圆
 ul.b &#123;list-style-type: square;&#125; 实心方块
 有序列表
 ol.c &#123;list-style-type: upper-roman;&#125; 罗马数字
 ol.d &#123;list-style-type: lower-alpha;&#125; 字母a-z<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="自定义的图像列表标记"><a href="#自定义的图像列表标记" class="headerlink" title="自定义的图像列表标记"></a>自定义的图像列表标记</h4>设置 list-style-image 属性的值来使用自定义的图片的列表标记<pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+<h4 id="自定义的图像列表标记"><a href="#自定义的图像列表标记" class="headerlink" title="自定义的图像列表标记"></a>自定义的图像列表标记</h4><p>设置 list-style-image 属性的值来使用自定义的图片的列表标记</p>
+<pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
 ul
 &#123;
     list-style-image: url(&#39;sqpurple.gif&#39;);
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-上面的例子在所有浏览器中显示并不相同，IE 和 Opera 显示图像标记比火狐，Chrome 和 Safari更高一点点。<br>如果你想在所有的浏览器放置同样的形象标志，就应使用浏览器兼容性解决方案，过程如下<h4 id="浏览器兼容解决方案"><a href="#浏览器兼容解决方案" class="headerlink" title="浏览器兼容解决方案"></a>浏览器兼容解决方案</h4><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+<p>上面的例子在所有浏览器中显示并不相同，IE 和 Opera 显示图像标记比火狐，Chrome 和 Safari更高一点点。<br>如果你想在所有的浏览器放置同样的形象标志，就应使用浏览器兼容性解决方案，过程如下</p>
+<h4 id="浏览器兼容解决方案"><a href="#浏览器兼容解决方案" class="headerlink" title="浏览器兼容解决方案"></a>浏览器兼容解决方案</h4><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
 ul
 &#123;
     list-style-type: none;
@@ -689,12 +770,16 @@ ul li
     background-position: 0px 5px; 
     padding-left: 14px; 
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-例子解释：<br>ul:</li>
+<p>例子解释：<br>ul:</p>
+<ul>
 <li>设置列表类型为没有列表项标记</li>
 <li>设置填充和边距 0px（浏览器兼容性）<br>ul 中所有 li:</li>
 <li>设置图像的 URL，并设置它只显示一次（无重复）</li>
 <li>您需要的定位图像位置（左 0px 和上下 5px）</li>
-<li>用 padding-left 属性把文本置于列表中<h4 id="简写属性"><a href="#简写属性" class="headerlink" title="简写属性"></a>简写属性</h4>顺序：</li>
+<li>用 padding-left 属性把文本置于列表中</li>
+</ul>
+<h4 id="简写属性"><a href="#简写属性" class="headerlink" title="简写属性"></a>简写属性</h4><p>顺序：</p>
+<ul>
 <li>list-style-type</li>
 <li>list-style-position (有关说明，请参见下面的CSS属性表)</li>
 <li>list-style-image</li>

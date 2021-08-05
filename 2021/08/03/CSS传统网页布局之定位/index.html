@@ -364,14 +364,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-08-03
+                    2021-08-05
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    493
                 </div>
                 
 
@@ -391,8 +391,44 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <span id="more"></span>
+                <p>在CSS中，通过CSS定位(CSS position)可以实现网页元素的精确定位。CSS定位和CSS浮动类似，也是控制网页布局的操作，CSS定位更加灵活，可以针对更多个性化的布局方案来使用。<br>定位分为静态定位，相对定位，绝对定位，固定定位这四种</p>
+<span id="more"></span>
 
+<h2 id="为什么需要定位"><a href="#为什么需要定位" class="headerlink" title="为什么需要定位"></a>为什么需要定位</h2><ul>
+<li>浮动可以让多个块级盒子没有缝隙的排列显示，经常用于横向排列盒子</li>
+<li>定位可以让盒子自由的在某个盒子内移动位置或者固定在屏幕中的某个位置，并且可以盖住其他盒子</li>
+</ul>
+<h2 id="定位的组成"><a href="#定位的组成" class="headerlink" title="定位的组成"></a>定位的组成</h2><p><b>定位 = 定位模式 + 边偏移</b></p>
+<h3 id="定位模式（position）"><a href="#定位模式（position）" class="headerlink" title="定位模式（position）"></a>定位模式（position）</h3><p>用于指定一个元素在文档中的定位方式，通过 position 属性来设置，有四个值：<br><img src="/2021/08/03/CSS%E4%BC%A0%E7%BB%9F%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80%E4%B9%8B%E5%AE%9A%E4%BD%8D/%E5%AE%9A%E4%BD%8D%E6%A8%A1%E5%BC%8F.jpg"></p>
+<h3 id="边偏移"><a href="#边偏移" class="headerlink" title="边偏移"></a>边偏移</h3><p>决定该元素的最终位置，有top、bottom、left、right 四个属性：<br><img src="/2021/08/03/CSS%E4%BC%A0%E7%BB%9F%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80%E4%B9%8B%E5%AE%9A%E4%BD%8D/%E8%BE%B9%E5%81%8F%E7%A7%BB.jpg"></p>
+<h2 id="静态定位（static）"><a href="#静态定位（static）" class="headerlink" title="静态定位（static）"></a>静态定位（static）</h2><p>静态定位是元素的<b>默认定位方式，无定位的意思</b></p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+div &#123;
+  position: static;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>静态定位按照标准流特性摆放位置，没有边偏移</li>
+<li>在实际布局中很少用</li>
+</ul>
+<h2 id="相对定位（relative）"><a href="#相对定位（relative）" class="headerlink" title="相对定位（relative）"></a>相对定位（relative）</h2><p>元素在移动位置的时候，是相对于它原来的位置来说的</p>
+<h3 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h3><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+div &#123;
+  position: relative;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ol>
+<li>相对于自己原来的位置来移动的（移动位置的参照点是他原来的位置）</li>
+<li>原来在标准流的位置继续占有，后面的盒子当它仍然在（不脱标，继续保留原来位置）<br>因此，相对定位没有脱标，主要用来限制绝对定位的</li>
+</ol>
+<h2 id="绝对定位（absolute）"><a href="#绝对定位（absolute）" class="headerlink" title="绝对定位（absolute）"></a>绝对定位（absolute）</h2><p>元素在移动位置的时候，是相对于它的祖先元素来说的</p>
+<h3 id="语法-2"><a href="#语法-2" class="headerlink" title="语法"></a>语法</h3><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+div &#123;
+  position: absolute;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h3><ol>
+<li>如果没有祖先元素或者祖先元素没有定位，则以浏览器为准定位（Document文档）</li>
+<li></li>
+</ol>
+<h2 id="固定定位（fixed）"><a href="#固定定位（fixed）" class="headerlink" title="固定定位（fixed）"></a>固定定位（fixed）</h2>
                 
             </div>
             <hr/>
@@ -654,7 +690,7 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            在CSS中，通过CSS定位(CSS position)可以实现网页元素的精确定位。CSS定位和CSS浮动类似，也是控制网页布局的操作，CSS定位更加灵活，可以针对更多个性化的布局方案来使用。定位分为静态定位，相对定位，绝对定位，固定定位这四
                         
                     </div>
                     <div class="publish-info">
@@ -918,7 +954,7 @@
     
 
     <div class="container row center-align"
-         style="margin-bottom: 0px !important;">
+         style="margin-bottom: 15px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
@@ -930,6 +966,9 @@
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
             
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">21k</span>
+            
             
             
             
@@ -937,6 +976,60 @@
             <br>
 
             <!-- 运行天数提醒. -->
+            
+                <span id="sitetime"> Loading ...</span>
+                <script>
+                    var calcSiteTime = function () {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2019";
+                        var startMonth = "6";
+                        var startDate = "28";
+                        var startHour = "0";
+                        var startMinute = "0";
+                        var startSecond = "0";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+
+                        // 区分是否有年份.
+                        var language = 'zh-CN';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '本站已运行 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '本站已運行 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '本站已运行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '本站已運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
+                        }
+                    }
+
+                    calcSiteTime();
+                </script>
             
             <br>
             

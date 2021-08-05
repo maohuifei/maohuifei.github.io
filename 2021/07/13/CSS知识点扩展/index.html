@@ -364,14 +364,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-08-03
+                    2021-08-05
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    714
+                    701
                 </div>
                 
 
@@ -423,7 +423,7 @@
     <li>HTML 标签选择器的权值为 1</li>
 </ul>
 
-<h3 id="CSS样式优先级"><a href="#CSS样式优先级" class="headerlink" title="CSS样式优先级"></a>CSS样式优先级</h3><p>内联样式 &gt; 内部样式表 &gt; 外部样式表 &gt; 浏览器样式表</p>
+<h2 id="CSS样式优先级"><a href="#CSS样式优先级" class="headerlink" title="CSS样式优先级"></a>CSS样式优先级</h2><p>内联样式 &gt; 内部样式表 &gt; 外部样式表 &gt; 浏览器样式表</p>
 <h4 id="css-7-种选择器："><a href="#css-7-种选择器：" class="headerlink" title="css 7 种选择器："></a>css 7 种选择器：</h4><ul>
     <li> id 选择器</li>
     <li> 类选择器</li>
@@ -467,7 +467,7 @@ p &#123;
 	font-size：16px；行高为16*1.5&#x3D;24
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="页面布局三大核心"><a href="#页面布局三大核心" class="headerlink" title="页面布局三大核心"></a>页面布局三大核心</h2><h3 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h3><h3 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h3><h3 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h3><h2 id="列表去掉圆点"><a href="#列表去掉圆点" class="headerlink" title="列表去掉圆点"></a>列表去掉圆点</h2><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+<h2 id="li列表去掉前面圆点"><a href="#li列表去掉前面圆点" class="headerlink" title="li列表去掉前面圆点"></a>li列表去掉前面圆点</h2><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
 list-style：none<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
                 
             </div>
@@ -992,7 +992,7 @@ list-style：none<span aria-hidden="true" class="line-numbers-rows"><span></span
     
 
     <div class="container row center-align"
-         style="margin-bottom: 0px !important;">
+         style="margin-bottom: 15px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
@@ -1004,6 +1004,9 @@ list-style：none<span aria-hidden="true" class="line-numbers-rows"><span></span
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
             
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">21k</span>
+            
             
             
             
@@ -1011,6 +1014,60 @@ list-style：none<span aria-hidden="true" class="line-numbers-rows"><span></span
             <br>
 
             <!-- 运行天数提醒. -->
+            
+                <span id="sitetime"> Loading ...</span>
+                <script>
+                    var calcSiteTime = function () {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2019";
+                        var startMonth = "6";
+                        var startDate = "28";
+                        var startHour = "0";
+                        var startMinute = "0";
+                        var startSecond = "0";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+
+                        // 区分是否有年份.
+                        var language = 'zh-CN';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '本站已运行 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '本站已運行 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '本站已运行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '本站已運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
+                        }
+                    }
+
+                    calcSiteTime();
+                </script>
             
             <br>
             

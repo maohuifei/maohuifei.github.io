@@ -364,14 +364,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-08-03
+                    2021-08-05
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    573
+                    1k
                 </div>
                 
 
@@ -415,7 +415,36 @@ div &#123;
 <li>浮动的盒子中间是没有缝隙的，紧挨着的</li>
 <li>行内元素同理<h2 id="浮动元素经常和标准流父级搭配使用"><a href="#浮动元素经常和标准流父级搭配使用" class="headerlink" title="浮动元素经常和标准流父级搭配使用"></a>浮动元素经常和标准流父级搭配使用</h2><b>先用标准流的父元素排列上下位置，之后内部子元素采取浮动排列左右位置</b>，符合网页布局第一准则。</li>
 <li>浮动如果一个元素浮动了。理论上来讲其余的兄弟元素也要浮动。</li>
-<li>浮动的盒子只会影响它后面的标准流，不会影响前面的标准流。<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2>一个盒子里面有多个盒子，其中一个盒子浮动了，理论上其他兄弟也要跟着浮动，以防出现问题<br>浮动的盒子只会影响浮动盒子后面的标准流，不会影响前面的标准流<h2 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h2></li>
+<li>浮动的盒子只会影响它后面的标准流，不会影响前面的标准流。<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2>一个盒子里面有多个盒子，其中一个盒子浮动了，理论上其他兄弟也要跟着浮动，以防出现问题<br>浮动的盒子只会影响浮动盒子后面的标准流，不会影响前面的标准流<h2 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h2><h3 id="为什么要清除浮动"><a href="#为什么要清除浮动" class="headerlink" title="为什么要清除浮动"></a>为什么要清除浮动</h3>由于父级盒子在很多情况下，不方便给高度，但是盒子浮动后不占位置，浮动后父盒子的高度会变成0，影响夏哥哥标准流盒子<br><img src="/2021/08/03/CSS%E4%BC%A0%E7%BB%9F%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80%E4%B9%8B%E6%B5%AE%E5%8A%A8/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8.jpg"><h3 id="清除浮动的本质"><a href="#清除浮动的本质" class="headerlink" title="清除浮动的本质"></a>清除浮动的本质</h3></li>
+<li>清除浮动的本质是清除元素浮动后造成的影响</li>
+<li>如果父元素本身有高度，则不需要清除浮动</li>
+<li>清除浮动之后，父级就会根据浮动的子级盒子自动检测高度，父级有高度之后就不会影响下面的标准流盒子了<h3 id="语法规范"><a href="#语法规范" class="headerlink" title="语法规范"></a>语法规范</h3><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+div &#123;
+  clear:both;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<img src="/2021/08/03/CSS%E4%BC%A0%E7%BB%9F%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80%E4%B9%8B%E6%B5%AE%E5%8A%A8/clear%E5%B1%9E%E6%80%A7%E5%80%BC.jpg"><br>实际工作中一般只用 both<br>清除浮动的策略是 <b>闭合浮动</b><h3 id="清除浮动的方法"><a href="#清除浮动的方法" class="headerlink" title="清除浮动的方法"></a>清除浮动的方法</h3><h4 id="额外标签法（隔墙法），W3C推荐做法"><a href="#额外标签法（隔墙法），W3C推荐做法" class="headerlink" title="额外标签法（隔墙法），W3C推荐做法"></a>额外标签法（隔墙法），W3C推荐做法</h4>在最后一个浮动元素后面加一个空标签，例如div或其他标签（必须是块元素，不能是行内元素）<br>再新建一个css属性为 clear:both; 并调用<br><b>优点：通俗易懂，书写方便<br>缺点：添加无意义标签，结构性差（乱）</b><h4 id="父级添加overflow-属性"><a href="#父级添加overflow-属性" class="headerlink" title="父级添加overflow 属性"></a>父级添加overflow 属性</h4>给父级添加 overflow属性，值为 hidden、auto、scroll<br><b>优点：代码简洁<br>缺点：无法显示溢出部分</b><h4 id="父级添加after伪元素"><a href="#父级添加after伪元素" class="headerlink" title="父级添加after伪元素"></a>父级添加after伪元素</h4>额外标签法的升级版，给父元素添加 clearfix 值为：<pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+.clearfix:after &#123;
+  conter: &quot;&quot;;
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+&#125;
+.clearfix &#123;
+  *zoom: 1;      || IE6.7专有
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<b>优点：结构简单<br>缺点：照顾低版本浏览器</b><h4 id="父级添加双伪元素"><a href="#父级添加双伪元素" class="headerlink" title="父级添加双伪元素"></a>父级添加双伪元素</h4>额外标签法的升级版的升级版，after是在浮动元素后面加一堵墙，before是在前面加一堵墙，使之完全闭合<pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+clearfix:before,.clearfix:after &#123;
+  conter: &quot;&quot;;
+  display: table;
+&#125;
+clear:after &#123;
+  clear: both;
+&#125;
+.clearfix &#123;
+  *zoom: 1;      || IE6.7专有
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<b>优点：代码更简洁<br>缺点：照顾低版本浏览器</b></li>
 </ul>
 
                 
@@ -678,7 +707,7 @@ div &#123;
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            在CSS中，通过CSS定位(CSS position)可以实现网页元素的精确定位。CSS定位和CSS浮动类似，也是控制网页布局的操作，CSS定位更加灵活，可以针对更多个性化的布局方案来使用。定位分为静态定位，相对定位，绝对定位，固定定位这四
                         
                     </div>
                     <div class="publish-info">
@@ -941,7 +970,7 @@ div &#123;
     
 
     <div class="container row center-align"
-         style="margin-bottom: 0px !important;">
+         style="margin-bottom: 15px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
@@ -953,6 +982,9 @@ div &#123;
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
             
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">21k</span>
+            
             
             
             
@@ -960,6 +992,60 @@ div &#123;
             <br>
 
             <!-- 运行天数提醒. -->
+            
+                <span id="sitetime"> Loading ...</span>
+                <script>
+                    var calcSiteTime = function () {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2019";
+                        var startMonth = "6";
+                        var startDate = "28";
+                        var startHour = "0";
+                        var startMinute = "0";
+                        var startSecond = "0";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+
+                        // 区分是否有年份.
+                        var language = 'zh-CN';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '本站已运行 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '本站已運行 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '本站已运行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '本站已運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
+                        }
+                    }
+
+                    calcSiteTime();
+                </script>
             
             <br>
             

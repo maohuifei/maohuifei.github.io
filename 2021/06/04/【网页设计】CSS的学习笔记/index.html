@@ -364,7 +364,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-08-03
+                    2021-08-05
                 </div>
                 
 
@@ -426,13 +426,21 @@ mycss
 <li>相邻的行内元素在一行上，一行可以显示多个</li>
 <li>高、宽直接设置是无效的</li>
 <li>默认宽度就是本身内容的宽度</li>
-<li>行内元素只能容纳文本和其他行内元素<h4 id="常见行内元素"><a href="#常见行内元素" class="headerlink" title="常见行内元素"></a>常见行内元素</h4>a、b、em、i、u、span<h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4></li>
+<li>行内元素只能容纳文本和其他行内元素</li>
+</ul>
+<h4 id="常见行内元素"><a href="#常见行内元素" class="headerlink" title="常见行内元素"></a>常见行内元素</h4><p>a、b、em、i、u、span</p>
+<h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><ul>
 <li>链接里不能放链接</li>
-<li>特殊情况链接a里面可以放块级元素，但是给a转换一下块级模式更安全<h3 id="块元素"><a href="#块元素" class="headerlink" title="块元素"></a>块元素</h3><h4 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h4></li>
+<li>特殊情况链接a里面可以放块级元素，但是给a转换一下块级模式更安全</li>
+</ul>
+<h3 id="块元素"><a href="#块元素" class="headerlink" title="块元素"></a>块元素</h3><h4 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h4><ul>
 <li>比较霸道，自己独占一行</li>
 <li>高、宽、内外边距都可以控制</li>
 <li>默认宽度就是容器/父级的100%</li>
-<li>是一个容器/盒子，里面可以放行内元素或者块级元素<h4 id="常见块元素"><a href="#常见块元素" class="headerlink" title="常见块元素"></a>常见块元素</h4>div、h1、p、ul、ol、li<h4 id="注意-1"><a href="#注意-1" class="headerlink" title="注意"></a>注意</h4></li>
+<li>是一个容器/盒子，里面可以放行内元素或者块级元素</li>
+</ul>
+<h4 id="常见块元素"><a href="#常见块元素" class="headerlink" title="常见块元素"></a>常见块元素</h4><p>div、h1、p、ul、ol、li</p>
+<h4 id="注意-1"><a href="#注意-1" class="headerlink" title="注意"></a>注意</h4><ul>
 <li>文字类元素内不能使用块元素</li>
 <li>p、h1-h6等标签主要放文字，不能放块元素</li>
 </ul>
@@ -637,13 +645,16 @@ p.thicker &#123;font-weight:900;&#125;<span aria-hidden="true" class="line-numbe
 <li>不允许用户在所有浏览器中改变文本大小</li>
 <li>确定了输出的物理尺寸时绝对大小很有用<br>相对大小：</li>
 <li>相对于周围的元素来设置大小</li>
-<li>允许用户在浏览器中改变文字大小<br>PS：如果你不指定一个字体的大小，默认大小和普通文本段落一样，是16像素（16px=1em）。<h5 id="使用像素控制字体大小"><a href="#使用像素控制字体大小" class="headerlink" title="使用像素控制字体大小"></a>使用像素控制字体大小</h5><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+<li>允许用户在浏览器中改变文字大小<br>PS：如果你不指定一个字体的大小，默认大小和普通文本段落一样，是16像素（16px=1em）。</li>
+</ul>
+<h5 id="使用像素控制字体大小"><a href="#使用像素控制字体大小" class="headerlink" title="使用像素控制字体大小"></a>使用像素控制字体大小</h5><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
 h1 &#123;font-size:40px;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h5 id="使用em控制字体大小"><a href="#使用em控制字体大小" class="headerlink" title="使用em控制字体大小"></a>使用em控制字体大小</h5>为了避免Internet Explorer 中无法调整文本的问题，许多开发者使用 em 单位代替像素。<br>em的尺寸单位由W3C建议。<br>1em和当前字体大小相等。在浏览器中默认的文字大小是16px。<br>因此，1em的默认大小是16px。可以通过下面这个公式将像素转换为em：<b>px/16=em</b><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+<h5 id="使用em控制字体大小"><a href="#使用em控制字体大小" class="headerlink" title="使用em控制字体大小"></a>使用em控制字体大小</h5><p>为了避免Internet Explorer 中无法调整文本的问题，许多开发者使用 em 单位代替像素。<br>em的尺寸单位由W3C建议。<br>1em和当前字体大小相等。在浏览器中默认的文字大小是16px。<br>因此，1em的默认大小是16px。可以通过下面这个公式将像素转换为em：<b>px/16=em</b></p>
+<pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
 h1 &#123;font-size:2.5em;&#125; &#x2F;* 40px&#x2F;16&#x3D;2.5em *&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h5 id="使用百分比控制字体大小"><a href="#使用百分比控制字体大小" class="headerlink" title="使用百分比控制字体大小"></a>使用百分比控制字体大小</h5><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
-body &#123;font-size:100%;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
-</ul>
+body &#123;font-size:100%;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><h4 id="语法规则"><a href="#语法规则" class="headerlink" title="语法规则"></a>语法规则</h4><p>链接的样式，可以用任何CSS属性（如颜色，字体，背景等）。<br>特别的链接，可以有不同的样式，这取决于他们是什么状态。</p>
 <pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
 a:link &#123;color:#000000;&#125;      &#x2F;* 未访问链接*&#x2F;
@@ -673,19 +684,24 @@ a.two:hover &#123;font-size:150%;&#125;<span aria-hidden="true" class="line-numb
 <h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><p>在 HTML中，有两种类型的列表：</p>
 <ul>
 <li>无序列表 ul - 列表项标记用特殊图形（如小黑点、小方框等）</li>
-<li>有序列表 ol - 列表项的标记有数字或字母<br>使用 CSS，可以列出进一步的样式，并可用图像作列表项标记。<h4 id="默认的列表标记"><a href="#默认的列表标记" class="headerlink" title="默认的列表标记"></a>默认的列表标记</h4>设置 list-style-type 属性的值来使用默认的列表标记<pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+<li>有序列表 ol - 列表项的标记有数字或字母<br>使用 CSS，可以列出进一步的样式，并可用图像作列表项标记。</li>
+</ul>
+<h4 id="默认的列表标记"><a href="#默认的列表标记" class="headerlink" title="默认的列表标记"></a>默认的列表标记</h4><p>设置 list-style-type 属性的值来使用默认的列表标记</p>
+<pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
 无序列表
 ul.a &#123;list-style-type: circle;&#125; 空心圆
 ul.b &#123;list-style-type: square;&#125; 实心方块
 有序列表
 ol.c &#123;list-style-type: upper-roman;&#125; 罗马数字
 ol.d &#123;list-style-type: lower-alpha;&#125; 字母a-z<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="自定义的图像列表标记"><a href="#自定义的图像列表标记" class="headerlink" title="自定义的图像列表标记"></a>自定义的图像列表标记</h4>设置 list-style-image 属性的值来使用自定义的图片的列表标记<pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+<h4 id="自定义的图像列表标记"><a href="#自定义的图像列表标记" class="headerlink" title="自定义的图像列表标记"></a>自定义的图像列表标记</h4><p>设置 list-style-image 属性的值来使用自定义的图片的列表标记</p>
+<pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
 ul
 &#123;
     list-style-image: url(&#39;sqpurple.gif&#39;);
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-上面的例子在所有浏览器中显示并不相同，IE 和 Opera 显示图像标记比火狐，Chrome 和 Safari更高一点点。<br>如果你想在所有的浏览器放置同样的形象标志，就应使用浏览器兼容性解决方案，过程如下<h4 id="浏览器兼容解决方案"><a href="#浏览器兼容解决方案" class="headerlink" title="浏览器兼容解决方案"></a>浏览器兼容解决方案</h4><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+<p>上面的例子在所有浏览器中显示并不相同，IE 和 Opera 显示图像标记比火狐，Chrome 和 Safari更高一点点。<br>如果你想在所有的浏览器放置同样的形象标志，就应使用浏览器兼容性解决方案，过程如下</p>
+<h4 id="浏览器兼容解决方案"><a href="#浏览器兼容解决方案" class="headerlink" title="浏览器兼容解决方案"></a>浏览器兼容解决方案</h4><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
 ul
 &#123;
     list-style-type: none;
@@ -699,12 +715,16 @@ ul li
     background-position: 0px 5px; 
     padding-left: 14px; 
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-例子解释：<br>ul:</li>
+<p>例子解释：<br>ul:</p>
+<ul>
 <li>设置列表类型为没有列表项标记</li>
 <li>设置填充和边距 0px（浏览器兼容性）<br>ul 中所有 li:</li>
 <li>设置图像的 URL，并设置它只显示一次（无重复）</li>
 <li>您需要的定位图像位置（左 0px 和上下 5px）</li>
-<li>用 padding-left 属性把文本置于列表中<h4 id="简写属性"><a href="#简写属性" class="headerlink" title="简写属性"></a>简写属性</h4>顺序：</li>
+<li>用 padding-left 属性把文本置于列表中</li>
+</ul>
+<h4 id="简写属性"><a href="#简写属性" class="headerlink" title="简写属性"></a>简写属性</h4><p>顺序：</p>
+<ul>
 <li>list-style-type</li>
 <li>list-style-position (有关说明，请参见下面的CSS属性表)</li>
 <li>list-style-image</li>
@@ -1242,7 +1262,7 @@ ul li
     
 
     <div class="container row center-align"
-         style="margin-bottom: 0px !important;">
+         style="margin-bottom: 15px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
@@ -1254,6 +1274,9 @@ ul li
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
             
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">21k</span>
+            
             
             
             
@@ -1261,6 +1284,60 @@ ul li
             <br>
 
             <!-- 运行天数提醒. -->
+            
+                <span id="sitetime"> Loading ...</span>
+                <script>
+                    var calcSiteTime = function () {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2019";
+                        var startMonth = "6";
+                        var startDate = "28";
+                        var startHour = "0";
+                        var startMinute = "0";
+                        var startSecond = "0";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+
+                        // 区分是否有年份.
+                        var language = 'zh-CN';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '本站已运行 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '本站已運行 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '本站已运行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '本站已運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
+                        }
+                    }
+
+                    calcSiteTime();
+                </script>
             
             <br>
             

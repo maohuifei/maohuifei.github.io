@@ -310,7 +310,7 @@
 
                                 </div>
                                 <div class="title">猫会飞呀</div>
-                                <div class="career">视觉设计/商业插画/编程爱好者</div>
+                                <div class="career">视觉设计/编程开发</div>
                                 <div class="social-link hide-on-large-only" data-aos="zoom-in-left">
                                     
     <a href="https://github.com/maohuifei" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
@@ -549,6 +549,58 @@
 
 
                 
+                
+<div class="my-projects">
+    <div class="title center-align" data-aos="zoom-in-up">
+        <i class="fas fa-gift"></i>&nbsp;&nbsp;我的项目
+    </div>
+    <div class="row">
+        
+        
+        <div class="col s12 m6 l4" data-aos="fade-up">
+            <div class="info center-align">
+                <a href="https://www.mhf.ink" class="icon"
+                   style="background: linear-gradient(to bottom right, #66BB6A 0%, #81C784 100%)" target="_blank">
+                    <i class="fas fa-file-alt"></i>
+                </a>
+                <div class="info-title">
+                    <a href="https://www.mhf.ink" target="_blank">hexo-theme-matery</a>
+                </div>
+                <div class="info-desc">This is a Hexo blog theme with &#39;Material Design&#39; and responsive design.</div>
+            </div>
+        </div>
+        
+        <div class="col s12 m6 l4" data-aos="fade-up">
+            <div class="info center-align">
+                <a href="https://www.mhf.ink" class="icon"
+                   style="background: linear-gradient(to bottom right, #F06292 0%, #EF5350 100%)" target="_blank">
+                    <i class="fas fa-database"></i>
+                </a>
+                <div class="info-title">
+                    <a href="https://www.mhf.ink" target="_blank">Fenix</a>
+                </div>
+                <div class="info-desc">这是 Spring Data JPA 复杂或动态 SQL 查询的扩展库。</div>
+            </div>
+        </div>
+        
+        <div class="col s12 m6 l4" data-aos="fade-up">
+            <div class="info center-align">
+                <a href="https://www.mhf.ink" class="icon"
+                   style="background: linear-gradient(to bottom right, #29B6F6 0%, #1E88E5 100%)" target="_blank">
+                    <i class="fas fa-file-alt"></i>
+                </a>
+                <div class="info-title">
+                    <a href="https://www.mhf.ink" target="_blank">typora-vue-theme</a>
+                </div>
+                <div class="info-desc">This is a typora theme inspired by Vue document style.</div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+                
 
                 
                 
@@ -575,7 +627,7 @@
             <div class="skillbar">
                 <div class="skillbar-title"
                      style="background: linear-gradient(to right, #9900FF 0%, #CC66FF 100%); width: 65%">
-                    <span>Adobe Illustrator</span>
+                    <span>Visual Communication Design</span>
                 </div>
                 <div class="skill-bar-percent">65%</div>
             </div>
@@ -585,10 +637,10 @@
         <div class="col s12 m6 l6" data-aos="fade-up">
             <div class="skillbar">
                 <div class="skillbar-title"
-                     style="background: linear-gradient(to right, #2196F3 0%, #42A5F5 100%); width: 60%">
-                    <span>CorelDRAW</span>
+                     style="background: linear-gradient(to right, #2196F3 0%, #42A5F5 100%); width: 90%">
+                    <span>HTML5+CSS3+Javascript</span>
                 </div>
-                <div class="skill-bar-percent">60%</div>
+                <div class="skill-bar-percent">90%</div>
             </div>
         </div>
         
@@ -597,7 +649,7 @@
             <div class="skillbar">
                 <div class="skillbar-title"
                      style="background: linear-gradient(to right, #00BCD4 0%, #80DEEA 100%); width: 40%">
-                    <span>Cinema 4D</span>
+                    <span>Vue.js</span>
                 </div>
                 <div class="skill-bar-percent">40%</div>
             </div>
@@ -608,7 +660,7 @@
             <div class="skillbar">
                 <div class="skillbar-title"
                      style="background: linear-gradient(to right, #4CAF50 0%, #81C784 100%); width: 50%">
-                    <span>影音剪辑</span>
+                    <span>computational thinking</span>
                 </div>
                 <div class="skill-bar-percent">50%</div>
             </div>
@@ -618,10 +670,10 @@
         <div class="col s12 m6 l6" data-aos="fade-up">
             <div class="skillbar">
                 <div class="skillbar-title"
-                     style="background: linear-gradient(to right, #FFEB3B 0%, #FFF176 100%); width: 45%">
-                    <span>编程开发</span>
+                     style="background: linear-gradient(to right, #FFEB3B 0%, #FFF176 100%); width: 40%">
+                    <span>Design Thinking</span>
                 </div>
-                <div class="skill-bar-percent">45%</div>
+                <div class="skill-bar-percent">40%</div>
             </div>
         </div>
         
@@ -813,7 +865,7 @@
     
 
     <div class="container row center-align"
-         style="margin-bottom: 0px !important;">
+         style="margin-bottom: 15px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
@@ -825,6 +877,9 @@
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
             
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">21k</span>
+            
             
             
             
@@ -832,6 +887,60 @@
             <br>
 
             <!-- 运行天数提醒. -->
+            
+                <span id="sitetime"> Loading ...</span>
+                <script>
+                    var calcSiteTime = function () {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2019";
+                        var startMonth = "6";
+                        var startDate = "28";
+                        var startHour = "0";
+                        var startMinute = "0";
+                        var startSecond = "0";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+
+                        // 区分是否有年份.
+                        var language = 'zh-CN';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '本站已运行 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '本站已運行 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '本站已运行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '本站已運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
+                        }
+                    }
+
+                    calcSiteTime();
+                </script>
             
             <br>
             
