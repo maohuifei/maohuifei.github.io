@@ -61,8 +61,8 @@
 <h2 id="定位的组成"><a href="#定位的组成" class="headerlink" title="定位的组成"></a>定位的组成</h2><p><b>定位 = 定位模式 + 边偏移</b></p>
 <h3 id="定位模式（position）"><a href="#定位模式（position）" class="headerlink" title="定位模式（position）"></a>定位模式（position）</h3><p>用于指定一个元素在文档中的定位方式，通过 position 属性来设置，有四个值：<br><img src="/2021/08/03/CSS%E4%BC%A0%E7%BB%9F%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80%E4%B9%8B%E5%AE%9A%E4%BD%8D/%E5%AE%9A%E4%BD%8D%E6%A8%A1%E5%BC%8F.jpg"></p>
 <h3 id="边偏移"><a href="#边偏移" class="headerlink" title="边偏移"></a>边偏移</h3><p>决定该元素的最终位置，有top、bottom、left、right 四个属性：<br><img src="/2021/08/03/CSS%E4%BC%A0%E7%BB%9F%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80%E4%B9%8B%E5%AE%9A%E4%BD%8D/%E8%BE%B9%E5%81%8F%E7%A7%BB.jpg"></p>
-<h2 id="静态定位（static）"><a href="#静态定位（static）" class="headerlink" title="静态定位（static）"></a>静态定位（static）</h2><p>静态定位是元素的<b>默认定位方式，无定位的意思</b></p>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+<h2 id="四种定位模式"><a href="#四种定位模式" class="headerlink" title="四种定位模式"></a>四种定位模式</h2><h3 id="静态定位（static）"><a href="#静态定位（static）" class="headerlink" title="静态定位（static）"></a>静态定位（static）</h3><p>静态定位是元素的<b>默认定位方式，无定位的意思</b></p>
+<h4 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h4><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
 div &#123;
   position: static;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
@@ -70,27 +70,85 @@ div &#123;
 <li>静态定位按照标准流特性摆放位置，没有边偏移</li>
 <li>在实际布局中很少用</li>
 </ul>
-<h2 id="相对定位（relative）"><a href="#相对定位（relative）" class="headerlink" title="相对定位（relative）"></a>相对定位（relative）</h2><p>元素在移动位置的时候，是相对于它原来的位置来说的</p>
-<h3 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h3><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+<h3 id="相对定位（relative）"><a href="#相对定位（relative）" class="headerlink" title="相对定位（relative）"></a>相对定位（relative）</h3><p>元素在移动位置的时候，是相对于它原来的位置来说的</p>
+<h4 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h4><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
 div &#123;
   position: relative;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ol>
+<h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><ol>
 <li>相对于自己原来的位置来移动的（移动位置的参照点是他原来的位置）</li>
 <li>原来在标准流的位置继续占有，后面的盒子当它仍然在（不脱标，继续保留原来位置）<br>因此，相对定位没有脱标，主要用来限制绝对定位的</li>
 </ol>
-<h2 id="绝对定位（absolute）"><a href="#绝对定位（absolute）" class="headerlink" title="绝对定位（absolute）"></a>绝对定位（absolute）</h2><p>元素在移动位置的时候，是相对于它的祖先元素来说的</p>
-<h3 id="语法-2"><a href="#语法-2" class="headerlink" title="语法"></a>语法</h3><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+<h3 id="绝对定位（absolute）"><a href="#绝对定位（absolute）" class="headerlink" title="绝对定位（absolute）"></a>绝对定位（absolute）</h3><p>元素在移动位置的时候，是相对于它的祖先元素来说的</p>
+<h4 id="语法-2"><a href="#语法-2" class="headerlink" title="语法"></a>语法</h4><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
 div &#123;
   position: absolute;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h3><ol>
+<h4 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h4><ol>
 <li>如果没有祖先元素或者祖先元素没有定位，则以浏览器为准定位（Document文档）</li>
-<li></li>
+<li>如果祖先元素有定位（相对、绝对、固定），则以<b>最近一级的有定位的祖先元素</b>为参考点移动位置</li>
+<li>绝对定位不再占有原先位置（脱标）</li>
 </ol>
-<h2 id="固定定位（fixed）"><a href="#固定定位（fixed）" class="headerlink" title="固定定位（fixed）"></a>固定定位（fixed）</h2>]]></content>
+<h3 id="“子绝父相”"><a href="#“子绝父相”" class="headerlink" title="“子绝父相”"></a>“子绝父相”</h3><p><b>如果子级使用绝对定位，父级需要用相对定位</b></p>
+<ol>
+<li>子级盒子用绝对定位，不会占用原来的位置，可以放到父盒子的任何一个地方，不会影响其他兄弟盒子</li>
+<li>由于级盒子绝对定位要求父元素也有定位，所以父盒子需要加定位限制子盒子在父盒子内显示</li>
+<li>父盒子在布局时，需要占有位置，不然会影响后面的其他盒子。所以使用相对定位</li>
+</ol>
+<p><b>总结：</b>父级在布局中需要占有位置，所以用相对定位。子级不需要占有位置，使用绝对定位</p>
+<h3 id="固定定位（fixed）"><a href="#固定定位（fixed）" class="headerlink" title="固定定位（fixed）"></a>固定定位（fixed）</h3><p>将元素固定到<b>浏览器可视区</b>的某个位置，不会随着界面的滚动而动</p>
+<h4 id="语法-3"><a href="#语法-3" class="headerlink" title="语法"></a>语法</h4><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+div &#123;
+  position: fixed;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="特点-2"><a href="#特点-2" class="headerlink" title="特点"></a>特点</h4><ol>
+<li>以浏览器的可视窗口为参考点移动元素</li>
+<li>跟父元素没有关系</li>
+<li>不随滚动条移动</li>
+<li>不占有原先位置（脱标）</li>
+</ol>
+<h3 id="粘性定位（sticky）"><a href="#粘性定位（sticky）" class="headerlink" title="粘性定位（sticky）"></a>粘性定位（sticky）</h3><p>可看成相对定位和固定定位的混合</p>
+<h4 id="语法-4"><a href="#语法-4" class="headerlink" title="语法"></a>语法</h4><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+div &#123;
+  position: sticky;
+  top：0px；         || 当元素距离浏览器可视区顶部距离为0时，变成粘性定位（固定）
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="特点-3"><a href="#特点-3" class="headerlink" title="特点"></a>特点</h4><ol>
+<li>以浏览器的可视窗口为参考点移动元素</li>
+<li>占有原先位置</li>
+<li>必须添加 top、left、bottom、right 其中一个才有效</li>
+<li>跟滚动搭配使用，兼容性较差，IE不支持</li>
+</ol>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p><img src="/2021/08/03/CSS%E4%BC%A0%E7%BB%9F%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80%E4%B9%8B%E5%AE%9A%E4%BD%8D/%E6%80%BB%E7%BB%93.jpg"></p>
+<h2 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h2><h3 id="定位的叠放次序"><a href="#定位的叠放次序" class="headerlink" title="定位的叠放次序"></a>定位的叠放次序</h3><h4 id="语法-5"><a href="#语法-5" class="headerlink" title="语法"></a>语法</h4><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+div &#123;
+  z-index: 1;  || z轴，没有单位
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="特点-4"><a href="#特点-4" class="headerlink" title="特点"></a>特点</h4><ol>
+<li>取值范围范围正整数、负整数、0，默认是auto，数值越大，盒子越靠上</li>
+<li>如果属性相同，则按照书写顺序，后来者居上</li>
+<li>数值没有单位，不能加单位</li>
+<li>标准流和浮动没有叠放次序，只有定位有</li>
+</ol>
+<h3 id="绝对定位的盒子的居中算法"><a href="#绝对定位的盒子的居中算法" class="headerlink" title="绝对定位的盒子的居中算法"></a>绝对定位的盒子的居中算法</h3><p>加了绝对定位的盒子不能通过 margin:0 auto; 来水平居中，但是可以通过计算方法来实现水平垂直居中<br><b>水平居中</b></p>
+<ol>
+<li>left父盒子宽度的50%(负值)</li>
+<li>margin-left子盒子（自身）宽度的50%</li>
+</ol>
+<p><b>垂直居中同理</b></p>
+<h3 id="定位的特殊特性"><a href="#定位的特殊特性" class="headerlink" title="定位的特殊特性"></a>定位的特殊特性</h3><p>绝对定位和固定定位和浮动类似</p>
+<ol>
+<li>行内元素添加绝对/固定定位，可以直接设置宽高</li>
+<li>块元素添加绝对/固定定位，如果不指定宽高，默认大小是内容大小，不再占用一整行</li>
+<li>脱标的盒子不会触发塌陷（外边距合并）</li>
+</ol>
+<h3 id="文本环绕"><a href="#文本环绕" class="headerlink" title="文本环绕"></a>文本环绕</h3><ol>
+<li>浮动的元素不会压住下面的标准流文字（浮动最开始的目的是做文字环绕效果）</li>
+<li>绝对/固定定位的元素会压住下面的所有元素</li>
+</ol>
+]]></content>
       <categories>
-        <category>读书笔记与感悟</category>
+        <category>学习笔记</category>
       </categories>
       <tags>
         <tag>CSS</tag>
@@ -158,7 +216,7 @@ clear:after &#123;
 </ul>
 ]]></content>
       <categories>
-        <category>读书笔记与感悟</category>
+        <category>学习笔记</category>
       </categories>
       <tags>
         <tag>CSS</tag>
@@ -167,7 +225,7 @@ clear:after &#123;
       </tags>
   </entry>
   <entry>
-    <title>CSS盒子模型</title>
+    <title>CSS传统网页布局之盒模型</title>
     <url>/2021/08/03/CSS%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/</url>
     <content><![CDATA[<p>所有HTML元素可以看作盒子，在CSS中，”box model”这一术语是用来设计和布局时使用。<br>CSS盒模型本质上是一个盒子，封装周围的HTML元素，它包括：边距，边框，填充，和实际内容。<br>盒模型允许我们在其它元素和周围元素边框之间的空间放置元素。</p>
 <span id="more"></span>
@@ -247,7 +305,7 @@ border-bottom-right-radius:10px;
 <h3 id="文字阴影"><a href="#文字阴影" class="headerlink" title="文字阴影"></a>文字阴影</h3><p>CSS3中新增文字阴影样式，使用 text-shadow 为文本添加阴影<br><img src="/2021/08/03/CSS%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/%E6%96%87%E5%AD%97%E9%98%B4%E5%BD%B1.jpg"></p>
 ]]></content>
       <categories>
-        <category>读书笔记与感悟</category>
+        <category>学习笔记</category>
       </categories>
       <tags>
         <tag>CSS</tag>
@@ -323,7 +381,7 @@ https:&#x2F;&#x2F;www.mhf.ink&#x2F;medias&#x2F;featureimages&#x2F;6.jpg<span ari
 
 <h2 id><a href="#" class="headerlink" title></a></h2>]]></content>
       <categories>
-        <category>技能收录</category>
+        <category>学习笔记</category>
       </categories>
       <tags>
         <tag>HTML</tag>
@@ -413,7 +471,7 @@ p &#123;
 <h2 id="li列表去掉前面圆点"><a href="#li列表去掉前面圆点" class="headerlink" title="li列表去掉前面圆点"></a>li列表去掉前面圆点</h2><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
 list-style：none<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>]]></content>
       <categories>
-        <category>技能收录</category>
+        <category>学习笔记</category>
       </categories>
       <tags>
         <tag>CSS</tag>
@@ -422,7 +480,7 @@ list-style：none<span aria-hidden="true" class="line-numbers-rows"><span></span
       </tags>
   </entry>
   <entry>
-    <title>【网页设计】JavaScript的学习笔记</title>
+    <title>JavaScript基础学习笔记</title>
     <url>/2021/06/04/%E3%80%90%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1%E3%80%91JavaScript%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<p>JavaScript（简称“JS”） 是一种具有函数优先的轻量级，解释型或即时编译型的编程语言。虽然它是作为开发Web页面的脚本语言而出名，但是它也被用到了很多非浏览器环境中，JavaScript 基于原型编程、多范式的动态脚本语言，并且支持面向对象、命令式、声明式、函数式编程范式。</p>
 <span id="more"></span>
@@ -435,7 +493,7 @@ list-style：none<span aria-hidden="true" class="line-numbers-rows"><span></span
 </ul>
 <h2 id><a href="#" class="headerlink" title></a></h2>]]></content>
       <categories>
-        <category>技能收录</category>
+        <category>学习笔记</category>
       </categories>
       <tags>
         <tag>网页设计</tag>
@@ -444,7 +502,7 @@ list-style：none<span aria-hidden="true" class="line-numbers-rows"><span></span
       </tags>
   </entry>
   <entry>
-    <title>【网页设计】CSS的学习笔记</title>
+    <title>CSS基础学习笔记</title>
     <url>/2021/06/04/%E3%80%90%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1%E3%80%91CSS%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<p>层叠样式表(英文全称：Cascading Style Sheets)<br>是一种用来表现HTML（标准通用标记语言的一个应用）或XML（标准通用标记语言的一个子集）等文件样式的计算机语言。<br>CSS不仅可以静态地修饰网页，还可以配合各种脚本语言动态地对网页各元素进行格式化。</p>
 <span id="more"></span>
@@ -795,7 +853,7 @@ ul li
 </ul>
 ]]></content>
       <categories>
-        <category>技能收录</category>
+        <category>学习笔记</category>
       </categories>
       <tags>
         <tag>网页设计</tag>
@@ -804,7 +862,7 @@ ul li
       </tags>
   </entry>
   <entry>
-    <title>【网页设计】HTML的学习笔记</title>
+    <title>HTML基础学习笔记</title>
     <url>/2021/06/04/%E3%80%90%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1%E3%80%91HTML%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<p>超文本标记语言（英语：HyperText Markup Language，简称：HTML）是一种用于创建网页的标准标记语言。<br>可以使用 HTML 来建立自己的 WEB 站点，HTML 运行在浏览器上，由浏览器来解析。</p>
 <span id="more"></span>
@@ -1156,7 +1214,7 @@ scheme:&#x2F;&#x2F;host.domain:port&#x2F;path&#x2F;filename<span aria-hidden="tr
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>###你已经完成了 HTML 的学习，下一步该学习什么呢？<br>####HTML 总结<br>本教程已教你如何使用 HTML 创建站点。<br>HTML 是一种在 Web 上使用的通用标记语言。HTML 允许你格式化文本，添加图片，创建链接、输入表单、框架和表格等等，并可将之存为文本文件，浏览器即可读取和显示。<br>HTML 的关键是标签，其作用是指示将出现的内容。<br>###现在，你已学完HTML，接下来该学习什么呢？<br>####学习 CSS<br>CSS被用来同时控制多重网页的样式和布局。<br>通过使用 CSS，所有的格式化均可从 HTML 中剥离出来，并存储于一个独立的文件中。<br>####学习 JavaScript<br>JavaScript 可以让你的网页更加生动。<br>如果你只想展示内容，静态网站是很好的展示形象，如果你想与用户进行交换或者让网页更加生动那就需要使用到Javascript。<br>JavaScript是互联网上最流行的脚本语言，目前所有主流浏览器都支持Javascript。<br>###站点服务器<br>在自己的服务器上托管网站始终是一个选项。有几点需要考虑：<br>硬件支出<br>如果要运行”真正”的网站，您不得不购买强大的服务器硬件。不要指望低价的 PC 能够应付这些工作。您还需要稳定的（一天 24 小时）高速连接。<br>软件支出<br>请记住，服务器授权通常比客户端授权更昂贵。同时请注意，服务器授权也许有用户数量限制。<br>人工费<br>不要指望低廉的人工费用。您必须安装自己的硬件和软件。您同时要处理漏洞和病毒，以确保您的服务器时刻正常地运行于一个”任何事都可能发生”的环境中。<br>###使用因特网服务提供商（ISP）<br>从 ISP 租用服务器也很常见。<br>大多数小公司会把网站存放到由 ISP 提供的服务器上。其优势有以下几点：<br>连接速度<br>大多数 ISP 都拥有连接因特网的高速连接。<br>强大的硬件<br>ISP 的 web 服务器通常强大到能够由若干网站分享资源。您还要看一下 ISP 是否提供高效的负载平衡，以及必要的备份服务器。<br>安全性和可靠性<br>ISP 是网站托管方面的专家。他们应该提供 99% 以上的在线时间，最新的软件补丁，以及最好的病毒防护。<br>选择 ISP 时的注意事项<br>24 小时支持<br>确保 ISP 提供 24 小时支持。不要使自己置于无法解决严重问题的尴尬境地，同时还必须等待第二个工作日。如果您不希望支付长途电话费，那么免费电话服务也是必要的。<br>每日备份<br>确保 ISP 会执行每日备份的例行工作，否则您有可能损失有价值的数据。<br>流量<br>研究一下 ISP 的流量限制。如果出现由于网站受欢迎而激增的不可预期的访问量，那么您要确保不会因此支付额外费用。<br>带宽或内容限制<br>研究一下 ISP 的带宽和内容限制。如果您计划发布图片或播出视频或音频，请确保您有此权限。<br>E-mail 功能<br>请确保 ISP 支持您需要的 e-mail 功能。<br>数据库访问<br>如果您计划使用网站数据库中的数据，那么请确保您的 ISP 支持您需要的数据库访问。</p>
 ]]></content>
       <categories>
-        <category>技能收录</category>
+        <category>学习笔记</category>
       </categories>
       <tags>
         <tag>网页设计</tag>

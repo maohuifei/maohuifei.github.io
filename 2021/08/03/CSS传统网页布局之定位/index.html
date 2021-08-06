@@ -344,8 +344,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E4%B8%8E%E6%84%9F%E6%82%9F/" class="post-category">
-                                读书笔记与感悟
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-category">
+                                学习笔记
                             </a>
                         
                     </div>
@@ -364,14 +364,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-08-05
+                    2021-08-06
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    493
+                    1.2k
                 </div>
                 
 
@@ -401,8 +401,8 @@
 <h2 id="定位的组成"><a href="#定位的组成" class="headerlink" title="定位的组成"></a>定位的组成</h2><p><b>定位 = 定位模式 + 边偏移</b></p>
 <h3 id="定位模式（position）"><a href="#定位模式（position）" class="headerlink" title="定位模式（position）"></a>定位模式（position）</h3><p>用于指定一个元素在文档中的定位方式，通过 position 属性来设置，有四个值：<br><img src="/2021/08/03/CSS%E4%BC%A0%E7%BB%9F%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80%E4%B9%8B%E5%AE%9A%E4%BD%8D/%E5%AE%9A%E4%BD%8D%E6%A8%A1%E5%BC%8F.jpg"></p>
 <h3 id="边偏移"><a href="#边偏移" class="headerlink" title="边偏移"></a>边偏移</h3><p>决定该元素的最终位置，有top、bottom、left、right 四个属性：<br><img src="/2021/08/03/CSS%E4%BC%A0%E7%BB%9F%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80%E4%B9%8B%E5%AE%9A%E4%BD%8D/%E8%BE%B9%E5%81%8F%E7%A7%BB.jpg"></p>
-<h2 id="静态定位（static）"><a href="#静态定位（static）" class="headerlink" title="静态定位（static）"></a>静态定位（static）</h2><p>静态定位是元素的<b>默认定位方式，无定位的意思</b></p>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+<h2 id="四种定位模式"><a href="#四种定位模式" class="headerlink" title="四种定位模式"></a>四种定位模式</h2><h3 id="静态定位（static）"><a href="#静态定位（static）" class="headerlink" title="静态定位（static）"></a>静态定位（static）</h3><p>静态定位是元素的<b>默认定位方式，无定位的意思</b></p>
+<h4 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h4><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
 div &#123;
   position: static;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
@@ -410,25 +410,83 @@ div &#123;
 <li>静态定位按照标准流特性摆放位置，没有边偏移</li>
 <li>在实际布局中很少用</li>
 </ul>
-<h2 id="相对定位（relative）"><a href="#相对定位（relative）" class="headerlink" title="相对定位（relative）"></a>相对定位（relative）</h2><p>元素在移动位置的时候，是相对于它原来的位置来说的</p>
-<h3 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h3><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+<h3 id="相对定位（relative）"><a href="#相对定位（relative）" class="headerlink" title="相对定位（relative）"></a>相对定位（relative）</h3><p>元素在移动位置的时候，是相对于它原来的位置来说的</p>
+<h4 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h4><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
 div &#123;
   position: relative;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ol>
+<h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><ol>
 <li>相对于自己原来的位置来移动的（移动位置的参照点是他原来的位置）</li>
 <li>原来在标准流的位置继续占有，后面的盒子当它仍然在（不脱标，继续保留原来位置）<br>因此，相对定位没有脱标，主要用来限制绝对定位的</li>
 </ol>
-<h2 id="绝对定位（absolute）"><a href="#绝对定位（absolute）" class="headerlink" title="绝对定位（absolute）"></a>绝对定位（absolute）</h2><p>元素在移动位置的时候，是相对于它的祖先元素来说的</p>
-<h3 id="语法-2"><a href="#语法-2" class="headerlink" title="语法"></a>语法</h3><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+<h3 id="绝对定位（absolute）"><a href="#绝对定位（absolute）" class="headerlink" title="绝对定位（absolute）"></a>绝对定位（absolute）</h3><p>元素在移动位置的时候，是相对于它的祖先元素来说的</p>
+<h4 id="语法-2"><a href="#语法-2" class="headerlink" title="语法"></a>语法</h4><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
 div &#123;
   position: absolute;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h3><ol>
+<h4 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h4><ol>
 <li>如果没有祖先元素或者祖先元素没有定位，则以浏览器为准定位（Document文档）</li>
-<li></li>
+<li>如果祖先元素有定位（相对、绝对、固定），则以<b>最近一级的有定位的祖先元素</b>为参考点移动位置</li>
+<li>绝对定位不再占有原先位置（脱标）</li>
 </ol>
-<h2 id="固定定位（fixed）"><a href="#固定定位（fixed）" class="headerlink" title="固定定位（fixed）"></a>固定定位（fixed）</h2>
+<h3 id="“子绝父相”"><a href="#“子绝父相”" class="headerlink" title="“子绝父相”"></a>“子绝父相”</h3><p><b>如果子级使用绝对定位，父级需要用相对定位</b></p>
+<ol>
+<li>子级盒子用绝对定位，不会占用原来的位置，可以放到父盒子的任何一个地方，不会影响其他兄弟盒子</li>
+<li>由于级盒子绝对定位要求父元素也有定位，所以父盒子需要加定位限制子盒子在父盒子内显示</li>
+<li>父盒子在布局时，需要占有位置，不然会影响后面的其他盒子。所以使用相对定位</li>
+</ol>
+<p><b>总结：</b>父级在布局中需要占有位置，所以用相对定位。子级不需要占有位置，使用绝对定位</p>
+<h3 id="固定定位（fixed）"><a href="#固定定位（fixed）" class="headerlink" title="固定定位（fixed）"></a>固定定位（fixed）</h3><p>将元素固定到<b>浏览器可视区</b>的某个位置，不会随着界面的滚动而动</p>
+<h4 id="语法-3"><a href="#语法-3" class="headerlink" title="语法"></a>语法</h4><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+div &#123;
+  position: fixed;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="特点-2"><a href="#特点-2" class="headerlink" title="特点"></a>特点</h4><ol>
+<li>以浏览器的可视窗口为参考点移动元素</li>
+<li>跟父元素没有关系</li>
+<li>不随滚动条移动</li>
+<li>不占有原先位置（脱标）</li>
+</ol>
+<h3 id="粘性定位（sticky）"><a href="#粘性定位（sticky）" class="headerlink" title="粘性定位（sticky）"></a>粘性定位（sticky）</h3><p>可看成相对定位和固定定位的混合</p>
+<h4 id="语法-4"><a href="#语法-4" class="headerlink" title="语法"></a>语法</h4><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+div &#123;
+  position: sticky;
+  top：0px；         || 当元素距离浏览器可视区顶部距离为0时，变成粘性定位（固定）
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="特点-3"><a href="#特点-3" class="headerlink" title="特点"></a>特点</h4><ol>
+<li>以浏览器的可视窗口为参考点移动元素</li>
+<li>占有原先位置</li>
+<li>必须添加 top、left、bottom、right 其中一个才有效</li>
+<li>跟滚动搭配使用，兼容性较差，IE不支持</li>
+</ol>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p><img src="/2021/08/03/CSS%E4%BC%A0%E7%BB%9F%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80%E4%B9%8B%E5%AE%9A%E4%BD%8D/%E6%80%BB%E7%BB%93.jpg"></p>
+<h2 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h2><h3 id="定位的叠放次序"><a href="#定位的叠放次序" class="headerlink" title="定位的叠放次序"></a>定位的叠放次序</h3><h4 id="语法-5"><a href="#语法-5" class="headerlink" title="语法"></a>语法</h4><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+div &#123;
+  z-index: 1;  || z轴，没有单位
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="特点-4"><a href="#特点-4" class="headerlink" title="特点"></a>特点</h4><ol>
+<li>取值范围范围正整数、负整数、0，默认是auto，数值越大，盒子越靠上</li>
+<li>如果属性相同，则按照书写顺序，后来者居上</li>
+<li>数值没有单位，不能加单位</li>
+<li>标准流和浮动没有叠放次序，只有定位有</li>
+</ol>
+<h3 id="绝对定位的盒子的居中算法"><a href="#绝对定位的盒子的居中算法" class="headerlink" title="绝对定位的盒子的居中算法"></a>绝对定位的盒子的居中算法</h3><p>加了绝对定位的盒子不能通过 margin:0 auto; 来水平居中，但是可以通过计算方法来实现水平垂直居中<br><b>水平居中</b></p>
+<ol>
+<li>left父盒子宽度的50%(负值)</li>
+<li>margin-left子盒子（自身）宽度的50%</li>
+</ol>
+<p><b>垂直居中同理</b></p>
+<h3 id="定位的特殊特性"><a href="#定位的特殊特性" class="headerlink" title="定位的特殊特性"></a>定位的特殊特性</h3><p>绝对定位和固定定位和浮动类似</p>
+<ol>
+<li>行内元素添加绝对/固定定位，可以直接设置宽高</li>
+<li>块元素添加绝对/固定定位，如果不指定宽高，默认大小是内容大小，不再占用一整行</li>
+<li>脱标的盒子不会触发塌陷（外边距合并）</li>
+</ol>
+<h3 id="文本环绕"><a href="#文本环绕" class="headerlink" title="文本环绕"></a>文本环绕</h3><ol>
+<li>浮动的元素不会压住下面的标准流文字（浮动最开始的目的是做文字环绕效果）</li>
+<li>绝对/固定定位的元素会压住下面的所有元素</li>
+</ol>
+
                 
             </div>
             <hr/>
@@ -701,8 +759,8 @@ div &#123;
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E4%B8%8E%E6%84%9F%E6%82%9F/" class="post-category">
-                                    读书笔记与感悟
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    学习笔记
                                 </a>
                             
                             
@@ -759,8 +817,8 @@ div &#123;
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E4%B8%8E%E6%84%9F%E6%82%9F/" class="post-category">
-                                    读书笔记与感悟
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    学习笔记
                                 </a>
                             
                             
@@ -967,7 +1025,7 @@ div &#123;
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">21k</span>
+                        class="white-color">21.8k</span>
             
             
             
