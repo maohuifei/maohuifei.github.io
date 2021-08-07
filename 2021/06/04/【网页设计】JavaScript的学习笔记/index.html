@@ -386,14 +386,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-08-06
+                    2021-08-07
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    204
+                    742
                 </div>
                 
 
@@ -416,13 +416,56 @@
                 <p>JavaScript（简称“JS”） 是一种具有函数优先的轻量级，解释型或即时编译型的编程语言。虽然它是作为开发Web页面的脚本语言而出名，但是它也被用到了很多非浏览器环境中，JavaScript 基于原型编程、多范式的动态脚本语言，并且支持面向对象、命令式、声明式、函数式编程范式。</p>
 <span id="more"></span>
 
+<p>JavaScript 是 web 开发人员必须学习的 3 门语言中的一门：</p>
+<ul>
+<li>HTML 定义了网页的内容</li>
+<li>CSS 描述了网页的布局</li>
+<li>JavaScript 控制了网页的行为</li>
+</ul>
+<p><b>本文参考：</b><br>官方文档：<a target="_blank" rel="noopener" href="https://www.javascript.com/learn/strings">https://www.javascript.com/learn/strings</a><br>菜鸟教程——JavaScript教程：<a target="_blank" rel="noopener" href="https://www.runoob.com/js/js-tutorial.html">https://www.runoob.com/js/js-tutorial.html</a><br>黑马pink老师avaScript基础语法-dom-bom-js-es6新语法-jQuery-数据可视化echarts：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Sy4y1C7ha">https://www.bilibili.com/video/BV1Sy4y1C7ha</a></p>
 <h2 id="什么是JavaScript？"><a href="#什么是JavaScript？" class="headerlink" title="什么是JavaScript？"></a>什么是JavaScript？</h2><ul>
 <li>JavaScript 是最流行的语言之一。</li>
 <li>JavaScript 是属于 web 的语言，它适用于 PC、笔记本电脑、平板电脑和移动电话。</li>
 <li>JavaScript可以使您的网站更具活力。</li>
 <li>许多 HTML 开发者都不是程序员，但是 JavaScript 却拥有非常简单的语法。几乎每个人都有能力将小的 JavaScript 片段添加到网页中。</li>
 </ul>
-<h2 id><a href="#" class="headerlink" title></a></h2>
+<h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><h3 id="书写位置（引用）"><a href="#书写位置（引用）" class="headerlink" title="书写位置（引用）"></a>书写位置（引用）</h3><ul>
+<li><p>行内：直接写到元素内部。不推荐，特殊情况下才会使用</p>
+<pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">$ 
+&lt;body&gt;
+&lt;input type&#x3D;&quot;button&quot; value&#x3D;&quot;点击&quot; onclick&#x3D;&quot;alert（‘欢迎’）&quot;&gt;
+&lt;&#x2F;body&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>内嵌：如需在 HTML 页面中插入 JavaScript，请使用 script 标签。<br>script 和 /script 会告诉 JavaScript 在何处开始和结束。<br>浏览器会解释并执行位于 script 和 /script之间的 JavaScript 代码<br>script 和 /script 之间的代码行包含了 JavaScript:</p>
+<pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">$ 
+&lt;head&gt;
+&lt;script&gt;
+alert(&quot;我的第一个 JavaScript&quot;);
+&lt;&#x2F;script&gt;
+&lt;&#x2F;head&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>外部：新建 .js 文件，内部直接写js语句，然后在 html 的 head 中注明引用路径。标签内不可以写任何其他代码</p>
+<pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">$ 
+&lt;head&gt;
+&lt;script src&#x3D;&quot;my.js&quot;&gt;&lt;&#x2F;script&gt;
+&lt;&#x2F;head&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">$ 
+&#x2F;&#x2F;单行注释
+&#x2F;*多行注释*&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="输入输出"><a href="#输入输出" class="headerlink" title="输入输出"></a>输入输出</h3><pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">$ 
+&lt;script&gt;
+&#x2F;&#x2F;输入框
+prompt(&#39;请输入你的年龄&#39;);
+&#x2F;&#x2F;弹出一个警示框，输出的，展示给用户的
+alert(&#39;欢迎 猫会飞呀&#39;);
+&#x2F;&#x2F;控制台输出，给开发人员测试用
+console.log(&#39;开发人员，你好&#39;);
+
+&lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><h3 id="控制流程"><a href="#控制流程" class="headerlink" title="控制流程"></a>控制流程</h3><h3 id="内置对象"><a href="#内置对象" class="headerlink" title="内置对象"></a>内置对象</h3><h2 id="DOM-文档对象模型"><a href="#DOM-文档对象模型" class="headerlink" title="DOM (文档对象模型)"></a>DOM (文档对象模型)</h2><p>W3C推荐的处理可扩展标记语言的<b>标准编程接口</b>。<br>通过DOM提供的接口，可以对页面上的各种元素进行操作（大小位置颜色等）</p>
+<h2 id="BOM-浏览器对象模型"><a href="#BOM-浏览器对象模型" class="headerlink" title="BOM (浏览器对象模型)"></a>BOM (浏览器对象模型)</h2><p>独立与内容的，可以与浏览器窗口进行互动的对象结构<br>可以操作浏览器窗口，如弹出框、浏览器跳转、获取分辨率等</p>
+<h2 id="接口请求-Ajax-Fetch"><a href="#接口请求-Ajax-Fetch" class="headerlink" title="接口请求 Ajax/Fetch"></a>接口请求 Ajax/Fetch</h2><h2 id="ES6"><a href="#ES6" class="headerlink" title="ES6+"></a>ES6+</h2>
                 
             </div>
             <hr/>
@@ -959,7 +1002,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">23.1k</span>
+                        class="white-color">24.1k</span>
             
             
             

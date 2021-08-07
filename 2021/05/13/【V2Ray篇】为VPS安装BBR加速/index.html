@@ -386,7 +386,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-05-26
+                    2021-08-07
                 </div>
                 
 
@@ -418,8 +418,7 @@
 <p>该算法使用网络最近出站数据分组当时的最大带宽和往返时间来创建网络的显式模型。数据包传输的每个累积或选择性确认用于生成记录在数据包传输过程和确认返回期间的时间内所传送数据量的采样率。该算法认为随着网络接口控制器逐渐进入千兆速度时，与缓冲膨胀相关的延迟相比丢包更应该被认为是识别拥塞的主要决定因素，所以基于延迟模型的拥塞控制算法（如BBR）会有更高的吞吐量和更低的延迟，可以用BBR来替代其他流行的拥塞算法，例如CUBIC。Google在YouTube上应用该算法，将全球平均的YouTube网络吞吐量提高了4%，在一些国家超过了14%。</p>
 <p>BBR之后移植入Linux内核4.9版本，并且对于QUIC可用。</p>
 <p>BBR效率很高，速度也很快，但是它与非BBR的流的公平性有争议。虽然谷歌的展示显示 BBR 与 CUBIC 共存良好，但像杰夫·休斯顿和霍克、布利斯和齐特巴特等研究者发现它对其他流不公平，并且不可扩展。霍克等人还发现，在Linux 4.9的BBR实现中“存在一些严重的固有问题，如排队延迟增加、不公平和大量数据包丢失”。</p>
-<p>索海尔·阿巴斯洛等人(C2TCP的作者)指出，BBR在动态环境中表现不佳，比如蜂窝网络。他们还表明BBR存在不公平问题。例如，当一个CUBIC流(在Linux、Android和MacOS中是默认的TCP实现)与网络中的BBR流共存时，BBR流可以支配 CUBIC 流并从中获得整个链路带宽</p>
-<p>简介参考维基百科，侵删</p>
+<p>索海尔·阿巴斯洛等人(C2TCP的作者)指出，BBR在动态环境中表现不佳，比如蜂窝网络。他们还表明BBR存在不公平问题。例如，当一个CUBIC流(在Linux、Android和MacOS中是默认的TCP实现)与网络中的BBR流共存时，BBR流可以支配 CUBIC 流并从中获得整个链路带宽<br><b>本文参考：</b><br>维基百科：<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Wikipedia:%E9%A6%96%E9%A1%B5">https://zh.wikipedia.org/wiki/Wikipedia:%E9%A6%96%E9%A1%B5</a><br>垃圾站 的博文：<a target="_blank" rel="noopener" href="https://cyhour.com/1090/">https://cyhour.com/1090/</a></p>
 <h1 id="CentOS-8-开启-BBR"><a href="#CentOS-8-开启-BBR" class="headerlink" title="CentOS 8 开启 BBR"></a>CentOS 8 开启 BBR</h1><p>CentOS 8 默认内核版本为 4.18.x，内核版本高于 4.9 就可以直接开启 BBR，所以 CentOS 8 启用 BBR 非常简单。</p>
 <pre class="line-numbers language-Linux" data-language="Linux"><code class="language-Linux">$ 
 echo &quot;net.core.default_qdisc&#x3D;fq&quot; &gt;&gt; &#x2F;etc&#x2F;sysctl.conf
@@ -722,19 +721,19 @@ wget --no-check-certificate https:&#x2F;&#x2F;github.com&#x2F;teddysun&#x2F;acro
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/05/13/hello-world/">
+                <a href="/2021/05/13/Markdown%E8%AF%AD%E6%B3%95/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Markdown语法">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">Markdown语法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+                            Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档。Markdown 语言在 2004 由约翰·格鲁伯（英语：John Gruber）创建。Markdown 编写的文档可以导出 HTML 、Word、图像、P
                         
                     </div>
                     <div class="publish-info">
@@ -756,16 +755,16 @@ wget --no-check-certificate https:&#x2F;&#x2F;github.com&#x2F;teddysun&#x2F;acro
                 
                 <div class="card-action article-tags">
                     
+                    <a href="/tags/Markdown/">
+                        <span class="chip bg-color">Markdown</span>
+                    </a>
+                    
                     <a href="/tags/%E8%AF%AD%E6%B3%95/">
                         <span class="chip bg-color">语法</span>
                     </a>
                     
                     <a href="/tags/Blog/">
                         <span class="chip bg-color">Blog</span>
-                    </a>
-                    
-                    <a href="/tags/bash/">
-                        <span class="chip bg-color">bash</span>
                     </a>
                     
                 </div>
@@ -1010,7 +1009,7 @@ wget --no-check-certificate https:&#x2F;&#x2F;github.com&#x2F;teddysun&#x2F;acro
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">23.1k</span>
+                        class="white-color">24.1k</span>
             
             
             
