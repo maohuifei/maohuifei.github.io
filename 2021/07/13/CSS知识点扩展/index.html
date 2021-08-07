@@ -106,6 +106,17 @@
     
   </li>
   
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
       <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
@@ -183,6 +194,17 @@
 			    <i class="fa-fw fas fa-user-circle"></i>
 			
 			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
 		</a>
           
         </li>
@@ -371,7 +393,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    701
+                    1.3k
                 </div>
                 
 
@@ -469,6 +491,56 @@ p &#123;
 
 <h2 id="li列表去掉前面圆点"><a href="#li列表去掉前面圆点" class="headerlink" title="li列表去掉前面圆点"></a>li列表去掉前面圆点</h2><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
 list-style：none<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="元素的显示和隐藏"><a href="#元素的显示和隐藏" class="headerlink" title="元素的显示和隐藏"></a>元素的显示和隐藏</h2><h3 id="display属性"><a href="#display属性" class="headerlink" title="display属性"></a>display属性</h3><p>display属性用于设置一个元素如何显示</p>
+<ul>
+<li>display: none; 隐藏对象</li>
+<li>display: block; 除了转换成块级元素外，还有显示元素的意思</li>
+</ul>
+<p><b>diplay隐藏元素后不再占有原来位置</b><br>后面应用及其广泛，搭配js做网页特效</p>
+<h3 id="visibility-可见性"><a href="#visibility-可见性" class="headerlink" title="visibility 可见性"></a>visibility 可见性</h3><p>visibility 属性用于指定元素可见或者隐藏</p>
+<ul>
+<li>visibility: visible; 元素可见</li>
+<li>visibility: hidden;  元素隐藏</li>
+</ul>
+<p><b>与 display 不一样的是，visibility 隐藏元素后继续占用原来位置</b><br>实际开发中，主要还是用 display</p>
+<h3 id="overflow-溢出"><a href="#overflow-溢出" class="headerlink" title="overflow 溢出"></a>overflow 溢出</h3><p>overflow 属性指定了如果内容溢出了一个元素的框（超过其指定的宽度和高度）时，会发生什么</p>
+<ul>
+<li>overflow: visible; || 显示</li>
+<li>overflow: hidden;  || 隐藏</li>
+<li>overflow: scroll;  || 溢出部分显示滚动条</li>
+<li>overflow: auto;    || 在合适的时候显示滚动条，超出显示不超出不显示</li>
+</ul>
+<h2 id="精灵技术"><a href="#精灵技术" class="headerlink" title="精灵技术"></a>精灵技术</h2><p>使用精灵图核心：</p>
+<ol>
+<li>精灵图主要针对于背景图片使用，就是把多个小背景图片整合到大图片中</li>
+<li>这个大图片叫做 sprites 精灵图（雪碧图）</li>
+<li>移动背景图片的位置 使用 background-position 属性</li>
+<li>移动的距离是目标图片的 x 轴和 y 轴，注意网页中的坐标有所不同，一般数值都是负的（往上往左是负值）</li>
+</ol>
+<h2 id="字体图标（iconfont）"><a href="#字体图标（iconfont）" class="headerlink" title="字体图标（iconfont）"></a>字体图标（iconfont）</h2><h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ul>
+<li>轻量级：文件小，和字体一起加载渲染，减少服务器请求</li>
+<li>灵活性：本质是文字，可以随意更改样式</li>
+<li>兼容性：几乎支持所有浏览器</li>
+</ul>
+<p>样式结构比较简单，代替不了精灵图/图片</p>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><h4 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h4><ul>
+<li>icomoon图标库：<a target="_blank" rel="noopener" href="https://icomoon.io/">https://icomoon.io/</a></li>
+<li>阿里巴巴图标库：<a target="_blank" rel="noopener" href="https://www.iconfont.cn/">https://www.iconfont.cn/</a></li>
+</ul>
+<h4 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h4><ol>
+<li>下载文件到本地后，解压压缩文件</li>
+<li>将 fonts 文件夹放到 Web 根目录</li>
+<li>将字体声明代码（解压后文件根目录的style.css开头）复制到html文件的 style 标签里<br><img src="/2021/07/13/CSS%E7%9F%A5%E8%AF%86%E7%82%B9%E6%89%A9%E5%B1%95/%E5%AD%97%E4%BD%93%E5%A3%B0%E6%98%8E.jpg"></li>
+<li>新建标签，内容为图标对应符号<br><img src="/2021/07/13/CSS%E7%9F%A5%E8%AF%86%E7%82%B9%E6%89%A9%E5%B1%95/%E5%AD%97%E4%BD%93%E5%9B%BE%E6%A0%87%E7%9A%84%E4%BD%BF%E7%94%A8.jpg"></li>
+<li>给标签声明字体（可添加颜色字号属性）<br><img src="/2021/07/13/CSS%E7%9F%A5%E8%AF%86%E7%82%B9%E6%89%A9%E5%B1%95/%E5%9B%BE%E6%A0%87%E4%BD%BF%E7%94%A8.jpg"></li>
+</ol>
+<h4 id="追加"><a href="#追加" class="headerlink" title="追加"></a>追加</h4><ol>
+<li>上传之前的图标记录文件（selection.json）</li>
+<li>选择新的图标</li>
+<li>打包下载到本地,替换原来的文件即可</li>
+</ol>
+<h2 id><a href="#" class="headerlink" title></a></h2>
                 
             </div>
             <hr/>
@@ -1005,7 +1077,7 @@ list-style：none<span aria-hidden="true" class="line-numbers-rows"><span></span
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">21.8k</span>
+                        class="white-color">23.1k</span>
             
             
             
