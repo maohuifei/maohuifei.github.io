@@ -3,14 +3,26 @@
   <entry>
     <title>分布式版本控制系统-Git</title>
     <url>/2021/08/07/%E5%88%86%E5%B8%83%E5%BC%8F%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F-Git/</url>
-    <content><![CDATA[<p>Git 是一个免费和开源分布式版本控制系统，旨在以速度和效率处理从小型到非常大型项目的所有问题。<br>Git易于学习，足迹很小，性能快闪电。它超越了SCM工具，如颠覆，CVS，Perforce，和ClearCase的功能，如便宜的本地分支，方便的中转区，和多个工作流程。<br>Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.<br>Git is easy to learn and has a tiny footprint with lightning fast performance. It outclasses SCM tools like Subversion, CVS, Perforce, and ClearCase with features like cheap local branching, convenient staging areas, and multiple workflows.<br>Git官网：<a href="https://git-scm.com/">https://git-scm.com/</a></p>
+    <content><![CDATA[<p>Git 是一个免费和开源分布式版本控制系统，旨在以速度和效率处理从小型到非常大型项目的所有问题。<br>Git易于学习，足迹很小，性能快闪电。它超越了SCM工具，如颠覆，CVS，Perforce，和ClearCase的功能，如便宜的本地分支，方便的中转区，和多个工作流程。</p>
 <span id="more"></span>
-<p><b>本文参考：</b><br>官方使用文档：<a href="https://git-scm.com/docs">https://git-scm.com/docs</a><br>狂神说JAVA——Git教程通俗易懂：<a href="https://www.bilibili.com/video/BV1FE411P7B3">https://www.bilibili.com/video/BV1FE411P7B3</a><br>菜鸟教程——Git教程：<a href="https://www.runoob.com/git/git-tutorial.html">https://www.runoob.com/git/git-tutorial.html</a></p>
-<h2 id="什么是Git"><a href="#什么是Git" class="headerlink" title="什么是Git"></a>什么是Git</h2><p>Git 是一个开源免费的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。<br>Git 是 Linus Torvalds 为了帮助管理 Linux 内核开发而开发的一个开放源码的版本控制软件。<br>Git 与常用的版本控制工具 CVS, Subversion 等不同，它采用了分布式版本库的方式，不必服务器端软件支持。</p>
-<h2 id="Git的下载与安装"><a href="#Git的下载与安装" class="headerlink" title="Git的下载与安装"></a>Git的下载与安装</h2><p>官网：<a href="https://git-scm.com/">https://git-scm.com/</a><br>没什么好说的，根据需要安装即可<br><img src="/2021/08/07/%E5%88%86%E5%B8%83%E5%BC%8F%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F-Git/Git%E4%B8%89%E4%B8%AA%E7%89%88%E6%9C%AC.jpg"></p>
+<p>Git 是一个开源免费的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。<br>Git 是 Linus Torvalds 为了帮助管理 Linux 内核开发而开发的一个开放源码的版本控制软件。<br>Git 与常用的版本控制工具 CVS, Subversion 等不同，它采用了分布式版本库的方式，不必服务器端软件支持。<br><b>本文参考：</b><br>官方使用文档：<a href="https://git-scm.com/docs">https://git-scm.com/docs</a><br>狂神说JAVA——Git教程通俗易懂：<a href="https://www.bilibili.com/video/BV1FE411P7B3">https://www.bilibili.com/video/BV1FE411P7B3</a><br>菜鸟教程——Git教程：<a href="https://www.runoob.com/git/git-tutorial.html">https://www.runoob.com/git/git-tutorial.html</a></p>
+<h2 id="Git的下载与安装"><a href="#Git的下载与安装" class="headerlink" title="Git的下载与安装"></a>Git的下载与安装</h2><p>官网：<a href="https://git-scm.com/">https://git-scm.com/</a><br>没什么好说的，根据需要安装即可，看不懂的英文就用截屏翻译</p>
+<p>安装完成后，会有三个环境：</p>
+<ul>
+<li>Git bash：Unix与Linux风格的命令行，推荐使用</li>
+<li>Git CMD ：win风格命令行</li>
+<li>Git GUI ：图形界面的Git，不推荐新手使用，尽量先熟悉命令行</li>
+</ul>
+<p>一般使用Linux语法风格的 Git Bash</p>
 <h2 id="常用的Linux命令"><a href="#常用的Linux命令" class="headerlink" title="常用的Linux命令"></a>常用的Linux命令</h2><p><img src="/2021/08/07/%E5%88%86%E5%B8%83%E5%BC%8F%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F-Git/%E5%9F%BA%E6%9C%ACLinux%E5%91%BD%E4%BB%A4.jpg"></p>
-<h2 id="Git工作区域"><a href="#Git工作区域" class="headerlink" title="Git工作区域"></a>Git工作区域</h2><p><img src="/2021/08/07/%E5%88%86%E5%B8%83%E5%BC%8F%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F-Git/Git%E5%B7%A5%E4%BD%9C%E5%8C%BA%E5%9F%9F.jpg"></p>
-<h2 id="Git文件的四种状态"><a href="#Git文件的四种状态" class="headerlink" title="Git文件的四种状态"></a>Git文件的四种状态</h2><p><img src="/2021/08/07/%E5%88%86%E5%B8%83%E5%BC%8F%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F-Git/Git%E6%96%87%E4%BB%B6%E7%9A%84%E5%9B%9B%E7%A7%8D%E7%8A%B6%E6%80%81.jpg"></p>
+<h2 id="Git工作区域（运行原理）"><a href="#Git工作区域（运行原理）" class="headerlink" title="Git工作区域（运行原理）"></a>Git工作区域（运行原理）</h2><p>工作区——暂存区——本地库——远程库<br><img src="/2021/08/07/%E5%88%86%E5%B8%83%E5%BC%8F%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F-Git/Git%E5%B7%A5%E4%BD%9C%E5%8C%BA%E5%9F%9F.jpg"></p>
+<h2 id="Git文件的四种状态"><a href="#Git文件的四种状态" class="headerlink" title="Git文件的四种状态"></a>Git文件的四种状态</h2><p>版本控制就是对文件的版本控制。<br>要对文件进行修改提交等操作，首先要知道文件当前在什么状态。</p>
+<ul>
+<li><b>Untracked：未跟踪，此文件在文件夹中，没有提交到git库，不参与版本控制</b><br>通过 git add 命令转变为 staged 状态。</li>
+<li><b>Unmodify：文件已入库，未修改</b><br>即库中的文件与文件夹中的内容完全一致。<br>被修改，变为 Modified<br>使用 git -rm 移除版本库，变为 Untracked</li>
+<li><b>Modified：文件已修改，仅仅是修改，并未进行其他操作</b><br>两种去处：<br>通过 git add 进入暂存区 staged 状态<br>通过 git checkout 丢弃修改过的，变回 Unmodify 状态(从库中取出文件覆盖当前)</li>
+<li><b>staged：暂存状态</b><br>使用 git commit 将修改同步到库中，这时库文件和本地文件一致，文件为 Unmodify 状态<br>使用 git reset HEAD fileanme 取消暂存，文件变为 Modified 状态</li>
+</ul>
 <h2 id="Git的使用"><a href="#Git的使用" class="headerlink" title="Git的使用"></a>Git的使用</h2><h3 id="创建及提交"><a href="#创建及提交" class="headerlink" title="创建及提交"></a>创建及提交</h3><pre class="line-numbers language-Git" data-language="Git"><code class="language-Git">$ 
 git init                 || 初始化，会新建一个名为.git 的隐藏文件
 git clone [url]          || 克隆远端仓库到本地
@@ -27,16 +39,67 @@ git push                 || 提交到远程仓库
 &#x2F;temp     
 bulid&#x2F;    忽略bulid项目下的所有文件
 doc&#x2F;*.txt 忽略doc根目录下的.txt文件，不包括doc&#x2F;ect&#x2F;001.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h2><h3 id="Git使用代理网络问题"><a href="#Git使用代理网络问题" class="headerlink" title="Git使用代理网络问题"></a>Git使用代理网络问题</h3><h4 id="配置Git代理"><a href="#配置Git代理" class="headerlink" title="配置Git代理"></a>配置Git代理</h4><pre class="line-numbers language-Git" data-language="Git"><code class="language-Git">$ 
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="Gitee-Github的免密码登录"><a href="#Gitee-Github的免密码登录" class="headerlink" title="Gitee/Github的免密码登录"></a>Gitee/Github的免密码登录</h3><p>Gitee：<a href="https://gitee.com/">https://gitee.com/</a><br>Github：<a href="https://github.com/">https://github.com/</a><br>进入目录 C:\Users\猫会飞.ssh<br>右击 使用Git 输入命令 ssh-keygen（生成公钥） -t rsa（使用加密）<br>此时会生成两个文件，id_rsa.pub 和 id_rsa 一个是公有一个是私有<br>登录Gitee/Github，设置——SSH公钥——填写文件 id_rsa.pub 里的密钥——确认保存</p>
+<h3 id="Git使用代理网络问题"><a href="#Git使用代理网络问题" class="headerlink" title="Git使用代理网络问题"></a>Git使用代理网络问题</h3><p>配置Git代理：</p>
+<pre class="line-numbers language-Git" data-language="Git"><code class="language-Git">$ 
 git config --global https.proxy http:&#x2F;&#x2F;127.0.0.1:1080
 git config --global https.proxy https:&#x2F;&#x2F;127.0.0.1:1080
 git config --global http.proxy &#39;socks5:&#x2F;&#x2F;127.0.0.1:1080&#39;
 git config --global https.proxy &#39;socks5:&#x2F;&#x2F;127.0.0.1:1080&#39;    || ip和端口使用不同的代理软件可能会有不同<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="取消Git代理"><a href="#取消Git代理" class="headerlink" title="取消Git代理"></a>取消Git代理</h4><pre class="line-numbers language-Git" data-language="Git"><code class="language-Git">$ 
+<p>取消Git代理：</p>
+<pre class="line-numbers language-Git" data-language="Git"><code class="language-Git">$ 
 git config --global --unset http.proxy
 git config --global --unset https.proxy<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h3 id="Gitee（码云）的免密码登录（SSH公钥）"><a href="#Gitee（码云）的免密码登录（SSH公钥）" class="headerlink" title="Gitee（码云）的免密码登录（SSH公钥）"></a>Gitee（码云）的免密码登录（SSH公钥）</h3><p>进入目录 C:\Users\猫会飞.ssh<br>右击 使用Git 输入命令 ssh-keygen（生成公钥） -t rsa（使用加密）<br>此时会生成两个文件，id_rsa.pub 和 id_rsa 一个是公有一个是私有<br>登录Gitee，设置——SSH公钥——填写文件 id_rsa.pub 里的密钥——确认保存</p>
-]]></content>
+
+<h3 id="Git配置文件路径"><a href="#Git配置文件路径" class="headerlink" title="Git配置文件路径"></a>Git配置文件路径</h3><h4 id="Git配置文件"><a href="#Git配置文件" class="headerlink" title="Git配置文件:"></a>Git配置文件:</h4><p>GIt安装目录下的etc文件夹里的 gitconfig 文件。路径：F:\Git\etc\gitconfig<br>内容：</p>
+<pre class="line-numbers language-Git" data-language="Git"><code class="language-Git">$ 
+[diff &quot;astextplain&quot;]
+  textconv &#x3D; astextplain
+[filter &quot;lfs&quot;]
+  clean &#x3D; git-lfs clean -- %f
+  smudge &#x3D; git-lfs smudge -- %f
+  process &#x3D; git-lfs filter-process
+  required &#x3D; true
+[http]
+  sslBackend &#x3D; openssl
+  sslCAInfo &#x3D; F:&#x2F;Git&#x2F;mingw64&#x2F;ssl&#x2F;certs&#x2F;ca-bundle.crt
+[core]
+  autocrlf &#x3D; true
+  fscache &#x3D; true
+  symlinks &#x3D; true
+[pull]
+  rebase &#x3D; false
+[credential]
+  helper &#x3D; manager-core
+[credential &quot;https:&#x2F;&#x2F;dev.azure.com&quot;]
+  useHttpPath &#x3D; true
+[init]
+  defaultBranch &#x3D; master
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="全局配置文件："><a href="#全局配置文件：" class="headerlink" title="全局配置文件："></a>全局配置文件：</h4><p>C盘用户目录下的.gitconfig 文件。路径：C:\Users\猫会飞.gitconfig<br>内容：</p>
+<pre class="line-numbers language-Git" data-language="Git"><code class="language-Git">$ 
+[user]&#x2F;&#x2F;提交邮箱和用户名
+  email &#x3D; 991270685@qq.com
+  name &#x3D; maohuifei
+[init]&#x2F;&#x2F;
+  defaultBranch &#x3D; main
+[https]&#x2F;&#x2F;代理相关设置
+  proxy &#x3D; http:&#x2F;&#x2F;192.168.43.1:10809<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="新建的-git配置文件"><a href="#新建的-git配置文件" class="headerlink" title="新建的.git配置文件"></a>新建的.git配置文件</h4><p>执行git into后，工作文件内生成的的隐藏文件。路径：git-project\test.git\config<br>内容：</p>
+<pre class="line-numbers language-Git" data-language="Git"><code class="language-Git">$ 
+[core]
+  repositoryformatversion &#x3D; 0
+  filemode &#x3D; false
+  bare &#x3D; false
+  logallrefupdates &#x3D; true
+  ignorecase &#x3D; true
+[remote &quot;origin&quot;]     &#x2F;&#x2F;如果提交远程库要求反复输密码，可尝试把url链接改为远程库的SSH链接
+  url &#x3D; https:&#x2F;&#x2F;gitee.com&#x2F;maohuifei&#x2F;test.git
+  fetch &#x3D; +refs&#x2F;heads&#x2F;*:refs&#x2F;remotes&#x2F;origin&#x2F;*
+[branch &quot;master&quot;]    &#x2F;&#x2F;分支相关信息
+  remote &#x3D; origin
+  merge &#x3D; refs&#x2F;heads&#x2F;master
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
       <categories>
         <category>学习笔记</category>
       </categories>
@@ -203,16 +266,29 @@ div &#123;
 <ul>
 <li>如果块元素没有设置宽度，默认和父级相同，<b>添加浮动后，宽度由内容决定。</b></li>
 <li>浮动的盒子中间是没有缝隙的，紧挨着的</li>
-<li>行内元素同理<h2 id="浮动元素经常和标准流父级搭配使用"><a href="#浮动元素经常和标准流父级搭配使用" class="headerlink" title="浮动元素经常和标准流父级搭配使用"></a>浮动元素经常和标准流父级搭配使用</h2><b>先用标准流的父元素排列上下位置，之后内部子元素采取浮动排列左右位置</b>，符合网页布局第一准则。</li>
+<li>行内元素同理</li>
+</ul>
+<h2 id="浮动元素经常和标准流父级搭配使用"><a href="#浮动元素经常和标准流父级搭配使用" class="headerlink" title="浮动元素经常和标准流父级搭配使用"></a>浮动元素经常和标准流父级搭配使用</h2><p><b>先用标准流的父元素排列上下位置，之后内部子元素采取浮动排列左右位置</b>，符合网页布局第一准则。</p>
+<ul>
 <li>浮动如果一个元素浮动了。理论上来讲其余的兄弟元素也要浮动。</li>
-<li>浮动的盒子只会影响它后面的标准流，不会影响前面的标准流。<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2>一个盒子里面有多个盒子，其中一个盒子浮动了，理论上其他兄弟也要跟着浮动，以防出现问题<br>浮动的盒子只会影响浮动盒子后面的标准流，不会影响前面的标准流<h2 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h2><h3 id="为什么要清除浮动"><a href="#为什么要清除浮动" class="headerlink" title="为什么要清除浮动"></a>为什么要清除浮动</h3>由于父级盒子在很多情况下，不方便给高度，但是盒子浮动后不占位置，浮动后父盒子的高度会变成0，影响夏哥哥标准流盒子<br><img src="/2021/08/03/CSS%E4%BC%A0%E7%BB%9F%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80%E4%B9%8B%E6%B5%AE%E5%8A%A8/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8.jpg"><h3 id="清除浮动的本质"><a href="#清除浮动的本质" class="headerlink" title="清除浮动的本质"></a>清除浮动的本质</h3></li>
+<li>浮动的盒子只会影响它后面的标准流，不会影响前面的标准流。</li>
+</ul>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>一个盒子里面有多个盒子，其中一个盒子浮动了，理论上其他兄弟也要跟着浮动，以防出现问题<br>浮动的盒子只会影响浮动盒子后面的标准流，不会影响前面的标准流</p>
+<h2 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h2><h3 id="为什么要清除浮动"><a href="#为什么要清除浮动" class="headerlink" title="为什么要清除浮动"></a>为什么要清除浮动</h3><p>由于父级盒子在很多情况下，不方便给高度，但是盒子浮动后不占位置，浮动后父盒子的高度会变成0，影响夏哥哥标准流盒子<br><img src="/2021/08/03/CSS%E4%BC%A0%E7%BB%9F%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80%E4%B9%8B%E6%B5%AE%E5%8A%A8/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8.jpg"></p>
+<h3 id="清除浮动的本质"><a href="#清除浮动的本质" class="headerlink" title="清除浮动的本质"></a>清除浮动的本质</h3><ul>
 <li>清除浮动的本质是清除元素浮动后造成的影响</li>
 <li>如果父元素本身有高度，则不需要清除浮动</li>
-<li>清除浮动之后，父级就会根据浮动的子级盒子自动检测高度，父级有高度之后就不会影响下面的标准流盒子了<h3 id="语法规范"><a href="#语法规范" class="headerlink" title="语法规范"></a>语法规范</h3><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+<li>清除浮动之后，父级就会根据浮动的子级盒子自动检测高度，父级有高度之后就不会影响下面的标准流盒子了</li>
+</ul>
+<h3 id="语法规范"><a href="#语法规范" class="headerlink" title="语法规范"></a>语法规范</h3><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
 div &#123;
   clear:both;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<img src="/2021/08/03/CSS%E4%BC%A0%E7%BB%9F%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80%E4%B9%8B%E6%B5%AE%E5%8A%A8/clear%E5%B1%9E%E6%80%A7%E5%80%BC.jpg"><br>实际工作中一般只用 both<br>清除浮动的策略是 <b>闭合浮动</b><h3 id="清除浮动的方法"><a href="#清除浮动的方法" class="headerlink" title="清除浮动的方法"></a>清除浮动的方法</h3><h4 id="额外标签法（隔墙法），W3C推荐做法"><a href="#额外标签法（隔墙法），W3C推荐做法" class="headerlink" title="额外标签法（隔墙法），W3C推荐做法"></a>额外标签法（隔墙法），W3C推荐做法</h4>在最后一个浮动元素后面加一个空标签，例如div或其他标签（必须是块元素，不能是行内元素）<br>再新建一个css属性为 clear:both; 并调用<br><b>优点：通俗易懂，书写方便<br>缺点：添加无意义标签，结构性差（乱）</b><h4 id="父级添加overflow-属性"><a href="#父级添加overflow-属性" class="headerlink" title="父级添加overflow 属性"></a>父级添加overflow 属性</h4>给父级添加 overflow属性，值为 hidden、auto、scroll<br><b>优点：代码简洁<br>缺点：无法显示溢出部分</b><h4 id="父级添加after伪元素"><a href="#父级添加after伪元素" class="headerlink" title="父级添加after伪元素"></a>父级添加after伪元素</h4>额外标签法的升级版，给父元素添加 clearfix 值为：<pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+<p><img src="/2021/08/03/CSS%E4%BC%A0%E7%BB%9F%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80%E4%B9%8B%E6%B5%AE%E5%8A%A8/clear%E5%B1%9E%E6%80%A7%E5%80%BC.jpg"><br>实际工作中一般只用 both<br>清除浮动的策略是 <b>闭合浮动</b></p>
+<h3 id="清除浮动的方法"><a href="#清除浮动的方法" class="headerlink" title="清除浮动的方法"></a>清除浮动的方法</h3><h4 id="额外标签法（隔墙法），W3C推荐做法"><a href="#额外标签法（隔墙法），W3C推荐做法" class="headerlink" title="额外标签法（隔墙法），W3C推荐做法"></a>额外标签法（隔墙法），W3C推荐做法</h4><p>在最后一个浮动元素后面加一个空标签，例如div或其他标签（必须是块元素，不能是行内元素）<br>再新建一个css属性为 clear:both; 并调用<br><b>优点：通俗易懂，书写方便<br>缺点：添加无意义标签，结构性差（乱）</b></p>
+<h4 id="父级添加overflow-属性"><a href="#父级添加overflow-属性" class="headerlink" title="父级添加overflow 属性"></a>父级添加overflow 属性</h4><p>给父级添加 overflow属性，值为 hidden、auto、scroll<br><b>优点：代码简洁<br>缺点：无法显示溢出部分</b></p>
+<h4 id="父级添加after伪元素"><a href="#父级添加after伪元素" class="headerlink" title="父级添加after伪元素"></a>父级添加after伪元素</h4><p>额外标签法的升级版，给父元素添加 clearfix 值为：</p>
+<pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
 .clearfix:after &#123;
   conter: &quot;&quot;;
   display: block;
@@ -223,7 +299,9 @@ div &#123;
 .clearfix &#123;
   *zoom: 1;      || IE6.7专有
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<b>优点：结构简单<br>缺点：照顾低版本浏览器</b><h4 id="父级添加双伪元素"><a href="#父级添加双伪元素" class="headerlink" title="父级添加双伪元素"></a>父级添加双伪元素</h4>额外标签法的升级版的升级版，after是在浮动元素后面加一堵墙，before是在前面加一堵墙，使之完全闭合<pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+<p><b>优点：结构简单<br>缺点：照顾低版本浏览器</b></p>
+<h4 id="父级添加双伪元素"><a href="#父级添加双伪元素" class="headerlink" title="父级添加双伪元素"></a>父级添加双伪元素</h4><p>额外标签法的升级版的升级版，after是在浮动元素后面加一堵墙，before是在前面加一堵墙，使之完全闭合</p>
+<pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
 clearfix:before,.clearfix:after &#123;
   conter: &quot;&quot;;
   display: table;
@@ -234,8 +312,7 @@ clear:after &#123;
 .clearfix &#123;
   *zoom: 1;      || IE6.7专有
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<b>优点：代码更简洁<br>缺点：照顾低版本浏览器</b></li>
-</ul>
+<p><b>优点：代码更简洁<br>缺点：照顾低版本浏览器</b></p>
 ]]></content>
       <categories>
         <category>学习笔记</category>
@@ -563,14 +640,14 @@ list-style：none<span aria-hidden="true" class="line-numbers-rows"><span></span
 <li>CSS 描述了网页的布局</li>
 <li>JavaScript 控制了网页的行为</li>
 </ul>
-<p><b>本文参考：</b><br>官方文档：<a href="https://www.javascript.com/learn/strings">https://www.javascript.com/learn/strings</a><br>菜鸟教程——JavaScript教程：<a href="https://www.runoob.com/js/js-tutorial.html">https://www.runoob.com/js/js-tutorial.html</a><br>黑马pink老师avaScript基础语法-dom-bom-js-es6新语法-jQuery-数据可视化echarts：<a href="https://www.bilibili.com/video/BV1Sy4y1C7ha">https://www.bilibili.com/video/BV1Sy4y1C7ha</a></p>
+<p><b>本文参考：</b><br>官方文档：<a href="https://www.javascript.com/learn/strings">https://www.javascript.com/learn/strings</a><br>菜鸟教程——JavaScript教程：<a href="https://www.runoob.com/js/js-tutorial.html">https://www.runoob.com/js/js-tutorial.html</a><br>现代JavaScript教程：<a href="https://zh.javascript.info/variables">https://zh.javascript.info/variables</a><br>黑马pink老师avaScript基础语法-dom-bom-js-es6新语法-jQuery-数据可视化echarts：<a href="https://www.bilibili.com/video/BV1Sy4y1C7ha">https://www.bilibili.com/video/BV1Sy4y1C7ha</a></p>
 <h2 id="什么是JavaScript？"><a href="#什么是JavaScript？" class="headerlink" title="什么是JavaScript？"></a>什么是JavaScript？</h2><ul>
 <li>JavaScript 是最流行的语言之一。</li>
 <li>JavaScript 是属于 web 的语言，它适用于 PC、笔记本电脑、平板电脑和移动电话。</li>
 <li>JavaScript可以使您的网站更具活力。</li>
 <li>许多 HTML 开发者都不是程序员，但是 JavaScript 却拥有非常简单的语法。几乎每个人都有能力将小的 JavaScript 片段添加到网页中。</li>
 </ul>
-<h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><h3 id="书写位置（引用）"><a href="#书写位置（引用）" class="headerlink" title="书写位置（引用）"></a>书写位置（引用）</h3><ul>
+<h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><h3 id="代码结构"><a href="#代码结构" class="headerlink" title="代码结构"></a>代码结构</h3><h4 id="书写位置（引用）"><a href="#书写位置（引用）" class="headerlink" title="书写位置（引用）"></a>书写位置（引用）</h4><ul>
 <li><p>行内：直接写到元素内部。不推荐，特殊情况下才会使用</p>
 <pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">$ 
 &lt;body&gt;
@@ -589,11 +666,11 @@ alert(&quot;我的第一个 JavaScript&quot;);
 &lt;script src&#x3D;&quot;my.js&quot;&gt;&lt;&#x2F;script&gt;
 &lt;&#x2F;head&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
-<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">$ 
+<h4 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h4><pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">$ 
 &#x2F;&#x2F;单行注释
 &#x2F;*多行注释*&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="输入输出"><a href="#输入输出" class="headerlink" title="输入输出"></a>输入输出</h3><pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">$ 
+<h4 id="交互（弹出框）"><a href="#交互（弹出框）" class="headerlink" title="交互（弹出框）"></a>交互（弹出框）</h4><h5 id="输入输出"><a href="#输入输出" class="headerlink" title="输入输出"></a>输入输出</h5><pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">$ 
 &lt;script&gt;
 &#x2F;&#x2F;输入框
 prompt(&#39;请输入你的年龄&#39;);
@@ -603,8 +680,215 @@ alert(&#39;欢迎 猫会飞呀&#39;);
 console.log(&#39;开发人员，你好&#39;);
 
 &lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="alert"><a href="#alert" class="headerlink" title="alert"></a>alert</h5><p>会显示一条信息，并等待用户按下 “OK”</p>
+<pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">$ 
+&lt;script&gt;
+alert(&#39;欢迎 猫会飞呀&#39;);
+&lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>弹出的这个带有信息的小窗口被称为 模态窗“modal” 意味着用户不能与页面的其他部分（例如点击其他按钮等）进行交互，直到他们处理完窗口。在上面示例这种情况下 —— 直到用户点击“确定”按钮</p>
+<h5 id="prompt"><a href="#prompt" class="headerlink" title="prompt"></a>prompt</h5><p>浏览器会显示一个带有文本消息的模态窗口，还有 input 框和确定/取消按钮。</p>
+<pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">$ 
+&lt;script&gt;
+name&#x3D;prompt(&#39;请输入昵称&#39;, default);
+&lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>显示给用户的文本</li>
+<li>default：可选的第二个参数，指定 input 框的初始值</li>
+</ul>
+<p>访问者可以在提示输入栏中输入一些内容，然后按“确定”键。然后我们在 name 中获取该文本（赋值给name）<br>或者他们可以按取消键或按 Esc 键取消输入，然后我们得到 null 作为 name</p>
+<h5 id="confirm"><a href="#confirm" class="headerlink" title="confirm"></a>confirm</h5><pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">$ 
+&lt;script&gt;
+a &#x3D; confirm(&#39;是否XXX XXX&#39;);
+&lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>显示一个带有“是否XXX XXX”以及确定和取消两个按钮的模态窗口<br>点击确定返回 true，点击取消返回 false</p>
+<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><p>用来存放东西的盒子，将变量想象成一个“数据”的盒子，盒子上有一个唯一的标注盒子名字的贴纸<br>程序在内存中申请的一块用来存放数据的空间</p>
+<h4 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h4><pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">$ 
+&lt;script&gt;
+let name；       ||声明了一个名字是name的变量
+name&#x3D;&#39;Hello&#39;;    ||给name赋值，保存字符串
+alert(&#39;name&#39;);   ||调用了name，显示变量内容
+&#x2F;*简写*&#x2F;
+let name&#x3D;&#39;Hello&#39;;
+alert(&#39;name&#39;);
+&#x2F;*一行中声明多个变量,用逗号分开*&#x2F;
+let a&#x3D;&#39;001&#39;,b&#x3D;&#39;002&#39;,c&#x3D;&#39;003&#39;;
+&#x2F;*优化可读性，分行写*&#x2F;
+let a&#x3D;&#39;001&#39;；|| let a&#x3D;&#39;001&#39;,
+let b&#x3D;&#39;002&#39;；|| b&#x3D;&#39;002&#39;,
+let c&#x3D;&#39;003&#39;；|| c&#x3D;&#39;003&#39;;
+&#x2F;*数值覆盖*&#x2F;
+a&#x3D;b;c&#x3D;b;b&#x3D;a;
+&lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="命名规范"><a href="#命名规范" class="headerlink" title="命名规范"></a>命名规范</h4><ol>
+<li>变量名称必须仅包含字母，数字，符号 $ 和 _。</li>
+<li>首字符必须非数字。</li>
+<li>区分大小写</li>
+<li>允许任何语言，但不推荐</li>
+<li>不能使用保留字</li>
+</ol>
+<h4 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h4><h5 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h5><p>声明一个常数（不变）变量，可以使用 const 而非 let：</p>
+<pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">$ 
+&lt;script&gt;
+const a &#x3D; &#39;001&#39;;
+&lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>使用 const 声明的变量称为“常量”。它们不能被修改，如果你尝试修改就会发现报错：</p>
+<pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">$ 
+&lt;script&gt;
+const my &#x3D; &#39;001&#39;;
+my &#x3D; &#39;002&#39;; &#x2F;&#x2F; 错误，不能对常量重新赋值
+&lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h5><p>一个普遍的做法是将常量用作别名，以便记住那些在执行之前就已知的难以记住的值。<br>使用大写字母和下划线来命名这些常量。<br>例如，让我们以所谓的“web”（十六进制）格式为颜色声明常量：</p>
+<pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">$ 
+&lt;script&gt;
+const COLOR_RED &#x3D; &quot;#F00&quot;;
+const COLOR_GREEN &#x3D; &quot;#0F0&quot;;
+const COLOR_BLUE &#x3D; &quot;#00F&quot;;
+const COLOR_ORANGE &#x3D; &quot;#FF7F00&quot;;
 
-<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><h3 id="控制流程"><a href="#控制流程" class="headerlink" title="控制流程"></a>控制流程</h3><h3 id="内置对象"><a href="#内置对象" class="headerlink" title="内置对象"></a>内置对象</h3><h2 id="DOM-文档对象模型"><a href="#DOM-文档对象模型" class="headerlink" title="DOM (文档对象模型)"></a>DOM (文档对象模型)</h2><p>W3C推荐的处理可扩展标记语言的<b>标准编程接口</b>。<br>通过DOM提供的接口，可以对页面上的各种元素进行操作（大小位置颜色等）</p>
+&#x2F;&#x2F; ……当我们需要选择一个颜色
+let color &#x3D; COLOR_ORANGE;
+alert(color); &#x2F;&#x2F; #FF7F00
+&lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><b>好处：</b></p>
+<ul>
+<li>COLOR_ORANGE 比 “#FF7F00” 更容易记忆。</li>
+<li>比起 COLOR_ORANGE 而言，”#FF7F00” 更容易输错。</li>
+<li>阅读代码时，COLOR_ORANGE 比 #FF7F00 更易懂。</li>
+</ul>
+<p>什么时候该为常量使用大写命名，什么时候进行常规命名？让我们弄清楚一点。<br>作为一个“常数”，意味着值永远不变。但是有些常量在执行之前就已知了（比如红色的十六进制值），还有些在执行期间被“计算”出来，但初始赋值之后就不会改变。</p>
+<h4 id="正确命名变量"><a href="#正确命名变量" class="headerlink" title="正确命名变量"></a>正确命名变量</h4><p>一个变量名应该有一个清晰、明显的含义，对其存储的数据进行描述。<br>变量命名是编程过程中最重要且最复杂的技能之一。快速地浏览变量的命名就知道代码是一个初学者还是有经验的开发者写的。<br>在一个实际项目中，大多数的时间都被用来修改和扩展现有的代码库，而不是从头开始写一些完全独立的代码。当一段时间后，我们做完其他事情，重新回到我们的代码，找到命名良好的信息要容易得多。换句话说，变量要有个好名字。<br><b>声明变量之前，多花点时间思考它的更好的命名。你会受益良多。</b><br><b>一些可以遵循的规则：</b></p>
+<ul>
+<li>使用易读的命名，比如 userName 或者 shoppingCart。</li>
+<li>离诸如 a、b、c 这种缩写和短名称远一点，除非你真的知道你在干什么。</li>
+<li>变量名在能够准确描述变量的同时要足够简洁。不好的例子就是data和value，这样的名称等于什么都没说。如果能够非常明显地从上下文知道数据和值所表达的含义，这样使用它们也是可以的。</li>
+<li>脑海中的术语要和团队保持一致。如果网站的访客称为“用户”，则我们采用相关的变量命名，比如 currentUser 或者 newUser，而不要使用 currentVisitor 或者一个 newManInTown。</li>
+</ul>
+<h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><h4 id="Number-类型（整数、浮点数）"><a href="#Number-类型（整数、浮点数）" class="headerlink" title="Number 类型（整数、浮点数）"></a>Number 类型（整数、浮点数）</h4><p>number 类型代表整数和浮点数。<br>数字可以有很多操作，加减乘除等<br>除了常规的数字，还包括所谓的“特殊数值”也属于这种类型：Infinity、-Infinity 和 NaN。</p>
+<ul>
+<li>Infinity：代表数学概念中的 无穷大 ∞。是一个比任何数字都大的特殊值。<pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">$ 
+&lt;script&gt;
+&#x2F;&#x2F;我们可以通过除以 0 来得到它：
+alert(1&#x2F;0);
+&#x2F;&#x2F;或者在代码中直接使用它：
+alert(Infinity);
+&lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>-Infinity：</li>
+<li>NaN： 代表一个计算错误。它是一个不正确的或者一个未定义的数学操作所得到的结果，比如：<pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">$ 
+&lt;script&gt;
+alert( &quot;not a number&quot; &#x2F; 2 ); &#x2F;&#x2F; NaN，这样的除法是错误的
+&lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+NaN 是粘性的。任何对 NaN 的进一步操作都会返回 NaN：<pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">$ 
+&lt;script&gt;
+alert( &quot;not a number&quot; &#x2F; 2 + 5 ); &#x2F;&#x2F; NaN
+&#x2F;&#x2F;所以，如果在数学表达式中有一个 NaN，会被传播到最终结果。
+&lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+PS：在 JavaScript 中做数学运算是安全的。<br>我们可以做任何事：除以 0，将非数字字符串视为数字等等。<br>脚本永远不会因为一个致命的错误而停止。<br>最坏的情况下，我们会得到 NaN 的结果。</li>
+</ul>
+<h4 id="BigInt-类型（长整数）"><a href="#BigInt-类型（长整数）" class="headerlink" title="BigInt 类型（长整数）"></a>BigInt 类型（长整数）</h4><p>在JS中，“number” 类型无法表示大于 (253-1)（即 9007199254740991），或小于 -(253-1) 的整数。这是其内部表示形式导致的技术限制。<br>在大多数情况下，这个范围就足够了，但有时我们需要很大的数字，例如用于加密或微秒精度的时间戳。<br>BigInt 类型是最近被添加到JS语言中的，用于表示任意长度的整数。<br>可以通过将 n 附加到整数字段的末尾来创建 BigInt 值。</p>
+<pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">$ 
+&lt;script&gt;
+&#x2F;&#x2F; 尾部的 &quot;n&quot; 表示这是一个 BigInt 类型
+const bigInt &#x3D; 1234567890123456789012345678901234567890n;
+&lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>实际应用中很少，某些版本浏览器不兼容</p>
+<h4 id="String-类型（字符串）"><a href="#String-类型（字符串）" class="headerlink" title="String 类型（字符串）"></a>String 类型（字符串）</h4><p>字符串必须被括在引号里<br>在JS中，有三种包含字符串的方式:</p>
+<ul>
+<li>双引号：”Hello”;</li>
+<li>单引号：’Hello’;</li>
+<li>反引号：<code>Hello</code>;</li>
+</ul>
+<p>双引号和单引号都是“简单”引用，在 JavaScript 中两者几乎没有什么差别<br>反引号是<b>功能扩展</b> 引号。它们允许我们通过将变量和表达式包装在 ${…} 中，来将它们嵌入到字符串中。例如：</p>
+<pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">$ 
+&lt;script&gt;
+let name&#x3D;jiang;
+alert(&#96;hello,$&#123;name&#125;&#96;);&#x2F;&#x2F;输出：hello，jiang
+alert(&#96;hello,$&#123;200+50&#125;&#96;)&#x2F;&#x2F;输出：hello，250
+&lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>${…} 内的表达式会被计算，计算结果会成为字符串的一部分。可以在 ${…} 内放置任何东西：<br>诸如名为 name 的<b>变量</b>，或者诸如 1 + 2 的<b>算数表达式</b>，或者其他一些更复杂的<br>这仅仅在反引号内有效，其他引号不允许这种嵌入</p>
+<h4 id="Boolean-类型（逻辑类型、true-false）"><a href="#Boolean-类型（逻辑类型、true-false）" class="headerlink" title="Boolean 类型（逻辑类型、true/false）"></a>Boolean 类型（逻辑类型、true/false）</h4><p>boolean 类型仅包含两个值：true 和 false<br>这种类型通常用于存储表示 yes 或 no 的值：true 意味着 “yes，正确”，false 意味着 “no，不正确”</p>
+<pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">$ 
+&lt;script&gt;
+let a&#x3D;true;
+let b&#x3D;false;
+&#x2F;&#x2F;也可作为比较的结果
+let c&#x3D;4&gt;1;
+alert(&#39;c&#39;);&#x2F;&#x2F;输出false
+&lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="“null”-值（无、空、值未知）"><a href="#“null”-值（无、空、值未知）" class="headerlink" title="“null” 值（无、空、值未知）"></a>“null” 值（无、空、值未知）</h4><p>特殊的 null 值不属于上述任何一种类型。<br>它构成了一个独立的类型，只包含 null 值：</p>
+<pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">$ 
+&lt;script&gt;
+let a&#x3D;null;&#x2F;&#x2F;表示 a 是未知的
+&lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>相比较于其他编程语言，JavaScript 中的 null <b>不是</b>一个“对不存在的 object 的引用”或者 “null 指针”<br>JavaScript 中的 null 仅仅是一个代表<b>“无”、“空”或“值未知”的特殊值</b></p>
+<h4 id="“undefined”-值-未被赋值"><a href="#“undefined”-值-未被赋值" class="headerlink" title="“undefined” 值(未被赋值)"></a>“undefined” 值(未被赋值)</h4><p>undefined 的含义是 未被赋值<br>如果一个变量已被声明，但未被赋值，那么它的值就是 undefined：</p>
+<pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">$ 
+&lt;script&gt;
+let a;
+alert(a);&#x2F;&#x2F;输出undefined
+&lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>可赋值给变量，但是不建议这样做。<br>通常，使用 null 将一个“空”或者“未知”的值写入变量中，而 undefined 则保留作为未进行初始化的事物的默认初始值。</p>
+<h4 id="object-类型和symbol-类型"><a href="#object-类型和symbol-类型" class="headerlink" title="object 类型和symbol 类型"></a>object 类型和symbol 类型</h4><p>object 类型是一个特殊的类型<br>其他所有的数据类型都被称为“原始类型”，因为它们的值只包含一个单独的内容（字符串、数字或者其他）。<br>相反，object 则用于储存数据集合和更复杂的实体。<br>symbol 类型用于创建对象的唯一标识符。<br>学到后面会细说</p>
+<h4 id="typeof-运算符（返回参数的类型）"><a href="#typeof-运算符（返回参数的类型）" class="headerlink" title="typeof 运算符（返回参数的类型）"></a>typeof 运算符（返回参数的类型）</h4><p>判断值的数据类型并以字符串的形式输出<br>typeof 运算符返回参数的类型。当我们想要分别处理不同类型值的时候，或者想快速进行数据类型检验时，非常有用。<br>它支持两种语法形式：</p>
+<ul>
+<li>作为运算符：typeof a;</li>
+<li>函数形式：typeof(a);</li>
+</ul>
+<pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">$ 
+&lt;script&gt;
+typeof undefined &#x2F;&#x2F; &quot;undefined&quot;
+typeof 0 &#x2F;&#x2F; &quot;number&quot;
+typeof 10n &#x2F;&#x2F; &quot;bigint&quot;
+typeof true &#x2F;&#x2F; &quot;boolean&quot;
+typeof &quot;foo&quot; &#x2F;&#x2F; &quot;string
+typeof Symbol(&quot;id&quot;) &#x2F;&#x2F; &quot;symbol&quot;
+typeof Math &#x2F;&#x2F; &quot;object&quot;  （1）
+typeof null &#x2F;&#x2F; &quot;object&quot;  （2）
+typeof alert &#x2F;&#x2F; &quot;function&quot;  （3）
+&lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol>
+<li>Math 是一个提供数学运算的内建 object，后面细说</li>
+<li>typeof null 的结果是 “object”。这是官方承认的 typeof 的行为上的错误，这个问题来自于 JavaScript 语言的早期，并为了兼容性而保留了下来。null 绝对不是一个 object。null 有自己的类型，它是一个特殊值。</li>
+<li>typeof alert 的结果是 “function”，因为 alert 在 JavaScript 语言中是一个函数。我们会在下一章学习函数，那时我们会了解到，在 JavaScript 语言中没有一个特别的 “function” 类型。函数隶属于 object 类型。但是 typeof 会对函数区分对待，并返回 “function”。这也是来自于 JavaScript 语言早期的问题。从技术上讲，这种行为是不正确的，但在实际编程中却非常方便。</li>
+</ol>
+<h4 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h4><p>大多数情况下，运算符和函数会自动将赋予它们的值转换为正确的类型。<br>比如，alert 会自动将任何值都转换为字符串以进行显示。算术运算符会将值转换为数字。<br>在某些情况下，我们需要将值显式地转换为我们期望的类型。</p>
+<h5 id="字符串转换-String-a"><a href="#字符串转换-String-a" class="headerlink" title="字符串转换 String(a)"></a>字符串转换 String(a)</h5><p>alert(value) 将 value 转换为字符串类型，然后显示这个值<br>我们也可以显式地调用 String(value) 来将 value 转换为字符串类型：</p>
+<pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">$ 
+&lt;script&gt;
+let name &#x3D; true;
+alert(typeof name);&#x2F;&#x2F;输出Booleam
+name &#x3D; String(name);&#x2F;&#x2F;现在，值是字符串形式的true
+alert(typeof name);&#x2F;&#x2F;输出string
+&lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="数字型转换-number-a"><a href="#数字型转换-number-a" class="headerlink" title="数字型转换 number(a)"></a>数字型转换 number(a)</h5><p>在算术函数和表达式中，会自动进行 number 类型转换。<br>比如，当把除法 / 用于非 number 类型：</p>
+<pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">$ 
+&lt;script&gt;
+alert( &quot;6&quot; &#x2F; &quot;2&quot; ); &#x2F;&#x2F; 3, string 类型的值被自动转换成 number 类型后进行计算
+&lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>我们也可以使用 Number(value) 显式地将这个 value 转换为 number 类型<br><b>转换规则:</b><br><img src="/2021/06/04/%E3%80%90%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1%E3%80%91JavaScript%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E5%AD%97%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E8%A7%84%E5%88%99.jpg"></p>
+<pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">$ 
+&lt;script&gt;
+alert( Number(&quot;   123   &quot;) ); &#x2F;&#x2F; 123
+alert( Number(&quot;123z&quot;) );      &#x2F;&#x2F; NaN（从字符串“读取”数字，读到 &quot;z&quot; 时出现错误）
+alert( Number(true) );        &#x2F;&#x2F; 1
+alert( Number(false) );       &#x2F;&#x2F; 0
+&lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="布尔型转换-Boolean-a"><a href="#布尔型转换-Boolean-a" class="headerlink" title="布尔型转换 Boolean(a)"></a>布尔型转换 Boolean(a)</h5><p>它发生在逻辑运算中（之后我们将进行条件判断和其他类似的东西），但是也可以通过调用 Boolean(a) 显式地进行转换<br><b>转换规则如下：</b></p>
+<ul>
+<li>直观上为“空”的值（如 0、空字符串、null、undefined 和 NaN）将变为 false。</li>
+<li>其他值变成 true。</li>
+</ul>
+<pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">$ 
+&lt;script&gt;
+alert( Boolean(1) ); &#x2F;&#x2F; true
+alert( Boolean(0) ); &#x2F;&#x2F; false
+alert( Boolean(&quot;hello&quot;) ); &#x2F;&#x2F; true
+alert( Boolean(&quot;&quot;) ); &#x2F;&#x2F; false
+&lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="流程控制"><a href="#流程控制" class="headerlink" title="流程控制"></a>流程控制</h3><h3 id="内置对象"><a href="#内置对象" class="headerlink" title="内置对象"></a>内置对象</h3><h2 id="DOM-文档对象模型"><a href="#DOM-文档对象模型" class="headerlink" title="DOM (文档对象模型)"></a>DOM (文档对象模型)</h2><p>W3C推荐的处理可扩展标记语言的<b>标准编程接口</b>。<br>通过DOM提供的接口，可以对页面上的各种元素进行操作（大小位置颜色等）</p>
 <h2 id="BOM-浏览器对象模型"><a href="#BOM-浏览器对象模型" class="headerlink" title="BOM (浏览器对象模型)"></a>BOM (浏览器对象模型)</h2><p>独立与内容的，可以与浏览器窗口进行互动的对象结构<br>可以操作浏览器窗口，如弹出框、浏览器跳转、获取分辨率等</p>
 <h2 id="接口请求-Ajax-Fetch"><a href="#接口请求-Ajax-Fetch" class="headerlink" title="接口请求 Ajax/Fetch"></a>接口请求 Ajax/Fetch</h2><h2 id="ES6"><a href="#ES6" class="headerlink" title="ES6+"></a>ES6+</h2>]]></content>
       <categories>
@@ -1060,12 +1344,12 @@ ul li
 <h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><p>img标签定义图像<br>常用属性：<br>1.src 为必须的属性表示图像<a herf="https://www.mhf.ink/2021/07/13/HTML%E7%9F%A5%E8%AF%86%E7%82%B9%E6%89%A9%E5%B1%95/" target="_blank">路径</a><br>2.alt 为当图片不显示时用文字替换<br>3.title 当鼠标指向时的提示文本<br>4.width/height 指定图片宽高，仅修改一个属性时自动调整比例<br>5.border 指定图片的边框粗细</p>
 <pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">$ 
 &lt;img src&#x3D;&quot;&#x2F;images&#x2F;logo.png&quot; alt&#x3D;&quot;图片001&quot; title&#x3D;&quot;提示文本&quot; width&#x3D;&quot;258&quot;  &#x2F;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h2 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h2><p>使用font-family（字体），color（颜色），和font-size（字体大小）属性来定义字体的样式</p>
+<h3 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h3><p>使用font-family（字体），color（颜色），和font-size（字体大小）属性来定义字体的样式</p>
 <pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">$ 
 &lt;h1 style&#x3D;&quot;font-family:arial;color:red;font-size:20px;&quot;&gt;一个标题&lt;&#x2F;h1&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">$ 
 &lt;!--注释文本--&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">$ 
+<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">$ 
 &lt;table border&#x3D;&quot;1&quot;&gt;      &lt;!--表框粗细--&gt;
 			&lt;tr&gt;
 				&lt;th&gt;表头1&lt;&#x2F;th&gt;
@@ -1082,20 +1366,20 @@ ul li
 				&lt;td&gt;内容5&lt;&#x2F;td&gt;
 				&lt;td&gt;内容6&lt;&#x2F;td&gt;
 			&lt;&#x2F;tr&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><p>HTML 支持有序、无序和定义列表</p>
-<h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><p>使用粗体圆圈进行标记<br>使用ul标签</p>
+<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><p>HTML 支持有序、无序和定义列表</p>
+<h4 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h4><p>使用粗体圆圈进行标记<br>使用ul标签</p>
 <pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">$ 
 &lt;ul&gt;
 &lt;li&gt;Coffee&lt;&#x2F;li&gt;
 &lt;li&gt;Milk&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h3><p>使用数字进行标记<br>使用ol标签</p>
+<h4 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h4><p>使用数字进行标记<br>使用ol标签</p>
 <pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">$ 
 &lt;ol&gt;
 &lt;li&gt;Coffee&lt;&#x2F;li&gt;
 &lt;li&gt;Milk&lt;&#x2F;li&gt;
 &lt;&#x2F;ol&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="自定义列表"><a href="#自定义列表" class="headerlink" title="自定义列表"></a>自定义列表</h3><p>使用自定义标记<br>使用dl标签，dt为列表项，dd为内容</p>
+<h4 id="自定义列表"><a href="#自定义列表" class="headerlink" title="自定义列表"></a>自定义列表</h4><p>使用自定义标记<br>使用dl标签，dt为列表项，dd为内容</p>
 <pre class="line-numbers language-none"><code class="language-none">$ 
 &lt;dl&gt;
 &lt;dt&gt;Coffee&lt;&#x2F;dt&gt;
@@ -1105,16 +1389,16 @@ ul li
 &lt;&#x2F;dl&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>列表项内部可以使用段落、换行符、图片、链接以及其他列表等等。</p>
-<h2 id="区块"><a href="#区块" class="headerlink" title="区块"></a>区块</h2><p>大多数 HTML 元素被定义为块级元素或内联元素。</p>
-<h3 id="块级元素"><a href="#块级元素" class="headerlink" title="块级元素"></a>块级元素</h3><pre class="line-numbers language-none"><code class="language-none">$ 
+<h3 id="区块"><a href="#区块" class="headerlink" title="区块"></a>区块</h3><p>大多数 HTML 元素被定义为块级元素或内联元素。</p>
+<h4 id="块级元素"><a href="#块级元素" class="headerlink" title="块级元素"></a>块级元素</h4><pre class="line-numbers language-none"><code class="language-none">$ 
 块级元素在浏览器显示时，通常会以新行来开始（和结束）。
 
 常用的块级元素: &lt;h1&gt;, &lt;p&gt;, &lt;ul&gt;, &lt;table&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="内联元素"><a href="#内联元素" class="headerlink" title="内联元素"></a>内联元素</h3><pre class="line-numbers language-none"><code class="language-none">$ 
+<h4 id="内联元素"><a href="#内联元素" class="headerlink" title="内联元素"></a>内联元素</h4><pre class="line-numbers language-none"><code class="language-none">$ 
 内联元素在显示时通常不会以新行开始。
 
 常用的内联元素: &lt;b&gt;, &lt;td&gt;, &lt;a&gt;, &lt;img&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="div元素"><a href="#div元素" class="headerlink" title="div元素"></a>div元素</h3><p>大盒子，占一整行</p>
+<h4 id="div元素"><a href="#div元素" class="headerlink" title="div元素"></a>div元素</h4><p>大盒子，占一整行</p>
 <pre class="line-numbers language-none"><code class="language-none">$ 
 &lt;div&gt; 元素是块级元素，是用于组合其他 HTML 元素的容器。
 
@@ -1124,7 +1408,7 @@ ul li
 
 &lt;div&gt; 元素的另一个常见的用途是文档布局。它取代了使用表格定义布局的老式方法。
 使用 &lt;table&gt; 元素进行文档布局不是表格的正确用法。&lt;table&gt; 元素的作用是显示表格化的数据。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="span元素"><a href="#span元素" class="headerlink" title="span元素"></a>span元素</h3><p>小盒子，一行可以有多个</p>
+<h4 id="span元素"><a href="#span元素" class="headerlink" title="span元素"></a>span元素</h4><p>小盒子，一行可以有多个</p>
 <pre class="line-numbers language-none"><code class="language-none">$ 
 &lt;span&gt; 元素是内联元素，可用作文本的容器
 
@@ -1132,15 +1416,15 @@ ul li
 
 当与 CSS 一同使用时，&lt;span&gt; 元素可用于为部分文本设置样式属性。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h2><p>大多数网站会把内容安排到多个列中（就像杂志或报纸那样）。<br>大多数网站可以使用 div 或者 table 元素来创建多列。<br>CSS 用于对元素进行定位，或者为页面创建背景以及色彩丰富的外观。</p>
-<h3 id="使用div元素布局"><a href="#使用div元素布局" class="headerlink" title="使用div元素布局"></a>使用div元素布局</h3><pre class="line-numbers language-none"><code class="language-none">$ 
+<h3 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h3><p>大多数网站会把内容安排到多个列中（就像杂志或报纸那样）。<br>大多数网站可以使用 div 或者 table 元素来创建多列。<br>CSS 用于对元素进行定位，或者为页面创建背景以及色彩丰富的外观。</p>
+<h4 id="使用div元素布局"><a href="#使用div元素布局" class="headerlink" title="使用div元素布局"></a>使用div元素布局</h4><pre class="line-numbers language-none"><code class="language-none">$ 
 &lt;div id&#x3D;&quot;menu&quot; style&#x3D;&quot;background-color:#FFD700;height:200px;width:100px;float:left;&quot;&gt;
 &lt;b&gt;菜单&lt;&#x2F;b&gt;&lt;br&gt;
 HTML&lt;br&gt;
 CSS&lt;br&gt;
 JavaScript
 &lt;&#x2F;div&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="使用table元素布局"><a href="#使用table元素布局" class="headerlink" title="使用table元素布局"></a>使用table元素布局</h3><p>下面的例子使用三行两列的表格 - 第一和最后一行使用 colspan 属性来横跨两列<br>实例摘自<a href="https://www.runoob.com/html/html-layouts.html">菜鸟教程</a></p>
+<h4 id="使用table元素布局"><a href="#使用table元素布局" class="headerlink" title="使用table元素布局"></a>使用table元素布局</h4><p>下面的例子使用三行两列的表格 - 第一和最后一行使用 colspan 属性来横跨两列<br>实例摘自<a href="https://www.runoob.com/html/html-layouts.html">菜鸟教程</a></p>
 <pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">$ 
 &lt;table width&#x3D;&quot;500&quot; border&#x3D;&quot;0&quot;&gt;
 &lt;tr&gt;
@@ -1165,63 +1449,63 @@ JavaScript
 版权 © runoob.com&lt;&#x2F;td&gt;
 &lt;&#x2F;tr&gt;
 &lt;&#x2F;table&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h2><p>表单是一个包含表单元素的区域，主要用来实现用户信息的搜集<br>表单元素是允许用户在表单中输入内容,<br>比如：文本域(textarea)、下拉列表、单选框(radio-buttons)、复选框(checkboxes)等等。<br>表单使用表单标签form来设置,form会把范围内的信息送到服务器<br><b>有三个重要属性：</b><br>1.action：url地址，用于接收表单所提交的信息的服务器url地址<br>2.method：提交方式，用于设置表单的提交方式，其取值为get或post<br>3.name：表单的名称，用来区分同界面中的多个表单域</p>
+<h3 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h3><p>表单是一个包含表单元素的区域，主要用来实现用户信息的搜集<br>表单元素是允许用户在表单中输入内容,<br>比如：文本域(textarea)、下拉列表、单选框(radio-buttons)、复选框(checkboxes)等等。<br>表单使用表单标签form来设置,form会把范围内的信息送到服务器<br><b>有三个重要属性：</b><br>1.action：url地址，用于接收表单所提交的信息的服务器url地址<br>2.method：提交方式，用于设置表单的提交方式，其取值为get或post<br>3.name：表单的名称，用来区分同界面中的多个表单域</p>
 <pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">$ 
 &lt;form action&#x3D;&quot;url地址&quot; method&#x3D;&quot;提交方式&quot; name&#x3D;&quot;表单名&quot;&gt;
 各种表单元素控件
 &lt;&#x2F;form&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="input输入表单元素"><a href="#input输入表单元素" class="headerlink" title="input输入表单元素"></a>input输入表单元素</h3><h4 id="文本框-type-”text”"><a href="#文本框-type-”text”" class="headerlink" title="文本框(type=”text”)"></a>文本框(type=”text”)</h4><p>文本框通过input type=”text”标签来设定，当用户要在表单中键入字母、数字等内容时，就会用到文本框。</p>
+<h4 id="input输入表单元素"><a href="#input输入表单元素" class="headerlink" title="input输入表单元素"></a>input输入表单元素</h4><h5 id="文本框-type-”text”"><a href="#文本框-type-”text”" class="headerlink" title="文本框(type=”text”)"></a>文本框(type=”text”)</h5><p>文本框通过input type=”text”标签来设定，当用户要在表单中键入字母、数字等内容时，就会用到文本框。</p>
 <pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">$ 
 &lt;form&gt;
 账号: &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;账号&quot;&gt;&lt;br&gt;
 密码: &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;密码&quot;&gt;
 &lt;&#x2F;form&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>PS:表单本身并不可见。同时，在大多数浏览器中，文本框的默认宽度是 20 个字符。</p>
-<h4 id="密码框-type-”password”"><a href="#密码框-type-”password”" class="headerlink" title="密码框(type=”password”)"></a>密码框(type=”password”)</h4><pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">$ 
+<h5 id="密码框-type-”password”"><a href="#密码框-type-”password”" class="headerlink" title="密码框(type=”password”)"></a>密码框(type=”password”)</h5><pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">$ 
 &lt;form&gt;
 密码： &lt;input type&#x3D;&quot;password&quot;&gt;
 &lt;&#x2F;form&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>PS:密码字段字符不会明文显示，而是以星号或圆点替代。</p>
-<h4 id="表单显示默认值-value-”请输入用户名”"><a href="#表单显示默认值-value-”请输入用户名”" class="headerlink" title="表单显示默认值(value=”请输入用户名”)"></a>表单显示默认值(value=”请输入用户名”)</h4><pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">$ 
+<h5 id="表单显示默认值-value-”请输入用户名”"><a href="#表单显示默认值-value-”请输入用户名”" class="headerlink" title="表单显示默认值(value=”请输入用户名”)"></a>表单显示默认值(value=”请输入用户名”)</h5><pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">$ 
 &lt;form&gt;
 账号： &lt;input type&#x3D;&quot;text&quot; value&#x3D;&quot;请输入用户名&quot;&gt;
 &lt;&#x2F;form&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>PS：给input添加maxiength，maxiength=”10”可以为规定输入字符的最大长度</p>
-<h4 id="圆形单选-多选按钮-type-”radio”"><a href="#圆形单选-多选按钮-type-”radio”" class="headerlink" title="圆形单选/多选按钮(type=”radio”)"></a>圆形单选/多选按钮(type=”radio”)</h4><p>input type=”radio”标签定义了表单单选框选项<br><b>name的值相同为单选，值不同为多选</b></p>
+<h5 id="圆形单选-多选按钮-type-”radio”"><a href="#圆形单选-多选按钮-type-”radio”" class="headerlink" title="圆形单选/多选按钮(type=”radio”)"></a>圆形单选/多选按钮(type=”radio”)</h5><p>input type=”radio”标签定义了表单单选框选项<br><b>name的值相同为单选，值不同为多选</b></p>
 <pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">$ 
 请选择：&lt;br&gt;
 &lt;input type&#x3D;&quot;radio&quot; name&#x3D;&quot;xingbie&quot; value&#x3D;&quot;男&quot;&gt;男
 &lt;input type&#x3D;&quot;radio&quot; name&#x3D;&quot;xingbie&quot; value&#x3D;&quot;女&quot;&gt;女<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="方形复选按钮-type-”checkbox”"><a href="#方形复选按钮-type-”checkbox”" class="headerlink" title="方形复选按钮(type=”checkbox”)"></a>方形复选按钮(type=”checkbox”)</h4><p>input type=”checkbox”标签定义了表单单选框选项</p>
+<h5 id="方形复选按钮-type-”checkbox”"><a href="#方形复选按钮-type-”checkbox”" class="headerlink" title="方形复选按钮(type=”checkbox”)"></a>方形复选按钮(type=”checkbox”)</h5><p>input type=”checkbox”标签定义了表单单选框选项</p>
 <pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">$ 
 &lt;form&gt;
 &lt;input type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;aihao&quot; value&#x3D;吃饭&quot;&gt;吃饭&lt;br&gt;
 &lt;input type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;aihao&quot; value&#x3D;&quot;睡觉&quot;&gt;睡觉
 &lt;&#x2F;form&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>PS：给input添加checked属性：checked=”checked”，为首次加载时默认的选中状态</p>
-<h4 id="提交按钮-type-”submit”"><a href="#提交按钮-type-”submit”" class="headerlink" title="提交按钮(type=”submit”)"></a>提交按钮(type=”submit”)</h4><p>input type=”submit”标签定义了表单单选框选项<br>当用户单击确认按钮时，表单的内容会被传送到后台。<br>表单的动作属性定义了目的文件的文件名<br>由动作属性定义的这个文件通常会对接收到的输入数据进行相关的处理:</p>
+<h5 id="提交按钮-type-”submit”"><a href="#提交按钮-type-”submit”" class="headerlink" title="提交按钮(type=”submit”)"></a>提交按钮(type=”submit”)</h5><p>input type=”submit”标签定义了表单单选框选项<br>当用户单击确认按钮时，表单的内容会被传送到后台。<br>表单的动作属性定义了目的文件的文件名<br>由动作属性定义的这个文件通常会对接收到的输入数据进行相关的处理:</p>
 <pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">$ 
 &lt;form name&#x3D;&quot;名字&quot; action&#x3D;&quot;URL链接&quot; method&#x3D;&quot;提交方式&quot;&gt;
 &lt;input type&#x3D;&quot;submit&quot; value&#x3D;&quot;提交&quot;&gt;
 &lt;&#x2F;form&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="重置-清除按钮-type-”reset”"><a href="#重置-清除按钮-type-”reset”" class="headerlink" title="重置/清除按钮(type=”reset”)"></a>重置/清除按钮(type=”reset”)</h4><p>还原表单元素为初始状态</p>
+<h5 id="重置-清除按钮-type-”reset”"><a href="#重置-清除按钮-type-”reset”" class="headerlink" title="重置/清除按钮(type=”reset”)"></a>重置/清除按钮(type=”reset”)</h5><p>还原表单元素为初始状态</p>
 <pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">$ 
 &lt;form&gt;
 &lt;input type&#x3D;&quot;reset&quot; value&#x3D;&quot;重置&quot;&gt;
 &lt;&#x2F;form&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="可点击按钮-type-”button”"><a href="#可点击按钮-type-”button”" class="headerlink" title="可点击按钮(type=”button”)"></a>可点击按钮(type=”button”)</h4><p>使用button来定义按钮，一般用于启动.js脚本<br>使用value来定义按钮内的文字</p>
+<h5 id="可点击按钮-type-”button”"><a href="#可点击按钮-type-”button”" class="headerlink" title="可点击按钮(type=”button”)"></a>可点击按钮(type=”button”)</h5><p>使用button来定义按钮，一般用于启动.js脚本<br>使用value来定义按钮内的文字</p>
 <pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">$ 
 &lt;form action&#x3D;&quot;&quot;&gt;
 &lt;input type&#x3D;&quot;button&quot; value&#x3D;&quot;Hello world!&quot;&gt;
 &lt;&#x2F;form&gt;
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="绑定表单元素-lable"><a href="#绑定表单元素-lable" class="headerlink" title="绑定表单元素 lable"></a>绑定表单元素 lable</h4><p>input定义标签，当用户点击文本/图标时，光标自动转到输入框/选项上。用于提升用户体验<br>语法：</p>
+<h5 id="绑定表单元素-lable"><a href="#绑定表单元素-lable" class="headerlink" title="绑定表单元素 lable"></a>绑定表单元素 lable</h5><p>input定义标签，当用户点击文本/图标时，光标自动转到输入框/选项上。用于提升用户体验<br>语法：</p>
 <pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">$ 
 &lt;form&gt;
 &lt;input type&#x3D;&quot;button&quot;  id&#x3D;&quot;xingbie&quot;&gt;
 &lt;lable for&#x3D;&quot;xingbie&quot;&gt;男&lt;&#x2F;lable&gt;
 &lt;&#x2F;form&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="下拉列表-select"><a href="#下拉列表-select" class="headerlink" title="下拉列表 select"></a>下拉列表 select</h3><p>1.select中至少包含一个option<br>2.可在option中添加selected=”selected”来设置列表默认的预选值</p>
+<h4 id="下拉列表-select"><a href="#下拉列表-select" class="headerlink" title="下拉列表 select"></a>下拉列表 select</h4><p>1.select中至少包含一个option<br>2.可在option中添加selected=”selected”来设置列表默认的预选值</p>
 <pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">$ 
 &lt;form&gt;
 &lt;select&gt;
@@ -1231,7 +1515,7 @@ JavaScript
 &lt;option&gt;004&lt;&#x2F;option&gt;
 &lt;&#x2F;select&gt;
 &lt;&#x2F;form&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="文本域-textarea"><a href="#文本域-textarea" class="headerlink" title="文本域 textarea"></a>文本域 textarea</h3><p>用于定义大量输入文本的控件，和文本框的区别是可输入的文本行数<br>语法规范：</p>
+<h4 id="文本域-textarea"><a href="#文本域-textarea" class="headerlink" title="文本域 textarea"></a>文本域 textarea</h4><p>用于定义大量输入文本的控件，和文本框的区别是可输入的文本行数<br>语法规范：</p>
 <pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">$ 
 &lt;form&gt;
 	&lt;textarea rows&#x3D;&quot;3&quot; cols&#x3D;&quot;10&quot;&gt;
@@ -1239,7 +1523,7 @@ JavaScript
 	&lt;&#x2F;textarea&gt;
 &lt;&#x2F;form&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>cols：每行的字符数<br>rows：显示的行数</p>
-<h2 id="框架"><a href="#框架" class="headerlink" title="框架"></a>框架</h2><p>通过使用框架，你可以在同一个浏览器窗口中显示不止一个页面。</p>
+<h3 id="框架"><a href="#框架" class="headerlink" title="框架"></a>框架</h3><p>通过使用框架，你可以在同一个浏览器窗口中显示不止一个页面。</p>
 <pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">$ 
 &lt;iframe src&#x3D;&quot;URL&quot;&gt;&lt;&#x2F;iframe&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>URL指向不同的网页</p>
@@ -1264,7 +1548,7 @@ div &#123;
 background:rgba(255,0,0,0.5);
 
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>相对于使用 rgb(255,255,0)，使用 rgba(255,255,0,0.5) 可以实现设置颜色透明度的功能，这里的 0.5 表示透明度，范围 0~1，0 表示全透明。</p>
+<p>相对于使用 rgb(255,255,0)，使用 rgba(255,255,0,0.5) 可以实现设置颜色透明度的功能，这里的 0.5 表示透明度，范围 0-1，0 表示全透明。</p>
 <h3 id="WEB安全色？"><a href="#WEB安全色？" class="headerlink" title="WEB安全色？"></a>WEB安全色？</h3><p>数年以前，当大多数计算机仅支持 256 种颜色的时候，一系列 216 种 Web 安全色作为 Web 标准被建议使用。其中的原因是，微软和 Mac 操作系统使用了 40 种不同的保留的固定系统颜色（双方大约各使用 20 种）。<br>我们不确定如今这么做的意义有多大，因为越来越多的计算机有能力处理数百万种颜色，不过做选择还是你自己。<br>最初，216 跨平台 web 安全色被用来确保：当计算机使用 256 色调色板时，所有的计算机能够正确地显示所有的颜色</p>
 <h3 id="颜色名"><a href="#颜色名" class="headerlink" title="颜色名"></a>颜色名</h3><p>141个颜色名称是在HTML和CSS颜色规范定义的（17标准颜色，再加124）。<br>具体可百度，暂时认为实用意义不大</p>
 <h2 id="HTML引用脚本"><a href="#HTML引用脚本" class="headerlink" title="HTML引用脚本"></a>HTML引用脚本</h2><h3 id="script标签"><a href="#script标签" class="headerlink" title="script标签"></a>script标签</h3><p>script标签用于定义客户端脚本，比如 JavaScript。<br>script 元素既可包含脚本语句，也可通过 src 属性指向外部脚本文件。<br>JavaScript 最常用于图片操作、表单验证以及内容动态更新。<br>下面的脚本会向浏览器输出”Hello World!”：</p>
@@ -1326,7 +1610,6 @@ scheme:&#x2F;&#x2F;host.domain:port&#x2F;path&#x2F;filename<span aria-hidden="tr
 
 <h3 id="URL-字符编码"><a href="#URL-字符编码" class="headerlink" title="URL 字符编码"></a>URL 字符编码</h3><p>URL 只能使用 ASCII 字符集.<br>来通过因特网进行发送。由于 URL 常常会包含 ASCII 集合之外的字符，URL 必须转换为有效的 ASCII 格式。<br>URL 编码使用 “%” 其后跟随两位的十六进制数来替换非 ASCII 字符。<br>URL 不能包含空格。URL 编码通常使用 + 来替换空格。</p>
 <h2 id="常用-HTML-标签简写及全称"><a href="#常用-HTML-标签简写及全称" class="headerlink" title="常用 HTML 标签简写及全称"></a>常用 HTML 标签简写及全称</h2><p>来自菜鸟教程的<a href="https://www.runoob.com/html/html-tag-name.html">常用 HTML 标签简写及全称</a></p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>###你已经完成了 HTML 的学习，下一步该学习什么呢？<br>####HTML 总结<br>本教程已教你如何使用 HTML 创建站点。<br>HTML 是一种在 Web 上使用的通用标记语言。HTML 允许你格式化文本，添加图片，创建链接、输入表单、框架和表格等等，并可将之存为文本文件，浏览器即可读取和显示。<br>HTML 的关键是标签，其作用是指示将出现的内容。<br>###现在，你已学完HTML，接下来该学习什么呢？<br>####学习 CSS<br>CSS被用来同时控制多重网页的样式和布局。<br>通过使用 CSS，所有的格式化均可从 HTML 中剥离出来，并存储于一个独立的文件中。<br>####学习 JavaScript<br>JavaScript 可以让你的网页更加生动。<br>如果你只想展示内容，静态网站是很好的展示形象，如果你想与用户进行交换或者让网页更加生动那就需要使用到Javascript。<br>JavaScript是互联网上最流行的脚本语言，目前所有主流浏览器都支持Javascript。<br>###站点服务器<br>在自己的服务器上托管网站始终是一个选项。有几点需要考虑：<br>硬件支出<br>如果要运行”真正”的网站，您不得不购买强大的服务器硬件。不要指望低价的 PC 能够应付这些工作。您还需要稳定的（一天 24 小时）高速连接。<br>软件支出<br>请记住，服务器授权通常比客户端授权更昂贵。同时请注意，服务器授权也许有用户数量限制。<br>人工费<br>不要指望低廉的人工费用。您必须安装自己的硬件和软件。您同时要处理漏洞和病毒，以确保您的服务器时刻正常地运行于一个”任何事都可能发生”的环境中。<br>###使用因特网服务提供商（ISP）<br>从 ISP 租用服务器也很常见。<br>大多数小公司会把网站存放到由 ISP 提供的服务器上。其优势有以下几点：<br>连接速度<br>大多数 ISP 都拥有连接因特网的高速连接。<br>强大的硬件<br>ISP 的 web 服务器通常强大到能够由若干网站分享资源。您还要看一下 ISP 是否提供高效的负载平衡，以及必要的备份服务器。<br>安全性和可靠性<br>ISP 是网站托管方面的专家。他们应该提供 99% 以上的在线时间，最新的软件补丁，以及最好的病毒防护。<br>选择 ISP 时的注意事项<br>24 小时支持<br>确保 ISP 提供 24 小时支持。不要使自己置于无法解决严重问题的尴尬境地，同时还必须等待第二个工作日。如果您不希望支付长途电话费，那么免费电话服务也是必要的。<br>每日备份<br>确保 ISP 会执行每日备份的例行工作，否则您有可能损失有价值的数据。<br>流量<br>研究一下 ISP 的流量限制。如果出现由于网站受欢迎而激增的不可预期的访问量，那么您要确保不会因此支付额外费用。<br>带宽或内容限制<br>研究一下 ISP 的带宽和内容限制。如果您计划发布图片或播出视频或音频，请确保您有此权限。<br>E-mail 功能<br>请确保 ISP 支持您需要的 e-mail 功能。<br>数据库访问<br>如果您计划使用网站数据库中的数据，那么请确保您的 ISP 支持您需要的数据库访问。</p>
 ]]></content>
       <categories>
         <category>学习笔记</category>
