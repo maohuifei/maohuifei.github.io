@@ -1,0 +1,1241 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="网络基础学习笔记, 猫会飞呀">
+    <meta name="description" content="视觉设计师/商业插画/编程爱好者">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>网络基础学习笔记 | 猫会飞呀</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">猫会飞呀</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">猫会飞呀</div>
+        <div class="logo-desc">
+            
+            视觉设计师/商业插画/编程爱好者
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">网络基础学习笔记</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                                <span class="chip bg-color">学习笔记</span>
+                            </a>
+                        
+                            <a href="/tags/Web%E5%89%8D%E7%AB%AF/">
+                                <span class="chip bg-color">Web前端</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%BD%91%E7%BB%9C/">
+                                <span class="chip bg-color">网络</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-category">
+                                学习笔记
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-08-09
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2021-08-09
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    4k
+                </div>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>互联网是网络的支柱，以这种技术为基础使网络成为可能。作为基础，互联网是把电脑互相连接起来的一个巨大网络。<br>互联网是一种基础的技术，它允许我们把成千上万的电脑连接在一起。在这些电脑中，有 一些电脑（我们称之为网络服务器（Web servers））可以发送一些浏览器可以理解的信息。互联网是基础设施，网络是建立在这种基础设施之上的服务。值得注意的是，一些其他服务运行在互联网之上，比如邮箱和IRC.<br>本文主要学习网络基础于Web前端的应用</p>
+<span id="more"></span>
+<p>本文参考：<br>维基百科：<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Wikipedia:%E9%A6%96%E9%A1%B5">https://zh.wikipedia.org/wiki/Wikipedia:%E9%A6%96%E9%A1%B5</a><br>InternetWhitepaper：<a target="_blank" rel="noopener" href="https://web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.htm">https://web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.htm</a><br>MDN Web Docs：<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Learn/Common_questions/How_does_the_Internet_work">https://developer.mozilla.org/zh-CN/docs/Learn/Common_questions/How_does_the_Internet_work</a><br>How the Internet Works in 5 Minutes：<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=7_LPdttKXPc">https://www.youtube.com/watch?v=7_LPdttKXPc</a></p>
+<h2 id="万维网是如何工作的"><a href="#万维网是如何工作的" class="headerlink" title="万维网是如何工作的"></a>万维网是如何工作的</h2><h3 id="互联网地址"><a href="#互联网地址" class="headerlink" title="互联网地址"></a>互联网地址</h3><ul>
+<li>因为互联网是一个全球计算机网络，每台连接到互联网的计算机必须有一个独特的地址。互联网地址以n.n.n.n. n的形式出现，其中 n 必须是 0 - 255 的号码。此地址称为 IP 地址</li>
+<li>如果您通过互联网服务提供商 （ISP） 连接到互联网，则通常会在拨入会话期间分配一个临时 IP 地址。如果您从局域网 （LAN） 连接到 Internet，您的计算机可能有永久 IP 地址，或者它可能从 DHCP（动态主机配置协议）服务器获得临时 IP 地址。无论如何，如果您连接到互联网，您的计算机有一个唯一的 IP 地址</li>
+</ul>
+<h3 id="协议堆栈和数据包"><a href="#协议堆栈和数据包" class="headerlink" title="协议堆栈和数据包"></a>协议堆栈和数据包</h3><p>因此，您的计算机连接到互联网，并具有唯一的地址。它如何与连接到互联网的其他计算机”交谈”？</p>
+<p>假设您的 IP 地址为 1.2.3.4，并且您想向计算机发送消息 5.6.7.8。<br>您要发送的消息是”你好电脑 5.6.7.8！<br>显然，消息必须通过连接计算机到互联网的任何类型的电线传输。<br>假设您从家里拨入了ISP，并且消息必须通过电话线传输。<br>因此，该消息必须从字母文本转换为电子信号，通过互联网传输，然后翻译回字母文本。<br>这是如何实现的？通过使用<b>协议堆栈</b></p>
+<p>由于使用了两种主要通信协议,互联网上使用的协议堆栈被称为 TCP/IP 协议堆栈<br><img src="/2021/08/09/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E4%B8%8E%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86%E9%A1%B9%E7%9B%AE%E5%8C%96/%E5%8D%8F%E8%AE%AE%E5%A0%86%E6%A0%88.jpg"><br>如果我们按照”你好电脑5.6.7.8！” 的消息从我们的计算机到IP地址5.6.7.8的计算机路径，它会发生这样的事情：<br><img src="/2021/08/09/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E4%B8%8E%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86%E9%A1%B9%E7%9B%AE%E5%8C%96/2.jpg"></p>
+<ul>
+<li>消息将从计算机上协议堆栈的顶部开始，并朝下工作。</li>
+<li>如果要发送的消息很长，则消息传递的每个堆栈层可能会将消息分解为较小的数据块。这是因为通过Internet（和大多数计算机网络）发送的数据是以可管理的块发送的。在互联网上，这些数据块被称为数据包。</li>
+<li>数据包将通过应用层并继续到 TCP 层。每个数据包都分配一个端口编号。端口稍后将进行解释，但足以说明许多程序可能正在使用 TCP/IP 堆栈并发送消息。我们需要知道目的地计算机上的哪个程序需要接收消息，因为它将在特定端口上收听。</li>
+<li>通过 TCP 层后，数据包将进入 IP 层。这是每个数据包接收其目的地地址的地方，5.6.7.8。</li>
+<li>现在，我们的消息包有一个端口号码和一个IP地址，他们准备通过互联网发送。硬件层负责将包含我们消息字母文本的包转为电子信号并通过电话线传输。</li>
+<li>在电话线的另一端，您的ISP与互联网有直接连接。ISP路由器检查每个包中的目的地地址，并确定将其发送到何处。通常，数据包的下一站是另一个路由器。稍后将更多有关路由器和互联网基础设施的信息。</li>
+<li>最终，数据包到达计算机 5.6.7.8。在这里，数据包从目的地计算机的 TCP/IP 堆栈的底部开始，向上工作。</li>
+<li>当数据包向上穿过堆栈时，从数据包中剥离了发送计算机堆栈添加的所有路由数据（如 IP 地址和端口号）。</li>
+<li>当数据到达堆栈顶部时，数据包已重新组装成原始表单，”你好计算机 5.6.7.8！</li>
+</ul>
+<h3 id="网络基础设施"><a href="#网络基础设施" class="headerlink" title="网络基础设施"></a>网络基础设施</h3><p>所以现在你知道数据包是如何通过互联网从一台计算机传到另一台计算机的。但两者之间有什么关系呢？究竟是什么组成了互联网？让我们看看另一个图表：<br><img src="/2021/08/09/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E4%B8%8E%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86%E9%A1%B9%E7%9B%AE%E5%8C%96/3.jpg"></p>
+<h3 id="互联网基础设施"><a href="#互联网基础设施" class="headerlink" title="互联网基础设施"></a>互联网基础设施</h3><p>互联网骨干网由许多相互连接的大型网络组成。这些大型网络称为网络服务提供商或NSP。一些大型 NSP 是 UUNet、瑟夫网、IBM、BBN 行星、冲刺网、PSINet 以及其他 NSP。这些网络相互对等以交换数据包流量。每个 NSP 需要连接到三个网络接入点或NAP。在 NAP 中，分组流量可能会从一个 NSP 的骨干跳到另一个 NSP 的骨干。NSP 在大都会地区交易所或 MAE 的MAE也相互连接，其用途与 NAP 相同，但属于私有。NAP 是最初的互联网互连点。NAP 和 MAE 都被称为互联网交换点或IX.NSP 也向较小的网络（如 ISP 和较小的带宽提供商）销售带宽。下面是显示此分层基础结构的图片。<br><img src="/2021/08/09/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E4%B8%8E%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86%E9%A1%B9%E7%9B%AE%E5%8C%96/4.jpg"><br>不是互联网上真实部分的真实表现。仅用于演示 NSP 如何相互连接和较小的 ISP</p>
+<h3 id="互联网路由等级"><a href="#互联网路由等级" class="headerlink" title="互联网路由等级"></a>互联网路由等级</h3><p>那么，数据包如何在互联网上找到它们的方式呢？连接到互联网的每台计算机都知道其他计算机的位置吗？数据包只是将”广播”到互联网上的每台计算机吗？<br>问题的回答都是”不”。没有计算机知道任何其他计算机的位置，并且数据包不会发送到每台计算机。用于将数据包传到目的地的信息包含在连接到 Internet 的每个路由器保存的路由表中。</p>
+<p><b>路由器是数据包开关</b>路由器通常在网络之间连接到它们之间的路由包。每个路由器都知道它的子网络以及他们使用的 IP 地址。路由器通常不知道”上面”的IP地址是什么。</p>
+<p><img src="/2021/08/09/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E4%B8%8E%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86%E9%A1%B9%E7%9B%AE%E5%8C%96/%E8%B7%AF%E7%94%B1%E5%99%A8.jpg"><br>当数据包到达路由器时，路由器检查源计算机上的 IP 协议层放置的 IP 地址。路由器检查路由表。如果发现包含 IP 地址的网络，则将数据包发送到该网络。如果找不到包含 IP 地址的网络，则路由器会在默认路线上发送数据包，通常将主干等级向上发送到下一个路由器。希望下一个路由器将知道在哪里发送包。如果没有，则再次向上路由数据包，直到它到达 NSP 骨干。连接到 NSP 骨干站的路由器拥有最大的路由表，在这里，数据包将被路由到正确的主干，在那里它将开始通过越来越小的网络”向下”的旅程，直到它找到目的地。</p>
+<h3 id="域名和DNS"><a href="#域名和DNS" class="headerlink" title="域名和DNS"></a>域名和DNS</h3><p>如果您不知道要连接到的计算机的 IP 地址，该怎么办？如果您需要访问称为”<a target="_blank" rel="noopener" href="http://www.anothercomputer.com&quot;的/">www.anothercomputer.com&quot;的</a> Web 服务器，该怎么办？您的网络浏览器如何知道这台计算机在互联网上的所在地？<br>问题的答案是域名服务或DNS</p>
+<p>DNS 是一个分布式数据库，可跟踪计算机名称及其在互联网上的相应 IP 地址。<br>许多连接到 Internet 的计算机承载了 DNS 数据库的一部分，以及允许其他人访问它的软件。这些计算机称为 DNS 服务器。没有DNS服务器包含整个数据库：它们只包含它的子集。如果 DNS 服务器不包含其他计算机请求的域名，DNS 服务器将请求的计算机重新定向到其他 DNS 服务器。<br><img src="/2021/08/09/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E4%B8%8E%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86%E9%A1%B9%E7%9B%AE%E5%8C%96/%E5%9F%9F%E5%90%8D%E7%BB%93%E6%9E%84.jpg"><br>域名服务的结构类似于 IP 路由等级。请求名称解析的计算机将重新定向”向上”分层，直到发现 DNS 服务器可以解决请求中的域名。图6说明了等级的一部分。树的顶部是域根。一些较旧的、更常见的域出现在顶部附近。没有显示的是世界各地的众多 DNS 服务器，这些服务器构成了其余的等级制度。<br>设置互联网连接（例如用于 Windows 中的局域网或拨号网络）时，通常指定一个主服务器和一台或多个辅助 DNS 服务器作为安装的一部分。这样，任何需要域名解析的互联网应用程序都能够正常工作。例如，当您将网址输入您的 Web 浏览器时，浏览器首先连接到您的主 DNS 服务器。在获取您输入的域名的 IP 地址后，浏览器将连接到目标计算机并请求您想要的网页。</p>
+<h3 id="互联网协议"><a href="#互联网协议" class="headerlink" title="互联网协议"></a>互联网协议</h3><p>互联网运行需要许多通信协议。其中包括 TCP 和 IP 协议、路由协议、中等访问控制协议、应用级别协议等。<br>以下部分描述了互联网上一些更重要和常用的协议。<br>首先讨论更高级别的协议，然后是较低级别的协议。</p>
+<h4 id="应用协议：HTTP和WWW"><a href="#应用协议：HTTP和WWW" class="headerlink" title="应用协议：HTTP和WWW"></a>应用协议：HTTP和WWW</h4><p>互联网上最常用的服务之一是万维网（WWW）。<br>使网络工作的应用程序协议是超文本传输协议或HTTP。<br>当在 Web 浏览器中键入 URL 时，将发生这种情况：</p>
+<ul>
+<li>如果 URL 包含域名，浏览器首先连接到域名服务器并检索 Web 服务器的相应 IP 地址。</li>
+<li>Web 浏览器连接到 Web 服务器，并为所需的网页发送 HTTP 请求（通过协议堆栈）。</li>
+<li>Web 服务器会收到请求并检查所需的页面。如果页面存在，则网络服务器会发送该页面。如果服务器找不到所请求的页面，它将发送 HTTP 404 错误消息。（404 的意思是”找不到页面”，因为任何上网的人可能都知道。</li>
+<li>Web 浏览器接收回页面并关闭连接。</li>
+<li>然后，浏览器分析页面并查找完成网页所需的其他页面元素。这些通常包括图像、苹果等。</li>
+<li>对于所需的每个元素，浏览器会针对每个元素向服务器提供额外的连接和 HTTP 请求。</li>
+<li>当浏览器完成加载所有图像、苹果等内容后，页面将完全加载到浏览器窗口中。</li>
+</ul>
+<h4 id="应用协议：SMTP-和-Electronic-Mail"><a href="#应用协议：SMTP-和-Electronic-Mail" class="headerlink" title="应用协议：SMTP 和 Electronic Mail"></a>应用协议：SMTP 和 Electronic Mail</h4><p>Electronic Mail使用一种称为”简单邮件传输协议”或”SMTP”的应用程序级别协议。<br>SMTP 也是基于文本的协议，但与 HTTP 不同，SMTP 以连接为导向。SMTP也比高频波复杂。SMTP 中的命令和考虑比 HTTP 中的命令和考虑要多得多。</p>
+<p>当您打开邮件客户端以阅读您的电子邮件时，通常会出现这种情况：</p>
+<ul>
+<li>邮件客户端（网景邮件、莲花笔记、微软展望等）打开连接到其默认邮件服务器的连接。邮件服务器的 IP 地址或域名通常是在安装邮件客户端时设置的。</li>
+<li>邮件服务器将始终传输第一条消息来识别自己。</li>
+<li>客户端将发送 SMTP HELO 命令，服务器将响应该命令并发送 250 OK 消息。</li>
+<li>根据客户端是否正在检查邮件、发送邮件等，将向服务器发送相应的 SMTP 命令，服务器将做出相应的响应。</li>
+<li>此请求/响应事务将继续，直到客户发送 SMTP 退出命令。然后，服务器将说再见，连接将被关闭。</li>
+</ul>
+<h4 id="传输控制协议"><a href="#传输控制协议" class="headerlink" title="传输控制协议"></a>传输控制协议</h4><p>协议堆栈中的应用层下是 TCP 层。当应用程序打开 Internet 上连接到另一台计算机的连接时，它们发送的消息（使用特定的应用程序层协议）会从堆栈中传递到 TCP 层。<br>TCP 负责将应用程序协议路由到目的地计算机上的正确应用程序。<br>为此，使用端口编号。端口可以被认为是每台计算机上的单独通道。<br>例如，您可以在阅读电子邮件时上网。这是因为这两个应用程序（Web浏览器和邮件客户端）使用了不同的端口号码。<br>当数据包到达计算机并向上设置协议堆栈时，TCP 层会根据端口编号决定哪个应用程序接收数据包。</p>
+<p>TCP 的工作原理是这样的：</p>
+<ul>
+<li>当 TCP 层从上面接收应用层协议数据时，它会将其细分为可管理的”块”，然后向每个”块”添加带有特定TCP信息的TCP头。TCP头中包含的信息包括数据需要发送到的应用程序的端口编号。</li>
+<li>当TCP层从其下方的IP层接收数据包时，TCP层会从数据包中剥离TCP头数据，必要时进行一些数据重建，然后使用从TCP头取的端口编号将数据发送到正确的应用程序。</li>
+<li>这就是 TCP 如何将通过协议堆栈移动的数据路由到正确的应用程序。</li>
+</ul>
+<p>TCP不是文本协议。<br>TCP 是一种以连接为导向、可靠、小节流服务。<br>基于连接的意味着使用 TCP 的两个应用程序必须在交换数据之前首先建立连接。<br>TCP 是可靠的，因为对于收到的每一个数据包，都会向发件人发送确认信，以确认递送。<br>TCP 还包括一个检查器，用于检查接收的数据。</p>
+<h4 id="网际协议"><a href="#网际协议" class="headerlink" title="网际协议"></a>网际协议</h4><p>与 TCP 不同，IP 是一个不可靠、无连接的协议。<br>IP不关心数据包是否到达目的地。<br>IP 也不知道连接和端口编号。<br>IP 的工作是将数据包发送和路由到其他计算机。IP 数据包是独立的实体，可能出现问题或根本不正常。<br>TCP 的工作是确保数据包到达并按正确的顺序到达。<br>关于 IP 与 TCP 的唯一共同点是它接收数据并将自己的 IP 标题信息添加到 TCP 数据中的方式。</p>
+<h2 id="什么是HTTP-HTTPS"><a href="#什么是HTTP-HTTPS" class="headerlink" title="什么是HTTP/HTTPS"></a>什么是HTTP/HTTPS</h2><p>HTTP 是 Web 浏览器和 Web 服务器用来通过互联网相互通信的协议<br>它是一个应用程序级别协议，因为它位于协议堆栈中的 TCP 层顶部，并被特定应用程序用于相互交谈。<br>在这种情况下，应用程序是 Web 浏览器和 Web 服务器。<br>HTTP 是一个基于文本的无连接协议。</p>
+<ul>
+<li>客户端（Web 浏览器）向 Web 服务器发送有关网页和图像等 Web 元素的请求。</li>
+<li>请求由服务器服务后，客户端和服务器之间的互联网连接将断开。</li>
+<li>对于每个请求，必须进行新的连接。大多数协议都以连接为导向。</li>
+<li>这意味着两台相互通信的计算机通过互联网保持连接。</li>
+<li>但是，HTTP没有。</li>
+<li>在客户端提出 HTTP 请求之前，必须向服务器进行新的连接。</li>
+</ul>
+<h2 id="DNS原理"><a href="#DNS原理" class="headerlink" title="DNS原理"></a>DNS原理</h2><h2 id="CDN原理"><a href="#CDN原理" class="headerlink" title="CDN原理"></a>CDN原理</h2>
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">猫会飞呀</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://maohuifei.github.io/2021/08/09/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E4%B8%8E%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86%E9%A1%B9%E7%9B%AE%E5%8C%96/">https://maohuifei.github.io/2021/08/09/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E4%B8%8E%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86%E9%A1%B9%E7%9B%AE%E5%8C%96/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">猫会飞呀</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                                    <span class="chip bg-color">学习笔记</span>
+                                </a>
+                            
+                                <a href="/tags/Web%E5%89%8D%E7%AB%AF/">
+                                    <span class="chip bg-color">Web前端</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%BD%91%E7%BB%9C/">
+                                    <span class="chip bg-color">网络</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2021/08/09/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E4%B8%8E%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86%E9%A1%B9%E7%9B%AE%E5%8C%96/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="网络基础学习笔记">
+                        
+                        <span class="card-title">网络基础学习笔记</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            互联网是网络的支柱，以这种技术为基础使网络成为可能。作为基础，互联网是把电脑互相连接起来的一个巨大网络。互联网是一种基础的技术，它允许我们把成千上万的电脑连接在一起。在这些电脑中，有 一些电脑（我们称之为网络服务器（Web servers）
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-09
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    学习笔记
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">学习笔记</span>
+                    </a>
+                    
+                    <a href="/tags/Web%E5%89%8D%E7%AB%AF/">
+                        <span class="chip bg-color">Web前端</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%BD%91%E7%BB%9C/">
+                        <span class="chip bg-color">网络</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/08/09/Web-APIs-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="Web APIs 学习笔记">
+                        
+                        <span class="card-title">Web APIs 学习笔记</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Web API是指网页服务器或网页浏览器的应用程序接口。它是网页程式设计领域的一个概念，不过通常只有在人们谈到网络应用程序的客户端（包括正在使用的Web应用框架）时的API时才会提到这一概念，在谈及网页服务器或浏览器实现细节如服务器应用程序
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-09
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    学习笔记
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">学习笔记</span>
+                    </a>
+                    
+                    <a href="/tags/Web%E5%89%8D%E7%AB%AF/">
+                        <span class="chip bg-color">Web前端</span>
+                    </a>
+                    
+                    <a href="/tags/DOM-BOM/">
+                        <span class="chip bg-color">DOM &amp; BOM</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('10')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 猫会飞呀<br />'
+            + '文章作者: 猫会飞呀<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者猫会飞呀所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2021</span>
+            
+            <span id="year">2019</span>
+            <a href="/about" target="_blank">猫会飞呀</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">35.2k</span>
+            
+            
+            
+            
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+                <span id="sitetime"> Loading ...</span>
+                <script>
+                    var calcSiteTime = function () {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2019";
+                        var startMonth = "6";
+                        var startDate = "28";
+                        var startHour = "0";
+                        var startMinute = "0";
+                        var startSecond = "0";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+
+                        // 区分是否有年份.
+                        var language = 'zh-CN';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '本站已运行 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '本站已運行 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '本站已运行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '本站已運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
+                        }
+                    }
+
+                    calcSiteTime();
+                </script>
+            
+            <br>
+            
+                <span id="icp"><img src="/medias/icp.png"
+                                    style="vertical-align: text-bottom;"/>
+                <a href="https://beian.miit.gov.cn" target="_blank">吉ICP备2021004361号-1</a>
+            </span>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link ">
+    <a href="https://github.com/maohuifei" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:991270685@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=991270685" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 991270685" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
