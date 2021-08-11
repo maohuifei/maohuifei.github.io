@@ -342,7 +342,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-08-07
+                    2021-08-10
                 </div>
                 
 
@@ -383,26 +383,26 @@
 </ul>
 <h3 id="内容content"><a href="#内容content" class="headerlink" title="内容content"></a>内容content</h3><p>没啥好说的，就是内容</p>
 <h3 id="边框-border"><a href="#边框-border" class="headerlink" title="边框 border"></a>边框 border</h3><h4 id="语法规则"><a href="#语法规则" class="headerlink" title="语法规则"></a>语法规则</h4><p>border可以设置元素的边框，边框有三部分组成：边框宽度、边框样式、边框颜色<br><img src="/2021/08/03/CSS%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B%E2%80%94%E2%80%94%E8%BE%B9%E6%A1%86.jpg"></p>
-<pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
-div &#123;
-  border-width:10px;   ||粗细10像素
-  border-style:solid   ||solid实线&#x2F;dashed虚线&#x2F;dotted点线；
-  border-color:#fff;   ||白色
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="简写"><a href="#简写" class="headerlink" title="简写"></a>简写</h4><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
-div &#123;
-  border:1px solid red; 没有先后顺序，只有通俗约定规范
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="进阶"><a href="#进阶" class="headerlink" title="进阶"></a>进阶</h4><h5 id="分开定义样式"><a href="#分开定义样式" class="headerlink" title="分开定义样式"></a>分开定义样式</h5><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
-div &#123;
-  border-top: 1px solid red;
-  border-bottom: 
-  border-left: 1px dashed green;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h5 id="合并相邻的边框"><a href="#合并相邻的边框" class="headerlink" title="合并相邻的边框"></a>合并相邻的边框</h5><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
-div &#123;
-  border-collapse:collapse;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">$ 
+div</span> <span class="token punctuation">&#123;</span>
+  <span class="token property">border-width</span><span class="token punctuation">:</span>10px<span class="token punctuation">;</span>   ||粗细10像素
+  <span class="token property">border-style</span><span class="token punctuation">:</span>solid   ||solid实线/dashed虚线/dotted点线；
+  <span class="token property">border-color</span><span class="token punctuation">:</span>#fff<span class="token punctuation">;</span>   ||白色
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="简写"><a href="#简写" class="headerlink" title="简写"></a>简写</h4><pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">$ 
+div</span> <span class="token punctuation">&#123;</span>
+  <span class="token property">border</span><span class="token punctuation">:</span>1px solid red<span class="token punctuation">;</span> 没有先后顺序，只有通俗约定规范
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="进阶"><a href="#进阶" class="headerlink" title="进阶"></a>进阶</h4><h5 id="分开定义样式"><a href="#分开定义样式" class="headerlink" title="分开定义样式"></a>分开定义样式</h5><pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">$ 
+div</span> <span class="token punctuation">&#123;</span>
+  <span class="token property">border-top</span><span class="token punctuation">:</span> 1px solid red<span class="token punctuation">;</span>
+  <span class="token property">border-bottom</span><span class="token punctuation">:</span> 
+  <span class="token property">border-left</span><span class="token punctuation">:</span> 1px dashed green<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="合并相邻的边框"><a href="#合并相邻的边框" class="headerlink" title="合并相邻的边框"></a>合并相邻的边框</h5><pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">$ 
+div</span> <span class="token punctuation">&#123;</span>
+  <span class="token property">border-collapse</span><span class="token punctuation">:</span>collapse<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h5 id="边框会影响实际盒子大小"><a href="#边框会影响实际盒子大小" class="headerlink" title="边框会影响实际盒子大小"></a>边框会影响实际盒子大小</h5><p>即我们所看到的区域大小=盒子大小+边框大小</p>
 <ul>
 <li>测量盒子大小时候不量边框</li>
@@ -414,35 +414,35 @@ div &#123;
 <h3 id="外边距margin"><a href="#外边距margin" class="headerlink" title="外边距margin"></a>外边距margin</h3><h4 id="语法规则-2"><a href="#语法规则-2" class="headerlink" title="语法规则"></a>语法规则</h4><p>margin可以设置元素的外边距，控制盒子和盒子间的距离<br><img src="/2021/08/03/CSS%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B%E2%80%94%E2%80%94%E5%A4%96%E8%BE%B9%E8%B7%9D.jpg"></p>
 <h4 id="简写-2"><a href="#简写-2" class="headerlink" title="简写"></a>简写</h4><p>margin简写意义顺序和pading完全一样</p>
 <h3 id="盒子模型的典型应用"><a href="#盒子模型的典型应用" class="headerlink" title="盒子模型的典型应用"></a>盒子模型的典型应用</h3><h4 id="外边距——块级盒子水平居中对齐"><a href="#外边距——块级盒子水平居中对齐" class="headerlink" title="外边距——块级盒子水平居中对齐"></a>外边距——块级盒子水平居中对齐</h4><p>外边距可以让块级盒子居中，但必须满足两个条件：<br>1.块级盒子必须指定了宽度<br>2.盒子<b>左右外边距</b>都设置为auto</p>
-<pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
-div &#123;
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">$ 
+div</span> <span class="token punctuation">&#123;</span>
   常见三种写法：
-  margin:0 auto; ||推荐
-  margin: auto;
-  margin-left:auto;margin-right:auto;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+  <span class="token property">margin</span><span class="token punctuation">:</span>0 auto<span class="token punctuation">;</span> ||推荐
+  <span class="token property">margin</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+  <span class="token property">margin-left</span><span class="token punctuation">:</span>auto<span class="token punctuation">;</span><span class="token property">margin-right</span><span class="token punctuation">:</span>auto<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="行内元素和行内块元素的水平居中"><a href="#行内元素和行内块元素的水平居中" class="headerlink" title="行内元素和行内块元素的水平居中"></a>行内元素和行内块元素的水平居中</h4><p>给其父元素添加text-align:center即可</p>
 <h4 id="外边距合并，嵌套块元素的塌陷问题"><a href="#外边距合并，嵌套块元素的塌陷问题" class="headerlink" title="外边距合并，嵌套块元素的塌陷问题"></a>外边距合并，嵌套块元素的塌陷问题</h4><p>对于两个嵌套关系（父子关系）的块元素，父元素有上外边距的同时子元素也有上外边距，此时父元素会塌陷较大的外边距值<br><img src="/2021/08/03/CSS%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/%E5%A1%8C%E9%99%B7%E9%97%AE%E9%A2%98.jpg"><br><img src="/2021/08/03/CSS%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/%E5%A1%8C%E9%99%B7%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88.jpg"><br>其他方法：使用浮动、固定、绝对定位的盒子不会有塌陷问题</p>
-<h4 id="清除内外边距"><a href="#清除内外边距" class="headerlink" title="清除内外边距"></a>清除内外边距</h4><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
-* &#123;
-  padding:0;
-  margin:0;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="清除内外边距"><a href="#清除内外边距" class="headerlink" title="清除内外边距"></a>清除内外边距</h4><pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">$ 
+*</span> <span class="token punctuation">&#123;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span>0<span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span>0<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="行内元素的兼容性问题"><a href="#行内元素的兼容性问题" class="headerlink" title="行内元素的兼容性问题"></a>行内元素的兼容性问题</h4><p>行内元素照顾兼容性问题，尽量只设置左右内外边距，不设置上下内外边距。转化为块级或者行内块级元素即可</p>
 <h3 id="圆角边框"><a href="#圆角边框" class="headerlink" title="圆角边框"></a>圆角边框</h3><h4 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h4><p>CSS3中，新增圆角边框样式</p>
-<pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
-&#123;
-  border-radius:10px;  ||数值为四角圆的半径，可以是数值或者百分比
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">$</span> 
+<span class="token punctuation">&#123;</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span>10px<span class="token punctuation">;</span>  ||数值为四角圆的半径，可以是数值或者百分比
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="进阶-1"><a href="#进阶-1" class="headerlink" title="进阶"></a>进阶</h4><p>如果要生成圆形盒子，数值设为正方形盒子宽度的一半或者50%即可<br>常用圆角矩形数值为盒子高度的一半</p>
 <h4 id="简写-3"><a href="#简写-3" class="headerlink" title="简写"></a>简写</h4><p>左上、右上、右下、左下（顺时针）</p>
-<pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
-&#123;
-border-top-left-radius:10px;
-border-top-right-radius:10px;
-border-bottom-left-radius:10px;
-border-bottom-right-radius:10px;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">$</span> 
+<span class="token punctuation">&#123;</span>
+<span class="token property">border-top-left-radius</span><span class="token punctuation">:</span>10px<span class="token punctuation">;</span>
+<span class="token property">border-top-right-radius</span><span class="token punctuation">:</span>10px<span class="token punctuation">;</span>
+<span class="token property">border-bottom-left-radius</span><span class="token punctuation">:</span>10px<span class="token punctuation">;</span>
+<span class="token property">border-bottom-right-radius</span><span class="token punctuation">:</span>10px<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="盒子阴影"><a href="#盒子阴影" class="headerlink" title="盒子阴影"></a>盒子阴影</h3><p>CSS3中新增盒子阴影样式，使用 box-shadow 为盒子添加阴影<br><img src="/2021/08/03/CSS%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/%E7%9B%92%E5%AD%90%E9%98%B4%E5%BD%B1.jpg"><br>PS：默认的是外阴影outset，但是这个单词不允许出现，否则阴影无效<br>阴影不占用空间，不影响盒子布局排列</p>
 <h3 id="文字阴影"><a href="#文字阴影" class="headerlink" title="文字阴影"></a>文字阴影</h3><p>CSS3中新增文字阴影样式，使用 text-shadow 为文本添加阴影<br><img src="/2021/08/03/CSS%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/%E6%96%87%E5%AD%97%E9%98%B4%E5%BD%B1.jpg"></p>
 
@@ -982,7 +982,7 @@ border-bottom-right-radius:10px;
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">35.2k</span>
+                        class="white-color">38.1k</span>
             
             
             

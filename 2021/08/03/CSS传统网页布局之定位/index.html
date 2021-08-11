@@ -342,7 +342,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-08-07
+                    2021-08-11
                 </div>
                 
 
@@ -380,28 +380,28 @@
 <h3 id="定位模式（position）"><a href="#定位模式（position）" class="headerlink" title="定位模式（position）"></a>定位模式（position）</h3><p>用于指定一个元素在文档中的定位方式，通过 position 属性来设置，有四个值：<br><img src="/2021/08/03/CSS%E4%BC%A0%E7%BB%9F%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80%E4%B9%8B%E5%AE%9A%E4%BD%8D/%E5%AE%9A%E4%BD%8D%E6%A8%A1%E5%BC%8F.jpg"></p>
 <h3 id="边偏移"><a href="#边偏移" class="headerlink" title="边偏移"></a>边偏移</h3><p>决定该元素的最终位置，有top、bottom、left、right 四个属性：<br><img src="/2021/08/03/CSS%E4%BC%A0%E7%BB%9F%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80%E4%B9%8B%E5%AE%9A%E4%BD%8D/%E8%BE%B9%E5%81%8F%E7%A7%BB.jpg"></p>
 <h2 id="四种定位模式"><a href="#四种定位模式" class="headerlink" title="四种定位模式"></a>四种定位模式</h2><h3 id="静态定位（static）"><a href="#静态定位（static）" class="headerlink" title="静态定位（static）"></a>静态定位（static）</h3><p>静态定位是元素的<b>默认定位方式，无定位的意思</b></p>
-<h4 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h4><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
-div &#123;
-  position: static;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h4><pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">$ 
+div</span> <span class="token punctuation">&#123;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> static<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>静态定位按照标准流特性摆放位置，没有边偏移</li>
 <li>在实际布局中很少用</li>
 </ul>
 <h3 id="相对定位（relative）"><a href="#相对定位（relative）" class="headerlink" title="相对定位（relative）"></a>相对定位（relative）</h3><p>元素在移动位置的时候，是相对于它原来的位置来说的</p>
-<h4 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h4><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
-div &#123;
-  position: relative;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h4><pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">$ 
+div</span> <span class="token punctuation">&#123;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><ol>
 <li>相对于自己原来的位置来移动的（移动位置的参照点是他原来的位置）</li>
 <li>原来在标准流的位置继续占有，后面的盒子当它仍然在（不脱标，继续保留原来位置）<br>因此，相对定位没有脱标，主要用来限制绝对定位的</li>
 </ol>
 <h3 id="绝对定位（absolute）"><a href="#绝对定位（absolute）" class="headerlink" title="绝对定位（absolute）"></a>绝对定位（absolute）</h3><p>元素在移动位置的时候，是相对于它的祖先元素来说的</p>
-<h4 id="语法-2"><a href="#语法-2" class="headerlink" title="语法"></a>语法</h4><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
-div &#123;
-  position: absolute;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="语法-2"><a href="#语法-2" class="headerlink" title="语法"></a>语法</h4><pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">$ 
+div</span> <span class="token punctuation">&#123;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h4><ol>
 <li>如果没有祖先元素或者祖先元素没有定位，则以浏览器为准定位（Document文档）</li>
 <li>如果祖先元素有定位（相对、绝对、固定），则以<b>最近一级的有定位的祖先元素</b>为参考点移动位置</li>
@@ -415,22 +415,22 @@ div &#123;
 </ol>
 <p><b>总结：</b>父级在布局中需要占有位置，所以用相对定位。子级不需要占有位置，使用绝对定位</p>
 <h3 id="固定定位（fixed）"><a href="#固定定位（fixed）" class="headerlink" title="固定定位（fixed）"></a>固定定位（fixed）</h3><p>将元素固定到<b>浏览器可视区</b>的某个位置，不会随着界面的滚动而动</p>
-<h4 id="语法-3"><a href="#语法-3" class="headerlink" title="语法"></a>语法</h4><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
-div &#123;
-  position: fixed;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="语法-3"><a href="#语法-3" class="headerlink" title="语法"></a>语法</h4><pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">$ 
+div</span> <span class="token punctuation">&#123;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> fixed<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="特点-2"><a href="#特点-2" class="headerlink" title="特点"></a>特点</h4><ol>
 <li>以浏览器的可视窗口为参考点移动元素</li>
 <li>跟父元素没有关系</li>
 <li>不随滚动条移动</li>
 <li>不占有原先位置（脱标）</li>
 </ol>
-<h3 id="粘性定位（sticky）"><a href="#粘性定位（sticky）" class="headerlink" title="粘性定位（sticky）"></a>粘性定位（sticky）</h3><p>可看成相对定位和固定定位的混合</p>
-<h4 id="语法-4"><a href="#语法-4" class="headerlink" title="语法"></a>语法</h4><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
-div &#123;
-  position: sticky;
+<h3 id="特殊：粘性定位（sticky）"><a href="#特殊：粘性定位（sticky）" class="headerlink" title="特殊：粘性定位（sticky）"></a>特殊：粘性定位（sticky）</h3><p>可看成相对定位和固定定位的混合</p>
+<h4 id="语法-4"><a href="#语法-4" class="headerlink" title="语法"></a>语法</h4><pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">$ 
+div</span> <span class="token punctuation">&#123;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> sticky<span class="token punctuation">;</span>
   top：0px；         || 当元素距离浏览器可视区顶部距离为0时，变成粘性定位（固定）
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="特点-3"><a href="#特点-3" class="headerlink" title="特点"></a>特点</h4><ol>
 <li>以浏览器的可视窗口为参考点移动元素</li>
 <li>占有原先位置</li>
@@ -438,10 +438,10 @@ div &#123;
 <li>跟滚动搭配使用，兼容性较差，IE不支持</li>
 </ol>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p><img src="/2021/08/03/CSS%E4%BC%A0%E7%BB%9F%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80%E4%B9%8B%E5%AE%9A%E4%BD%8D/%E6%80%BB%E7%BB%93.jpg"></p>
-<h2 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h2><h3 id="定位的叠放次序"><a href="#定位的叠放次序" class="headerlink" title="定位的叠放次序"></a>定位的叠放次序</h3><h4 id="语法-5"><a href="#语法-5" class="headerlink" title="语法"></a>语法</h4><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
-div &#123;
-  z-index: 1;  || z轴，没有单位
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h2><h3 id="定位的叠放次序"><a href="#定位的叠放次序" class="headerlink" title="定位的叠放次序"></a>定位的叠放次序</h3><h4 id="语法-5"><a href="#语法-5" class="headerlink" title="语法"></a>语法</h4><pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">$ 
+div</span> <span class="token punctuation">&#123;</span>
+  <span class="token property">z-index</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>  || z轴，没有单位
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="特点-4"><a href="#特点-4" class="headerlink" title="特点"></a>特点</h4><ol>
 <li>取值范围范围正整数、负整数、0，默认是auto，数值越大，盒子越靠上</li>
 <li>如果属性相同，则按照书写顺序，后来者居上</li>
@@ -1001,7 +1001,7 @@ div &#123;
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">35.2k</span>
+                        class="white-color">38.1k</span>
             
             
             

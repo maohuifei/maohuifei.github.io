@@ -342,7 +342,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-08-07
+                    2021-08-10
                 </div>
                 
 
@@ -414,38 +414,38 @@
 
 <h4 id="css选择器优先规则"><a href="#css选择器优先规则" class="headerlink" title="css选择器优先规则"></a>css选择器优先规则</h4><p>内联样式 &gt; id 选择器 &gt; 类选择器 = 伪类选择器 = 属性选择器 &gt; 标签选择器 = 伪元素选择器</p>
 <h4 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h4><p>HTML:</p>
-<pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">$ 
-&lt;div class&#x3D;&quot;content-class&quot; id&#x3D;&quot;content-id&quot;&gt;&lt;&#x2F;div&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css">$ 
+&lt;div class=<span class="token string">"content-class"</span> id=<span class="token string">"content-id"</span>>&lt;/div><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>CSS:</p>
-<pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
-#content-id &#123;
-    color: red;
-&#125;
-.content-class &#123;
-    color: blue;
-&#125;
-div &#123;
-    color: grey;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">$ 
+#content-id</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token selector">.content-class</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token selector">div</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">color</span><span class="token punctuation">:</span> grey<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>div的最终显示结果为红色</p>
-<h2 id="行内元素转块元素"><a href="#行内元素转块元素" class="headerlink" title="行内元素转块元素"></a>行内元素转块元素</h2><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
-display: inline-block;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="行内元素转块元素"><a href="#行内元素转块元素" class="headerlink" title="行内元素转块元素"></a>行内元素转块元素</h2><pre class="line-numbers language-css" data-language="css"><code class="language-css">$ 
+<span class="token property">display</span><span class="token punctuation">:</span> inline-block<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<h2 id="文字的垂直居中"><a href="#文字的垂直居中" class="headerlink" title="文字的垂直居中"></a>文字的垂直居中</h2><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+<h2 id="文字的垂直居中"><a href="#文字的垂直居中" class="headerlink" title="文字的垂直居中"></a>文字的垂直居中</h2><pre class="line-numbers language-css" data-language="css"><code class="language-css">$ 
 添加 line-height属性，值等于容器高度<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<h2 id="CSS继承性——行高的继承"><a href="#CSS继承性——行高的继承" class="headerlink" title="CSS继承性——行高的继承"></a>CSS继承性——行高的继承</h2><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
-body &#123;
-	font：12px&#x2F;1.5 ；这里的1.5 为当前元素文字大小的1.5倍，所以body的行高为
-&#125;
-div &#123;
-	font-size：14px；子元素div继承父元素body的行高1.5，行高为14*1.5&#x3D;21
-&#125;
-p &#123;
-	font-size：16px；行高为16*1.5&#x3D;24
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="CSS继承性——行高的继承"><a href="#CSS继承性——行高的继承" class="headerlink" title="CSS继承性——行高的继承"></a>CSS继承性——行高的继承</h2><pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">$ 
+body</span> <span class="token punctuation">&#123;</span>
+	font：12px/1.5 ；这里的1.5 为当前元素文字大小的1.5倍，所以body的行高为
+<span class="token punctuation">&#125;</span>
+<span class="token selector">div</span> <span class="token punctuation">&#123;</span>
+	font-size：14px；子元素div继承父元素body的行高1.5，行高为14*1.5=21
+<span class="token punctuation">&#125;</span>
+<span class="token selector">p</span> <span class="token punctuation">&#123;</span>
+	font-size：16px；行高为16*1.5=24
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="li列表去掉前面圆点"><a href="#li列表去掉前面圆点" class="headerlink" title="li列表去掉前面圆点"></a>li列表去掉前面圆点</h2><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">$ 
+<h2 id="li列表去掉前面圆点"><a href="#li列表去掉前面圆点" class="headerlink" title="li列表去掉前面圆点"></a>li列表去掉前面圆点</h2><pre class="line-numbers language-css" data-language="css"><code class="language-css">$ 
 list-style：none<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <h2 id="元素的显示和隐藏"><a href="#元素的显示和隐藏" class="headerlink" title="元素的显示和隐藏"></a>元素的显示和隐藏</h2><h3 id="display属性"><a href="#display属性" class="headerlink" title="display属性"></a>display属性</h3><p>display属性用于设置一个元素如何显示</p>
@@ -1033,7 +1033,7 @@ list-style：none<span aria-hidden="true" class="line-numbers-rows"><span></span
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">35.2k</span>
+                        class="white-color">38.1k</span>
             
             
             
