@@ -342,7 +342,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-08-08
+                    2021-08-26
                 </div>
                 
 
@@ -390,13 +390,14 @@
 <li><b>staged：暂存状态</b><br>使用 git commit 将修改同步到库中，这时库文件和本地文件一致，文件为 Unmodify 状态<br>使用 git reset HEAD fileanme 取消暂存，文件变为 Modified 状态</li>
 </ul>
 <h2 id="Git的使用"><a href="#Git的使用" class="headerlink" title="Git的使用"></a>Git的使用</h2><h3 id="创建及提交"><a href="#创建及提交" class="headerlink" title="创建及提交"></a>创建及提交</h3><pre class="line-numbers language-Git" data-language="Git"><code class="language-Git">$ 
-git init                 || 初始化，会新建一个名为.git 的隐藏文件
-git clone [url]          || 克隆远端仓库到本地
-git status               || 查看所有文件状态
-git add .                || 添加所有文件到暂存区
-git commit -m “消息内容” || 提交暂存区内容到本地仓库，-m 提交信息
-git push                 || 提交到远程仓库
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+git init                      || 初始化，会新建一个名为.git 的隐藏文件
+git remote add origin [url]   || 指定提交的远程存储库的链接
+git clone [url]               || 克隆远端仓库到本地
+git status                    || 查看所有文件状态
+git add .                     || 添加所有文件到暂存区
+git commit -m “消息内容”       || 提交暂存区内容到本地仓库，-m 提交信息&#x2F;备注信息
+git push                      || 提交到远程仓库
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="忽略文件（指定某些文件不提交）"><a href="#忽略文件（指定某些文件不提交）" class="headerlink" title="忽略文件（指定某些文件不提交）"></a>忽略文件（指定某些文件不提交）</h3><p>有些时候我们不想把某些文件纳入版本控制中，比如数据库文件，临时文件，设计文件等<br>在主目录下新建 .gitignore 文件，此文件有以下规则：</p>
 <pre class="line-numbers language-Git" data-language="Git"><code class="language-Git">$ 
 #为注释
@@ -411,7 +412,9 @@ doc&#x2F;*.txt 忽略doc根目录下的.txt文件，不包括doc&#x2F;ect&#x2F;0
 git config --global https.proxy http:&#x2F;&#x2F;127.0.0.1:1080
 git config --global https.proxy https:&#x2F;&#x2F;127.0.0.1:1080
 git config --global http.proxy &#39;socks5:&#x2F;&#x2F;127.0.0.1:1080&#39;
-git config --global https.proxy &#39;socks5:&#x2F;&#x2F;127.0.0.1:1080&#39;    || ip和端口使用不同的代理软件可能会有不同<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+git config --global https.proxy &#39;socks5:&#x2F;&#x2F;127.0.0.1:1080&#39;    || ip和端口使用不同的代理软件可能会有不同
+
+我用的v2rayNG git config --global http.proxy &#39;socks5:&#x2F;&#x2F;192.168.43.1:10808&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>取消Git代理：</p>
 <pre class="line-numbers language-Git" data-language="Git"><code class="language-Git">$ 
 git config --global --unset http.proxy
@@ -1002,7 +1005,7 @@ git config --global --unset https.proxy<span aria-hidden="true" class="line-numb
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">42k</span>
+                        class="white-color">43.4k</span>
             
             
             
