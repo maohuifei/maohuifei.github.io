@@ -342,14 +342,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-08-14
+                    2021-08-28
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.1k
+                    2.3k
                 </div>
                 
 
@@ -431,8 +431,11 @@
 <h2 id="行内元素转块元素"><a href="#行内元素转块元素" class="headerlink" title="行内元素转块元素"></a>行内元素转块元素</h2><pre class="line-numbers language-css" data-language="css"><code class="language-css">$ 
 <span class="token property">display</span><span class="token punctuation">:</span> inline-block<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<h2 id="文字的垂直居中"><a href="#文字的垂直居中" class="headerlink" title="文字的垂直居中"></a>文字的垂直居中</h2><pre class="line-numbers language-css" data-language="css"><code class="language-css">$ 
-添加 line-height属性，值等于容器高度<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="文字的水平垂直居中"><a href="#文字的水平垂直居中" class="headerlink" title="文字的水平垂直居中"></a>文字的水平垂直居中</h2><pre class="line-numbers language-css" data-language="css"><code class="language-css">$ 
+水平居中：给父盒子添加 text-align属性，值为 center
+垂直居中：添加 line-height属性，值等于容器高度<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="盒子的水平垂直居中"><a href="#盒子的水平垂直居中" class="headerlink" title="盒子的水平垂直居中"></a>盒子的水平垂直居中</h2><pre class="line-numbers language-css" data-language="css"><code class="language-css">水平居中：给盒子添加margin属性，值为 0px auto（只适用于盒子有宽的时候）
+垂直居中：使用定位，或者转换<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <h2 id="CSS继承性——行高的继承"><a href="#CSS继承性——行高的继承" class="headerlink" title="CSS继承性——行高的继承"></a>CSS继承性——行高的继承</h2><pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">$ 
 body</span> <span class="token punctuation">&#123;</span>
@@ -582,7 +585,21 @@ list-style：none<span aria-hidden="true" class="line-numbers-rows"><span></span
 </ul>
 <h3 id="行内块的巧妙运用"><a href="#行内块的巧妙运用" class="headerlink" title="行内块的巧妙运用"></a>行内块的巧妙运用</h3><p><img src="/2021/07/13/CSS%E7%9F%A5%E8%AF%86%E7%82%B9%E6%89%A9%E5%B1%95/%E8%A1%8C%E5%86%85%E5%9D%97%E7%9A%84%E5%B7%A7%E5%A6%99%E8%BF%90%E7%94%A8.jpg"><br>给父元素添加 <code>text-align: center;</code> 所有子元素的行内块都会水平居中</p>
 <h2 id="CSS初始化"><a href="#CSS初始化" class="headerlink" title="CSS初始化"></a>CSS初始化</h2><p>重新设置浏览器样式（cssreset）<br>每个网页都要进行初始化<br><img src="/2021/07/13/CSS%E7%9F%A5%E8%AF%86%E7%82%B9%E6%89%A9%E5%B1%95/CSS%E5%88%9D%E5%A7%8B%E5%8C%961.jpg"></p>
+<h2 id="浏览器的私有前缀"><a href="#浏览器的私有前缀" class="headerlink" title="浏览器的私有前缀"></a>浏览器的私有前缀</h2><pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token property">-moz-</span><span class="token punctuation">:</span> 火狐
+<span class="token property">-ms-</span><span class="token punctuation">:</span> IE
+-webkit- Safari、老版本谷歌
+<span class="token property">-o-</span><span class="token punctuation">:</span> Opera欧鹏<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>以添加过渡属性为例：</strong></p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">div</span>
+<span class="token punctuation">&#123;</span>
+    <span class="token property">transition</span><span class="token punctuation">:</span> width 2s<span class="token punctuation">;</span>//常规
+    <span class="token property">-webkit-transition</span><span class="token punctuation">:</span> width 2s<span class="token punctuation">;</span> //Safari和谷歌
+    <span class="token property">-o-transition</span><span class="token punctuation">:</span> width 2s<span class="token punctuation">;</span> //Opera欧鹏
+    <span class="token property">-ms-transition</span><span class="token punctuation">:</span> width 2s<span class="token punctuation">;</span> //IE
+    <span class="token property">-moz-transition</span><span class="token punctuation">:</span> width 2s<span class="token punctuation">;</span> //火狐
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<h2 id="属性笔记"><a href="#属性笔记" class="headerlink" title="属性笔记"></a>属性笔记</h2><h3 id="透明度-opacity：-1"><a href="#透明度-opacity：-1" class="headerlink" title="透明度 opacity： 1"></a>透明度 opacity： 1</h3><h3 id="文字强制一行显示-white-space：nowrap"><a href="#文字强制一行显示-white-space：nowrap" class="headerlink" title="文字强制一行显示 white-space：nowrap"></a>文字强制一行显示 white-space：nowrap</h3>
                 
             </div>
             <hr/>
@@ -1118,7 +1135,7 @@ list-style：none<span aria-hidden="true" class="line-numbers-rows"><span></span
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">43.4k</span>
+                        class="white-color">44.7k</span>
             
             
             

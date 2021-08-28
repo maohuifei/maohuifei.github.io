@@ -342,14 +342,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-08-25
+                    2021-08-28
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.2k
+                    3.1k
                 </div>
                 
 
@@ -585,7 +585,111 @@ section div:nth-of-type（1）</span><span class="token punctuation">&#123;</spa
 </ol>
 <h4 id="综合写法"><a href="#综合写法" class="headerlink" title="综合写法"></a>综合写法</h4><p>属性间用空格隔开</p>
 <pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translate</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">)</span> <span class="token function">rotate</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">)</span> <span class="token function">scale</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>同时有位移和其他属性的时候，位移放到最前面</p>
+<h3 id="动画-animathon"><a href="#动画-animathon" class="headerlink" title="动画 animathon"></a>动画 animathon</h3><p>通过设置多个节点来精确控制一个或一组动画，常用来实现<strong>复杂</strong>的动画效果</p>
+<h4 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h4><ol>
+<li>先定义动画</li>
+<li>再使用（调用）动画</li>
+</ol>
+<p><strong>定义：</strong></p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token atrule"><span class="token rule">@keyframes</span> 动画名称</span><span class="token punctuation">&#123;</span>
+  <span class="token selector">0%:</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span> <span class="token property">background-coler</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span> 
+  <span class="token punctuation">&#125;</span>
+  <span class="token selector">50%</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 150px<span class="token punctuation">;</span> <span class="token property">background-coler</span><span class="token punctuation">:</span> yellow<span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+  <span class="token selector">100%:</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span> <span class="token property">background-coler</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>注意：</strong></p>
+<ol>
+<li>为了得到最佳的浏览器支持，应该始终定义 0% 和 100% 选择器</li>
+<li>多个属性之间用分号隔开</li>
+</ol>
+<p><strong>调用：</strong></p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"> <span class="token selector">div</span> <span class="token punctuation">&#123;</span>
+      <span class="token property">animation</span><span class="token punctuation">:</span> 定义的名称（name） 动画的持续时间（s<span class="token punctuation">)</span>，
+      定义的名称（name） 动画的持续时间（s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>注意：</strong><br>元素可以添加多个动画，动画之间用逗号隔开</p>
+<h4 id="所有动画属性"><a href="#所有动画属性" class="headerlink" title="所有动画属性"></a>所有动画属性</h4><p><img src="/2021/08/13/HTML5-CSS3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%8A%A8%E7%94%BB%E5%B1%9E%E6%80%A7.jpg"></p>
+<h4 id="动画序列"><a href="#动画序列" class="headerlink" title="动画序列"></a>动画序列</h4><ol>
+<li>0%是动画的<strong>开始</strong>，100是动画的<strong>结束</strong>。这样的规则就是动画序列</li>
+<li>在 @keyframes 中规定某项CSS样式，就能创建<strong>由当前样式逐渐转变为新样式</strong>的效果</li>
+<li>动画是使元素从一种样式逐渐变化为另一种样式的效果，可以改变<strong>任意多的样式任意多的次数</strong>。</li>
+<li>请用<strong>百分比</strong>来规定变化发生的时间，或用关键词 “from” 和 “to”，等同于 0% 和 100%。</li>
+</ol>
+<h4 id="简写"><a href="#简写" class="headerlink" title="简写"></a>简写</h4><pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">div</span>
+<span class="token punctuation">&#123;</span>
+    <span class="token property">animation-name</span><span class="token punctuation">:</span> myfirst<span class="token punctuation">;</span>
+    <span class="token property">animation-duration</span><span class="token punctuation">:</span> 5s<span class="token punctuation">;</span>
+    <span class="token property">animation-timing-function</span><span class="token punctuation">:</span> linear<span class="token punctuation">;</span>
+    <span class="token property">animation-delay</span><span class="token punctuation">:</span> 2s<span class="token punctuation">;</span>
+    <span class="token property">animation-iteration-count</span><span class="token punctuation">:</span> infinite<span class="token punctuation">;</span>
+    <span class="token property">animation-direction</span><span class="token punctuation">:</span> alternate<span class="token punctuation">;</span>
+    <span class="token property">animation-play-state</span><span class="token punctuation">:</span> running<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token selector">................简写...................
 
+div</span>
+<span class="token punctuation">&#123;</span>
+    <span class="token property">animation</span><span class="token punctuation">:</span> myfirst 5s linear（匀速） 2s infinite（无限循环） alternate<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="速度曲线"><a href="#速度曲线" class="headerlink" title="速度曲线"></a>速度曲线</h4><p><img src="/2021/08/13/HTML5-CSS3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E9%80%9F%E5%BA%A6%E6%9B%B2%E7%BA%BF.jpg"><br><code>steps()</code>可用来做<strong>逐帧动画</strong>，<strong>打字</strong>效果</p>
+<h3 id="3D转换-transform"><a href="#3D转换-transform" class="headerlink" title="3D转换 transform"></a>3D转换 transform</h3><h4 id="三维坐标系"><a href="#三维坐标系" class="headerlink" title="三维坐标系"></a>三维坐标系</h4><p><img src="/2021/08/13/HTML5-CSS3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E4%B8%89%E7%BB%B4%E5%9D%90%E6%A0%87%E7%B3%BB.jpg"></p>
+<ul>
+<li><strong>X轴：水平向右，(右+/左-)</strong></li>
+<li><strong>Y轴：垂直向下，(下+/上-)</strong></li>
+<li><strong>Z轴：垂直于屏幕，(外+/里-)</strong></li>
+</ul>
+<h4 id="3D位移-translate3d-x-y-z"><a href="#3D位移-translate3d-x-y-z" class="headerlink" title="3D位移 translate3d(x,y,z)"></a>3D位移 translate3d(x,y,z)</h4><pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token punctuation">&#123;</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translateX</span><span class="token punctuation">(</span>120px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translateY</span><span class="token punctuation">(</span>120px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translateZ</span><span class="token punctuation">(</span>120px<span class="token punctuation">)</span><span class="token punctuation">;</span>//直接使用无效果，需要借助下面的透视
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translate3d</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">,</span>z<span class="token punctuation">)</span><span class="token punctuation">;</span>//简写
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="透视-perspective"><a href="#透视-perspective" class="headerlink" title="透视 perspective"></a>透视 perspective</h4><p><img src="/2021/08/13/HTML5-CSS3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/3D%E9%80%8F%E8%A7%86.jpg"><br>d：视距，眼睛到屏幕的距离<br>z：Z轴，物体距离屏幕的距离</p>
+<ul>
+<li>透视也称为<strong>视距</strong>，人的<strong>眼睛到屏幕的距离</strong></li>
+<li>近大远小： 距离视觉点<strong>越近</strong>的在电脑平面<strong>成像越大，越远成像越小</strong></li>
+<li>透视单位是像素</li>
+</ul>
+<p>透视写在 <strong>被观察元素</strong> 的 <strong>父盒子</strong> 上面</p>
+<p><code>perspective</code>和<code>translateZ</code>能实现相同的视觉效果<br>但是，透视是给父盒子加的属性，里面可能有多个子盒子</p>
+<p><strong>透视应用场景：</strong><br><img src="/2021/08/13/HTML5-CSS3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E9%80%8F%E8%A7%86%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF.jpg"><br>给父盒子一个<code>perspective</code>，每个子盒子通过<code>translateZ</code>更改Z轴前后关系</p>
+<h4 id="3D旋转-rotate3d-x-y-z"><a href="#3D旋转-rotate3d-x-y-z" class="headerlink" title="3D旋转 rotate3d(x,y,z)"></a>3D旋转 rotate3d(x,y,z)</h4><p>让元素在三位平面内沿着X/Y/Z轴旋转<br><img src="/2021/08/13/HTML5-CSS3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/3D%E6%97%8B%E8%BD%AC.gif"></p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token punctuation">&#123;</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotateX</span><span class="token punctuation">(</span>120deg<span class="token punctuation">)</span><span class="token punctuation">;</span>//沿着X轴正方向旋转120度
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotateY</span><span class="token punctuation">(</span>120deg<span class="token punctuation">)</span><span class="token punctuation">;</span>//沿着Y轴正方向旋转120度
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotateZ</span><span class="token punctuation">(</span>120deg<span class="token punctuation">)</span><span class="token punctuation">;</span>//沿着Z轴正方向旋转120度
+
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotate3d</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">,</span>z<span class="token punctuation">,</span>deg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    //沿着自定义轴正方向旋转
+    //沿X轴旋转180度：（1<span class="token punctuation">,</span>0<span class="token punctuation">,</span>0<span class="token punctuation">,</span>180deg）
+    //还可以沿着对角线进行旋转：（1<span class="token punctuation">,</span>1<span class="token punctuation">,</span>0<span class="token punctuation">,</span>180deg）
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="左手守则"><a href="#左手守则" class="headerlink" title="左手守则"></a>左手守则</h4><p><strong>利用左手守则判断旋转方向：</strong><br><img src="/2021/08/13/HTML5-CSS3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%B7%A6%E6%89%8B%E5%AE%88%E5%88%99.jpg"></p>
+<ul>
+<li>左手手拇指指向X轴正方向</li>
+<li>手指弯曲的方向就是该元素沿着X轴旋转的方向</li>
+</ul>
+<h4 id="3D呈现-transform-style"><a href="#3D呈现-transform-style" class="headerlink" title="3D呈现 transform-style"></a>3D呈现 transform-style</h4><ol>
+<li><p>控制子元素<strong>是否开启三维</strong>立体环境</p>
+</li>
+<li><p><code>transform-style: flat</code> 默认是子元素不开启3D环境</p>
+</li>
+<li><p><code>transform-style: preserve-3d</code> 子元素开启立体环境</p>
+</li>
+<li><p>这个<strong>属性给父元素加</strong>，影响的是子盒子</p>
+</li>
+<li><p><strong>重要属性</strong></p>
+</li>
+<li><p>自己试验发现这个属性给上一级的父盒子添加才有用</p>
+</li>
+</ol>
 
                 
             </div>
@@ -1125,7 +1229,7 @@ section div:nth-of-type（1）</span><span class="token punctuation">&#123;</spa
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">43.4k</span>
+                        class="white-color">44.7k</span>
             
             
             
