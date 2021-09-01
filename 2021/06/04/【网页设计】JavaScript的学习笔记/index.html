@@ -342,7 +342,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-08-21
+                    2021-09-01
                 </div>
                 
 
@@ -369,7 +369,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>JavaScript（简称“JS”） 是一种具有函数优先的轻量级，解释型或即时编译型的编程语言。虽然它是作为开发Web页面的脚本语言而出名，但是它也被用到了很多非浏览器环境中，JavaScript 基于原型编程、多范式的动态脚本语言，并且支持面向对象、命令式、声明式、函数式编程范式。<br>ECMAScript 是一种由Ecma国际（前身为欧洲计算机制造商协会）在标准ECMA-262中定义的手稿语言规范。 这种语言在万维网上应用广泛，它往往被称为JavaScript或JScript，但实际上后两者是ECMA-262标准的实践和扩展。</p>
+                <p>JavaScript（简称“JS”） 是一种具有函数优先的轻量级，解释型或即时编译型的编程语言。虽然它是作为开发Web页面的脚本语言而出名，但是它也被用到了很多非浏览器环境中，JavaScript 基于原型编程、多范式的动态脚本语言，并且支持面向对象、命令式、声明式、函数式编程范式。<br>ECMAScript 是一种由Ecma国际（前身为欧洲计算机制造商协会）在标准ECMA-262中定义的手稿语言规范。 这种语言在万维网上应用广泛，它往往被称为JavaScript或JScript，但实际上后两者是ECMA-262标准的实践和扩展。<br><strong>本文为学习JavaScript基础语法，ECMAscript标准规定的基本语法的学习笔记</strong></p>
 <span id="more"></span>
 
 <p><b>本文参考：</b><br>维基百科：<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/zh-tw/ECMAScript">https://zh.wikipedia.org/zh-tw/ECMAScript</a><br>官方文档：<a target="_blank" rel="noopener" href="https://www.javascript.com/learn/strings">https://www.javascript.com/learn/strings</a><br>菜鸟教程——JavaScript教程：<a target="_blank" rel="noopener" href="https://www.runoob.com/js/js-tutorial.html">https://www.runoob.com/js/js-tutorial.html</a><br>现代JavaScript教程：<a target="_blank" rel="noopener" href="https://zh.javascript.info/variables">https://zh.javascript.info/variables</a><br>黑马pink老师avaScript基础语法-dom-bom-js-es6新语法-jQuery-数据可视化echarts：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Sy4y1C7ha">https://www.bilibili.com/video/BV1Sy4y1C7ha</a></p>
@@ -896,39 +896,6 @@ fruits<span class="token punctuation">[</span><span class="token number">3</span
   <span class="token function">alert</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>PS：注意起始值是0，结束值是长度</p>
-<h3 id><a href="#" class="headerlink" title></a></h3><h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><h4 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h4><p>队列（queue）是最常见的使用数组的方法之一</p>
-<ul>
-<li>push 在末端添加一个元素</li>
-<li>shift 取出队列首端的一个元素，整个队列往前移，这样原先排第二的元素现在排在了第一</li>
-</ul>
-<h4 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h4><ul>
-<li>push 在末端添加一个元素</li>
-<li>pop 从末端取出一个元素</li>
-</ul>
-<p>所以新元素的添加和取出都是从“末端”开始的。<br>栈通常被被形容成一叠卡片：要么在最上面添加卡片，要么从最上面拿走卡片：</p>
-<p>对于栈来说，最后放进去的内容是最先接收的，也叫做 LIFO（Last-In-First-Out），即后进先出法则。<br>而与队列相对应的叫做 FIFO（First-In-First-Out），即先进先出。<br>JavaScript 中的数组既可以用作队列，也可以用作栈。它们允许你从首端/末端来添加/删除元素。<br>这在计算机科学中，允许这样的操作的数据结构被称为 双端队列（deque）</p>
-<h4 id="作用于数组末端的方法："><a href="#作用于数组末端的方法：" class="headerlink" title="作用于数组末端的方法："></a>作用于数组末端的方法：</h4><pre class="line-numbers language-js" data-language="js"><code class="language-js">pop<span class="token operator">:</span>
-<span class="token keyword">let</span> fruits <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Apple"</span><span class="token punctuation">,</span> <span class="token string">"Orange"</span><span class="token punctuation">,</span> <span class="token string">"Pear"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token function">alert</span><span class="token punctuation">(</span> fruits<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 移除 "Pear" 然后 alert 显示出来</span>
-<span class="token function">alert</span><span class="token punctuation">(</span> fruits <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Apple, Orange</span>
-push<span class="token operator">:</span>
-<span class="token keyword">let</span> fruits <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Apple"</span><span class="token punctuation">,</span> <span class="token string">"Orange"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-fruits<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">"Pear"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token function">alert</span><span class="token punctuation">(</span> fruits <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Apple, Orange, Pear</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="作用于数组首端的方法："><a href="#作用于数组首端的方法：" class="headerlink" title="作用于数组首端的方法："></a>作用于数组首端的方法：</h4><pre class="line-numbers language-js" data-language="js"><code class="language-js">shift<span class="token operator">:</span>
-<span class="token keyword">let</span> fruits <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Apple"</span><span class="token punctuation">,</span> <span class="token string">"Orange"</span><span class="token punctuation">,</span> <span class="token string">"Pear"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token function">alert</span><span class="token punctuation">(</span> fruits<span class="token punctuation">.</span><span class="token function">shift</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 移除 Apple 然后 alert 显示出来</span>
-<span class="token function">alert</span><span class="token punctuation">(</span> fruits <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Orange, Pear</span>
-unshfit<span class="token operator">:</span>
-<span class="token keyword">let</span> fruits <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Orange"</span><span class="token punctuation">,</span> <span class="token string">"Pear"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-fruits<span class="token punctuation">.</span><span class="token function">unshift</span><span class="token punctuation">(</span><span class="token string">'Apple'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token function">alert</span><span class="token punctuation">(</span> fruits <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Apple, Orange, Pear</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="PS"><a href="#PS" class="headerlink" title="PS"></a>PS</h4><p>push 和 unshift 方法都可以一次添加多个元素：</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> fruits <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Apple"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-fruits<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">"Orange"</span><span class="token punctuation">,</span> <span class="token string">"Peach"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-fruits<span class="token punctuation">.</span><span class="token function">unshift</span><span class="token punctuation">(</span><span class="token string">"Pineapple"</span><span class="token punctuation">,</span> <span class="token string">"Lemon"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment">// ["Pineapple", "Lemon", "Apple", "Orange", "Peach"]</span>
-<span class="token function">alert</span><span class="token punctuation">(</span> fruits <span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><p><img src="/2021/06/04/%E3%80%90%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1%E3%80%91JavaScript%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F.jpg"></p>
 <h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>我们经常需要在脚本的许多地方执行很相似的操作<br>函数是程序的主要“构建模块”。函数使该段代码可以被调用很多次，而不需要写重复的代码。<br>我们已经看到了内置函数的示例，如 alert(message)、prompt(message, default) 和 confirm(question)。<br>但我们也可以创建自己的函数</p>
 <h3 id="函数声明"><a href="#函数声明" class="headerlink" title="函数声明"></a>函数声明</h3><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">showMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
@@ -1222,7 +1189,48 @@ objectName<span class="token punctuation">.</span><span class="token function">m
   consloe<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//这句输出值</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="内置对象"><a href="#内置对象" class="headerlink" title="内置对象"></a>内置对象</h3>
+<h3 id="内置对象"><a href="#内置对象" class="headerlink" title="内置对象"></a>内置对象</h3><p>内置对象指JS语言<strong>自带的一些对象</strong>，供开发者使用，提供一些<strong>常用或者最基本</strong>的功能（属性和方法）<br>内置对象最大的优点<strong>帮助我们快速开发</strong></p>
+<h4 id="常见的内置对象"><a href="#常见的内置对象" class="headerlink" title="常见的内置对象"></a>常见的内置对象</h4><p>JS提供多个内置对象：Math，Date，Array，String等<br>详见： <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects</a></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">Math<span class="token punctuation">.</span><span class="token constant">PI</span><span class="token comment">//圆周率</span>
+Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">//向下取整</span>
+Math<span class="token punctuation">.</span><span class="token function">ceil</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">//向上取整</span>
+Math<span class="token punctuation">.</span><span class="token function">round</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">//四舍五入版，就近取整，-3.5取整后是-3</span>
+Math<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">//绝对值</span>
+Math<span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token function">min</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">//求最大和最小</span>
+Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">//返回[0-1)之间的随机数，包含0不包含1</span>
+Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> max <span class="token operator">-</span> min <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">+</span> min<span class="token comment">//返回两个数之间的随机整数，包含两数</span>
+Math<span class="token punctuation">.</span><span class="token function">date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">//日期，构造函数必须使用new</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="封装自己的数学对象"><a href="#封装自己的数学对象" class="headerlink" title="封装自己的数学对象"></a>封装自己的数学对象</h4><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> myMath <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+    <span class="token constant">PI</span><span class="token operator">:</span> <span class="token number">3.1415926</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">max</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">var</span> max <span class="token operator">=</span> arguments<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> arguments<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>max <span class="token operator">&lt;</span> arguments<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                max <span class="token operator">=</span> arguments<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">return</span> max<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">min</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">var</span> min <span class="token operator">=</span> arguments<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> arguments<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>min <span class="token operator">></span> arguments<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                min <span class="token operator">=</span> arguments<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">return</span> min<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>myMath<span class="token punctuation">.</span><span class="token constant">PI</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>myMath<span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>myMath<span class="token punctuation">.</span><span class="token function">min</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="基本包装类型"><a href="#基本包装类型" class="headerlink" title="基本包装类型"></a>基本包装类型</h4><p>为了方便操作基本数据类型，JS提供了三个特殊的引用类型:string/number/boolean<br><strong>基本包装类型</strong>就是把简单的数据类型<strong>转换包装</strong>成复杂数据类型<br>这样基本数据类型就有了属性和方法</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> a<span class="token operator">=</span><span class="token string">'name'</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> i<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span><span class="token string">'name'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+a<span class="token operator">=</span>i<span class="token punctuation">;</span>
+i<span class="token operator">=</span><span class="token keyword">null</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
                 
             </div>
             <hr/>
@@ -1531,8 +1539,7 @@ objectName<span class="token punctuation">.</span><span class="token function">m
                 <a href="/2021/06/04/%E3%80%90%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1%E3%80%91CSS%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
                     <div class="card-image">
                         
-                        
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="CSS基础学习笔记">
+                        <img src="/medias/featureimages/35.jpg" class="responsive-img" alt="CSS基础学习笔记">
                         
                         <span class="card-title">CSS基础学习笔记</span>
                     </div>
@@ -1592,7 +1599,7 @@ objectName<span class="token punctuation">.</span><span class="token function">m
 
         var selection = window.getSelection();
         // if the selection is short let's not annoy our users.
-        if (('' + selection).length < Number.parseInt('10')) {
+        if (('' + selection).length < Number.parseInt('300')) {
             return;
         }
 
@@ -1759,7 +1766,7 @@ objectName<span class="token punctuation">.</span><span class="token function">m
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">44.7k</span>
+                        class="white-color">47.6k</span>
             
             
             
