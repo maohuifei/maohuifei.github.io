@@ -342,14 +342,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-08-28
+                    2021-09-07
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.3k
+                    2.4k
                 </div>
                 
 
@@ -477,6 +477,34 @@ list-style：none<span aria-hidden="true" class="line-numbers-rows"><span></span
 <li>移动背景图片的位置 使用 background-position 属性</li>
 <li>移动的距离是目标图片的 x 轴和 y 轴，注意网页中的坐标有所不同，一般数值都是负的（往上往左是负值）</li>
 </ol>
+<h3 id="JS技术与精灵图的应用"><a href="#JS技术与精灵图的应用" class="headerlink" title="JS技术与精灵图的应用"></a>JS技术与精灵图的应用</h3><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>style<span class="token operator">></span>
+        div ul li <span class="token punctuation">&#123;</span>
+        	list<span class="token operator">-</span>style<span class="token operator">:</span> none<span class="token punctuation">;</span>
+            float<span class="token operator">:</span> left<span class="token punctuation">;</span>
+            width<span class="token operator">:</span> <span class="token number">24</span>px<span class="token punctuation">;</span>
+            height<span class="token operator">:</span> <span class="token number">24</span>px<span class="token punctuation">;</span>
+            margin<span class="token operator">:</span> <span class="token number">5</span>px<span class="token punctuation">;</span>
+            background<span class="token operator">-</span>image<span class="token operator">:</span> <span class="token function">url</span><span class="token punctuation">(</span><span class="token string">'images/001.png'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            background<span class="token operator">-</span>position<span class="token operator">:</span> <span class="token number">0</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token comment">//定义每个图标的CSS样式</span>
+        <span class="token punctuation">&#125;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>style<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>head<span class="token operator">></span>
+<span class="token operator">&lt;</span>body<span class="token operator">></span>
+    <span class="token operator">&lt;</span>div<span class="token operator">></span>
+        <span class="token operator">&lt;</span>ul<span class="token operator">></span>
+            <span class="token operator">&lt;</span>li<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">></span><span class="token operator">&lt;</span>li<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">></span><span class="token operator">&lt;</span>li<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">></span><span class="token operator">&lt;</span>li<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">></span><span class="token operator">&lt;</span>li<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">></span><span class="token operator">&lt;</span>li<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">></span><span class="token operator">&lt;</span>li<span class="token operator">></span>
+            <span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">></span><span class="token operator">&lt;</span>li<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">></span><span class="token operator">&lt;</span>li<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">></span><span class="token operator">&lt;</span>li<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">></span><span class="token operator">&lt;</span>li<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">></span><span class="token operator">&lt;</span>li<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">></span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>ul<span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+    <span class="token operator">&lt;</span>script<span class="token operator">></span>
+        <span class="token keyword">var</span> lis <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">'li'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//获取所有的li</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> lis<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">//遍历所有li</span>
+            <span class="token keyword">var</span> b <span class="token operator">=</span> i <span class="token operator">*</span> <span class="token number">44</span><span class="token punctuation">;</span><span class="token comment">//这里是每个图标的y轴坐标</span>
+            lis<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>style<span class="token punctuation">.</span>backgroundPosition <span class="token operator">=</span> <span class="token string">'0 -'</span> <span class="token operator">+</span> b <span class="token operator">+</span> <span class="token string">'px'</span><span class="token punctuation">;</span><span class="token comment">//事件为改变背景坐标属性</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h2 id="字体图标（iconfont）"><a href="#字体图标（iconfont）" class="headerlink" title="字体图标（iconfont）"></a>字体图标（iconfont）</h2><h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ul>
 <li>轻量级：文件小，和字体一起加载渲染，减少服务器请求</li>
 <li>灵活性：本质是文字，可以随意更改样式</li>
@@ -1134,7 +1162,7 @@ list-style：none<span aria-hidden="true" class="line-numbers-rows"><span></span
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">47.6k</span>
+                        class="white-color">51.1k</span>
             
             
             

@@ -342,14 +342,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-09-01
+                    2021-09-10
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.1k
+                    2.3k
                 </div>
                 
 
@@ -564,6 +564,19 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token function">fn</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//4.输出：张学友(被覆盖了)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="/2021/09/01/JavaScript%E7%9F%A5%E8%AF%86%E7%82%B9%E6%89%A9%E5%B1%95/%E5%A4%8D%E6%9D%82%E4%BC%A0%E5%8F%82.jpg"></p>
+<h2 id="相似鼠标事件的区别"><a href="#相似鼠标事件的区别" class="headerlink" title="相似鼠标事件的区别"></a>相似鼠标事件的区别</h2><h3 id="onmouseover和onmouseenter"><a href="#onmouseover和onmouseenter" class="headerlink" title="onmouseover和onmouseenter"></a>onmouseover和onmouseenter</h3><ol>
+<li>鼠标移入该元素的时候触发的事件</li>
+<li>如果<strong>打开页面的时候鼠标刚好在该元素上面</strong>，onmouseenter就没有被触发，而onmouseover会被触发</li>
+<li>因为<strong>onmouseenter</strong>只有在<strong>鼠标进入该元素的瞬间</strong>才会被触发</li>
+</ol>
+<h3 id="onmouseleave和onmouseout"><a href="#onmouseleave和onmouseout" class="headerlink" title="onmouseleave和onmouseout"></a>onmouseleave和onmouseout</h3><ol>
+<li>只要鼠标不在该元素身上，onmouseout就会触发</li>
+<li>而onmouseleavr<strong>只有在鼠标从该元素身上离开的时候才会触发</strong></li>
+</ol>
+<h3 id="onmouseover和onmousemove"><a href="#onmouseover和onmousemove" class="headerlink" title="onmouseover和onmousemove"></a>onmouseover和onmousemove</h3><ol>
+<li>onmouseover 只在<strong>刚进入区域时触发</strong></li>
+<li>onmousemove 除了刚进入区域触发外，<strong>在区域内移动鼠标，也会触发该事件</strong></li>
+</ol>
 
                 
             </div>
@@ -809,29 +822,29 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/09/01/JavaScript%E7%9F%A5%E8%AF%86%E7%82%B9%E6%89%A9%E5%B1%95/">
+                <a href="/2021/09/13/jQuery%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="JavaScript知识点扩展">
                         
-                        <span class="card-title">JavaScript知识点扩展</span>
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="jQuery基础学习笔记">
+                        
+                        <span class="card-title">jQuery基础学习笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            收录总结JavaScript学习中的知识点扩展
+                            jquery是一个快速、简洁的JavaScript框架，是继Prototype之后又一个优秀的JavaScript代码库（或JavaScript框架）。
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-01
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-09-13
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -844,13 +857,8 @@ console<span class="token punctuation">.</span><span class="token function">log<
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
-                    
-                    <a href="/tags/JavaScript/">
-                        <span class="chip bg-color">JavaScript</span>
-                    </a>
                     
                     <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
                         <span class="chip bg-color">学习笔记</span>
@@ -858,6 +866,10 @@ console<span class="token punctuation">.</span><span class="token function">log<
                     
                     <a href="/tags/Web%E5%89%8D%E7%AB%AF/">
                         <span class="chip bg-color">Web前端</span>
+                    </a>
+                    
+                    <a href="/tags/jQuery/">
+                        <span class="chip bg-color">jQuery</span>
                     </a>
                     
                 </div>
@@ -1103,7 +1115,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">47.6k</span>
+                        class="white-color">51.1k</span>
             
             
             
