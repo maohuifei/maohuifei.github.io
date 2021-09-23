@@ -342,14 +342,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-09-13
+                    2021-09-14
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    30
+                    463
                 </div>
                 
 
@@ -372,7 +372,53 @@
                 <p>jquery是一个快速、简洁的JavaScript框架，是继Prototype之后又一个优秀的JavaScript代码库（或JavaScript框架）。</p>
 <span id="more"></span>
 
-<h2 id><a href="#" class="headerlink" title></a></h2>
+<h2 id="jQuery简介"><a href="#jQuery简介" class="headerlink" title="jQuery简介"></a>jQuery简介</h2><ul>
+<li>jQuery 是一个 JavaScript 库</li>
+<li>jQuery 极大地简化了 JavaScript 编程</li>
+<li>jQuery 很容易学习</li>
+</ul>
+<h2 id="jQuery-库功能"><a href="#jQuery-库功能" class="headerlink" title="jQuery 库功能"></a>jQuery 库功能</h2><ul>
+<li>HTML 元素选取</li>
+<li>HTML 元素操作</li>
+<li>CSS 操作</li>
+<li>HTML 事件函数</li>
+<li>JavaScript 特效和动画</li>
+<li>HTML DOM 遍历和修改</li>
+<li>AJAX</li>
+<li>Utilities</li>
+<li><em>提示：</em>* 除此之外，jQuery 还提供了大量的插件</li>
+</ul>
+<h2 id="安装和引用"><a href="#安装和引用" class="headerlink" title="安装和引用"></a>安装和引用</h2><h3 id="从官网下载jQuery库"><a href="#从官网下载jQuery库" class="headerlink" title="从官网下载jQuery库"></a>从官网下载jQuery库</h3><p><a target="_blank" rel="noopener" href="https://jquery.com/download/">官方下载地址</a><br><strong>两个版本：</strong></p>
+<ul>
+<li>Production version - 用于实际的网站中，已被精简和压缩。</li>
+<li>Development version - 用于测试和开发（未压缩，是可读的代码）</li>
+</ul>
+<h3 id="引用语法"><a href="#引用语法" class="headerlink" title="引用语法"></a>引用语法</h3><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>head<span class="token operator">></span>
+<span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">"jquery-1.10.2.min.js"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>head<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>将下载的文件放在网页的同一目录下，就可以使用jQuery</p>
+<h3 id="从-CDN-中载入-jQuery"><a href="#从-CDN-中载入-jQuery" class="headerlink" title="从 CDN 中载入 jQuery"></a>从 CDN 中载入 jQuery</h3><p>如果您不希望下载并存放 jQuery，那么也可以通过 CDN（内容分发网络） 引用它<br><strong>百度：</strong></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>head<span class="token operator">></span>
+<span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">"https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"</span><span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>head<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>又拍云：</strong></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>head<span class="token operator">></span>
+<span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">"https://upcdn.b0.upaiyun.com/libs/jquery/jquery-2.0.2.min.js"</span><span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>head<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>新浪：</strong></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>head<span class="token operator">></span>
+<span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">"https://lib.sinaapp.com/js/jquery/2.0.2/jquery-2.0.2.min.js"</span><span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>head<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>Google:</strong></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>head<span class="token operator">></span>
+<span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">"https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"</span><span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>head<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>许多用户在访问其他站点时，已经从百度、又拍云、新浪、谷歌或微软加载过jQuery。<br>所以结果是，当他们访问您的站点时，会从缓存中加载jQuery，这样可以减少加载时间。<br>同时，大多数 CDN 都可以确保当用户向其请求文件时，会从离用户最近的服务器上返回响应，这样也可以提高加载速度。</p>
+<h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><h2 id="操作HTML"><a href="#操作HTML" class="headerlink" title="操作HTML"></a>操作HTML</h2><h2 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h2><h2 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h2><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2>
                 
             </div>
             <hr/>
@@ -617,30 +663,29 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/09/13/jQuery%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                <a href="/2021/09/15/Node-js%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="jQuery基础学习笔记">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Node.js基础学习笔记">
                         
-                        <span class="card-title">jQuery基础学习笔记</span>
+                        <span class="card-title">Node.js基础学习笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            jquery是一个快速、简洁的JavaScript框架，是继Prototype之后又一个优秀的JavaScript代码库（或JavaScript框架）。
+                            Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境。Node.js 使用了一个事件驱动、非阻塞式 I/O 的模型，使其轻量又高效。Node.js 的包管理器 npm，是全球最大的开源库生态系统。
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-13
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-09-15
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -653,7 +698,6 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -665,8 +709,8 @@
                         <span class="chip bg-color">Web前端</span>
                     </a>
                     
-                    <a href="/tags/jQuery/">
-                        <span class="chip bg-color">jQuery</span>
+                    <a href="/tags/Node-js/">
+                        <span class="chip bg-color">Node.js</span>
                     </a>
                     
                 </div>
@@ -910,7 +954,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">51.1k</span>
+                        class="white-color">53k</span>
             
             
             

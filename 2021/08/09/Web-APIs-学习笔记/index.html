@@ -342,14 +342,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-09-13
+                    2021-09-14
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.1k
+                    4.6k
                 </div>
                 
 
@@ -842,7 +842,15 @@ e<span class="token punctuation">.</span><span class="token function-variable fu
     <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
 <span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ol>
-<h3 id="计时器方法"><a href="#计时器方法" class="headerlink" title="计时器方法"></a>计时器方法</h3><h4 id="satInterval与clearInterval"><a href="#satInterval与clearInterval" class="headerlink" title="satInterval与clearInterval"></a>satInterval与clearInterval</h4><p><strong>秒表案例：</strong></p>
+<h3 id="计时器方法"><a href="#计时器方法" class="headerlink" title="计时器方法"></a>计时器方法</h3><h4 id="satInterval与clearInterval"><a href="#satInterval与clearInterval" class="headerlink" title="satInterval与clearInterval"></a>satInterval与clearInterval</h4><p><strong>语法：</strong></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> a<span class="token operator">=</span><span class="token keyword">null</span><span class="token punctuation">;</span>
+a<span class="token operator">=</span><span class="token function">setInterval</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'hello,world!'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//事件</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token comment">/*秒数，1000为1秒*/</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//每1秒输出一个hello，world！</span>
+
+<span class="token function">clearInterval</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//用于终止计时器事件</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>秒表案例：</strong></p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>body<span class="token operator">></span>
     <span class="token operator">&lt;</span>button <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">'start'</span><span class="token operator">></span>开始<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">></span>
     <span class="token operator">&lt;</span>button <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">'pause'</span><span class="token operator">></span>暂停<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">></span>
@@ -880,7 +888,73 @@ e<span class="token punctuation">.</span><span class="token function-variable fu
     <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
 <span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id><a href="#" class="headerlink" title></a></h4><h2 id="BOM-浏览器对象模型"><a href="#BOM-浏览器对象模型" class="headerlink" title="BOM (浏览器对象模型)"></a>BOM (浏览器对象模型)</h2><p>独立与内容的，可以与浏览器窗口进行互动的对象结构<br>可以操作浏览器窗口，如弹出框、浏览器跳转、获取分辨率等</p>
+<h4 id="setTimeout和clearTimeout"><a href="#setTimeout和clearTimeout" class="headerlink" title="setTimeout和clearTimeout"></a>setTimeout和clearTimeout</h4><p><strong>语法：</strong></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> a<span class="token operator">=</span><span class="token keyword">null</span><span class="token punctuation">;</span>
+a <span class="token operator">=</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'hello,world!'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token number">5000</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//5秒后输出一个hello，world！</span>
+
+<span class="token function">clearTimeout</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//结束计时器事件</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="防抖与节流"><a href="#防抖与节流" class="headerlink" title="防抖与节流"></a>防抖与节流</h3><p>解决性能问题，实际开发中会遇到</p>
+<h4 id="防抖-debounce"><a href="#防抖-debounce" class="headerlink" title="防抖 debounce"></a>防抖 debounce</h4><p>对于<strong>短时间内多次触发事件</strong>的情况，可以使用防抖<strong>停止事件持续触发</strong></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>body<span class="token operator">></span>
+    <span class="token operator">&lt;</span>div<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+    <span class="token operator">&lt;</span>script<span class="token operator">></span>
+        <span class="token keyword">var</span> time <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+        window<span class="token punctuation">.</span><span class="token function-variable function">onscroll</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>time <span class="token operator">!==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                <span class="token function">clearInterval</span><span class="token punctuation">(</span>time<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+            time <span class="token operator">=</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+                console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'hello,world!'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                time <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span><span class="token comment">//滚轮事件不会连续触发</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="节流-throttle"><a href="#节流-throttle" class="headerlink" title="节流 throttle"></a>节流 throttle</h4><p><strong>防止短时间内多次触发事件</strong>的情况，但是<strong>间隔事件</strong>内，还是<strong>需要不断触发</strong>（控制事件执行的次数）</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>body<span class="token operator">></span>
+    <span class="token operator">&lt;</span>div<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+    <span class="token operator">&lt;</span>script<span class="token operator">></span>
+        <span class="token keyword">var</span> mark <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+        window<span class="token punctuation">.</span><span class="token function-variable function">onscroll</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>mark<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+                    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'hello,world!'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    mark <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+                <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token number">500</span><span class="token punctuation">)</span>
+            <span class="token punctuation">&#125;</span>
+            mark <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span><span class="token comment">//控制事件，每隔0.5秒才能执行一次（按时间间隔触发）</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="利用闭包，封装防抖算法"><a href="#利用闭包，封装防抖算法" class="headerlink" title="利用闭包，封装防抖算法"></a>利用闭包，封装防抖算法</h4><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="BOM-浏览器对象模型"><a href="#BOM-浏览器对象模型" class="headerlink" title="BOM (浏览器对象模型)"></a>BOM (浏览器对象模型)</h2><p>独立与内容的，可以与浏览器窗口进行互动的对象结构<br>可以操作浏览器窗口，如弹出框、浏览器跳转、获取分辨率等</p>
+<h3 id="BOM对象"><a href="#BOM对象" class="headerlink" title="BOM对象"></a>BOM对象</h3><h4 id="window对象（全局对象）"><a href="#window对象（全局对象）" class="headerlink" title="window对象（全局对象）"></a>window对象（全局对象）</h4><p>之前有详细用法此处不过多赘述</p>
+<ol>
+<li><strong>计时器对象</strong><br>satInterval与clearInterval<br>setTimeout和clearTimeout<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token number">500</span><span class="token punctuation">)</span>
+————全写————
+window<span class="token punctuation">.</span><span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=></span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span><span class="token number">500</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+<li><strong>弹出框</strong><br>alert/prompt/confirm<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'hello'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+————全写————
+window<span class="token punctuation">.</span><span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'hello'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+</ol>
+<h4 id="location对象"><a href="#location对象" class="headerlink" title="location对象"></a>location对象</h4><p>用于获得当前页面的地址（url），并把浏览器重定向到新的页面</p>
+<ol>
+<li>location.href：返回当前页面的<strong>URL</strong></li>
+<li>location.hostname：返回Web主机的<strong>域名</strong></li>
+<li>location.pathname：当前页面的<strong>路径和文件名</strong></li>
+<li>location.port：返回Web主机的<strong>端口</strong></li>
+<li>location.protocol：返回<strong>协议</strong>-https</li>
+</ol>
+<h4 id="navigator对象"><a href="#navigator对象" class="headerlink" title="navigator对象"></a>navigator对象</h4><p>包含有关访问者浏览器的信息</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">navigator<span class="token punctuation">.</span>userAgent<span class="token comment">//返回访问者浏览器的信息</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="screen对象"><a href="#screen对象" class="headerlink" title="screen对象"></a>screen对象</h4><p>包含有关用户屏幕的信息</p>
+<h4 id="history对象"><a href="#history对象" class="headerlink" title="history对象"></a>history对象</h4><p>包含浏览器的历史</p>
 
                 
             </div>
@@ -1418,7 +1492,7 @@ e<span class="token punctuation">.</span><span class="token function-variable fu
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">51.1k</span>
+                        class="white-color">53k</span>
             
             
             

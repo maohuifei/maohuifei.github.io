@@ -342,14 +342,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-08-27
+                    2021-09-15
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.7k
+                    1.8k
                 </div>
                 
 
@@ -429,16 +429,27 @@ bulid&#x2F;    忽略bulid项目下的所有文件
 doc&#x2F;*.txt 忽略doc根目录下的.txt文件，不包括doc&#x2F;ect&#x2F;001.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
-<h2 id="报错及解决方法"><a href="#报错及解决方法" class="headerlink" title="报错及解决方法"></a>报错及解决方法</h2><p>使用Git过程中遇到的报错，其原因和解决方法<br><strong>报错：</strong></p>
-<pre class="line-numbers language-git" data-language="git"><code class="language-git">! [rejected]        main -> main (non-fast-forward)
-error: failed to push some refs to <span class="token string">'https://gitee.com/maohuifei/WebSiteTest.git'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p><strong>原因：</strong><br>别人上传到远程仓库后，你没有及时的同步（、拉取）到本地，但是你同时又添加了一些内容（提交），以致于你在提交时，它会检测到你之前从远程仓库拉取的时候的仓库状态和现在的不一样。于是，它为了安全起见拒绝了你的提交（然后就报了这个错误）。</p>
-<p><strong>解决方法：</strong></p>
-<p><strong>报错：</strong></p>
+<h2 id="报错及解决方法"><a href="#报错及解决方法" class="headerlink" title="报错及解决方法"></a>报错及解决方法</h2><p>使用Git过程中遇到的报错，其原因和解决方法</p>
+<ol>
+<li><ul>
+<li><strong>报错：</strong><pre class="line-numbers language-git" data-language="git"><code class="language-git">! [rejected]        main -> main (non-fast-forward)
+error: failed to push some refs to <span class="token string">'https://gitee.com/maohuifei/WebSiteTest.git'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li><strong>原因：</strong><br>别人上传到远程仓库后，你没有及时的同步（、拉取）到本地，但是你同时又添加了一些内容（提交），以致于你在提交时，它会检测到你之前从远程仓库拉取的时候的仓库状态和现在的不一样。于是，它为了安全起见拒绝了你的提交（然后就报了这个错误）。</li>
+<li><strong>解决方法：</strong><br>先拉取：<pre class="line-numbers language-git" data-language="git"><code class="language-git">git pull --rebase origin master<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+再上传：<pre class="line-numbers language-git" data-language="git"><code class="language-git">git push -u origin master<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ul>
+</li>
+<li><ul>
+<li><p><strong>报错：</strong></p>
 <pre class="line-numbers language-git" data-language="git"><code class="language-git">! [rejected]        main -> main (fetch first)
-error: failed to push some refs to <span class="token string">'https://gitee.com/maohuifei/WebSiteTest.git'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p><strong>原因：</strong></p>
-<p><strong>解决方法：</strong></p>
+error: failed to push some refs to <span class="token string">'https://gitee.com/maohuifei/WebSiteTest.git'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li><p><strong>原因：</strong></p>
+</li>
+<li><p><strong>解决方法：</strong></p>
+</li>
+</ul>
+</li>
+</ol>
 <h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="Gitee-Github的免密码登录"><a href="#Gitee-Github的免密码登录" class="headerlink" title="Gitee/Github的免密码登录"></a>Gitee/Github的免密码登录</h3><p>Gitee：<a target="_blank" rel="noopener" href="https://gitee.com/">https://gitee.com/</a><br>Github：<a target="_blank" rel="noopener" href="https://github.com/">https://github.com/</a><br>进入目录 C:\Users\猫会飞.ssh<br>右击 使用Git 输入命令 ssh-keygen（生成公钥） -t rsa（使用加密）<br>此时会生成两个文件，id_rsa.pub 和 id_rsa 一个是公有一个是私有<br>登录Gitee/Github，设置——SSH公钥——填写文件 id_rsa.pub 里的密钥——确认保存</p>
 <h3 id="Git使用代理网络问题"><a href="#Git使用代理网络问题" class="headerlink" title="Git使用代理网络问题"></a>Git使用代理网络问题</h3><p>配置Git代理：</p>
 <pre class="line-numbers language-Git" data-language="Git"><code class="language-Git">$ 
@@ -1040,7 +1051,7 @@ git config --global --unset https.proxy<span aria-hidden="true" class="line-numb
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">51.1k</span>
+                        class="white-color">53k</span>
             
             
             

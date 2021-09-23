@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="泰戈尔《飞鸟集》阅读笔记, 猫会飞呀">
+    <meta name="keywords" content="Node.js基础学习笔记, 猫会飞呀">
     <meta name="description" content="视觉设计师/商业插画/编程爱好者">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>泰戈尔《飞鸟集》阅读笔记 | 猫会飞呀</title>
+    <title>Node.js基础学习笔记 | 猫会飞呀</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -181,12 +181,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">泰戈尔《飞鸟集》阅读笔记</h1>
+                    <h1 class="description center-align post-title">Node.js基础学习笔记</h1>
                 </div>
             </div>
         </div>
@@ -302,16 +302,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E8%AF%BB%E4%B9%A6/">
-                                <span class="chip bg-color">读书</span>
+                            <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                                <span class="chip bg-color">学习笔记</span>
                             </a>
                         
-                            <a href="/tags/%E6%B3%B0%E6%88%88%E5%B0%94/">
-                                <span class="chip bg-color">泰戈尔</span>
+                            <a href="/tags/Web%E5%89%8D%E7%AB%AF/">
+                                <span class="chip bg-color">Web前端</span>
                             </a>
                         
-                            <a href="/tags/%E5%8D%B0%E5%BA%A6%E6%96%87%E5%AD%A6/">
-                                <span class="chip bg-color">印度文学</span>
+                            <a href="/tags/Node-js/">
+                                <span class="chip bg-color">Node.js</span>
                             </a>
                         
                     </div>
@@ -322,8 +322,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E4%B8%8E%E6%84%9F%E6%82%9F/" class="post-category">
-                                读书笔记与感悟
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-category">
+                                学习笔记
                             </a>
                         
                     </div>
@@ -335,21 +335,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-04-28
+                    2021-09-15
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-05-26
+                    2021-09-17
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    39
+                    1.2k
                 </div>
                 
 
@@ -369,9 +369,149 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>夏天的飞鸟，飞到我窗前唱歌，又飞去了。<br>秋天的黄叶，他们没有什么可唱，只叹息一声，飞落在哪里。</p>
+                <p>Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境。<br>Node.js 使用了一个事件驱动、非阻塞式 I/O 的模型，使其轻量又高效。<br>Node.js 的包管理器 npm，是全球最大的开源库生态系统。</p>
 <span id="more"></span>
 
+<h2 id="下载和安装"><a href="#下载和安装" class="headerlink" title="下载和安装"></a>下载和安装</h2><p><a target="_blank" rel="noopener" href="http://nodejs.cn/">官方网站</a><br>官网下载，常规安装，不过多赘述</p>
+<pre class="line-numbers language-node" data-language="node"><code class="language-node">node -v &#x2F;&#x2F;查看版本，验证安装<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="npm包管理器"><a href="#npm包管理器" class="headerlink" title="npm包管理器"></a>npm包管理器</h2><p>npm是node官方的包管理器，用于下载第三方模块<br>可以通过npm管理一整个Node项目或者前端项目的所有依赖</p>
+<pre class="line-numbers language-node" data-language="node"><code class="language-node">npm -v &#x2F;&#x2F;查看版本，验证安装<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="cnpm（国内环境的npm替代）"><a href="#cnpm（国内环境的npm替代）" class="headerlink" title="cnpm（国内环境的npm替代）"></a>cnpm（国内环境的npm替代）</h2><p>npm服务器在国外，访问慢<br>国内有cnpm，也就是npm的淘宝镜像</p>
+<pre class="line-numbers language-node" data-language="node"><code class="language-node">npm install -g cnpm --registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.org<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-node" data-language="node"><code class="language-node">cnpm -v &#x2F;&#x2F;查看版本，验证安装<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="npm常用命令"><a href="#npm常用命令" class="headerlink" title="npm常用命令"></a>npm常用命令</h2><h3 id="本地安装和全局安装"><a href="#本地安装和全局安装" class="headerlink" title="本地安装和全局安装"></a>本地安装和全局安装</h3><h3 id="http-server"><a href="#http-server" class="headerlink" title="http-server"></a>http-server</h3><p>创建一个静态服务器</p>
+<pre class="line-numbers language-npm" data-language="npm"><code class="language-npm">cnpm install -g http-server
+.
+.
+.
+http-server
+.
+.
+.
+  http:&#x2F;&#x2F;127.0.0.1:8080
+
+Hit CTRL-C to stop the server<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>浏览器输入<a target="_blank" rel="noopener" href="http://127.0.0.1:8080/index.html%EF%BC%8C%E5%8F%AF%E4%BB%A5%E6%9C%AC%E5%9C%B0%E9%A2%84%E8%A7%88%E7%BD%91%E9%A1%B5">http://127.0.0.1:8080/index.html，可以本地预览网页</a><br>如果服务器与其他设备在同一网络下（同一wifi下的手机和电脑），可以同时访问此网页</p>
+<h2 id="创建npm项目"><a href="#创建npm项目" class="headerlink" title="创建npm项目"></a>创建npm项目</h2><p>在新建的npmprojcet文件夹下cmd，输入：</p>
+<pre class="line-numbers language-npm" data-language="npm"><code class="language-npm">npm init<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>来进行初始化<br>会生成一个<code>package.json</code>文件，里面包含之前输入的项目信息</p>
+<h3 id="同步第三方依赖"><a href="#同步第三方依赖" class="headerlink" title="同步第三方依赖"></a>同步第三方依赖</h3><pre class="line-numbers language-npm" data-language="npm"><code class="language-npm">cnpm instrall jquery --save   &#x2F;&#x2F;--save的意思是将依赖集成到package.json里（差不多）<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>传输项目时只需要传输<code>package.json</code>文件（配置文件）<br><strong>在另一台电脑上执行：</strong></p>
+<pre class="line-numbers language-npm" data-language="npm"><code class="language-npm">cnpm instrall<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>就会查找package.json文件，并将依赖下载到本地</p>
+<h2 id="模块化开发"><a href="#模块化开发" class="headerlink" title="模块化开发"></a>模块化开发</h2><h3 id="外部模块"><a href="#外部模块" class="headerlink" title="外部模块"></a>外部模块</h3><p>引入的外部模块有三种：</p>
+<ol>
+<li><strong>核心模块：</strong>node自带模块，可以使用<code>require()</code>引入后直接使用</li>
+<li><strong>自定义模块：</strong>自己编写的，需要指定路径</li>
+<li><strong>第三方模块：</strong>使用npm下载的第三方模块，下载完成后可以引用</li>
+</ol>
+<h4 id="自定义模块"><a href="#自定义模块" class="headerlink" title="自定义模块"></a>自定义模块</h4><p>新建两个<code>.js</code>文件:<code>sum.js</code> 和 <code>main.js</code></p>
+<ol>
+<li>在<code>sum.js</code>中书写模块方法：<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">sum</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">return</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> sum<span class="token punctuation">;</span><span class="token comment">//暴露模块接口</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>在<code>main.js</code>中引入外部模块：<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> sum <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./sum'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//引入一个外部模块</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">sum</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+</ol>
+<h4 id="核心模块"><a href="#核心模块" class="headerlink" title="核心模块"></a>核心模块</h4><ol>
+<li><p><strong>读取文件 readFile();函数</strong></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'fs'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+fs<span class="token punctuation">.</span><span class="token function">readFile</span><span class="token punctuation">(</span><span class="token string">'test.txt'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span> data</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span><span class="token comment">//文件路径、err未找到返回、data文件内容</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>data<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>readFile();函数有两个参数：</p>
+<ul>
+<li>读取文件的地址</li>
+<li>回调函数</li>
+</ul>
+</li>
+<li><p><strong>处理文件路径 path.join(a,b,c);函数</strong></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token string">'http://www.baidu.com'</span><span class="token punctuation">,</span>
+    b <span class="token operator">=</span> <span class="token string">'doc'</span><span class="token punctuation">,</span>
+    c <span class="token operator">=</span> <span class="token string">'666'</span><span class="token punctuation">;</span>
+a <span class="token operator">=</span> path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ol>
+<h4 id="http模块"><a href="#http模块" class="headerlink" title="http模块"></a>http模块</h4><p>可以通过http模块的createServer方法在本地创建一个服务器：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> http <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'http'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> server <span class="token operator">=</span> http<span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token string">'hello,world'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//响应内容,可通过浏览器输入127.0.0.1:端口查看</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+server<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">3000</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span> <span class="token comment">//指定端口</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'server is running'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//直接运行js的显示</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="/2021/09/15/Node-js%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/server.jpg"><br>此时服务器正在运行<br>在浏览器输入127.0.0.1:3000<br>显示hello，world<br>这样就完成了一个node服务器的搭建</p>
+<p>之后每次更改都需要重启服务器<br>所以可以使用<strong>nodemon</strong></p>
+<pre class="line-numbers language-node" data-language="node"><code class="language-node">cnpm install -g nodemon&#x2F;&#x2F;下载
+nodemon server.js&#x2F;&#x2F;运行文件<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>修改文件后，<strong>服务器自动重启</strong></p>
+<h2 id="在node服务器上渲染静态页面"><a href="#在node服务器上渲染静态页面" class="headerlink" title="在node服务器上渲染静态页面"></a>在node服务器上渲染静态页面</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'fs'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> http <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'http'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//调用</span>
+
+<span class="token keyword">const</span> server <span class="token operator">=</span> http<span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//创建一个node服务器</span>
+server<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">3000</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'服务器正在3000端口上启动...'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+server<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'request'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">request<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">var</span> url <span class="token operator">=</span> request<span class="token punctuation">.</span>url<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>url <span class="token operator">===</span> <span class="token string">'/'</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        fs<span class="token punctuation">.</span><span class="token function">readFile</span><span class="token punctuation">(</span><span class="token string">'index.html'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span> data</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>eer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+            res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>url <span class="token operator">===</span> <span class="token string">'/list'</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        fs<span class="token punctuation">.</span><span class="token function">readFile</span><span class="token punctuation">(</span><span class="token string">'list.html'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span> data</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>eer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+            res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+        res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token string">'页面不存在'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="Koa框架"><a href="#Koa框架" class="headerlink" title="Koa框架"></a>Koa框架</h2><h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><pre class="line-numbers language-node" data-language="node"><code class="language-node">npm init &#x2F;&#x2F;初始化
+cnpm install --save koa &#x2F;&#x2F;安装Koa<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>使用koa创建node服务器</p>
+<pre class="line-numbers language-node" data-language="node"><code class="language-node">const Koa &#x3D; require(&#39;koa&#39;); &#x2F;&#x2F;引入koa构造函数
+const app &#x3D; new Koa(); &#x2F;&#x2F;创建应用
+app.use(async(ctx) &#x3D;&gt; &#123; &#x2F;&#x2F;中间件函数，在页面响应之前加载
+    ctx.body &#x3D; &#39;hello,koa&#39;;
+&#125;)
+app.listen(3000, () &#x3D;&gt; &#123; &#x2F;&#x2F;监听端口
+    console.log(&#39;服务器正在3000端口运行...&#39;);
+&#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h3><pre class="line-numbers language-node" data-language="node"><code class="language-node">const Koa &#x3D; require(&#39;koa&#39;); &#x2F;&#x2F;引入koa构造函数
+const router &#x3D; require(&#39;koa-router&#39;)() &#x2F;&#x2F;引入并执行koa-router函数
+
+const app &#x3D; new Koa(); &#x2F;&#x2F;创建应用
+
+router.get(&#39;&#x2F;&#39;, async(ctx) &#x3D;&gt; &#123;
+    ctx.body &#x3D; &#39;&lt;h1&gt;index&lt;h1&gt;&#39;;
+&#125;)
+router.get(&#39;&#x2F;about&#39;, async(ctx) &#x3D;&gt; &#123;
+    ctx.body &#x3D; &#39;about&#39;;
+&#125;)
+app.use(router.routes()); &#x2F;&#x2F;将router作为中间件引入app
+
+app.listen(3000, () &#x3D;&gt; &#123; &#x2F;&#x2F;监听端口
+    console.log(&#39;服务器正在3000端口运行...&#39;);
+&#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="静态文件"><a href="#静态文件" class="headerlink" title="静态文件"></a>静态文件</h3>
                 
             </div>
             <hr/>
@@ -397,7 +537,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://maohuifei.github.io/2021/04/28/%E6%B3%B0%E6%88%88%E5%B0%94%E3%80%8A%E9%A3%9E%E9%B8%9F%E9%9B%86%E3%80%8B%E8%AF%BB%E5%90%8E%E6%84%9F/">https://maohuifei.github.io/2021/04/28/%E6%B3%B0%E6%88%88%E5%B0%94%E3%80%8A%E9%A3%9E%E9%B8%9F%E9%9B%86%E3%80%8B%E8%AF%BB%E5%90%8E%E6%84%9F/</a>
+                    <a href="https://maohuifei.github.io/2021/09/15/Node-js%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">https://maohuifei.github.io/2021/09/15/Node-js%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -435,16 +575,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E8%AF%BB%E4%B9%A6/">
-                                    <span class="chip bg-color">读书</span>
+                                <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                                    <span class="chip bg-color">学习笔记</span>
                                 </a>
                             
-                                <a href="/tags/%E6%B3%B0%E6%88%88%E5%B0%94/">
-                                    <span class="chip bg-color">泰戈尔</span>
+                                <a href="/tags/Web%E5%89%8D%E7%AB%AF/">
+                                    <span class="chip bg-color">Web前端</span>
                                 </a>
                             
-                                <a href="/tags/%E5%8D%B0%E5%BA%A6%E6%96%87%E5%AD%A6/">
-                                    <span class="chip bg-color">印度文学</span>
+                                <a href="/tags/Node-js/">
+                                    <span class="chip bg-color">Node.js</span>
                                 </a>
                             
                         </div>
@@ -620,31 +760,31 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/05/13/%E3%80%90V2Ray%E7%AF%87%E3%80%91V2Ray%E4%BB%8B%E7%BB%8D/">
+                <a href="/2021/09/15/Ajax%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="【V2Ray篇】V2Ray介绍">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="Ajax基础学习笔记">
                         
-                        <span class="card-title">【V2Ray篇】V2Ray介绍</span>
+                        <span class="card-title">Ajax基础学习笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            V2Ray（也简称V2），是Victoria Raymond开发的Project V下的一个工具。Project V是一个工具集合，号称可以帮助其使用者打造专属的基础通信网络。Project V的核心工具称为V2Ray，其主要负责网络协议和
+                            AJAX不是JavaScript的规范，它只是一个哥们“发明”的缩写：Asynchronous JavaScript and XML，意思就是用JavaScript执行异步网络请求。用JavaScript写一个完整的AJAX代码并不复杂，但
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-05-13
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-09-15
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%8A%80%E8%83%BD%E6%94%B6%E5%BD%95/" class="post-category">
-                                    技能收录
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    学习笔记
                                 </a>
                             
                             
@@ -654,16 +794,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/V2Ray/">
-                        <span class="chip bg-color">V2Ray</span>
+                    <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">学习笔记</span>
                     </a>
                     
-                    <a href="/tags/%E4%BB%A3%E7%90%86%E5%B7%A5%E5%85%B7/">
-                        <span class="chip bg-color">代理工具</span>
+                    <a href="/tags/Web%E5%89%8D%E7%AB%AF/">
+                        <span class="chip bg-color">Web前端</span>
                     </a>
                     
-                    <a href="/tags/%E4%BA%91%E5%85%8D/">
-                        <span class="chip bg-color">云免</span>
+                    <a href="/tags/Ajax/">
+                        <span class="chip bg-color">Ajax</span>
                     </a>
                     
                 </div>
@@ -677,31 +817,31 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/04/28/%E6%B3%B0%E6%88%88%E5%B0%94%E3%80%8A%E6%96%B0%E6%9C%88%E9%9B%86%E3%80%8B%E8%AF%BB%E5%90%8E%E6%84%9F/">
+                <a href="/2021/09/13/jQuery%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="泰戈尔《新月集》阅读笔记">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="jQuery基础学习笔记">
                         
-                        <span class="card-title">泰戈尔《新月集》阅读笔记</span>
+                        <span class="card-title">jQuery基础学习笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            我独自在横跨过田地的路上走着，夕阳像一个守财奴似的，正藏起它的最后的金子。白昼更加深沉地投入黑暗之中，那已经收割了的孤寂的田地，默默地躺在那里。天空里突然升起了一个男孩子的尖锐的歌声。他穿过看不见的黑暗，留下他的歌声的辙痕跨过黄昏的静谧。他
+                            jquery是一个快速、简洁的JavaScript框架，是继Prototype之后又一个优秀的JavaScript代码库（或JavaScript框架）。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-28
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-13
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E4%B8%8E%E6%84%9F%E6%82%9F/" class="post-category">
-                                    读书笔记与感悟
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    学习笔记
                                 </a>
                             
                             
@@ -711,16 +851,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%AF%BB%E4%B9%A6/">
-                        <span class="chip bg-color">读书</span>
+                    <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">学习笔记</span>
                     </a>
                     
-                    <a href="/tags/%E6%B3%B0%E6%88%88%E5%B0%94/">
-                        <span class="chip bg-color">泰戈尔</span>
+                    <a href="/tags/Web%E5%89%8D%E7%AB%AF/">
+                        <span class="chip bg-color">Web前端</span>
                     </a>
                     
-                    <a href="/tags/%E5%8D%B0%E5%BA%A6%E6%96%87%E5%AD%A6/">
-                        <span class="chip bg-color">印度文学</span>
+                    <a href="/tags/jQuery/">
+                        <span class="chip bg-color">jQuery</span>
                     </a>
                     
                 </div>
@@ -908,7 +1048,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">51.1k</span>
+                        class="white-color">53k</span>
             
             
             

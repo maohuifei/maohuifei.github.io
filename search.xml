@@ -188,16 +188,27 @@ bulid&#x2F;    忽略bulid项目下的所有文件
 doc&#x2F;*.txt 忽略doc根目录下的.txt文件，不包括doc&#x2F;ect&#x2F;001.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
-<h2 id="报错及解决方法"><a href="#报错及解决方法" class="headerlink" title="报错及解决方法"></a>报错及解决方法</h2><p>使用Git过程中遇到的报错，其原因和解决方法<br><strong>报错：</strong></p>
-<pre class="line-numbers language-git" data-language="git"><code class="language-git">! [rejected]        main -> main (non-fast-forward)
-error: failed to push some refs to <span class="token string">'https://gitee.com/maohuifei/WebSiteTest.git'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p><strong>原因：</strong><br>别人上传到远程仓库后，你没有及时的同步（、拉取）到本地，但是你同时又添加了一些内容（提交），以致于你在提交时，它会检测到你之前从远程仓库拉取的时候的仓库状态和现在的不一样。于是，它为了安全起见拒绝了你的提交（然后就报了这个错误）。</p>
-<p><strong>解决方法：</strong></p>
-<p><strong>报错：</strong></p>
+<h2 id="报错及解决方法"><a href="#报错及解决方法" class="headerlink" title="报错及解决方法"></a>报错及解决方法</h2><p>使用Git过程中遇到的报错，其原因和解决方法</p>
+<ol>
+<li><ul>
+<li><strong>报错：</strong><pre class="line-numbers language-git" data-language="git"><code class="language-git">! [rejected]        main -> main (non-fast-forward)
+error: failed to push some refs to <span class="token string">'https://gitee.com/maohuifei/WebSiteTest.git'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li><strong>原因：</strong><br>别人上传到远程仓库后，你没有及时的同步（、拉取）到本地，但是你同时又添加了一些内容（提交），以致于你在提交时，它会检测到你之前从远程仓库拉取的时候的仓库状态和现在的不一样。于是，它为了安全起见拒绝了你的提交（然后就报了这个错误）。</li>
+<li><strong>解决方法：</strong><br>先拉取：<pre class="line-numbers language-git" data-language="git"><code class="language-git">git pull --rebase origin master<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+再上传：<pre class="line-numbers language-git" data-language="git"><code class="language-git">git push -u origin master<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ul>
+</li>
+<li><ul>
+<li><p><strong>报错：</strong></p>
 <pre class="line-numbers language-git" data-language="git"><code class="language-git">! [rejected]        main -> main (fetch first)
-error: failed to push some refs to <span class="token string">'https://gitee.com/maohuifei/WebSiteTest.git'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p><strong>原因：</strong></p>
-<p><strong>解决方法：</strong></p>
+error: failed to push some refs to <span class="token string">'https://gitee.com/maohuifei/WebSiteTest.git'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li><p><strong>原因：</strong></p>
+</li>
+<li><p><strong>解决方法：</strong></p>
+</li>
+</ul>
+</li>
+</ol>
 <h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="Gitee-Github的免密码登录"><a href="#Gitee-Github的免密码登录" class="headerlink" title="Gitee/Github的免密码登录"></a>Gitee/Github的免密码登录</h3><p>Gitee：<a href="https://gitee.com/">https://gitee.com/</a><br>Github：<a href="https://github.com/">https://github.com/</a><br>进入目录 C:\Users\猫会飞.ssh<br>右击 使用Git 输入命令 ssh-keygen（生成公钥） -t rsa（使用加密）<br>此时会生成两个文件，id_rsa.pub 和 id_rsa 一个是公有一个是私有<br>登录Gitee/Github，设置——SSH公钥——填写文件 id_rsa.pub 里的密钥——确认保存</p>
 <h3 id="Git使用代理网络问题"><a href="#Git使用代理网络问题" class="headerlink" title="Git使用代理网络问题"></a>Git使用代理网络问题</h3><p>配置Git代理：</p>
 <pre class="line-numbers language-Git" data-language="Git"><code class="language-Git">$ 
@@ -273,12 +284,309 @@ git config --global --unset https.proxy<span aria-hidden="true" class="line-numb
       </tags>
   </entry>
   <entry>
+    <title>Vue基础学习笔记</title>
+    <url>/2021/09/15/Vue%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p>Vue是一套用于构建用户界面的渐进式框架。<br>与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。<br>Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。<br>另一方面，当与现代化的工具链以及各种支持类库结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。</p>
+<span id="more"></span>
+
+<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><h3 id="在线直接引用"><a href="#在线直接引用" class="headerlink" title="在线直接引用"></a>在线直接引用</h3><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">"https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span><span class="token comment">//引用Vue.js</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="环境使用"><a href="#环境使用" class="headerlink" title="环境使用"></a>环境使用</h3><pre class="line-numbers language-win" data-language="win"><code class="language-win">
+npm install -g @vue&#x2F;cli&#x2F;&#x2F;安装脚手架
+vue create demo01&#x2F;&#x2F;创建项目demo01
+cd demo01&#x2F;&#x2F;切换到项目
+npm run serve&#x2F;&#x2F;运行本地服务器
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><h3 id="绑定文本"><a href="#绑定文本" class="headerlink" title="绑定文本"></a>绑定文本</h3><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>body<span class="token operator">></span>
+    <span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"app"</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>h1<span class="token operator">></span><span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span>message<span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">></span> <span class="token comment">//这里，可以是js表达式</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+    <span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">"https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span><span class="token comment">//引用Vue.js</span>
+    <span class="token operator">&lt;</span>script<span class="token operator">></span>
+        <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+            el<span class="token operator">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span><span class="token comment">//指定元素为id=app</span>
+            data<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+                message<span class="token operator">:</span> <span class="token string">'hello,world'</span><span class="token comment">//数据内容</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="绑定属性-v-bind"><a href="#绑定属性-v-bind" class="headerlink" title="绑定属性 v-bind"></a>绑定属性 v-bind</h3><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>body<span class="token operator">></span>
+    <span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"app"</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>img v<span class="token operator">-</span>bind<span class="token operator">:</span>src<span class="token operator">=</span><span class="token string">"url"</span> alt<span class="token operator">=</span><span class="token string">""</span><span class="token operator">></span><span class="token comment">//标准写法</span>
+        <span class="token operator">&lt;</span>img <span class="token operator">:</span>src<span class="token operator">=</span><span class="token string">"url"</span> alt<span class="token operator">=</span><span class="token string">""</span><span class="token operator">></span><span class="token comment">//简写</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+    <span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">"https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+    <span class="token operator">&lt;</span>script<span class="token operator">></span>
+        <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+            el<span class="token operator">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
+            data<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+                message<span class="token operator">:</span> <span class="token string">'hello,world'</span><span class="token punctuation">,</span>
+                url<span class="token operator">:</span> <span class="token string">'images/001.jpg'</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="绑定事件（事件修饰符）-v-on"><a href="#绑定事件（事件修饰符）-v-on" class="headerlink" title="绑定事件（事件修饰符） v-on"></a>绑定事件（事件修饰符） v-on</h3><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>body<span class="token operator">></span>
+    <span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"app"</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>button v<span class="token operator">-</span>on<span class="token operator">:</span>click<span class="token operator">=</span><span class="token string">'say'</span><span class="token operator">></span>按钮<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">></span>
+        <span class="token operator">&lt;</span>button @click<span class="token operator">=</span><span class="token string">'say'</span><span class="token operator">></span>按钮<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">></span><span class="token comment">//简写@符</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+    <span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">"https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+    <span class="token operator">&lt;</span>script<span class="token operator">></span>
+        <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+            methods<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+                <span class="token function">say</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                    <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'hello'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">&#125;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>学习笔记</tag>
+        <tag>Web前端</tag>
+        <tag>Vue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ajax基础学习笔记</title>
+    <url>/2021/09/15/Ajax%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p>AJAX不是JavaScript的规范，它只是一个哥们“发明”的缩写：Asynchronous JavaScript and XML，意思就是用JavaScript执行异步网络请求。<br>用JavaScript写一个完整的AJAX代码并不复杂，但是需要注意：AJAX请求是异步执行的，也就是说，要通过回调函数获得响应。</p>
+<span id="more"></span>
+
+<h2 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h2><p><strong>优点：</strong>按需获取数据，提升系统性能<br><strong>缺点：</strong>异步获取数据，不利于搜索引擎优化</p>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><h3 id="如何想服务器发送请求"><a href="#如何想服务器发送请求" class="headerlink" title="如何想服务器发送请求"></a>如何想服务器发送请求</h3><ol>
+<li>输入网址</li>
+<li>a标签的页面跳转</li>
+<li>表单提交</li>
+<li>postman模拟http请求</li>
+</ol>
+<p>Ajax的原理是通过<code>XMLhttpRequest</code>对象向服务器发送请求的</p>
+<h3 id><a href="#" class="headerlink" title></a></h3>]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>学习笔记</tag>
+        <tag>Web前端</tag>
+        <tag>Ajax</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Node.js基础学习笔记</title>
+    <url>/2021/09/15/Node-js%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p>Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境。<br>Node.js 使用了一个事件驱动、非阻塞式 I/O 的模型，使其轻量又高效。<br>Node.js 的包管理器 npm，是全球最大的开源库生态系统。</p>
+<span id="more"></span>
+
+<h2 id="下载和安装"><a href="#下载和安装" class="headerlink" title="下载和安装"></a>下载和安装</h2><p><a href="http://nodejs.cn/">官方网站</a><br>官网下载，常规安装，不过多赘述</p>
+<pre class="line-numbers language-node" data-language="node"><code class="language-node">node -v &#x2F;&#x2F;查看版本，验证安装<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="npm包管理器"><a href="#npm包管理器" class="headerlink" title="npm包管理器"></a>npm包管理器</h2><p>npm是node官方的包管理器，用于下载第三方模块<br>可以通过npm管理一整个Node项目或者前端项目的所有依赖</p>
+<pre class="line-numbers language-node" data-language="node"><code class="language-node">npm -v &#x2F;&#x2F;查看版本，验证安装<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="cnpm（国内环境的npm替代）"><a href="#cnpm（国内环境的npm替代）" class="headerlink" title="cnpm（国内环境的npm替代）"></a>cnpm（国内环境的npm替代）</h2><p>npm服务器在国外，访问慢<br>国内有cnpm，也就是npm的淘宝镜像</p>
+<pre class="line-numbers language-node" data-language="node"><code class="language-node">npm install -g cnpm --registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.org<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-node" data-language="node"><code class="language-node">cnpm -v &#x2F;&#x2F;查看版本，验证安装<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="npm常用命令"><a href="#npm常用命令" class="headerlink" title="npm常用命令"></a>npm常用命令</h2><h3 id="本地安装和全局安装"><a href="#本地安装和全局安装" class="headerlink" title="本地安装和全局安装"></a>本地安装和全局安装</h3><h3 id="http-server"><a href="#http-server" class="headerlink" title="http-server"></a>http-server</h3><p>创建一个静态服务器</p>
+<pre class="line-numbers language-npm" data-language="npm"><code class="language-npm">cnpm install -g http-server
+.
+.
+.
+http-server
+.
+.
+.
+  http:&#x2F;&#x2F;127.0.0.1:8080
+
+Hit CTRL-C to stop the server<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>浏览器输入<a href="http://127.0.0.1:8080/index.html%EF%BC%8C%E5%8F%AF%E4%BB%A5%E6%9C%AC%E5%9C%B0%E9%A2%84%E8%A7%88%E7%BD%91%E9%A1%B5">http://127.0.0.1:8080/index.html，可以本地预览网页</a><br>如果服务器与其他设备在同一网络下（同一wifi下的手机和电脑），可以同时访问此网页</p>
+<h2 id="创建npm项目"><a href="#创建npm项目" class="headerlink" title="创建npm项目"></a>创建npm项目</h2><p>在新建的npmprojcet文件夹下cmd，输入：</p>
+<pre class="line-numbers language-npm" data-language="npm"><code class="language-npm">npm init<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>来进行初始化<br>会生成一个<code>package.json</code>文件，里面包含之前输入的项目信息</p>
+<h3 id="同步第三方依赖"><a href="#同步第三方依赖" class="headerlink" title="同步第三方依赖"></a>同步第三方依赖</h3><pre class="line-numbers language-npm" data-language="npm"><code class="language-npm">cnpm instrall jquery --save   &#x2F;&#x2F;--save的意思是将依赖集成到package.json里（差不多）<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>传输项目时只需要传输<code>package.json</code>文件（配置文件）<br><strong>在另一台电脑上执行：</strong></p>
+<pre class="line-numbers language-npm" data-language="npm"><code class="language-npm">cnpm instrall<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>就会查找package.json文件，并将依赖下载到本地</p>
+<h2 id="模块化开发"><a href="#模块化开发" class="headerlink" title="模块化开发"></a>模块化开发</h2><h3 id="外部模块"><a href="#外部模块" class="headerlink" title="外部模块"></a>外部模块</h3><p>引入的外部模块有三种：</p>
+<ol>
+<li><strong>核心模块：</strong>node自带模块，可以使用<code>require()</code>引入后直接使用</li>
+<li><strong>自定义模块：</strong>自己编写的，需要指定路径</li>
+<li><strong>第三方模块：</strong>使用npm下载的第三方模块，下载完成后可以引用</li>
+</ol>
+<h4 id="自定义模块"><a href="#自定义模块" class="headerlink" title="自定义模块"></a>自定义模块</h4><p>新建两个<code>.js</code>文件:<code>sum.js</code> 和 <code>main.js</code></p>
+<ol>
+<li>在<code>sum.js</code>中书写模块方法：<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">sum</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">return</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> sum<span class="token punctuation">;</span><span class="token comment">//暴露模块接口</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>在<code>main.js</code>中引入外部模块：<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> sum <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./sum'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//引入一个外部模块</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">sum</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+</ol>
+<h4 id="核心模块"><a href="#核心模块" class="headerlink" title="核心模块"></a>核心模块</h4><ol>
+<li><p><strong>读取文件 readFile();函数</strong></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'fs'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+fs<span class="token punctuation">.</span><span class="token function">readFile</span><span class="token punctuation">(</span><span class="token string">'test.txt'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span> data</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span><span class="token comment">//文件路径、err未找到返回、data文件内容</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>data<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>readFile();函数有两个参数：</p>
+<ul>
+<li>读取文件的地址</li>
+<li>回调函数</li>
+</ul>
+</li>
+<li><p><strong>处理文件路径 path.join(a,b,c);函数</strong></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token string">'http://www.baidu.com'</span><span class="token punctuation">,</span>
+    b <span class="token operator">=</span> <span class="token string">'doc'</span><span class="token punctuation">,</span>
+    c <span class="token operator">=</span> <span class="token string">'666'</span><span class="token punctuation">;</span>
+a <span class="token operator">=</span> path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ol>
+<h4 id="http模块"><a href="#http模块" class="headerlink" title="http模块"></a>http模块</h4><p>可以通过http模块的createServer方法在本地创建一个服务器：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> http <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'http'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> server <span class="token operator">=</span> http<span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token string">'hello,world'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//响应内容,可通过浏览器输入127.0.0.1:端口查看</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+server<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">3000</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span> <span class="token comment">//指定端口</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'server is running'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//直接运行js的显示</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="/2021/09/15/Node-js%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/server.jpg"><br>此时服务器正在运行<br>在浏览器输入127.0.0.1:3000<br>显示hello，world<br>这样就完成了一个node服务器的搭建</p>
+<p>之后每次更改都需要重启服务器<br>所以可以使用<strong>nodemon</strong></p>
+<pre class="line-numbers language-node" data-language="node"><code class="language-node">cnpm install -g nodemon&#x2F;&#x2F;下载
+nodemon server.js&#x2F;&#x2F;运行文件<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>修改文件后，<strong>服务器自动重启</strong></p>
+<h2 id="在node服务器上渲染静态页面"><a href="#在node服务器上渲染静态页面" class="headerlink" title="在node服务器上渲染静态页面"></a>在node服务器上渲染静态页面</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'fs'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> http <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'http'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//调用</span>
+
+<span class="token keyword">const</span> server <span class="token operator">=</span> http<span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//创建一个node服务器</span>
+server<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">3000</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'服务器正在3000端口上启动...'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+server<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'request'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">request<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">var</span> url <span class="token operator">=</span> request<span class="token punctuation">.</span>url<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>url <span class="token operator">===</span> <span class="token string">'/'</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        fs<span class="token punctuation">.</span><span class="token function">readFile</span><span class="token punctuation">(</span><span class="token string">'index.html'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span> data</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>eer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+            res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>url <span class="token operator">===</span> <span class="token string">'/list'</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        fs<span class="token punctuation">.</span><span class="token function">readFile</span><span class="token punctuation">(</span><span class="token string">'list.html'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span> data</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>eer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+            res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+        res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token string">'页面不存在'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="Koa框架"><a href="#Koa框架" class="headerlink" title="Koa框架"></a>Koa框架</h2><h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><pre class="line-numbers language-node" data-language="node"><code class="language-node">npm init &#x2F;&#x2F;初始化
+cnpm install --save koa &#x2F;&#x2F;安装Koa<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>使用koa创建node服务器</p>
+<pre class="line-numbers language-node" data-language="node"><code class="language-node">const Koa &#x3D; require(&#39;koa&#39;); &#x2F;&#x2F;引入koa构造函数
+const app &#x3D; new Koa(); &#x2F;&#x2F;创建应用
+app.use(async(ctx) &#x3D;&gt; &#123; &#x2F;&#x2F;中间件函数，在页面响应之前加载
+    ctx.body &#x3D; &#39;hello,koa&#39;;
+&#125;)
+app.listen(3000, () &#x3D;&gt; &#123; &#x2F;&#x2F;监听端口
+    console.log(&#39;服务器正在3000端口运行...&#39;);
+&#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h3><pre class="line-numbers language-node" data-language="node"><code class="language-node">const Koa &#x3D; require(&#39;koa&#39;); &#x2F;&#x2F;引入koa构造函数
+const router &#x3D; require(&#39;koa-router&#39;)() &#x2F;&#x2F;引入并执行koa-router函数
+
+const app &#x3D; new Koa(); &#x2F;&#x2F;创建应用
+
+router.get(&#39;&#x2F;&#39;, async(ctx) &#x3D;&gt; &#123;
+    ctx.body &#x3D; &#39;&lt;h1&gt;index&lt;h1&gt;&#39;;
+&#125;)
+router.get(&#39;&#x2F;about&#39;, async(ctx) &#x3D;&gt; &#123;
+    ctx.body &#x3D; &#39;about&#39;;
+&#125;)
+app.use(router.routes()); &#x2F;&#x2F;将router作为中间件引入app
+
+app.listen(3000, () &#x3D;&gt; &#123; &#x2F;&#x2F;监听端口
+    console.log(&#39;服务器正在3000端口运行...&#39;);
+&#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="静态文件"><a href="#静态文件" class="headerlink" title="静态文件"></a>静态文件</h3>]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>学习笔记</tag>
+        <tag>Web前端</tag>
+        <tag>Node.js</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>jQuery基础学习笔记</title>
     <url>/2021/09/13/jQuery%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<p>jquery是一个快速、简洁的JavaScript框架，是继Prototype之后又一个优秀的JavaScript代码库（或JavaScript框架）。</p>
 <span id="more"></span>
 
-<h2 id><a href="#" class="headerlink" title></a></h2>]]></content>
+<h2 id="jQuery简介"><a href="#jQuery简介" class="headerlink" title="jQuery简介"></a>jQuery简介</h2><ul>
+<li>jQuery 是一个 JavaScript 库</li>
+<li>jQuery 极大地简化了 JavaScript 编程</li>
+<li>jQuery 很容易学习</li>
+</ul>
+<h2 id="jQuery-库功能"><a href="#jQuery-库功能" class="headerlink" title="jQuery 库功能"></a>jQuery 库功能</h2><ul>
+<li>HTML 元素选取</li>
+<li>HTML 元素操作</li>
+<li>CSS 操作</li>
+<li>HTML 事件函数</li>
+<li>JavaScript 特效和动画</li>
+<li>HTML DOM 遍历和修改</li>
+<li>AJAX</li>
+<li>Utilities</li>
+<li><em>提示：</em>* 除此之外，jQuery 还提供了大量的插件</li>
+</ul>
+<h2 id="安装和引用"><a href="#安装和引用" class="headerlink" title="安装和引用"></a>安装和引用</h2><h3 id="从官网下载jQuery库"><a href="#从官网下载jQuery库" class="headerlink" title="从官网下载jQuery库"></a>从官网下载jQuery库</h3><p><a href="https://jquery.com/download/">官方下载地址</a><br><strong>两个版本：</strong></p>
+<ul>
+<li>Production version - 用于实际的网站中，已被精简和压缩。</li>
+<li>Development version - 用于测试和开发（未压缩，是可读的代码）</li>
+</ul>
+<h3 id="引用语法"><a href="#引用语法" class="headerlink" title="引用语法"></a>引用语法</h3><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>head<span class="token operator">></span>
+<span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">"jquery-1.10.2.min.js"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>head<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>将下载的文件放在网页的同一目录下，就可以使用jQuery</p>
+<h3 id="从-CDN-中载入-jQuery"><a href="#从-CDN-中载入-jQuery" class="headerlink" title="从 CDN 中载入 jQuery"></a>从 CDN 中载入 jQuery</h3><p>如果您不希望下载并存放 jQuery，那么也可以通过 CDN（内容分发网络） 引用它<br><strong>百度：</strong></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>head<span class="token operator">></span>
+<span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">"https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"</span><span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>head<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>又拍云：</strong></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>head<span class="token operator">></span>
+<span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">"https://upcdn.b0.upaiyun.com/libs/jquery/jquery-2.0.2.min.js"</span><span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>head<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>新浪：</strong></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>head<span class="token operator">></span>
+<span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">"https://lib.sinaapp.com/js/jquery/2.0.2/jquery-2.0.2.min.js"</span><span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>head<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>Google:</strong></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>head<span class="token operator">></span>
+<span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">"https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"</span><span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>head<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>许多用户在访问其他站点时，已经从百度、又拍云、新浪、谷歌或微软加载过jQuery。<br>所以结果是，当他们访问您的站点时，会从缓存中加载jQuery，这样可以减少加载时间。<br>同时，大多数 CDN 都可以确保当用户向其请求文件时，会从离用户最近的服务器上返回响应，这样也可以提高加载速度。</p>
+<h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><h2 id="操作HTML"><a href="#操作HTML" class="headerlink" title="操作HTML"></a>操作HTML</h2><h2 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h2><h2 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h2><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2>]]></content>
       <categories>
         <category>学习笔记</category>
       </categories>
@@ -1403,7 +1711,15 @@ e<span class="token punctuation">.</span><span class="token function-variable fu
     <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
 <span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ol>
-<h3 id="计时器方法"><a href="#计时器方法" class="headerlink" title="计时器方法"></a>计时器方法</h3><h4 id="satInterval与clearInterval"><a href="#satInterval与clearInterval" class="headerlink" title="satInterval与clearInterval"></a>satInterval与clearInterval</h4><p><strong>秒表案例：</strong></p>
+<h3 id="计时器方法"><a href="#计时器方法" class="headerlink" title="计时器方法"></a>计时器方法</h3><h4 id="satInterval与clearInterval"><a href="#satInterval与clearInterval" class="headerlink" title="satInterval与clearInterval"></a>satInterval与clearInterval</h4><p><strong>语法：</strong></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> a<span class="token operator">=</span><span class="token keyword">null</span><span class="token punctuation">;</span>
+a<span class="token operator">=</span><span class="token function">setInterval</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'hello,world!'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//事件</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token comment">/*秒数，1000为1秒*/</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//每1秒输出一个hello，world！</span>
+
+<span class="token function">clearInterval</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//用于终止计时器事件</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>秒表案例：</strong></p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>body<span class="token operator">></span>
     <span class="token operator">&lt;</span>button <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">'start'</span><span class="token operator">></span>开始<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">></span>
     <span class="token operator">&lt;</span>button <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">'pause'</span><span class="token operator">></span>暂停<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">></span>
@@ -1441,7 +1757,73 @@ e<span class="token punctuation">.</span><span class="token function-variable fu
     <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
 <span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id><a href="#" class="headerlink" title></a></h4><h2 id="BOM-浏览器对象模型"><a href="#BOM-浏览器对象模型" class="headerlink" title="BOM (浏览器对象模型)"></a>BOM (浏览器对象模型)</h2><p>独立与内容的，可以与浏览器窗口进行互动的对象结构<br>可以操作浏览器窗口，如弹出框、浏览器跳转、获取分辨率等</p>
+<h4 id="setTimeout和clearTimeout"><a href="#setTimeout和clearTimeout" class="headerlink" title="setTimeout和clearTimeout"></a>setTimeout和clearTimeout</h4><p><strong>语法：</strong></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> a<span class="token operator">=</span><span class="token keyword">null</span><span class="token punctuation">;</span>
+a <span class="token operator">=</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'hello,world!'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token number">5000</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//5秒后输出一个hello，world！</span>
+
+<span class="token function">clearTimeout</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//结束计时器事件</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="防抖与节流"><a href="#防抖与节流" class="headerlink" title="防抖与节流"></a>防抖与节流</h3><p>解决性能问题，实际开发中会遇到</p>
+<h4 id="防抖-debounce"><a href="#防抖-debounce" class="headerlink" title="防抖 debounce"></a>防抖 debounce</h4><p>对于<strong>短时间内多次触发事件</strong>的情况，可以使用防抖<strong>停止事件持续触发</strong></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>body<span class="token operator">></span>
+    <span class="token operator">&lt;</span>div<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+    <span class="token operator">&lt;</span>script<span class="token operator">></span>
+        <span class="token keyword">var</span> time <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+        window<span class="token punctuation">.</span><span class="token function-variable function">onscroll</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>time <span class="token operator">!==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                <span class="token function">clearInterval</span><span class="token punctuation">(</span>time<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+            time <span class="token operator">=</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+                console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'hello,world!'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                time <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span><span class="token comment">//滚轮事件不会连续触发</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="节流-throttle"><a href="#节流-throttle" class="headerlink" title="节流 throttle"></a>节流 throttle</h4><p><strong>防止短时间内多次触发事件</strong>的情况，但是<strong>间隔事件</strong>内，还是<strong>需要不断触发</strong>（控制事件执行的次数）</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>body<span class="token operator">></span>
+    <span class="token operator">&lt;</span>div<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+    <span class="token operator">&lt;</span>script<span class="token operator">></span>
+        <span class="token keyword">var</span> mark <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+        window<span class="token punctuation">.</span><span class="token function-variable function">onscroll</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>mark<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+                    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'hello,world!'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    mark <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+                <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token number">500</span><span class="token punctuation">)</span>
+            <span class="token punctuation">&#125;</span>
+            mark <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span><span class="token comment">//控制事件，每隔0.5秒才能执行一次（按时间间隔触发）</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="利用闭包，封装防抖算法"><a href="#利用闭包，封装防抖算法" class="headerlink" title="利用闭包，封装防抖算法"></a>利用闭包，封装防抖算法</h4><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="BOM-浏览器对象模型"><a href="#BOM-浏览器对象模型" class="headerlink" title="BOM (浏览器对象模型)"></a>BOM (浏览器对象模型)</h2><p>独立与内容的，可以与浏览器窗口进行互动的对象结构<br>可以操作浏览器窗口，如弹出框、浏览器跳转、获取分辨率等</p>
+<h3 id="BOM对象"><a href="#BOM对象" class="headerlink" title="BOM对象"></a>BOM对象</h3><h4 id="window对象（全局对象）"><a href="#window对象（全局对象）" class="headerlink" title="window对象（全局对象）"></a>window对象（全局对象）</h4><p>之前有详细用法此处不过多赘述</p>
+<ol>
+<li><strong>计时器对象</strong><br>satInterval与clearInterval<br>setTimeout和clearTimeout<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token number">500</span><span class="token punctuation">)</span>
+————全写————
+window<span class="token punctuation">.</span><span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=></span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span><span class="token number">500</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+<li><strong>弹出框</strong><br>alert/prompt/confirm<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'hello'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+————全写————
+window<span class="token punctuation">.</span><span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'hello'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+</ol>
+<h4 id="location对象"><a href="#location对象" class="headerlink" title="location对象"></a>location对象</h4><p>用于获得当前页面的地址（url），并把浏览器重定向到新的页面</p>
+<ol>
+<li>location.href：返回当前页面的<strong>URL</strong></li>
+<li>location.hostname：返回Web主机的<strong>域名</strong></li>
+<li>location.pathname：当前页面的<strong>路径和文件名</strong></li>
+<li>location.port：返回Web主机的<strong>端口</strong></li>
+<li>location.protocol：返回<strong>协议</strong>-https</li>
+</ol>
+<h4 id="navigator对象"><a href="#navigator对象" class="headerlink" title="navigator对象"></a>navigator对象</h4><p>包含有关访问者浏览器的信息</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">navigator<span class="token punctuation">.</span>userAgent<span class="token comment">//返回访问者浏览器的信息</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="screen对象"><a href="#screen对象" class="headerlink" title="screen对象"></a>screen对象</h4><p>包含有关用户屏幕的信息</p>
+<h4 id="history对象"><a href="#history对象" class="headerlink" title="history对象"></a>history对象</h4><p>包含浏览器的历史</p>
 ]]></content>
       <categories>
         <category>学习笔记</category>
@@ -2172,11 +2554,12 @@ name<span class="token operator">=</span><span class="token function">prompt</sp
 <li>default：可选的第二个参数，指定 input 框的初始值</li>
 </ul>
 <p>访问者可以在提示输入栏中输入一些内容，然后按“确定”键。然后我们在 name 中获取该文本（赋值给name）<br>或者他们可以按取消键或按 Esc 键取消输入，然后我们得到 null 作为 name</p>
+<p><strong>后记：</strong>返回值为输入文本（确定）或者null（取消）</p>
 <h4 id="confirm"><a href="#confirm" class="headerlink" title="confirm"></a>confirm</h4><pre class="line-numbers language-js" data-language="js"><code class="language-js">$ 
 <span class="token operator">&lt;</span>script<span class="token operator">></span>
 a <span class="token operator">=</span> <span class="token function">confirm</span><span class="token punctuation">(</span><span class="token string">'是否XXX XXX'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>显示一个带有“是否XXX XXX”以及确定和取消两个按钮的模态窗口<br>点击确定返回 true，点击取消返回 false</p>
+<p>显示一个带有“是否XXX XXX”以及确定和取消两个按钮的模态窗口<br>点击确定返回值 true，点击取消返回值 false</p>
 <h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>用来存放东西的盒子，将变量想象成一个“数据”的盒子，盒子上有一个唯一的标注盒子名字的贴纸<br>程序在内存中申请的一块用来存放数据的空间</p>
 <h3 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h3><pre class="line-numbers language-js" data-language="js"><code class="language-js">$ 
 <span class="token operator">&lt;</span>script<span class="token operator">></span>
@@ -4025,51 +4408,6 @@ v2ray uninstall 卸载 V2Ray<span aria-hidden="true" class="line-numbers-rows"><
         <tag>V2Ray</tag>
         <tag>代理工具</tag>
         <tag>云免</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>泰戈尔《飞鸟集》阅读笔记</title>
-    <url>/2021/04/28/%E6%B3%B0%E6%88%88%E5%B0%94%E3%80%8A%E9%A3%9E%E9%B8%9F%E9%9B%86%E3%80%8B%E8%AF%BB%E5%90%8E%E6%84%9F/</url>
-    <content><![CDATA[<p>夏天的飞鸟，飞到我窗前唱歌，又飞去了。<br>秋天的黄叶，他们没有什么可唱，只叹息一声，飞落在哪里。</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>读书笔记与感悟</category>
-      </categories>
-      <tags>
-        <tag>读书</tag>
-        <tag>泰戈尔</tag>
-        <tag>印度文学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>泰戈尔《新月集》阅读笔记</title>
-    <url>/2021/04/28/%E6%B3%B0%E6%88%88%E5%B0%94%E3%80%8A%E6%96%B0%E6%9C%88%E9%9B%86%E3%80%8B%E8%AF%BB%E5%90%8E%E6%84%9F/</url>
-    <content><![CDATA[<p>我独自在横跨过田地的路上走着，夕阳像一个守财奴似的，正藏起它的最后的金子。<br>白昼更加深沉地投入黑暗之中，那已经收割了的孤寂的田地，默默地躺在那里。<br>天空里突然升起了一个男孩子的尖锐的歌声。他穿过看不见的黑暗，留下他的歌声的辙痕跨过黄昏的静谧。<br>他的乡村的家坐落在荒凉的边上，在甘蔗田的后面，躲藏在香蕉树，瘦长的槟榔树，椰子树和深绿色的贾克果树的阴影里。<br>我在星光下独自走着的路上停留了一会，我看见黑沉沉的大地展开在我的面前，用她的手臂拥抱着无量数的家庭，在那些家庭里有着摇篮和床铺，母亲们的心和夜晚的灯，还有年轻轻的生命，他们满心欢乐，却浑然不知这样的欢乐对于世界的价值。</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>读书笔记与感悟</category>
-      </categories>
-      <tags>
-        <tag>读书</tag>
-        <tag>泰戈尔</tag>
-        <tag>印度文学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>冯家敏《中国职业设计指南》阅读笔记</title>
-    <url>/2021/04/28/%E5%86%AF%E5%AE%B6%E6%95%8F%E3%80%8A%E4%B8%AD%E5%9B%BD%E8%81%8C%E4%B8%9A%E8%AE%BE%E8%AE%A1%E6%8C%87%E5%8D%97%E3%80%8B%E8%AF%BB%E5%90%8E%E6%84%9F/</url>
-    <content><![CDATA[<p>我们，以万物为友，以苍生为念<br>我们，拒绝平庸和重复，颠覆自我和传统<br>我们，在平淡中创造惊喜，在荒芜中发掘财富，在磨砺中打造经典和时尚<br>我们是设计师<br>我们对自身的职业身怀热爱和敬畏</p>
-<span id="more"></span>
-
-<h1 id="职业分类-定位"><a href="#职业分类-定位" class="headerlink" title="职业分类/定位"></a>职业分类/定位</h1><h2 id="设计职业的分类"><a href="#设计职业的分类" class="headerlink" title="设计职业的分类"></a>设计职业的分类</h2><h2 id="设计师的职业特征"><a href="#设计师的职业特征" class="headerlink" title="设计师的职业特征"></a>设计师的职业特征</h2><h2 id="设计师的自身之本是知识产权"><a href="#设计师的自身之本是知识产权" class="headerlink" title="设计师的自身之本是知识产权"></a>设计师的自身之本是知识产权</h2><h2 id="设计师的从业方式"><a href="#设计师的从业方式" class="headerlink" title="设计师的从业方式"></a>设计师的从业方式</h2><h2 id="设计师职业定位"><a href="#设计师职业定位" class="headerlink" title="设计师职业定位"></a>设计师职业定位</h2><h2 id="设计职业的定位罗盘"><a href="#设计职业的定位罗盘" class="headerlink" title="设计职业的定位罗盘"></a>设计职业的定位罗盘</h2><h2 id="孙磊：驻场设计师的职业发展方向"><a href="#孙磊：驻场设计师的职业发展方向" class="headerlink" title="孙磊：驻场设计师的职业发展方向"></a>孙磊：驻场设计师的职业发展方向</h2><h2 id="驻场设计师的职务与职责"><a href="#驻场设计师的职务与职责" class="headerlink" title="驻场设计师的职务与职责"></a>驻场设计师的职务与职责</h2><h2 id="驻场设计师的绩效考核"><a href="#驻场设计师的绩效考核" class="headerlink" title="驻场设计师的绩效考核"></a>驻场设计师的绩效考核</h2><h2 id="跨入设计行业的三个转变"><a href="#跨入设计行业的三个转变" class="headerlink" title="跨入设计行业的三个转变"></a>跨入设计行业的三个转变</h2><h2 id="应聘设计师的注意事项"><a href="#应聘设计师的注意事项" class="headerlink" title="应聘设计师的注意事项"></a>应聘设计师的注意事项</h2><h2 id="创业常识"><a href="#创业常识" class="headerlink" title="创业常识"></a>创业常识</h2><h2 id="创业之前的准备"><a href="#创业之前的准备" class="headerlink" title="创业之前的准备"></a>创业之前的准备</h2><h1 id="职业素质"><a href="#职业素质" class="headerlink" title="职业素质"></a>职业素质</h1><h2 id="设计师的职业素质"><a href="#设计师的职业素质" class="headerlink" title="设计师的职业素质"></a>设计师的职业素质</h2><h2 id="王粤飞：功夫在设计之外"><a href="#王粤飞：功夫在设计之外" class="headerlink" title="王粤飞：功夫在设计之外"></a>王粤飞：功夫在设计之外</h2><h2 id="体验设计师的素质与发展"><a href="#体验设计师的素质与发展" class="headerlink" title="体验设计师的素质与发展"></a>体验设计师的素质与发展</h2><h2 id="职业设计师的思维方式"><a href="#职业设计师的思维方式" class="headerlink" title="职业设计师的思维方式"></a>职业设计师的思维方式</h2><h2 id="职业设计师的素质模型及成长路线"><a href="#职业设计师的素质模型及成长路线" class="headerlink" title="职业设计师的素质模型及成长路线"></a>职业设计师的素质模型及成长路线</h2><h2 id="柴俊峰：汲骨养心-润今立业"><a href="#柴俊峰：汲骨养心-润今立业" class="headerlink" title="柴俊峰：汲骨养心 润今立业"></a>柴俊峰：汲骨养心 润今立业</h2><h2 id="任清泉：室内设计的职业困惑"><a href="#任清泉：室内设计的职业困惑" class="headerlink" title="任清泉：室内设计的职业困惑"></a>任清泉：室内设计的职业困惑</h2><h2 id="权磊：展示设计师的优秀素质"><a href="#权磊：展示设计师的优秀素质" class="headerlink" title="权磊：展示设计师的优秀素质"></a>权磊：展示设计师的优秀素质</h2><h2 id="设计师的心理健康"><a href="#设计师的心理健康" class="headerlink" title="设计师的心理健康"></a>设计师的心理健康</h2><h1 id="知识产权"><a href="#知识产权" class="headerlink" title="知识产权"></a>知识产权</h1><h2 id="知识产权是设计师的必修课"><a href="#知识产权是设计师的必修课" class="headerlink" title="知识产权是设计师的必修课"></a>知识产权是设计师的必修课</h2><h2 id="设计与专利"><a href="#设计与专利" class="headerlink" title="设计与专利"></a>设计与专利</h2><h2 id="设计与著作权"><a href="#设计与著作权" class="headerlink" title="设计与著作权"></a>设计与著作权</h2><h2 id="设计与商标权"><a href="#设计与商标权" class="headerlink" title="设计与商标权"></a>设计与商标权</h2><h2 id="著作权纠纷的解决方式"><a href="#著作权纠纷的解决方式" class="headerlink" title="著作权纠纷的解决方式"></a>著作权纠纷的解决方式</h2><h2 id="设计作品知识产权保护防御体系"><a href="#设计作品知识产权保护防御体系" class="headerlink" title="设计作品知识产权保护防御体系"></a>设计作品知识产权保护防御体系</h2><h2 id="设计师“六招”防欠款防侵权"><a href="#设计师“六招”防欠款防侵权" class="headerlink" title="设计师“六招”防欠款防侵权"></a>设计师“六招”防欠款防侵权</h2><h2 id="保护创意权益"><a href="#保护创意权益" class="headerlink" title="保护创意权益"></a>保护创意权益</h2><h2 id="数字作品备案的重要性和必要性"><a href="#数字作品备案的重要性和必要性" class="headerlink" title="数字作品备案的重要性和必要性"></a>数字作品备案的重要性和必要性</h2><h2 id="美术摄影作品的合法使用"><a href="#美术摄影作品的合法使用" class="headerlink" title="美术摄影作品的合法使用"></a>美术摄影作品的合法使用</h2><h2 id="电脑字体的合法使用"><a href="#电脑字体的合法使用" class="headerlink" title="电脑字体的合法使用"></a>电脑字体的合法使用</h2><h2 id="肖像作品的合法使用"><a href="#肖像作品的合法使用" class="headerlink" title="肖像作品的合法使用"></a>肖像作品的合法使用</h2><h2 id="语言文字的合法使用"><a href="#语言文字的合法使用" class="headerlink" title="语言文字的合法使用"></a>语言文字的合法使用</h2><h1 id="行业规范-合同"><a href="#行业规范-合同" class="headerlink" title="行业规范/合同"></a>行业规范/合同</h1><h2 id="设计师职业道德公约"><a href="#设计师职业道德公约" class="headerlink" title="设计师职业道德公约"></a>设计师职业道德公约</h2><h2 id="设计行业服务公约"><a href="#设计行业服务公约" class="headerlink" title="设计行业服务公约"></a>设计行业服务公约</h2><h2 id="深圳平面设计作品委托合同"><a href="#深圳平面设计作品委托合同" class="headerlink" title="深圳平面设计作品委托合同"></a>深圳平面设计作品委托合同</h2><h2 id="一份合同中不要涉及多个项目"><a href="#一份合同中不要涉及多个项目" class="headerlink" title="一份合同中不要涉及多个项目"></a>一份合同中不要涉及多个项目</h2><h2 id="解决送达作品的签收难题"><a href="#解决送达作品的签收难题" class="headerlink" title="解决送达作品的签收难题"></a>解决送达作品的签收难题</h2><h2 id="约定“评审验收”的期限"><a href="#约定“评审验收”的期限" class="headerlink" title="约定“评审验收”的期限"></a>约定“评审验收”的期限</h2><h2 id="提案会议和修改次数的约定"><a href="#提案会议和修改次数的约定" class="headerlink" title="提案会议和修改次数的约定"></a>提案会议和修改次数的约定</h2><h2 id="关于著作权归属的约定"><a href="#关于著作权归属的约定" class="headerlink" title="关于著作权归属的约定"></a>关于著作权归属的约定</h2><h2 id="关于侵权赔偿数额的约定"><a href="#关于侵权赔偿数额的约定" class="headerlink" title="关于侵权赔偿数额的约定"></a>关于侵权赔偿数额的约定</h2><h2 id="付清全款才能获得著作权或使用权"><a href="#付清全款才能获得著作权或使用权" class="headerlink" title="付清全款才能获得著作权或使用权"></a>付清全款才能获得著作权或使用权</h2><h2 id="关于设计行业的一般交易惯例"><a href="#关于设计行业的一般交易惯例" class="headerlink" title="关于设计行业的一般交易惯例"></a>关于设计行业的一般交易惯例</h2><h2 id="插画交易惯例"><a href="#插画交易惯例" class="headerlink" title="插画交易惯例"></a>插画交易惯例</h2><h1 id="客户沟通"><a href="#客户沟通" class="headerlink" title="客户沟通"></a>客户沟通</h1><h1 id="设计价格"><a href="#设计价格" class="headerlink" title="设计价格"></a>设计价格</h1><h1 id="经营-流程"><a href="#经营-流程" class="headerlink" title="经营/流程"></a>经营/流程</h1><h1 id="职业发展"><a href="#职业发展" class="headerlink" title="职业发展"></a>职业发展</h1>]]></content>
-      <categories>
-        <category>读书笔记与感悟</category>
-      </categories>
-      <tags>
-        <tag>平面设计</tag>
-        <tag>读书</tag>
       </tags>
   </entry>
   <entry>
