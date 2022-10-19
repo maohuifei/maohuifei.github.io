@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>前端开发学习笔记</title>
+      <link href="/2022/10/19/qian-duan-kai-fa-xue-xi-bi-ji/"/>
+      <url>/2022/10/19/qian-duan-kai-fa-xue-xi-bi-ji/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前端 </tag>
+            
+            <tag> HTML </tag>
+            
+            <tag> CSS </tag>
+            
+            <tag> JavaScript </tag>
+            
+            <tag> Web </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>后端开发学习笔记</title>
+      <link href="/2022/10/19/hou-duan-kai-fa-xue-xi-bi-ji/"/>
+      <url>/2022/10/19/hou-duan-kai-fa-xue-xi-bi-ji/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+            <tag> 后端 </tag>
+            
+            <tag> Node.js </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>测试工程学习笔记</title>
+      <link href="/2022/10/19/ce-shi-gong-cheng-xue-xi-bi-ji/"/>
+      <url>/2022/10/19/ce-shi-gong-cheng-xue-xi-bi-ji/</url>
+      
+        <content type="html"><![CDATA[<h2 id="测试的阶段"><a href="#测试的阶段" class="headerlink" title="测试的阶段"></a>测试的阶段</h2><p>单元测试：某个功能模块<br>集成测试：各个模块的联合测试<br>系统测试：将整个软件系统视为整体，功能、性能、运行环境<br>验收测试：基于客户的规格最终测试，功能、界面、性能、业务<br>回归测试：新版本或发生修改后重新测试之前出现的问题</p><h2 id="测试流程"><a href="#测试流程" class="headerlink" title="测试流程"></a>测试流程</h2><p>需求调查<br>测试准备<br>测试设计<br>进行测试<br>测试评估</p><h2 id="测试策略"><a href="#测试策略" class="headerlink" title="测试策略"></a>测试策略</h2><p>黑盒：不了解内部代码，用户角度测试产品。主要包括功能和性能测试<br>白盒（结构&#x2F;逻辑驱动）：代码内部结构和逻辑分析<br>灰盒：以上二者结合<br>静态：测试不运行的部分，代码、界面、文档<br>动态：运行软件，输入测试数据，检测输出结果是否达到预期<br>手工、自动、冒烟、回归、公测</p><h2 id="beta测试与alpha测试"><a href="#beta测试与alpha测试" class="headerlink" title="beta测试与alpha测试"></a>beta测试与alpha测试</h2><p>Beta测试：多个或一个用户在实际环境测试，开发者不在现场<br>Alpha测试：一个用户开发环境下测试，公司内部模拟实际操作情况</p><h2 id="软件的安全性"><a href="#软件的安全性" class="headerlink" title="软件的安全性"></a>软件的安全性</h2><h2 id="用户程序"><a href="#用户程序" class="headerlink" title="用户程序"></a>用户程序</h2><p>明确不同用户权限<br>用户冲突<br>用户权限更改数据混乱<br>密码可见可复制<br>绝对途径登录：登录后的链接直接进入<br>退出系统后残留：删除鉴权标记，是否可以后退再次进入</p><h2 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h2><h2 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h2><p>数据机密<br>数据完整<br>数据可管理性<br>数据独立<br>可备份和恢复</p><h2 id="测试用例方法"><a href="#测试用例方法" class="headerlink" title="测试用例方法"></a>测试用例方法</h2><h3 id="等价类划分"><a href="#等价类划分" class="headerlink" title="等价类划分"></a>等价类划分</h3><h3 id="边界值分析"><a href="#边界值分析" class="headerlink" title="边界值分析"></a>边界值分析</h3><p>输入输出的边界值</p><h3 id="错误推测"><a href="#错误推测" class="headerlink" title="错误推测"></a>错误推测</h3><p>列举该类程序可能出现的错误和容易发生错误的特殊情况</p><h3 id="因果图"><a href="#因果图" class="headerlink" title="因果图"></a>因果图</h3><h2 id="bug报告一般内容"><a href="#bug报告一般内容" class="headerlink" title="bug报告一般内容"></a>bug报告一般内容</h2><p>环境：硬件平台、操作系统、生产&#x2F;测试环境<br>版本、所属模块<br>Bug优先级：严重程度<br>bug状态<br>发现人、提交人、处理人<br>Bug描述：标题+详情<br>附件<br>提交日期</p><h2 id="测试用例"><a href="#测试用例" class="headerlink" title="测试用例"></a>测试用例</h2><p>测试项目<br>子项目（模块）<br>编号<br>测试标题（描述）<br>预置条件（之前的环境&#x2F;数据合法）<br>输入（测试动作）<br>预期输出<br>实际输出</p><h2 id="BUG优先级说明"><a href="#BUG优先级说明" class="headerlink" title="BUG优先级说明"></a>BUG优先级说明</h2><h3 id="非常紧急（影响流程，需要马上解决才能继续进行）"><a href="#非常紧急（影响流程，需要马上解决才能继续进行）" class="headerlink" title="非常紧急（影响流程，需要马上解决才能继续进行）"></a>非常紧急（影响流程，需要马上解决才能继续进行）</h3><p>（1）程序崩溃<br>（2）功能严重缺失<br>（3）程序不能运行<br>（4）主要功能没有实现</p><h3 id="紧急（重要但不影响流程进行）"><a href="#紧急（重要但不影响流程进行）" class="headerlink" title="紧急（重要但不影响流程进行）"></a>紧急（重要但不影响流程进行）</h3><p>（1）功能实现与需求说明不符<br>（2）功能不能实现但不影响使用<br>（3）程序逻辑错误<br>（4）用户使用严重不便</p><h3 id="普通（页面、样式问题）"><a href="#普通（页面、样式问题）" class="headerlink" title="普通（页面、样式问题）"></a>普通（页面、样式问题）</h3><p>（1）提示信息文字错误<br>（2）字段丢失&#x2F;错误、按钮&#x2F;元素重叠<br>（3）与设计图（UI）不一致</p><h3 id="建议（追加、用户体验的优化）"><a href="#建议（追加、用户体验的优化）" class="headerlink" title="建议（追加、用户体验的优化）"></a>建议（追加、用户体验的优化）</h3><p>（1）功能实现但使用不便<br>（2）提示信息不统一<br>（3）界面元素位置&#x2F;大小不符合用户习惯<br>（4）可商榷的页面布局</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 测试 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hexo+Git博客搭建指南</title>
+      <link href="/2022/10/19/hexo-git-bo-ke-da-jian-zhi-nan/"/>
+      <url>/2022/10/19/hexo-git-bo-ke-da-jian-zhi-nan/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> Git </tag>
+            
+            <tag> Blog </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>宗教与信仰探索笔记</title>
+      <link href="/2022/10/19/zong-jiao-yu-xin-yang-tan-suo-bi-ji/"/>
+      <url>/2022/10/19/zong-jiao-yu-xin-yang-tan-suo-bi-ji/</url>
+      
+        <content type="html"><![CDATA[<h2 id="儒"><a href="#儒" class="headerlink" title="儒"></a>儒</h2><h2 id="释"><a href="#释" class="headerlink" title="释"></a>释</h2><h2 id="道"><a href="#道" class="headerlink" title="道"></a>道</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> 日常笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 宗教 </tag>
+            
+            <tag> 文明 </tag>
+            
+            <tag> 社会 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>网络工程学习笔记</title>
+      <link href="/2022/10/19/wang-luo-gong-cheng-xue-xi-bi-ji/"/>
+      <url>/2022/10/19/wang-luo-gong-cheng-xue-xi-bi-ji/</url>
+      
+        <content type="html"><![CDATA[<h2 id="网络基础"><a href="#网络基础" class="headerlink" title="网络基础"></a>网络基础</h2><h3 id="OSI和TCP-x2F-IP模型"><a href="#OSI和TCP-x2F-IP模型" class="headerlink" title="OSI和TCP&#x2F;IP模型"></a>OSI和TCP&#x2F;IP模型</h3><h3 id="交换机"><a href="#交换机" class="headerlink" title="交换机"></a>交换机</h3><h3 id="路由器"><a href="#路由器" class="headerlink" title="路由器"></a>路由器</h3><h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><h3 id="系统安装"><a href="#系统安装" class="headerlink" title="系统安装"></a>系统安装</h3><h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><h3 id="启动流程"><a href="#启动流程" class="headerlink" title="启动流程"></a>启动流程</h3><h3 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h3><h3 id="磁盘分区"><a href="#磁盘分区" class="headerlink" title="磁盘分区"></a>磁盘分区</h3><h3 id="软件包管理"><a href="#软件包管理" class="headerlink" title="软件包管理"></a>软件包管理</h3><h3 id="文件权限"><a href="#文件权限" class="headerlink" title="文件权限"></a>文件权限</h3><h3 id="文本处理"><a href="#文本处理" class="headerlink" title="文本处理"></a>文本处理</h3><h3 id="进程管理"><a href="#进程管理" class="headerlink" title="进程管理"></a>进程管理</h3><h3 id="性能分析工具"><a href="#性能分析工具" class="headerlink" title="性能分析工具"></a>性能分析工具</h3><h2 id="日志分析"><a href="#日志分析" class="headerlink" title="日志分析"></a>日志分析</h2><h2 id="Shell"><a href="#Shell" class="headerlink" title="Shell"></a>Shell</h2><h2 id="安全"><a href="#安全" class="headerlink" title="安全"></a>安全</h2><h2 id="监控"><a href="#监控" class="headerlink" title="监控"></a>监控</h2><p>监控点包括基本服务器资源、接口状态、服务性能、PV&#x2F;UV、日志等方面</p><h2 id="集群"><a href="#集群" class="headerlink" title="集群"></a>集群</h2><h3 id="负载均衡器"><a href="#负载均衡器" class="headerlink" title="负载均衡器"></a>负载均衡器</h3><p>单台服务器终究资源有限，抵抗高访问量肯定是无法支撑的，解决此问题最关键的技术就是采用负载均衡器，水平扩展多台Web服务器，同时对外提供服务，这样就成倍扩展性能了。<br>负载均衡器主流开源技术有LVS、HAProxy和Nginx</p><h3 id="分布式文件系统"><a href="#分布式文件系统" class="headerlink" title="分布式文件系统"></a>分布式文件系统</h3><h2 id="虚拟化"><a href="#虚拟化" class="headerlink" title="虚拟化"></a>虚拟化</h2><h3 id="虚拟化-1"><a href="#虚拟化-1" class="headerlink" title="虚拟化"></a>虚拟化</h3><p>硬件服务器资源利用率很低，甚是浪费！可以把空闲多的服务器虚拟化，弄成很多个的虚拟机，每个虚拟机就是一个完整的操作系统。可以很大程度提高资源利用率。建议学习开源的KVM+OpenStack云平台。</p><h3 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h3><p>虚拟机作为基础平台还可以，但应用业务弹性伸缩也太重量了吧！启动好几分钟，文件又这么大，快速扩展太费劲了！<br>好说，上容器，容器主要特点就是快速部署和环境隔离。一个服务封装到镜像中，分分钟钟可创建几百个容器。<br>主流的容器技术非Docker莫属了。</p><h3 id="集群化管理容器"><a href="#集群化管理容器" class="headerlink" title="集群化管理容器"></a>集群化管理容器</h3><p>当然，生产环境单机Docker大多数情况下是无法满足业务需求的，可以部署Kubernetes、Swarm集群化管理容器，形成一个大的资源池，集中管理，为基础架构提供有力的支撑</p><h2 id="自动化"><a href="#自动化" class="headerlink" title="自动化"></a>自动化</h2><p>所有的操作尽可能自动化，减少人为失误，提高工作效率。<br>主流服务器集中管理工具：Ansible、Saltstack<br>这两个选择任意一个就行。<br>持续集成工具：Jenkins</p><h2 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h2><h3 id="硬件层"><a href="#硬件层" class="headerlink" title="硬件层"></a>硬件层</h3><h3 id="操作系统层"><a href="#操作系统层" class="headerlink" title="操作系统层"></a>操作系统层</h3><h3 id="软件层"><a href="#软件层" class="headerlink" title="软件层"></a>软件层</h3><h3 id="架构层"><a href="#架构层" class="headerlink" title="架构层"></a>架构层</h3>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 网络 </tag>
+            
+            <tag> Linux </tag>
+            
+            <tag> shell </tag>
+            
+            <tag> 安全 </tag>
+            
+            <tag> 集群 </tag>
+            
+            <tag> 虚拟化 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>MacOS使用笔记</title>
+      <link href="/2022/10/18/macos-shi-yong-bi-ji/"/>
+      <url>/2022/10/18/macos-shi-yong-bi-ji/</url>
+      
+        <content type="html"><![CDATA[<h2 id="偏好设置"><a href="#偏好设置" class="headerlink" title="偏好设置"></a>偏好设置</h2><p>我是内容</p><h2 id="终端"><a href="#终端" class="headerlink" title="终端"></a>终端</h2><h3 id="权限操作"><a href="#权限操作" class="headerlink" title="权限操作"></a>权限操作</h3><p><code>sudo -s</code></p><h3 id="端口操作"><a href="#端口操作" class="headerlink" title="端口操作"></a>端口操作</h3><p>查看端口被哪个程序占用<br><code>sudo lsof -i tcp:port</code><br>示例：<br><code>sudo lsof -i tcp:8080 查看8080端口是否被占用</code><br>2. 看到进程的PID，可以将进程杀死。<br><code>sudo kill -9 PID</code><br>示例：<br><code>sudo kill -9 3210</code></p><h2 id="用户权限"><a href="#用户权限" class="headerlink" title="用户权限"></a>用户权限</h2><h3 id="VScode编辑文件提示权限不足"><a href="#VScode编辑文件提示权限不足" class="headerlink" title="VScode编辑文件提示权限不足"></a>VScode编辑文件提示权限不足</h3><p>原因：目前看来是创建项目时使用root权限<br>解决方案：右击项目文件夹，选择“查看简介”，在简介界面下方“共享与权限”中添加当前用户”读与写“权限，并且点击“···”应用到包含的所有项目</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 日常笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 教程笔记 </tag>
+            
+            <tag> 操作系统 </tag>
+            
+            <tag> Apple生态 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hexo-theme-matery笔记</title>
+      <link href="/2022/10/18/hexo-theme-matery-bi-ji/"/>
+      <url>/2022/10/18/hexo-theme-matery-bi-ji/</url>
+      
+        <content type="html"><![CDATA[<h2 id="全局css样式修改"><a href="#全局css样式修改" class="headerlink" title="全局css样式修改"></a>全局css样式修改</h2><p>css文件地址路径<code>themes/hexo-thieme-matery/source/css/matery.css</code></p><h2 id=""><a href="#" class="headerlink" title=""></a></h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> 教程 </tag>
+            
+            <tag> 笔记 </tag>
+            
+            <tag> 博客主题 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
