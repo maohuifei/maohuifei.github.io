@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>图片测试</title>
+      <link href="/2022/10/20/tu-pian-ce-shi/"/>
+      <url>/2022/10/20/tu-pian-ce-shi/</url>
+      
+        <content type="html"><![CDATA[<h2 id="图拍呢"><a href="#图拍呢" class="headerlink" title="图拍呢"></a>图拍呢</h2><p><img src="/../../public/medias/avatar.jpg"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> default </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> default </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>前端开发学习笔记</title>
       <link href="/2022/10/19/qian-duan-kai-fa-xue-xi-bi-ji/"/>
       <url>/2022/10/19/qian-duan-kai-fa-xue-xi-bi-ji/</url>
@@ -153,7 +178,7 @@
       <link href="/2022/10/19/wang-luo-gong-cheng-xue-xi-bi-ji/"/>
       <url>/2022/10/19/wang-luo-gong-cheng-xue-xi-bi-ji/</url>
       
-        <content type="html"><![CDATA[<h2 id="网络基础"><a href="#网络基础" class="headerlink" title="网络基础"></a>网络基础</h2><h3 id="OSI和TCP-x2F-IP模型"><a href="#OSI和TCP-x2F-IP模型" class="headerlink" title="OSI和TCP&#x2F;IP模型"></a>OSI和TCP&#x2F;IP模型</h3><h3 id="交换机"><a href="#交换机" class="headerlink" title="交换机"></a>交换机</h3><h3 id="路由器"><a href="#路由器" class="headerlink" title="路由器"></a>路由器</h3><h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><h3 id="系统安装"><a href="#系统安装" class="headerlink" title="系统安装"></a>系统安装</h3><h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><h3 id="启动流程"><a href="#启动流程" class="headerlink" title="启动流程"></a>启动流程</h3><h3 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h3><h3 id="磁盘分区"><a href="#磁盘分区" class="headerlink" title="磁盘分区"></a>磁盘分区</h3><h3 id="软件包管理"><a href="#软件包管理" class="headerlink" title="软件包管理"></a>软件包管理</h3><h3 id="文件权限"><a href="#文件权限" class="headerlink" title="文件权限"></a>文件权限</h3><h3 id="文本处理"><a href="#文本处理" class="headerlink" title="文本处理"></a>文本处理</h3><h3 id="进程管理"><a href="#进程管理" class="headerlink" title="进程管理"></a>进程管理</h3><h3 id="性能分析工具"><a href="#性能分析工具" class="headerlink" title="性能分析工具"></a>性能分析工具</h3><h2 id="日志分析"><a href="#日志分析" class="headerlink" title="日志分析"></a>日志分析</h2><h2 id="Shell"><a href="#Shell" class="headerlink" title="Shell"></a>Shell</h2><h2 id="安全"><a href="#安全" class="headerlink" title="安全"></a>安全</h2><h2 id="监控"><a href="#监控" class="headerlink" title="监控"></a>监控</h2><p>监控点包括基本服务器资源、接口状态、服务性能、PV&#x2F;UV、日志等方面</p><h2 id="集群"><a href="#集群" class="headerlink" title="集群"></a>集群</h2><h3 id="负载均衡器"><a href="#负载均衡器" class="headerlink" title="负载均衡器"></a>负载均衡器</h3><p>单台服务器终究资源有限，抵抗高访问量肯定是无法支撑的，解决此问题最关键的技术就是采用负载均衡器，水平扩展多台Web服务器，同时对外提供服务，这样就成倍扩展性能了。<br>负载均衡器主流开源技术有LVS、HAProxy和Nginx</p><h3 id="分布式文件系统"><a href="#分布式文件系统" class="headerlink" title="分布式文件系统"></a>分布式文件系统</h3><h2 id="虚拟化"><a href="#虚拟化" class="headerlink" title="虚拟化"></a>虚拟化</h2><h3 id="虚拟化-1"><a href="#虚拟化-1" class="headerlink" title="虚拟化"></a>虚拟化</h3><p>硬件服务器资源利用率很低，甚是浪费！可以把空闲多的服务器虚拟化，弄成很多个的虚拟机，每个虚拟机就是一个完整的操作系统。可以很大程度提高资源利用率。建议学习开源的KVM+OpenStack云平台。</p><h3 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h3><p>虚拟机作为基础平台还可以，但应用业务弹性伸缩也太重量了吧！启动好几分钟，文件又这么大，快速扩展太费劲了！<br>好说，上容器，容器主要特点就是快速部署和环境隔离。一个服务封装到镜像中，分分钟钟可创建几百个容器。<br>主流的容器技术非Docker莫属了。</p><h3 id="集群化管理容器"><a href="#集群化管理容器" class="headerlink" title="集群化管理容器"></a>集群化管理容器</h3><p>当然，生产环境单机Docker大多数情况下是无法满足业务需求的，可以部署Kubernetes、Swarm集群化管理容器，形成一个大的资源池，集中管理，为基础架构提供有力的支撑</p><h2 id="自动化"><a href="#自动化" class="headerlink" title="自动化"></a>自动化</h2><p>所有的操作尽可能自动化，减少人为失误，提高工作效率。<br>主流服务器集中管理工具：Ansible、Saltstack<br>这两个选择任意一个就行。<br>持续集成工具：Jenkins</p><h2 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h2><h3 id="硬件层"><a href="#硬件层" class="headerlink" title="硬件层"></a>硬件层</h3><h3 id="操作系统层"><a href="#操作系统层" class="headerlink" title="操作系统层"></a>操作系统层</h3><h3 id="软件层"><a href="#软件层" class="headerlink" title="软件层"></a>软件层</h3><h3 id="架构层"><a href="#架构层" class="headerlink" title="架构层"></a>架构层</h3>]]></content>
+        <content type="html"><![CDATA[<h2 id="网络基础"><a href="#网络基础" class="headerlink" title="网络基础"></a>网络基础</h2><h3 id="OSI参考模型"><a href="#OSI参考模型" class="headerlink" title="OSI参考模型"></a>OSI参考模型</h3><h3 id="TCP-x2F-IP模型"><a href="#TCP-x2F-IP模型" class="headerlink" title="TCP&#x2F;IP模型"></a>TCP&#x2F;IP模型</h3><h3 id="交换机"><a href="#交换机" class="headerlink" title="交换机"></a>交换机</h3><h3 id="路由器"><a href="#路由器" class="headerlink" title="路由器"></a>路由器</h3><h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><h3 id="系统安装"><a href="#系统安装" class="headerlink" title="系统安装"></a>系统安装</h3><h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><h3 id="启动流程"><a href="#启动流程" class="headerlink" title="启动流程"></a>启动流程</h3><h3 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h3><h3 id="磁盘分区"><a href="#磁盘分区" class="headerlink" title="磁盘分区"></a>磁盘分区</h3><h3 id="软件包管理"><a href="#软件包管理" class="headerlink" title="软件包管理"></a>软件包管理</h3><h3 id="文件权限"><a href="#文件权限" class="headerlink" title="文件权限"></a>文件权限</h3><h3 id="文本处理"><a href="#文本处理" class="headerlink" title="文本处理"></a>文本处理</h3><h3 id="进程管理"><a href="#进程管理" class="headerlink" title="进程管理"></a>进程管理</h3><h3 id="性能分析工具"><a href="#性能分析工具" class="headerlink" title="性能分析工具"></a>性能分析工具</h3><h2 id="日志分析"><a href="#日志分析" class="headerlink" title="日志分析"></a>日志分析</h2><h2 id="Shell"><a href="#Shell" class="headerlink" title="Shell"></a>Shell</h2><h2 id="安全"><a href="#安全" class="headerlink" title="安全"></a>安全</h2><h2 id="监控"><a href="#监控" class="headerlink" title="监控"></a>监控</h2><p>监控点包括基本服务器资源、接口状态、服务性能、PV&#x2F;UV、日志等方面</p><h2 id="集群"><a href="#集群" class="headerlink" title="集群"></a>集群</h2><h3 id="负载均衡器"><a href="#负载均衡器" class="headerlink" title="负载均衡器"></a>负载均衡器</h3><p>单台服务器终究资源有限，抵抗高访问量肯定是无法支撑的，解决此问题最关键的技术就是采用负载均衡器，水平扩展多台Web服务器，同时对外提供服务，这样就成倍扩展性能了。<br>负载均衡器主流开源技术有LVS、HAProxy和Nginx</p><h3 id="分布式文件系统"><a href="#分布式文件系统" class="headerlink" title="分布式文件系统"></a>分布式文件系统</h3><h2 id="虚拟化"><a href="#虚拟化" class="headerlink" title="虚拟化"></a>虚拟化</h2><h3 id="虚拟化-1"><a href="#虚拟化-1" class="headerlink" title="虚拟化"></a>虚拟化</h3><p>硬件服务器资源利用率很低，甚是浪费！可以把空闲多的服务器虚拟化，弄成很多个的虚拟机，每个虚拟机就是一个完整的操作系统。可以很大程度提高资源利用率。建议学习开源的KVM+OpenStack云平台。</p><h3 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h3><p>虚拟机作为基础平台还可以，但应用业务弹性伸缩也太重量了吧！启动好几分钟，文件又这么大，快速扩展太费劲了！<br>好说，上容器，容器主要特点就是快速部署和环境隔离。一个服务封装到镜像中，分分钟钟可创建几百个容器。<br>主流的容器技术非Docker莫属了。</p><h3 id="集群化管理容器"><a href="#集群化管理容器" class="headerlink" title="集群化管理容器"></a>集群化管理容器</h3><p>当然，生产环境单机Docker大多数情况下是无法满足业务需求的，可以部署Kubernetes、Swarm集群化管理容器，形成一个大的资源池，集中管理，为基础架构提供有力的支撑</p><h2 id="自动化"><a href="#自动化" class="headerlink" title="自动化"></a>自动化</h2><p>所有的操作尽可能自动化，减少人为失误，提高工作效率。<br>主流服务器集中管理工具：Ansible、Saltstack<br>这两个选择任意一个就行。<br>持续集成工具：Jenkins</p><h2 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h2><h3 id="硬件层"><a href="#硬件层" class="headerlink" title="硬件层"></a>硬件层</h3><h3 id="操作系统层"><a href="#操作系统层" class="headerlink" title="操作系统层"></a>操作系统层</h3><h3 id="软件层"><a href="#软件层" class="headerlink" title="软件层"></a>软件层</h3><h3 id="架构层"><a href="#架构层" class="headerlink" title="架构层"></a>架构层</h3>]]></content>
       
       
       <categories>
