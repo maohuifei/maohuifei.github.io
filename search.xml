@@ -4,23 +4,52 @@
   
     
     <entry>
-      <title>图片测试</title>
-      <link href="/2022/10/20/tu-pian-ce-shi/"/>
-      <url>/2022/10/20/tu-pian-ce-shi/</url>
+      <title>少卿妙论，令我闻之如饮醍醐</title>
+      <link href="/2022/10/26/shao-qing-miao-lun-ling-wo-wen-zhi-ru-yin-ti-hu/"/>
+      <url>/2022/10/26/shao-qing-miao-lun-ling-wo-wen-zhi-ru-yin-ti-hu/</url>
       
-        <content type="html"><![CDATA[<h2 id="图拍呢"><a href="#图拍呢" class="headerlink" title="图拍呢"></a>图拍呢</h2><p><img src="/../../public/medias/avatar.jpg"></p>]]></content>
+        <content type="html"><![CDATA[<h2 id="别的行业容易赚钱，是现代人最大的错觉"><a href="#别的行业容易赚钱，是现代人最大的错觉" class="headerlink" title="别的行业容易赚钱，是现代人最大的错觉"></a>别的行业容易赚钱，是现代人最大的错觉</h2><h2 id="时代的大风可以吹走无根的柳絮，却不能把扎了根的大树拔起"><a href="#时代的大风可以吹走无根的柳絮，却不能把扎了根的大树拔起" class="headerlink" title="时代的大风可以吹走无根的柳絮，却不能把扎了根的大树拔起"></a>时代的大风可以吹走无根的柳絮，却不能把扎了根的大树拔起</h2><p>来自：<br>微信文章《浙江卫视曝光年赚300万烧饼大姐：你的苟且，正在成为别人的红利》——洞见</p><h2 id=""><a href="#" class="headerlink" title=""></a></h2>]]></content>
       
       
       <categories>
           
-          <category> default </category>
+          <category> 日常笔记 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> default </tag>
+            <tag> 妙语收录 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>数据库学习笔记</title>
+      <link href="/2022/10/24/shu-ju-ku-xue-xi-bi-ji/"/>
+      <url>/2022/10/24/shu-ju-ku-xue-xi-bi-ji/</url>
+      
+        <content type="html"><![CDATA[<h2 id="MySql"><a href="#MySql" class="headerlink" title="MySql"></a>MySql</h2><h3 id="常用语句（基础）"><a href="#常用语句（基础）" class="headerlink" title="常用语句（基础）"></a>常用语句（基础）</h3><p>SELECT - 从数据库中提取数据（查）<br>UPDATE - 更新数据库中的数据（改）<br>DELETE - 从数据库中删除数据（删）<br>INSERT INTO - 向数据库中插入新数据（增）</p><p>CREATE DATABASE - 创建新数据库<br>ALTER DATABASE - 修改数据库</p><p>CREATE TABLE - 创建新表<br>ALTER TABLE - 变更（改变）数据库表<br>DROP TABLE - 删除表</p><p>CREATE INDEX - 创建索引（搜索键）<br>DROP INDEX - 删除索引</p><h2 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 后端 </tag>
+            
+            <tag> 数据库 </tag>
+            
+            <tag> SQL </tag>
             
         </tags>
       
@@ -178,7 +207,7 @@
       <link href="/2022/10/19/wang-luo-gong-cheng-xue-xi-bi-ji/"/>
       <url>/2022/10/19/wang-luo-gong-cheng-xue-xi-bi-ji/</url>
       
-        <content type="html"><![CDATA[<h2 id="网络基础"><a href="#网络基础" class="headerlink" title="网络基础"></a>网络基础</h2><h3 id="OSI参考模型"><a href="#OSI参考模型" class="headerlink" title="OSI参考模型"></a>OSI参考模型</h3><h3 id="TCP-x2F-IP模型"><a href="#TCP-x2F-IP模型" class="headerlink" title="TCP&#x2F;IP模型"></a>TCP&#x2F;IP模型</h3><h3 id="交换机"><a href="#交换机" class="headerlink" title="交换机"></a>交换机</h3><h3 id="路由器"><a href="#路由器" class="headerlink" title="路由器"></a>路由器</h3><h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><h3 id="系统安装"><a href="#系统安装" class="headerlink" title="系统安装"></a>系统安装</h3><h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><h3 id="启动流程"><a href="#启动流程" class="headerlink" title="启动流程"></a>启动流程</h3><h3 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h3><h3 id="磁盘分区"><a href="#磁盘分区" class="headerlink" title="磁盘分区"></a>磁盘分区</h3><h3 id="软件包管理"><a href="#软件包管理" class="headerlink" title="软件包管理"></a>软件包管理</h3><h3 id="文件权限"><a href="#文件权限" class="headerlink" title="文件权限"></a>文件权限</h3><h3 id="文本处理"><a href="#文本处理" class="headerlink" title="文本处理"></a>文本处理</h3><h3 id="进程管理"><a href="#进程管理" class="headerlink" title="进程管理"></a>进程管理</h3><h3 id="性能分析工具"><a href="#性能分析工具" class="headerlink" title="性能分析工具"></a>性能分析工具</h3><h2 id="日志分析"><a href="#日志分析" class="headerlink" title="日志分析"></a>日志分析</h2><h2 id="Shell"><a href="#Shell" class="headerlink" title="Shell"></a>Shell</h2><h2 id="安全"><a href="#安全" class="headerlink" title="安全"></a>安全</h2><h2 id="监控"><a href="#监控" class="headerlink" title="监控"></a>监控</h2><p>监控点包括基本服务器资源、接口状态、服务性能、PV&#x2F;UV、日志等方面</p><h2 id="集群"><a href="#集群" class="headerlink" title="集群"></a>集群</h2><h3 id="负载均衡器"><a href="#负载均衡器" class="headerlink" title="负载均衡器"></a>负载均衡器</h3><p>单台服务器终究资源有限，抵抗高访问量肯定是无法支撑的，解决此问题最关键的技术就是采用负载均衡器，水平扩展多台Web服务器，同时对外提供服务，这样就成倍扩展性能了。<br>负载均衡器主流开源技术有LVS、HAProxy和Nginx</p><h3 id="分布式文件系统"><a href="#分布式文件系统" class="headerlink" title="分布式文件系统"></a>分布式文件系统</h3><h2 id="虚拟化"><a href="#虚拟化" class="headerlink" title="虚拟化"></a>虚拟化</h2><h3 id="虚拟化-1"><a href="#虚拟化-1" class="headerlink" title="虚拟化"></a>虚拟化</h3><p>硬件服务器资源利用率很低，甚是浪费！可以把空闲多的服务器虚拟化，弄成很多个的虚拟机，每个虚拟机就是一个完整的操作系统。可以很大程度提高资源利用率。建议学习开源的KVM+OpenStack云平台。</p><h3 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h3><p>虚拟机作为基础平台还可以，但应用业务弹性伸缩也太重量了吧！启动好几分钟，文件又这么大，快速扩展太费劲了！<br>好说，上容器，容器主要特点就是快速部署和环境隔离。一个服务封装到镜像中，分分钟钟可创建几百个容器。<br>主流的容器技术非Docker莫属了。</p><h3 id="集群化管理容器"><a href="#集群化管理容器" class="headerlink" title="集群化管理容器"></a>集群化管理容器</h3><p>当然，生产环境单机Docker大多数情况下是无法满足业务需求的，可以部署Kubernetes、Swarm集群化管理容器，形成一个大的资源池，集中管理，为基础架构提供有力的支撑</p><h2 id="自动化"><a href="#自动化" class="headerlink" title="自动化"></a>自动化</h2><p>所有的操作尽可能自动化，减少人为失误，提高工作效率。<br>主流服务器集中管理工具：Ansible、Saltstack<br>这两个选择任意一个就行。<br>持续集成工具：Jenkins</p><h2 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h2><h3 id="硬件层"><a href="#硬件层" class="headerlink" title="硬件层"></a>硬件层</h3><h3 id="操作系统层"><a href="#操作系统层" class="headerlink" title="操作系统层"></a>操作系统层</h3><h3 id="软件层"><a href="#软件层" class="headerlink" title="软件层"></a>软件层</h3><h3 id="架构层"><a href="#架构层" class="headerlink" title="架构层"></a>架构层</h3>]]></content>
+        <content type="html"><![CDATA[<h2 id="网络基础"><a href="#网络基础" class="headerlink" title="网络基础"></a>网络基础</h2><h3 id="OSI参考模型"><a href="#OSI参考模型" class="headerlink" title="OSI参考模型"></a>OSI参考模型</h3><p>分层原则：<br>(1)网络中各节点具有相同的层次<br>(2)网络中各节点同等层次功能相同<br>(3)同一节点内相邻层通过接口通信<br>(4)同一节点内底层向高层提供服务<br>(5)网络中各节点同层通过协议通信</p><p>Application(应用层)<br>Presentation(表示层)<br>Session(会话层)<br>Transport(传输层)<br>Network(网络层)<br>DataLink(数据链路层)<br>Physical(物理层)</p><h3 id="TCP-x2F-IP模型"><a href="#TCP-x2F-IP模型" class="headerlink" title="TCP&#x2F;IP模型"></a>TCP&#x2F;IP模型</h3><p>应用层<br>传输层<br>internet层<br>网络接入层</p><h3 id="交换机"><a href="#交换机" class="headerlink" title="交换机"></a>交换机</h3><h3 id="路由器"><a href="#路由器" class="headerlink" title="路由器"></a>路由器</h3><h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><h3 id="系统安装"><a href="#系统安装" class="headerlink" title="系统安装"></a>系统安装</h3><h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><h3 id="启动流程"><a href="#启动流程" class="headerlink" title="启动流程"></a>启动流程</h3><h3 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h3><h3 id="磁盘分区"><a href="#磁盘分区" class="headerlink" title="磁盘分区"></a>磁盘分区</h3><h3 id="软件包管理"><a href="#软件包管理" class="headerlink" title="软件包管理"></a>软件包管理</h3><h3 id="文件权限"><a href="#文件权限" class="headerlink" title="文件权限"></a>文件权限</h3><h3 id="文本处理"><a href="#文本处理" class="headerlink" title="文本处理"></a>文本处理</h3><h3 id="进程管理"><a href="#进程管理" class="headerlink" title="进程管理"></a>进程管理</h3><h3 id="性能分析工具"><a href="#性能分析工具" class="headerlink" title="性能分析工具"></a>性能分析工具</h3><h2 id="日志分析"><a href="#日志分析" class="headerlink" title="日志分析"></a>日志分析</h2><h2 id="Shell"><a href="#Shell" class="headerlink" title="Shell"></a>Shell</h2><h2 id="安全"><a href="#安全" class="headerlink" title="安全"></a>安全</h2><h2 id="监控"><a href="#监控" class="headerlink" title="监控"></a>监控</h2><p>监控点包括基本服务器资源、接口状态、服务性能、PV&#x2F;UV、日志等方面</p><h2 id="集群"><a href="#集群" class="headerlink" title="集群"></a>集群</h2><h3 id="负载均衡器"><a href="#负载均衡器" class="headerlink" title="负载均衡器"></a>负载均衡器</h3><p>单台服务器终究资源有限，抵抗高访问量肯定是无法支撑的，解决此问题最关键的技术就是采用负载均衡器，水平扩展多台Web服务器，同时对外提供服务，这样就成倍扩展性能了。<br>负载均衡器主流开源技术有LVS、HAProxy和Nginx</p><h3 id="分布式文件系统"><a href="#分布式文件系统" class="headerlink" title="分布式文件系统"></a>分布式文件系统</h3><h2 id="虚拟化"><a href="#虚拟化" class="headerlink" title="虚拟化"></a>虚拟化</h2><h3 id="虚拟化-1"><a href="#虚拟化-1" class="headerlink" title="虚拟化"></a>虚拟化</h3><p>硬件服务器资源利用率很低，甚是浪费！可以把空闲多的服务器虚拟化，弄成很多个的虚拟机，每个虚拟机就是一个完整的操作系统。可以很大程度提高资源利用率。建议学习开源的KVM+OpenStack云平台。</p><h3 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h3><p>虚拟机作为基础平台还可以，但应用业务弹性伸缩也太重量了吧！启动好几分钟，文件又这么大，快速扩展太费劲了！<br>好说，上容器，容器主要特点就是快速部署和环境隔离。一个服务封装到镜像中，分分钟钟可创建几百个容器。<br>主流的容器技术非Docker莫属了。</p><h3 id="集群化管理容器"><a href="#集群化管理容器" class="headerlink" title="集群化管理容器"></a>集群化管理容器</h3><p>当然，生产环境单机Docker大多数情况下是无法满足业务需求的，可以部署Kubernetes、Swarm集群化管理容器，形成一个大的资源池，集中管理，为基础架构提供有力的支撑</p><h2 id="自动化"><a href="#自动化" class="headerlink" title="自动化"></a>自动化</h2><p>所有的操作尽可能自动化，减少人为失误，提高工作效率。<br>主流服务器集中管理工具：Ansible、Saltstack<br>这两个选择任意一个就行。<br>持续集成工具：Jenkins</p><h2 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h2><h3 id="硬件层"><a href="#硬件层" class="headerlink" title="硬件层"></a>硬件层</h3><h3 id="操作系统层"><a href="#操作系统层" class="headerlink" title="操作系统层"></a>操作系统层</h3><h3 id="软件层"><a href="#软件层" class="headerlink" title="软件层"></a>软件层</h3><h3 id="架构层"><a href="#架构层" class="headerlink" title="架构层"></a>架构层</h3>]]></content>
       
       
       <categories>
@@ -242,7 +271,7 @@
       <link href="/2022/10/18/hexo-theme-matery-bi-ji/"/>
       <url>/2022/10/18/hexo-theme-matery-bi-ji/</url>
       
-        <content type="html"><![CDATA[<h2 id="全局css样式修改"><a href="#全局css样式修改" class="headerlink" title="全局css样式修改"></a>全局css样式修改</h2><p>css文件地址路径<code>themes/hexo-thieme-matery/source/css/matery.css</code></p><h2 id=""><a href="#" class="headerlink" title=""></a></h2>]]></content>
+        <content type="html"><![CDATA[<h2 id="全局css样式修改"><a href="#全局css样式修改" class="headerlink" title="全局css样式修改"></a>全局css样式修改</h2><p>css文件地址路径<code>themes/hexo-thieme-matery/source/css/matery.css</code></p><h2 id="新建文章配置"><a href="#新建文章配置" class="headerlink" title="新建文章配置"></a>新建文章配置</h2><table><thead><tr><th>配置选项</th><th>默认值</th><th>描述</th></tr></thead><tbody><tr><td>title</td><td>Markdown 的文件标题</td><td>文章标题，强烈建议填写此选项</td></tr><tr><td>date</td><td>文件创建时的日期时间</td><td>发布时间，强烈建议填写此选项，且最好保证全局唯一</td></tr><tr><td>author</td><td>根 _config.yml 中的 author</td><td>文章作者</td></tr><tr><td>img</td><td>featureImages 中的某个值</td><td>文章特征图，推荐使用图床(腾讯云、七牛云、又拍云等)来做图片的路径.</td></tr><tr><td>top</td><td>true</td><td>推荐文章（文章是否置顶），如果 top 值为 true，则会作为首页推荐文章</td></tr><tr><td>cover</td><td>false</td><td>v1.0.2版本新增，表示该文章是否需要加入到首页轮播封面中</td></tr><tr><td>coverImg</td><td>无</td><td>v1.0.2版本新增，表示该文章在首页轮播封面需要显示的图片路径，如果没有，则默认使用文章的特色图片</td></tr><tr><td>password</td><td>无</td><td>文章阅读密码，如果要对文章设置阅读验证密码的话，就可以设置 password 的值，该值必须是用 SHA256 加密后的密码，防止被他人识破。前提是在主题的 config.yml 中激活了 verifyPassword 选项</td></tr><tr><td>toc</td><td>true</td><td>是否开启 TOC，可以针对某篇文章单独关闭 TOC 的功能。前提是在主题的 config.yml 中激活了 toc 选项</td></tr><tr><td>mathjax</td><td>false</td><td>是否开启数学公式支持 ，本文章是否开启 mathjax，且需要在主题的 _config.yml 文件中也需要开启才行</td></tr><tr><td>summary</td><td>无</td><td>文章摘要，自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要</td></tr><tr><td>categories</td><td>无</td><td>文章分类，本主题的分类表示宏观上大的分类，只建议一篇文章一个分类</td></tr><tr><td>tags</td><td>无</td><td>文章标签，一篇文章可以多个标签</td></tr></tbody></table><p>默认配置文件路径：<br><code>根目录/scaffolds/post</code></p>]]></content>
       
       
       <categories>
