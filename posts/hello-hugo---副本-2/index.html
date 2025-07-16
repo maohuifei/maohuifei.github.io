@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Hello Hugo | 我的博客</title>
+<meta name="keywords" content="">
+<meta name="description" content="E9
+前端
+限定范围
+ecodeSDK.checkLPath
+if (!ecodeSDK.checkLPath(&#34;/spa/workflow/static4form/index.html&#34;)) return;
+JS 原生
+//全路径
+window.location.pathname === &#34;/sp/integration/loginSingle/freepass&#34;;
+//路径包含
+window.location.href.includes(&#34;/workflow/request/&#34;);
+组件复写
+ecodeSDK.overwritePropsFnQueueMapSet(&#34;WeaTop&#34;, {
+  fn: (newProps) =&gt; {
+    newProps.title = &#34;666&#34;;
+  },
+  order: 1,
+  desc: &#34;成绩公示的重新计算按钮&#34;,
+});
+组件重写
+请求接口
+WeaTools
+const { WeaTools } = ecCom;
+WeaTools.callApi(
+  &#34;/api/MedicalEthicsExamination/gradeInquiry/calculateGrades&#34;,
+  &#34;GET&#34;
+)
+  .then((response) =&gt; {
+    if (response) {
+      //console.log(&#34;接口逻辑成功&#34;)
+      //window.location.reload()刷新页面
+    } else {
+      //console.log(&#34;接口逻辑失败&#34;)
+    }
+  })
+  .catch((error) =&gt; {
+    //console.log(&#34;接口请求失败&#34;,error)
+  });
+jQuery
+jQuery.ajax({
+  url: &#34;/qr/pingzheng.jspuserid=&#34; &#43; userid &#43; &#34;&amp;ids=&#34; &#43; ids,
+  async: false,
+  type: &#34;POST&#34;,
+  success: function (res) {
+    console.log(&#34;原始响应:&#34;, res);
+  },
+});
+后端
+自定义 API
+package com.api.MedicalEthicsExamination;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.core.Context;
+import java.util.HashMap;
+import java.util.Map;
+import com.alibaba.fastjson.JSONObject;
+import weaver.general.BaseBean;
+import weaver.conn.RecordSet;
+
+@Path(&#34;/MedicalEthicsExamination/Organization&#34;)
+public class GetLeader {
+    @GET
+    @Path(&#34;/getData&#34;)
+    public String updateScorePublicAction(@Context HttpServletRequest request, @Context HttpServletResponse response){
+		//打印日志
+        BaseBean log =new BaseBean();
+        log.writeLog(&#34;自定义XXX接口开始执行&#34;);
+
+        //获取前端传参：userId
+        String userIdParam = request.getParameter(&#34;userId&#34;);
+
+		//。。。代码逻辑。。。
+
+        //构建返回结构
+        Map&lt;String, Object&gt; dataMap = new HashMap&lt;&gt;();
+        dataMap.put(&#34;ascription&#34;, ascription);
+        dataMap.put(&#34;kpdyId&#34;, kpdyId);
+
+        JSONObject responseData = new JSONObject();
+        responseData.put(&#34;code&#34;, 200);
+        responseData.put(&#34;msg&#34;, &#34;success&#34;);
+        responseData.put(&#34;data&#34;, dataMap);
+
+        return responseData.toJSONString();
+    }}
+节后附加操作
+package weaver.workflow.MedicalEthicsExamination;
+
+import weaver.interfaces.workflow.action.Action;
+import weaver.soa.workflow.request.Property;
+import weaver.soa.workflow.request.RequestInfo;
+import com.weaver.general.BaseBean;
+import java.util.HashMap;
+import java.util.Map;
+
+public class MedicalEthicsExaminationUpdateScoreAi implements Action {
+    @Override
+    public String execute(RequestInfo requestInfo) {
+        BaseBean log = new BaseBean();
+        log.writeLog(&#34;XXX节点附加操作开始执行&#34;);
+
+		// 获取主表数据
+		Property[] props = requestInfo.getMainTableInfo().getProperty();
+		Map&lt;String, String&gt; fieldMap = new HashMap&lt;&gt;();
+		for (Property prop : props) {
+		    fieldMap.put(prop.getName(), prop.getValue());
+		}
+		String scorePrams = fieldMap.get(&#34;df&#34;);
+		String userIdPrams = fieldMap.get(&#34;cpr&#34;);
+
+		//获取流程id
+		String workflowid = requestInfo.getWorkflowid();
+
+		//。。。代码逻辑。。。
+
+		return Action.SUCCESS;
+    }
+}
+数据库操作
+查询
+String getLeaderSQL=&#34;select id from uf_hfkpdy where kpxzzc = ?&#34;;
+RecordSet getLeaderRS =new RecordSet();
+getLeaderRS.executeQuery(getLeaderSQL,userIdParam);
+if(getLeaderRS.next()){
+	log.writeLog(&#34;getLeaderRS查询成功&#34;);
+	kpdyId=getLeaderRS.getString(&#34;id&#34;);
+}else{
+	log.writeLog(&#34;getLeaderRS查询失败&#34;);
+}
+更新&amp;插入&amp;删除
+String updateSQL = &#34;UPDATE cus_fielddata SET field21=?&#34;;
+RecordSet updateRS = new RecordSet();
+boolean updateSuccess = updateRS.executeUpdate(updateSQL, newScore);
+if(updateSuccess &amp;&amp; updateRS.getUpdateCount() &gt; 0) {
+	log.writeLog(&#34;更新成功，影响行数：&#34; &#43; updateRS.getUpdateCount());
+} else {
+	log.writeLog(&#34;更新失败);
+}
+批量更新&amp;插入
+List valueList = new ArrayList();
+valueList.add(uuid);
+valueList.add(ddh);
+List idList = new ArrayList();
+idList.add(valueList);
+//参数格式：[[uuid1,ddh1],[[uuid2,ddh2]],[[uuid3,ddh3]]]
+RecordSet rs=new RecordSet();
+String insertSQL =&#34;INSERT INTO uf_IntermediateTabl (uuid, ddh) VALUES (?,?)&#34;;
+rs.executeBatchSql(insertSQL,idList);
+打印日志
+//方法一
+import com.weaver.general.BaseBean;
+
+BaseBean log = new BaseBean();
+log.writeLog(&#34;XXX节点附加操作开始执行&#34;);
+创建流程
+构建主表
+WorkflowMainTableInfo workflowMainTableInfo = new WorkflowMainTableInfo();
+WorkflowRequestTableRecord[] workflowRequestTableRecord = new WorkflowRequestTableRecord[1];  //固定值1
+WorkflowRequestTableField[] WorkflowRequestTableField = new WorkflowRequestTableField[3];  //总字段数
+
+WorkflowRequestTableField[0] = createTableField(&#34;dw&#34;, String.valueOf(currentPerson.getDw()));
+WorkflowRequestTableField[1] = createTableField(&#34;nd&#34;, String.valueOf(currentPerson.getNd()));
+WorkflowRequestTableField[2] = createTableField(&#34;xm&#34;, String.valueOf(currentPerson.getXm()));
+
+workflowRequestTableRecord[0] = new WorkflowRequestTableRecord();
+workflowRequestTableRecord[0].setWorkflowRequestTableFields(WorkflowRequestTableField);
+workflowMainTableInfo.setRequestRecords(workflowRequestTableRecord);
+构建明细表
+WorkflowDetailTableInfo[] workflowDetailTableInfo = new WorkflowDetailTableInfo[1];
+WorkflowRequestTableRecord[] workflowRequestTableRecord = new WorkflowRequestTableRecord[allData.size()];
+
+for (int i = 0; i &lt; allData.size(); i&#43;&#43;) {
+    TranscriptStructure ts = allData.get(i);
+    WorkflowRequestTableField[] WorkflowRequestTableField = new WorkflowRequestTableField[3];  //数据总数
+
+    WorkflowRequestTableField[0] = createTableField(&#34;xm&#34;, String.valueOf(ts.getXm()));
+    WorkflowRequestTableField[1] = createTableField(&#34;zggh&#34;, String.valueOf(ts.getZggh()));
+    WorkflowRequestTableField[2] = createTableField(&#34;kpdc&#34;, String.valueOf(ts.getKpdc()));
+
+    workflowRequestTableRecord[i] = new WorkflowRequestTableRecord();
+    workflowRequestTableRecord[i].setWorkflowRequestTableFields(WorkflowRequestTableField);
+}
+
+workflowDetailTableInfo[0] = new WorkflowDetailTableInfo();
+workflowDetailTableInfo[0].setWorkflowRequestTableRecords(workflowRequestTableRecord);
+创建
+log.writeLog(&#34;开始为人员创建流程，人员信息：&#34; &#43; currentPerson.getXm());
+
+// 创建流程信息
+WorkflowRequestInfo workflowRequestInfo = new WorkflowRequestInfo();
+workflowRequestInfo.setRequestName(&#34;医德考评成绩确认单&#34;);
+workflowRequestInfo.setCreatorId(userId);
+
+WorkflowBaseInfo workflowBaseInfo = new WorkflowBaseInfo();
+workflowBaseInfo.setWorkflowId(&#34;25&#34;);
+workflowRequestInfo.setWorkflowBaseInfo(workflowBaseInfo);
+
+// 构建主表
+WorkflowMainTableInfo workflowMainTableInfo = buildMainTableInfo(currentPerson);
+workflowRequestInfo.setWorkflowMainTableInfo(workflowMainTableInfo);
+
+// 构建明细表
+WorkflowDetailTableInfo[] workflowDetailTableInfo = buildDetailTableInfo(allData);
+workflowRequestInfo.setWorkflowDetailTableInfos(workflowDetailTableInfo);
+
+// 创建流程
+WorkflowServiceImpl wsi = new WorkflowServiceImpl();
+String requestId = wsi.doCreateWorkflowRequest(workflowRequestInfo, userIdInt);
+
+log.writeLog(&#34;创建流程成功，流程ID：&#34; &#43; requestId);
+流程干预
+try {
+    // 获取干预服务
+    WorkflowRequestOperatePAImpl service = ServiceUtil.getService(WorkflowRequestOperatePAImpl.class);
+    // 使用有权限的用户（这里使用admin用户）
+    User user = new User(1);
+
+    // 遍历所有需要干预的流程
+    for (Map&lt;String, String&gt; item : newRequestList) {
+        String requestId = item.get(&#34;requestId&#34;);
+        String xm = item.get(&#34;xm&#34;);
+
+        try {
+            log.writeLog(&#34;开始干预流程，requestId: &#34; &#43; requestId &#43; &#34;, 接收人: &#34; &#43; xm);
+
+            // 设置干预参数
+            ReqOperateRequestEntity requestParam = new ReqOperateRequestEntity();
+            requestParam.setRequestId(Integer.parseInt(requestId)); // 流程实例ID
+            requestParam.setSubmitNodeId(94); // 目标节点ID（独立打印节点）
+            requestParam.setIntervenorid(xm); // 设置接收人为当前xm
+
+            // 执行干预
+            PAResponseEntity result = service.doIntervenor(user, requestParam);
+
+            // 检查干预结果 - 修改为正确的枚举比较方式
+            if (PAResponseCode.SUCCESS.equals(result.getCode())) {
+                log.writeLog(&#34;干预成功，requestId: &#34; &#43; requestId);
+                successCount&#43;&#43;;
+            } else {
+                log.writeLog(&#34;干预失败，requestId: &#34; &#43; requestId &#43;
+                        &#34;, 错误码: &#34; &#43; result.getCode().name() &#43;
+                        &#34;, 错误信息: &#34; &#43; result.getErrMsg());
+                allSuccess = false;
+                failCount&#43;&#43;;
+                failedRequests.add(requestId);
+            }        } catch (Exception e) {
+            log.writeLog(&#34;干预流程异常，requestId: &#34; &#43; requestId &#43; &#34;, 异常信息: &#34; &#43; e.getMessage());
+            allSuccess = false;
+            failCount&#43;&#43;;
+            failedRequests.add(requestId);
+        }    }
+    // 记录总体干预结果
+    log.writeLog(&#34;流程干预完成，成功: &#34; &#43; successCount &#43; &#34;个，失败: &#34; &#43; failCount &#43; &#34;个&#34;);
+    if (!failedRequests.isEmpty()) {
+        log.writeLog(&#34;失败的requestIds: &#34; &#43; failedRequests);
+    }
+} catch (Exception e) {
+    log.writeLog(&#34;获取干预服务或初始化用户异常: &#34; &#43; e.getMessage());
+    allSuccess = false;
+}
+E10
+前端
+组件复写
+regOvProps(&#39;weappUi&#39;, &#39;Title&#39;, (props) =&gt; {
+
+ const {weId=&#39;&#39;} = props;
+
+  //console.log(&#34;拿到的参数：&#34;,props)
+
+  if(weId &amp;&amp; weId.endsWith(&#34;_pnhv5o&#34;)){
+
+    props.title=&#34;自定义标题23333&#34;
+
+  return props;
+
+  }
+
+}, 0);
+
+}
+组件重写
+import React from &#34;react&#34;;
+import { regOvComponent } from &#34;@weapp/utils&#34;;
+import { asyncImport } from &#34;@weapp/ecodesdk&#34;;
+
+const NewHelp = React.lazy(() =&gt; asyncImport(&#34;${appId}&#34;, &#34;NewHelp&#34;));
+
+regOvComponent(
+  &#34;weappUi&#34;,
+  &#34;Help&#34;,
+  (Com) =&gt; {
+    if (window.location.pathname === &#34;/sp/integration/loginSingle/freepass&#34;) {
+      return React.forwardRef((props, ref) =&gt; {
+        console.log(&#34;获取的help参数&#34;, props);
+        return (
+          &lt;React.Suspense fallback={() =&gt; {}}&gt;
+                 {&#34; &#34;}
+            &lt;NewHelp {...props} OriginCom={Com} ref={ref} forwardedRef={ref} /&gt; 
+             {&#34; &#34;}
+          &lt;/React.Suspense&gt;
+        );
+      });
+    }
+  },
+  1
+);
+请求接口
+接口拦截
+//拦截请求
+axios.interceptors.request.use((request) =&gt; {
+  if (request.url === &#34;/api/ebuilder/coms/list/getData&#34;) {
+    const params = new URLSearchParams(request.data);
+    params.set(&#34;pageSize&#34;, &#34;10000&#34;);
+    request.data = params.toString();
+  }
+  return request;
+});
+//拦截响应
+axios.interceptors.response.use((response) =&gt; {
+  if (response.config.url === &#34;/api/ebuilder/coms/list/getData&#34;) {
+    const reversedData = response.data.data.list.reverse();
+    response.data.data.list = reversedData;
+  }
+  return response;
+});
+后端">
+<meta name="author" content="">
+<link rel="canonical" href="https://maohuifei.github.io/posts/hello-hugo---%E5%89%AF%E6%9C%AC-2/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.8fe10233a706bc87f2e08b3cf97b8bd4c0a80f10675a143675d59212121037c0.css" integrity="sha256-j&#43;ECM6cGvIfy4Is8&#43;XuL1MCoDxBnWhQ2ddWSEhIQN8A=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://maohuifei.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://maohuifei.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://maohuifei.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://maohuifei.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://maohuifei.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://maohuifei.github.io/posts/hello-hugo---%E5%89%AF%E6%9C%AC-2/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:url" content="https://maohuifei.github.io/posts/hello-hugo---%E5%89%AF%E6%9C%AC-2/">
+  <meta property="og:site_name" content="我的博客">
+  <meta property="og:title" content="Hello Hugo">
+  <meta property="og:description" content="E9 前端 限定范围 ecodeSDK.checkLPath if (!ecodeSDK.checkLPath(&#34;/spa/workflow/static4form/index.html&#34;)) return; JS 原生 //全路径 window.location.pathname === &#34;/sp/integration/loginSingle/freepass&#34;; //路径包含 window.location.href.includes(&#34;/workflow/request/&#34;); 组件复写 ecodeSDK.overwritePropsFnQueueMapSet(&#34;WeaTop&#34;, { fn: (newProps) =&gt; { newProps.title = &#34;666&#34;; }, order: 1, desc: &#34;成绩公示的重新计算按钮&#34;, }); 组件重写 请求接口 WeaTools const { WeaTools } = ecCom; WeaTools.callApi( &#34;/api/MedicalEthicsExamination/gradeInquiry/calculateGrades&#34;, &#34;GET&#34; ) .then((response) =&gt; { if (response) { //console.log(&#34;接口逻辑成功&#34;) //window.location.reload()刷新页面 } else { //console.log(&#34;接口逻辑失败&#34;) } }) .catch((error) =&gt; { //console.log(&#34;接口请求失败&#34;,error) }); jQuery jQuery.ajax({ url: &#34;/qr/pingzheng.jspuserid=&#34; &#43; userid &#43; &#34;&amp;ids=&#34; &#43; ids, async: false, type: &#34;POST&#34;, success: function (res) { console.log(&#34;原始响应:&#34;, res); }, }); 后端 自定义 API package com.api.MedicalEthicsExamination; import javax.servlet.http.HttpServletRequest; import javax.servlet.http.HttpServletResponse; import javax.ws.rs.GET; import javax.ws.rs.Path; import javax.ws.rs.core.Context; import java.util.HashMap; import java.util.Map; import com.alibaba.fastjson.JSONObject; import weaver.general.BaseBean; import weaver.conn.RecordSet; @Path(&#34;/MedicalEthicsExamination/Organization&#34;) public class GetLeader { @GET @Path(&#34;/getData&#34;) public String updateScorePublicAction(@Context HttpServletRequest request, @Context HttpServletResponse response){ //打印日志 BaseBean log =new BaseBean(); log.writeLog(&#34;自定义XXX接口开始执行&#34;); //获取前端传参：userId String userIdParam = request.getParameter(&#34;userId&#34;); //。。。代码逻辑。。。 //构建返回结构 Map&lt;String, Object&gt; dataMap = new HashMap&lt;&gt;(); dataMap.put(&#34;ascription&#34;, ascription); dataMap.put(&#34;kpdyId&#34;, kpdyId); JSONObject responseData = new JSONObject(); responseData.put(&#34;code&#34;, 200); responseData.put(&#34;msg&#34;, &#34;success&#34;); responseData.put(&#34;data&#34;, dataMap); return responseData.toJSONString(); }} 节后附加操作 package weaver.workflow.MedicalEthicsExamination; import weaver.interfaces.workflow.action.Action; import weaver.soa.workflow.request.Property; import weaver.soa.workflow.request.RequestInfo; import com.weaver.general.BaseBean; import java.util.HashMap; import java.util.Map; public class MedicalEthicsExaminationUpdateScoreAi implements Action { @Override public String execute(RequestInfo requestInfo) { BaseBean log = new BaseBean(); log.writeLog(&#34;XXX节点附加操作开始执行&#34;); // 获取主表数据 Property[] props = requestInfo.getMainTableInfo().getProperty(); Map&lt;String, String&gt; fieldMap = new HashMap&lt;&gt;(); for (Property prop : props) { fieldMap.put(prop.getName(), prop.getValue()); } String scorePrams = fieldMap.get(&#34;df&#34;); String userIdPrams = fieldMap.get(&#34;cpr&#34;); //获取流程id String workflowid = requestInfo.getWorkflowid(); //。。。代码逻辑。。。 return Action.SUCCESS; } } 数据库操作 查询 String getLeaderSQL=&#34;select id from uf_hfkpdy where kpxzzc = ?&#34;; RecordSet getLeaderRS =new RecordSet(); getLeaderRS.executeQuery(getLeaderSQL,userIdParam); if(getLeaderRS.next()){ log.writeLog(&#34;getLeaderRS查询成功&#34;); kpdyId=getLeaderRS.getString(&#34;id&#34;); }else{ log.writeLog(&#34;getLeaderRS查询失败&#34;); } 更新&amp;插入&amp;删除 String updateSQL = &#34;UPDATE cus_fielddata SET field21=?&#34;; RecordSet updateRS = new RecordSet(); boolean updateSuccess = updateRS.executeUpdate(updateSQL, newScore); if(updateSuccess &amp;&amp; updateRS.getUpdateCount() &gt; 0) { log.writeLog(&#34;更新成功，影响行数：&#34; &#43; updateRS.getUpdateCount()); } else { log.writeLog(&#34;更新失败); } 批量更新&amp;插入 List valueList = new ArrayList(); valueList.add(uuid); valueList.add(ddh); List idList = new ArrayList(); idList.add(valueList); //参数格式：[[uuid1,ddh1],[[uuid2,ddh2]],[[uuid3,ddh3]]] RecordSet rs=new RecordSet(); String insertSQL =&#34;INSERT INTO uf_IntermediateTabl (uuid, ddh) VALUES (?,?)&#34;; rs.executeBatchSql(insertSQL,idList); 打印日志 //方法一 import com.weaver.general.BaseBean; BaseBean log = new BaseBean(); log.writeLog(&#34;XXX节点附加操作开始执行&#34;); 创建流程 构建主表 WorkflowMainTableInfo workflowMainTableInfo = new WorkflowMainTableInfo(); WorkflowRequestTableRecord[] workflowRequestTableRecord = new WorkflowRequestTableRecord[1]; //固定值1 WorkflowRequestTableField[] WorkflowRequestTableField = new WorkflowRequestTableField[3]; //总字段数 WorkflowRequestTableField[0] = createTableField(&#34;dw&#34;, String.valueOf(currentPerson.getDw())); WorkflowRequestTableField[1] = createTableField(&#34;nd&#34;, String.valueOf(currentPerson.getNd())); WorkflowRequestTableField[2] = createTableField(&#34;xm&#34;, String.valueOf(currentPerson.getXm())); workflowRequestTableRecord[0] = new WorkflowRequestTableRecord(); workflowRequestTableRecord[0].setWorkflowRequestTableFields(WorkflowRequestTableField); workflowMainTableInfo.setRequestRecords(workflowRequestTableRecord); 构建明细表 WorkflowDetailTableInfo[] workflowDetailTableInfo = new WorkflowDetailTableInfo[1]; WorkflowRequestTableRecord[] workflowRequestTableRecord = new WorkflowRequestTableRecord[allData.size()]; for (int i = 0; i &lt; allData.size(); i&#43;&#43;) { TranscriptStructure ts = allData.get(i); WorkflowRequestTableField[] WorkflowRequestTableField = new WorkflowRequestTableField[3]; //数据总数 WorkflowRequestTableField[0] = createTableField(&#34;xm&#34;, String.valueOf(ts.getXm())); WorkflowRequestTableField[1] = createTableField(&#34;zggh&#34;, String.valueOf(ts.getZggh())); WorkflowRequestTableField[2] = createTableField(&#34;kpdc&#34;, String.valueOf(ts.getKpdc())); workflowRequestTableRecord[i] = new WorkflowRequestTableRecord(); workflowRequestTableRecord[i].setWorkflowRequestTableFields(WorkflowRequestTableField); } workflowDetailTableInfo[0] = new WorkflowDetailTableInfo(); workflowDetailTableInfo[0].setWorkflowRequestTableRecords(workflowRequestTableRecord); 创建 log.writeLog(&#34;开始为人员创建流程，人员信息：&#34; &#43; currentPerson.getXm()); // 创建流程信息 WorkflowRequestInfo workflowRequestInfo = new WorkflowRequestInfo(); workflowRequestInfo.setRequestName(&#34;医德考评成绩确认单&#34;); workflowRequestInfo.setCreatorId(userId); WorkflowBaseInfo workflowBaseInfo = new WorkflowBaseInfo(); workflowBaseInfo.setWorkflowId(&#34;25&#34;); workflowRequestInfo.setWorkflowBaseInfo(workflowBaseInfo); // 构建主表 WorkflowMainTableInfo workflowMainTableInfo = buildMainTableInfo(currentPerson); workflowRequestInfo.setWorkflowMainTableInfo(workflowMainTableInfo); // 构建明细表 WorkflowDetailTableInfo[] workflowDetailTableInfo = buildDetailTableInfo(allData); workflowRequestInfo.setWorkflowDetailTableInfos(workflowDetailTableInfo); // 创建流程 WorkflowServiceImpl wsi = new WorkflowServiceImpl(); String requestId = wsi.doCreateWorkflowRequest(workflowRequestInfo, userIdInt); log.writeLog(&#34;创建流程成功，流程ID：&#34; &#43; requestId); 流程干预 try { // 获取干预服务 WorkflowRequestOperatePAImpl service = ServiceUtil.getService(WorkflowRequestOperatePAImpl.class); // 使用有权限的用户（这里使用admin用户） User user = new User(1); // 遍历所有需要干预的流程 for (Map&lt;String, String&gt; item : newRequestList) { String requestId = item.get(&#34;requestId&#34;); String xm = item.get(&#34;xm&#34;); try { log.writeLog(&#34;开始干预流程，requestId: &#34; &#43; requestId &#43; &#34;, 接收人: &#34; &#43; xm); // 设置干预参数 ReqOperateRequestEntity requestParam = new ReqOperateRequestEntity(); requestParam.setRequestId(Integer.parseInt(requestId)); // 流程实例ID requestParam.setSubmitNodeId(94); // 目标节点ID（独立打印节点） requestParam.setIntervenorid(xm); // 设置接收人为当前xm // 执行干预 PAResponseEntity result = service.doIntervenor(user, requestParam); // 检查干预结果 - 修改为正确的枚举比较方式 if (PAResponseCode.SUCCESS.equals(result.getCode())) { log.writeLog(&#34;干预成功，requestId: &#34; &#43; requestId); successCount&#43;&#43;; } else { log.writeLog(&#34;干预失败，requestId: &#34; &#43; requestId &#43; &#34;, 错误码: &#34; &#43; result.getCode().name() &#43; &#34;, 错误信息: &#34; &#43; result.getErrMsg()); allSuccess = false; failCount&#43;&#43;; failedRequests.add(requestId); } } catch (Exception e) { log.writeLog(&#34;干预流程异常，requestId: &#34; &#43; requestId &#43; &#34;, 异常信息: &#34; &#43; e.getMessage()); allSuccess = false; failCount&#43;&#43;; failedRequests.add(requestId); } } // 记录总体干预结果 log.writeLog(&#34;流程干预完成，成功: &#34; &#43; successCount &#43; &#34;个，失败: &#34; &#43; failCount &#43; &#34;个&#34;); if (!failedRequests.isEmpty()) { log.writeLog(&#34;失败的requestIds: &#34; &#43; failedRequests); } } catch (Exception e) { log.writeLog(&#34;获取干预服务或初始化用户异常: &#34; &#43; e.getMessage()); allSuccess = false; } E10 前端 组件复写 regOvProps(&#39;weappUi&#39;, &#39;Title&#39;, (props) =&gt; { const {weId=&#39;&#39;} = props; //console.log(&#34;拿到的参数：&#34;,props) if(weId &amp;&amp; weId.endsWith(&#34;_pnhv5o&#34;)){ props.title=&#34;自定义标题23333&#34; return props; } }, 0); } 组件重写 import React from &#34;react&#34;; import { regOvComponent } from &#34;@weapp/utils&#34;; import { asyncImport } from &#34;@weapp/ecodesdk&#34;; const NewHelp = React.lazy(() =&gt; asyncImport(&#34;${appId}&#34;, &#34;NewHelp&#34;)); regOvComponent( &#34;weappUi&#34;, &#34;Help&#34;, (Com) =&gt; { if (window.location.pathname === &#34;/sp/integration/loginSingle/freepass&#34;) { return React.forwardRef((props, ref) =&gt; { console.log(&#34;获取的help参数&#34;, props); return ( &lt;React.Suspense fallback={() =&gt; {}}&gt; {&#34; &#34;} &lt;NewHelp {...props} OriginCom={Com} ref={ref} forwardedRef={ref} /&gt; {&#34; &#34;} &lt;/React.Suspense&gt; ); }); } }, 1 ); 请求接口 接口拦截 //拦截请求 axios.interceptors.request.use((request) =&gt; { if (request.url === &#34;/api/ebuilder/coms/list/getData&#34;) { const params = new URLSearchParams(request.data); params.set(&#34;pageSize&#34;, &#34;10000&#34;); request.data = params.toString(); } return request; }); //拦截响应 axios.interceptors.response.use((response) =&gt; { if (response.config.url === &#34;/api/ebuilder/coms/list/getData&#34;) { const reversedData = response.data.data.list.reverse(); response.data.data.list = reversedData; } return response; }); 后端">
+  <meta property="og:locale" content="zh-cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-07-16T11:23:15+08:00">
+    <meta property="article:modified_time" content="2025-07-16T11:23:15+08:00">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hello Hugo">
+<meta name="twitter:description" content="E9
+前端
+限定范围
+ecodeSDK.checkLPath
+if (!ecodeSDK.checkLPath(&#34;/spa/workflow/static4form/index.html&#34;)) return;
+JS 原生
+//全路径
+window.location.pathname === &#34;/sp/integration/loginSingle/freepass&#34;;
+//路径包含
+window.location.href.includes(&#34;/workflow/request/&#34;);
+组件复写
+ecodeSDK.overwritePropsFnQueueMapSet(&#34;WeaTop&#34;, {
+  fn: (newProps) =&gt; {
+    newProps.title = &#34;666&#34;;
+  },
+  order: 1,
+  desc: &#34;成绩公示的重新计算按钮&#34;,
+});
+组件重写
+请求接口
+WeaTools
+const { WeaTools } = ecCom;
+WeaTools.callApi(
+  &#34;/api/MedicalEthicsExamination/gradeInquiry/calculateGrades&#34;,
+  &#34;GET&#34;
+)
+  .then((response) =&gt; {
+    if (response) {
+      //console.log(&#34;接口逻辑成功&#34;)
+      //window.location.reload()刷新页面
+    } else {
+      //console.log(&#34;接口逻辑失败&#34;)
+    }
+  })
+  .catch((error) =&gt; {
+    //console.log(&#34;接口请求失败&#34;,error)
+  });
+jQuery
+jQuery.ajax({
+  url: &#34;/qr/pingzheng.jspuserid=&#34; &#43; userid &#43; &#34;&amp;ids=&#34; &#43; ids,
+  async: false,
+  type: &#34;POST&#34;,
+  success: function (res) {
+    console.log(&#34;原始响应:&#34;, res);
+  },
+});
+后端
+自定义 API
+package com.api.MedicalEthicsExamination;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.core.Context;
+import java.util.HashMap;
+import java.util.Map;
+import com.alibaba.fastjson.JSONObject;
+import weaver.general.BaseBean;
+import weaver.conn.RecordSet;
+
+@Path(&#34;/MedicalEthicsExamination/Organization&#34;)
+public class GetLeader {
+    @GET
+    @Path(&#34;/getData&#34;)
+    public String updateScorePublicAction(@Context HttpServletRequest request, @Context HttpServletResponse response){
+		//打印日志
+        BaseBean log =new BaseBean();
+        log.writeLog(&#34;自定义XXX接口开始执行&#34;);
+
+        //获取前端传参：userId
+        String userIdParam = request.getParameter(&#34;userId&#34;);
+
+		//。。。代码逻辑。。。
+
+        //构建返回结构
+        Map&lt;String, Object&gt; dataMap = new HashMap&lt;&gt;();
+        dataMap.put(&#34;ascription&#34;, ascription);
+        dataMap.put(&#34;kpdyId&#34;, kpdyId);
+
+        JSONObject responseData = new JSONObject();
+        responseData.put(&#34;code&#34;, 200);
+        responseData.put(&#34;msg&#34;, &#34;success&#34;);
+        responseData.put(&#34;data&#34;, dataMap);
+
+        return responseData.toJSONString();
+    }}
+节后附加操作
+package weaver.workflow.MedicalEthicsExamination;
+
+import weaver.interfaces.workflow.action.Action;
+import weaver.soa.workflow.request.Property;
+import weaver.soa.workflow.request.RequestInfo;
+import com.weaver.general.BaseBean;
+import java.util.HashMap;
+import java.util.Map;
+
+public class MedicalEthicsExaminationUpdateScoreAi implements Action {
+    @Override
+    public String execute(RequestInfo requestInfo) {
+        BaseBean log = new BaseBean();
+        log.writeLog(&#34;XXX节点附加操作开始执行&#34;);
+
+		// 获取主表数据
+		Property[] props = requestInfo.getMainTableInfo().getProperty();
+		Map&lt;String, String&gt; fieldMap = new HashMap&lt;&gt;();
+		for (Property prop : props) {
+		    fieldMap.put(prop.getName(), prop.getValue());
+		}
+		String scorePrams = fieldMap.get(&#34;df&#34;);
+		String userIdPrams = fieldMap.get(&#34;cpr&#34;);
+
+		//获取流程id
+		String workflowid = requestInfo.getWorkflowid();
+
+		//。。。代码逻辑。。。
+
+		return Action.SUCCESS;
+    }
+}
+数据库操作
+查询
+String getLeaderSQL=&#34;select id from uf_hfkpdy where kpxzzc = ?&#34;;
+RecordSet getLeaderRS =new RecordSet();
+getLeaderRS.executeQuery(getLeaderSQL,userIdParam);
+if(getLeaderRS.next()){
+	log.writeLog(&#34;getLeaderRS查询成功&#34;);
+	kpdyId=getLeaderRS.getString(&#34;id&#34;);
+}else{
+	log.writeLog(&#34;getLeaderRS查询失败&#34;);
+}
+更新&amp;插入&amp;删除
+String updateSQL = &#34;UPDATE cus_fielddata SET field21=?&#34;;
+RecordSet updateRS = new RecordSet();
+boolean updateSuccess = updateRS.executeUpdate(updateSQL, newScore);
+if(updateSuccess &amp;&amp; updateRS.getUpdateCount() &gt; 0) {
+	log.writeLog(&#34;更新成功，影响行数：&#34; &#43; updateRS.getUpdateCount());
+} else {
+	log.writeLog(&#34;更新失败);
+}
+批量更新&amp;插入
+List valueList = new ArrayList();
+valueList.add(uuid);
+valueList.add(ddh);
+List idList = new ArrayList();
+idList.add(valueList);
+//参数格式：[[uuid1,ddh1],[[uuid2,ddh2]],[[uuid3,ddh3]]]
+RecordSet rs=new RecordSet();
+String insertSQL =&#34;INSERT INTO uf_IntermediateTabl (uuid, ddh) VALUES (?,?)&#34;;
+rs.executeBatchSql(insertSQL,idList);
+打印日志
+//方法一
+import com.weaver.general.BaseBean;
+
+BaseBean log = new BaseBean();
+log.writeLog(&#34;XXX节点附加操作开始执行&#34;);
+创建流程
+构建主表
+WorkflowMainTableInfo workflowMainTableInfo = new WorkflowMainTableInfo();
+WorkflowRequestTableRecord[] workflowRequestTableRecord = new WorkflowRequestTableRecord[1];  //固定值1
+WorkflowRequestTableField[] WorkflowRequestTableField = new WorkflowRequestTableField[3];  //总字段数
+
+WorkflowRequestTableField[0] = createTableField(&#34;dw&#34;, String.valueOf(currentPerson.getDw()));
+WorkflowRequestTableField[1] = createTableField(&#34;nd&#34;, String.valueOf(currentPerson.getNd()));
+WorkflowRequestTableField[2] = createTableField(&#34;xm&#34;, String.valueOf(currentPerson.getXm()));
+
+workflowRequestTableRecord[0] = new WorkflowRequestTableRecord();
+workflowRequestTableRecord[0].setWorkflowRequestTableFields(WorkflowRequestTableField);
+workflowMainTableInfo.setRequestRecords(workflowRequestTableRecord);
+构建明细表
+WorkflowDetailTableInfo[] workflowDetailTableInfo = new WorkflowDetailTableInfo[1];
+WorkflowRequestTableRecord[] workflowRequestTableRecord = new WorkflowRequestTableRecord[allData.size()];
+
+for (int i = 0; i &lt; allData.size(); i&#43;&#43;) {
+    TranscriptStructure ts = allData.get(i);
+    WorkflowRequestTableField[] WorkflowRequestTableField = new WorkflowRequestTableField[3];  //数据总数
+
+    WorkflowRequestTableField[0] = createTableField(&#34;xm&#34;, String.valueOf(ts.getXm()));
+    WorkflowRequestTableField[1] = createTableField(&#34;zggh&#34;, String.valueOf(ts.getZggh()));
+    WorkflowRequestTableField[2] = createTableField(&#34;kpdc&#34;, String.valueOf(ts.getKpdc()));
+
+    workflowRequestTableRecord[i] = new WorkflowRequestTableRecord();
+    workflowRequestTableRecord[i].setWorkflowRequestTableFields(WorkflowRequestTableField);
+}
+
+workflowDetailTableInfo[0] = new WorkflowDetailTableInfo();
+workflowDetailTableInfo[0].setWorkflowRequestTableRecords(workflowRequestTableRecord);
+创建
+log.writeLog(&#34;开始为人员创建流程，人员信息：&#34; &#43; currentPerson.getXm());
+
+// 创建流程信息
+WorkflowRequestInfo workflowRequestInfo = new WorkflowRequestInfo();
+workflowRequestInfo.setRequestName(&#34;医德考评成绩确认单&#34;);
+workflowRequestInfo.setCreatorId(userId);
+
+WorkflowBaseInfo workflowBaseInfo = new WorkflowBaseInfo();
+workflowBaseInfo.setWorkflowId(&#34;25&#34;);
+workflowRequestInfo.setWorkflowBaseInfo(workflowBaseInfo);
+
+// 构建主表
+WorkflowMainTableInfo workflowMainTableInfo = buildMainTableInfo(currentPerson);
+workflowRequestInfo.setWorkflowMainTableInfo(workflowMainTableInfo);
+
+// 构建明细表
+WorkflowDetailTableInfo[] workflowDetailTableInfo = buildDetailTableInfo(allData);
+workflowRequestInfo.setWorkflowDetailTableInfos(workflowDetailTableInfo);
+
+// 创建流程
+WorkflowServiceImpl wsi = new WorkflowServiceImpl();
+String requestId = wsi.doCreateWorkflowRequest(workflowRequestInfo, userIdInt);
+
+log.writeLog(&#34;创建流程成功，流程ID：&#34; &#43; requestId);
+流程干预
+try {
+    // 获取干预服务
+    WorkflowRequestOperatePAImpl service = ServiceUtil.getService(WorkflowRequestOperatePAImpl.class);
+    // 使用有权限的用户（这里使用admin用户）
+    User user = new User(1);
+
+    // 遍历所有需要干预的流程
+    for (Map&lt;String, String&gt; item : newRequestList) {
+        String requestId = item.get(&#34;requestId&#34;);
+        String xm = item.get(&#34;xm&#34;);
+
+        try {
+            log.writeLog(&#34;开始干预流程，requestId: &#34; &#43; requestId &#43; &#34;, 接收人: &#34; &#43; xm);
+
+            // 设置干预参数
+            ReqOperateRequestEntity requestParam = new ReqOperateRequestEntity();
+            requestParam.setRequestId(Integer.parseInt(requestId)); // 流程实例ID
+            requestParam.setSubmitNodeId(94); // 目标节点ID（独立打印节点）
+            requestParam.setIntervenorid(xm); // 设置接收人为当前xm
+
+            // 执行干预
+            PAResponseEntity result = service.doIntervenor(user, requestParam);
+
+            // 检查干预结果 - 修改为正确的枚举比较方式
+            if (PAResponseCode.SUCCESS.equals(result.getCode())) {
+                log.writeLog(&#34;干预成功，requestId: &#34; &#43; requestId);
+                successCount&#43;&#43;;
+            } else {
+                log.writeLog(&#34;干预失败，requestId: &#34; &#43; requestId &#43;
+                        &#34;, 错误码: &#34; &#43; result.getCode().name() &#43;
+                        &#34;, 错误信息: &#34; &#43; result.getErrMsg());
+                allSuccess = false;
+                failCount&#43;&#43;;
+                failedRequests.add(requestId);
+            }        } catch (Exception e) {
+            log.writeLog(&#34;干预流程异常，requestId: &#34; &#43; requestId &#43; &#34;, 异常信息: &#34; &#43; e.getMessage());
+            allSuccess = false;
+            failCount&#43;&#43;;
+            failedRequests.add(requestId);
+        }    }
+    // 记录总体干预结果
+    log.writeLog(&#34;流程干预完成，成功: &#34; &#43; successCount &#43; &#34;个，失败: &#34; &#43; failCount &#43; &#34;个&#34;);
+    if (!failedRequests.isEmpty()) {
+        log.writeLog(&#34;失败的requestIds: &#34; &#43; failedRequests);
+    }
+} catch (Exception e) {
+    log.writeLog(&#34;获取干预服务或初始化用户异常: &#34; &#43; e.getMessage());
+    allSuccess = false;
+}
+E10
+前端
+组件复写
+regOvProps(&#39;weappUi&#39;, &#39;Title&#39;, (props) =&gt; {
+
+ const {weId=&#39;&#39;} = props;
+
+  //console.log(&#34;拿到的参数：&#34;,props)
+
+  if(weId &amp;&amp; weId.endsWith(&#34;_pnhv5o&#34;)){
+
+    props.title=&#34;自定义标题23333&#34;
+
+  return props;
+
+  }
+
+}, 0);
+
+}
+组件重写
+import React from &#34;react&#34;;
+import { regOvComponent } from &#34;@weapp/utils&#34;;
+import { asyncImport } from &#34;@weapp/ecodesdk&#34;;
+
+const NewHelp = React.lazy(() =&gt; asyncImport(&#34;${appId}&#34;, &#34;NewHelp&#34;));
+
+regOvComponent(
+  &#34;weappUi&#34;,
+  &#34;Help&#34;,
+  (Com) =&gt; {
+    if (window.location.pathname === &#34;/sp/integration/loginSingle/freepass&#34;) {
+      return React.forwardRef((props, ref) =&gt; {
+        console.log(&#34;获取的help参数&#34;, props);
+        return (
+          &lt;React.Suspense fallback={() =&gt; {}}&gt;
+                 {&#34; &#34;}
+            &lt;NewHelp {...props} OriginCom={Com} ref={ref} forwardedRef={ref} /&gt; 
+             {&#34; &#34;}
+          &lt;/React.Suspense&gt;
+        );
+      });
+    }
+  },
+  1
+);
+请求接口
+接口拦截
+//拦截请求
+axios.interceptors.request.use((request) =&gt; {
+  if (request.url === &#34;/api/ebuilder/coms/list/getData&#34;) {
+    const params = new URLSearchParams(request.data);
+    params.set(&#34;pageSize&#34;, &#34;10000&#34;);
+    request.data = params.toString();
+  }
+  return request;
+});
+//拦截响应
+axios.interceptors.response.use((response) =&gt; {
+  if (response.config.url === &#34;/api/ebuilder/coms/list/getData&#34;) {
+    const reversedData = response.data.data.list.reverse();
+    response.data.data.list = reversedData;
+  }
+  return response;
+});
+后端">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://maohuifei.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Hello Hugo",
+      "item": "https://maohuifei.github.io/posts/hello-hugo---%E5%89%AF%E6%9C%AC-2/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Hello Hugo",
+  "name": "Hello Hugo",
+  "description": "E9 前端 限定范围 ecodeSDK.checkLPath if (!ecodeSDK.checkLPath(\u0026#34;/spa/workflow/static4form/index.html\u0026#34;)) return; JS 原生 //全路径 window.location.pathname === \u0026#34;/sp/integration/loginSingle/freepass\u0026#34;; //路径包含 window.location.href.includes(\u0026#34;/workflow/request/\u0026#34;); 组件复写 ecodeSDK.overwritePropsFnQueueMapSet(\u0026#34;WeaTop\u0026#34;, { fn: (newProps) =\u0026gt; { newProps.title = \u0026#34;666\u0026#34;; }, order: 1, desc: \u0026#34;成绩公示的重新计算按钮\u0026#34;, }); 组件重写 请求接口 WeaTools const { WeaTools } = ecCom; WeaTools.callApi( \u0026#34;/api/MedicalEthicsExamination/gradeInquiry/calculateGrades\u0026#34;, \u0026#34;GET\u0026#34; ) .then((response) =\u0026gt; { if (response) { //console.log(\u0026#34;接口逻辑成功\u0026#34;) //window.location.reload()刷新页面 } else { //console.log(\u0026#34;接口逻辑失败\u0026#34;) } }) .catch((error) =\u0026gt; { //console.log(\u0026#34;接口请求失败\u0026#34;,error) }); jQuery jQuery.ajax({ url: \u0026#34;/qr/pingzheng.jspuserid=\u0026#34; + userid + \u0026#34;\u0026amp;ids=\u0026#34; + ids, async: false, type: \u0026#34;POST\u0026#34;, success: function (res) { console.log(\u0026#34;原始响应:\u0026#34;, res); }, }); 后端 自定义 API package com.api.MedicalEthicsExamination; import javax.servlet.http.HttpServletRequest; import javax.servlet.http.HttpServletResponse; import javax.ws.rs.GET; import javax.ws.rs.Path; import javax.ws.rs.core.Context; import java.util.HashMap; import java.util.Map; import com.alibaba.fastjson.JSONObject; import weaver.general.BaseBean; import weaver.conn.RecordSet; @Path(\u0026#34;/MedicalEthicsExamination/Organization\u0026#34;) public class GetLeader { @GET @Path(\u0026#34;/getData\u0026#34;) public String updateScorePublicAction(@Context HttpServletRequest request, @Context HttpServletResponse response){ //打印日志 BaseBean log =new BaseBean(); log.writeLog(\u0026#34;自定义XXX接口开始执行\u0026#34;); //获取前端传参：userId String userIdParam = request.getParameter(\u0026#34;userId\u0026#34;); //。。。代码逻辑。。。 //构建返回结构 Map\u0026lt;String, Object\u0026gt; dataMap = new HashMap\u0026lt;\u0026gt;(); dataMap.put(\u0026#34;ascription\u0026#34;, ascription); dataMap.put(\u0026#34;kpdyId\u0026#34;, kpdyId); JSONObject responseData = new JSONObject(); responseData.put(\u0026#34;code\u0026#34;, 200); responseData.put(\u0026#34;msg\u0026#34;, \u0026#34;success\u0026#34;); responseData.put(\u0026#34;data\u0026#34;, dataMap); return responseData.toJSONString(); }} 节后附加操作 package weaver.workflow.MedicalEthicsExamination; import weaver.interfaces.workflow.action.Action; import weaver.soa.workflow.request.Property; import weaver.soa.workflow.request.RequestInfo; import com.weaver.general.BaseBean; import java.util.HashMap; import java.util.Map; public class MedicalEthicsExaminationUpdateScoreAi implements Action { @Override public String execute(RequestInfo requestInfo) { BaseBean log = new BaseBean(); log.writeLog(\u0026#34;XXX节点附加操作开始执行\u0026#34;); // 获取主表数据 Property[] props = requestInfo.getMainTableInfo().getProperty(); Map\u0026lt;String, String\u0026gt; fieldMap = new HashMap\u0026lt;\u0026gt;(); for (Property prop : props) { fieldMap.put(prop.getName(), prop.getValue()); } String scorePrams = fieldMap.get(\u0026#34;df\u0026#34;); String userIdPrams = fieldMap.get(\u0026#34;cpr\u0026#34;); //获取流程id String workflowid = requestInfo.getWorkflowid(); //。。。代码逻辑。。。 return Action.SUCCESS; } } 数据库操作 查询 String getLeaderSQL=\u0026#34;select id from uf_hfkpdy where kpxzzc = ?\u0026#34;; RecordSet getLeaderRS =new RecordSet(); getLeaderRS.executeQuery(getLeaderSQL,userIdParam); if(getLeaderRS.next()){ log.writeLog(\u0026#34;getLeaderRS查询成功\u0026#34;); kpdyId=getLeaderRS.getString(\u0026#34;id\u0026#34;); }else{ log.writeLog(\u0026#34;getLeaderRS查询失败\u0026#34;); } 更新\u0026amp;插入\u0026amp;删除 String updateSQL = \u0026#34;UPDATE cus_fielddata SET field21=?\u0026#34;; RecordSet updateRS = new RecordSet(); boolean updateSuccess = updateRS.executeUpdate(updateSQL, newScore); if(updateSuccess \u0026amp;\u0026amp; updateRS.getUpdateCount() \u0026gt; 0) { log.writeLog(\u0026#34;更新成功，影响行数：\u0026#34; + updateRS.getUpdateCount()); } else { log.writeLog(\u0026#34;更新失败); } 批量更新\u0026amp;插入 List valueList = new ArrayList(); valueList.add(uuid); valueList.add(ddh); List idList = new ArrayList(); idList.add(valueList); //参数格式：[[uuid1,ddh1],[[uuid2,ddh2]],[[uuid3,ddh3]]] RecordSet rs=new RecordSet(); String insertSQL =\u0026#34;INSERT INTO uf_IntermediateTabl (uuid, ddh) VALUES (?,?)\u0026#34;; rs.executeBatchSql(insertSQL,idList); 打印日志 //方法一 import com.weaver.general.BaseBean; BaseBean log = new BaseBean(); log.writeLog(\u0026#34;XXX节点附加操作开始执行\u0026#34;); 创建流程 构建主表 WorkflowMainTableInfo workflowMainTableInfo = new WorkflowMainTableInfo(); WorkflowRequestTableRecord[] workflowRequestTableRecord = new WorkflowRequestTableRecord[1]; //固定值1 WorkflowRequestTableField[] WorkflowRequestTableField = new WorkflowRequestTableField[3]; //总字段数 WorkflowRequestTableField[0] = createTableField(\u0026#34;dw\u0026#34;, String.valueOf(currentPerson.getDw())); WorkflowRequestTableField[1] = createTableField(\u0026#34;nd\u0026#34;, String.valueOf(currentPerson.getNd())); WorkflowRequestTableField[2] = createTableField(\u0026#34;xm\u0026#34;, String.valueOf(currentPerson.getXm())); workflowRequestTableRecord[0] = new WorkflowRequestTableRecord(); workflowRequestTableRecord[0].setWorkflowRequestTableFields(WorkflowRequestTableField); workflowMainTableInfo.setRequestRecords(workflowRequestTableRecord); 构建明细表 WorkflowDetailTableInfo[] workflowDetailTableInfo = new WorkflowDetailTableInfo[1]; WorkflowRequestTableRecord[] workflowRequestTableRecord = new WorkflowRequestTableRecord[allData.size()]; for (int i = 0; i \u0026lt; allData.size(); i++) { TranscriptStructure ts = allData.get(i); WorkflowRequestTableField[] WorkflowRequestTableField = new WorkflowRequestTableField[3]; //数据总数 WorkflowRequestTableField[0] = createTableField(\u0026#34;xm\u0026#34;, String.valueOf(ts.getXm())); WorkflowRequestTableField[1] = createTableField(\u0026#34;zggh\u0026#34;, String.valueOf(ts.getZggh())); WorkflowRequestTableField[2] = createTableField(\u0026#34;kpdc\u0026#34;, String.valueOf(ts.getKpdc())); workflowRequestTableRecord[i] = new WorkflowRequestTableRecord(); workflowRequestTableRecord[i].setWorkflowRequestTableFields(WorkflowRequestTableField); } workflowDetailTableInfo[0] = new WorkflowDetailTableInfo(); workflowDetailTableInfo[0].setWorkflowRequestTableRecords(workflowRequestTableRecord); 创建 log.writeLog(\u0026#34;开始为人员创建流程，人员信息：\u0026#34; + currentPerson.getXm()); // 创建流程信息 WorkflowRequestInfo workflowRequestInfo = new WorkflowRequestInfo(); workflowRequestInfo.setRequestName(\u0026#34;医德考评成绩确认单\u0026#34;); workflowRequestInfo.setCreatorId(userId); WorkflowBaseInfo workflowBaseInfo = new WorkflowBaseInfo(); workflowBaseInfo.setWorkflowId(\u0026#34;25\u0026#34;); workflowRequestInfo.setWorkflowBaseInfo(workflowBaseInfo); // 构建主表 WorkflowMainTableInfo workflowMainTableInfo = buildMainTableInfo(currentPerson); workflowRequestInfo.setWorkflowMainTableInfo(workflowMainTableInfo); // 构建明细表 WorkflowDetailTableInfo[] workflowDetailTableInfo = buildDetailTableInfo(allData); workflowRequestInfo.setWorkflowDetailTableInfos(workflowDetailTableInfo); // 创建流程 WorkflowServiceImpl wsi = new WorkflowServiceImpl(); String requestId = wsi.doCreateWorkflowRequest(workflowRequestInfo, userIdInt); log.writeLog(\u0026#34;创建流程成功，流程ID：\u0026#34; + requestId); 流程干预 try { // 获取干预服务 WorkflowRequestOperatePAImpl service = ServiceUtil.getService(WorkflowRequestOperatePAImpl.class); // 使用有权限的用户（这里使用admin用户） User user = new User(1); // 遍历所有需要干预的流程 for (Map\u0026lt;String, String\u0026gt; item : newRequestList) { String requestId = item.get(\u0026#34;requestId\u0026#34;); String xm = item.get(\u0026#34;xm\u0026#34;); try { log.writeLog(\u0026#34;开始干预流程，requestId: \u0026#34; + requestId + \u0026#34;, 接收人: \u0026#34; + xm); // 设置干预参数 ReqOperateRequestEntity requestParam = new ReqOperateRequestEntity(); requestParam.setRequestId(Integer.parseInt(requestId)); // 流程实例ID requestParam.setSubmitNodeId(94); // 目标节点ID（独立打印节点） requestParam.setIntervenorid(xm); // 设置接收人为当前xm // 执行干预 PAResponseEntity result = service.doIntervenor(user, requestParam); // 检查干预结果 - 修改为正确的枚举比较方式 if (PAResponseCode.SUCCESS.equals(result.getCode())) { log.writeLog(\u0026#34;干预成功，requestId: \u0026#34; + requestId); successCount++; } else { log.writeLog(\u0026#34;干预失败，requestId: \u0026#34; + requestId + \u0026#34;, 错误码: \u0026#34; + result.getCode().name() + \u0026#34;, 错误信息: \u0026#34; + result.getErrMsg()); allSuccess = false; failCount++; failedRequests.add(requestId); } } catch (Exception e) { log.writeLog(\u0026#34;干预流程异常，requestId: \u0026#34; + requestId + \u0026#34;, 异常信息: \u0026#34; + e.getMessage()); allSuccess = false; failCount++; failedRequests.add(requestId); } } // 记录总体干预结果 log.writeLog(\u0026#34;流程干预完成，成功: \u0026#34; + successCount + \u0026#34;个，失败: \u0026#34; + failCount + \u0026#34;个\u0026#34;); if (!failedRequests.isEmpty()) { log.writeLog(\u0026#34;失败的requestIds: \u0026#34; + failedRequests); } } catch (Exception e) { log.writeLog(\u0026#34;获取干预服务或初始化用户异常: \u0026#34; + e.getMessage()); allSuccess = false; } E10 前端 组件复写 regOvProps(\u0026#39;weappUi\u0026#39;, \u0026#39;Title\u0026#39;, (props) =\u0026gt; { const {weId=\u0026#39;\u0026#39;} = props; //console.log(\u0026#34;拿到的参数：\u0026#34;,props) if(weId \u0026amp;\u0026amp; weId.endsWith(\u0026#34;_pnhv5o\u0026#34;)){ props.title=\u0026#34;自定义标题23333\u0026#34; return props; } }, 0); } 组件重写 import React from \u0026#34;react\u0026#34;; import { regOvComponent } from \u0026#34;@weapp/utils\u0026#34;; import { asyncImport } from \u0026#34;@weapp/ecodesdk\u0026#34;; const NewHelp = React.lazy(() =\u0026gt; asyncImport(\u0026#34;${appId}\u0026#34;, \u0026#34;NewHelp\u0026#34;)); regOvComponent( \u0026#34;weappUi\u0026#34;, \u0026#34;Help\u0026#34;, (Com) =\u0026gt; { if (window.location.pathname === \u0026#34;/sp/integration/loginSingle/freepass\u0026#34;) { return React.forwardRef((props, ref) =\u0026gt; { console.log(\u0026#34;获取的help参数\u0026#34;, props); return ( \u0026lt;React.Suspense fallback={() =\u0026gt; {}}\u0026gt; {\u0026#34; \u0026#34;} \u0026lt;NewHelp {...props} OriginCom={Com} ref={ref} forwardedRef={ref} /\u0026gt; {\u0026#34; \u0026#34;} \u0026lt;/React.Suspense\u0026gt; ); }); } }, 1 ); 请求接口 接口拦截 //拦截请求 axios.interceptors.request.use((request) =\u0026gt; { if (request.url === \u0026#34;/api/ebuilder/coms/list/getData\u0026#34;) { const params = new URLSearchParams(request.data); params.set(\u0026#34;pageSize\u0026#34;, \u0026#34;10000\u0026#34;); request.data = params.toString(); } return request; }); //拦截响应 axios.interceptors.response.use((response) =\u0026gt; { if (response.config.url === \u0026#34;/api/ebuilder/coms/list/getData\u0026#34;) { const reversedData = response.data.data.list.reverse(); response.data.data.list = reversedData; } return response; }); 后端",
+  "keywords": [
+    
+  ],
+  "articleBody": "E9 前端 限定范围 ecodeSDK.checkLPath if (!ecodeSDK.checkLPath(\"/spa/workflow/static4form/index.html\")) return; JS 原生 //全路径 window.location.pathname === \"/sp/integration/loginSingle/freepass\"; //路径包含 window.location.href.includes(\"/workflow/request/\"); 组件复写 ecodeSDK.overwritePropsFnQueueMapSet(\"WeaTop\", { fn: (newProps) =\u003e { newProps.title = \"666\"; }, order: 1, desc: \"成绩公示的重新计算按钮\", }); 组件重写 请求接口 WeaTools const { WeaTools } = ecCom; WeaTools.callApi( \"/api/MedicalEthicsExamination/gradeInquiry/calculateGrades\", \"GET\" ) .then((response) =\u003e { if (response) { //console.log(\"接口逻辑成功\") //window.location.reload()刷新页面 } else { //console.log(\"接口逻辑失败\") } }) .catch((error) =\u003e { //console.log(\"接口请求失败\",error) }); jQuery jQuery.ajax({ url: \"/qr/pingzheng.jspuserid=\" + userid + \"\u0026ids=\" + ids, async: false, type: \"POST\", success: function (res) { console.log(\"原始响应:\", res); }, }); 后端 自定义 API package com.api.MedicalEthicsExamination; import javax.servlet.http.HttpServletRequest; import javax.servlet.http.HttpServletResponse; import javax.ws.rs.GET; import javax.ws.rs.Path; import javax.ws.rs.core.Context; import java.util.HashMap; import java.util.Map; import com.alibaba.fastjson.JSONObject; import weaver.general.BaseBean; import weaver.conn.RecordSet; @Path(\"/MedicalEthicsExamination/Organization\") public class GetLeader { @GET @Path(\"/getData\") public String updateScorePublicAction(@Context HttpServletRequest request, @Context HttpServletResponse response){ //打印日志 BaseBean log =new BaseBean(); log.writeLog(\"自定义XXX接口开始执行\"); //获取前端传参：userId String userIdParam = request.getParameter(\"userId\"); //。。。代码逻辑。。。 //构建返回结构 Map\u003cString, Object\u003e dataMap = new HashMap\u003c\u003e(); dataMap.put(\"ascription\", ascription); dataMap.put(\"kpdyId\", kpdyId); JSONObject responseData = new JSONObject(); responseData.put(\"code\", 200); responseData.put(\"msg\", \"success\"); responseData.put(\"data\", dataMap); return responseData.toJSONString(); }} 节后附加操作 package weaver.workflow.MedicalEthicsExamination; import weaver.interfaces.workflow.action.Action; import weaver.soa.workflow.request.Property; import weaver.soa.workflow.request.RequestInfo; import com.weaver.general.BaseBean; import java.util.HashMap; import java.util.Map; public class MedicalEthicsExaminationUpdateScoreAi implements Action { @Override public String execute(RequestInfo requestInfo) { BaseBean log = new BaseBean(); log.writeLog(\"XXX节点附加操作开始执行\"); // 获取主表数据 Property[] props = requestInfo.getMainTableInfo().getProperty(); Map\u003cString, String\u003e fieldMap = new HashMap\u003c\u003e(); for (Property prop : props) { fieldMap.put(prop.getName(), prop.getValue()); } String scorePrams = fieldMap.get(\"df\"); String userIdPrams = fieldMap.get(\"cpr\"); //获取流程id String workflowid = requestInfo.getWorkflowid(); //。。。代码逻辑。。。 return Action.SUCCESS; } } 数据库操作 查询 String getLeaderSQL=\"select id from uf_hfkpdy where kpxzzc = ?\"; RecordSet getLeaderRS =new RecordSet(); getLeaderRS.executeQuery(getLeaderSQL,userIdParam); if(getLeaderRS.next()){ log.writeLog(\"getLeaderRS查询成功\"); kpdyId=getLeaderRS.getString(\"id\"); }else{ log.writeLog(\"getLeaderRS查询失败\"); } 更新\u0026插入\u0026删除 String updateSQL = \"UPDATE cus_fielddata SET field21=?\"; RecordSet updateRS = new RecordSet(); boolean updateSuccess = updateRS.executeUpdate(updateSQL, newScore); if(updateSuccess \u0026\u0026 updateRS.getUpdateCount() \u003e 0) { log.writeLog(\"更新成功，影响行数：\" + updateRS.getUpdateCount()); } else { log.writeLog(\"更新失败); } 批量更新\u0026插入 List valueList = new ArrayList(); valueList.add(uuid); valueList.add(ddh); List idList = new ArrayList(); idList.add(valueList); //参数格式：[[uuid1,ddh1],[[uuid2,ddh2]],[[uuid3,ddh3]]] RecordSet rs=new RecordSet(); String insertSQL =\"INSERT INTO uf_IntermediateTabl (uuid, ddh) VALUES (?,?)\"; rs.executeBatchSql(insertSQL,idList); 打印日志 //方法一 import com.weaver.general.BaseBean; BaseBean log = new BaseBean(); log.writeLog(\"XXX节点附加操作开始执行\"); 创建流程 构建主表 WorkflowMainTableInfo workflowMainTableInfo = new WorkflowMainTableInfo(); WorkflowRequestTableRecord[] workflowRequestTableRecord = new WorkflowRequestTableRecord[1]; //固定值1 WorkflowRequestTableField[] WorkflowRequestTableField = new WorkflowRequestTableField[3]; //总字段数 WorkflowRequestTableField[0] = createTableField(\"dw\", String.valueOf(currentPerson.getDw())); WorkflowRequestTableField[1] = createTableField(\"nd\", String.valueOf(currentPerson.getNd())); WorkflowRequestTableField[2] = createTableField(\"xm\", String.valueOf(currentPerson.getXm())); workflowRequestTableRecord[0] = new WorkflowRequestTableRecord(); workflowRequestTableRecord[0].setWorkflowRequestTableFields(WorkflowRequestTableField); workflowMainTableInfo.setRequestRecords(workflowRequestTableRecord); 构建明细表 WorkflowDetailTableInfo[] workflowDetailTableInfo = new WorkflowDetailTableInfo[1]; WorkflowRequestTableRecord[] workflowRequestTableRecord = new WorkflowRequestTableRecord[allData.size()]; for (int i = 0; i \u003c allData.size(); i++) { TranscriptStructure ts = allData.get(i); WorkflowRequestTableField[] WorkflowRequestTableField = new WorkflowRequestTableField[3]; //数据总数 WorkflowRequestTableField[0] = createTableField(\"xm\", String.valueOf(ts.getXm())); WorkflowRequestTableField[1] = createTableField(\"zggh\", String.valueOf(ts.getZggh())); WorkflowRequestTableField[2] = createTableField(\"kpdc\", String.valueOf(ts.getKpdc())); workflowRequestTableRecord[i] = new WorkflowRequestTableRecord(); workflowRequestTableRecord[i].setWorkflowRequestTableFields(WorkflowRequestTableField); } workflowDetailTableInfo[0] = new WorkflowDetailTableInfo(); workflowDetailTableInfo[0].setWorkflowRequestTableRecords(workflowRequestTableRecord); 创建 log.writeLog(\"开始为人员创建流程，人员信息：\" + currentPerson.getXm()); // 创建流程信息 WorkflowRequestInfo workflowRequestInfo = new WorkflowRequestInfo(); workflowRequestInfo.setRequestName(\"医德考评成绩确认单\"); workflowRequestInfo.setCreatorId(userId); WorkflowBaseInfo workflowBaseInfo = new WorkflowBaseInfo(); workflowBaseInfo.setWorkflowId(\"25\"); workflowRequestInfo.setWorkflowBaseInfo(workflowBaseInfo); // 构建主表 WorkflowMainTableInfo workflowMainTableInfo = buildMainTableInfo(currentPerson); workflowRequestInfo.setWorkflowMainTableInfo(workflowMainTableInfo); // 构建明细表 WorkflowDetailTableInfo[] workflowDetailTableInfo = buildDetailTableInfo(allData); workflowRequestInfo.setWorkflowDetailTableInfos(workflowDetailTableInfo); // 创建流程 WorkflowServiceImpl wsi = new WorkflowServiceImpl(); String requestId = wsi.doCreateWorkflowRequest(workflowRequestInfo, userIdInt); log.writeLog(\"创建流程成功，流程ID：\" + requestId); 流程干预 try { // 获取干预服务 WorkflowRequestOperatePAImpl service = ServiceUtil.getService(WorkflowRequestOperatePAImpl.class); // 使用有权限的用户（这里使用admin用户） User user = new User(1); // 遍历所有需要干预的流程 for (Map\u003cString, String\u003e item : newRequestList) { String requestId = item.get(\"requestId\"); String xm = item.get(\"xm\"); try { log.writeLog(\"开始干预流程，requestId: \" + requestId + \", 接收人: \" + xm); // 设置干预参数 ReqOperateRequestEntity requestParam = new ReqOperateRequestEntity(); requestParam.setRequestId(Integer.parseInt(requestId)); // 流程实例ID requestParam.setSubmitNodeId(94); // 目标节点ID（独立打印节点） requestParam.setIntervenorid(xm); // 设置接收人为当前xm // 执行干预 PAResponseEntity result = service.doIntervenor(user, requestParam); // 检查干预结果 - 修改为正确的枚举比较方式 if (PAResponseCode.SUCCESS.equals(result.getCode())) { log.writeLog(\"干预成功，requestId: \" + requestId); successCount++; } else { log.writeLog(\"干预失败，requestId: \" + requestId + \", 错误码: \" + result.getCode().name() + \", 错误信息: \" + result.getErrMsg()); allSuccess = false; failCount++; failedRequests.add(requestId); } } catch (Exception e) { log.writeLog(\"干预流程异常，requestId: \" + requestId + \", 异常信息: \" + e.getMessage()); allSuccess = false; failCount++; failedRequests.add(requestId); } } // 记录总体干预结果 log.writeLog(\"流程干预完成，成功: \" + successCount + \"个，失败: \" + failCount + \"个\"); if (!failedRequests.isEmpty()) { log.writeLog(\"失败的requestIds: \" + failedRequests); } } catch (Exception e) { log.writeLog(\"获取干预服务或初始化用户异常: \" + e.getMessage()); allSuccess = false; } E10 前端 组件复写 regOvProps('weappUi', 'Title', (props) =\u003e { const {weId=''} = props; //console.log(\"拿到的参数：\",props) if(weId \u0026\u0026 weId.endsWith(\"_pnhv5o\")){ props.title=\"自定义标题23333\" return props; } }, 0); } 组件重写 import React from \"react\"; import { regOvComponent } from \"@weapp/utils\"; import { asyncImport } from \"@weapp/ecodesdk\"; const NewHelp = React.lazy(() =\u003e asyncImport(\"${appId}\", \"NewHelp\")); regOvComponent( \"weappUi\", \"Help\", (Com) =\u003e { if (window.location.pathname === \"/sp/integration/loginSingle/freepass\") { return React.forwardRef((props, ref) =\u003e { console.log(\"获取的help参数\", props); return ( \u003cReact.Suspense fallback={() =\u003e {}}\u003e {\" \"} \u003cNewHelp {...props} OriginCom={Com} ref={ref} forwardedRef={ref} /\u003e {\" \"} \u003c/React.Suspense\u003e ); }); } }, 1 ); 请求接口 接口拦截 //拦截请求 axios.interceptors.request.use((request) =\u003e { if (request.url === \"/api/ebuilder/coms/list/getData\") { const params = new URLSearchParams(request.data); params.set(\"pageSize\", \"10000\"); request.data = params.toString(); } return request; }); //拦截响应 axios.interceptors.response.use((response) =\u003e { if (response.config.url === \"/api/ebuilder/coms/list/getData\") { const reversedData = response.data.data.list.reverse(); response.data.data.list = reversedData; } return response; }); 后端 ",
+  "wordCount" : "761",
+  "inLanguage": "en",
+  "datePublished": "2025-07-16T11:23:15+08:00",
+  "dateModified": "2025-07-16T11:23:15+08:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://maohuifei.github.io/posts/hello-hugo---%E5%89%AF%E6%9C%AC-2/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "我的博客",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://maohuifei.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://maohuifei.github.io/" accesskey="h" title="我的博客 (Alt + H)">我的博客</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://maohuifei.github.io/posts" title="个人">
+                    <span>个人</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://maohuifei.github.io/docs" title="教程">
+                    <span>教程</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://maohuifei.github.io/study" title="学习">
+                    <span>学习</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Hello Hugo
+    </h1>
+    <div class="post-meta"><span title='2025-07-16 11:23:15 +0800 CST'>July 16, 2025</span>
+
+</div>
+  </header> 
+  <div class="post-content"><h1 id="e9">E9<a hidden class="anchor" aria-hidden="true" href="#e9">#</a></h1>
+<h2 id="前端">前端<a hidden class="anchor" aria-hidden="true" href="#前端">#</a></h2>
+<h3 id="限定范围">限定范围<a hidden class="anchor" aria-hidden="true" href="#限定范围">#</a></h3>
+<h4 id="ecodesdkchecklpath">ecodeSDK.checkLPath<a hidden class="anchor" aria-hidden="true" href="#ecodesdkchecklpath">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">ecodeSDK</span>.<span style="color:#a6e22e">checkLPath</span>(<span style="color:#e6db74">&#34;/spa/workflow/static4form/index.html&#34;</span>)) <span style="color:#66d9ef">return</span>;
+</span></span></code></pre></div><h4 id="js-原生">JS 原生<a hidden class="anchor" aria-hidden="true" href="#js-原生">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">//全路径
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>window.<span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">pathname</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#34;/sp/integration/loginSingle/freepass&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//路径包含
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>window.<span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">href</span>.<span style="color:#a6e22e">includes</span>(<span style="color:#e6db74">&#34;/workflow/request/&#34;</span>);
+</span></span></code></pre></div><h3 id="组件复写">组件复写<a hidden class="anchor" aria-hidden="true" href="#组件复写">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">ecodeSDK</span>.<span style="color:#a6e22e">overwritePropsFnQueueMapSet</span>(<span style="color:#e6db74">&#34;WeaTop&#34;</span>, {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">fn</span><span style="color:#f92672">:</span> (<span style="color:#a6e22e">newProps</span>) =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">newProps</span>.<span style="color:#a6e22e">title</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;666&#34;</span>;
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">order</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">desc</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;成绩公示的重新计算按钮&#34;</span>,
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><h3 id="组件重写">组件重写<a hidden class="anchor" aria-hidden="true" href="#组件重写">#</a></h3>
+<h3 id="请求接口">请求接口<a hidden class="anchor" aria-hidden="true" href="#请求接口">#</a></h3>
+<h4 id="weatools">WeaTools<a hidden class="anchor" aria-hidden="true" href="#weatools">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">WeaTools</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">ecCom</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">WeaTools</span>.<span style="color:#a6e22e">callApi</span>(
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;/api/MedicalEthicsExamination/gradeInquiry/calculateGrades&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;GET&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>  .<span style="color:#a6e22e">then</span>((<span style="color:#a6e22e">response</span>) =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">response</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">//console.log(&#34;接口逻辑成功&#34;)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#75715e">//window.location.reload()刷新页面
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">//console.log(&#34;接口逻辑失败&#34;)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    }
+</span></span><span style="display:flex;"><span>  })
+</span></span><span style="display:flex;"><span>  .<span style="color:#66d9ef">catch</span>((<span style="color:#a6e22e">error</span>) =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//console.log(&#34;接口请求失败&#34;,error)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  });
+</span></span></code></pre></div><h4 id="jquery">jQuery<a hidden class="anchor" aria-hidden="true" href="#jquery">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">jQuery</span>.<span style="color:#a6e22e">ajax</span>({
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">url</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;/qr/pingzheng.jspuserid=&#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">userid</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;&amp;ids=&#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">ids</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">async</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;POST&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">success</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">res</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;原始响应:&#34;</span>, <span style="color:#a6e22e">res</span>);
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><h2 id="后端">后端<a hidden class="anchor" aria-hidden="true" href="#后端">#</a></h2>
+<h3 id="自定义-api">自定义 API<a hidden class="anchor" aria-hidden="true" href="#自定义-api">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> com.api.MedicalEthicsExamination;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javax.servlet.http.HttpServletRequest;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javax.servlet.http.HttpServletResponse;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javax.ws.rs.GET;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javax.ws.rs.Path;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javax.ws.rs.core.Context;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.HashMap;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.Map;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> com.alibaba.fastjson.JSONObject;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> weaver.general.BaseBean;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> weaver.conn.RecordSet;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Path</span>(<span style="color:#e6db74">&#34;/MedicalEthicsExamination/Organization&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">GetLeader</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@GET</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Path</span>(<span style="color:#e6db74">&#34;/getData&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">updateScorePublicAction</span>(<span style="color:#a6e22e">@Context</span> HttpServletRequest request, <span style="color:#a6e22e">@Context</span> HttpServletResponse response){
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">//打印日志</span>
+</span></span><span style="display:flex;"><span>        BaseBean log <span style="color:#f92672">=</span><span style="color:#66d9ef">new</span> BaseBean();
+</span></span><span style="display:flex;"><span>        log.<span style="color:#a6e22e">writeLog</span>(<span style="color:#e6db74">&#34;自定义XXX接口开始执行&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//获取前端传参：userId</span>
+</span></span><span style="display:flex;"><span>        String userIdParam <span style="color:#f92672">=</span> request.<span style="color:#a6e22e">getParameter</span>(<span style="color:#e6db74">&#34;userId&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">//。。。代码逻辑。。。</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//构建返回结构</span>
+</span></span><span style="display:flex;"><span>        Map<span style="color:#f92672">&lt;</span>String, Object<span style="color:#f92672">&gt;</span> dataMap <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashMap<span style="color:#f92672">&lt;&gt;</span>();
+</span></span><span style="display:flex;"><span>        dataMap.<span style="color:#a6e22e">put</span>(<span style="color:#e6db74">&#34;ascription&#34;</span>, ascription);
+</span></span><span style="display:flex;"><span>        dataMap.<span style="color:#a6e22e">put</span>(<span style="color:#e6db74">&#34;kpdyId&#34;</span>, kpdyId);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        JSONObject responseData <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> JSONObject();
+</span></span><span style="display:flex;"><span>        responseData.<span style="color:#a6e22e">put</span>(<span style="color:#e6db74">&#34;code&#34;</span>, 200);
+</span></span><span style="display:flex;"><span>        responseData.<span style="color:#a6e22e">put</span>(<span style="color:#e6db74">&#34;msg&#34;</span>, <span style="color:#e6db74">&#34;success&#34;</span>);
+</span></span><span style="display:flex;"><span>        responseData.<span style="color:#a6e22e">put</span>(<span style="color:#e6db74">&#34;data&#34;</span>, dataMap);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> responseData.<span style="color:#a6e22e">toJSONString</span>();
+</span></span><span style="display:flex;"><span>    }}
+</span></span></code></pre></div><h3 id="节后附加操作">节后附加操作<a hidden class="anchor" aria-hidden="true" href="#节后附加操作">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> weaver.workflow.MedicalEthicsExamination;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> weaver.interfaces.workflow.action.Action;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> weaver.soa.workflow.request.Property;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> weaver.soa.workflow.request.RequestInfo;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> com.weaver.general.BaseBean;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.HashMap;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.Map;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MedicalEthicsExaminationUpdateScoreAi</span> <span style="color:#66d9ef">implements</span> Action {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">execute</span>(RequestInfo requestInfo) {
+</span></span><span style="display:flex;"><span>        BaseBean log <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BaseBean();
+</span></span><span style="display:flex;"><span>        log.<span style="color:#a6e22e">writeLog</span>(<span style="color:#e6db74">&#34;XXX节点附加操作开始执行&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 获取主表数据</span>
+</span></span><span style="display:flex;"><span>		Property<span style="color:#f92672">[]</span> props <span style="color:#f92672">=</span> requestInfo.<span style="color:#a6e22e">getMainTableInfo</span>().<span style="color:#a6e22e">getProperty</span>();
+</span></span><span style="display:flex;"><span>		Map<span style="color:#f92672">&lt;</span>String, String<span style="color:#f92672">&gt;</span> fieldMap <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashMap<span style="color:#f92672">&lt;&gt;</span>();
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> (Property prop : props) {
+</span></span><span style="display:flex;"><span>		    fieldMap.<span style="color:#a6e22e">put</span>(prop.<span style="color:#a6e22e">getName</span>(), prop.<span style="color:#a6e22e">getValue</span>());
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		String scorePrams <span style="color:#f92672">=</span> fieldMap.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;df&#34;</span>);
+</span></span><span style="display:flex;"><span>		String userIdPrams <span style="color:#f92672">=</span> fieldMap.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;cpr&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">//获取流程id</span>
+</span></span><span style="display:flex;"><span>		String workflowid <span style="color:#f92672">=</span> requestInfo.<span style="color:#a6e22e">getWorkflowid</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">//。。。代码逻辑。。。</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> Action.<span style="color:#a6e22e">SUCCESS</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="数据库操作">数据库操作<a hidden class="anchor" aria-hidden="true" href="#数据库操作">#</a></h3>
+<h4 id="查询">查询<a hidden class="anchor" aria-hidden="true" href="#查询">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String getLeaderSQL<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;select id from uf_hfkpdy where kpxzzc = ?&#34;</span>;
+</span></span><span style="display:flex;"><span>RecordSet getLeaderRS <span style="color:#f92672">=</span><span style="color:#66d9ef">new</span> RecordSet();
+</span></span><span style="display:flex;"><span>getLeaderRS.<span style="color:#a6e22e">executeQuery</span>(getLeaderSQL,userIdParam);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span>(getLeaderRS.<span style="color:#a6e22e">next</span>()){
+</span></span><span style="display:flex;"><span>	log.<span style="color:#a6e22e">writeLog</span>(<span style="color:#e6db74">&#34;getLeaderRS查询成功&#34;</span>);
+</span></span><span style="display:flex;"><span>	kpdyId<span style="color:#f92672">=</span>getLeaderRS.<span style="color:#a6e22e">getString</span>(<span style="color:#e6db74">&#34;id&#34;</span>);
+</span></span><span style="display:flex;"><span>}<span style="color:#66d9ef">else</span>{
+</span></span><span style="display:flex;"><span>	log.<span style="color:#a6e22e">writeLog</span>(<span style="color:#e6db74">&#34;getLeaderRS查询失败&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="更新插入删除">更新&amp;插入&amp;删除<a hidden class="anchor" aria-hidden="true" href="#更新插入删除">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String updateSQL <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;UPDATE cus_fielddata SET field21=?&#34;</span>;
+</span></span><span style="display:flex;"><span>RecordSet updateRS <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> RecordSet();
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">boolean</span> updateSuccess <span style="color:#f92672">=</span> updateRS.<span style="color:#a6e22e">executeUpdate</span>(updateSQL, newScore);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span>(updateSuccess <span style="color:#f92672">&amp;&amp;</span> updateRS.<span style="color:#a6e22e">getUpdateCount</span>() <span style="color:#f92672">&gt;</span> 0) {
+</span></span><span style="display:flex;"><span>	log.<span style="color:#a6e22e">writeLog</span>(<span style="color:#e6db74">&#34;更新成功，影响行数：&#34;</span> <span style="color:#f92672">+</span> updateRS.<span style="color:#a6e22e">getUpdateCount</span>());
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>	log.<span style="color:#a6e22e">writeLog</span>(<span style="color:#e6db74">&#34;更新失败);
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">}
+</span></span></span></code></pre></div><h4 id="批量更新插入">批量更新&amp;插入<a hidden class="anchor" aria-hidden="true" href="#批量更新插入">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List valueList <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList();
+</span></span><span style="display:flex;"><span>valueList.<span style="color:#a6e22e">add</span>(uuid);
+</span></span><span style="display:flex;"><span>valueList.<span style="color:#a6e22e">add</span>(ddh);
+</span></span><span style="display:flex;"><span>List idList <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList();
+</span></span><span style="display:flex;"><span>idList.<span style="color:#a6e22e">add</span>(valueList);
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//参数格式：[[uuid1,ddh1],[[uuid2,ddh2]],[[uuid3,ddh3]]]</span>
+</span></span><span style="display:flex;"><span>RecordSet rs<span style="color:#f92672">=</span><span style="color:#66d9ef">new</span> RecordSet();
+</span></span><span style="display:flex;"><span>String insertSQL <span style="color:#f92672">=</span><span style="color:#e6db74">&#34;INSERT INTO uf_IntermediateTabl (uuid, ddh) VALUES (?,?)&#34;</span>;
+</span></span><span style="display:flex;"><span>rs.<span style="color:#a6e22e">executeBatchSql</span>(insertSQL,idList);
+</span></span></code></pre></div><h3 id="打印日志">打印日志<a hidden class="anchor" aria-hidden="true" href="#打印日志">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">//方法一</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> com.weaver.general.BaseBean;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>BaseBean log <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BaseBean();
+</span></span><span style="display:flex;"><span>log.<span style="color:#a6e22e">writeLog</span>(<span style="color:#e6db74">&#34;XXX节点附加操作开始执行&#34;</span>);
+</span></span></code></pre></div><h3 id="创建流程">创建流程<a hidden class="anchor" aria-hidden="true" href="#创建流程">#</a></h3>
+<h4 id="构建主表">构建主表<a hidden class="anchor" aria-hidden="true" href="#构建主表">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>WorkflowMainTableInfo workflowMainTableInfo <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> WorkflowMainTableInfo();
+</span></span><span style="display:flex;"><span>WorkflowRequestTableRecord<span style="color:#f92672">[]</span> workflowRequestTableRecord <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> WorkflowRequestTableRecord<span style="color:#f92672">[</span>1<span style="color:#f92672">]</span>;  <span style="color:#75715e">//固定值1</span>
+</span></span><span style="display:flex;"><span>WorkflowRequestTableField<span style="color:#f92672">[]</span> WorkflowRequestTableField <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> WorkflowRequestTableField<span style="color:#f92672">[</span>3<span style="color:#f92672">]</span>;  <span style="color:#75715e">//总字段数</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>WorkflowRequestTableField<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> createTableField(<span style="color:#e6db74">&#34;dw&#34;</span>, String.<span style="color:#a6e22e">valueOf</span>(currentPerson.<span style="color:#a6e22e">getDw</span>()));
+</span></span><span style="display:flex;"><span>WorkflowRequestTableField<span style="color:#f92672">[</span>1<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> createTableField(<span style="color:#e6db74">&#34;nd&#34;</span>, String.<span style="color:#a6e22e">valueOf</span>(currentPerson.<span style="color:#a6e22e">getNd</span>()));
+</span></span><span style="display:flex;"><span>WorkflowRequestTableField<span style="color:#f92672">[</span>2<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> createTableField(<span style="color:#e6db74">&#34;xm&#34;</span>, String.<span style="color:#a6e22e">valueOf</span>(currentPerson.<span style="color:#a6e22e">getXm</span>()));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>workflowRequestTableRecord<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> WorkflowRequestTableRecord();
+</span></span><span style="display:flex;"><span>workflowRequestTableRecord<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span>.<span style="color:#a6e22e">setWorkflowRequestTableFields</span>(WorkflowRequestTableField);
+</span></span><span style="display:flex;"><span>workflowMainTableInfo.<span style="color:#a6e22e">setRequestRecords</span>(workflowRequestTableRecord);
+</span></span></code></pre></div><h4 id="构建明细表">构建明细表<a hidden class="anchor" aria-hidden="true" href="#构建明细表">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>WorkflowDetailTableInfo<span style="color:#f92672">[]</span> workflowDetailTableInfo <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> WorkflowDetailTableInfo<span style="color:#f92672">[</span>1<span style="color:#f92672">]</span>;
+</span></span><span style="display:flex;"><span>WorkflowRequestTableRecord<span style="color:#f92672">[]</span> workflowRequestTableRecord <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> WorkflowRequestTableRecord<span style="color:#f92672">[</span>allData.<span style="color:#a6e22e">size</span>()<span style="color:#f92672">]</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0; i <span style="color:#f92672">&lt;</span> allData.<span style="color:#a6e22e">size</span>(); i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>    TranscriptStructure ts <span style="color:#f92672">=</span> allData.<span style="color:#a6e22e">get</span>(i);
+</span></span><span style="display:flex;"><span>    WorkflowRequestTableField<span style="color:#f92672">[]</span> WorkflowRequestTableField <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> WorkflowRequestTableField<span style="color:#f92672">[</span>3<span style="color:#f92672">]</span>;  <span style="color:#75715e">//数据总数</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    WorkflowRequestTableField<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> createTableField(<span style="color:#e6db74">&#34;xm&#34;</span>, String.<span style="color:#a6e22e">valueOf</span>(ts.<span style="color:#a6e22e">getXm</span>()));
+</span></span><span style="display:flex;"><span>    WorkflowRequestTableField<span style="color:#f92672">[</span>1<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> createTableField(<span style="color:#e6db74">&#34;zggh&#34;</span>, String.<span style="color:#a6e22e">valueOf</span>(ts.<span style="color:#a6e22e">getZggh</span>()));
+</span></span><span style="display:flex;"><span>    WorkflowRequestTableField<span style="color:#f92672">[</span>2<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> createTableField(<span style="color:#e6db74">&#34;kpdc&#34;</span>, String.<span style="color:#a6e22e">valueOf</span>(ts.<span style="color:#a6e22e">getKpdc</span>()));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    workflowRequestTableRecord<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> WorkflowRequestTableRecord();
+</span></span><span style="display:flex;"><span>    workflowRequestTableRecord<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span>.<span style="color:#a6e22e">setWorkflowRequestTableFields</span>(WorkflowRequestTableField);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>workflowDetailTableInfo<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> WorkflowDetailTableInfo();
+</span></span><span style="display:flex;"><span>workflowDetailTableInfo<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span>.<span style="color:#a6e22e">setWorkflowRequestTableRecords</span>(workflowRequestTableRecord);
+</span></span></code></pre></div><h4 id="创建">创建<a hidden class="anchor" aria-hidden="true" href="#创建">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>log.<span style="color:#a6e22e">writeLog</span>(<span style="color:#e6db74">&#34;开始为人员创建流程，人员信息：&#34;</span> <span style="color:#f92672">+</span> currentPerson.<span style="color:#a6e22e">getXm</span>());
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 创建流程信息</span>
+</span></span><span style="display:flex;"><span>WorkflowRequestInfo workflowRequestInfo <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> WorkflowRequestInfo();
+</span></span><span style="display:flex;"><span>workflowRequestInfo.<span style="color:#a6e22e">setRequestName</span>(<span style="color:#e6db74">&#34;医德考评成绩确认单&#34;</span>);
+</span></span><span style="display:flex;"><span>workflowRequestInfo.<span style="color:#a6e22e">setCreatorId</span>(userId);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>WorkflowBaseInfo workflowBaseInfo <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> WorkflowBaseInfo();
+</span></span><span style="display:flex;"><span>workflowBaseInfo.<span style="color:#a6e22e">setWorkflowId</span>(<span style="color:#e6db74">&#34;25&#34;</span>);
+</span></span><span style="display:flex;"><span>workflowRequestInfo.<span style="color:#a6e22e">setWorkflowBaseInfo</span>(workflowBaseInfo);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 构建主表</span>
+</span></span><span style="display:flex;"><span>WorkflowMainTableInfo workflowMainTableInfo <span style="color:#f92672">=</span> buildMainTableInfo(currentPerson);
+</span></span><span style="display:flex;"><span>workflowRequestInfo.<span style="color:#a6e22e">setWorkflowMainTableInfo</span>(workflowMainTableInfo);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 构建明细表</span>
+</span></span><span style="display:flex;"><span>WorkflowDetailTableInfo<span style="color:#f92672">[]</span> workflowDetailTableInfo <span style="color:#f92672">=</span> buildDetailTableInfo(allData);
+</span></span><span style="display:flex;"><span>workflowRequestInfo.<span style="color:#a6e22e">setWorkflowDetailTableInfos</span>(workflowDetailTableInfo);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 创建流程</span>
+</span></span><span style="display:flex;"><span>WorkflowServiceImpl wsi <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> WorkflowServiceImpl();
+</span></span><span style="display:flex;"><span>String requestId <span style="color:#f92672">=</span> wsi.<span style="color:#a6e22e">doCreateWorkflowRequest</span>(workflowRequestInfo, userIdInt);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>log.<span style="color:#a6e22e">writeLog</span>(<span style="color:#e6db74">&#34;创建流程成功，流程ID：&#34;</span> <span style="color:#f92672">+</span> requestId);
+</span></span></code></pre></div><h3 id="流程干预">流程干预<a hidden class="anchor" aria-hidden="true" href="#流程干预">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 获取干预服务</span>
+</span></span><span style="display:flex;"><span>    WorkflowRequestOperatePAImpl service <span style="color:#f92672">=</span> ServiceUtil.<span style="color:#a6e22e">getService</span>(WorkflowRequestOperatePAImpl.<span style="color:#a6e22e">class</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 使用有权限的用户（这里使用admin用户）</span>
+</span></span><span style="display:flex;"><span>    User user <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> User(1);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 遍历所有需要干预的流程</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (Map<span style="color:#f92672">&lt;</span>String, String<span style="color:#f92672">&gt;</span> item : newRequestList) {
+</span></span><span style="display:flex;"><span>        String requestId <span style="color:#f92672">=</span> item.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;requestId&#34;</span>);
+</span></span><span style="display:flex;"><span>        String xm <span style="color:#f92672">=</span> item.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;xm&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>            log.<span style="color:#a6e22e">writeLog</span>(<span style="color:#e6db74">&#34;开始干预流程，requestId: &#34;</span> <span style="color:#f92672">+</span> requestId <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;, 接收人: &#34;</span> <span style="color:#f92672">+</span> xm);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// 设置干预参数</span>
+</span></span><span style="display:flex;"><span>            ReqOperateRequestEntity requestParam <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ReqOperateRequestEntity();
+</span></span><span style="display:flex;"><span>            requestParam.<span style="color:#a6e22e">setRequestId</span>(Integer.<span style="color:#a6e22e">parseInt</span>(requestId)); <span style="color:#75715e">// 流程实例ID</span>
+</span></span><span style="display:flex;"><span>            requestParam.<span style="color:#a6e22e">setSubmitNodeId</span>(94); <span style="color:#75715e">// 目标节点ID（独立打印节点）</span>
+</span></span><span style="display:flex;"><span>            requestParam.<span style="color:#a6e22e">setIntervenorid</span>(xm); <span style="color:#75715e">// 设置接收人为当前xm</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// 执行干预</span>
+</span></span><span style="display:flex;"><span>            PAResponseEntity result <span style="color:#f92672">=</span> service.<span style="color:#a6e22e">doIntervenor</span>(user, requestParam);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// 检查干预结果 - 修改为正确的枚举比较方式</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (PAResponseCode.<span style="color:#a6e22e">SUCCESS</span>.<span style="color:#a6e22e">equals</span>(result.<span style="color:#a6e22e">getCode</span>())) {
+</span></span><span style="display:flex;"><span>                log.<span style="color:#a6e22e">writeLog</span>(<span style="color:#e6db74">&#34;干预成功，requestId: &#34;</span> <span style="color:#f92672">+</span> requestId);
+</span></span><span style="display:flex;"><span>                successCount<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>            } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>                log.<span style="color:#a6e22e">writeLog</span>(<span style="color:#e6db74">&#34;干预失败，requestId: &#34;</span> <span style="color:#f92672">+</span> requestId <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#e6db74">&#34;, 错误码: &#34;</span> <span style="color:#f92672">+</span> result.<span style="color:#a6e22e">getCode</span>().<span style="color:#a6e22e">name</span>() <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#e6db74">&#34;, 错误信息: &#34;</span> <span style="color:#f92672">+</span> result.<span style="color:#a6e22e">getErrMsg</span>());
+</span></span><span style="display:flex;"><span>                allSuccess <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>                failCount<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>                failedRequests.<span style="color:#a6e22e">add</span>(requestId);
+</span></span><span style="display:flex;"><span>            }        } <span style="color:#66d9ef">catch</span> (Exception e) {
+</span></span><span style="display:flex;"><span>            log.<span style="color:#a6e22e">writeLog</span>(<span style="color:#e6db74">&#34;干预流程异常，requestId: &#34;</span> <span style="color:#f92672">+</span> requestId <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;, 异常信息: &#34;</span> <span style="color:#f92672">+</span> e.<span style="color:#a6e22e">getMessage</span>());
+</span></span><span style="display:flex;"><span>            allSuccess <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>            failCount<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>            failedRequests.<span style="color:#a6e22e">add</span>(requestId);
+</span></span><span style="display:flex;"><span>        }    }
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 记录总体干预结果</span>
+</span></span><span style="display:flex;"><span>    log.<span style="color:#a6e22e">writeLog</span>(<span style="color:#e6db74">&#34;流程干预完成，成功: &#34;</span> <span style="color:#f92672">+</span> successCount <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;个，失败: &#34;</span> <span style="color:#f92672">+</span> failCount <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;个&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>failedRequests.<span style="color:#a6e22e">isEmpty</span>()) {
+</span></span><span style="display:flex;"><span>        log.<span style="color:#a6e22e">writeLog</span>(<span style="color:#e6db74">&#34;失败的requestIds: &#34;</span> <span style="color:#f92672">+</span> failedRequests);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">catch</span> (Exception e) {
+</span></span><span style="display:flex;"><span>    log.<span style="color:#a6e22e">writeLog</span>(<span style="color:#e6db74">&#34;获取干预服务或初始化用户异常: &#34;</span> <span style="color:#f92672">+</span> e.<span style="color:#a6e22e">getMessage</span>());
+</span></span><span style="display:flex;"><span>    allSuccess <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h1 id="e10">E10<a hidden class="anchor" aria-hidden="true" href="#e10">#</a></h1>
+<h2 id="前端-1">前端<a hidden class="anchor" aria-hidden="true" href="#前端-1">#</a></h2>
+<h3 id="组件复写-1">组件复写<a hidden class="anchor" aria-hidden="true" href="#组件复写-1">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">regOvProps</span>(<span style="color:#e6db74">&#39;weappUi&#39;</span>, <span style="color:#e6db74">&#39;Title&#39;</span>, (<span style="color:#a6e22e">props</span>) =&gt; {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">const</span> {<span style="color:#a6e22e">weId</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span>} <span style="color:#f92672">=</span> <span style="color:#a6e22e">props</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">//console.log(&#34;拿到的参数：&#34;,props)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">weId</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">weId</span>.<span style="color:#a6e22e">endsWith</span>(<span style="color:#e6db74">&#34;_pnhv5o&#34;</span>)){
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;自定义标题23333&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">props</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}, <span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="组件重写-1">组件重写<a hidden class="anchor" aria-hidden="true" href="#组件重写-1">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">React</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;react&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">regOvComponent</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;@weapp/utils&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">asyncImport</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;@weapp/ecodesdk&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">NewHelp</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">lazy</span>(() =&gt; <span style="color:#a6e22e">asyncImport</span>(<span style="color:#e6db74">&#34;${appId}&#34;</span>, <span style="color:#e6db74">&#34;NewHelp&#34;</span>));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">regOvComponent</span>(
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;weappUi&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;Help&#34;</span>,
+</span></span><span style="display:flex;"><span>  (<span style="color:#a6e22e">Com</span>) =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (window.<span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">pathname</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#34;/sp/integration/loginSingle/freepass&#34;</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">forwardRef</span>((<span style="color:#a6e22e">props</span>, <span style="color:#a6e22e">ref</span>) =&gt; {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;获取的help参数&#34;</span>, <span style="color:#a6e22e">props</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> (
+</span></span><span style="display:flex;"><span>          &lt;<span style="color:#f92672">React.Suspense</span> <span style="color:#a6e22e">fallback</span><span style="color:#f92672">=</span>{() =&gt; {}}&gt;
+</span></span><span style="display:flex;"><span>                 {<span style="color:#e6db74">&#34; &#34;</span>}
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">NewHelp</span> {<span style="color:#a6e22e">...props</span>} <span style="color:#a6e22e">OriginCom</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">Com</span>} <span style="color:#a6e22e">ref</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">ref</span>} <span style="color:#a6e22e">forwardedRef</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">ref</span>} /&gt; 
+</span></span><span style="display:flex;"><span>             {<span style="color:#e6db74">&#34; &#34;</span>}
+</span></span><span style="display:flex;"><span>          &lt;/<span style="color:#f92672">React.Suspense</span>&gt;
+</span></span><span style="display:flex;"><span>        );
+</span></span><span style="display:flex;"><span>      });
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>);
+</span></span></code></pre></div><h3 id="请求接口-1">请求接口<a hidden class="anchor" aria-hidden="true" href="#请求接口-1">#</a></h3>
+<h3 id="接口拦截">接口拦截<a hidden class="anchor" aria-hidden="true" href="#接口拦截">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#75715e">//拦截请求
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">interceptors</span>.<span style="color:#a6e22e">request</span>.<span style="color:#a6e22e">use</span>((<span style="color:#a6e22e">request</span>) =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">request</span>.<span style="color:#a6e22e">url</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#34;/api/ebuilder/coms/list/getData&#34;</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">params</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">URLSearchParams</span>(<span style="color:#a6e22e">request</span>.<span style="color:#a6e22e">data</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">set</span>(<span style="color:#e6db74">&#34;pageSize&#34;</span>, <span style="color:#e6db74">&#34;10000&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">request</span>.<span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">toString</span>();
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">request</span>;
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//拦截响应
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">interceptors</span>.<span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">use</span>((<span style="color:#a6e22e">response</span>) =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">config</span>.<span style="color:#a6e22e">url</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#34;/api/ebuilder/coms/list/getData&#34;</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">reversedData</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">list</span>.<span style="color:#a6e22e">reverse</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">list</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">reversedData</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">response</span>;
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><h2 id="后端-1">后端<a hidden class="anchor" aria-hidden="true" href="#后端-1">#</a></h2>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="https://maohuifei.github.io/">我的博客</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>
