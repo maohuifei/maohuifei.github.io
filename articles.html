@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>我的在线笔记-文章</title>
+    <link rel="import" href="coms/header.html">
+
+    <link rel="stylesheet" href="./style/main.css">
+    <link rel="stylesheet" href="style/articles.css">
+
+    <script src="script/template.js" defer></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.3.0/marked.min.js"></script>
+    <script src="script/articles.js" defer></script>
+    
+</head>
+<body>
+    <header></header>
+    <main>
+        <!-- <h1>文章列表</h1> -->
+            <div class="article-list" id="articleList">
+                <div class="list-header">
+                    <h2 class="list-title">最新文章</h2>
+                    <div class="article-count" id="articleCount">0 篇文章</div>
+                </div>
+                <div id="articleItems">
+                    <div class="loading">
+                        <div class="spinner"></div>
+                        正在加载文章列表...
+                    </div>
+                </div>
+            </div>
+    </main>
+    <footer></footer>
+</body>
+</html>
