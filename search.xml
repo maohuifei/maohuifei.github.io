@@ -2110,16 +2110,9 @@
       </categories>
   </entry>
   <entry>
-    <title></title>
+    <title>数据结构和算法</title>
     <url>/2025/08/02/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/</url>
-    <content><![CDATA[<hr>
-<p>title: 数据结构和算法</p>
-<p>categories: 数据结构和算法</p>
-<p>date: 2025-08-02 22:03:26</p>
-<p>description: 随着应用程序变得越来越复杂和数据越来越丰富，几百万、几十亿甚至几百亿的数据就会出现，<br>而对这么大对数据进行搜索、插入或者排序等的操作就越来越慢，数据结构就是用来解决这些问题的</p>
-<p>tags:</p>
-<hr>
-<h2 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h2><h3 id="栈（Stack）"><a href="#栈（Stack）" class="headerlink" title="栈（Stack）"></a>栈（Stack）</h3><p>栈是一种特殊的线性表，它只能在一个表的一个固定端进行数据结点的插入和删除操作。</p>
+    <content><![CDATA[<h2 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h2><h3 id="栈（Stack）"><a href="#栈（Stack）" class="headerlink" title="栈（Stack）"></a>栈（Stack）</h3><p>栈是一种特殊的线性表，它只能在一个表的一个固定端进行数据结点的插入和删除操作。</p>
 <h3 id="队列（Queue）"><a href="#队列（Queue）" class="headerlink" title="队列（Queue）"></a>队列（Queue）</h3><p>队列和栈类似，也是一种特殊的线性表。和栈不同的是，队列只允许在表的一端进行插入操作，而在另一端进行删除操作。</p>
 <h3 id="数组（Array）"><a href="#数组（Array）" class="headerlink" title="数组（Array）"></a>数组（Array）</h3><p>数组是一种聚合数据类型，它是将具有相同类型的若干变量有序地组织在一起的集合。</p>
 <h3 id="链表（Linked-List）"><a href="#链表（Linked-List）" class="headerlink" title="链表（Linked List）"></a>链表（Linked List）</h3><p>链表是一种数据元素按照链式存储结构进行存储的数据结构，这种存储结构具有在物理上存在非连续的特点。</p>
@@ -2133,6 +2126,9 @@
 <h3 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h3><p>改变指定节点的一个或多个字段的值。</p>
 <h3 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h3><p>把节点按某种指定的顺序重新排列。例如递增或递减。</p>
 <h3 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a>算法思想</h3><h3 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h3><h3 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h3><h3 id="贪心"><a href="#贪心" class="headerlink" title="贪心"></a>贪心</h3><h3 id="分治"><a href="#分治" class="headerlink" title="分治"></a>分治</h3><h3 id="动态规则"><a href="#动态规则" class="headerlink" title="动态规则"></a>动态规则</h3><h3 id="回溯"><a href="#回溯" class="headerlink" title="回溯"></a>回溯</h3>]]></content>
+      <categories>
+        <category>数据结构和算法</category>
+      </categories>
   </entry>
   <entry>
     <title>数学</title>
