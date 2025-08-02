@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"maohuifei.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.23.2","exturl":false,"sidebar":{"position":"right","width_expanded":300,"width_dual_column":240,"display":"hide","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"github-dark","dark":"github-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":"mac","style":null},"fold":{"enable":true,"height":500},"language":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="Vue.js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue.js">
+<meta property="og:url" content="https://maohuifei.github.io/2025/08/02/Vue.js/index.html">
+<meta property="og:site_name" content="HuaFeng&#39;s notes">
+<meta property="og:description" content="Vue.js">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-08-02T14:03:26.000Z">
+<meta property="article:modified_time" content="2025-08-02T14:48:44.564Z">
+<meta property="article:author" content="HuaFeng">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://maohuifei.github.io/2025/08/02/Vue.js/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://maohuifei.github.io/2025/08/02/Vue.js/","path":"2025/08/02/Vue.js/","title":"Vue.js"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Vue.js | HuaFeng's notes</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">HuaFeng's notes</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">画风的在线笔记</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-announcement"><a href="/announcement" rel="section"><i class="fas fa-bullhorn fa-fw"></i>声明</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#vue2"><span class="nav-number">1.</span> <span class="nav-text">vue2</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#vue3"><span class="nav-number">2.</span> <span class="nav-text">vue3</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B0%E7%89%B9%E6%80%A7"><span class="nav-number">2.1.</span> <span class="nav-text">新特性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#router"><span class="nav-number">2.1.1.</span> <span class="nav-text">router</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8D%E6%8E%A8%E8%8D%90%E4%BD%BF%E7%94%A8index%E4%BD%9C%E4%B8%BAkey%E5%80%BC%E7%9A%84%E5%8E%9F%E5%9B%A0"><span class="nav-number">2.2.</span> <span class="nav-text">不推荐使用index作为key值的原因</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83%E7%90%86%E5%BF%B5"><span class="nav-number">2.3.</span> <span class="nav-text">核心理念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A%E5%8E%9F%E7%90%86"><span class="nav-number">2.4.</span> <span class="nav-text">vue数据绑定原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%93%8D%E5%BA%94%E5%BC%8F%E5%8E%9F%E7%90%86"><span class="nav-number">2.5.</span> <span class="nav-text">响应式原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#setup"><span class="nav-number">2.6.</span> <span class="nav-text">setup</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vue-3-%E4%B8%AD%E7%9A%84-ref-%E5%92%8C-reactive-%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="nav-number">2.7.</span> <span class="nav-text">Vue 3 中的 ref 和 reactive 有什么区别？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vue-3-%E4%B8%AD%E7%9A%84-toRef-%E5%92%8C-toRefs-%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">2.8.</span> <span class="nav-text">Vue 3 中的 toRef 和 toRefs 是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-mvvm%EF%BC%9F-MVC-MVP-MVVM"><span class="nav-number">2.9.</span> <span class="nav-text">什么是 mvvm？ MVC MVP MVVM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%9A%84%E7%90%86%E8%A7%A3%EF%BC%9F"><span class="nav-number">2.10.</span> <span class="nav-text">vue生命周期的理解？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%B4%E5%87%BA%E8%87%B3%E5%B0%914%E7%A7%8Dvue%E5%BD%93%E4%B8%AD%E7%9A%84%E6%8C%87%E4%BB%A4%E5%92%8C%E5%AE%83%E7%9A%84%E7%94%A8%E6%B3%95%EF%BC%9F"><span class="nav-number">2.11.</span> <span class="nav-text">说出至少4种vue当中的指令和它的用法？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#computed%E5%92%8Cwatch"><span class="nav-number">2.12.</span> <span class="nav-text">computed和watch</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC"><span class="nav-number">2.13.</span> <span class="nav-text">父子组件传值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue%E8%B7%AF%E7%94%B1%E4%BC%A0%E5%8F%82%E6%95%B0"><span class="nav-number">2.14.</span> <span class="nav-text">vue路由传参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E8%AF%B7%E6%B1%82%E7%8A%B6%E6%80%81%E5%90%97"><span class="nav-number">2.15.</span> <span class="nav-text">常见请求状态吗</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%B7%E6%B1%82%E7%BB%93%E6%9E%84"><span class="nav-number">2.16.</span> <span class="nav-text">请求结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%93%8D%E5%BA%94%E7%BB%93%E6%9E%84"><span class="nav-number">2.17.</span> <span class="nav-text">响应结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#flex%E5%B8%83%E5%B1%80"><span class="nav-number">2.18.</span> <span class="nav-text">flex布局</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ts"><span class="nav-number">2.19.</span> <span class="nav-text">ts</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">HuaFeng</p>
+  <div class="site-description" itemprop="description">画风的在线笔记</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/maohuifei" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;maohuifei" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:jzwbuere@163.com" title="E-Mail → mailto:jzwbuere@163.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://maohuifei.github.io/2025/08/02/Vue.js/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="HuaFeng">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HuaFeng's notes">
+      <meta itemprop="description" content="画风的在线笔记">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Vue.js | HuaFeng's notes">
+      <meta itemprop="description" content="Vue.js">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Vue.js
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2025-08-02 22:03:26 / 修改时间：22:48:44" itemprop="dateCreated datePublished" datetime="2025-08-02T22:03:26+08:00">2025-08-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Vue-js/" itemprop="url" rel="index"><span itemprop="name">Vue.js</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+            <div class="post-description">Vue.js</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="vue2"><a href="#vue2" class="headerlink" title="vue2"></a>vue2</h1><h1 id="vue3"><a href="#vue3" class="headerlink" title="vue3"></a>vue3</h1><h2 id="新特性"><a href="#新特性" class="headerlink" title="新特性"></a>新特性</h2><h3 id="router"><a href="#router" class="headerlink" title="router"></a>router</h3><p>动态路由懒加载</p>
+<p>更好的错误处理<br>虚拟列表<br>生命周期<br>前端跨域<br>配置vueconfig代理<br>自定义指令<br>vue.directive</p>
+<p>组合式api<br>更好的ts支持<br>Proxy 实现响应式，更好的性能<br>按需引入，不使用无效代码，加快打包速度<br>新增组件</p>
+<ul>
+<li><code>Fragment</code> 不再限制 <code>template</code> 只有一个根节点。</li>
+<li><code>Teleport</code> 传送门，允许我们将控制的内容传送到任意的 <code>DOM</code> 中。</li>
+<li><code>Suspense</code> 等待异步组件时渲染一些额外的内容，让应用有更好的用户体验</li>
+</ul>
+<h2 id="不推荐使用index作为key值的原因"><a href="#不推荐使用index作为key值的原因" class="headerlink" title="不推荐使用index作为key值的原因"></a>不推荐使用<code>index</code>作为<code>key</code>值的原因</h2><ol>
+<li><p>状态不稳定：在Vue的开发中，数据是动态变化的，当数据发生变化时，新的元素可能被添加到数组的开头、中间或末尾等位置，这样原本的<code>index</code>值就会发生改变，导致<code>key</code>与实际内容不匹配，可能会出现渲染错误或性能下降的问题。</p>
+</li>
+<li><p>列表重新排序时可能引发错误：当列表中的元素需要重新排序时，如果我们使用<code>index</code>作为<code>key</code>值，Vue会认为只是简单的更新了元素的位置，而不是重新创建新元素，这可能会导致列表顺序混乱或出现奇怪的BUG。</p>
+</li>
+<li><p>对可访问性的影响：如果使用<code>index</code>作为<code>key</code>值，可能会导致不利于屏幕阅读器和键盘导航器的访问，因为这些助力技术可能依赖于<code>key</code>值来确定元素的唯一性。</p>
+</li>
+</ol>
+<h2 id="核心理念"><a href="#核心理念" class="headerlink" title="核心理念"></a>核心理念</h2><p>数据驱动和组件化</p>
+<h2 id="vue数据绑定原理"><a href="#vue数据绑定原理" class="headerlink" title="vue数据绑定原理"></a><strong>vue数据绑定原理</strong></h2><p>通过<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E5%93%8D%E5%BA%94%E5%BC%8F&spm=1001.2101.3001.7020">响应式</a>系统和虚拟DOM的结合来实现的。响应式系统保证了数据和视图的同步，而虚拟DOM则通过高效的更新方式提高了渲染性能</p>
+<p>基于ES6的Proxy对象实现的,初始化Vue实例时，Vue会对数据对象进行递归地遍历，将每个属性都转换为getter和setter。当属性被读取时，会触发getter函数，将当前的Watcher对象添加到依赖列表中,当属性被修改时，会触发setter函数，Vue会通知依赖列表中的每个Watcher对象进行更新操作</p>
+<h2 id="响应式原理"><a href="#响应式原理" class="headerlink" title="响应式原理"></a>响应式原理</h2><p>基于ES6的<code>Proxy</code>对象来实现。在<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=Vue%203&spm=1001.2101.3001.7020">Vue 3</a>中，每个组件都有一个响应式代理对象。当组件中的数据发生变化时，这个代理对象会立即响应并更新视图</p>
+<h2 id="setup"><a href="#setup" class="headerlink" title="setup"></a>setup</h2><p><code>setup</code> 是 Composition API 的入口函数，在组件创建之前执行</p>
+<h2 id="Vue-3-中的-ref-和-reactive-有什么区别？"><a href="#Vue-3-中的-ref-和-reactive-有什么区别？" class="headerlink" title="Vue 3 中的 ref 和 reactive 有什么区别？"></a><strong>Vue 3 中的 <code>ref</code> 和 <code>reactive</code> 有什么区别？</strong></h2><ul>
+<li><code>ref</code>：用于定义基本类型的响应式数据，内容需要通过 <code>.value</code> 获取。<ul>
+<li>获取dom元素 this.$<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=refs&spm=1001.2101.3001.7020">refs</a>.box</li>
+<li>获取子组件中的data this.$refs.box.msg</li>
+<li>调用子组件中的方法 this.$refs.box.open()</li>
+</ul>
+</li>
+<li><code>reactive</code>：用于定义对象类型的响应式数据。内容直接返回</li>
+</ul>
+<h2 id="Vue-3-中的-toRef-和-toRefs-是什么？"><a href="#Vue-3-中的-toRef-和-toRefs-是什么？" class="headerlink" title="Vue 3 中的 toRef 和 toRefs 是什么？"></a><strong>Vue 3 中的 <code>toRef</code> 和 <code>toRefs</code> 是什么？</strong></h2><ul>
+<li><code>toRef</code>：将对象的某个属性转换为 <code>ref</code>。</li>
+<li><code>toRefs</code>：将整个响应式对象的所有属性转换为 <code>ref</code>。</li>
+</ul>
+<h2 id="什么是-mvvm？-MVC-MVP-MVVM"><a href="#什么是-mvvm？-MVC-MVP-MVVM" class="headerlink" title="什么是 mvvm？ MVC MVP MVVM"></a><strong>什么是 mvvm？ MVC MVP MVVM</strong></h2><p>MVVM 是 Model-View-ViewModel 的缩写。mvvm 是一种设计思想。Model 层代表数据模型，也可以在 Model 中定义数据修改和操作的业务逻辑；View 代表 UI 组件，它负责将数据模型转化成 UI 展现出来，ViewModel 是一个同步 View 和 Model 的对象。</p>
+<h2 id="vue生命周期的理解？"><a href="#vue生命周期的理解？" class="headerlink" title="vue生命周期的理解？"></a><strong>vue生命周期的理解？</strong></h2><p>总共分为 8 个阶段创建前&#x2F;后，载入前&#x2F;后，更新前&#x2F;后，销毁前&#x2F;后。</p>
+<h2 id="说出至少4种vue当中的指令和它的用法？"><a href="#说出至少4种vue当中的指令和它的用法？" class="headerlink" title="说出至少4种vue当中的指令和它的用法？"></a><strong>说出至少4种vue当中的指令和它的用法？</strong></h2><p>v-if：判断是否隐藏；v-for：数据循环出来；v-bind:class：绑定一个属性；v-model：实现双向绑定</p>
+<h2 id="computed和watch"><a href="#computed和watch" class="headerlink" title="computed和watch"></a><strong>computed和watch</strong></h2><p>computed计算属性改变时更新 DOM，某些数据依赖其他数据进行变动的时候，可以使用计算属性computed</p>
+<p>watch监听的是你定义的变量,当你定义的变量的值发生变化时，调用对应的方法</p>
+<h2 id="父子组件传值"><a href="#父子组件传值" class="headerlink" title="父子组件传值"></a><strong>父子组件传值</strong></h2><p>父子：props、defineProps</p>
+<p>子父：emits、defineEmits<br><code>provide/inject</code><br>Vuex、内存、</p>
+<h2 id="vue路由传参数"><a href="#vue路由传参数" class="headerlink" title="vue路由传参数"></a><strong>vue路由传参数</strong></h2><p>使用query方法传入的参数使用this.$route.query接受</p>
+<p>使用params方式传入的参数使用this.$route.params接受</p>
+<h2 id="常见请求状态吗"><a href="#常见请求状态吗" class="headerlink" title="常见请求状态吗"></a><strong>常见请求状态吗</strong></h2><p>信息响应 (1xx)</p>
+<p>成功响应 (2xx)</p>
+<ul>
+<li>200 OK: 请求成功</li>
+<li>204 No Content: 无内容。服务器成功处理，但未返回内容。</li>
+</ul>
+<p>重定向消息 (3xx)</p>
+<p>客户端错误响应 (4xx)</p>
+<ul>
+<li>400 Bad Request: 客户端请求的语法错误，服务器无法理解。</li>
+<li>401 Unauthorized: 请求要求用户的身份认证。</li>
+<li>403 Forbidden: 服务器理解请求，但拒绝执行。</li>
+<li>404 Not Found: 服务器无法根据客户端的请求找到资源。</li>
+</ul>
+<p>服务端错误响应 (5xx)</p>
+<ul>
+<li>500：服务器错误</li>
+<li>503 Service Unavailable: 由于超载或系统维护，服务器暂时无法处理请求。</li>
+<li>504 Gateway Timeout: 超时</li>
+</ul>
+<h2 id="请求结构"><a href="#请求结构" class="headerlink" title="请求结构"></a><strong>请求结构</strong></h2><ul>
+<li><p><strong>请求行</strong>（Request Line）：</p>
+</li>
+<li><p><strong>方法</strong>：如 GET、POST、PUT、DELETE等，指定要执行的操作。</p>
+</li>
+<li><p><strong>请求 URI</strong>（统一资源标识符）：请求的资源路径，通常包括主机名、端口号（如果非默认）、路径和查询字符串。</p>
+</li>
+<li><p><strong>HTTP 版本</strong>：如 HTTP&#x2F;1.1 或 HTTP&#x2F;2。</p>
+</li>
+<li><p>请求行的格式示例：GET &#x2F;index.html HTTP&#x2F;1.1</p>
+</li>
+<li><p><strong>请求头</strong>（Request Headers）：</p>
+</li>
+<li><p>包含了客户端环境信息、请求体的大小（如果有）、客户端支持的压缩类型等。</p>
+</li>
+<li><p>常见的请求头包括Host、User-Agent、Accept、Accept-Encoding、Content-Length等。</p>
+</li>
+<li><p>Host*：指定请求的目标服务器域名和端口号。</p>
+</li>
+<li><p>User-Agent：发起请求的客户端软件的信息，如浏览器类型、操作系统、浏览器版本等</p>
+</li>
+<li><p>Accept：客户端希望接收的响应内容的类型，如文本、HTML、XML、JSON 等</p>
+</li>
+<li><p>Accept-Encoding：客户端支持的内容编码方式，如 gzip、deflate 等</p>
+</li>
+<li><p>Content-Length：在 POST、PUT 等包含请求体的请求中非常重要，它告诉服务器请求体的长度，以便服务器能够正确读取和处理请求体</p>
+</li>
+<li><p><strong>空行</strong>：</p>
+</li>
+<li><p>请求头和请求体之间的分隔符，表示请求头的结束。</p>
+</li>
+<li><p><strong>请求体</strong>（可选）：</p>
+</li>
+<li><p>在某些类型的HTTP请求（如 POST 和 PUT）中，请求体包含要发送给服务器的数据。</p>
+</li>
+</ul>
+<h2 id="响应结构"><a href="#响应结构" class="headerlink" title="响应结构"></a><strong>响应结构</strong></h2><ul>
+<li><p><strong>状态行</strong>（Status Line）：</p>
+</li>
+<li><p><strong>HTTP 版本</strong>：与请求消息中的版本相匹配。</p>
+</li>
+<li><p><strong>状态码</strong>：三位数，表示请求的处理结果，如 200 表示成功，404 表示未找到资源。</p>
+</li>
+<li><p><strong>状态信息</strong>：状态码的简短描述。</p>
+</li>
+<li><p>状态行的格式示例：HTTP&#x2F;1.1 200 OK</p>
+</li>
+<li><p><strong>响应头</strong>（Response Headers）：</p>
+</li>
+<li><p>包含了服务器环境信息、响应体的大小、服务器支持的压缩类型等。</p>
+</li>
+<li><p>常见的响应头包括Content-Type、Content-Length、Server、Set-Cookie等。</p>
+</li>
+<li><p>Content-Type：客户端响应体的内容类型，如文本、HTML、XML、JSON、图片等</p>
+</li>
+<li><p>Content-Length：告诉客户端响应体的长度</p>
+</li>
+<li><p>Server：处理请求的服务器软件的信息，如服务器类型、操作系统、服务器版本等</p>
+</li>
+<li><p>Set-Cookie：在客户端设置 Cookie，以便在后续的请求中客户端可以发送这些 Cookie 给服务器</p>
+</li>
+<li><p><strong>空行</strong>：</p>
+</li>
+<li><p>响应头和响应体之间的分隔符，表示响应头的结束。</p>
+</li>
+<li><p><strong>响应体</strong>（可选）：</p>
+</li>
+</ul>
+<p>包含服务器返回的数据，如请求的网页内容、图片、JSON数据等。</p>
+<h2 id="flex布局"><a href="#flex布局" class="headerlink" title="flex布局"></a>flex布局</h2><p>flex-direction：主轴方向<br>justify-content：在主轴对齐方式<br>align-items：在交叉轴如何对齐</p>
+<h2 id="ts"><a href="#ts" class="headerlink" title="ts"></a>ts</h2><p>定义接口</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1.   </span><br><span class="line">    interface name &#123;</span><br><span class="line">    </span><br><span class="line">2. // 字段声明</span><br><span class="line">    </span><br><span class="line">3. // 方法声明</span><br><span class="line">    </span><br><span class="line">4. &#125;</span><br></pre></td></tr></table></figure>
+<p>类<br>继承</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">1. class Shape &#123;</span><br><span class="line">    </span><br><span class="line">2. Area:number</span><br><span class="line">    </span><br><span class="line">3. constructor(area:number) &#123;</span><br><span class="line">    </span><br><span class="line">4. this.Area = area</span><br><span class="line">    </span><br><span class="line">5. &#125;</span><br><span class="line">    </span><br><span class="line">6. &#125;</span><br><span class="line">    </span><br><span class="line">7. class Circle extends Shape &#123;</span><br><span class="line">    </span><br><span class="line">8. display():void &#123;</span><br><span class="line">    </span><br><span class="line">9. console.log(&quot;圆的面积: &quot;+this.Area)</span><br><span class="line">    </span><br><span class="line">10. &#125;</span><br><span class="line">    </span><br><span class="line">11. &#125;</span><br></pre></td></tr></table></figure>
+<p>范型</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">是一个提供创建可重用组件方法的工具。它能够创建可以处理多种数据类型而不是单一数据类型的组件</span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/08/02/Web%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7%E5%BA%93/" rel="prev" title="Web前端工具库">
+                  <i class="fa fa-angle-left"></i> Web前端工具库
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2025/08/02/React.js/" rel="next" title="React.js">
+                  React.js <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">HuaFeng</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>

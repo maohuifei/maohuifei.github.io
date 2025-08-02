@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"maohuifei.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.23.2","exturl":false,"sidebar":{"position":"right","width_expanded":300,"width_dual_column":240,"display":"hide","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"github-dark","dark":"github-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":"mac","style":null},"fold":{"enable":true,"height":500},"language":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="Web开发规范">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Web开发规范">
+<meta property="og:url" content="https://maohuifei.github.io/2025/08/02/Web%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/index.html">
+<meta property="og:site_name" content="HuaFeng&#39;s notes">
+<meta property="og:description" content="Web开发规范">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-08-02T14:03:26.000Z">
+<meta property="article:modified_time" content="2025-08-02T14:52:44.485Z">
+<meta property="article:author" content="HuaFeng">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://maohuifei.github.io/2025/08/02/Web%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://maohuifei.github.io/2025/08/02/Web%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/","path":"2025/08/02/Web开发规范/","title":"Web开发规范"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Web开发规范 | HuaFeng's notes</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">HuaFeng's notes</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">画风的在线笔记</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-announcement"><a href="/announcement" rel="section"><i class="fas fa-bullhorn fa-fw"></i>声明</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#REST%E9%A3%8E%E6%A0%BC%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83"><span class="nav-number">1.</span> <span class="nav-text">REST风格设计规范</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83%E5%8E%9F%E5%88%99%EF%BC%88Roy-Fielding%E5%AE%9A%E4%B9%89%EF%BC%89"><span class="nav-number">1.1.</span> <span class="nav-text">核心原则（Roy Fielding定义）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-CS%E6%9E%B6%E6%9E%84%EF%BC%88Client-Server%EF%BC%89"><span class="nav-number">1.1.1.</span> <span class="nav-text">1. CS架构（Client&#x2F;Server）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%97%A0%E7%8A%B6%E6%80%81%EF%BC%88Stateless%EF%BC%89"><span class="nav-number">1.1.2.</span> <span class="nav-text">2. 无状态（Stateless）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E7%BC%93%E5%AD%98%EF%BC%88Cacheable%EF%BC%89"><span class="nav-number">1.1.3.</span> <span class="nav-text">3. 缓存（Cacheable）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E7%BB%9F%E4%B8%80%E6%8E%A5%E5%8F%A3%EF%BC%88Uniform-Interface%EF%BC%89"><span class="nav-number">1.1.4.</span> <span class="nav-text">4. 统一接口（Uniform Interface）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E5%88%86%E5%B1%82%E7%B3%BB%E7%BB%9F%EF%BC%88Layered-System%EF%BC%89"><span class="nav-number">1.1.5.</span> <span class="nav-text">5. 分层系统（Layered System）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%91%BD%E5%90%8D%E4%B8%8E%E7%BB%93%E6%9E%84%E8%A7%84%E8%8C%83"><span class="nav-number">1.2.</span> <span class="nav-text">命名与结构规范</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99"><span class="nav-number">1.2.1.</span> <span class="nav-text">命名规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%E7%A4%BA%E4%BE%8B"><span class="nav-number">1.2.2.</span> <span class="nav-text">目录结构示例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%B7%E6%B1%82%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83"><span class="nav-number">1.3.</span> <span class="nav-text">请求设计规范</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#URI%E8%AE%BE%E8%AE%A1"><span class="nav-number">1.3.1.</span> <span class="nav-text">URI设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP%E6%96%B9%E6%B3%95%E8%A7%84%E8%8C%83"><span class="nav-number">1.3.2.</span> <span class="nav-text">HTTP方法规范</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%93%8D%E5%BA%94%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83"><span class="nav-number">1.4.</span> <span class="nav-text">响应设计规范</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%A0%BC%E5%BC%8F"><span class="nav-number">1.4.1.</span> <span class="nav-text">数据格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E9%A1%B5%E8%AE%BE%E8%AE%A1"><span class="nav-number">1.4.2.</span> <span class="nav-text">分页设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8A%B6%E6%80%81%E7%A0%81%E8%A7%84%E8%8C%83"><span class="nav-number">1.4.3.</span> <span class="nav-text">状态码规范</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86%E7%A4%BA%E4%BE%8B"><span class="nav-number">1.4.4.</span> <span class="nav-text">错误处理示例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E5%85%A8%E8%A7%84%E8%8C%83"><span class="nav-number">1.5.</span> <span class="nav-text">安全规范</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-HTTPS%E5%BC%BA%E5%88%B6"><span class="nav-number">1.5.1.</span> <span class="nav-text">1. HTTPS强制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E9%89%B4%E6%9D%83%E6%96%B9%E6%A1%88"><span class="nav-number">1.5.2.</span> <span class="nav-text">2. 鉴权方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E9%99%90%E6%B5%81%E7%AD%96%E7%95%A5"><span class="nav-number">1.5.3.</span> <span class="nav-text">3. 限流策略</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5"><span class="nav-number">1.6.</span> <span class="nav-text">最佳实践</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">HuaFeng</p>
+  <div class="site-description" itemprop="description">画风的在线笔记</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/maohuifei" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;maohuifei" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:jzwbuere@163.com" title="E-Mail → mailto:jzwbuere@163.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://maohuifei.github.io/2025/08/02/Web%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="HuaFeng">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HuaFeng's notes">
+      <meta itemprop="description" content="画风的在线笔记">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Web开发规范 | HuaFeng's notes">
+      <meta itemprop="description" content="Web开发规范">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Web开发规范
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2025-08-02 22:03:26 / 修改时间：22:52:44" itemprop="dateCreated datePublished" datetime="2025-08-02T22:03:26+08:00">2025-08-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/" itemprop="url" rel="index"><span itemprop="name">开发规范</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+            <div class="post-description">Web开发规范</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="REST风格设计规范"><a href="#REST风格设计规范" class="headerlink" title="REST风格设计规范"></a>REST风格设计规范</h1><hr>
+<h2 id="核心原则（Roy-Fielding定义）"><a href="#核心原则（Roy-Fielding定义）" class="headerlink" title="核心原则（Roy Fielding定义）"></a>核心原则（Roy Fielding定义）</h2><h3 id="1-CS架构（Client-Server）"><a href="#1-CS架构（Client-Server）" class="headerlink" title="1. CS架构（Client&#x2F;Server）"></a>1. CS架构（Client&#x2F;Server）</h3><ul>
+<li><strong>关注点分离</strong>：客户端与服务器职责解耦</li>
+<li><strong>服务端职责</strong>：专注数据存储、业务逻辑和安全性<br>✅ 优势：简化服务端逻辑，提升稳定性</li>
+<li><strong>客户端职责</strong>：专注用户交互与数据展示<br>✅ 优势：支持多终端（Web&#x2F;App&#x2F;桌面）兼容，提升可移植性</li>
+</ul>
+<h3 id="2-无状态（Stateless）"><a href="#2-无状态（Stateless）" class="headerlink" title="2. 无状态（Stateless）"></a>2. 无状态（Stateless）</h3><ul>
+<li>每个请求必须包含<strong>所有必要上下文信息</strong>（如身份令牌、参数）</li>
+<li>服务端<strong>不存储客户端会话状态</strong><br>✅ 优势：提升可扩展性，降低服务器资源消耗</li>
+</ul>
+<h3 id="3-缓存（Cacheable）"><a href="#3-缓存（Cacheable）" class="headerlink" title="3. 缓存（Cacheable）"></a>3. 缓存（Cacheable）</h3><ul>
+<li>通过<code>Cache-Control</code>、<code>ETag</code>、<code>Last-Modified</code>等HTTP头控制缓存<br>✅ 优势：减少重复请求，提升性能<br>⚠️ 注意：敏感数据需标记为<code>no-store</code></li>
+</ul>
+<h3 id="4-统一接口（Uniform-Interface）"><a href="#4-统一接口（Uniform-Interface）" class="headerlink" title="4. 统一接口（Uniform Interface）"></a>4. 统一接口（Uniform Interface）</h3><ul>
+<li><strong>资源标识</strong>：URI唯一标识资源（如<code>/users/123</code>）</li>
+<li><strong>表述操作</strong>：通过JSON&#x2F;XML等格式操作资源</li>
+<li><strong>自描述消息</strong>：使用标准HTTP方法（GET&#x2F;POST&#x2F;PUT&#x2F;DELETE）</li>
+<li><strong>HATEOAS</strong>：响应中返回下一步操作的超链接（如分页导航）</li>
+</ul>
+<h3 id="5-分层系统（Layered-System）"><a href="#5-分层系统（Layered-System）" class="headerlink" title="5. 分层系统（Layered System）"></a>5. 分层系统（Layered System）</h3><ul>
+<li>客户端无需感知是否直连服务器（可能经过CDN&#x2F;代理&#x2F;防火墙）<br>✅ 优势：提升安全性和可扩展性</li>
+</ul>
+<hr>
+<h2 id="命名与结构规范"><a href="#命名与结构规范" class="headerlink" title="命名与结构规范"></a>命名与结构规范</h2><h3 id="命名规则"><a href="#命名规则" class="headerlink" title="命名规则"></a>命名规则</h3><ul>
+<li><strong>URI使用名词复数</strong>：<code>/users</code>而非<code>/user</code></li>
+<li><strong>关联资源嵌套</strong>：<code>/users/&#123;uid&#125;/orders/&#123;oid&#125;</code></li>
+<li><strong>连字符命名</strong>：<code>/api/v1/user-roles</code>（非下划线或驼峰）</li>
+<li><strong>版本控制</strong>：URL路径（<code>/v1/users</code>）或请求头（<code>Accept: application/vnd.myapi.v1+json</code>）</li>
+</ul>
+<h3 id="目录结构示例"><a href="#目录结构示例" class="headerlink" title="目录结构示例"></a>目录结构示例</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">/src</span><br><span class="line">  /controllers    # 请求处理逻辑</span><br><span class="line">  /models         # 数据模型定义</span><br><span class="line">  /routes         # API路由配置</span><br><span class="line">  /middlewares    # 鉴权/日志等中间件</span><br><span class="line">  /utils          # 通用工具类</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="请求设计规范"><a href="#请求设计规范" class="headerlink" title="请求设计规范"></a>请求设计规范</h2><h3 id="URI设计"><a href="#URI设计" class="headerlink" title="URI设计"></a>URI设计</h3><ul>
+<li><strong>资源定位</strong>：<code>GET /users/123</code></li>
+<li><strong>过滤&#x2F;排序</strong>：<code>GET /users?role=admin&amp;sort=-created_at</code></li>
+<li><strong>搜索</strong>：<code>GET /users?q=John+email:gmail.com</code></li>
+</ul>
+<h3 id="HTTP方法规范"><a href="#HTTP方法规范" class="headerlink" title="HTTP方法规范"></a>HTTP方法规范</h3><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>幂等性</th>
+<th>用途</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>GET</td>
+<td>✔️</td>
+<td>获取资源</td>
+<td><code>GET /users</code></td>
+</tr>
+<tr>
+<td>POST</td>
+<td>❌</td>
+<td>创建资源</td>
+<td><code>POST /users</code></td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>✔️</td>
+<td>全量更新资源</td>
+<td><code>PUT /users/123</code></td>
+</tr>
+<tr>
+<td>PATCH</td>
+<td>❌</td>
+<td>部分更新资源</td>
+<td><code>PATCH /users/123</code></td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>✔️</td>
+<td>删除资源</td>
+<td><code>DELETE /users/123</code></td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="响应设计规范"><a href="#响应设计规范" class="headerlink" title="响应设计规范"></a>响应设计规范</h2><h3 id="数据格式"><a href="#数据格式" class="headerlink" title="数据格式"></a>数据格式</h3><ul>
+<li><strong>统一响应体</strong>：<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;code&quot;</span><span class="punctuation">:</span> <span class="number">200</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;data&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span> <span class="comment">/* 主数据 */</span> <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;pagination&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span> <span class="comment">/* 分页信息 */</span> <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;links&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span> <span class="comment">/* HATEOAS超链接 */</span> <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="分页设计"><a href="#分页设计" class="headerlink" title="分页设计"></a>分页设计</h3><ul>
+<li><strong>请求参数</strong>：<code>GET /users?page=2&amp;per_page=20</code></li>
+<li><strong>响应元数据</strong>：<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;pagination&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;total&quot;</span><span class="punctuation">:</span> <span class="number">100</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;current_page&quot;</span><span class="punctuation">:</span> <span class="number">2</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;per_page&quot;</span><span class="punctuation">:</span> <span class="number">20</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;total_pages&quot;</span><span class="punctuation">:</span> <span class="number">5</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="状态码规范"><a href="#状态码规范" class="headerlink" title="状态码规范"></a>状态码规范</h3><table>
+<thead>
+<tr>
+<th>状态码</th>
+<th>场景</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>200</td>
+<td>常规成功</td>
+</tr>
+<tr>
+<td>201</td>
+<td>资源创建成功</td>
+</tr>
+<tr>
+<td>204</td>
+<td>无内容（如DELETE成功）</td>
+</tr>
+<tr>
+<td>400</td>
+<td>客户端请求错误</td>
+</tr>
+<tr>
+<td>401</td>
+<td>未授权</td>
+</tr>
+<tr>
+<td>403</td>
+<td>禁止访问</td>
+</tr>
+<tr>
+<td>404</td>
+<td>资源不存在</td>
+</tr>
+<tr>
+<td>429</td>
+<td>请求过于频繁（限流触发）</td>
+</tr>
+<tr>
+<td>500</td>
+<td>服务端内部错误</td>
+</tr>
+</tbody></table>
+<h3 id="错误处理示例"><a href="#错误处理示例" class="headerlink" title="错误处理示例"></a>错误处理示例</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;code&quot;</span><span class="punctuation">:</span> <span class="number">40001</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;message&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Invalid email format&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;details&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Email must contain @ symbol&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="安全规范"><a href="#安全规范" class="headerlink" title="安全规范"></a>安全规范</h2><h3 id="1-HTTPS强制"><a href="#1-HTTPS强制" class="headerlink" title="1. HTTPS强制"></a>1. HTTPS强制</h3><ul>
+<li>所有API必须通过<strong>HTTPS</strong>传输</li>
+<li>HTTP请求返回<code>301 Moved Permanently</code></li>
+</ul>
+<h3 id="2-鉴权方案"><a href="#2-鉴权方案" class="headerlink" title="2. 鉴权方案"></a>2. 鉴权方案</h3><ul>
+<li><strong>OAuth 2.0</strong>：<code>Authorization: Bearer &lt;token&gt;</code></li>
+<li><strong>API Key</strong>：<code>X-API-Key: your_key</code></li>
+<li><strong>JWT</strong>：<code>Authorization: Bearer &lt;JWT&gt;</code></li>
+</ul>
+<h3 id="3-限流策略"><a href="#3-限流策略" class="headerlink" title="3. 限流策略"></a>3. 限流策略</h3><ul>
+<li><strong>速率限制</strong>：<code>X-RateLimit-Limit: 100</code>（总配额）</li>
+<li><strong>剩余配额</strong>：<code>X-RateLimit-Remaining: 95</code></li>
+<li><strong>重置时间</strong>：<code>X-RateLimit-Reset: 1661345678</code></li>
+</ul>
+<hr>
+<h2 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h2><ol>
+<li><strong>版本控制</strong>：通过URL或Header维护API版本</li>
+<li><strong>内容协商</strong>：支持<code>Accept</code>头指定返回格式（JSON&#x2F;XML）</li>
+<li><strong>文档化</strong>：使用OpenAPI&#x2F;Swagger生成交互式文档</li>
+<li><strong>兼容性</strong>：通过添加新字段而非修改旧字段保持向后兼容</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/08/02/%E4%BA%A7%E5%93%81%E6%B5%8B%E8%AF%95/" rel="prev" title="产品测试">
+                  <i class="fa fa-angle-left"></i> 产品测试
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2025/08/02/v2ray/" rel="next" title="v2ray">
+                  v2ray <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">HuaFeng</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>

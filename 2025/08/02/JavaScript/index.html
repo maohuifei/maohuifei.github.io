@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"maohuifei.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.23.2","exturl":false,"sidebar":{"position":"right","width_expanded":300,"width_dual_column":240,"display":"hide","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"github-dark","dark":"github-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":"mac","style":null},"fold":{"enable":true,"height":500},"language":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript">
+<meta property="og:url" content="https://maohuifei.github.io/2025/08/02/JavaScript/index.html">
+<meta property="og:site_name" content="HuaFeng&#39;s notes">
+<meta property="og:description" content="JavaScript">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-08-02T14:03:26.000Z">
+<meta property="article:modified_time" content="2025-08-02T14:50:15.734Z">
+<meta property="article:author" content="HuaFeng">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://maohuifei.github.io/2025/08/02/JavaScript/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://maohuifei.github.io/2025/08/02/JavaScript/","path":"2025/08/02/JavaScript/","title":"JavaScript"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>JavaScript | HuaFeng's notes</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">HuaFeng's notes</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">画风的在线笔记</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-announcement"><a href="/announcement" rel="section"><i class="fas fa-bullhorn fa-fw"></i>声明</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.</span> <span class="nav-text">数组对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A3%80%E6%B5%8B%E6%98%AF%E5%90%A6%E4%B8%BA%E6%95%B0%E7%BB%84%EF%BC%9Ainstanceof-isArray"><span class="nav-number">1.1.</span> <span class="nav-text">检测是否为数组：instanceof &#x2F; isArray</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%92%E5%85%A5-%E5%88%A0%E9%99%A4%E5%85%83%E7%B4%A0%EF%BC%9Apush-pop-shift-unshift"><span class="nav-number">1.2.</span> <span class="nav-text">插入&#x2F;删除元素：push&#x2F;pop &amp; shift&#x2F;unshift</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%98%9F%E5%88%97%E6%93%8D%E4%BD%9C%EF%BC%88FIFO%EF%BC%89"><span class="nav-number">1.2.1.</span> <span class="nav-text">队列操作（FIFO）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%88%E6%93%8D%E4%BD%9C%EF%BC%88LIFO%EF%BC%89"><span class="nav-number">1.2.2.</span> <span class="nav-text">栈操作（LIFO）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E6%8E%92%E5%BA%8F%EF%BC%9Areverse-sort"><span class="nav-number">1.3.</span> <span class="nav-text">数组排序：reverse&#x2F;sort</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E7%B4%A2%E5%BC%95%EF%BC%9AindexOf-lastIndexOf"><span class="nav-number">1.4.</span> <span class="nav-text">数组索引：indexOf&#x2F;lastIndexOf</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2%EF%BC%9AtoString-join"><span class="nav-number">1.5.</span> <span class="nav-text">数组转字符串：toString&#x2F;join</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E6%93%8D%E4%BD%9C%EF%BC%9Asplice"><span class="nav-number">1.6.</span> <span class="nav-text">数组操作：splice</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%AA%E5%8F%96%E6%95%B0%E7%BB%84%EF%BC%9Aslice"><span class="nav-number">1.7.</span> <span class="nav-text">截取数组：slice</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8B%BC%E6%8E%A5%E6%95%B0%E7%BB%84%EF%BC%9Aconcat"><span class="nav-number">1.8.</span> <span class="nav-text">拼接数组：concat</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AF%B9%E8%B1%A1"><span class="nav-number">2.</span> <span class="nav-text">字符串对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8D%E5%8F%AF%E5%8F%98%E6%80%A7%E7%89%B9%E6%80%A7"><span class="nav-number">2.1.</span> <span class="nav-text">不可变性特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E5%AE%9A%E4%BD%8D%EF%BC%9AindexOf-lastIndexOf"><span class="nav-number">2.2.</span> <span class="nav-text">字符定位：indexOf&#x2F;lastIndexOf</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E8%8E%B7%E5%8F%96"><span class="nav-number">2.3.</span> <span class="nav-text">字符获取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8B%BC%E6%8E%A5%EF%BC%9Aconcat"><span class="nav-number">2.4.</span> <span class="nav-text">字符串拼接：concat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%88%AA%E5%8F%96"><span class="nav-number">2.5.</span> <span class="nav-text">字符串截取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%9B%BF%E6%8D%A2%EF%BC%9Areplace"><span class="nav-number">2.6.</span> <span class="nav-text">字符串替换：replace</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%88%86%E5%89%B2%EF%BC%9Asplit"><span class="nav-number">2.7.</span> <span class="nav-text">字符串分割：split</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%A7%E5%B0%8F%E5%86%99%E8%BD%AC%E6%8D%A2"><span class="nav-number">2.8.</span> <span class="nav-text">大小写转换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B8%8E%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86"><span class="nav-number">3.</span> <span class="nav-text">数据类型与内存管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%80%BC%E7%B1%BB%E5%9E%8B-vs-%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B"><span class="nav-number">3.1.</span> <span class="nav-text">值类型 vs 引用类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92%E7%89%B9%E6%80%A7"><span class="nav-number">3.2.</span> <span class="nav-text">参数传递特性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%BC%A0%E6%A0%87%E4%BA%8B%E4%BB%B6%E5%AF%B9%E6%AF%94"><span class="nav-number">4.</span> <span class="nav-text">鼠标事件对比</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">HuaFeng</p>
+  <div class="site-description" itemprop="description">画风的在线笔记</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/maohuifei" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;maohuifei" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:jzwbuere@163.com" title="E-Mail → mailto:jzwbuere@163.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://maohuifei.github.io/2025/08/02/JavaScript/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="HuaFeng">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HuaFeng's notes">
+      <meta itemprop="description" content="画风的在线笔记">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="JavaScript | HuaFeng's notes">
+      <meta itemprop="description" content="JavaScript">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          JavaScript
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2025-08-02 22:03:26 / 修改时间：22:50:15" itemprop="dateCreated datePublished" datetime="2025-08-02T22:03:26+08:00">2025-08-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+            <div class="post-description">JavaScript</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h2 id="数组对象"><a href="#数组对象" class="headerlink" title="数组对象"></a>数组对象</h2><h3 id="检测是否为数组：instanceof-isArray"><a href="#检测是否为数组：instanceof-isArray" class="headerlink" title="检测是否为数组：instanceof &#x2F; isArray"></a>检测是否为数组：instanceof &#x2F; isArray</h3><p><strong>方法一：</strong><br>使用 <code>instanceof Array</code> 运算符检测：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">checkArray</span>(<span class="params">arr</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (arr <span class="keyword">instanceof</span> <span class="title class_">Array</span>) &#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>方法二：</strong><br>使用 <code>Array.isArray()</code> 方法检测（HTML5 新增，IE9+ 支持）：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">checkArray</span>(<span class="params">arr</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="title class_">Array</span>.<span class="title function_">isArray</span>(arr)) &#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="插入-删除元素：push-pop-shift-unshift"><a href="#插入-删除元素：push-pop-shift-unshift" class="headerlink" title="插入&#x2F;删除元素：push&#x2F;pop &amp; shift&#x2F;unshift"></a>插入&#x2F;删除元素：push&#x2F;pop &amp; shift&#x2F;unshift</h3><h4 id="队列操作（FIFO）"><a href="#队列操作（FIFO）" class="headerlink" title="队列操作（FIFO）"></a>队列操作（FIFO）</h4><ul>
+<li><code>push()</code>：在数组末端添加元素</li>
+<li><code>shift()</code>：移除数组首端元素</li>
+</ul>
+<h4 id="栈操作（LIFO）"><a href="#栈操作（LIFO）" class="headerlink" title="栈操作（LIFO）"></a>栈操作（LIFO）</h4><ul>
+<li><code>push()</code>：在数组末端添加元素</li>
+<li><code>pop()</code>：从数组末端移除元素</li>
+</ul>
+<p><strong>双端队列操作示例：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 末端操作</span></span><br><span class="line"><span class="keyword">let</span> fruits = [<span class="string">&quot;Apple&quot;</span>, <span class="string">&quot;Orange&quot;</span>, <span class="string">&quot;Pear&quot;</span>];</span><br><span class="line"><span class="title function_">alert</span>(fruits.<span class="title function_">pop</span>());    <span class="comment">// 移除 &quot;Pear&quot; 并弹出</span></span><br><span class="line"><span class="title function_">alert</span>(fruits);          <span class="comment">// Apple, Orange</span></span><br><span class="line"></span><br><span class="line">fruits.<span class="title function_">push</span>(<span class="string">&quot;Pear&quot;</span>);</span><br><span class="line"><span class="title function_">alert</span>(fruits);          <span class="comment">// Apple, Orange, Pear</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 首端操作</span></span><br><span class="line"><span class="keyword">let</span> fruits2 = [<span class="string">&quot;Apple&quot;</span>, <span class="string">&quot;Orange&quot;</span>, <span class="string">&quot;Pear&quot;</span>];</span><br><span class="line"><span class="title function_">alert</span>(fruits2.<span class="title function_">shift</span>()); <span class="comment">// 移除 Apple 并弹出</span></span><br><span class="line"><span class="title function_">alert</span>(fruits2);         <span class="comment">// Orange, Pear</span></span><br><span class="line"></span><br><span class="line">fruits2.<span class="title function_">unshift</span>(<span class="string">&quot;Apple&quot;</span>);</span><br><span class="line"><span class="title function_">alert</span>(fruits2);         <span class="comment">// Apple, Orange, Pear</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>批量操作：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="string">&quot;Apple&quot;</span>];</span><br><span class="line">arr.<span class="title function_">push</span>(<span class="string">&quot;Orange&quot;</span>, <span class="string">&quot;Peach&quot;</span>);</span><br><span class="line">arr.<span class="title function_">unshift</span>(<span class="string">&quot;Pineapple&quot;</span>, <span class="string">&quot;Lemon&quot;</span>);</span><br><span class="line"><span class="comment">// [&quot;Pineapple&quot;, &quot;Lemon&quot;, &quot;Apple&quot;, &quot;Orange&quot;, &quot;Peach&quot;]</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="数组排序：reverse-sort"><a href="#数组排序：reverse-sort" class="headerlink" title="数组排序：reverse&#x2F;sort"></a>数组排序：reverse&#x2F;sort</h3><p><strong>翻转数组：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="string">&quot;three&quot;</span>, <span class="string">&quot;two&quot;</span>, <span class="string">&quot;one&quot;</span>];</span><br><span class="line">arr.<span class="title function_">reverse</span>();</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr); <span class="comment">// [&quot;one&quot;, &quot;two&quot;, &quot;three&quot;]</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>排序优化：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> nums = [<span class="number">3</span>, <span class="number">1</span>, <span class="number">16</span>, <span class="number">7</span>, <span class="number">68</span>];</span><br><span class="line">nums.<span class="title function_">sort</span>(<span class="function">(<span class="params">a, b</span>) =&gt;</span> a - b);  <span class="comment">// 升序 [1, 3, 7, 16, 68]</span></span><br><span class="line">nums.<span class="title function_">sort</span>(<span class="function">(<span class="params">a, b</span>) =&gt;</span> b - a);  <span class="comment">// 降序 [68, 16, 7, 3, 1]</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="数组索引：indexOf-lastIndexOf"><a href="#数组索引：indexOf-lastIndexOf" class="headerlink" title="数组索引：indexOf&#x2F;lastIndexOf"></a>数组索引：indexOf&#x2F;lastIndexOf</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> colors = [<span class="string">&quot;red&quot;</span>, <span class="string">&quot;green&quot;</span>, <span class="string">&quot;yellow&quot;</span>, <span class="string">&quot;pink&quot;</span>, <span class="string">&quot;pink&quot;</span>];</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(colors.<span class="title function_">indexOf</span>(<span class="string">&quot;pink&quot;</span>));     <span class="comment">// 3（首个匹配项）</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(colors.<span class="title function_">lastIndexOf</span>(<span class="string">&quot;pink&quot;</span>)); <span class="comment">// 4（末次匹配项）</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(colors.<span class="title function_">indexOf</span>(<span class="string">&quot;blue&quot;</span>));     <span class="comment">// -1（未找到）</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="数组转字符串：toString-join"><a href="#数组转字符串：toString-join" class="headerlink" title="数组转字符串：toString&#x2F;join"></a>数组转字符串：toString&#x2F;join</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> nums = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(nums.<span class="title function_">toString</span>()); <span class="comment">// &quot;1,2,3,4,5&quot;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(nums.<span class="title function_">join</span>(<span class="string">&quot;-&quot;</span>));  <span class="comment">// &quot;1-2-3-4-5&quot;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="数组操作：splice"><a href="#数组操作：splice" class="headerlink" title="数组操作：splice"></a>数组操作：splice</h3><p><strong>删除&#x2F;替换元素：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr.<span class="title function_">splice</span>(<span class="number">1</span>, <span class="number">3</span>));      <span class="comment">// 返回 [2, 3, 4]</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr);                   <span class="comment">// 剩余 [1, 5]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 插入元素</span></span><br><span class="line"><span class="keyword">let</span> arr2 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line">arr2.<span class="title function_">splice</span>(<span class="number">1</span>, <span class="number">0</span>, <span class="number">9</span>, <span class="number">99</span>, <span class="number">999</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr2); <span class="comment">// [1, 9, 99, 999, 2, 3]</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="截取数组：slice"><a href="#截取数组：slice" class="headerlink" title="截取数组：slice"></a>截取数组：slice</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> nums = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>];</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(nums.<span class="title function_">slice</span>(<span class="number">1</span>, -<span class="number">1</span>));  <span class="comment">// [2, 3, 4, 5, 6]</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(nums.<span class="title function_">slice</span>(<span class="number">0</span>, <span class="number">3</span>));   <span class="comment">// [1, 2, 3]</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(nums.<span class="title function_">slice</span>(<span class="number">3</span>));      <span class="comment">// [4, 5, 6, 7]</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="拼接数组：concat"><a href="#拼接数组：concat" class="headerlink" title="拼接数组：concat"></a>拼接数组：concat</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="keyword">let</span> arr2 = [<span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr1.<span class="title function_">concat</span>(arr2)); <span class="comment">// [1, 2, 3, 4, 5]</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="字符串对象"><a href="#字符串对象" class="headerlink" title="字符串对象"></a>字符串对象</h2><h3 id="不可变性特性"><a href="#不可变性特性" class="headerlink" title="不可变性特性"></a>不可变性特性</h3><p>字符串重新赋值会创建新内存空间，原空间保留。</p>
+<hr>
+<h3 id="字符定位：indexOf-lastIndexOf"><a href="#字符定位：indexOf-lastIndexOf" class="headerlink" title="字符定位：indexOf&#x2F;lastIndexOf"></a>字符定位：indexOf&#x2F;lastIndexOf</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="string">&quot;改革春风吹满地，春天来了&quot;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">indexOf</span>(<span class="string">&quot;春&quot;</span>));        <span class="comment">// 2</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">indexOf</span>(<span class="string">&quot;春&quot;</span>, <span class="number">3</span>));     <span class="comment">// 8</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">lastIndexOf</span>(<span class="string">&quot;春&quot;</span>));    <span class="comment">// 8</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="字符获取"><a href="#字符获取" class="headerlink" title="字符获取"></a>字符获取</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="string">&quot;改革春风吹满地&quot;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">charAt</span>(<span class="number">2</span>));         <span class="comment">// &quot;春&quot;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">charCodeAt</span>(<span class="number">2</span>));     <span class="comment">// 26149 (Unicode)</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str[<span class="number">2</span>]);                <span class="comment">// &quot;春&quot; (ES6)</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="字符串拼接：concat"><a href="#字符串拼接：concat" class="headerlink" title="字符串拼接：concat"></a>字符串拼接：concat</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> base = <span class="string">&quot;Hello&quot;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(base.<span class="title function_">concat</span>(<span class="string">&quot; World&quot;</span>, <span class="string">&quot;!&quot;</span>)); <span class="comment">// &quot;Hello World!&quot;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="字符串截取"><a href="#字符串截取" class="headerlink" title="字符串截取"></a>字符串截取</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="string">&quot;abcdefg&quot;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">substr</span>(<span class="number">2</span>, <span class="number">3</span>));    <span class="comment">// &quot;cde&quot; (从索引2取3字符)</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">slice</span>(<span class="number">2</span>, <span class="number">5</span>));     <span class="comment">// &quot;cde&quot; (索引2到5)</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">substring</span>(<span class="number">2</span>, <span class="number">5</span>)); <span class="comment">// &quot;cde&quot; (同slice，但兼容旧浏览器)</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="字符串替换：replace"><a href="#字符串替换：replace" class="headerlink" title="字符串替换：replace"></a>字符串替换：replace</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> text = <span class="string">&quot;apple,orange,apple&quot;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(text.<span class="title function_">replace</span>(<span class="string">&quot;apple&quot;</span>, <span class="string">&quot;kiwi&quot;</span>)); <span class="comment">// &quot;kiwi,orange,apple&quot;（仅替换首个）</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="字符串分割：split"><a href="#字符串分割：split" class="headerlink" title="字符串分割：split"></a>字符串分割：split</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> colors = <span class="string">&quot;red,blue,yellow,pink&quot;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(colors.<span class="title function_">split</span>(<span class="string">&quot;,&quot;</span>)); <span class="comment">// [&quot;red&quot;, &quot;blue&quot;, &quot;yellow&quot;, &quot;pink&quot;]</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="大小写转换"><a href="#大小写转换" class="headerlink" title="大小写转换"></a>大小写转换</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> word = <span class="string">&quot;JavaScript&quot;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(word.<span class="title function_">toUpperCase</span>()); <span class="comment">// &quot;JAVASCRIPT&quot;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(word.<span class="title function_">toLowerCase</span>()); <span class="comment">// &quot;javascript&quot;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="数据类型与内存管理"><a href="#数据类型与内存管理" class="headerlink" title="数据类型与内存管理"></a>数据类型与内存管理</h2><h3 id="值类型-vs-引用类型"><a href="#值类型-vs-引用类型" class="headerlink" title="值类型 vs 引用类型"></a>值类型 vs 引用类型</h3><ul>
+<li><strong>值类型</strong>：String、Number、Boolean、undefined、null（栈内存）</li>
+<li><strong>引用类型</strong>：Object、Array、Date（堆内存）</li>
+</ul>
+<hr>
+<h3 id="参数传递特性"><a href="#参数传递特性" class="headerlink" title="参数传递特性"></a>参数传递特性</h3><ul>
+<li>值类型参数传递：副本操作，不影响原值</li>
+<li>引用类型参数传递：地址引用，修改会影响原对象</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 值类型示例</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">modify</span>(<span class="params">num</span>) &#123;</span><br><span class="line">  num = <span class="number">10</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> x = <span class="number">5</span>;</span><br><span class="line"><span class="title function_">modify</span>(x);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(x); <span class="comment">// 5</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 引用类型示例</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">updateObj</span>(<span class="params">obj</span>) &#123;</span><br><span class="line">  obj.<span class="property">name</span> = <span class="string">&quot;Modified&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> person = &#123; <span class="attr">name</span>: <span class="string">&quot;Original&quot;</span> &#125;;</span><br><span class="line"><span class="title function_">updateObj</span>(person);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person.<span class="property">name</span>); <span class="comment">// &quot;Modified&quot;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="鼠标事件对比"><a href="#鼠标事件对比" class="headerlink" title="鼠标事件对比"></a>鼠标事件对比</h2><table>
+<thead>
+<tr>
+<th>事件</th>
+<th>触发条件</th>
+<th>特性</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>onmouseover</code></td>
+<td>鼠标进入元素时</td>
+<td>支持冒泡</td>
+</tr>
+<tr>
+<td><code>onmouseenter</code></td>
+<td>鼠标首次进入元素时</td>
+<td>不冒泡</td>
+</tr>
+<tr>
+<td><code>onmouseout</code></td>
+<td>鼠标离开元素时</td>
+<td>支持冒泡</td>
+</tr>
+<tr>
+<td><code>onmouseleave</code></td>
+<td>鼠标完全离开元素时</td>
+<td>不冒泡</td>
+</tr>
+<tr>
+<td><code>onmousemove</code></td>
+<td>鼠标在元素内移动时连续触发</td>
+<td>高频触发</td>
+</tr>
+</tbody></table>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/08/02/React.js/" rel="prev" title="React.js">
+                  <i class="fa fa-angle-left"></i> React.js
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2025/08/02/MacOS%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/" rel="next" title="MacOS使用笔记">
+                  MacOS使用笔记 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">HuaFeng</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>

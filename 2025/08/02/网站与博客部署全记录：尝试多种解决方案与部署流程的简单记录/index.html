@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"maohuifei.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.23.2","exturl":false,"sidebar":{"position":"right","width_expanded":300,"width_dual_column":240,"display":"hide","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"github-dark","dark":"github-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":"mac","style":null},"fold":{"enable":true,"height":500},"language":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="尝试多种解决方案与部署流程的简单记录">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网站与博客部署全记录">
+<meta property="og:url" content="https://maohuifei.github.io/2025/08/02/%E7%BD%91%E7%AB%99%E4%B8%8E%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%85%A8%E8%AE%B0%E5%BD%95%EF%BC%9A%E5%B0%9D%E8%AF%95%E5%A4%9A%E7%A7%8D%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%B8%8E%E9%83%A8%E7%BD%B2%E6%B5%81%E7%A8%8B%E7%9A%84%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/index.html">
+<meta property="og:site_name" content="HuaFeng&#39;s notes">
+<meta property="og:description" content="尝试多种解决方案与部署流程的简单记录">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-08-02T14:03:26.000Z">
+<meta property="article:modified_time" content="2025-08-02T14:51:37.526Z">
+<meta property="article:author" content="HuaFeng">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://maohuifei.github.io/2025/08/02/%E7%BD%91%E7%AB%99%E4%B8%8E%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%85%A8%E8%AE%B0%E5%BD%95%EF%BC%9A%E5%B0%9D%E8%AF%95%E5%A4%9A%E7%A7%8D%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%B8%8E%E9%83%A8%E7%BD%B2%E6%B5%81%E7%A8%8B%E7%9A%84%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://maohuifei.github.io/2025/08/02/%E7%BD%91%E7%AB%99%E4%B8%8E%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%85%A8%E8%AE%B0%E5%BD%95%EF%BC%9A%E5%B0%9D%E8%AF%95%E5%A4%9A%E7%A7%8D%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%B8%8E%E9%83%A8%E7%BD%B2%E6%B5%81%E7%A8%8B%E7%9A%84%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/","path":"2025/08/02/网站与博客部署全记录：尝试多种解决方案与部署流程的简单记录/","title":"网站与博客部署全记录"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>网站与博客部署全记录 | HuaFeng's notes</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">HuaFeng's notes</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">画风的在线笔记</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-announcement"><a href="/announcement" rel="section"><i class="fas fa-bullhorn fa-fw"></i>声明</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#hexo-git"><span class="nav-number">1.</span> <span class="nav-text">hexo+git</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#node%E7%9A%84%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85"><span class="nav-number">1.1.</span> <span class="nav-text">node的下载与安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#github%E6%B3%A8%E5%86%8C"><span class="nav-number">1.2.</span> <span class="nav-text">github注册</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gitforwin%E7%9A%84%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85"><span class="nav-number">1.3.</span> <span class="nav-text">gitforwin的下载与安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#githubSHH%E9%85%8D%E7%BD%AE"><span class="nav-number">1.4.</span> <span class="nav-text">githubSHH配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo%E7%9A%84%E6%9C%AC%E5%9C%B0%E4%BD%BF%E7%94%A8"><span class="nav-number">1.5.</span> <span class="nav-text">hexo的本地使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sublime%E7%9A%84%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85"><span class="nav-number">1.6.</span> <span class="nav-text">sublime的下载与安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%86hexo%E5%8F%91%E5%B8%83%E8%87%B3github"><span class="nav-number">1.7.</span> <span class="nav-text">将hexo发布至github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo%E4%B8%BB%E9%A2%98%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-number">1.8.</span> <span class="nav-text">hexo主题的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#matery%E4%B8%BB%E9%A2%98"><span class="nav-number">1.8.1.</span> <span class="nav-text">matery主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%A8%E5%B1%80css%E6%A0%B7%E5%BC%8F%E4%BF%AE%E6%94%B9"><span class="nav-number">1.8.2.</span> <span class="nav-text">全局css样式修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B0%E5%BB%BA%E6%96%87%E7%AB%A0%E9%85%8D%E7%BD%AE"><span class="nav-number">1.8.3.</span> <span class="nav-text">新建文章配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hugo"><span class="nav-number">1.9.</span> <span class="nav-text">Hugo</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">HuaFeng</p>
+  <div class="site-description" itemprop="description">画风的在线笔记</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/maohuifei" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;maohuifei" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:jzwbuere@163.com" title="E-Mail → mailto:jzwbuere@163.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://maohuifei.github.io/2025/08/02/%E7%BD%91%E7%AB%99%E4%B8%8E%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%85%A8%E8%AE%B0%E5%BD%95%EF%BC%9A%E5%B0%9D%E8%AF%95%E5%A4%9A%E7%A7%8D%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%B8%8E%E9%83%A8%E7%BD%B2%E6%B5%81%E7%A8%8B%E7%9A%84%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="HuaFeng">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HuaFeng's notes">
+      <meta itemprop="description" content="画风的在线笔记">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="网站与博客部署全记录 | HuaFeng's notes">
+      <meta itemprop="description" content="尝试多种解决方案与部署流程的简单记录">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          网站与博客部署全记录
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2025-08-02 22:03:26 / 修改时间：22:51:37" itemprop="dateCreated datePublished" datetime="2025-08-02T22:03:26+08:00">2025-08-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/" itemprop="url" rel="index"><span itemprop="name">个人网站</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+            <div class="post-description">尝试多种解决方案与部署流程的简单记录</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="hexo-git"><a href="#hexo-git" class="headerlink" title="hexo+git"></a>hexo+git</h1><p>— 博客，音译，英文名为Blogger，它的正式名称为网络日记；是使用特定的软件，在网络上出版、发表和张贴个人文章的人，或者是一种通常由个人管理、不定期张贴新的文章的网站。博客是继MSN、BBS、ICQ之后出现的第4种网络交流方式，是网络时代的个人“读者文摘”，它代表着新的生活、工作和学习方式。</p>
+<p>— 在本人搭建博客的过程中，发现互联网上的教程大多数的发布时间是几年甚至十几年之前，有些软件的版本和操作方式都已经有所改变。许多新手小白如果按照之前的教程来操作的话会产生各种各样的问题。教程中所使用的专业名词也会使小白们一头雾水，影响操作效率。</p>
+<p>— 于是在2021年4月10日发布了这篇面向纯新手小白的保姆级搭建教程，手把手教你搭建属于自己的个人博客</p>
+<p>— 教程步骤框架来自hojun.cn发布的教程，使用工具包含node.js、github、gitforwin、Git、sublime、Hexo侵删</p>
+<h2 id="node的下载与安装"><a href="#node的下载与安装" class="headerlink" title="node的下载与安装"></a>node的下载与安装</h2><p>① Node.js官网下载并打开安装包</p>
+<p>② 更改安装位置</p>
+<p>③ 是否安装必要的环境，我选的安装</p>
+<p>④ 安装完成</p>
+<p>⑤ Win+R打开运行窗口，输入cmd</p>
+<p>⑥ node -v查看版本</p>
+<h2 id="github注册"><a href="#github注册" class="headerlink" title="github注册"></a>github注册</h2><p>① 打开github官网 GitHub: Where the world builds software · GitHub</p>
+<p>② 右上角注册</p>
+<p>③ 注册流程走完后回首页，右上角加号第一个选项，传建一个新的存储库</p>
+<p>④ 存储库名称为 <a target="_blank" rel="noopener" href="http://用户名+.github+.io/">用户名+.github+.io</a>，其他默认，创建</p>
+<h2 id="gitforwin的下载与安装"><a href="#gitforwin的下载与安装" class="headerlink" title="gitforwin的下载与安装"></a>gitforwin的下载与安装</h2><p>① 浏览器输入 Git for Windows，下载gitforwin安装包</p>
+<p>② 安装git</p>
+<p>③ 更改安装位置</p>
+<p>④ 创建开始菜单快捷方式，随意，我选择不创建</p>
+<p>⑤ 点下一步全部默认就可以，到这一步选择第二个</p>
+<p>⑥ 安装完成</p>
+<p>⑦ 桌面没有新的快捷方式不要慌，正常现象，有需要的话可以在开始菜单和软件安装路径里找到并创建快捷方式</p>
+<p>⑧ 验证是否安装完成 Win+R，输入cmd，输入命令git</p>
+<h2 id="githubSHH配置"><a href="#githubSHH配置" class="headerlink" title="githubSHH配置"></a>githubSHH配置</h2><p>① 打开git的安装路径，找到git bash.exe 双击运行</p>
+<p>② 输入命令ssh-keygen -t rsa -C “<a href="mailto:991270685@qq.com">991270685@qq.com</a>“，引号内是github注册邮箱地址，回车</p>
+<p>③ 无特殊提示就回车，有（y&#x2F;n）就输入y回车</p>
+<p>④ 打开github，点击右上角头像选择 设置</p>
+<p>⑤ 选择shh和密钥选项，添加新密钥</p>
+<p>⑥ 标题就用户名+tech吧（tech技术），填到第一栏</p>
+<p>在C盘找到id_rsa.pub这个文件，以记事本形式打开，复制内容填到第二栏</p>
+<p>⑦ 提交，创建完成</p>
+<h2 id="hexo的本地使用"><a href="#hexo的本地使用" class="headerlink" title="hexo的本地使用"></a>hexo的本地使用</h2><p>① 浏览器输入 Hexo 进入hexo官网</p>
+<p>② 在合适的位置新建一个文件夹blog，关于博客的文件基本都在这里面，我选择D盘根目录</p>
+<p>③ 进入bolg文件，点击路径输入cmd，回车进入（也可以win+R，输入cmd，再用cd命令一级一级切到blog文件下）</p>
+<p>④ 回到hexo官网，复制命令 npm install hexo-cli -g 到运行窗口回车</p>
+<p>⑤ 网站下拉会有使用命令行，blog为你的博客名</p>
+<p>⑥ 输入 hexo init +博客名 回车运行</p>
+<p>⑦ 输入命令cd 博客名，进入博客文件，回到网站复制命令行 npm install 并运行</p>
+<p>⑧ 完成后输入命令 hexo s 生成本地预览，最后会生成一个4000端口的网址，复制到浏览器进入，就能看到我们的博客了</p>
+<h2 id="sublime的下载与安装"><a href="#sublime的下载与安装" class="headerlink" title="sublime的下载与安装"></a>sublime的下载与安装</h2><p>① 浏览器输入Download - Sublime Text 进去官网下载，选择自己的系统，我选择windows64位</p>
+<p>② 下载完成运行，更改安装路径</p>
+<p>③ 默认选项就可以，一直下一步。安装完成</p>
+<p>④ 打开sublime</p>
+<p>⑤ 打开sublime，在左边栏source——-posts —— hello-world.md中输入文字，ctrl+s保存</p>
+<p>⑥ 在blog路径中右击运行git bash，输入命令hexo cl清理缓存，hexo g hexo s生成本地预览</p>
+<p>⑦ 浏览器打开本地预览，更改已生效</p>
+<h2 id="将hexo发布至github"><a href="#将hexo发布至github" class="headerlink" title="将hexo发布至github"></a>将hexo发布至github</h2><p>① 打开浏览器，进入github之前新建的存储库，进入库，复制地址</p>
+<p>② 在sublime中打开-config.yml文件更改配置信息</p>
+<p>更改参数 author：名字，我的是maohuifei</p>
+<p>更改参数 ur1： 后面为github存储库的地址中的一部分（<a target="_blank" rel="noopener" href="http://xxxx.github.io/">XXXX.github.io</a>）</p>
+<p>更改参数 type：git，</p>
+<p>添加新参数 branch: gh-pages</p>
+<p>添加新参数 repo：后面为github存储库的地址</p>
+<p>保存</p>
+<p>③ 进入hexo一键部署网站部署 | Hexo ，复制hexo-deployer-git的安装命令 npm install hexo-deployer-git –save 进入git bash 运行安装</p>
+<p>④ 命令 hexo cl 清理hexo g生成 hexo d提交</p>
+<p>⑤ 浏览器输入 <a target="_blank" rel="noopener" href="http://用户名+github.io/">用户名+github.Io</a> <a target="_blank" rel="noopener" href="http://我的是maohuifei.github.io/">我的是maohuifei.github.io</a></p>
+<p>⑥ 博客搭建完成!</p>
+<h2 id="hexo主题的使用"><a href="#hexo主题的使用" class="headerlink" title="hexo主题的使用"></a>hexo主题的使用</h2><p>① 进入hexo主题官网Themes | Hexo 选择主题，以next为例</p>
+<p>② 进入主题详情，有详细安装步骤教程，每个主题进入位置不同</p>
+<h3 id="matery主题"><a href="#matery主题" class="headerlink" title="matery主题"></a><code>matery</code>主题</h3><h3 id="全局css样式修改"><a href="#全局css样式修改" class="headerlink" title="全局css样式修改"></a>全局css样式修改</h3><p>css文件地址路径<code>themes/hexo-thieme-matery/source/css/matery.css</code></p>
+<h3 id="新建文章配置"><a href="#新建文章配置" class="headerlink" title="新建文章配置"></a>新建文章配置</h3><table>
+<thead>
+<tr>
+<th>配置选项</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>title</td>
+<td>Markdown 的文件标题</td>
+<td>文章标题，强烈建议填写此选项</td>
+</tr>
+<tr>
+<td>date</td>
+<td>文件创建时的日期时间</td>
+<td>发布时间，强烈建议填写此选项，且最好保证全局唯一</td>
+</tr>
+<tr>
+<td>author</td>
+<td>根 _config.yml 中的 author</td>
+<td>文章作者</td>
+</tr>
+<tr>
+<td>img</td>
+<td>featureImages 中的某个值</td>
+<td>文章特征图，推荐使用图床(腾讯云、七牛云、又拍云等)来做图片的路径.</td>
+</tr>
+<tr>
+<td>top</td>
+<td>true</td>
+<td>推荐文章（文章是否置顶），如果 top 值为 true，则会作为首页推荐文章</td>
+</tr>
+<tr>
+<td>cover</td>
+<td>false</td>
+<td>v1.0.2版本新增，表示该文章是否需要加入到首页轮播封面中</td>
+</tr>
+<tr>
+<td>coverImg</td>
+<td>无</td>
+<td>v1.0.2版本新增，表示该文章在首页轮播封面需要显示的图片路径，如果没有，则默认使用文章的特色图片</td>
+</tr>
+<tr>
+<td>password</td>
+<td>无</td>
+<td>文章阅读密码，如果要对文章设置阅读验证密码的话，就可以设置 password 的值，该值必须是用 SHA256 加密后的密码，防止被他人识破。前提是在主题的 config.yml 中激活了 verifyPassword 选项</td>
+</tr>
+<tr>
+<td>toc</td>
+<td>true</td>
+<td>是否开启 TOC，可以针对某篇文章单独关闭 TOC 的功能。前提是在主题的 config.yml 中激活了 toc 选项</td>
+</tr>
+<tr>
+<td>mathjax</td>
+<td>false</td>
+<td>是否开启数学公式支持 ，本文章是否开启 mathjax，且需要在主题的 _config.yml 文件中也需要开启才行</td>
+</tr>
+<tr>
+<td>summary</td>
+<td>无</td>
+<td>文章摘要，自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要</td>
+</tr>
+<tr>
+<td>categories</td>
+<td>无</td>
+<td>文章分类，本主题的分类表示宏观上大的分类，只建议一篇文章一个分类</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>无</td>
+<td>文章标签，一篇文章可以多个标签</td>
+</tr>
+</tbody></table>
+<p>默认配置文件路径：</p>
+<p><code>根目录/scaffolds/post</code></p>
+<h2 id="Hugo"><a href="#Hugo" class="headerlink" title="Hugo"></a>Hugo</h2>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/08/02/%E6%B3%9B%E5%BE%AE%E4%BA%8C%E5%BC%80%E6%A0%87%E5%87%86%E4%BB%A3%E7%A0%81%E6%A8%A1%E6%9D%BF/" rel="prev" title="泛微二开标准代码模板">
+                  <i class="fa fa-angle-left"></i> 泛微二开标准代码模板
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2025/08/02/%E6%B5%8B%E8%AF%95/" rel="next" title="产品测试">
+                  产品测试 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">HuaFeng</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>

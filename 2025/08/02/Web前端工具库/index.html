@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"maohuifei.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.23.2","exturl":false,"sidebar":{"position":"right","width_expanded":300,"width_dual_column":240,"display":"hide","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"github-dark","dark":"github-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":"mac","style":null},"fold":{"enable":true,"height":500},"language":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="Web前端工具库">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Web前端工具库">
+<meta property="og:url" content="https://maohuifei.github.io/2025/08/02/Web%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7%E5%BA%93/index.html">
+<meta property="og:site_name" content="HuaFeng&#39;s notes">
+<meta property="og:description" content="Web前端工具库">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://1.94.0.101/wp-content/uploads/2024/03/URL%E7%BB%84%E6%88%90-913x176.jpg">
+<meta property="og:image" content="http://1.94.0.101/wp-content/uploads/2024/03/get%E5%87%BD%E6%95%B0-863x210.jpg">
+<meta property="og:image" content="http://1.94.0.101/wp-content/uploads/2024/03/%E4%B8%8D%E5%B8%A6%E5%8F%82%E6%95%B0get%E8%AF%B7%E6%B1%82%E8%BF%94%E5%9B%9E-767x322.jpg">
+<meta property="og:image" content="http://1.94.0.101/wp-content/uploads/2024/03/%E5%B8%A6%E5%8F%82%E6%95%B0get%E8%AF%B7%E6%B1%82%E8%BF%94%E5%9B%9E-775x303.jpg">
+<meta property="og:image" content="http://1.94.0.101/wp-content/uploads/2024/03/post%E5%87%BD%E6%95%B0-877x205.jpg">
+<meta property="og:image" content="http://1.94.0.101/wp-content/uploads/2024/03/post%E8%AF%B7%E6%B1%82%E8%BF%94%E5%9B%9E-703x196.jpg">
+<meta property="article:published_time" content="2025-08-02T14:03:26.000Z">
+<meta property="article:modified_time" content="2025-08-02T14:48:04.438Z">
+<meta property="article:author" content="HuaFeng">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://1.94.0.101/wp-content/uploads/2024/03/URL%E7%BB%84%E6%88%90-913x176.jpg">
+
+
+<link rel="canonical" href="https://maohuifei.github.io/2025/08/02/Web%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7%E5%BA%93/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://maohuifei.github.io/2025/08/02/Web%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7%E5%BA%93/","path":"2025/08/02/Web前端工具库/","title":"Web前端工具库"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Web前端工具库 | HuaFeng's notes</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">HuaFeng's notes</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">画风的在线笔记</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-announcement"><a href="/announcement" rel="section"><i class="fas fa-bullhorn fa-fw"></i>声明</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#jQuery"><span class="nav-number">1.</span> <span class="nav-text">jQuery</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#jQuery%E7%AE%80%E4%BB%8B"><span class="nav-number">1.1.</span> <span class="nav-text">jQuery简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jQuery-%E5%BA%93%E5%8A%9F%E8%83%BD"><span class="nav-number">1.2.</span> <span class="nav-text">jQuery 库功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E5%92%8C%E5%BC%95%E7%94%A8"><span class="nav-number">1.3.</span> <span class="nav-text">安装和引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%8E%E5%AE%98%E7%BD%91%E4%B8%8B%E8%BD%BDjQuery%E5%BA%93"><span class="nav-number">1.4.</span> <span class="nav-text">从官网下载jQuery库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%95%E7%94%A8%E8%AF%AD%E6%B3%95"><span class="nav-number">1.5.</span> <span class="nav-text">引用语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%8E-CDN-%E4%B8%AD%E8%BD%BD%E5%85%A5-jQuery"><span class="nav-number">1.6.</span> <span class="nav-text">从 CDN 中载入 jQuery</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80"><span class="nav-number">1.7.</span> <span class="nav-text">基础</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%88%E6%9E%9C"><span class="nav-number">1.8.</span> <span class="nav-text">效果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%93%8D%E4%BD%9CHTML"><span class="nav-number">1.9.</span> <span class="nav-text">操作HTML</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%81%8D%E5%8E%86"><span class="nav-number">1.10.</span> <span class="nav-text">遍历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ajax"><span class="nav-number">1.11.</span> <span class="nav-text">Ajax</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B6%E4%BB%96"><span class="nav-number">1.12.</span> <span class="nav-text">其他</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%92%E4%BB%B6"><span class="nav-number">1.13.</span> <span class="nav-text">插件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AJAX"><span class="nav-number">2.</span> <span class="nav-text">AJAX</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#URL"><span class="nav-number">2.1.</span> <span class="nav-text">URL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A6%82%E5%BF%B5"><span class="nav-number">2.2.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%84%E6%88%90%E9%83%A8%E5%88%86"><span class="nav-number">2.3.</span> <span class="nav-text">组成部分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%B8%8E%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E9%80%9A%E4%BF%A1%E8%BF%87%E7%A8%8B"><span class="nav-number">2.4.</span> <span class="nav-text">客户端与服务器的通信过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E9%A1%B5%E5%A6%82%E4%BD%95%E5%90%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%8F%91%E9%80%81%E8%AF%B7%E6%B1%82"><span class="nav-number">2.5.</span> <span class="nav-text">网页如何向服务器发送请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%B7%E6%B1%82%E6%96%B9%E5%BC%8F"><span class="nav-number">2.6.</span> <span class="nav-text">请求方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%AD%A6%E4%B9%A0AJAX%EF%BC%9F"><span class="nav-number">2.7.</span> <span class="nav-text">为什么要学习AJAX？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AJAX%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="nav-number">2.8.</span> <span class="nav-text">AJAX优缺点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jQuery%E4%B8%AD%E5%8F%91%E8%B5%B7AJAX%E8%AF%B7%E6%B1%82%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="nav-number">2.9.</span> <span class="nav-text">jQuery中发起AJAX请求的三种方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#get"><span class="nav-number">2.10.</span> <span class="nav-text">$.get()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8get%E5%8F%91%E8%B5%B7%E4%B8%8D%E5%B8%A6%E5%8F%82%E6%95%B0%E7%9A%84%E8%AF%B7%E6%B1%82"><span class="nav-number">2.11.</span> <span class="nav-text">使用get发起不带参数的请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8get%E5%8F%91%E8%B5%B7%E5%B8%A6%E5%8F%82%E6%95%B0%E7%9A%84%E8%AF%B7%E6%B1%82"><span class="nav-number">2.12.</span> <span class="nav-text">使用get发起带参数的请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#post"><span class="nav-number">2.13.</span> <span class="nav-text">$.post()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ajax"><span class="nav-number">2.14.</span> <span class="nav-text">$.ajax()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8E%A5%E5%8F%A3"><span class="nav-number">2.15.</span> <span class="nav-text">接口</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Emmet"><span class="nav-number">3.</span> <span class="nav-text">Emmet</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Emmet%E8%AF%AD%E6%B3%95%E4%BA%8EHTML%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8"><span class="nav-number">3.1.</span> <span class="nav-text">Emmet语法于HTML中的应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%9F%E6%88%90%E6%A0%87%E7%AD%BE"><span class="nav-number">3.2.</span> <span class="nav-text">生成标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%9F%E6%88%90%E5%A4%9A%E4%B8%AA%E7%9B%B8%E5%90%8C%E6%A0%87%E7%AD%BE"><span class="nav-number">3.3.</span> <span class="nav-text">生成多个相同标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%88%B6%E5%AD%90%E7%BA%A7%E6%A0%87%E7%AD%BE"><span class="nav-number">3.4.</span> <span class="nav-text">父子级标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%84%E5%BC%9F%E7%BA%A7%E6%A0%87%E7%AD%BE"><span class="nav-number">3.5.</span> <span class="nav-text">兄弟级标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%9F%E6%88%90%E5%B8%A6%E6%9C%89%E7%B1%BB%E5%90%8D%E6%88%96%E8%80%85id%E5%90%8D%E5%AD%97%E7%9A%84"><span class="nav-number">3.6.</span> <span class="nav-text">生成带有类名或者id名字的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%9F%E6%88%90%E6%9C%89%E9%A1%BA%E5%BA%8F%E7%9A%84"><span class="nav-number">3.7.</span> <span class="nav-text">生成有顺序的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8%E7%94%9F%E6%88%90%E7%9A%84%E6%A0%87%E7%AD%BE%E9%87%8C%E5%86%99%E5%86%85%E5%AE%B9"><span class="nav-number">3.8.</span> <span class="nav-text">在生成的标签里写内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Emmet%E8%AF%AD%E6%B3%95%E4%BA%8ECSS%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8"><span class="nav-number">3.9.</span> <span class="nav-text">Emmet语法于CSS中的应用</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">HuaFeng</p>
+  <div class="site-description" itemprop="description">画风的在线笔记</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/maohuifei" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;maohuifei" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:jzwbuere@163.com" title="E-Mail → mailto:jzwbuere@163.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://maohuifei.github.io/2025/08/02/Web%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7%E5%BA%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="HuaFeng">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HuaFeng's notes">
+      <meta itemprop="description" content="画风的在线笔记">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Web前端工具库 | HuaFeng's notes">
+      <meta itemprop="description" content="Web前端工具库">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Web前端工具库
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2025-08-02 22:03:26 / 修改时间：22:48:04" itemprop="dateCreated datePublished" datetime="2025-08-02T22:03:26+08:00">2025-08-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+            <div class="post-description">Web前端工具库</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h2 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a>jQuery</h2><p>jquery是一个快速、简洁的JavaScript框架，是继Prototype之后又一个优秀的JavaScript代码库（或JavaScript框架）。</p>
+<h3 id="jQuery简介"><a href="#jQuery简介" class="headerlink" title="jQuery简介"></a>jQuery简介</h3><ul>
+<li>jQuery 是一个 JavaScript 库</li>
+<li>jQuery 极大地简化了 JavaScript 编程</li>
+<li>jQuery 很容易学习</li>
+</ul>
+<h3 id="jQuery-库功能"><a href="#jQuery-库功能" class="headerlink" title="jQuery 库功能"></a>jQuery 库功能</h3><ul>
+<li>HTML 元素选取</li>
+<li>HTML 元素操作</li>
+<li>CSS 操作</li>
+<li>HTML 事件函数</li>
+<li>JavaScript 特效和动画</li>
+<li>HTML DOM 遍历和修改</li>
+<li>AJAX</li>
+<li>Utilities</li>
+<li><em>提示：</em>除此之外，jQuery 还提供了大量的插件</li>
+</ul>
+<h3 id="安装和引用"><a href="#安装和引用" class="headerlink" title="安装和引用"></a>安装和引用</h3><h3 id="从官网下载jQuery库"><a href="#从官网下载jQuery库" class="headerlink" title="从官网下载jQuery库"></a>从官网下载jQuery库</h3><p><a target="_blank" rel="noopener" href="https://jquery.com/download/">官方下载地址</a></p>
+<p><strong>两个版本：</strong></p>
+<ul>
+<li>Production version - 用于实际的网站中，已被精简和压缩。</li>
+<li>Development version - 用于测试和开发（未压缩，是可读的代码）</li>
+</ul>
+<h3 id="引用语法"><a href="#引用语法" class="headerlink" title="引用语法"></a>引用语法</h3><p><code>&lt;head&gt;&lt;script src=&quot;jquery-1.10.2.min.js&quot;&gt;&lt;/script&gt;&lt;/head&gt;</code>HTML</p>
+<p>将下载的文件放在网页的同一目录下，就可以使用jQuery</p>
+<h3 id="从-CDN-中载入-jQuery"><a href="#从-CDN-中载入-jQuery" class="headerlink" title="从 CDN 中载入 jQuery"></a>从 CDN 中载入 jQuery</h3><p>如果您不希望下载并存放 jQuery，那么也可以通过 CDN（内容分发网络） 引用它</p>
+<p><strong>百度：</strong></p>
+<p><code>&lt;head&gt;&lt;script src=&quot;&lt;https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js&gt;&quot;&gt;&lt;/script&gt;&lt;/head&gt;</code>HTML</p>
+<p><strong>又拍云：</strong></p>
+<p><code>&lt;head&gt;&lt;script src=&quot;&lt;https://upcdn.b0.upaiyun.com/libs/jquery/jquery-2.0.2.min.js&gt;&quot;&gt;&lt;/script&gt;&lt;/head&gt;</code>HTML</p>
+<p><strong>新浪：</strong></p>
+<p><code>&lt;head&gt;&lt;script src=&quot;&lt;https://lib.sinaapp.com/js/jquery/2.0.2/jquery-2.0.2.min.js&gt;&quot;&gt;&lt;/script&gt;&lt;/head&gt;</code>HTML</p>
+<p><strong>Google:</strong></p>
+<p><code>&lt;head&gt;&lt;script src=&quot;&lt;https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js&gt;&quot;&gt;&lt;/script&gt;&lt;/head&gt;</code>HTML</p>
+<p>许多用户在访问其他站点时，已经从百度、又拍云、新浪、谷歌或微软加载过jQuery。</p>
+<p>所以结果是，当他们访问您的站点时，会从缓存中加载jQuery，这样可以减少加载时间。</p>
+<p>同时，大多数 CDN 都可以确保当用户向其请求文件时，会从离用户最近的服务器上返回响应，这样也可以提高加载速度。</p>
+<h3 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h3><h3 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h3><h3 id="操作HTML"><a href="#操作HTML" class="headerlink" title="操作HTML"></a>操作HTML</h3><h3 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h3><h3 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h3><h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><h3 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h3><h2 id="AJAX"><a href="#AJAX" class="headerlink" title="AJAX"></a>AJAX</h2><p>AJAX不是JavaScript的规范，它只是一个哥们“发明”的缩写：Asynchronous JavaScript and XML，意思就是用JavaScript执行异步网络请求。</p>
+<p>用JavaScript写一个完整的AJAX代码并不复杂，但是需要注意：AJAX请求是异步执行的，也就是说，要通过回调函数获得响应</p>
+<h3 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h3><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>URL，统一资源定位符，用于标识互联网上每个资源的唯一存放位置。</p>
+<p>浏览器只有经过URL地址，才能正确定位资源的存放位置，从而成功访问到对应的资源。</p>
+<h3 id="组成部分"><a href="#组成部分" class="headerlink" title="组成部分"></a>组成部分</h3><ol>
+<li>客户端与服务器之间的<strong>通信协议</strong></li>
+<li>存有该资源的<strong>服务器名称</strong></li>
+<li>资源在服务器上的<strong>具体位置</strong></li>
+</ol>
+<p><img src="http://1.94.0.101/wp-content/uploads/2024/03/URL%E7%BB%84%E6%88%90-913x176.jpg" alt="http://1.94.0.101/wp-content/uploads/2024/03/URL组成-913x176.jpg"></p>
+<h3 id="客户端与服务器的通信过程"><a href="#客户端与服务器的通信过程" class="headerlink" title="客户端与服务器的通信过程"></a>客户端与服务器的通信过程</h3><p>通信过程分为：请求、处理、相应</p>
+<h3 id="网页如何向服务器发送请求"><a href="#网页如何向服务器发送请求" class="headerlink" title="网页如何向服务器发送请求"></a>网页如何向服务器发送请求</h3><ol>
+<li>输入网址</li>
+<li>a标签的页面跳转</li>
+<li>表单提交</li>
+<li>postman模拟http请求</li>
+</ol>
+<p>Ajax的原理是通过<code>XMLHttpRequest</code>对象向服务器发送请求的</p>
+<p>最简单的用法：</p>
+<p><code>var xhr=new XMLHttpRequest()</code>JavaScript</p>
+<h3 id="请求方式"><a href="#请求方式" class="headerlink" title="请求方式"></a>请求方式</h3><ul>
+<li>get请求，通常用于获取服务器资源（接收）例如：根据URL地址，从服务器获取文件、图片、数据资源等</li>
+<li>post请求，通常用于向服务器提交数据（发送）例如：提交的登录信息、注册信息、用户信息等各种数据提交操作</li>
+</ul>
+<h3 id="为什么要学习AJAX？"><a href="#为什么要学习AJAX？" class="headerlink" title="为什么要学习AJAX？"></a>为什么要学习AJAX？</h3><p>之前所学的技术，只能把网页做的更美观漂亮，或添加一些动画效果,但是, Ajax能让我们轻松实现<strong>网页与服务器之间的数据交互</strong>。</p>
+<h3 id="AJAX优缺点"><a href="#AJAX优缺点" class="headerlink" title="AJAX优缺点"></a>AJAX优缺点</h3><p><strong>优点：</strong>按需获取数据，提升系统性能</p>
+<p><strong>缺点：</strong>异步获取数据，不利于搜索引擎优化</p>
+<h3 id="jQuery中发起AJAX请求的三种方式"><a href="#jQuery中发起AJAX请求的三种方式" class="headerlink" title="jQuery中发起AJAX请求的三种方式"></a>jQuery中发起AJAX请求的三种方式</h3><p>浏览器中提供的<code>XMLHttpRequest</code>用法比较复杂,所以jQuery对<code>XML HttpRequest</code>进行了封装,提供了一系列Ajax相关的函数,极大地降低了Ajax的使用难度。</p>
+<h3 id="get"><a href="#get" class="headerlink" title="$.get()"></a>$.get()</h3><p>用途单一，仅用于向服务器请求资源</p>
+<p><strong>基本语法：</strong></p>
+<p><code>$.get(url,[data],[callback])//URL是必须的，后面两个是可选的</code>JavaScript</p>
+<p><img src="http://1.94.0.101/wp-content/uploads/2024/03/get%E5%87%BD%E6%95%B0-863x210.jpg" alt="http://1.94.0.101/wp-content/uploads/2024/03/get函数-863x210.jpg"></p>
+<h3 id="使用get发起不带参数的请求"><a href="#使用get发起不带参数的请求" class="headerlink" title="使用get发起不带参数的请求"></a>使用get发起不带参数的请求</h3><p>直接提供URL地址和请求成功的回调函数</p>
+<p><strong>实例代码：</strong></p>
+<p><code>&lt;script&gt; $(function() &#123; $(&#39;#btnAJAX&#39;).on(&#39;click&#39;, function() &#123; $.get(&#39;&lt;http://www.liulongbin.top:3006/api/getbooks&gt;&#39;, function(res) &#123; console.log(res) &#125;) &#125;) &#125;)&lt;/script&gt;</code>JavaScript</p>
+<p><img src="http://1.94.0.101/wp-content/uploads/2024/03/%E4%B8%8D%E5%B8%A6%E5%8F%82%E6%95%B0get%E8%AF%B7%E6%B1%82%E8%BF%94%E5%9B%9E-767x322.jpg" alt="http://1.94.0.101/wp-content/uploads/2024/03/不带参数get请求返回-767x322.jpg"></p>
+<h3 id="使用get发起带参数的请求"><a href="#使用get发起带参数的请求" class="headerlink" title="使用get发起带参数的请求"></a>使用get发起带参数的请求</h3><p><strong>实例代码：</strong></p>
+<p><code>&lt;script&gt; $(function() &#123; $(&#39;#btnAJAX&#39;).on(&#39;click&#39;, function() &#123; $.get(&#39;&lt;http://www.liulongbin.top:3006/api/getbooks&gt;&#39;, &#123; id: 1 &#125;, function(res) &#123; console.log(res) &#125;) &#125;) &#125;)&lt;/script&gt;</code>JavaScript</p>
+<p><img src="http://1.94.0.101/wp-content/uploads/2024/03/%E5%B8%A6%E5%8F%82%E6%95%B0get%E8%AF%B7%E6%B1%82%E8%BF%94%E5%9B%9E-775x303.jpg" alt="http://1.94.0.101/wp-content/uploads/2024/03/带参数get请求返回-775x303.jpg"></p>
+<h3 id="post"><a href="#post" class="headerlink" title="$.post()"></a>$.post()</h3><p>用途单一，仅用于向服务器发送请求</p>
+<p><strong>基本语法：</strong></p>
+<p><code>$.post(url,[data],[callback])//URL是必须的，后面两个是可选的</code>JavaScript</p>
+<p><img src="http://1.94.0.101/wp-content/uploads/2024/03/post%E5%87%BD%E6%95%B0-877x205.jpg" alt="http://1.94.0.101/wp-content/uploads/2024/03/post函数-877x205.jpg"></p>
+<p><code>&lt;script&gt; $(function() &#123; $(&#39;#btnpost&#39;).on(&#39;click&#39;, function() &#123; $.post(&#39;&lt;http://www.liulongbin.top:3006/api/addbook&gt;&#39;, &#123; bookname: &#39;大耳朵图图&#39;, author: &#39;胡图图&#39;, publisher: &#39;猫会飞呀出版社&#39; &#125;, function(res) &#123; console.log(res); &#125;) &#125;) &#125;) &lt;/script&gt;</code>JavaScript</p>
+<p><img src="http://1.94.0.101/wp-content/uploads/2024/03/post%E8%AF%B7%E6%B1%82%E8%BF%94%E5%9B%9E-703x196.jpg" alt="http://1.94.0.101/wp-content/uploads/2024/03/post请求返回-703x196.jpg"></p>
+<h3 id="ajax"><a href="#ajax" class="headerlink" title="$.ajax()"></a>$.ajax()</h3><p>相比于$.get()和$.post()函数，jQuery中提供的$.ajax()函数，是一个功能比较综合的函数，它允许我们对ajax请求进行更详细的配置</p>
+<p><strong>基本语法：</strong></p>
+<p><code>$.ajax(&#123; type:&#39;&#39;,//请求的方式 url:&#39;&#39;,//请求的url地址 data:&#123;&#125;,//这次请求要携带的数据 success:function(res)&#123;&#125;//请求成功之后的回调函数&#125;)</code>JavaScript</p>
+<p><strong>实例代码：</strong></p>
+<p><code>&lt;script&gt; $(function() &#123; $(&#39;#btnajax&#39;).on(&#39;click&#39;, function() &#123; $.ajax(&#123; type: &#39;POST&#39;, url: &#39;&lt;http://www.liulongbin.top:3006/api/addbook&gt;&#39;, data: &#123; bookname: &#39;图图删减版&#39;, author: &#39;胡图图&#39;, publisher: &#39;猫会飞呀出版社&#39; &#125;, success: function(res) &#123; console.log(res); &#125; &#125;) &#125;) &#125;)&lt;/script&gt;</code>JavaScript</p>
+<h3 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h3><p>使用ajax使用数据时，被请求的url地址，就叫做数据接口</p>
+<h2 id="Emmet"><a href="#Emmet" class="headerlink" title="Emmet"></a>Emmet</h2><p>Emmet (前身为 Zen Coding) 是一个能大幅度提高前端开发效率的一个工具。</p>
+<p>基本上，大多数的文本编辑器都会允许你存储和重用一些代码块，我们称之为“片段”。</p>
+<p>虽然片段能很好地推动你得生产力，但大多数的实现都有这样一个缺点：你必须先定义你得代码片段，并且不能再运行时进行拓展。</p>
+<p>Emmet把片段这个概念提高到了一个新的层次：你可以设置CSS形式的能够动态被解析的表达式，然后根据你所输入的缩写来得到相应的内容。</p>
+<p>Emmet是很成熟的并且非常适用于编写HTML&#x2F;XML 和 CSS 代码的前端开发人员，但也可以用于编程语言。</p>
+<h3 id="Emmet语法于HTML中的应用"><a href="#Emmet语法于HTML中的应用" class="headerlink" title="Emmet语法于HTML中的应用"></a>Emmet语法于HTML中的应用</h3><h3 id="生成标签"><a href="#生成标签" class="headerlink" title="生成标签"></a>生成标签</h3><p>直接输入标签名 按tab键</p>
+<h3 id="生成多个相同标签"><a href="#生成多个相同标签" class="headerlink" title="生成多个相同标签"></a>生成多个相同标签</h3><p>在标签名后加 * 比如：div* 3为生成三个div标签</p>
+<h3 id="父子级标签"><a href="#父子级标签" class="headerlink" title="父子级标签"></a>父子级标签</h3><p>标签名间加”&gt;”，如：ul&gt;li</p>
+<h3 id="兄弟级标签"><a href="#兄弟级标签" class="headerlink" title="兄弟级标签"></a>兄弟级标签</h3><p>标签名间加”+”，如：div+p</p>
+<h3 id="生成带有类名或者id名字的"><a href="#生成带有类名或者id名字的" class="headerlink" title="生成带有类名或者id名字的"></a>生成带有类名或者id名字的</h3><p>直接写 .name 或者 #name 再按tab键</p>
+<h3 id="生成有顺序的"><a href="#生成有顺序的" class="headerlink" title="生成有顺序的"></a>生成有顺序的</h3><p>使用自增符号”$”，如：div$ + tab键</p>
+<h3 id="在生成的标签里写内容"><a href="#在生成的标签里写内容" class="headerlink" title="在生成的标签里写内容"></a>在生成的标签里写内容</h3><p>标签名后面加花括号：”{}”，花括号里写内容</p>
+<h3 id="Emmet语法于CSS中的应用"><a href="#Emmet语法于CSS中的应用" class="headerlink" title="Emmet语法于CSS中的应用"></a>Emmet语法于CSS中的应用</h3><ul>
+<li>CSS基本采取简写形式即可</li>
+<li>如：w100 按tab键 生成 width：100px</li>
+<li>lh100 按tab键 生成 line-height：100px</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/08/02/SEO(%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E4%BC%98%E5%8C%96)/" rel="prev" title="SEO(搜索引擎优化)">
+                  <i class="fa fa-angle-left"></i> SEO(搜索引擎优化)
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2025/08/02/Vue.js/" rel="next" title="Vue.js">
+                  Vue.js <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">HuaFeng</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>

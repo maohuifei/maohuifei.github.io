@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"maohuifei.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.23.2","exturl":false,"sidebar":{"position":"right","width_expanded":300,"width_dual_column":240,"display":"hide","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"github-dark","dark":"github-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":"mac","style":null},"fold":{"enable":true,"height":500},"language":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java">
+<meta property="og:url" content="https://maohuifei.github.io/2025/08/02/Java/index.html">
+<meta property="og:site_name" content="HuaFeng&#39;s notes">
+<meta property="og:description" content="Java">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2013/12/java-extends-2020-12-08.png">
+<meta property="og:image" content="http://1.94.0.101/wp-content/uploads/2024/04/image-6-1024x1024.png">
+<meta property="og:image" content="http://1.94.0.101/wp-content/uploads/2024/04/image-8-edited.png">
+<meta property="article:published_time" content="2025-08-02T14:03:26.000Z">
+<meta property="article:modified_time" content="2025-08-02T14:50:26.543Z">
+<meta property="article:author" content="HuaFeng">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.runoob.com/wp-content/uploads/2013/12/java-extends-2020-12-08.png">
+
+
+<link rel="canonical" href="https://maohuifei.github.io/2025/08/02/Java/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://maohuifei.github.io/2025/08/02/Java/","path":"2025/08/02/Java/","title":"Java"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Java | HuaFeng's notes</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">HuaFeng's notes</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">画风的在线笔记</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-announcement"><a href="/announcement" rel="section"><i class="fas fa-bullhorn fa-fw"></i>声明</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#java%E7%89%B9%E7%82%B9"><span class="nav-number">1.</span> <span class="nav-text">java特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="nav-number">2.</span> <span class="nav-text">环境搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%88%E6%9C%AC%E9%80%89%E6%8B%A9"><span class="nav-number">2.1.</span> <span class="nav-text">版本选择</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A5%E9%AA%A4"><span class="nav-number">2.2.</span> <span class="nav-text">步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4"><span class="nav-number">2.3.</span> <span class="nav-text">相关命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%90%E8%A1%8C"><span class="nav-number">3.</span> <span class="nav-text">运行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95"><span class="nav-number">4.</span> <span class="nav-text">基础语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A8%E9%87%8A"><span class="nav-number">4.1.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%95%E8%A1%8C"><span class="nav-number">4.2.</span> <span class="nav-text">单行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E8%A1%8C"><span class="nav-number">4.3.</span> <span class="nav-text">多行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E6%A1%A3%E6%B3%A8%E9%87%8A"><span class="nav-number">4.4.</span> <span class="nav-text">文档注释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%AC%E4%B9%89%E7%AC%A6"><span class="nav-number">4.5.</span> <span class="nav-text">转义符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">4.6.</span> <span class="nav-text">关键字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%87%E8%AF%86%E7%AC%A6"><span class="nav-number">4.7.</span> <span class="nav-text">标识符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-number">4.8.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%84%E5%88%99"><span class="nav-number">4.9.</span> <span class="nav-text">规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ps"><span class="nav-number">4.10.</span> <span class="nav-text">ps</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%98%E9%87%8F"><span class="nav-number">4.11.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%84%E5%88%99-1"><span class="nav-number">4.12.</span> <span class="nav-text">规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E4%BE%8B"><span class="nav-number">4.13.</span> <span class="nav-text">实例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F"><span class="nav-number">4.14.</span> <span class="nav-text">局部变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E4%BE%8B%E5%8F%98%E9%87%8F"><span class="nav-number">4.15.</span> <span class="nav-text">实例变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F%EF%BC%88%E7%B1%BB%E5%8F%98%E9%87%8F%EF%BC%89"><span class="nav-number">4.16.</span> <span class="nav-text">静态变量（类变量）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%82%E6%95%B0%E5%8F%98%E9%87%8F"><span class="nav-number">4.17.</span> <span class="nav-text">参数变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A"><span class="nav-number">4.18.</span> <span class="nav-text">总结：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">4.19.</span> <span class="nav-text">运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">4.20.</span> <span class="nav-text">算术运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">4.21.</span> <span class="nav-text">关系运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">4.22.</span> <span class="nav-text">位运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">4.23.</span> <span class="nav-text">逻辑运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">4.24.</span> <span class="nav-text">赋值运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9D%A1%E4%BB%B6%E8%BF%90%E7%AE%97%E7%AC%A6%EF%BC%88-%EF%BC%89"><span class="nav-number">4.25.</span> <span class="nav-text">条件运算符（?:）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#instanceof-%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">4.26.</span> <span class="nav-text">instanceof 运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6"><span class="nav-number">4.27.</span> <span class="nav-text">流程控制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD%EF%BC%88if%E2%80%A6%E2%80%A6else%EF%BC%89"><span class="nav-number">4.28.</span> <span class="nav-text">条件判断（if……else）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%89%E6%8B%A9%E7%BB%93%E6%9E%84%EF%BC%88switch%E2%80%A6%E2%80%A6case1-case2-%E2%80%A6%E2%80%A6%EF%BC%89"><span class="nav-number">4.29.</span> <span class="nav-text">选择结构（switch……case1:case2:……）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84"><span class="nav-number">4.30.</span> <span class="nav-text">循环结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#while"><span class="nav-number">4.31.</span> <span class="nav-text">while</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#do-while"><span class="nav-number">4.32.</span> <span class="nav-text">do while</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#for"><span class="nav-number">4.33.</span> <span class="nav-text">for</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#for%E5%A2%9E%E5%BC%BA"><span class="nav-number">4.34.</span> <span class="nav-text">for增强</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#break"><span class="nav-number">4.35.</span> <span class="nav-text">break</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#continue"><span class="nav-number">4.36.</span> <span class="nav-text">continue</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E7%BB%84"><span class="nav-number">4.37.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%84%E5%88%99-2"><span class="nav-number">4.38.</span> <span class="nav-text">规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84"><span class="nav-number">4.39.</span> <span class="nav-text">一维数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84"><span class="nav-number">4.40.</span> <span class="nav-text">二维数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E6%95%B0%E7%BB%84"><span class="nav-number">4.41.</span> <span class="nav-text">动态数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%84%E7%90%86%E6%95%B0%E7%BB%84"><span class="nav-number">4.42.</span> <span class="nav-text">处理数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Arryes%E5%B7%A5%E5%85%B7%E7%B1%BB"><span class="nav-number">4.43.</span> <span class="nav-text">Arryes工具类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%83%E4%B9%A0"><span class="nav-number">5.</span> <span class="nav-text">练习</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#100%E5%86%85%E7%9A%84%E8%B4%A8%E6%95%B0"><span class="nav-number">5.1.</span> <span class="nav-text">100内的质数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E8%AE%B0%E8%B4%A6"><span class="nav-number">5.2.</span> <span class="nav-text">简单记账</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B"><span class="nav-number">6.</span> <span class="nav-text">面向对象编程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E5%8F%8A%E7%B1%BB%E7%9A%84%E5%86%85%E9%83%A8%E6%88%90%E5%91%98"><span class="nav-number">6.1.</span> <span class="nav-text">类及类的内部成员</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B1%9E%E6%80%A7%E3%80%81%E6%96%B9%E6%B3%95"><span class="nav-number">6.2.</span> <span class="nav-text">属性、方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9E%84%E9%80%A0%E5%99%A8"><span class="nav-number">6.3.</span> <span class="nav-text">构造器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%84%E5%88%99%EF%BC%9A"><span class="nav-number">6.4.</span> <span class="nav-text">规则：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90%EF%BC%9A"><span class="nav-number">6.5.</span> <span class="nav-text">例子：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%9C%E7%94%A8%EF%BC%9A"><span class="nav-number">6.6.</span> <span class="nav-text">作用：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B1%9E%E6%80%A7%E8%B5%8B%E5%80%BC"><span class="nav-number">6.7.</span> <span class="nav-text">属性赋值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%9D%97"><span class="nav-number">6.8.</span> <span class="nav-text">代码块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E9%83%A8%E7%B1%BB"><span class="nav-number">6.9.</span> <span class="nav-text">内部类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E9%83%A8%E7%B1%BB%E8%AE%BF%E9%97%AE%E5%A4%96%E9%83%A8%E7%B1%BB%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F%EF%BC%9A"><span class="nav-number">6.10.</span> <span class="nav-text">内部类访问外部类成员变量：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%99%E6%80%81%E6%88%90%E5%91%98%E5%86%85%E9%83%A8%E7%B1%BB"><span class="nav-number">6.11.</span> <span class="nav-text">静态成员内部类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%9E%E9%9D%99%E6%80%81%E6%88%90%E5%91%98%E5%86%85%E9%83%A8%E7%B1%BB"><span class="nav-number">6.12.</span> <span class="nav-text">非静态成员内部类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B1%80%E9%83%A8%E5%86%85%E9%83%A8%E7%B1%BB"><span class="nav-number">6.13.</span> <span class="nav-text">局部内部类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%BF%E5%90%8D%E5%86%85%E9%83%A8%E7%B1%BB"><span class="nav-number">6.14.</span> <span class="nav-text">匿名内部类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%85%E8%A3%85%E7%B1%BB"><span class="nav-number">6.15.</span> <span class="nav-text">包装类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9E%9A%E4%B8%BE%E7%B1%BB"><span class="nav-number">6.16.</span> <span class="nav-text">枚举类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%89%B9%E5%BE%81"><span class="nav-number">6.17.</span> <span class="nav-text">面向对象的特征</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%81%E8%A3%85"><span class="nav-number">6.18.</span> <span class="nav-text">封装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9D%83%E9%99%90%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="nav-number">6.19.</span> <span class="nav-text">权限修饰符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%A7%E6%89%BF"><span class="nav-number">6.20.</span> <span class="nav-text">继承</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%84%E5%88%99-3"><span class="nav-number">6.21.</span> <span class="nav-text">规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E5%9E%8B"><span class="nav-number">6.22.</span> <span class="nav-text">类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%B9%E7%82%B9"><span class="nav-number">6.23.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E9%94%AE%E5%AD%97-1"><span class="nav-number">6.24.</span> <span class="nav-text">关键字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#extends"><span class="nav-number">6.25.</span> <span class="nav-text">extends</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#implements"><span class="nav-number">6.26.</span> <span class="nav-text">implements</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#super%E5%92%8Cthis"><span class="nav-number">6.27.</span> <span class="nav-text">super和this</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#final"><span class="nav-number">6.28.</span> <span class="nav-text">final</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9E%84%E9%80%A0%E5%99%A8%E7%9A%84%E7%BB%A7%E6%89%BF"><span class="nav-number">6.29.</span> <span class="nav-text">构造器的继承</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E6%80%81"><span class="nav-number">6.30.</span> <span class="nav-text">多态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E7%9A%84%E9%87%8D%E5%86%99%E5%92%8C%E9%87%8D%E8%BD%BD"><span class="nav-number">6.31.</span> <span class="nav-text">方法的重写和重载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E5%86%99-override"><span class="nav-number">6.32.</span> <span class="nav-text">重写(override)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E8%BD%BD-overload"><span class="nav-number">6.33.</span> <span class="nav-text">重载(overload)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%A4%9A%E6%80%81%E6%80%A7"><span class="nav-number">6.34.</span> <span class="nav-text">对象的多态性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%BD%E8%B1%A1"><span class="nav-number">6.35.</span> <span class="nav-text">抽象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%BD%E8%B1%A1%E6%96%B9%E6%B3%95"><span class="nav-number">6.36.</span> <span class="nav-text">抽象方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%BD%E8%B1%A1%E7%B1%BB"><span class="nav-number">6.37.</span> <span class="nav-text">抽象类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B6%E5%AE%83%E5%85%B3%E9%94%AE%E5%AD%97%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-number">6.38.</span> <span class="nav-text">其它关键字的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8E%A5%E5%8F%A3"><span class="nav-number">6.39.</span> <span class="nav-text">接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#object%E7%B1%BB"><span class="nav-number">6.40.</span> <span class="nav-text">object类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">6.41.</span> <span class="nav-text">常用的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#toString-NaN"><span class="nav-number">6.42.</span> <span class="nav-text">toString()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#equals-Object-obj"><span class="nav-number">6.43.</span> <span class="nav-text">equals(Object obj)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hashCode"><span class="nav-number">6.44.</span> <span class="nav-text">hashCode()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#getClass"><span class="nav-number">6.45.</span> <span class="nav-text">getClass()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A8%E8%A7%A3"><span class="nav-number">6.46.</span> <span class="nav-text">注解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F"><span class="nav-number">6.47.</span> <span class="nav-text">单例模式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%94%E7%94%A8"><span class="nav-number">7.</span> <span class="nav-text">应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86"><span class="nav-number">7.1.</span> <span class="nav-text">异常处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%82%E5%B8%B8"><span class="nav-number">7.2.</span> <span class="nav-text">异常</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%9B%E5%87%BA%E6%9C%BA%E5%88%B6"><span class="nav-number">7.3.</span> <span class="nav-text">抛出机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="nav-number">7.4.</span> <span class="nav-text">体系结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F"><span class="nav-number">7.5.</span> <span class="nav-text">处理方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#try-chtch-finally%EF%BC%88%E6%8A%93%E6%8A%9B%E6%A8%A1%E5%9E%8B%EF%BC%89"><span class="nav-number">7.6.</span> <span class="nav-text">try-chtch-finally（抓抛模型）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#throw-%E5%BC%82%E5%B8%B8%E7%B1%BB%E5%9E%8B"><span class="nav-number">7.7.</span> <span class="nav-text">throw+异常类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BC%82%E5%B8%B8"><span class="nav-number">7.8.</span> <span class="nav-text">自定义异常</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E7%BA%BF%E7%A8%8B"><span class="nav-number">7.9.</span> <span class="nav-text">多线程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E7%BA%BF%E7%A8%8B"><span class="nav-number">7.10.</span> <span class="nav-text">创建线程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%A7%E6%89%BFThread%E7%B1%BB"><span class="nav-number">7.11.</span> <span class="nav-text">继承Thread类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0Runnable%E6%8E%A5%E5%8F%A3"><span class="nav-number">7.12.</span> <span class="nav-text">实现Runnable接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%EF%BC%88%E5%90%8C%E6%AD%A5%EF%BC%89"><span class="nav-number">7.13.</span> <span class="nav-text">线程安全（同步）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#synchronized%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="nav-number">7.14.</span> <span class="nav-text">synchronized修饰符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E7%8A%B6%E6%80%81"><span class="nav-number">7.15.</span> <span class="nav-text">线程状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wait-%E5%92%8Cnotify"><span class="nav-number">7.16.</span> <span class="nav-text">wait()和notify()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%BB%E9%94%81"><span class="nav-number">7.17.</span> <span class="nav-text">死锁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lock%E9%94%81"><span class="nav-number">7.18.</span> <span class="nav-text">lock锁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Callable%E6%8E%A5%E5%8F%A3"><span class="nav-number">7.19.</span> <span class="nav-text">Callable接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#volatile%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">7.20.</span> <span class="nav-text">volatile关键字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E6%B1%A0"><span class="nav-number">7.21.</span> <span class="nav-text">线程池</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E6%97%B6%E5%99%A8Timer"><span class="nav-number">7.22.</span> <span class="nav-text">定时器Timer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9B%86%E5%90%88"><span class="nav-number">7.23.</span> <span class="nav-text">集合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8E%A5%E5%8F%A3-1"><span class="nav-number">7.24.</span> <span class="nav-text">接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB"><span class="nav-number">7.25.</span> <span class="nav-text">类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Collection%E6%8E%A5%E5%8F%A3"><span class="nav-number">7.26.</span> <span class="nav-text">Collection接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%AD%E4%BB%A3%E5%99%A8"><span class="nav-number">7.27.</span> <span class="nav-text">迭代器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#I0%E6%B5%81"><span class="nav-number">7.28.</span> <span class="nav-text">I0流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E7%B5%A1%E7%BC%96%E7%A8%8B"><span class="nav-number">7.29.</span> <span class="nav-text">网絡编程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8D%E5%B0%84"><span class="nav-number">7.30.</span> <span class="nav-text">反射</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B0%E7%89%B9%E6%80%A7"><span class="nav-number">7.31.</span> <span class="nav-text">新特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E5%B8%B8%E7%94%A8api"><span class="nav-number">7.32.</span> <span class="nav-text">其他常用api</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">HuaFeng</p>
+  <div class="site-description" itemprop="description">画风的在线笔记</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/maohuifei" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;maohuifei" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:jzwbuere@163.com" title="E-Mail → mailto:jzwbuere@163.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://maohuifei.github.io/2025/08/02/Java/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="HuaFeng">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HuaFeng's notes">
+      <meta itemprop="description" content="画风的在线笔记">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Java | HuaFeng's notes">
+      <meta itemprop="description" content="Java">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Java
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2025-08-02 22:03:26 / 修改时间：22:50:26" itemprop="dateCreated datePublished" datetime="2025-08-02T22:03:26+08:00">2025-08-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+            <div class="post-description">Java</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h2 id="java特点"><a href="#java特点" class="headerlink" title="java特点"></a>java特点</h2><p>简单、面向对象、分布式、健壮、安全、体系结构中立、可移植、解释型、高性能、多线程、动态</p>
+<h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><h3 id="版本选择"><a href="#版本选择" class="headerlink" title="版本选择"></a>版本选择</h3><p>选择LTS版本</p>
+<p>Java 8是一次重大的发行版更新，引入了大量新特性和改进。其中最为显著的是Lambda表达式的引入，它允许在代码中直接定义匿名函数，大幅简化了函数的编写，并提升了效率。此外，Java 8还新增了Stream API，使得开发者可以更方便地进行流式操作。Date&#x2F;Time API的改进也为日期和时间的处理提供了更多的便利。同时，Java 8还在接口中添加了默认方法和函数式接口的概念，以及方法引用(::)和Optional容器类型等特性。</p>
+<p>Java 17则主要关注在Java语言和Java虚拟机的性能和安全性方面的改进。其中一个重要的变化是Switch表达式的增强，支持Lambda表达式和块语句，这使得Switch语句的功能更加强大和灵活。此外，Java 17还改进了类型推断机制，允许在Lambda表达式和匿名内部类中使用var关键字，进一步提升了代码的简洁性和可读性。</p>
+<p>至于Java 21，作为自JDK17之后的新的LTS版本，也带来了许多新特性。其中包括switch模式匹配、字符串模板、顺序集合、记录模式(Record Patterns)、未命名类和实例的main方法（预览版）以及虚拟线程等。这些新特性进一步增强了Java的编程能力和应用范围。</p>
+<p>总的来说，从Java 8到Java 17再到Java 21，每个版本都在不断地优化和改进，为开发者提供了更加高效、安全和灵活的编程环境。具体选择哪个版本进行学习或开发，需要根据项目的实际需求和个人的技术水平进行权衡。</p>
+<h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><p>macos端2024&#x2F;3&#x2F;29测试，官网直接安装Jdk即可，自动配置环境变量</p>
+<p>安装链接（jdk21 for Mac）：</p>
+<p><a target="_blank" rel="noopener" href="https://www.oracle.com/cn/java/technologies/downloads/#jdk22-mac"></a><a target="_blank" rel="noopener" href="https://www.oracle.com/cn/java/technologies/downloads/#jdk21-mac">https://www.oracle.com/cn/java/technologies/downloads/#jdk21-mac</a></p>
+<h3 id="相关命令"><a href="#相关命令" class="headerlink" title="相关命令"></a>相关命令</h3><p>查看java版本：</p>
+<p><code>java -version</code>ShellScript</p>
+<p>列出所有安装的 JDK 版本及其路径：</p>
+<p><code>/usr/libexec/java_home -V</code>ShellScript</p>
+<p>查看<code>JAVA_HOME</code> 环境变量：</p>
+<p><code>echo $JAVA_HOME</code>ShellScript</p>
+<p>检查 <code>PATH</code> 环境变量中是否包含了 JDK 的 <code>bin</code> 目录：</p>
+<p><code>echo $PATH</code>ShellScript</p>
+<p>卸载jdk：</p>
+<p><code>sudo rm -rf /Library/Java/JavaVirtualMachines/jdk1.8.0_XXX.jdk</code>ShellScript</p>
+<p><strong>删除 Java Web 插件和相关的缓存文件</strong>：</p>
+<p><code>sudo rm -rf /Library/Internet\\ Plug-Ins/JavaAppletPlugin.plugin sudo rm -rf /Library/Application\\ Support/Oracle/Java</code>ShellScript</p>
+<h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><p>编辑源文件：hello.java</p>
+<p>编译：Javac hello.java（运行后新增hello.class，为编译后的字节码文件）</p>
+<p>java hello（将hello.class文件放到虚拟机JVM里运行，执行hello类）</p>
+<p>ps：</p>
+<p>1、public类有且唯一，其他类不限，文件名必须是public类名</p>
+<p>2、每个类单独生成一个.class编译文件</p>
+<h2 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h2><h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><h3 id="单行"><a href="#单行" class="headerlink" title="单行"></a>单行</h3><p><code>//abc</code>Java</p>
+<h3 id="多行"><a href="#多行" class="headerlink" title="多行"></a>多行</h3><p><code>/*abc*/</code>Java</p>
+<h3 id="文档注释"><a href="#文档注释" class="headerlink" title="文档注释"></a>文档注释</h3><p><code>/** * 这是一个文档注释示例 * 它通常包含有关类、方法或字段的详细信息 */public class MyClass &#123; // 类的成员和方法&#125;</code>Java</p>
+<p>通常出现在类、方法、字段前，用于生成代码文档，可以被javadoc工具解析提取生成为api文档</p>
+<p><code>javadoc -d 目的文件夹名 -javadoc标签1 - Javadoc标签2 …… 源文件名.java</code>Java</p>
+<p>简单的例子：</p>
+<p><code>/** * 我是主说明 * * @author buer * @version 1.0 */public class hello &#123; /** * 默认构造器，虽然在这个只包含静态方法的类中不会被使用，但为了消除警告而显式定义。 */ public hello() &#123; // 这里没有特殊的初始化代码，因为类只包含静态方法 &#125; /** * 主方法，程序的入口点 * * @param args 命令行参数数组 */ public static void main(String[] args) &#123; System.out.println(&quot;hello,java&quot;); &#125;&#125;</code>Java</p>
+<h3 id="转义符"><a href="#转义符" class="headerlink" title="转义符"></a>转义符</h3><p><code>\\t 对齐\\n 换行\\\\ \\\\&quot; &quot;\\&#39; &#39;\\r 回车</code>Java</p>
+<h3 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h3><p>保留字不能用于常量、变量、和任何标识符的名称</p>
+<p>class类public公共的default默认的new创建static静态更多查询：<a target="_blank" rel="noopener" href="https://www.runoob.com/java/java-basic-syntax.html">https://www.runoob.com/java/java-basic-syntax.html</a></p>
+<h3 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h3><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>Java 所有的组成部分都需要名字。类名、变量名以及方法名都被称为标识符</p>
+<h3 id="规则"><a href="#规则" class="headerlink" title="规则"></a>规则</h3><p>1、以字母（A-Z 或者 a-z）,美元符（$）、或者下划线（_）开始</p>
+<p>2、不是关键字</p>
+<p>3、大小写敏感</p>
+<h3 id="ps"><a href="#ps" class="headerlink" title="ps"></a>ps</h3><p>还有字面常量null、false、ture，不是关键字，也不能作为标识符</p>
+<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><h3 id="规则-1"><a href="#规则-1" class="headerlink" title="规则"></a>规则</h3><p><code>type identifier [ = value][, identifier [= value] ...] ;</code>Java</p>
+<p>类型 变量名 &#x3D; 值（可用，号分隔多个同时声明的变量）</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p><code>int a, b, c;         // 声明三个int型整数：a、 b、cint d = 3, e = 4, f = 5; // 声明三个整数并赋予初值byte z = 22;    // 声明并初始化 zString s = &quot;runoob&quot;; // 声明并初始化字符串 sdouble pi = 3.14159; // 声明了双精度浮点型变量 pichar x = &#39;x&#39;;        // 声明变量 x 的值是字符 &#39;x&#39;。</code>Java</p>
+<h3 id="局部变量"><a href="#局部变量" class="headerlink" title="局部变量"></a>局部变量</h3><p>定义：</p>
+<p>在方法、构造函数或块内部声明的变量</p>
+<p>性质：</p>
+<p>1、它们在声明的方法、构造函数或块执行结束后被销毁</p>
+<p>2、局部变量在声明时需要初始化，否则会导致编译错误</p>
+<p><code>public void Fun() &#123; int localVar = 10; // 局部变量 // ...&#125;</code>Java</p>
+<h3 id="实例变量"><a href="#实例变量" class="headerlink" title="实例变量"></a>实例变量</h3><p>定义：</p>
+<p>在类中声明，但在方法、构造函数或块之外</p>
+<p>性质：</p>
+<p>1、它们属于类的实例，每个类的实例都有自己的副本</p>
+<p>2、如果不明确初始化，实例变量会被赋予默认值（数值类型为0，boolean类型为false，对象引用类型为null）</p>
+<p><code>public class Fun &#123; int instanceVar; // 实例变量&#125;</code>Java</p>
+<h3 id="静态变量（类变量）"><a href="#静态变量（类变量）" class="headerlink" title="静态变量（类变量）"></a>静态变量（类变量）</h3><p>定义：</p>
+<p>类变量是在类中用 static 关键字声明的变量</p>
+<p>性质：</p>
+<p>1、它们属于类而不是实例</p>
+<p>2、所有该类的实例共享同一个类变量的值</p>
+<p>3、类变量在类加载时被初始化，而且只初始化一次</p>
+<p><code>public class Fun &#123; static int classVar; // 类变量&#125;</code>Java</p>
+<h3 id="参数变量"><a href="#参数变量" class="headerlink" title="参数变量"></a>参数变量</h3><p>参数是方法或构造函数声明中的变量，用于接收调用该方法或构造函数时传递的值，参数变量的作用域只限于方法内部。</p>
+<p><code>public void Fun(int a ）&#123; //在fangFa方法中，a就是参数变量&#125;</code>Java</p>
+<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><p><code>public class Fun &#123; // 成员变量 private int instanceVar; // 静态变量 private static int staticVar; public void method(int paramVar) &#123; // 局部变量 int localVar = 10; // 使用变量 instanceVar = localVar; staticVar = paramVar; System.out.println(&quot;成员变量: &quot; + instanceVar); System.out.println(&quot;静态变量: &quot; + staticVar); System.out.println(&quot;参数变量: &quot; + paramVar); System.out.println(&quot;局部变量: &quot; + localVar); &#125; public static void main(String[] args) &#123; Fun v = new Fun(); v.method(20); &#125;&#125;</code>Java</p>
+<h3 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h3><h3 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符"></a>算术运算符</h3><table>
+<thead>
+<tr>
+<th>操作符</th>
+<th>描述</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>+</td>
+<td>加法 - 相加运算符两侧的值</td>
+<td>A + B 等于 30</td>
+</tr>
+<tr>
+<td>-</td>
+<td>减法 - 左操作数减去右操作数</td>
+<td>A – B 等于 -10</td>
+</tr>
+<tr>
+<td>*</td>
+<td>乘法 - 相乘操作符两侧的值</td>
+<td>A * B等于200</td>
+</tr>
+<tr>
+<td>&#x2F;</td>
+<td>除法 - 左操作数除以右操作数</td>
+<td>B &#x2F; A等于2</td>
+</tr>
+<tr>
+<td>％</td>
+<td>取余 - 左操作数除以右操作数的余数</td>
+<td>B%A等于0</td>
+</tr>
+<tr>
+<td>++</td>
+<td>自增: 操作数的值增加1</td>
+<td>B++ 或 ++B 等于 21</td>
+</tr>
+<tr>
+<td>–</td>
+<td>自减: 操作数的值减少1</td>
+<td>B– 或 –B 等于 19</td>
+</tr>
+</tbody></table>
+<h3 id="关系运算符"><a href="#关系运算符" class="headerlink" title="关系运算符"></a>关系运算符</h3><table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>描述</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&#x3D;&#x3D;</td>
+<td>检查如果两个操作数的值是否相等，如果相等则条件为真。</td>
+<td>（A &#x3D;&#x3D; B）为假。</td>
+</tr>
+<tr>
+<td>!&#x3D;</td>
+<td>检查如果两个操作数的值是否相等，如果值不相等则条件为真。</td>
+<td>(A !&#x3D; B) 为真。</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>检查左操作数的值是否大于右操作数的值，如果是那么条件为真。</td>
+<td>（A&gt; B）为假。</td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td>检查左操作数的值是否小于右操作数的值，如果是那么条件为真。</td>
+<td>（A &lt;B）为真。</td>
+</tr>
+<tr>
+<td>&gt;&#x3D;</td>
+<td>检查左操作数的值是否大于或等于右操作数的值，如果是那么条件为真。</td>
+<td>（A&gt; &#x3D; B）为假。</td>
+</tr>
+<tr>
+<td>&lt;&#x3D;</td>
+<td>检查左操作数的值是否小于或等于右操作数的值，如果是那么条件为真。</td>
+<td>（A &lt;&#x3D; B）为真。</td>
+</tr>
+</tbody></table>
+<h3 id="位运算符"><a href="#位运算符" class="headerlink" title="位运算符"></a>位运算符</h3><table>
+<thead>
+<tr>
+<th>操作符</th>
+<th>描述</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>＆</td>
+<td>如果相对应位都是1，则结果为1，否则为0</td>
+<td>（A＆B），得到12，即0000 1100</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>如果相对应位都是 0，则结果为 0，否则为 1</td>
+</tr>
+<tr>
+<td>^</td>
+<td>如果相对应位值相同，则结果为0，否则为1</td>
+<td>（A ^ B）得到49，即 0011 0001</td>
+</tr>
+<tr>
+<td>〜</td>
+<td>按位取反运算符翻转操作数的每一位，即0变成1，1变成0。</td>
+<td>（〜A）得到-61，即1100 0011</td>
+</tr>
+<tr>
+<td>&lt;&lt;</td>
+<td>按位左移运算符。左操作数按位左移右操作数指定的位数。</td>
+<td>A &lt;&lt; 2得到240，即 1111 0000</td>
+</tr>
+<tr>
+<td>&gt;&gt;</td>
+<td>按位右移运算符。左操作数按位右移右操作数指定的位数。</td>
+<td>A &gt;&gt; 2得到15即 1111</td>
+</tr>
+<tr>
+<td>&gt;&gt;&gt;</td>
+<td>按位右移补零操作符。左操作数的值按右操作数指定的位数右移，移动得到的空位以零填充。</td>
+<td>A&gt;&gt;&gt;2得到15即0000 1111</td>
+</tr>
+</tbody></table>
+<h3 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h3><table>
+<thead>
+<tr>
+<th>操作符</th>
+<th>描述</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&amp;&amp;</td>
+<td>称为逻辑与运算符。当且仅当两个操作数都为真，条件才为真。</td>
+<td>（A &amp;&amp; B）为假。</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>！</td>
+<td>称为逻辑非运算符。用来反转操作数的逻辑状态。如果条件为true，则逻辑非运算符将得到false。</td>
+<td>！（A &amp;&amp; B）为真。</td>
+</tr>
+</tbody></table>
+<h3 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a>赋值运算符</h3><table>
+<thead>
+<tr>
+<th>操作符</th>
+<th>描述</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&#x3D;</td>
+<td>简单的赋值运算符，将右操作数的值赋给左侧操作数</td>
+<td>C &#x3D; A + B将把A + B得到的值赋给C</td>
+</tr>
+<tr>
+<td>+ &#x3D;</td>
+<td>加和赋值操作符，它把左操作数和右操作数相加赋值给左操作数</td>
+<td>C + &#x3D; A等价于C &#x3D; C + A</td>
+</tr>
+<tr>
+<td>- &#x3D;</td>
+<td>减和赋值操作符，它把左操作数和右操作数相减赋值给左操作数</td>
+<td>C - &#x3D; A等价于C &#x3D; C - A</td>
+</tr>
+<tr>
+<td>* &#x3D;</td>
+<td>乘和赋值操作符，它把左操作数和右操作数相乘赋值给左操作数</td>
+<td>C * &#x3D; A等价于C &#x3D; C * A</td>
+</tr>
+<tr>
+<td>&#x2F; &#x3D;</td>
+<td>除和赋值操作符，它把左操作数和右操作数相除赋值给左操作数</td>
+<td>C &#x2F; &#x3D; A，C 与 A 同类型时等价于 C &#x3D; C &#x2F; A</td>
+</tr>
+<tr>
+<td>（％）&#x3D;</td>
+<td>取模和赋值操作符，它把左操作数和右操作数取模后赋值给左操作数</td>
+<td>C％&#x3D; A等价于C &#x3D; C％A</td>
+</tr>
+<tr>
+<td>&lt;&lt; &#x3D;</td>
+<td>左移位赋值运算符</td>
+<td>C &lt;&lt; &#x3D; 2等价于C &#x3D; C &lt;&lt; 2</td>
+</tr>
+<tr>
+<td>&gt;&gt; &#x3D;</td>
+<td>右移位赋值运算符</td>
+<td>C &gt;&gt; &#x3D; 2等价于C &#x3D; C &gt;&gt; 2</td>
+</tr>
+<tr>
+<td>＆&#x3D;</td>
+<td>按位与赋值运算符</td>
+<td>C＆&#x3D; 2等价于C &#x3D; C＆2</td>
+</tr>
+<tr>
+<td>^ &#x3D;</td>
+<td>按位异或赋值操作符</td>
+<td>C ^ &#x3D; 2等价于C &#x3D; C ^ 2</td>
+</tr>
+<tr>
+<td></td>
+<td>&#x3D;</td>
+<td>按位或赋值操作符</td>
+</tr>
+</tbody></table>
+<h3 id="条件运算符（-）"><a href="#条件运算符（-）" class="headerlink" title="条件运算符（?:）"></a>条件运算符（?:）</h3><p>条件运算符也被称为三元运算符。</p>
+<p>该运算符有3个操作数，并且需要判断布尔表达式的值。</p>
+<p>该运算符的主要是决定哪个值应该赋值给变量。</p>
+<p><code>variable x = (expression) ? value if true : value if false</code>Java</p>
+<h3 id="instanceof-运算符"><a href="#instanceof-运算符" class="headerlink" title="instanceof 运算符"></a>instanceof 运算符</h3><p>该运算符用于操作对象实例，检查该对象是否是一个特定类型（类类型或接口类型）。</p>
+<p>instanceof运算符使用格式如下：</p>
+<p><code>( Object reference variable ) instanceof (class/interface type)</code>Java</p>
+<p>如果运算符左侧变量所指的对象，是操作符右侧类或接口(class&#x2F;interface)的一个对象，那么结果为真。</p>
+<h3 id="流程控制"><a href="#流程控制" class="headerlink" title="流程控制"></a>流程控制</h3><h3 id="条件判断（if……else）"><a href="#条件判断（if……else）" class="headerlink" title="条件判断（if……else）"></a>条件判断（if……else）</h3><ol>
+<li>if 语句至多有 1 个 else 语句，else 语句在所有的 else if 语句之后。</li>
+<li>if 语句可以有若干个 else if 语句，它们必须在 else 语句之前。</li>
+<li>一旦其中一个 else if 语句检测为 true，其他的 else if 以及 else 语句都将跳过执行。</li>
+</ol>
+<h3 id="选择结构（switch……case1-case2-……）"><a href="#选择结构（switch……case1-case2-……）" class="headerlink" title="选择结构（switch……case1:case2:……）"></a>选择结构（switch……case1:case2:……）</h3><p><code>switch(expression)&#123; case value : //语句 break; //可选 case value : //语句 break; //可选 //你可以有任意数量的case语句 default : //可选 //语句&#125;</code>Java</p>
+<ul>
+<li>switch 语句中的变量类型可以是： byte、short、int 或者 char。从 Java SE 7 开始，switch 支持字符串 String 类型了，同时 case 标签必须为字符串常量或字面量。</li>
+<li>switch 语句可以拥有多个 case 语句。每个 case 后面跟一个要比较的值和冒号。</li>
+<li>case 语句中的值的数据类型必须与变量的数据类型相同，而且只能是常量或者字面常量。</li>
+<li>当变量的值与 case 语句的值相等时，那么 case 语句之后的语句开始执行，直到 break 语句出现才会跳出 switch 语句。</li>
+<li>当遇到 break 语句时，switch 语句终止。程序跳转到 switch 语句后面的语句执行。case 语句不必须要包含 break 语句。如果没有 break 语句出现，程序会继续执行下一条 case 语句，直到出现 break 语句。</li>
+<li>switch 语句可以包含一个 default 分支，该分支一般是 switch 语句的最后一个分支（可以在任何位置，但建议在最后一个）。default 在没有 case 语句的值和变量值相等的时候执行。default 分支不需要 break 语句。</li>
+</ul>
+<h3 id="循环结构"><a href="#循环结构" class="headerlink" title="循环结构"></a>循环结构</h3><h3 id="while"><a href="#while" class="headerlink" title="while"></a>while</h3><p><code>while( 布尔表达式 ) &#123; //循环内容&#125;</code>Java</p>
+<p>只要布尔表达式为 true，循环就会一直执行下去。</p>
+<h3 id="do-while"><a href="#do-while" class="headerlink" title="do while"></a>do while</h3><p>对于 while 语句而言，如果不满足条件，则不能进入循环。但有时候我们需要即使不满足条件，也至少执行一次。</p>
+<p>do…while 循环和 while 循环相似，不同的是，do…while 循环至少会执行一次。</p>
+<p><code>do &#123; //代码语句&#125;while(布尔表达式);</code>Java</p>
+<p>布尔表达式在循环体的后面，所以语句块在检测布尔表达式之前已经执行了。 如果布尔表达式的值为 true，则语句块一直执行，直到布尔表达式的值为 false。</p>
+<h3 id="for"><a href="#for" class="headerlink" title="for"></a>for</h3><p><code>for(初始化; 布尔表达式; 更新) &#123; //代码语句&#125;</code>Java</p>
+<ul>
+<li>最先执行初始化步骤。可以声明一种类型，但可初始化一个或多个循环控制变量，也可以是空语句。</li>
+<li>然后，检测布尔表达式的值。如果为 true，循环体被执行。如果为false，循环终止，开始执行循环体后面的语句。</li>
+<li>执行一次循环后，更新循环控制变量。</li>
+<li>再次检测布尔表达式。循环执行上面的过程。</li>
+</ul>
+<h3 id="for增强"><a href="#for增强" class="headerlink" title="for增强"></a>for增强</h3><p>Java5 引入了一种主要用于数组的增强型 for 循环。</p>
+<p>Java 增强 for 循环语法格式如下:</p>
+<p><code>for(声明语句 : 表达式)&#123; //代码句子&#125;</code>Java</p>
+<p><strong>声明语句：</strong>声明新的局部变量，该变量的类型必须和数组元素的类型匹配。其作用域限定在循环语句块，其值与此时数组元素的值相等。</p>
+<p><strong>表达式：</strong>表达式是要访问的数组名，或者是返回值为数组的方法。</p>
+<h3 id="break"><a href="#break" class="headerlink" title="break"></a>break</h3><p>break 主要用在循环语句或者 switch 语句中，用来跳出整个语句块。</p>
+<p>break 跳出最里层的循环，并且继续执行该循环下面的语句。</p>
+<h3 id="continue"><a href="#continue" class="headerlink" title="continue"></a>continue</h3><p>continue 适用于任何循环控制结构中。作用是让程序立刻跳转到下一次循环的迭代。</p>
+<p>在 for 循环中，continue 语句使程序立即跳转到更新语句。</p>
+<p>在 while 或者 do…while 循环中，程序立即跳转到布尔表达式的判断语句。</p>
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><h3 id="规则-2"><a href="#规则-2" class="headerlink" title="规则"></a>规则</h3><ul>
+<li>引用数据类型</li>
+<li>创建后，在内存中开辟一整块固定连续的空间，长度不可变</li>
+<li>初始化后数组元素默认值：整形0、浮点型0.0、字符型0、布尔型false、引用型null</li>
+<li>内存解析，栈&gt;指针&gt;堆</li>
+</ul>
+<h3 id="一维数组"><a href="#一维数组" class="headerlink" title="一维数组"></a>一维数组</h3><p><code>import java.util.Arrays;public class MyCommons &#123; public static void main(String[] args) &#123; //静态初始化 //int[] arr; //arr=new int[]&#123;1,2,3,4&#125;; int[] arr=new int[]&#123;1,2,3,4&#125;;//简写 //动态初始化 int[] arr2=new int[4] //System.out.printf(arr);直接输出会隐式调用tostring方法，输出乱码（类型简写和数值哈希值） System.out.println(Arrays.toString(arr)); &#125;&#125;</code>Java</p>
+<h3 id="二维数组"><a href="#二维数组" class="headerlink" title="二维数组"></a>二维数组</h3><p>一位数组的元素是数组</p>
+<p><code>int[][] arr=new int[][]&#123;&#123;1,2,3&#125;,&#123;4,5,6&#125;,&#123;7,8,9&#125;,&#123;10,11,12&#125;&#125;arr[0][1]//第一项的第二个，2</code>Java</p>
+<h3 id="动态数组"><a href="#动态数组" class="headerlink" title="动态数组"></a>动态数组</h3><p><code>import java.util.ArrayList; // 导入ArrayList类ArrayList&lt;String&gt; myList = new ArrayList&lt;String&gt;();//字符型数组ArrayList&lt;Integer&gt; myList = new ArrayList&lt;Integer&gt;();//整型数组ArrayList&lt;Integer&gt; myList = new ArrayList&lt;&gt;();//在Java 7及以上版本中，可以使用菱形操作符（&lt;&gt;）来代替显式类型实参myList.add(1); // 向ArrayList中添加元素</code>Java</p>
+<h3 id="处理数组"><a href="#处理数组" class="headerlink" title="处理数组"></a>处理数组</h3><p><code>public class MyCommons &#123; public static void main(String[] args) &#123; int[] arr=new int[]&#123;1,2,9,4,0,7,6,4,6,8&#125;; int num=0;//最小值arr[0] for(int i=0;i&lt;arr.length;i++)&#123; //最大值 //if(arr[i]&gt;num)&#123; // num=arr[i]; //&#125; //最小值 //if(arr[i]&lt;=num)&#123; // num=arr[i]; //&#125; num+=arr[i];//和 //反转：i&lt;arr.length/2 arr[i]&lt;-&gt;arr[arr.length-1-i] &#125; System.out.println(num); //System.out.println((double)num/arr.length);平均值 &#125;&#125;</code>Java</p>
+<h3 id="Arryes工具类"><a href="#Arryes工具类" class="headerlink" title="Arryes工具类"></a>Arryes工具类</h3><p><code>add()：将指定的元素添加到此列表的末尾。ArrayList&lt;String&gt; list = new ArrayList&lt;&gt;(); list.add(&quot;Apple&quot;); list.add(&quot;Banana&quot;);add(int index, E element)：在列表的指定位置插入指定的元素。ArrayList&lt;String&gt; list = new ArrayList&lt;&gt;(); list.add(&quot;Apple&quot;); list.add(&quot;Banana&quot;); list.add(1, &quot;Orange&quot;); // 插入后列表为 [&quot;Apple&quot;, &quot;Orange&quot;, &quot;Banana&quot;]remove(int index)：删除列表中指定位置的元素。ArrayList&lt;String&gt; list = new ArrayList&lt;&gt;(); list.add(&quot;Apple&quot;); list.add(&quot;Banana&quot;); list.remove(0); // 删除后列表为 [&quot;Banana&quot;]get(int index)：返回列表中指定位置的元素。ArrayList&lt;String&gt; list = new ArrayList&lt;&gt;(); list.add(&quot;Apple&quot;); list.add(&quot;Banana&quot;); String fruit = list.get(0); // fruit 将被赋值为 &quot;Apple&quot;size()：返回列表中的元素个数。ArrayList&lt;String&gt; list = new ArrayList&lt;&gt;(); list.add(&quot;Apple&quot;); list.add(&quot;Banana&quot;); int size = list.size(); // size 将被赋值为 2contains(Object o)：判断列表中是否包含指定的元素。ArrayList&lt;String&gt; list = new ArrayList&lt;&gt;(); list.add(&quot;Apple&quot;); list.add(&quot;Banana&quot;); boolean hasApple = list.contains(&quot;Apple&quot;); // hasApple 将被赋值为 trueCollections.sort 数组排序import java.util.ArrayList; import java.util.Collections; public class Main &#123; public static void main(String[] args) &#123; ArrayList&lt;Integer&gt; numbers = new ArrayList&lt;&gt;(); numbers.add(3); numbers.add(1); numbers.add(2); Collections.sort(numbers); for (int num : numbers) &#123; System.out.print(num + &quot; &quot;); &#125; // 输出：1 2 3 &#125; &#125;</code>Java</p>
+<h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><h3 id="100内的质数"><a href="#100内的质数" class="headerlink" title="100内的质数"></a>100内的质数</h3><p><code>import java.util.ArrayList;//引入类public class ZhiShu &#123; public static void main(String[] args) &#123; ArrayList&lt;Integer&gt; myList = new ArrayList&lt;&gt;();//声明动态整数数组 for(int a=2;a&lt;=100;a++)&#123;//遍历2-100 boolean n=true;//标识 for(int b=2;b&lt;a;b++)&#123;//遍历并比较2-a之间 if(a%b==0)&#123; n=fasle;//不是质数就更改标识 break; &#125; &#125; if(n)&#123; myList.add(a);//给数组添加元素 &#125; &#125; System.out.println(myList);//输出 &#125;&#125;</code>Java</p>
+<h3 id="简单记账"><a href="#简单记账" class="headerlink" title="简单记账"></a>简单记账</h3><p><code>import java.util.Scanner;public class JiZhang &#123; private double balance; public void addFun(double num)&#123;//收入方法 balance+=num; System.out.printf(&quot;收入&quot;+num+&quot;元，当前余额：&quot;+balance); &#125; public void subFun(double num)&#123;//支出方法 balance=balance-num; System.out.printf(&quot;支出&quot;+num+&quot;元，当前余额：&quot;+balance); &#125; public void cxFun()&#123;//查询方法 System.out.printf(&quot;当前余额：&quot;+balance); &#125; public static void main(String[] args) &#123; Scanner scanner = new Scanner(System.in); JiZhang jiZhangInstance = new JiZhang(); // 创建JiZhang类的实例 boolean sta=true; while (sta)&#123; System.out.print(&quot;记账系统\\n1.查询余额\\n2.收入\\n3.支出\\n4.退出&quot;); String sce=scanner.nextLine(); switch (sce)&#123; case &quot;1&quot;: jiZhangInstance.cxFun(); break; case &quot;2&quot;: System.out.print(&quot;请输入收入金额：&quot;); double income = scanner.nextDouble(); jiZhangInstance.addFun(income); break; case &quot;3&quot;: System.out.print(&quot;请输入支出金额：&quot;); double expense = scanner.nextDouble(); jiZhangInstance.subFun(expense); break; case &quot;4&quot;: sta=false; break; default: // 如果用户输入了无效的选择 System.out.println(&quot;无效的选择，请重新输入。&quot;); &#125; scanner.nextLine(); // 消耗掉输入后的换行符 &#125; &#125;&#125;</code>Java</p>
+<h2 id="面向对象编程"><a href="#面向对象编程" class="headerlink" title="面向对象编程"></a>面向对象编程</h2><h3 id="类及类的内部成员"><a href="#类及类的内部成员" class="headerlink" title="类及类的内部成员"></a>类及类的内部成员</h3><h3 id="属性、方法"><a href="#属性、方法" class="headerlink" title="属性、方法"></a>属性、方法</h3><p><code>public class Phone &#123;//创建类 String color = &quot;红色&quot;;//设计类的属性 public void Messages(String txt) &#123; //设计类的方法，void指不需要方法返回，如果需要返回值，将void替换为返回值的数据类型，结尾return //方法必须在类里，不能独立存在 System.out.printf(&quot;手机发出了一条短息，内容是：&quot; + txt); &#125;&#125;public class PhoneText &#123; public static void main(String[] args) &#123; Phone iphone = new Phone();//初始化，创建类的对象（实例化） System.out.printf(&quot;外观：&quot;+iphone.color);//通过创建的对象，调用其内部声明的属性和方法 iphone.Messages(&quot;你好，对象&quot;); &#125;&#125;</code>Java</p>
+<h3 id="构造器"><a href="#构造器" class="headerlink" title="构造器"></a>构造器</h3><p>构造器（也称为构造函数）是一种特殊类型的方法，用于初始化对象的状态。当使用<code>new</code>关键字创建类的实例时，会自动调用构造器</p>
+<h3 id="规则："><a href="#规则：" class="headerlink" title="规则："></a>规则：</h3><p><code>权限修饰符 类名(形参列表)&#123;&#125;</code>Java</p>
+<h3 id="例子："><a href="#例子：" class="headerlink" title="例子："></a>例子：</h3><p><code>public static void main(String[] args) &#123; // 使用无参构造器创建对象 Person person1 = new Person(); System.out.println(person1); // 输出: Person&#123;name=&#39;Unknown&#39;, age=0&#125; // 使用带参构造器创建对象 Person person2 = new Person(&quot;Alice&quot;, 25); System.out.println(person2); // 输出: Person&#123;name=&#39;Alice&#39;, age=25&#125; &#125;</code> Java</p>
+<ul>
+<li><strong>与类同名</strong>：构造器的名称必须与类名完全相同。</li>
+<li><strong>没有返回类型</strong>：构造器没有返回类型，甚至不能是<code>void</code>。</li>
+<li><strong>自动调用</strong>：当你使用<code>new</code>关键字创建一个对象时，Java会自动调用该类的构造器。</li>
+<li><strong>重载</strong>：一个类可以有多个构造器，只要它们的参数列表不同（这称为构造器的重载）。</li>
+<li><strong>初始化</strong>：构造器通常用于初始化对象的属性或执行必要的设置。</li>
+</ul>
+<h3 id="作用："><a href="#作用：" class="headerlink" title="作用："></a>作用：</h3><ul>
+<li>搭配上new创建对象</li>
+<li>初始化对象的成员变量</li>
+</ul>
+<h3 id="属性赋值"><a href="#属性赋值" class="headerlink" title="属性赋值"></a>属性赋值</h3><p>位置：</p>
+<ul>
+<li>默认初始化</li>
+<li>显式初始化</li>
+<li>构造器中初始化</li>
+<li>通过obj.Fun()赋值</li>
+<li>通过obj.name赋值</li>
+</ul>
+<p>执行顺序：</p>
+<p>1-2-3-4&#x2F;5</p>
+<h3 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h3><p><code>//构造代码块：&#123; System.out.print(&quot;我是代码块&quot;);&#125;//特点：优先于构造方法执行，每new一次就执行一次//静态代码块static&#123; System.out.print(&quot;我是静态代码块&quot;);&#125;//特点：优先于构造代码块和构造方法执行，只执行一次</code>Java</p>
+<h3 id="内部类"><a href="#内部类" class="headerlink" title="内部类"></a>内部类</h3><p>类里面的类</p>
+<h3 id="内部类访问外部类成员变量："><a href="#内部类访问外部类成员变量：" class="headerlink" title="内部类访问外部类成员变量："></a>内部类访问外部类成员变量：</h3><p><code>public class A&#123; int a;//外部成员变量 static class B&#123; int b;//内部成员变量 void Bfun()&#123; this.b;//调用内部变量 A.this.a;//调用外部变量 &#125;&#125;</code>Java</p>
+<h3 id="静态成员内部类"><a href="#静态成员内部类" class="headerlink" title="静态成员内部类"></a>静态成员内部类</h3><p><code>public class A&#123; static class B&#123; &#125;&#125;A.B name=new A.B()</code>Java</p>
+<h3 id="非静态成员内部类"><a href="#非静态成员内部类" class="headerlink" title="非静态成员内部类"></a>非静态成员内部类</h3><p><code>public class A&#123; class B&#123; &#125;&#125;A.B name=new A().new B()</code>Java</p>
+<h3 id="局部内部类"><a href="#局部内部类" class="headerlink" title="局部内部类"></a>局部内部类</h3><p><code>public class A&#123; void run()&#123; class B&#123;//局部内部类 void eat()&#123;&#125; &#125; new B().eat()//间接调用 &#125;&#125;class Text&#123; A name=new A(); name.run();//调用&#125;</code>Java</p>
+<h3 id="匿名内部类"><a href="#匿名内部类" class="headerlink" title="匿名内部类"></a>匿名内部类</h3><p><code>interface Greeting &#123; void sayHello(); &#125; public class Main &#123; public static void main(String[] args) &#123; //这里，创建了一个Greeting接口的匿名内部类实例，并覆盖了sayHello方法 Greeting greeting = new Greeting() &#123; @Override public void sayHello() &#123; System.out.println(&quot;Hello, World!&quot;); &#125; &#125;; // 调用匿名内部类实现的方法 greeting.sayHello(); &#125; &#125;</code>Java</p>
+<h3 id="包装类"><a href="#包装类" class="headerlink" title="包装类"></a>包装类</h3><p>Java包装类（Wrapper Classes）是Java提供的一种特殊类，它们将基本数据类型（如int, double, char等）包装为对象，使得基本数据类型可以像对象一样被操作。每个基本数据类型都有对应的包装类，如下所示：</p>
+<ul>
+<li><code>byte</code> 对应的包装类是 <code>Byte</code></li>
+<li><code>short</code> 对应的包装类是 <code>Short</code></li>
+<li><code>int</code> 对应的包装类是 <code>Integer</code></li>
+<li><code>long</code> 对应的包装类是 <code>Long</code></li>
+<li><code>float</code> 对应的包装类是 <code>Float</code></li>
+<li><code>double</code> 对应的包装类是 <code>Double</code></li>
+<li><code>char</code> 对应的包装类是 <code>Character</code></li>
+<li><code>boolean</code> 对应的包装类是 <code>Boolean</code></li>
+</ul>
+<p>包装类的主要用途有：</p>
+<ol>
+<li><strong>作为集合类元素</strong>：Java集合类（如ArrayList, HashSet等）只能存储对象，不能存储基本数据类型。因此，当我们需要将基本数据类型存储到集合中时，就需要使用对应的包装类。</li>
+<li><strong>提升基本数据类型的操作能力</strong>：包装类提供了一系列方法，用于对基本数据类型进行各种操作，比如类型转换、比较大小等。</li>
+<li><strong>自动装箱和拆箱</strong>：Java 5.0之后引入了自动装箱和拆箱的特性，使得在基本数据类型和包装类之间转换时更加方便。例如，当我们将一个int值赋给一个Integer对象时，Java会自动进行装箱操作；当我们从一个Integer对象获取int值时，Java会自动进行拆箱操作。</li>
+</ol>
+<h3 id="枚举类"><a href="#枚举类" class="headerlink" title="枚举类"></a>枚举类</h3><p><code>public enum Day&#123;//使用enum关键字定义枚举类 SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY&#125;public class Main &#123; //使用 public static void main(String[] args) &#123; Day today = Day.MONDAY; switch (today) &#123; case MONDAY: System.out.println(&quot;Today is Monday.&quot;); break; case TUESDAY: System.out.println(&quot;Today is Tuesday.&quot;); break; // 其他情况的处理... default: System.out.println(&quot;Today is some other day.&quot;); &#125; for (Day day : Day.values()) &#123; System.out.println(day); &#125; &#125; &#125;//在这个例子中，我们创建了一个Day类型的变量today，并将其设置为MONDAY。然后，我们使用switch语句根据today的值执行不同的操作。最后，我们使用for-each循环遍历Day枚举类的所有实例，并打印它们。</code>Java</p>
+<ul>
+<li><strong>常量性</strong>：枚举类的实例在JVM中是唯一的，不能被实例化多次。</li>
+<li><strong>类型安全</strong>：枚举常量具有类型信息，这使得它们在编译时就能进行类型检查。</li>
+<li><strong>可遍历性</strong>：枚举类实现了<code>java.lang.Enum</code>接口，因此可以使用<code>values()</code>方法获取枚举类的所有实例，或者使用<code>ordinal()</code>方法获取实例在枚举声明中的位置。</li>
+</ul>
+<h3 id="面向对象的特征"><a href="#面向对象的特征" class="headerlink" title="面向对象的特征"></a>面向对象的特征</h3><h3 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h3><p>面向对象的开发原则要遵循：高内聚、低耦合</p>
+<ul>
+<li>内聚意味重用和独立。体现为类的内部数据操作细节自己完成，不允许外部干涉</li>
+<li>耦合意味多米诺效应、牵一发而动全身。体现为仅暴露少量的方法给外部使用，尽量方便外部调用</li>
+</ul>
+<h3 id="权限修饰符"><a href="#权限修饰符" class="headerlink" title="权限修饰符"></a>权限修饰符</h3><ol>
+<li><strong>private</strong>：<ul>
+<li>私有的。只能被定义它的类本身访问。</li>
+<li>它是限制最严格的访问修饰符，用于隐藏类的内部实现细节。</li>
+<li>成员变量、方法、构造器、内部类都可以使用private修饰。</li>
+</ul>
+</li>
+<li><strong>default（默认，无修饰符）</strong>：<ul>
+<li>包内访问权限。无需任何关键字，只写成员变量名或方法名即可。</li>
+<li>它意味着该成员可以被同一个包内的其他类访问。</li>
+<li>如果不特别声明任何访问修饰符，则使用默认访问级别。</li>
+</ul>
+</li>
+<li><strong>protected</strong>：<ul>
+<li>受保护的。可以被同一个包内的其他类以及不同包中的子类访问。</li>
+<li>它提供了比默认访问级别稍宽的访问权限，常用于实现继承中的某些特性。</li>
+</ul>
+</li>
+<li><strong>public</strong>：<ul>
+<li>公共的。可以被任何类访问。</li>
+<li>它是访问级别最宽的修饰符，通常用于对外暴露类的API。</li>
+</ul>
+</li>
+</ol>
+<p>这些权限修饰符可以应用于类、接口、方法、变量等，但它们的使用场景和效果有所不同。例如：</p>
+<ul>
+<li>类和接口只能使用<code>public</code>或<code>default</code>（无修饰符）。</li>
+<li>成员变量、方法、构造器和内部类可以使用所有四种权限修饰符。</li>
+<li>局部变量不能使用访问权限修饰符（如<code>public</code>、<code>private</code>、<code>protected</code>）和非访问修饰符（如<code>static</code>）进行修饰，可以使用<code>final</code>修饰符。<code>final</code>修饰符用于修饰不可更改的变量，即该变量的值在初始化后不能被重新赋值。</li>
+</ul>
+<p>在选择使用哪种权限修饰符时，应考虑封装性、继承性和安全性等因素。</p>
+<p>通常，为了遵循良好的封装原则，应尽可能将成员变量设置为<code>private</code></p>
+<h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><h3 id="规则-3"><a href="#规则-3" class="headerlink" title="规则"></a>规则</h3><p><code>class 父类 &#123;&#125; class 子类 extends 父类 &#123;&#125;</code>Java</p>
+<h3 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h3><p><img src="https://www.runoob.com/wp-content/uploads/2013/12/java-extends-2020-12-08.png" alt="https://www.runoob.com/wp-content/uploads/2013/12/java-extends-2020-12-08.png"></p>
+<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ul>
+<li>子类拥有父类非 private 的属性、方法。</li>
+<li>子类可以拥有自己的属性和方法，即子类可以对父类进行扩展。</li>
+<li>子类可以用自己的方式实现父类的方法。</li>
+<li>Java 的继承是单继承，但是可以多重继承，单继承就是一个子类只能继承一个父类，多重继承就是，例如 B 类继承 A 类，C 类继承 B 类，所以按照关系就是 B 类是 C 类的父类，A 类是 B 类的父类，这是 Java 继承区别于 C++ 继承的一个特性。</li>
+<li>提高了类之间的耦合性（继承的缺点，耦合度高就会造成代码之间的联系越紧密，代码独立性越差）。</li>
+</ul>
+<h3 id="关键字-1"><a href="#关键字-1" class="headerlink" title="关键字"></a>关键字</h3><h3 id="extends"><a href="#extends" class="headerlink" title="extends"></a>extends</h3><p>默认</p>
+<p><code>class 父类 &#123;&#125; class 子类 extends 父类 &#123;&#125;</code>Java</p>
+<h3 id="implements"><a href="#implements" class="headerlink" title="implements"></a>implements</h3><p>mplements 关键字可以变相的使java具有多继承的特性，使用范围为类继承接口的情况，可以同时继承多个接口（接口跟接口之间采用逗号分隔）</p>
+<p><code>public interface A &#123; public void eat(); public void sleep();&#125; public interface B &#123; public void show();&#125; public class C implements A,B &#123;&#125;</code>Java</p>
+<h3 id="super和this"><a href="#super和this" class="headerlink" title="super和this"></a>super和this</h3><p>通过super关键字来实现对父类成员的访问，用来引用当前对象的父类</p>
+<p><code>class Animal &#123; void eat() &#123; System.out.println(&quot;animal : eat&quot;); &#125;&#125; class Dog extends Animal &#123; void eat() &#123; System.out.println(&quot;dog : eat&quot;); &#125; void eatTest() &#123; this.eat(); // this 调用自己的方法 super.eat(); // super 调用父类方法 &#125;&#125;</code>Java</p>
+<h3 id="final"><a href="#final" class="headerlink" title="final"></a>final</h3><ul>
+<li>final 可以用来修饰变量（包括类属性、对象属性、局部变量和形参）、方法（包括类方法和对象方法）和类。</li>
+<li>final 含义为 “最终的”。</li>
+<li>使用 final 关键字声明类，就是把类定义定义为最终类，不能被继承，或者用于修饰方法，该方法不能被子类重写：</li>
+</ul>
+<p><code>声明类：final class 类名 &#123;//类体&#125;声明方法：修饰符(public/private/default/protected) final 返回值类型 方法名()&#123;//方法体&#125;</code>Java</p>
+<h3 id="构造器的继承"><a href="#构造器的继承" class="headerlink" title="构造器的继承"></a>构造器的继承</h3><ul>
+<li>子类是不继承父类的构造器（构造方法或者构造函数）的，它只是调用（隐式或显式）。<strong>如果父类的构造器带有参数，则必须在子类的构造器中显式地通过 super 关键字调用父类的构造器并配以适当的参数列表。</strong></li>
+<li>如果父类构造器没有参数，则在子类的构造器中不需要使用 <strong>super</strong> 关键字调用父类构造器，系统会自动调用父类的无参构造器。</li>
+</ul>
+<p><code>class SuperClass &#123; private int n; SuperClass()&#123; System.out.println(&quot;SuperClass()&quot;); &#125; SuperClass(int n) &#123; System.out.println(&quot;SuperClass(int n)&quot;); this.n = n; &#125;&#125;// SubClass 类继承class SubClass extends SuperClass&#123; private int n; SubClass()&#123; // 自动调用父类的无参数构造器 System.out.println(&quot;SubClass&quot;); &#125; public SubClass(int n)&#123; super(300); // 调用父类中带有参数的构造器 System.out.println(&quot;SubClass(int n):&quot;+n); this.n = n; &#125;&#125;</code>Java</p>
+<h3 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h3><h3 id="方法的重写和重载"><a href="#方法的重写和重载" class="headerlink" title="方法的重写和重载"></a>方法的重写和重载</h3><h3 id="重写-override"><a href="#重写-override" class="headerlink" title="重写(override)"></a>重写(override)</h3><p>在子类存在方法与父类的方法的名字相同,而且参数的个数与类型一样,返回值也一样的方法</p>
+<p>子类对继承过来的方法进行重写、覆盖</p>
+<h3 id="重载-overload"><a href="#重载-overload" class="headerlink" title="重载(overload)"></a>重载(overload)</h3><p>一个类中定义了多个方法名相同,而他们的参数的数量不同或数量相同而类型和次序不同,</p>
+<p>最常用的地方就是构造器的重载</p>
+<p><code>//以下两个参数类型顺序不同 public String test(int a,String s)&#123; System.out.println(&quot;test3&quot;); return &quot;returntest3&quot;; &#125; public String test(String s,int a)&#123; System.out.println(&quot;test4&quot;); return &quot;returntest4&quot;; &#125;</code> Java</p>
+<h3 id="对象的多态性"><a href="#对象的多态性" class="headerlink" title="对象的多态性"></a>对象的多态性</h3><p>父类类型的变量可以引用子类对象，并且可以在运行时确定实际调用的是哪个子类的方法</p>
+<p>在Java中，当我们声明一个父类类型的引用变量并让它指向一个子类对象时，我们称之为向上转型（upcasting）。这种转型是安全的，因为子类对象包含父类所有的成员（包括属性和方法），所以父类引用可以访问子类对象中的这些成员。</p>
+<p>然而，当我们通过这个父类引用调用一个被子类重写的方法时，实际执行的是子类中的方法，而不是父类中的方法。这种机制称为动态方法分派（dynamic method dispatch），它发生在运行时，Java虚拟机根据对象的实际类型来确定应该调用哪个方法。</p>
+<p><code>public class duoTai &#123; public static void main(String[] args) &#123; Animal animal = new Dog(); // 向上转型：Animal引用指向Dog对象 animal.makeSound(); // 输出 &quot;777&quot; //animal1.eat();无法直接运行 Dog dog=(Dog)animal;//向下转型，将animal转换为Dog类型 dog.eat();//888 &#125;&#125;class Animal &#123; public void makeSound() &#123; System.out.println(&quot;666&quot;); &#125;&#125;class Dog extends Animal &#123; public void makeSound() &#123; //重写了makeSound方法 System.out.println(&quot;777&quot;); &#125; void eat()&#123; System.out.println(&quot;888&quot;); &#125;&#125;</code>Java</p>
+<p>在这个例子中，我们有一个<code>Animal</code>类以及两个子类<code>Dog</code>和<code>Cat</code>。每个类都有一个<code>makeSound</code>方法，而<code>Dog</code>和<code>Cat</code>类重写了这个方法以提供不同的行为。在<code>main</code>方法中，我们创建了两个<code>Animal</code>类型的引用<code>animal1</code>和<code>animal2</code>，但分别让它们指向<code>Dog</code>和<code>Cat</code>对象。当我们调用<code>makeSound</code>方法时，实际执行的是相应子类中的方法，这体现了多态性。</p>
+<p>这种多态性让代码更加灵活，因为我们可以在不改变<code>Animal</code>类代码的情况下添加新的子类并实现新的行为。同时，这也允许我们在不知道具体子类类型的情况下处理对象，只要它们都是某个父类的类型。</p>
+<h3 id="抽象"><a href="#抽象" class="headerlink" title="抽象"></a>抽象</h3><h3 id="抽象方法"><a href="#抽象方法" class="headerlink" title="抽象方法"></a>抽象方法</h3><ul>
+<li>使用abstract修饰的方法，没有方法体，只有声明</li>
+<li>定义一种规范，告诉子类必须要给该方法提供具体的实现</li>
+</ul>
+<h3 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h3><p>包含抽象方法的类</p>
+<p>可以做到严格限制子类设计，子类间更通用</p>
+<p><code>public class chouXiang extends Animal02&#123; public void run()&#123;//必须调用，不然会报错 &#125; public static void main(String[] args) &#123; &#125;&#125;abstract class Animal02&#123; int age; public abstract void run(); public void eat()&#123; System.out.print(&quot;eat&quot;); &#125;&#125;</code>Java</p>
+<p>使用要点</p>
+<ol>
+<li>有抽象方法的类只能定义成抽象类</li>
+<li>抽象类不能实例化，即不能用 new 来实例化抽象类。</li>
+<li>抽象类可以包含属性、方法、构造方法。但是构造方法不能用来 new 实例，只能用来被子类调用。</li>
+<li>抽象类只能用来被继承。</li>
+<li>抽象方法必须被子类实现</li>
+</ol>
+<h3 id="其它关键字的使用"><a href="#其它关键字的使用" class="headerlink" title="其它关键字的使用"></a>其它关键字的使用</h3><h3 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h3><p>一组规范，所有的类都要遵守</p>
+<p><code>[权限修饰符] interface 接口名称 [extends 父类接口1，父类接口2] &#123; // 定义常量 // 抽象方法&#125;interface Aanimal&#123;//定义 动物 接口，抽象方法 跑 和 吃 void run(); void eat();&#125;interface Cute&#123;//定义 可爱 接口，抽象方法 看起来喜欢 void looklike();&#125;class Cat implements Aanimal,Cute&#123;//猫类 实现 动物 和 可爱 接口，必须有 跑 和 吃 和 看起来喜欢方法 public void run()&#123; System.out.print(&quot;跑&quot;); &#125; public void eat()&#123; System.out.print(&quot;吃&quot;); &#125; public void looklike()&#123; System.out.print(&quot;看起来喜欢&quot;); &#125;&#125;</code>Java</p>
+<ul>
+<li>权限修饰符只能是public或者默认</li>
+<li>接口名和类名相似</li>
+<li>接口可以多继承</li>
+<li>接口内只能定义常量，总是用public static final定义，不写也是</li>
+<li>接口内只能声明抽象方法，public abstract，不写也是</li>
+<li>java8之后可以声明静态方法和默认方法，java9之后可以声明私有方法</li>
+</ul>
+<h3 id="object类"><a href="#object类" class="headerlink" title="object类"></a>object类</h3><p>类似于js原型链，每个类的源头都默认继承object类</p>
+<p><code>java.lang.Objact</code>Java</p>
+<h3 id="常用的方法"><a href="#常用的方法" class="headerlink" title="常用的方法"></a>常用的方法</h3><h3 id="toString-NaN"><a href="#toString-NaN" class="headerlink" title="toString()"></a><strong>toString()</strong></h3><ul>
+<li>常用程度：★★★★★</li>
+<li>用途：返回对象的字符串表示，通常用于调试和日志记录。</li>
+<li>规则：建议重写此方法以提供对象状态的简洁描述。默认实现返回类名、@符号和哈希码的组合。</li>
+</ul>
+<h3 id="equals-Object-obj"><a href="#equals-Object-obj" class="headerlink" title="equals(Object obj)"></a><strong>equals(Object obj)</strong></h3><ul>
+<li>常用程度：★★★★☆</li>
+<li>用途：判断两个对象是否相等。</li>
+<li>规则：通常需要重写此方法以比较对象的实际内容而非引用。重写时应遵循自反性、对称性、传递性和一致性等原则。</li>
+</ul>
+<h3 id="hashCode"><a href="#hashCode" class="headerlink" title="hashCode()"></a><strong>hashCode()</strong></h3><ul>
+<li>常用程度：★★★★☆</li>
+<li>用途：返回对象的哈希码值，用于支持哈希表等数据结构的快速查找。</li>
+<li>规则：当重写<code>equals</code>方法时，通常也需要重写<code>hashCode</code>方法，以确保相等的对象具有相同的哈希码。</li>
+</ul>
+<h3 id="getClass"><a href="#getClass" class="headerlink" title="getClass()"></a><strong>getClass()</strong></h3><ul>
+<li>常用程度：★★★☆☆</li>
+<li>用途：获取对象所属类的<code>Class</code>对象，用于反射或类型检查等操作。</li>
+<li>规则：此方法返回表示该对象的运行时类的<code>Class</code>实例。通常不需要重写。</li>
+</ul>
+<h3 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h3><ol>
+<li><strong>@Override</strong>：<ul>
+<li>作用：用于指示一个方法声明打算重写父类中的方法。如果方法签名与父类中的方法不一致，编译器会报错。</li>
+<li>示例：<code>@Override public void myMethod() &#123; ... &#125;</code></li>
+</ul>
+</li>
+<li><strong>@Deprecated</strong>：<ul>
+<li>作用：用于标记一个已过时的方法或类。当其他代码使用这个已过时的方法或类时，编译器会发出警告。</li>
+<li>示例：<code>@Deprecated public void myDeprecatedMethod() &#123; ... &#125;</code></li>
+</ul>
+</li>
+<li><strong>@SuppressWarnings</strong>：<ul>
+<li>作用：用于告诉编译器忽略指定的警告类型。这可以避免在编译时产生不必要的警告信息。</li>
+<li>示例：<code>@SuppressWarnings(&quot;unchecked&quot;) public void myMethod() &#123; ... &#125;</code></li>
+</ul>
+</li>
+<li><strong>@FunctionalInterface</strong>：<ul>
+<li>作用：用于标记一个接口是函数式接口，即该接口只有一个抽象方法。这有助于编译器检查接口是否符合函数式接口的要求。</li>
+</ul>
+</li>
+<li><strong>@SafeVarargs</strong>：<ul>
+<li>作用：用于标记一个方法或构造函数使用了可变参数（varargs），并且不会产生类型安全问题。编译器会给出警告，但不会阻止使用。</li>
+</ul>
+</li>
+<li><strong>@Retention</strong>：<ul>
+<li>作用：用于指定注解的保留策略，即注解在什么时候生效。可能的值有<code>SOURCE</code>（仅保留在源码中，编译时丢弃）、<code>CLASS</code>（保留在class文件中，但JVM会忽略）和<code>RUNTIME</code>（保留在class文件中，且JVM会在运行时保留，因此可以通过反射读取）。</li>
+</ul>
+</li>
+<li><strong>@Documented</strong>：<ul>
+<li>作用：用于指定注解是否应被包含在JavaDoc文档中。</li>
+</ul>
+</li>
+<li><strong>@Inherited</strong>：<ul>
+<li>作用：用于指定注解是否可以被继承。如果一个类使用了某个带有<code>@Inherited</code>注解的注解，那么它的子类也会自动继承这个注解。</li>
+</ul>
+</li>
+<li><strong>@Repeatable</strong>：<ul>
+<li>作用：用于指定一个注解是否可以在同一个元素（如类或方法）上多次使用。这通常是通过定义一个容器注解来实现的。</li>
+</ul>
+</li>
+</ol>
+<h3 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h3><p><code>class BankTest&#123; public static void main(String[] args)&#123; Bank name1=Bank.getfun(); &#125;&#125;//饿汉式class Bank&#123; private Bank()&#123;&#125;//类构造器私有化 private static Bank name=new Bank();//在类内部创建实例，也必须是static public static Bank getfun()&#123;//使用方法获取实例，必须是static return name; &#125;&#125;//懒汉式class Bank&#123; private static Bank name=null; public static Bank getfun()&#123; if(name==null)&#123; name=new Bank(); &#125; return name; &#125;&#125;</code>Java</p>
+<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><h3 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h3><h3 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h3><p>这里的异常不是指代码编译后的报错</p>
+<h3 id="抛出机制"><a href="#抛出机制" class="headerlink" title="抛出机制"></a>抛出机制</h3><p>不同异常用不同的<strong>类</strong>表示，一旦发生，创建该异常的对象并且<strong>抛出（throw）</strong>，然后程序员<strong>捕获（catch</strong>）这个异常对象，如果没有捕获，会导致程序<strong>终止</strong></p>
+<h3 id="体系结构"><a href="#体系结构" class="headerlink" title="体系结构"></a>体系结构</h3><ul>
+<li>java.lang.Throwable<ul>
+<li>java.lang.Error 错误（一般不编写针对性代码处理）：虚拟机无法解决的严重问题，如系统内部错误、资源耗尽等。<ul>
+<li>StackOverflowError</li>
+<li>OutOfMenmoryError</li>
+</ul>
+</li>
+<li>java.lang.Exception 异常（可以编写代码处理）：<ul>
+<li>编译时异常（执行javac时，受检异常）<ul>
+<li>ClassNotFoundException</li>
+<li>FileNotFoundException</li>
+<li>IOException</li>
+</ul>
+</li>
+<li>运行时异常（执行java时，非受检异常）<ul>
+<li>ArrayIndexOutOfBoundsException（数组角标越界）</li>
+<li>NullPointerException（空指针）</li>
+<li>ClassCastException</li>
+<li>NumberFormatException</li>
+<li>InputMismatchException</li>
+<li>ArithmeticException</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="处理方式"><a href="#处理方式" class="headerlink" title="处理方式"></a>处理方式</h3><h3 id="try-chtch-finally（抓抛模型）"><a href="#try-chtch-finally（抓抛模型）" class="headerlink" title="try-chtch-finally（抓抛模型）"></a>try-chtch-finally（抓抛模型）</h3><p><code>try&#123; •••••//可能产生异常的代码&#125;catch（异常类型1 e)&#123; //当产生异常类型1型异常时的处置措施 System.out.println(&quot;异常1原因: &quot; + e.getMessage());&#125;catch（异常类型2 e)&#123; //当产生异常类型2型异常时的处置措施 System.out.println(&quot;异常2详细信息: &quot; + e.printStackTrace());&#125;finally&#123; //无论是否发生异常，都无条件一定执行的语句 //和直接在try-catch-finally结构下面直接写的不同，直接写的语句在有报错的情况下不会执行 System.out.println(&quot;清理资源...&quot;); ｝</code>Java</p>
+<h3 id="throw-异常类型"><a href="#throw-异常类型" class="headerlink" title="throw+异常类型"></a>throw+异常类型</h3><p>当方法内部有代码可能抛出检查型异常，而该方法本身不处理这些异常时</p>
+<p><code>public void Fun() throws 异常类型1, 异常类型2 &#123; //可能抛出异常的代码 &#125;</code>Java</p>
+<p><code>class Parent &#123; public void doSomething() throws IOException &#123; // ... 可能抛出IOException的代码 ... &#125; &#125; class Child extends Parent &#123; @Override public void doSomething() throws FileNotFoundException &#123; // FileNotFoundException是IOException的子类 // ... 可能抛出FileNotFoundException的代码 ... &#125; &#125;</code>Java</p>
+<p>在这个例子中，Child类重写了Parent类的doSomething方法，并且声明它可能抛出一个更具体的异常FileNotFoundException，这是IOException的子类。这是合法的，因为子类方法不会比父类方法抛出更多类型的异常。如果子类方法尝试声明抛出与父类方法不相关的异常，编译器会报错。</p>
+<h3 id="自定义异常"><a href="#自定义异常" class="headerlink" title="自定义异常"></a>自定义异常</h3><p>除了Java内置的异常类，程序员还可以根据需要自定义异常类。自定义异常类通常继承自<code>Exception</code>或其子类。通过自定义异常，可以更好地描述和处理程序中的特定错误情况。</p>
+<p><code>public class CustomException extends Exception &#123; public CustomException(String message) &#123; super(message); &#125; &#125; // 使用自定义异常 try &#123; throw new CustomException(&quot;自定义异常发生&quot;); &#125; catch (CustomException e) &#123; System.out.println(&quot;捕获到自定义异常: &quot; + e.getMessage()); &#125;</code>Java</p>
+<h3 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h3><h3 id="创建线程"><a href="#创建线程" class="headerlink" title="创建线程"></a>创建线程</h3><h3 id="继承Thread类"><a href="#继承Thread类" class="headerlink" title="继承Thread类"></a><strong>继承Thread类</strong></h3><p><code>public class MyThread extends Thread &#123; @Override public void run() &#123; // 线程执行的代码 System.out.println(&quot;MyThread is running&quot;); &#125; public static void main(String[] args) &#123; MyThread thread = new MyThread(); thread.start(); // 启动线程 &#125; &#125;</code>Java</p>
+<ul>
+<li>void start()——开启线程</li>
+<li>void run()——设置线程任务</li>
+<li>String getName()——获取当前运行的线程名字</li>
+<li>void setName(String name)——给线程设置名字</li>
+<li>static Thread currentThread()——获取正在执行的线程对象</li>
+<li>static void sleep(Long millis)——线程睡眠</li>
+<li>——————————————————————————————</li>
+<li>void setPriority(int newPriority)——设置线程优先级（更容易优先，不是一定，newPriority默认5，最小1最大10）</li>
+<li>int getPrioity()——获取线程优先级</li>
+<li>void setDaemon(boolean on)——设置守护线程（伴随着被守护线程的结束而结束）</li>
+<li>static void yield()——礼让线程，让当前线程让出cpu使用权（尽量平衡，交替执行）</li>
+<li>void join()——插入线程 或 插队线程（a.join把线程a插到当前线程之前）</li>
+</ul>
+<h3 id="实现Runnable接口"><a href="#实现Runnable接口" class="headerlink" title="实现Runnable接口"></a><strong>实现Runnable接口</strong></h3><p><code>public class MyRunnable implements Runnable &#123; @Override public void run() &#123; // 线程执行的代码 System.out.println(&quot;MyRunnable is running&quot;); &#125; public static void main(String[] args) &#123; Thread thread = new Thread(new MyRunnable()); thread.start(); // 启动线程 &#125; &#125;</code>Java</p>
+<h3 id="线程安全（同步）"><a href="#线程安全（同步）" class="headerlink" title="线程安全（同步）"></a>线程安全（同步）</h3><h3 id="synchronized修饰符"><a href="#synchronized修饰符" class="headerlink" title="synchronized修饰符"></a>synchronized修饰符</h3><p>通过给方法或代码块加上synchronized修饰符，可以确保同一时间只有一个线程能够执行该方法或代码块。这有助于防止多个线程同时修改共享数据</p>
+<p><code>//1-同步代码块synchronized(锁对象)&#123; //线程可能出现不安全的代码&#125;//锁对象：代表锁的一个对象，一般用this，指代当前对象实例，也就是调用这些方法的对象//2-同步方法修饰符 synchronized 返回值类型 方法名()&#123; 方法体 return 结果&#125;</code>Java</p>
+<h3 id="线程状态"><a href="#线程状态" class="headerlink" title="线程状态"></a>线程状态</h3><table>
+<thead>
+<tr>
+<th><strong>状态</strong></th>
+<th><strong>发生条件</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>NEW（新建）</td>
+<td>线程刚被创建，但是并未启动。还没调用start方法。</td>
+</tr>
+<tr>
+<td>Runnable（可运行）</td>
+<td>线程可以在问虚拟机中运行的状态，可能正在运行自己代码，也可能没有，这取决于操作系统处理噐。</td>
+</tr>
+<tr>
+<td>Blocked（锁阻塞）</td>
+<td>当一个线程试图获取一个对象锁，而该对象锁被其他的线程持有，则该线程进入Blocked状态；当该线程持有锁时，该线程将变成Runnable状态。</td>
+</tr>
+<tr>
+<td>Waiting（无限等待）</td>
+<td>一个线程在等待另一个线程执行一个（唤醒）动作时，该线程进入Waiting状态。进入这个状态后是不能自动唤醒的，必须等待另一个线程调用notify或者notifyAl方法才能够唤醒。</td>
+</tr>
+<tr>
+<td>Timed Waiting（计时等待）</td>
+<td>同waiting状态，有几个方法有超时参数，调用他们将进入Timed Waiting状态。这一状态将一直保持到超时期满或者接收到唤醒通知。带有超时参数的常用方法有Jhread.sleep、 Object.wait.</td>
+</tr>
+<tr>
+<td>Terminated（被终止）</td>
+<td>因为run方法正常退出而死亡，或者因为没有捕获的异常终止了run方法而死亡。或者调用过时方法stop（）</td>
+</tr>
+</tbody></table>
+<p><img src="http://1.94.0.101/wp-content/uploads/2024/04/image-6-1024x1024.png" alt="http://1.94.0.101/wp-content/uploads/2024/04/image-6-1024x1024.png"></p>
+<h3 id="wait-和notify"><a href="#wait-和notify" class="headerlink" title="wait()和notify()"></a>wait()和notify()</h3><ul>
+<li><strong>sleep(time)和wait(time)有啥区别？</strong><ul>
+<li>a.sleep（time）；线程睡眠，在睡眠的过程中，线程是不会释放锁，此时其他线程抢不到锁，设置的时间一旦超时，自动醒来，继续执行 。</li>
+<li>b.wait（time）：线程等待，在等待的过程中会释放锁，其他线程就有可能抢到锁如果在等待的过程中被唤醒或者时间超时，会和其他的线程重新抢锁，如果抢到了继续执行，抢不到，锁阻塞。</li>
+</ul>
+</li>
+<li><strong>wait()和notify():</strong><ul>
+<li>a.wait()：空参wait.线程进入到无限等待状态，会释放锁需要其他线程调用。notify()（一次唤醒一条等待的线程，唤醒是随机的）或者notifyAII方法（将所有等待线程全唤醒），被唤醒之后，会和其他的线程里新抢锁，抢到了，继续执行；抢不到，锁阻塞。</li>
+<li>b.notify()：notify会唤醒正在等待的线程，一次只能唤醒—条等待的线程；如果要是多条线程在等待，notify会随机一条唤醒；</li>
+<li>c.notifyAII()：晚醒所有等待的线程</li>
+</ul>
+</li>
+<li><strong>wait和notify两个方法的用法：</strong><ul>
+<li>两个方法都需要锁对象调用，所以两个方法需要用到同步代码块，同步方法中</li>
+<li>两个方法必须是同一个锁对象调用</li>
+<li>可以理解为用同一个锁对象，将多条线程分到了一组中，这样notify就知道唤醒的是自己本组的等待线程</li>
+</ul>
+</li>
+</ul>
+<h3 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h3><p>简单实例代码：</p>
+<p><code>public class delLockText&#123; final Object lock1=new Object(); final Object lock2=new Object(); public static void main(String[] args) &#123; delLockText delLockText=new delLockText(); Thread thread1=new Thread(delLockText.new Thread1()); Thread thread2=new Thread(delLockText.new Thread2()); thread1.start(); thread2.start(); &#125; class Thread1 extends Thread&#123; @Override public void run() &#123; synchronized (lock1)&#123; System.out.println(&quot;Thread1获取lock1&quot;); synchronized (lock2)&#123; System.out.println(&quot;Thread1获取lock2&quot;); &#125; &#125; &#125; &#125; class Thread2 extends Thread&#123; @Override public void run() &#123; synchronized (lock2)&#123; System.out.println(&quot;Thread2获取lock2&quot;); synchronized (lock1)&#123; System.out.println(&quot;Thread2获取lock1&quot;); &#125; &#125; &#125; &#125;&#125;</code>Java</p>
+<h3 id="lock锁"><a href="#lock锁" class="headerlink" title="lock锁"></a>lock锁</h3><p><strong>主要方法和特点：</strong></p>
+<ul>
+<li>**lock()**：获取锁。如果锁被其他线程持有，则当前线程将阻塞，直到获得锁。</li>
+<li>**tryLock()**：尝试获取锁，如果锁被其他线程持有，则立即返回false，不会阻塞当前线程。</li>
+<li>**unlock()**：释放锁。调用此方法的前提是当前线程持有该锁，否则会抛出<code>IllegalMonitorStateException</code>。</li>
+<li>**tryLock(long time, TimeUnit unit)**：尝试获取锁，如果在指定的时间内没有获得锁，则返回false。</li>
+<li>**newCondition()**：返回与此锁关联的<code>Condition</code>实例，用于线程间的等待&#x2F;通知机制。</li>
+</ul>
+<p><code>import java.util.concurrent.locks.Lock; import java.util.concurrent.locks.ReentrantLock; Lock lock = new ReentrantLock(); public void increment() &#123; lock.lock(); try &#123; count++; &#125; finally &#123; lock.unlock(); &#125; &#125;</code> Java</p>
+<h3 id="Callable接口"><a href="#Callable接口" class="headerlink" title="Callable接口"></a>Callable<V>接口</h3><p><code>public class MyCS implements Callable&lt;String&gt;&#123; @Override public String call() throws Exception &#123; return “涛哥和金莲...的故事”； ｝｝public class Test &#123; public static void main(Stringl] args)&#123; MyCS my_cs = new MyCS(); //FutureTask (Callable&lt;V&gt; callable) FutureTask&lt;String&gt; futureTask = new FutureTask&lt;&gt;(my_cs); //创建Thread对象-&gt;Thread（Runnabletarget） Thread t1 = new Thread (futureTask); t1. start; //调用get方法获取ca11方法返回值 System.out.println(futureTask.get); &#125;&#125;</code>Java</p>
+<p>v call()——设置线程任务，类似于Runable的run方法</p>
+<ul>
+<li>相同点：都是设置线程任务</li>
+<li>不同点：<ul>
+<li>call 有返回值，且有异常可以throws</li>
+<li>run没有返回值，有异常不能throws</li>
+</ul>
+</li>
+</ul>
+<h3 id="volatile关键字"><a href="#volatile关键字" class="headerlink" title="volatile关键字"></a><strong>volatile关键字</strong></h3><p>volatile用于修饰变量，确保多线程对变量的操作具有可见性，即当一个线程修改了一个volatile变量的值，其他线程能够立即看到这个修改。</p>
+<p><code>public volatile int sharedVariable = 0;</code>Java</p>
+<h3 id="线程池"><a href="#线程池" class="headerlink" title="线程池"></a>线程池</h3><ol>
+<li>创建线程对象：工具类-Executors</li>
+<li>获取线程对象：Executors中的静态方法<ul>
+<li>static ExecutorService newFixedThreadPool（int nThreads）</li>
+<li>参数：指定线程池中最多创建的线程对象数量</li>
+<li>返回值ExecutorService时线程池，用来管理线程对象</li>
+</ul>
+</li>
+<li>执行线程任务：ExecutorService中的方法<ul>
+<li>Future&lt;?&gt; submit(Runnable task)提交一个runnable任务用于执行</li>
+<li>Future<T> submit(Callable<T> task)提交一个callable任务用于执行</li>
+</ul>
+</li>
+<li>submit方法的返回值：Future接口<ul>
+<li>用于接收run或call方法返回值，但是run没有返回值，所以可以不用Future接收</li>
+<li>Future有一个方法V get() 用于获取call返回值</li>
+</ul>
+</li>
+<li>ExecutorService中的方法：<ul>
+<li>void shutdown()启动有序关闭，之前提交的任务执行，不会接受新任务</li>
+</ul>
+</li>
+</ol>
+<p><code>public class Text01 &#123; public static void main(String[] args) throws ExecutionException, InterruptedException &#123; ExecutorService executor_service= Executors.newFixedThreadPool(2); //MyRunnable executor_service.submit(new MyRunnable()); //MyCallable Future future=executor_service.submit(new MyCallable()); System.out.println(future.get()); //关闭线程池 executor_service.shutdown(); &#125;&#125;//MyRunnablepublic class MyRunnable implements Runnable&#123; @Override public void run() &#123; System.out.println(Thread.currentThread().getName()+&quot;线程，执行了&quot;); &#125;&#125;//Callablepublic class MyCallable implements Callable&lt;String&gt; &#123; @Override public String call() throws Exception &#123; return &quot;执行&quot;; &#125;&#125;</code>Java</p>
+<h3 id="定时器Timer"><a href="#定时器Timer" class="headerlink" title="定时器Timer"></a>定时器Timer</h3><p>构造：Timer()</p>
+<p>方法：void schedule(TimerTask task,Date firstTime,long period)</p>
+<ul>
+<li>task：抽象类，Runnable的实现类</li>
+<li>firstTime：执行的起始时间</li>
+<li>period：执行间隔（毫秒）</li>
+</ul>
+<p><code>public class DemoOlTimer &#123; public static void main (String[] args) &#123; Timer timer = new Timer (); timer.schedule (new TimerTask &#123; @Override public void run () &#123; system.out.println（&quot;起床了~~~&quot;）； &#125; &#125;,new Date(),2000L); &#125;&#125;</code>Java</p>
+<h3 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h3><p>动态的容器</p>
+<ul>
+<li>单列集合：元素只有一个组成部分</li>
+<li>双列集合：元素有两个组成部分，key，value</li>
+</ul>
+<h3 id="接口-1"><a href="#接口-1" class="headerlink" title="接口"></a>接口</h3><ol>
+<li><strong>Collection</strong>：这是集合框架的根接口，它定义了集合的基本操作，如添加、删除、检查元素是否存在等。</li>
+<li><strong>List</strong>：有序的集合（元素可重复）。</li>
+<li><strong>Set</strong>：无序的集合（元素不重复）。</li>
+<li><strong>Queue</strong>：队列，一种特殊的线性表，它只允许在表的前端（front）进行删除操作，而在表的后端（rear）进行插入操作。</li>
+<li><strong>Deque</strong>：双端队列，支持在两端插入和移除元素。</li>
+<li><strong>Map</strong>：存储键值对的集合。</li>
+</ol>
+<h3 id="类"><a href="#类" class="headerlink" title="类"></a>类</h3><ol>
+<li><strong>ArrayList</strong>：基于动态数组实现的List。</li>
+<li><strong>LinkedList</strong>：基于链表实现的List。</li>
+<li><strong>HashSet</strong>：基于哈希表实现的Set。</li>
+<li><strong>TreeSet</strong>：基于红黑树实现的Set，可以对元素进行排序。</li>
+<li><strong>PriorityQueue</strong>：基于优先级堆的队列，元素根据其自然顺序或者创建的Comparator进行排序。</li>
+<li><strong>ArrayDeque</strong>：基于数组实现的双端队列。</li>
+<li><strong>HashMap</strong>：基于哈希表实现的Map。</li>
+<li><strong>TreeMap</strong>：基于红黑树实现的Map，可以对键进行排序。</li>
+<li><strong>LinkedHashMap</strong>：HashMap的子类，维护了一个运行于所有条目的双向链表。此链表定义了迭代顺序，通常是按照将元素插入到映射中的顺序（插入顺序）进行迭代。</li>
+</ol>
+<p><img src="http://1.94.0.101/wp-content/uploads/2024/04/image-8-edited.png" alt="http://1.94.0.101/wp-content/uploads/2024/04/image-8-edited.png"></p>
+<h3 id="Collection接口"><a href="#Collection接口" class="headerlink" title="Collection接口"></a>Collection接口</h3><p><strong>定义</strong>：</p>
+<p>单列集合的顶级接口</p>
+<p><strong>使用：</strong></p>
+<p>创建：Collection<E> name&#x3D;new 实现类对象<E>()</p>
+<ul>
+<li><E>泛型，决定集合中能存储什么类型的数据，可以统一元素类型</li>
+<li>泛型中只能写<strong>引用数据类型</strong>，如果不写默认object，什么类型都可以存储了</li>
+<li>等号前面的&lt;&gt;必须写，后面的可省略</li>
+</ul>
+<p><strong>常见方法：</strong></p>
+<ol>
+<li><strong>add(Object obj)</strong>: 向集合中添加一个元素。</li>
+<li><strong>addAll(Collection c)</strong>: 将指定集合中的所有元素添加到此集合中。</li>
+<li><strong>remove(Object obj)</strong>: 从集合中移除一个元素。</li>
+<li><strong>removeAll(Collection c)</strong>: 移除集合c中的所有元素。</li>
+<li><strong>retainAll(Collection c)</strong>: 仅保留集合c中的元素，其他元素将被移除。</li>
+<li><strong>clear()</strong>: 清空集合中的所有元素。</li>
+<li><strong>contains(Object obj)</strong>: 判断集合中是否包含元素obj。</li>
+<li><strong>containsAll(Collection c)</strong>: 判断集合中是否包含集合c中的所有元素。</li>
+<li><strong>isEmpty()</strong>: 判断集合是否为空。</li>
+<li><strong>size()</strong>: 获取集合中元素的个数。</li>
+<li><strong>toArray()</strong>: 将集合转换为数组。</li>
+</ol>
+<h3 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h3><p><code>import java.util.ArrayList;import java.util.Collection;import java.util.Iterator;public class iteratorCS &#123; public static void main(String[] args) &#123; //Collection&lt;String&gt; arr=new ArrayList&lt;&gt;(); ArrayList&lt;String&gt; arr=new ArrayList&lt;&gt;(); arr.add(&quot;001&quot;); arr.add(&quot;002&quot;); arr.add(&quot;003&quot;); arr.add(&quot;004&quot;); Iterator&lt;String&gt; iterator= arr.iterator(); while (iterator.hasNext())&#123;//检查集合中是否还有更多的元素 String t=iterator.next();//返回集合中的下一个元素 //System.out.println(t); if(&quot;003&quot;.equals(t))&#123;//匹配003并删除 arr.remove(&quot;003&quot;);//从集合中删除上一次通过next()方法返回的元素 System.out.println(arr); &#125; &#125; for(String i:arr)&#123;//for-each遍历 //System.out.println(i); &#125; &#125;&#125;</code>Java</p>
+<h3 id="I0流"><a href="#I0流" class="headerlink" title="I0流"></a>I0流</h3><h3 id="网絡编程"><a href="#网絡编程" class="headerlink" title="网絡编程"></a>网絡编程</h3><h3 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h3><h3 id="新特性"><a href="#新特性" class="headerlink" title="新特性"></a>新特性</h3><h3 id="其他常用api"><a href="#其他常用api" class="headerlink" title="其他常用api"></a>其他常用api</h3>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/08/02/arm%E6%9E%B6%E6%9E%84macos%E9%83%A8%E7%BD%B2sqlserver/" rel="prev" title="arm架构macos部署sqlserver">
+                  <i class="fa fa-angle-left"></i> arm架构macos部署sqlserver
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2025/08/02/SEO(%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E4%BC%98%E5%8C%96)/" rel="next" title="SEO(搜索引擎优化)">
+                  SEO(搜索引擎优化) <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">HuaFeng</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>
