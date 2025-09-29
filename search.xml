@@ -54,128 +54,6 @@
       </categories>
   </entry>
   <entry>
-    <title>CSS</title>
-    <url>/2025/08/02/CSS/</url>
-    <content><![CDATA[<h2 id="CSS3-模块化"><a href="#CSS3-模块化" class="headerlink" title="CSS3 模块化"></a>CSS3 模块化</h2><p>CSS3 采用模块化设计，将旧规范拆分并新增多个模块，主要模块包括：</p>
-<ul>
-<li>✅ 选择器</li>
-<li>✅ 盒模型</li>
-<li>✅ 背景和边框</li>
-<li>✅ 文字特效</li>
-<li>✅ 2D&#x2F;3D转换</li>
-<li>✅ 动画</li>
-<li>✅ 多列布局</li>
-<li>✅ 用户界面</li>
-</ul>
-<hr>
-<h2 id="新增选择器"><a href="#新增选择器" class="headerlink" title="新增选择器"></a>新增选择器</h2><h3 id="1-属性选择器"><a href="#1-属性选择器" class="headerlink" title="1. 属性选择器 [ ]"></a>1. 属性选择器 <code>[ ]</code></h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 存在属性选择 */</span></span><br><span class="line"><span class="selector-tag">input</span><span class="selector-attr">[value]</span> &#123; <span class="attribute">color</span>: red; &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 精确属性值匹配 */</span></span><br><span class="line"><span class="selector-tag">input</span><span class="selector-attr">[type=<span class="string">&quot;text&quot;</span>]</span> &#123; <span class="attribute">color</span>: blue; &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 前缀匹配 */</span></span><br><span class="line"><span class="selector-tag">div</span><span class="selector-attr">[class^=<span class="string">&quot;con&quot;</span>]</span> &#123; <span class="attribute">color</span>: red; &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 后缀匹配 */</span></span><br><span class="line"><span class="selector-tag">div</span><span class="selector-attr">[class$=<span class="string">&quot;ico&quot;</span>]</span> &#123; <span class="attribute">color</span>: red; &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 子串匹配 */</span></span><br><span class="line"><span class="selector-tag">div</span><span class="selector-attr">[class*=<span class="string">&quot;ico&quot;</span>]</span> &#123; <span class="attribute">color</span>: red; &#125;</span><br></pre></td></tr></table></figure>
-<p><strong>权重：10</strong>（等同类选择器）</p>
-<hr>
-<h3 id="2-结构伪类选择器"><a href="#2-结构伪类选择器" class="headerlink" title="2. 结构伪类选择器 :"></a>2. 结构伪类选择器 <code>:</code></h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 基础选择 */</span></span><br><span class="line"><span class="selector-tag">ul</span><span class="selector-pseudo">:first-child</span> &#123; <span class="attribute">color</span>: red; &#125;</span><br><span class="line"><span class="selector-tag">ul</span><span class="selector-pseudo">:last-child</span> &#123; <span class="attribute">color</span>: blue; &#125;</span><br><span class="line"><span class="selector-tag">ul</span><span class="selector-pseudo">:nth-child</span>(n) &#123; <span class="attribute">color</span>: green; &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 类型过滤选择 */</span></span><br><span class="line"><span class="selector-tag">ul</span><span class="selector-pseudo">:first-of-type</span> &#123; <span class="attribute">color</span>: yellow; &#125;</span><br><span class="line"><span class="selector-tag">ul</span><span class="selector-pseudo">:nth-of-type</span>(<span class="number">2</span>n+<span class="number">1</span>) &#123; <span class="attribute">color</span>: purple; &#125;</span><br></pre></td></tr></table></figure>
-<p><strong>参数说明：</strong></p>
-<ul>
-<li><code>n</code> 可为数字&#x2F;关键字&#x2F;公式</li>
-<li><code>even</code>&#x2F;<code>odd</code> 表示奇偶</li>
-<li>公式示例：<code>2n</code>（偶数）、<code>3n</code>（3的倍数）</li>
-</ul>
-<blockquote>
-<p><strong>💡 核心区别：</strong><br><code>nth-child</code> 先计数后匹配类型，<code>nth-of-type</code> 先过滤类型后计数</p>
-</blockquote>
-<hr>
-<h3 id="3-伪元素选择器"><a href="#3-伪元素选择器" class="headerlink" title="3. 伪元素选择器 ::"></a>3. 伪元素选择器 <code>::</code></h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.element</span><span class="selector-pseudo">::before</span> &#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="string">&quot;★&quot;</span>;  <span class="comment">/* 必须属性 */</span></span><br><span class="line">  <span class="attribute">display</span>: inline-block;</span><br><span class="line">  <span class="attribute">color</span>: gold;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>特性：</strong></p>
-<ul>
-<li>创建行内元素</li>
-<li>DOM树不可见</li>
-<li>权重 &#x3D; 标签选择器（1）</li>
-<li>应用场景：图标、遮罩、清除浮动</li>
-</ul>
-<hr>
-<h2 id="盒模型进阶"><a href="#盒模型进阶" class="headerlink" title="盒模型进阶"></a>盒模型进阶</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">box-sizing</span>: border-box;  <span class="comment">/* 推荐初始化设置 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<table>
-<thead>
-<tr>
-<th>模式</th>
-<th>计算方式</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>content-box</code> (默认)</td>
-<td>width + padding + border</td>
-</tr>
-<tr>
-<td><code>border-box</code></td>
-<td>width &#x3D; 内容+padding+border</td>
-</tr>
-</tbody></table>
-<hr>
-<h2 id="视觉增强特性"><a href="#视觉增强特性" class="headerlink" title="视觉增强特性"></a>视觉增强特性</h2><h3 id="1-滤镜-filter"><a href="#1-滤镜-filter" class="headerlink" title="1. 滤镜 filter"></a>1. 滤镜 <code>filter</code></h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.img-blur</span> &#123;</span><br><span class="line">  <span class="attribute">filter</span>: <span class="built_in">blur</span>(<span class="number">5px</span>) <span class="built_in">brightness</span>(<span class="number">120%</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>常用函数：<code>blur()</code>、<code>grayscale()</code>、<code>opacity()</code></p>
-<h3 id="2-动态计算-calc"><a href="#2-动态计算-calc" class="headerlink" title="2. 动态计算 calc()"></a>2. 动态计算 <code>calc()</code></h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.fluid-width</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="built_in">calc</span>(<span class="number">100%</span> - <span class="number">60px</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-过渡动画-transition"><a href="#3-过渡动画-transition" class="headerlink" title="3. 过渡动画 transition"></a>3. 过渡动画 <code>transition</code></h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.button</span> &#123;</span><br><span class="line">  <span class="attribute">transition</span>: all <span class="number">0.3s</span> ease-in-out <span class="number">0.1s</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>参数顺序：</strong> 属性 时长 缓动函数 延迟</p>
-<hr>
-<h2 id="变形与动画"><a href="#变形与动画" class="headerlink" title="变形与动画"></a>变形与动画</h2><h3 id="2D-变换坐标系"><a href="#2D-变换坐标系" class="headerlink" title="2D 变换坐标系"></a>2D 变换坐标系</h3><p><img src="http://1.94.0.101/wp-content/uploads/2024/03/%E4%BA%8C%E7%BB%B4%E5%9D%90%E6%A0%87%E7%B3%BB-416x313.jpg" alt="二维坐标系"></p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.transform-box</span> &#123;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">translate</span>(<span class="number">50px</span>, <span class="number">20px</span>) <span class="built_in">rotate</span>(<span class="number">45deg</span>) <span class="built_in">scale</span>(<span class="number">1.2</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="3D-变换"><a href="#3D-变换" class="headerlink" title="3D 变换"></a>3D 变换</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.cube</span> &#123;</span><br><span class="line">  <span class="attribute">perspective</span>: <span class="number">1000px</span>;  <span class="comment">/* 父元素设置透视 */</span></span><br><span class="line">  <span class="attribute">transform-style</span>: preserve-<span class="number">3</span>d;  <span class="comment">/* 开启3D空间 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="关键帧动画"><a href="#关键帧动画" class="headerlink" title="关键帧动画"></a>关键帧动画</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@keyframes</span> slide &#123;</span><br><span class="line">  <span class="number">0%</span> &#123; <span class="attribute">transform</span>: <span class="built_in">translateX</span>(-<span class="number">100%</span>); &#125;</span><br><span class="line">  <span class="number">100%</span> &#123; <span class="attribute">transform</span>: <span class="built_in">translateX</span>(<span class="number">0</span>); &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.slider</span> &#123;</span><br><span class="line">  <span class="attribute">animation</span>: slide <span class="number">1s</span> ease-in-out infinite alternate;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="优先级深度解析"><a href="#优先级深度解析" class="headerlink" title="优先级深度解析"></a>优先级深度解析</h2><h3 id="权重计算表"><a href="#权重计算表" class="headerlink" title="权重计算表"></a>权重计算表</h3><table>
-<thead>
-<tr>
-<th>选择器类型</th>
-<th>权重值</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>内联样式</td>
-<td>1000</td>
-</tr>
-<tr>
-<td>ID选择器</td>
-<td>100</td>
-</tr>
-<tr>
-<td>类&#x2F;伪类&#x2F;属性选择器</td>
-<td>10</td>
-</tr>
-<tr>
-<td>元素&#x2F;伪元素选择器</td>
-<td>1</td>
-</tr>
-</tbody></table>
-<h3 id="important-使用原则"><a href="#important-使用原则" class="headerlink" title="!important 使用原则"></a>!important 使用原则</h3><ol>
-<li>尽量避免使用</li>
-<li>仅用于覆盖第三方库样式</li>
-<li>不可滥用，维护性差</li>
-</ol>
-<hr>
-<h2 id="实用技巧合集"><a href="#实用技巧合集" class="headerlink" title="实用技巧合集"></a>实用技巧合集</h2><h3 id="1-元素居中方案"><a href="#1-元素居中方案" class="headerlink" title="1. 元素居中方案"></a>1. 元素居中方案</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 文字居中 */</span></span><br><span class="line"><span class="selector-class">.text-center</span> &#123;</span><br><span class="line">  <span class="attribute">text-align</span>: center;</span><br><span class="line">  <span class="attribute">line-height</span>: 容器高度;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 盒子居中 */</span></span><br><span class="line"><span class="selector-class">.box-center</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">translate</span>(-<span class="number">50%</span>, -<span class="number">50%</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-图片空白处理"><a href="#2-图片空白处理" class="headerlink" title="2. 图片空白处理"></a>2. 图片空白处理</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">img</span> &#123;</span><br><span class="line">  <span class="attribute">vertical-align</span>: middle;  <span class="comment">/* 消除基线间隙 */</span></span><br><span class="line">  <span class="attribute">display</span>: block;          <span class="comment">/* 替代方案 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-文本溢出处理"><a href="#3-文本溢出处理" class="headerlink" title="3. 文本溢出处理"></a>3. 文本溢出处理</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.ellipsis</span> &#123;</span><br><span class="line">  <span class="attribute">white-space</span>: nowrap;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">  <span class="attribute">text-overflow</span>: ellipsis;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.multi-ellipsis</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: -webkit-box;</span><br><span class="line">  -webkit-<span class="selector-tag">line</span>-clamp: <span class="number">3</span>;</span><br><span class="line">  -webkit-<span class="attribute">box-orient</span>: vertical;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="浏览器兼容方案"><a href="#浏览器兼容方案" class="headerlink" title="浏览器兼容方案"></a>浏览器兼容方案</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.gradient-bg</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#1e5799</span>; <span class="comment">/* 回退色 */</span></span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">-moz-linear-gradient</span>(top, <span class="number">#1e5799</span> <span class="number">0%</span>, <span class="number">#7db9e8</span> <span class="number">100%</span>);</span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">-webkit-linear-gradient</span>(top, <span class="number">#1e5799</span> <span class="number">0%</span>,<span class="number">#7db9e8</span> <span class="number">100%</span>);</span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">linear-gradient</span>(to bottom, <span class="number">#1e5799</span> <span class="number">0%</span>,<span class="number">#7db9e8</span> <span class="number">100%</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="性能优化建议"><a href="#性能优化建议" class="headerlink" title="性能优化建议"></a>性能优化建议</h2><ol start="4">
-<li>优先使用transform&#x2F;opacity属性（触发GPU加速）</li>
-<li>避免过多层嵌套选择器</li>
-<li>使用will-change预声明变化属性</li>
-<li>精简重排重绘操作</li>
-</ol>
-]]></content>
-      <categories>
-        <category>CSS</category>
-      </categories>
-  </entry>
-  <entry>
     <title>HTML</title>
     <url>/2025/08/02/HTML/</url>
     <content><![CDATA[<h1 id="HTML-学习笔记"><a href="#HTML-学习笔记" class="headerlink" title="HTML 学习笔记"></a>HTML 学习笔记</h1><h2 id="基础篇"><a href="#基础篇" class="headerlink" title="基础篇"></a>基础篇</h2><h3 id="一、HTML简介"><a href="#一、HTML简介" class="headerlink" title="一、HTML简介"></a>一、HTML简介</h3><h4 id="1-1-什么是HTML？"><a href="#1-1-什么是HTML？" class="headerlink" title="1.1 什么是HTML？"></a>1.1 什么是HTML？</h4><ul>
@@ -456,32 +334,238 @@
       </categories>
   </entry>
   <entry>
-    <title>MacOS使用笔记</title>
-    <url>/2025/08/02/MacOS%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h2 id="Homebrew"><a href="#Homebrew" class="headerlink" title="Homebrew"></a>Homebrew</h2><p>安装(镜像、国内第三方脚本)</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/bin/zsh -c &quot;$(curl -fsSL &lt;https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh&gt;)&quot;</span><br></pre></td></tr></table></figure>
+    <title>CSS</title>
+    <url>/2025/08/02/CSS/</url>
+    <content><![CDATA[<h2 id="CSS3-模块化"><a href="#CSS3-模块化" class="headerlink" title="CSS3 模块化"></a>CSS3 模块化</h2><p>CSS3 采用模块化设计，将旧规范拆分并新增多个模块，主要模块包括：</p>
+<ul>
+<li>✅ 选择器</li>
+<li>✅ 盒模型</li>
+<li>✅ 背景和边框</li>
+<li>✅ 文字特效</li>
+<li>✅ 2D&#x2F;3D转换</li>
+<li>✅ 动画</li>
+<li>✅ 多列布局</li>
+<li>✅ 用户界面</li>
+</ul>
+<hr>
+<h2 id="新增选择器"><a href="#新增选择器" class="headerlink" title="新增选择器"></a>新增选择器</h2><h3 id="1-属性选择器"><a href="#1-属性选择器" class="headerlink" title="1. 属性选择器 [ ]"></a>1. 属性选择器 <code>[ ]</code></h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 存在属性选择 */</span></span><br><span class="line"><span class="selector-tag">input</span><span class="selector-attr">[value]</span> &#123; <span class="attribute">color</span>: red; &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 精确属性值匹配 */</span></span><br><span class="line"><span class="selector-tag">input</span><span class="selector-attr">[type=<span class="string">&quot;text&quot;</span>]</span> &#123; <span class="attribute">color</span>: blue; &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 前缀匹配 */</span></span><br><span class="line"><span class="selector-tag">div</span><span class="selector-attr">[class^=<span class="string">&quot;con&quot;</span>]</span> &#123; <span class="attribute">color</span>: red; &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 后缀匹配 */</span></span><br><span class="line"><span class="selector-tag">div</span><span class="selector-attr">[class$=<span class="string">&quot;ico&quot;</span>]</span> &#123; <span class="attribute">color</span>: red; &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 子串匹配 */</span></span><br><span class="line"><span class="selector-tag">div</span><span class="selector-attr">[class*=<span class="string">&quot;ico&quot;</span>]</span> &#123; <span class="attribute">color</span>: red; &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>权重：10</strong>（等同类选择器）</p>
+<hr>
+<h3 id="2-结构伪类选择器"><a href="#2-结构伪类选择器" class="headerlink" title="2. 结构伪类选择器 :"></a>2. 结构伪类选择器 <code>:</code></h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 基础选择 */</span></span><br><span class="line"><span class="selector-tag">ul</span><span class="selector-pseudo">:first-child</span> &#123; <span class="attribute">color</span>: red; &#125;</span><br><span class="line"><span class="selector-tag">ul</span><span class="selector-pseudo">:last-child</span> &#123; <span class="attribute">color</span>: blue; &#125;</span><br><span class="line"><span class="selector-tag">ul</span><span class="selector-pseudo">:nth-child</span>(n) &#123; <span class="attribute">color</span>: green; &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 类型过滤选择 */</span></span><br><span class="line"><span class="selector-tag">ul</span><span class="selector-pseudo">:first-of-type</span> &#123; <span class="attribute">color</span>: yellow; &#125;</span><br><span class="line"><span class="selector-tag">ul</span><span class="selector-pseudo">:nth-of-type</span>(<span class="number">2</span>n+<span class="number">1</span>) &#123; <span class="attribute">color</span>: purple; &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>参数说明：</strong></p>
+<ul>
+<li><code>n</code> 可为数字&#x2F;关键字&#x2F;公式</li>
+<li><code>even</code>&#x2F;<code>odd</code> 表示奇偶</li>
+<li>公式示例：<code>2n</code>（偶数）、<code>3n</code>（3的倍数）</li>
+</ul>
+<blockquote>
+<p><strong>💡 核心区别：</strong><br><code>nth-child</code> 先计数后匹配类型，<code>nth-of-type</code> 先过滤类型后计数</p>
+</blockquote>
+<hr>
+<h3 id="3-伪元素选择器"><a href="#3-伪元素选择器" class="headerlink" title="3. 伪元素选择器 ::"></a>3. 伪元素选择器 <code>::</code></h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.element</span><span class="selector-pseudo">::before</span> &#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="string">&quot;★&quot;</span>;  <span class="comment">/* 必须属性 */</span></span><br><span class="line">  <span class="attribute">display</span>: inline-block;</span><br><span class="line">  <span class="attribute">color</span>: gold;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>特性：</strong></p>
+<ul>
+<li>创建行内元素</li>
+<li>DOM树不可见</li>
+<li>权重 &#x3D; 标签选择器（1）</li>
+<li>应用场景：图标、遮罩、清除浮动</li>
+</ul>
+<hr>
+<h2 id="盒模型进阶"><a href="#盒模型进阶" class="headerlink" title="盒模型进阶"></a>盒模型进阶</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">box-sizing</span>: border-box;  <span class="comment">/* 推荐初始化设置 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>模式</th>
+<th>计算方式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>content-box</code> (默认)</td>
+<td>width + padding + border</td>
+</tr>
+<tr>
+<td><code>border-box</code></td>
+<td>width &#x3D; 内容+padding+border</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="视觉增强特性"><a href="#视觉增强特性" class="headerlink" title="视觉增强特性"></a>视觉增强特性</h2><h3 id="1-滤镜-filter"><a href="#1-滤镜-filter" class="headerlink" title="1. 滤镜 filter"></a>1. 滤镜 <code>filter</code></h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.img-blur</span> &#123;</span><br><span class="line">  <span class="attribute">filter</span>: <span class="built_in">blur</span>(<span class="number">5px</span>) <span class="built_in">brightness</span>(<span class="number">120%</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>常用函数：<code>blur()</code>、<code>grayscale()</code>、<code>opacity()</code></p>
+<h3 id="2-动态计算-calc"><a href="#2-动态计算-calc" class="headerlink" title="2. 动态计算 calc()"></a>2. 动态计算 <code>calc()</code></h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.fluid-width</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="built_in">calc</span>(<span class="number">100%</span> - <span class="number">60px</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>卸载</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/bin/zsh -c &quot;$(curl -fsSL &lt;https://gitee.com/cunkai/HomebrewCN/raw/master/HomebrewUninstall.sh&gt;)&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="3-过渡动画-transition"><a href="#3-过渡动画-transition" class="headerlink" title="3. 过渡动画 transition"></a>3. 过渡动画 <code>transition</code></h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.button</span> &#123;</span><br><span class="line">  <span class="attribute">transition</span>: all <span class="number">0.3s</span> ease-in-out <span class="number">0.1s</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>参数顺序：</strong> 属性 时长 缓动函数 延迟</p>
+<hr>
+<h2 id="变形与动画"><a href="#变形与动画" class="headerlink" title="变形与动画"></a>变形与动画</h2><h3 id="2D-变换坐标系"><a href="#2D-变换坐标系" class="headerlink" title="2D 变换坐标系"></a>2D 变换坐标系</h3><p><img src="http://1.94.0.101/wp-content/uploads/2024/03/%E4%BA%8C%E7%BB%B4%E5%9D%90%E6%A0%87%E7%B3%BB-416x313.jpg" alt="二维坐标系"></p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.transform-box</span> &#123;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">translate</span>(<span class="number">50px</span>, <span class="number">20px</span>) <span class="built_in">rotate</span>(<span class="number">45deg</span>) <span class="built_in">scale</span>(<span class="number">1.2</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>默认命令行安装的软件包路径：usr&#x2F;local Homebrew安装的路径：opt&#x2F;homebrew</p>
-<h2 id="偏好设置"><a href="#偏好设置" class="headerlink" title="偏好设置"></a>偏好设置</h2><h2 id="终端"><a href="#终端" class="headerlink" title="终端"></a>终端</h2><h3 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h3><p><code>查找目录下所有名字包含666的所有文件及目录 查找：sudo find /usr/local -type d -name &quot;*666*&quot; 删除：sudo find /usr/local -type d -name &quot;*666*&quot; -exec rm -rf &#123;&#125; +</code></p>
-<h3 id="权限操作"><a href="#权限操作" class="headerlink" title="权限操作"></a>权限操作</h3><p><code>sudo -s</code></p>
-<h3 id="端口操作"><a href="#端口操作" class="headerlink" title="端口操作"></a>端口操作</h3><p>查看端口被哪个程序占用</p>
-<p><code>sudo lsof -i tcp:port</code></p>
-<p>示例：</p>
-<p><code>sudo lsof -i tcp:8080 查看8080端口是否被占用</code></p>
-<ol start="2">
-<li>看到进程的PID，可以将进程杀死。</li>
+<h3 id="3D-变换"><a href="#3D-变换" class="headerlink" title="3D 变换"></a>3D 变换</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.cube</span> &#123;</span><br><span class="line">  <span class="attribute">perspective</span>: <span class="number">1000px</span>;  <span class="comment">/* 父元素设置透视 */</span></span><br><span class="line">  <span class="attribute">transform-style</span>: preserve-<span class="number">3</span>d;  <span class="comment">/* 开启3D空间 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="关键帧动画"><a href="#关键帧动画" class="headerlink" title="关键帧动画"></a>关键帧动画</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@keyframes</span> slide &#123;</span><br><span class="line">  <span class="number">0%</span> &#123; <span class="attribute">transform</span>: <span class="built_in">translateX</span>(-<span class="number">100%</span>); &#125;</span><br><span class="line">  <span class="number">100%</span> &#123; <span class="attribute">transform</span>: <span class="built_in">translateX</span>(<span class="number">0</span>); &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.slider</span> &#123;</span><br><span class="line">  <span class="attribute">animation</span>: slide <span class="number">1s</span> ease-in-out infinite alternate;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="优先级深度解析"><a href="#优先级深度解析" class="headerlink" title="优先级深度解析"></a>优先级深度解析</h2><h3 id="权重计算表"><a href="#权重计算表" class="headerlink" title="权重计算表"></a>权重计算表</h3><table>
+<thead>
+<tr>
+<th>选择器类型</th>
+<th>权重值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>内联样式</td>
+<td>1000</td>
+</tr>
+<tr>
+<td>ID选择器</td>
+<td>100</td>
+</tr>
+<tr>
+<td>类&#x2F;伪类&#x2F;属性选择器</td>
+<td>10</td>
+</tr>
+<tr>
+<td>元素&#x2F;伪元素选择器</td>
+<td>1</td>
+</tr>
+</tbody></table>
+<h3 id="important-使用原则"><a href="#important-使用原则" class="headerlink" title="!important 使用原则"></a>!important 使用原则</h3><ol>
+<li>尽量避免使用</li>
+<li>仅用于覆盖第三方库样式</li>
+<li>不可滥用，维护性差</li>
 </ol>
-<p><code>sudo kill -9 PID</code></p>
-<p>示例：</p>
-<p><code>sudo kill -9 3210</code></p>
-<h2 id="用户权限"><a href="#用户权限" class="headerlink" title="用户权限"></a>用户权限</h2><h3 id="VScode编辑文件提示权限不足"><a href="#VScode编辑文件提示权限不足" class="headerlink" title="VScode编辑文件提示权限不足"></a>VScode编辑文件提示权限不足</h3><p>原因：目前看来是创建项目时使用root权限</p>
-<p>解决方案：右击项目文件夹，选择“查看简介”，在简介界面下方“共享与权限”中添加当前用户”读与写“权限，并且点击“···”应用到包含的所有项目</p>
+<hr>
+<h2 id="实用技巧合集"><a href="#实用技巧合集" class="headerlink" title="实用技巧合集"></a>实用技巧合集</h2><h3 id="1-元素居中方案"><a href="#1-元素居中方案" class="headerlink" title="1. 元素居中方案"></a>1. 元素居中方案</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 文字居中 */</span></span><br><span class="line"><span class="selector-class">.text-center</span> &#123;</span><br><span class="line">  <span class="attribute">text-align</span>: center;</span><br><span class="line">  <span class="attribute">line-height</span>: 容器高度;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 盒子居中 */</span></span><br><span class="line"><span class="selector-class">.box-center</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">translate</span>(-<span class="number">50%</span>, -<span class="number">50%</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-图片空白处理"><a href="#2-图片空白处理" class="headerlink" title="2. 图片空白处理"></a>2. 图片空白处理</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">img</span> &#123;</span><br><span class="line">  <span class="attribute">vertical-align</span>: middle;  <span class="comment">/* 消除基线间隙 */</span></span><br><span class="line">  <span class="attribute">display</span>: block;          <span class="comment">/* 替代方案 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-文本溢出处理"><a href="#3-文本溢出处理" class="headerlink" title="3. 文本溢出处理"></a>3. 文本溢出处理</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.ellipsis</span> &#123;</span><br><span class="line">  <span class="attribute">white-space</span>: nowrap;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">  <span class="attribute">text-overflow</span>: ellipsis;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.multi-ellipsis</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: -webkit-box;</span><br><span class="line">  -webkit-<span class="selector-tag">line</span>-clamp: <span class="number">3</span>;</span><br><span class="line">  -webkit-<span class="attribute">box-orient</span>: vertical;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="浏览器兼容方案"><a href="#浏览器兼容方案" class="headerlink" title="浏览器兼容方案"></a>浏览器兼容方案</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.gradient-bg</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#1e5799</span>; <span class="comment">/* 回退色 */</span></span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">-moz-linear-gradient</span>(top, <span class="number">#1e5799</span> <span class="number">0%</span>, <span class="number">#7db9e8</span> <span class="number">100%</span>);</span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">-webkit-linear-gradient</span>(top, <span class="number">#1e5799</span> <span class="number">0%</span>,<span class="number">#7db9e8</span> <span class="number">100%</span>);</span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">linear-gradient</span>(to bottom, <span class="number">#1e5799</span> <span class="number">0%</span>,<span class="number">#7db9e8</span> <span class="number">100%</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="性能优化建议"><a href="#性能优化建议" class="headerlink" title="性能优化建议"></a>性能优化建议</h2><ol start="4">
+<li>优先使用transform&#x2F;opacity属性（触发GPU加速）</li>
+<li>避免过多层嵌套选择器</li>
+<li>使用will-change预声明变化属性</li>
+<li>精简重排重绘操作</li>
+</ol>
 ]]></content>
       <categories>
-        <category>MacOS</category>
+        <category>CSS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Web前端工具库</title>
+    <url>/2025/08/02/Web%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7%E5%BA%93/</url>
+    <content><![CDATA[<h2 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a>jQuery</h2><p>jquery是一个快速、简洁的JavaScript框架，是继Prototype之后又一个优秀的JavaScript代码库（或JavaScript框架）。</p>
+<h3 id="jQuery简介"><a href="#jQuery简介" class="headerlink" title="jQuery简介"></a>jQuery简介</h3><ul>
+<li>jQuery 是一个 JavaScript 库</li>
+<li>jQuery 极大地简化了 JavaScript 编程</li>
+<li>jQuery 很容易学习</li>
+</ul>
+<h3 id="jQuery-库功能"><a href="#jQuery-库功能" class="headerlink" title="jQuery 库功能"></a>jQuery 库功能</h3><ul>
+<li>HTML 元素选取</li>
+<li>HTML 元素操作</li>
+<li>CSS 操作</li>
+<li>HTML 事件函数</li>
+<li>JavaScript 特效和动画</li>
+<li>HTML DOM 遍历和修改</li>
+<li>AJAX</li>
+<li>Utilities</li>
+<li><em>提示：</em>除此之外，jQuery 还提供了大量的插件</li>
+</ul>
+<h3 id="安装和引用"><a href="#安装和引用" class="headerlink" title="安装和引用"></a>安装和引用</h3><h3 id="从官网下载jQuery库"><a href="#从官网下载jQuery库" class="headerlink" title="从官网下载jQuery库"></a>从官网下载jQuery库</h3><p><a href="https://jquery.com/download/">官方下载地址</a></p>
+<p><strong>两个版本：</strong></p>
+<ul>
+<li>Production version - 用于实际的网站中，已被精简和压缩。</li>
+<li>Development version - 用于测试和开发（未压缩，是可读的代码）</li>
+</ul>
+<h3 id="引用语法"><a href="#引用语法" class="headerlink" title="引用语法"></a>引用语法</h3><p><code>&lt;head&gt;&lt;script src=&quot;jquery-1.10.2.min.js&quot;&gt;&lt;/script&gt;&lt;/head&gt;</code>HTML</p>
+<p>将下载的文件放在网页的同一目录下，就可以使用jQuery</p>
+<h3 id="从-CDN-中载入-jQuery"><a href="#从-CDN-中载入-jQuery" class="headerlink" title="从 CDN 中载入 jQuery"></a>从 CDN 中载入 jQuery</h3><p>如果您不希望下载并存放 jQuery，那么也可以通过 CDN（内容分发网络） 引用它</p>
+<p><strong>百度：</strong></p>
+<p><code>&lt;head&gt;&lt;script src=&quot;&lt;https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js&gt;&quot;&gt;&lt;/script&gt;&lt;/head&gt;</code>HTML</p>
+<p><strong>又拍云：</strong></p>
+<p><code>&lt;head&gt;&lt;script src=&quot;&lt;https://upcdn.b0.upaiyun.com/libs/jquery/jquery-2.0.2.min.js&gt;&quot;&gt;&lt;/script&gt;&lt;/head&gt;</code>HTML</p>
+<p><strong>新浪：</strong></p>
+<p><code>&lt;head&gt;&lt;script src=&quot;&lt;https://lib.sinaapp.com/js/jquery/2.0.2/jquery-2.0.2.min.js&gt;&quot;&gt;&lt;/script&gt;&lt;/head&gt;</code>HTML</p>
+<p><strong>Google:</strong></p>
+<p><code>&lt;head&gt;&lt;script src=&quot;&lt;https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js&gt;&quot;&gt;&lt;/script&gt;&lt;/head&gt;</code>HTML</p>
+<p>许多用户在访问其他站点时，已经从百度、又拍云、新浪、谷歌或微软加载过jQuery。</p>
+<p>所以结果是，当他们访问您的站点时，会从缓存中加载jQuery，这样可以减少加载时间。</p>
+<p>同时，大多数 CDN 都可以确保当用户向其请求文件时，会从离用户最近的服务器上返回响应，这样也可以提高加载速度。</p>
+<h3 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h3><h3 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h3><h3 id="操作HTML"><a href="#操作HTML" class="headerlink" title="操作HTML"></a>操作HTML</h3><h3 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h3><h3 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h3><h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><h3 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h3><h2 id="AJAX"><a href="#AJAX" class="headerlink" title="AJAX"></a>AJAX</h2><p>AJAX不是JavaScript的规范，它只是一个哥们“发明”的缩写：Asynchronous JavaScript and XML，意思就是用JavaScript执行异步网络请求。</p>
+<p>用JavaScript写一个完整的AJAX代码并不复杂，但是需要注意：AJAX请求是异步执行的，也就是说，要通过回调函数获得响应</p>
+<h3 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h3><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>URL，统一资源定位符，用于标识互联网上每个资源的唯一存放位置。</p>
+<p>浏览器只有经过URL地址，才能正确定位资源的存放位置，从而成功访问到对应的资源。</p>
+<h3 id="组成部分"><a href="#组成部分" class="headerlink" title="组成部分"></a>组成部分</h3><ol>
+<li>客户端与服务器之间的<strong>通信协议</strong></li>
+<li>存有该资源的<strong>服务器名称</strong></li>
+<li>资源在服务器上的<strong>具体位置</strong></li>
+</ol>
+<p><img src="http://1.94.0.101/wp-content/uploads/2024/03/URL%E7%BB%84%E6%88%90-913x176.jpg" alt="http://1.94.0.101/wp-content/uploads/2024/03/URL组成-913x176.jpg"></p>
+<h3 id="客户端与服务器的通信过程"><a href="#客户端与服务器的通信过程" class="headerlink" title="客户端与服务器的通信过程"></a>客户端与服务器的通信过程</h3><p>通信过程分为：请求、处理、相应</p>
+<h3 id="网页如何向服务器发送请求"><a href="#网页如何向服务器发送请求" class="headerlink" title="网页如何向服务器发送请求"></a>网页如何向服务器发送请求</h3><ol>
+<li>输入网址</li>
+<li>a标签的页面跳转</li>
+<li>表单提交</li>
+<li>postman模拟http请求</li>
+</ol>
+<p>Ajax的原理是通过<code>XMLHttpRequest</code>对象向服务器发送请求的</p>
+<p>最简单的用法：</p>
+<p><code>var xhr=new XMLHttpRequest()</code>JavaScript</p>
+<h3 id="请求方式"><a href="#请求方式" class="headerlink" title="请求方式"></a>请求方式</h3><ul>
+<li>get请求，通常用于获取服务器资源（接收）例如：根据URL地址，从服务器获取文件、图片、数据资源等</li>
+<li>post请求，通常用于向服务器提交数据（发送）例如：提交的登录信息、注册信息、用户信息等各种数据提交操作</li>
+</ul>
+<h3 id="为什么要学习AJAX？"><a href="#为什么要学习AJAX？" class="headerlink" title="为什么要学习AJAX？"></a>为什么要学习AJAX？</h3><p>之前所学的技术，只能把网页做的更美观漂亮，或添加一些动画效果,但是, Ajax能让我们轻松实现<strong>网页与服务器之间的数据交互</strong>。</p>
+<h3 id="AJAX优缺点"><a href="#AJAX优缺点" class="headerlink" title="AJAX优缺点"></a>AJAX优缺点</h3><p><strong>优点：</strong>按需获取数据，提升系统性能</p>
+<p><strong>缺点：</strong>异步获取数据，不利于搜索引擎优化</p>
+<h3 id="jQuery中发起AJAX请求的三种方式"><a href="#jQuery中发起AJAX请求的三种方式" class="headerlink" title="jQuery中发起AJAX请求的三种方式"></a>jQuery中发起AJAX请求的三种方式</h3><p>浏览器中提供的<code>XMLHttpRequest</code>用法比较复杂,所以jQuery对<code>XML HttpRequest</code>进行了封装,提供了一系列Ajax相关的函数,极大地降低了Ajax的使用难度。</p>
+<h3 id="get"><a href="#get" class="headerlink" title="$.get()"></a>$.get()</h3><p>用途单一，仅用于向服务器请求资源</p>
+<p><strong>基本语法：</strong></p>
+<p><code>$.get(url,[data],[callback])//URL是必须的，后面两个是可选的</code>JavaScript</p>
+<p><img src="http://1.94.0.101/wp-content/uploads/2024/03/get%E5%87%BD%E6%95%B0-863x210.jpg" alt="http://1.94.0.101/wp-content/uploads/2024/03/get函数-863x210.jpg"></p>
+<h3 id="使用get发起不带参数的请求"><a href="#使用get发起不带参数的请求" class="headerlink" title="使用get发起不带参数的请求"></a>使用get发起不带参数的请求</h3><p>直接提供URL地址和请求成功的回调函数</p>
+<p><strong>实例代码：</strong></p>
+<p><code>&lt;script&gt; $(function() &#123; $(&#39;#btnAJAX&#39;).on(&#39;click&#39;, function() &#123; $.get(&#39;&lt;http://www.liulongbin.top:3006/api/getbooks&gt;&#39;, function(res) &#123; console.log(res) &#125;) &#125;) &#125;)&lt;/script&gt;</code>JavaScript</p>
+<p><img src="http://1.94.0.101/wp-content/uploads/2024/03/%E4%B8%8D%E5%B8%A6%E5%8F%82%E6%95%B0get%E8%AF%B7%E6%B1%82%E8%BF%94%E5%9B%9E-767x322.jpg" alt="http://1.94.0.101/wp-content/uploads/2024/03/不带参数get请求返回-767x322.jpg"></p>
+<h3 id="使用get发起带参数的请求"><a href="#使用get发起带参数的请求" class="headerlink" title="使用get发起带参数的请求"></a>使用get发起带参数的请求</h3><p><strong>实例代码：</strong></p>
+<p><code>&lt;script&gt; $(function() &#123; $(&#39;#btnAJAX&#39;).on(&#39;click&#39;, function() &#123; $.get(&#39;&lt;http://www.liulongbin.top:3006/api/getbooks&gt;&#39;, &#123; id: 1 &#125;, function(res) &#123; console.log(res) &#125;) &#125;) &#125;)&lt;/script&gt;</code>JavaScript</p>
+<p><img src="http://1.94.0.101/wp-content/uploads/2024/03/%E5%B8%A6%E5%8F%82%E6%95%B0get%E8%AF%B7%E6%B1%82%E8%BF%94%E5%9B%9E-775x303.jpg" alt="http://1.94.0.101/wp-content/uploads/2024/03/带参数get请求返回-775x303.jpg"></p>
+<h3 id="post"><a href="#post" class="headerlink" title="$.post()"></a>$.post()</h3><p>用途单一，仅用于向服务器发送请求</p>
+<p><strong>基本语法：</strong></p>
+<p><code>$.post(url,[data],[callback])//URL是必须的，后面两个是可选的</code>JavaScript</p>
+<p><img src="http://1.94.0.101/wp-content/uploads/2024/03/post%E5%87%BD%E6%95%B0-877x205.jpg" alt="http://1.94.0.101/wp-content/uploads/2024/03/post函数-877x205.jpg"></p>
+<p><code>&lt;script&gt; $(function() &#123; $(&#39;#btnpost&#39;).on(&#39;click&#39;, function() &#123; $.post(&#39;&lt;http://www.liulongbin.top:3006/api/addbook&gt;&#39;, &#123; bookname: &#39;大耳朵图图&#39;, author: &#39;胡图图&#39;, publisher: &#39;猫会飞呀出版社&#39; &#125;, function(res) &#123; console.log(res); &#125;) &#125;) &#125;) &lt;/script&gt;</code>JavaScript</p>
+<p><img src="http://1.94.0.101/wp-content/uploads/2024/03/post%E8%AF%B7%E6%B1%82%E8%BF%94%E5%9B%9E-703x196.jpg" alt="http://1.94.0.101/wp-content/uploads/2024/03/post请求返回-703x196.jpg"></p>
+<h3 id="ajax"><a href="#ajax" class="headerlink" title="$.ajax()"></a>$.ajax()</h3><p>相比于$.get()和$.post()函数，jQuery中提供的$.ajax()函数，是一个功能比较综合的函数，它允许我们对ajax请求进行更详细的配置</p>
+<p><strong>基本语法：</strong></p>
+<p><code>$.ajax(&#123; type:&#39;&#39;,//请求的方式 url:&#39;&#39;,//请求的url地址 data:&#123;&#125;,//这次请求要携带的数据 success:function(res)&#123;&#125;//请求成功之后的回调函数&#125;)</code>JavaScript</p>
+<p><strong>实例代码：</strong></p>
+<p><code>&lt;script&gt; $(function() &#123; $(&#39;#btnajax&#39;).on(&#39;click&#39;, function() &#123; $.ajax(&#123; type: &#39;POST&#39;, url: &#39;&lt;http://www.liulongbin.top:3006/api/addbook&gt;&#39;, data: &#123; bookname: &#39;图图删减版&#39;, author: &#39;胡图图&#39;, publisher: &#39;猫会飞呀出版社&#39; &#125;, success: function(res) &#123; console.log(res); &#125; &#125;) &#125;) &#125;)&lt;/script&gt;</code>JavaScript</p>
+<h3 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h3><p>使用ajax使用数据时，被请求的url地址，就叫做数据接口</p>
+<h2 id="Emmet"><a href="#Emmet" class="headerlink" title="Emmet"></a>Emmet</h2><p>Emmet (前身为 Zen Coding) 是一个能大幅度提高前端开发效率的一个工具。</p>
+<p>基本上，大多数的文本编辑器都会允许你存储和重用一些代码块，我们称之为“片段”。</p>
+<p>虽然片段能很好地推动你得生产力，但大多数的实现都有这样一个缺点：你必须先定义你得代码片段，并且不能再运行时进行拓展。</p>
+<p>Emmet把片段这个概念提高到了一个新的层次：你可以设置CSS形式的能够动态被解析的表达式，然后根据你所输入的缩写来得到相应的内容。</p>
+<p>Emmet是很成熟的并且非常适用于编写HTML&#x2F;XML 和 CSS 代码的前端开发人员，但也可以用于编程语言。</p>
+<h3 id="Emmet语法于HTML中的应用"><a href="#Emmet语法于HTML中的应用" class="headerlink" title="Emmet语法于HTML中的应用"></a>Emmet语法于HTML中的应用</h3><h3 id="生成标签"><a href="#生成标签" class="headerlink" title="生成标签"></a>生成标签</h3><p>直接输入标签名 按tab键</p>
+<h3 id="生成多个相同标签"><a href="#生成多个相同标签" class="headerlink" title="生成多个相同标签"></a>生成多个相同标签</h3><p>在标签名后加 * 比如：div* 3为生成三个div标签</p>
+<h3 id="父子级标签"><a href="#父子级标签" class="headerlink" title="父子级标签"></a>父子级标签</h3><p>标签名间加”&gt;”，如：ul&gt;li</p>
+<h3 id="兄弟级标签"><a href="#兄弟级标签" class="headerlink" title="兄弟级标签"></a>兄弟级标签</h3><p>标签名间加”+”，如：div+p</p>
+<h3 id="生成带有类名或者id名字的"><a href="#生成带有类名或者id名字的" class="headerlink" title="生成带有类名或者id名字的"></a>生成带有类名或者id名字的</h3><p>直接写 .name 或者 #name 再按tab键</p>
+<h3 id="生成有顺序的"><a href="#生成有顺序的" class="headerlink" title="生成有顺序的"></a>生成有顺序的</h3><p>使用自增符号”$”，如：div$ + tab键</p>
+<h3 id="在生成的标签里写内容"><a href="#在生成的标签里写内容" class="headerlink" title="在生成的标签里写内容"></a>在生成的标签里写内容</h3><p>标签名后面加花括号：”{}”，花括号里写内容</p>
+<h3 id="Emmet语法于CSS中的应用"><a href="#Emmet语法于CSS中的应用" class="headerlink" title="Emmet语法于CSS中的应用"></a>Emmet语法于CSS中的应用</h3><ul>
+<li>CSS基本采取简写形式即可</li>
+<li>如：w100 按tab键 生成 width：100px</li>
+<li>lh100 按tab键 生成 line-height：100px</li>
+</ul>
+]]></content>
+      <categories>
+        <category>前端</category>
       </categories>
   </entry>
   <entry>
@@ -631,116 +715,125 @@
       </categories>
   </entry>
   <entry>
-    <title>Web前端工具库</title>
-    <url>/2025/08/02/Web%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7%E5%BA%93/</url>
-    <content><![CDATA[<h2 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a>jQuery</h2><p>jquery是一个快速、简洁的JavaScript框架，是继Prototype之后又一个优秀的JavaScript代码库（或JavaScript框架）。</p>
-<h3 id="jQuery简介"><a href="#jQuery简介" class="headerlink" title="jQuery简介"></a>jQuery简介</h3><ul>
-<li>jQuery 是一个 JavaScript 库</li>
-<li>jQuery 极大地简化了 JavaScript 编程</li>
-<li>jQuery 很容易学习</li>
-</ul>
-<h3 id="jQuery-库功能"><a href="#jQuery-库功能" class="headerlink" title="jQuery 库功能"></a>jQuery 库功能</h3><ul>
-<li>HTML 元素选取</li>
-<li>HTML 元素操作</li>
-<li>CSS 操作</li>
-<li>HTML 事件函数</li>
-<li>JavaScript 特效和动画</li>
-<li>HTML DOM 遍历和修改</li>
-<li>AJAX</li>
-<li>Utilities</li>
-<li><em>提示：</em>除此之外，jQuery 还提供了大量的插件</li>
-</ul>
-<h3 id="安装和引用"><a href="#安装和引用" class="headerlink" title="安装和引用"></a>安装和引用</h3><h3 id="从官网下载jQuery库"><a href="#从官网下载jQuery库" class="headerlink" title="从官网下载jQuery库"></a>从官网下载jQuery库</h3><p><a href="https://jquery.com/download/">官方下载地址</a></p>
-<p><strong>两个版本：</strong></p>
-<ul>
-<li>Production version - 用于实际的网站中，已被精简和压缩。</li>
-<li>Development version - 用于测试和开发（未压缩，是可读的代码）</li>
-</ul>
-<h3 id="引用语法"><a href="#引用语法" class="headerlink" title="引用语法"></a>引用语法</h3><p><code>&lt;head&gt;&lt;script src=&quot;jquery-1.10.2.min.js&quot;&gt;&lt;/script&gt;&lt;/head&gt;</code>HTML</p>
-<p>将下载的文件放在网页的同一目录下，就可以使用jQuery</p>
-<h3 id="从-CDN-中载入-jQuery"><a href="#从-CDN-中载入-jQuery" class="headerlink" title="从 CDN 中载入 jQuery"></a>从 CDN 中载入 jQuery</h3><p>如果您不希望下载并存放 jQuery，那么也可以通过 CDN（内容分发网络） 引用它</p>
-<p><strong>百度：</strong></p>
-<p><code>&lt;head&gt;&lt;script src=&quot;&lt;https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js&gt;&quot;&gt;&lt;/script&gt;&lt;/head&gt;</code>HTML</p>
-<p><strong>又拍云：</strong></p>
-<p><code>&lt;head&gt;&lt;script src=&quot;&lt;https://upcdn.b0.upaiyun.com/libs/jquery/jquery-2.0.2.min.js&gt;&quot;&gt;&lt;/script&gt;&lt;/head&gt;</code>HTML</p>
-<p><strong>新浪：</strong></p>
-<p><code>&lt;head&gt;&lt;script src=&quot;&lt;https://lib.sinaapp.com/js/jquery/2.0.2/jquery-2.0.2.min.js&gt;&quot;&gt;&lt;/script&gt;&lt;/head&gt;</code>HTML</p>
-<p><strong>Google:</strong></p>
-<p><code>&lt;head&gt;&lt;script src=&quot;&lt;https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js&gt;&quot;&gt;&lt;/script&gt;&lt;/head&gt;</code>HTML</p>
-<p>许多用户在访问其他站点时，已经从百度、又拍云、新浪、谷歌或微软加载过jQuery。</p>
-<p>所以结果是，当他们访问您的站点时，会从缓存中加载jQuery，这样可以减少加载时间。</p>
-<p>同时，大多数 CDN 都可以确保当用户向其请求文件时，会从离用户最近的服务器上返回响应，这样也可以提高加载速度。</p>
-<h3 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h3><h3 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h3><h3 id="操作HTML"><a href="#操作HTML" class="headerlink" title="操作HTML"></a>操作HTML</h3><h3 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h3><h3 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h3><h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><h3 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h3><h2 id="AJAX"><a href="#AJAX" class="headerlink" title="AJAX"></a>AJAX</h2><p>AJAX不是JavaScript的规范，它只是一个哥们“发明”的缩写：Asynchronous JavaScript and XML，意思就是用JavaScript执行异步网络请求。</p>
-<p>用JavaScript写一个完整的AJAX代码并不复杂，但是需要注意：AJAX请求是异步执行的，也就是说，要通过回调函数获得响应</p>
-<h3 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h3><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>URL，统一资源定位符，用于标识互联网上每个资源的唯一存放位置。</p>
-<p>浏览器只有经过URL地址，才能正确定位资源的存放位置，从而成功访问到对应的资源。</p>
-<h3 id="组成部分"><a href="#组成部分" class="headerlink" title="组成部分"></a>组成部分</h3><ol>
-<li>客户端与服务器之间的<strong>通信协议</strong></li>
-<li>存有该资源的<strong>服务器名称</strong></li>
-<li>资源在服务器上的<strong>具体位置</strong></li>
+    <title>MacOS使用笔记</title>
+    <url>/2025/08/02/MacOS%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h2 id="Homebrew"><a href="#Homebrew" class="headerlink" title="Homebrew"></a>Homebrew</h2><p>安装(镜像、国内第三方脚本)</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/bin/zsh -c &quot;$(curl -fsSL &lt;https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh&gt;)&quot;</span><br></pre></td></tr></table></figure>
+
+<p>卸载</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/bin/zsh -c &quot;$(curl -fsSL &lt;https://gitee.com/cunkai/HomebrewCN/raw/master/HomebrewUninstall.sh&gt;)&quot;</span><br></pre></td></tr></table></figure>
+
+<p>默认命令行安装的软件包路径：usr&#x2F;local Homebrew安装的路径：opt&#x2F;homebrew</p>
+<h2 id="偏好设置"><a href="#偏好设置" class="headerlink" title="偏好设置"></a>偏好设置</h2><h2 id="终端"><a href="#终端" class="headerlink" title="终端"></a>终端</h2><h3 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h3><p><code>查找目录下所有名字包含666的所有文件及目录 查找：sudo find /usr/local -type d -name &quot;*666*&quot; 删除：sudo find /usr/local -type d -name &quot;*666*&quot; -exec rm -rf &#123;&#125; +</code></p>
+<h3 id="权限操作"><a href="#权限操作" class="headerlink" title="权限操作"></a>权限操作</h3><p><code>sudo -s</code></p>
+<h3 id="端口操作"><a href="#端口操作" class="headerlink" title="端口操作"></a>端口操作</h3><p>查看端口被哪个程序占用</p>
+<p><code>sudo lsof -i tcp:port</code></p>
+<p>示例：</p>
+<p><code>sudo lsof -i tcp:8080 查看8080端口是否被占用</code></p>
+<ol start="2">
+<li>看到进程的PID，可以将进程杀死。</li>
 </ol>
-<p><img src="http://1.94.0.101/wp-content/uploads/2024/03/URL%E7%BB%84%E6%88%90-913x176.jpg" alt="http://1.94.0.101/wp-content/uploads/2024/03/URL组成-913x176.jpg"></p>
-<h3 id="客户端与服务器的通信过程"><a href="#客户端与服务器的通信过程" class="headerlink" title="客户端与服务器的通信过程"></a>客户端与服务器的通信过程</h3><p>通信过程分为：请求、处理、相应</p>
-<h3 id="网页如何向服务器发送请求"><a href="#网页如何向服务器发送请求" class="headerlink" title="网页如何向服务器发送请求"></a>网页如何向服务器发送请求</h3><ol>
-<li>输入网址</li>
-<li>a标签的页面跳转</li>
-<li>表单提交</li>
-<li>postman模拟http请求</li>
-</ol>
-<p>Ajax的原理是通过<code>XMLHttpRequest</code>对象向服务器发送请求的</p>
-<p>最简单的用法：</p>
-<p><code>var xhr=new XMLHttpRequest()</code>JavaScript</p>
-<h3 id="请求方式"><a href="#请求方式" class="headerlink" title="请求方式"></a>请求方式</h3><ul>
-<li>get请求，通常用于获取服务器资源（接收）例如：根据URL地址，从服务器获取文件、图片、数据资源等</li>
-<li>post请求，通常用于向服务器提交数据（发送）例如：提交的登录信息、注册信息、用户信息等各种数据提交操作</li>
-</ul>
-<h3 id="为什么要学习AJAX？"><a href="#为什么要学习AJAX？" class="headerlink" title="为什么要学习AJAX？"></a>为什么要学习AJAX？</h3><p>之前所学的技术，只能把网页做的更美观漂亮，或添加一些动画效果,但是, Ajax能让我们轻松实现<strong>网页与服务器之间的数据交互</strong>。</p>
-<h3 id="AJAX优缺点"><a href="#AJAX优缺点" class="headerlink" title="AJAX优缺点"></a>AJAX优缺点</h3><p><strong>优点：</strong>按需获取数据，提升系统性能</p>
-<p><strong>缺点：</strong>异步获取数据，不利于搜索引擎优化</p>
-<h3 id="jQuery中发起AJAX请求的三种方式"><a href="#jQuery中发起AJAX请求的三种方式" class="headerlink" title="jQuery中发起AJAX请求的三种方式"></a>jQuery中发起AJAX请求的三种方式</h3><p>浏览器中提供的<code>XMLHttpRequest</code>用法比较复杂,所以jQuery对<code>XML HttpRequest</code>进行了封装,提供了一系列Ajax相关的函数,极大地降低了Ajax的使用难度。</p>
-<h3 id="get"><a href="#get" class="headerlink" title="$.get()"></a>$.get()</h3><p>用途单一，仅用于向服务器请求资源</p>
-<p><strong>基本语法：</strong></p>
-<p><code>$.get(url,[data],[callback])//URL是必须的，后面两个是可选的</code>JavaScript</p>
-<p><img src="http://1.94.0.101/wp-content/uploads/2024/03/get%E5%87%BD%E6%95%B0-863x210.jpg" alt="http://1.94.0.101/wp-content/uploads/2024/03/get函数-863x210.jpg"></p>
-<h3 id="使用get发起不带参数的请求"><a href="#使用get发起不带参数的请求" class="headerlink" title="使用get发起不带参数的请求"></a>使用get发起不带参数的请求</h3><p>直接提供URL地址和请求成功的回调函数</p>
-<p><strong>实例代码：</strong></p>
-<p><code>&lt;script&gt; $(function() &#123; $(&#39;#btnAJAX&#39;).on(&#39;click&#39;, function() &#123; $.get(&#39;&lt;http://www.liulongbin.top:3006/api/getbooks&gt;&#39;, function(res) &#123; console.log(res) &#125;) &#125;) &#125;)&lt;/script&gt;</code>JavaScript</p>
-<p><img src="http://1.94.0.101/wp-content/uploads/2024/03/%E4%B8%8D%E5%B8%A6%E5%8F%82%E6%95%B0get%E8%AF%B7%E6%B1%82%E8%BF%94%E5%9B%9E-767x322.jpg" alt="http://1.94.0.101/wp-content/uploads/2024/03/不带参数get请求返回-767x322.jpg"></p>
-<h3 id="使用get发起带参数的请求"><a href="#使用get发起带参数的请求" class="headerlink" title="使用get发起带参数的请求"></a>使用get发起带参数的请求</h3><p><strong>实例代码：</strong></p>
-<p><code>&lt;script&gt; $(function() &#123; $(&#39;#btnAJAX&#39;).on(&#39;click&#39;, function() &#123; $.get(&#39;&lt;http://www.liulongbin.top:3006/api/getbooks&gt;&#39;, &#123; id: 1 &#125;, function(res) &#123; console.log(res) &#125;) &#125;) &#125;)&lt;/script&gt;</code>JavaScript</p>
-<p><img src="http://1.94.0.101/wp-content/uploads/2024/03/%E5%B8%A6%E5%8F%82%E6%95%B0get%E8%AF%B7%E6%B1%82%E8%BF%94%E5%9B%9E-775x303.jpg" alt="http://1.94.0.101/wp-content/uploads/2024/03/带参数get请求返回-775x303.jpg"></p>
-<h3 id="post"><a href="#post" class="headerlink" title="$.post()"></a>$.post()</h3><p>用途单一，仅用于向服务器发送请求</p>
-<p><strong>基本语法：</strong></p>
-<p><code>$.post(url,[data],[callback])//URL是必须的，后面两个是可选的</code>JavaScript</p>
-<p><img src="http://1.94.0.101/wp-content/uploads/2024/03/post%E5%87%BD%E6%95%B0-877x205.jpg" alt="http://1.94.0.101/wp-content/uploads/2024/03/post函数-877x205.jpg"></p>
-<p><code>&lt;script&gt; $(function() &#123; $(&#39;#btnpost&#39;).on(&#39;click&#39;, function() &#123; $.post(&#39;&lt;http://www.liulongbin.top:3006/api/addbook&gt;&#39;, &#123; bookname: &#39;大耳朵图图&#39;, author: &#39;胡图图&#39;, publisher: &#39;猫会飞呀出版社&#39; &#125;, function(res) &#123; console.log(res); &#125;) &#125;) &#125;) &lt;/script&gt;</code>JavaScript</p>
-<p><img src="http://1.94.0.101/wp-content/uploads/2024/03/post%E8%AF%B7%E6%B1%82%E8%BF%94%E5%9B%9E-703x196.jpg" alt="http://1.94.0.101/wp-content/uploads/2024/03/post请求返回-703x196.jpg"></p>
-<h3 id="ajax"><a href="#ajax" class="headerlink" title="$.ajax()"></a>$.ajax()</h3><p>相比于$.get()和$.post()函数，jQuery中提供的$.ajax()函数，是一个功能比较综合的函数，它允许我们对ajax请求进行更详细的配置</p>
-<p><strong>基本语法：</strong></p>
-<p><code>$.ajax(&#123; type:&#39;&#39;,//请求的方式 url:&#39;&#39;,//请求的url地址 data:&#123;&#125;,//这次请求要携带的数据 success:function(res)&#123;&#125;//请求成功之后的回调函数&#125;)</code>JavaScript</p>
-<p><strong>实例代码：</strong></p>
-<p><code>&lt;script&gt; $(function() &#123; $(&#39;#btnajax&#39;).on(&#39;click&#39;, function() &#123; $.ajax(&#123; type: &#39;POST&#39;, url: &#39;&lt;http://www.liulongbin.top:3006/api/addbook&gt;&#39;, data: &#123; bookname: &#39;图图删减版&#39;, author: &#39;胡图图&#39;, publisher: &#39;猫会飞呀出版社&#39; &#125;, success: function(res) &#123; console.log(res); &#125; &#125;) &#125;) &#125;)&lt;/script&gt;</code>JavaScript</p>
-<h3 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h3><p>使用ajax使用数据时，被请求的url地址，就叫做数据接口</p>
-<h2 id="Emmet"><a href="#Emmet" class="headerlink" title="Emmet"></a>Emmet</h2><p>Emmet (前身为 Zen Coding) 是一个能大幅度提高前端开发效率的一个工具。</p>
-<p>基本上，大多数的文本编辑器都会允许你存储和重用一些代码块，我们称之为“片段”。</p>
-<p>虽然片段能很好地推动你得生产力，但大多数的实现都有这样一个缺点：你必须先定义你得代码片段，并且不能再运行时进行拓展。</p>
-<p>Emmet把片段这个概念提高到了一个新的层次：你可以设置CSS形式的能够动态被解析的表达式，然后根据你所输入的缩写来得到相应的内容。</p>
-<p>Emmet是很成熟的并且非常适用于编写HTML&#x2F;XML 和 CSS 代码的前端开发人员，但也可以用于编程语言。</p>
-<h3 id="Emmet语法于HTML中的应用"><a href="#Emmet语法于HTML中的应用" class="headerlink" title="Emmet语法于HTML中的应用"></a>Emmet语法于HTML中的应用</h3><h3 id="生成标签"><a href="#生成标签" class="headerlink" title="生成标签"></a>生成标签</h3><p>直接输入标签名 按tab键</p>
-<h3 id="生成多个相同标签"><a href="#生成多个相同标签" class="headerlink" title="生成多个相同标签"></a>生成多个相同标签</h3><p>在标签名后加 * 比如：div* 3为生成三个div标签</p>
-<h3 id="父子级标签"><a href="#父子级标签" class="headerlink" title="父子级标签"></a>父子级标签</h3><p>标签名间加”&gt;”，如：ul&gt;li</p>
-<h3 id="兄弟级标签"><a href="#兄弟级标签" class="headerlink" title="兄弟级标签"></a>兄弟级标签</h3><p>标签名间加”+”，如：div+p</p>
-<h3 id="生成带有类名或者id名字的"><a href="#生成带有类名或者id名字的" class="headerlink" title="生成带有类名或者id名字的"></a>生成带有类名或者id名字的</h3><p>直接写 .name 或者 #name 再按tab键</p>
-<h3 id="生成有顺序的"><a href="#生成有顺序的" class="headerlink" title="生成有顺序的"></a>生成有顺序的</h3><p>使用自增符号”$”，如：div$ + tab键</p>
-<h3 id="在生成的标签里写内容"><a href="#在生成的标签里写内容" class="headerlink" title="在生成的标签里写内容"></a>在生成的标签里写内容</h3><p>标签名后面加花括号：”{}”，花括号里写内容</p>
-<h3 id="Emmet语法于CSS中的应用"><a href="#Emmet语法于CSS中的应用" class="headerlink" title="Emmet语法于CSS中的应用"></a>Emmet语法于CSS中的应用</h3><ul>
-<li>CSS基本采取简写形式即可</li>
-<li>如：w100 按tab键 生成 width：100px</li>
-<li>lh100 按tab键 生成 line-height：100px</li>
-</ul>
+<p><code>sudo kill -9 PID</code></p>
+<p>示例：</p>
+<p><code>sudo kill -9 3210</code></p>
+<h2 id="用户权限"><a href="#用户权限" class="headerlink" title="用户权限"></a>用户权限</h2><h3 id="VScode编辑文件提示权限不足"><a href="#VScode编辑文件提示权限不足" class="headerlink" title="VScode编辑文件提示权限不足"></a>VScode编辑文件提示权限不足</h3><p>原因：目前看来是创建项目时使用root权限</p>
+<p>解决方案：右击项目文件夹，选择“查看简介”，在简介界面下方“共享与权限”中添加当前用户”读与写“权限，并且点击“···”应用到包含的所有项目</p>
 ]]></content>
       <categories>
-        <category>前端</category>
+        <category>MacOS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>arm架构macos部署sqlserver</title>
+    <url>/2025/08/02/arm%E6%9E%B6%E6%9E%84macos%E9%83%A8%E7%BD%B2sqlserver/</url>
+    <content><![CDATA[<h2 id="安装docker"><a href="#安装docker" class="headerlink" title="安装docker"></a>安装docker</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install docker.io</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="启动docker"><a href="#启动docker" class="headerlink" title="启动docker"></a>启动docker</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo systemctl start docker</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="docker开机自启"><a href="#docker开机自启" class="headerlink" title="docker开机自启"></a>docker开机自启</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo systemctl enable docker</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="用户加组"><a href="#用户加组" class="headerlink" title="用户加组"></a>用户加组</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo usermod -aG docker $USER</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="拉取-Azure-SQL-Edge-镜像"><a href="#拉取-Azure-SQL-Edge-镜像" class="headerlink" title="拉取 Azure SQL Edge 镜像"></a>拉取 Azure SQL Edge 镜像</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker pull mcr.microsoft.com/azure-sql-edge</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="运行容器"><a href="#运行容器" class="headerlink" title="运行容器"></a>运行容器</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker run -e &#x27;ACCEPT_EULA=1&#x27; -e &#x27;MSSQL_SA_PASSWORD=SAsa991((!&#x27; \</span><br><span class="line">   -p 1433:1433 --name azuresqledge \</span><br><span class="line">   -d mcr.microsoft.com/azure-sql-edge</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="查看容器状态"><a href="#查看容器状态" class="headerlink" title="查看容器状态"></a>查看容器状态</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker ps</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="连接sql（使用DBeaver-ARM-社区构建版）"><a href="#连接sql（使用DBeaver-ARM-社区构建版）" class="headerlink" title="连接sql（使用DBeaver ARM 社区构建版）"></a>连接sql（使用DBeaver ARM 社区构建版）</h2><h3 id="java环境"><a href="#java环境" class="headerlink" title="java环境"></a>java环境</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install default-jre -y</span><br><span class="line">java -version</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wget https://dbeaver.io/files/ea/dbeaver-ce-25.1.0-linux.gtk.aarch64-nojdk.tar.gz</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="解压并运行"><a href="#解压并运行" class="headerlink" title="解压并运行"></a>解压并运行</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tar -xvzf dbeaver-ce-25.1.0-linux.gtk.aarch64-nojdk.tar.gz</span><br><span class="line">cd dbeaver</span><br><span class="line">./dbeaver</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>arm架构macos部署sqlserver</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>React.js</title>
+    <url>/2025/08/02/React.js/</url>
+    <content><![CDATA[<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>前置环境: node<br>next</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npx create-next-app@latest</span><br></pre></td></tr></table></figure>
+<p>mobx</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install mobx mobx-react-lite</span><br></pre></td></tr></table></figure>
+<h3 id="1-mobx-react-lite-vs-mobx-react"><a href="#1-mobx-react-lite-vs-mobx-react" class="headerlink" title="1. mobx-react-lite vs mobx-react"></a><strong>1. <code>mobx-react-lite</code> vs <code>mobx-react</code></strong></h3><table>
+<thead>
+<tr>
+<th>特性</th>
+<th><code>mobx-react-lite</code> (轻量版)</th>
+<th><code>mobx-react</code> (完整版)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>体积</strong></td>
+<td>~1.5KB (更小)</td>
+<td>~5KB (更大)</td>
+</tr>
+<tr>
+<td><strong>支持组件类型</strong></td>
+<td>仅函数组件 + Hooks</td>
+<td>类组件 + 函数组件</td>
+</tr>
+<tr>
+<td><strong>API 复杂度</strong></td>
+<td>更简单（只有 <code>observer</code>）</td>
+<td>包含 <code>Provider</code>&#x2F;<code>inject</code> 等旧 API</td>
+</tr>
+<tr>
+<td><strong>性能</strong></td>
+<td>更高（无类组件开销）</td>
+<td>略低</td>
+</tr>
+<tr>
+<td><strong>Next.js 兼容性</strong></td>
+<td>更适合 App Router</td>
+<td>需要额外配置</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="2-为什么推荐-mobx-react-lite？"><a href="#2-为什么推荐-mobx-react-lite？" class="headerlink" title="2. 为什么推荐 mobx-react-lite？"></a><strong>2. 为什么推荐 <code>mobx-react-lite</code>？</strong></h3><ul>
+<li><p><strong>现代 React 的标配</strong>：<br>  如果你只用函数组件（99% 的新项目），<code>mobx-react-lite</code> 的 <code>observer</code> 配合 <code>useContext</code> 完全够用。</p>
+</li>
+<li><p><strong>更小的包体积</strong>：<br>  减少最终打包体积，提升加载速度。</p>
+</li>
+<li><p><strong>更简单的心智模型</strong>：<br>  无需处理类组件的 <code>inject</code>&#x2F;<code>Provider</code> 复杂逻辑。</p>
+</li>
+</ul>
+<h1 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h1><h2 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h2><p>react组件是返回标签的js函数</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">function MyButton()&#123;</span><br><span class="line">	return(</span><br><span class="line">		&lt;button&gt;my buton&lt;/button&gt;</span><br><span class="line">	)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>React 组件必须以大写字母开头<br>组件内只能有一个根元素</p>
+<h2 id="插值"><a href="#插值" class="headerlink" title="插值"></a>插值</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">export default function About() &#123;</span><br><span class="line"></span><br><span class="line">	var start = false</span><br><span class="line">	titletxt=&quot;666&quot;</span><br><span class="line"></span><br><span class="line">	var title = &quot;&quot;</span><br><span class="line"></span><br><span class="line">	var html = &quot;&quot;</span><br><span class="line"></span><br><span class="line">	if (start) &#123;</span><br><span class="line"></span><br><span class="line">		title = &quot;i am about&quot;</span><br><span class="line"></span><br><span class="line">		html = &lt;span&gt;i am span&lt;/span&gt;</span><br><span class="line"></span><br><span class="line">	&#125; else &#123;</span><br><span class="line"></span><br><span class="line">		title = &quot;i am upabout&quot;</span><br><span class="line"></span><br><span class="line">		html = &lt;p&gt;i am p&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">return (</span><br><span class="line"></span><br><span class="line">	&lt;div&gt;</span><br><span class="line">		//这里的“&#123;&#125;”就是插值,可以用在clss和内容里</span><br><span class="line">		&lt;h1 title=&#123;titletxt&#125;&gt;&#123;title&#125;&lt;/h1&gt;</span><br><span class="line">		//插的值可以直接是html标签</span><br><span class="line">		&lt;div&gt;&#123;html&#125;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">	&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="列表渲染"><a href="#列表渲染" class="headerlink" title="列表渲染"></a>列表渲染</h2><p>使用arr.map方法遍历数组并返回处理后的数组</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//按照之前学习的标准es6箭头函数写法:&quot;()=&gt;&#123;&#125;&quot;</span><br><span class="line">var arrlist=arr.map((item)=&gt;&#123;</span><br><span class="line">	&lt;li key=&#123;item&#125;&gt;&#123;item&#125;&lt;/li&gt;</span><br><span class="line">&#125;)</span><br><span class="line">//有问题,不渲染</span><br><span class="line">//因为箭头函数会隐式地返回位于 `=&gt;` 之后的表达式，所以可以省略 `return` 语句</span><br><span class="line">//不过，如果 `=&gt;` 后面跟了一对花括号 `&#123;` ，那你必须使用 `return` 来指定返回值!</span><br><span class="line">//所以应改为:</span><br><span class="line">var arrlist=arr.map((item)=&gt;&#123;</span><br><span class="line"></span><br><span class="line">return(</span><br><span class="line"></span><br><span class="line">&lt;li key=&#123;item&#125;&gt;&#123;item&#125;&lt;/li&gt;</span><br><span class="line"></span><br><span class="line">)&#125;)</span><br><span class="line">//或者简写:</span><br><span class="line">var arrlist=arr.map((item)=&gt;&lt;li key=&#123;item&#125;&gt;&#123;item&#125;&lt;/li&gt;)</span><br><span class="line">//每个元素要有一个key</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">export default function About() &#123;</span><br><span class="line"></span><br><span class="line">// const &#123; oneS &#125; = oneStore()</span><br><span class="line"></span><br><span class="line">var arr = [1,2,3,4,5,6,7,8,9,0]</span><br><span class="line"></span><br><span class="line">var arrlist=arr.map((item)=&gt;&lt;li key=&#123;item&#125;&gt;&#123;item&#125;&lt;/li&gt;)</span><br><span class="line">//jsx中只能有有个根元素,如果要在添加一个元素的话,需要用&lt;Fragment&gt;组件包裹,没有绑定值的要求可以简写为:&lt;&gt;&lt;/&gt;</span><br><span class="line">var arrlist=arrtwo.map((item)=&gt;(</span><br><span class="line"></span><br><span class="line">	&lt;Fragment key=&#123;item.id&#125;&gt;</span><br><span class="line"></span><br><span class="line">		&lt;li key=&#123;item.id&#125;&gt;&#123;item.name&#125;&lt;/li&gt;</span><br><span class="line"></span><br><span class="line">		&lt;li&gt;-------------------------&lt;/li&gt;</span><br><span class="line"></span><br><span class="line">	&lt;/Fragment&gt;</span><br><span class="line"></span><br><span class="line">))</span><br><span class="line"></span><br><span class="line">return (</span><br><span class="line"></span><br><span class="line">&lt;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;ul&gt;&#123;arrlist&#125;&lt;/ul&gt;</span><br><span class="line"></span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="状态管理-响应式"><a href="#状态管理-响应式" class="headerlink" title="状态管理(响应式)"></a>状态管理(响应式)</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">export default function About() &#123;</span><br><span class="line"></span><br><span class="line">//解构不是固定的,也可以是[user,userData][active,activeData]</span><br><span class="line">const [data,setData]=useState(&#123;</span><br><span class="line"></span><br><span class="line">title:&quot;i am title&quot;,</span><br><span class="line"></span><br><span class="line">cotent:&quot;i am cotent&quot;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">const [arr,setArr]=useState([1,2,3,4,5])</span><br><span class="line"></span><br><span class="line">function btnFun(e)&#123;</span><br><span class="line"></span><br><span class="line">//仅修改cotent,不改其他属性</span><br><span class="line">setData(&#123;</span><br><span class="line"></span><br><span class="line">...data,</span><br><span class="line"></span><br><span class="line">cotent:&quot;i am new cotent&quot;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line">//如果是数组操作,添加/删除某项</span><br><span class="line">//添加,这里的...arr不能是...data,固定写法只是...,后面是原变量</span><br><span class="line">setArr([</span><br><span class="line">	...arr,</span><br><span class="line">	6</span><br><span class="line">])</span><br><span class="line">//删除(过滤),使用js语法💦</span><br><span class="line">setArr(arr.filter(item=&gt;item!=2))</span><br><span class="line"></span><br><span class="line">return (</span><br><span class="line"></span><br><span class="line">&lt;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;h1 title=&#123;data.title&#125;&gt;&#123;data.cotent&#125;&lt;/h1&gt;</span><br><span class="line"></span><br><span class="line">&lt;button onClick=&#123;btnFun&#125;&gt;onClick&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="组件传值"><a href="#组件传值" class="headerlink" title="组件传值"></a>组件传值</h2><p>父传子(props)</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//父组件About</span><br><span class="line">export default function About() &#123;</span><br><span class="line"></span><br><span class="line">const [arr,setArr]=useState([1,2,3,4])</span><br><span class="line">return (</span><br><span class="line">	&lt;div&gt;</span><br><span class="line">		&lt;Contact ctx=&#123;arr&#125;&gt;&lt;/Contact&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">)&#125;</span><br><span class="line">//子组件Contact</span><br><span class="line">export default function Contact(props)&#123;//这里也可以用解构,Contact(&#123;ctx&#125;)&#123;</span><br><span class="line">return(</span><br><span class="line">	&lt;div&gt;&#123;props.ctx&#125;&lt;/div&gt;//渲染成功</span><br><span class="line">)&#125;</span><br></pre></td></tr></table></figure>
+<p>子传父</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//父组件About</span><br><span class="line">export default function About() &#123;</span><br><span class="line">	const porp=&quot;&quot;</span><br><span class="line">	function porpFun(porps)&#123;</span><br><span class="line">		porp=porps</span><br><span class="line">	&#125;</span><br><span class="line">return (</span><br><span class="line">&lt;&gt;</span><br><span class="line">&lt;Contact porpFunBox=&#123;porpFun&#125;&gt;&lt;/Contact&gt;</span><br><span class="line">&lt;div&gt;父组件拿到的参数:&#123;porp&#125;&lt;/div&gt;</span><br><span class="line">&lt;/&gt;</span><br><span class="line">)&#125;</span><br><span class="line">//子组件Contact</span><br><span class="line">export default function Contact(&#123;porpFunBox&#125;)&#123;</span><br><span class="line"></span><br><span class="line">function contactClik()&#123;</span><br><span class="line">console.log(&quot;子组件拿到的参数:&quot;+porpFunBox);</span><br><span class="line">porpFun(&quot;参数1&quot;)</span><br><span class="line">&#125;</span><br><span class="line">return(</span><br><span class="line">	&lt;button onClick=&#123;contactClik&#125;&gt;onClick&lt;/button&gt;</span><br><span class="line">)&#125;</span><br></pre></td></tr></table></figure>
+<p>同级传值,利用父组件中转<br>跨层级</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<p>children</p>
+<h2 id="mobx"><a href="#mobx" class="headerlink" title="mobx"></a>mobx</h2><h2 id="Hooks"><a href="#Hooks" class="headerlink" title="Hooks"></a>Hooks</h2><h3 id="useState-状态管理钩子"><a href="#useState-状态管理钩子" class="headerlink" title="useState()状态管理钩子"></a>useState()状态管理钩子</h3><p>上面已经用到了,状态管理(响应式)</p>
+<h3 id="useContext-共享状态钩子"><a href="#useContext-共享状态钩子" class="headerlink" title="useContext()共享状态钩子"></a>useContext()共享状态钩子</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import &#123; createContext &#125; from &quot;react&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">const ContextBox=createContext()//创建状态容器</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">export default function Father()&#123;//父组件</span><br><span class="line"></span><br><span class="line">const data=&quot;i am data&quot;//定义数据</span><br><span class="line"></span><br><span class="line">return(</span><br><span class="line"></span><br><span class="line">&lt;&gt;</span><br><span class="line"></span><br><span class="line">&lt;ContextBox.Provider value=&#123;data&#125;&gt;//用固定语法包裹并传值</span><br><span class="line"></span><br><span class="line">&lt;Son&gt;&lt;/Son&gt;</span><br><span class="line"></span><br><span class="line">&lt;/ContextBox.Provider&gt;</span><br><span class="line"></span><br><span class="line">&lt;/&gt;</span><br><span class="line"></span><br><span class="line">)&#125;</span><br><span class="line"></span><br><span class="line">function Son()&#123;//儿组件</span><br><span class="line"></span><br><span class="line">return(</span><br><span class="line"></span><br><span class="line">&lt;&gt;</span><br><span class="line"></span><br><span class="line">&lt;Grandson&gt;&lt;/Grandson&gt;</span><br><span class="line"></span><br><span class="line">&lt;/&gt;</span><br><span class="line"></span><br><span class="line">)&#125;</span><br><span class="line"></span><br><span class="line">function Grandson()&#123;//孙组件</span><br><span class="line"></span><br><span class="line">const getData=useContext(ContextBox)</span><br><span class="line"></span><br><span class="line">return(</span><br><span class="line"></span><br><span class="line">&lt;&gt;</span><br><span class="line"></span><br><span class="line">&lt;p&gt;&#123;getData&#125;&lt;/p&gt;//获取数据</span><br><span class="line"></span><br><span class="line">&lt;/&gt;</span><br><span class="line"></span><br><span class="line">)&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="useReducer-action-钩子"><a href="#useReducer-action-钩子" class="headerlink" title="useReducer()action 钩子"></a>useReducer()action 钩子</h3><h3 id="useEffect-副作用钩子"><a href="#useEffect-副作用钩子" class="headerlink" title="useEffect()## 副作用钩子"></a>useEffect()## 副作用钩子</h3><h3 id="自定义Hooks"><a href="#自定义Hooks" class="headerlink" title="自定义Hooks"></a>自定义Hooks</h3>]]></content>
+      <categories>
+        <category>React.js</category>
       </categories>
   </entry>
   <entry>
@@ -831,243 +924,6 @@
 <h3 id="pm2-1"><a href="#pm2-1" class="headerlink" title="pm2"></a>pm2</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 查看最后200行日志</span><br><span class="line">pm2 logs --lines 200</span><br><span class="line">-- 查看错误日志</span><br><span class="line">pm2 logs --err</span><br></pre></td></tr></table></figure>
 <h2 id="技术升级-宝塔面板部署"><a href="#技术升级-宝塔面板部署" class="headerlink" title="技术升级-宝塔面板部署"></a>技术升级-宝塔面板部署</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">下载宝塔、修改配置</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 ]]></content>
-      <categories>
-        <category>个人网站</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>React.js</title>
-    <url>/2025/08/02/React.js/</url>
-    <content><![CDATA[<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>前置环境: node<br>next</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npx create-next-app@latest</span><br></pre></td></tr></table></figure>
-<p>mobx</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install mobx mobx-react-lite</span><br></pre></td></tr></table></figure>
-<h3 id="1-mobx-react-lite-vs-mobx-react"><a href="#1-mobx-react-lite-vs-mobx-react" class="headerlink" title="1. mobx-react-lite vs mobx-react"></a><strong>1. <code>mobx-react-lite</code> vs <code>mobx-react</code></strong></h3><table>
-<thead>
-<tr>
-<th>特性</th>
-<th><code>mobx-react-lite</code> (轻量版)</th>
-<th><code>mobx-react</code> (完整版)</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>体积</strong></td>
-<td>~1.5KB (更小)</td>
-<td>~5KB (更大)</td>
-</tr>
-<tr>
-<td><strong>支持组件类型</strong></td>
-<td>仅函数组件 + Hooks</td>
-<td>类组件 + 函数组件</td>
-</tr>
-<tr>
-<td><strong>API 复杂度</strong></td>
-<td>更简单（只有 <code>observer</code>）</td>
-<td>包含 <code>Provider</code>&#x2F;<code>inject</code> 等旧 API</td>
-</tr>
-<tr>
-<td><strong>性能</strong></td>
-<td>更高（无类组件开销）</td>
-<td>略低</td>
-</tr>
-<tr>
-<td><strong>Next.js 兼容性</strong></td>
-<td>更适合 App Router</td>
-<td>需要额外配置</td>
-</tr>
-</tbody></table>
-<hr>
-<h3 id="2-为什么推荐-mobx-react-lite？"><a href="#2-为什么推荐-mobx-react-lite？" class="headerlink" title="2. 为什么推荐 mobx-react-lite？"></a><strong>2. 为什么推荐 <code>mobx-react-lite</code>？</strong></h3><ul>
-<li><p><strong>现代 React 的标配</strong>：<br>  如果你只用函数组件（99% 的新项目），<code>mobx-react-lite</code> 的 <code>observer</code> 配合 <code>useContext</code> 完全够用。</p>
-</li>
-<li><p><strong>更小的包体积</strong>：<br>  减少最终打包体积，提升加载速度。</p>
-</li>
-<li><p><strong>更简单的心智模型</strong>：<br>  无需处理类组件的 <code>inject</code>&#x2F;<code>Provider</code> 复杂逻辑。</p>
-</li>
-</ul>
-<h1 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h1><h2 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h2><p>react组件是返回标签的js函数</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">function MyButton()&#123;</span><br><span class="line">	return(</span><br><span class="line">		&lt;button&gt;my buton&lt;/button&gt;</span><br><span class="line">	)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>React 组件必须以大写字母开头<br>组件内只能有一个根元素</p>
-<h2 id="插值"><a href="#插值" class="headerlink" title="插值"></a>插值</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">export default function About() &#123;</span><br><span class="line"></span><br><span class="line">	var start = false</span><br><span class="line">	titletxt=&quot;666&quot;</span><br><span class="line"></span><br><span class="line">	var title = &quot;&quot;</span><br><span class="line"></span><br><span class="line">	var html = &quot;&quot;</span><br><span class="line"></span><br><span class="line">	if (start) &#123;</span><br><span class="line"></span><br><span class="line">		title = &quot;i am about&quot;</span><br><span class="line"></span><br><span class="line">		html = &lt;span&gt;i am span&lt;/span&gt;</span><br><span class="line"></span><br><span class="line">	&#125; else &#123;</span><br><span class="line"></span><br><span class="line">		title = &quot;i am upabout&quot;</span><br><span class="line"></span><br><span class="line">		html = &lt;p&gt;i am p&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">return (</span><br><span class="line"></span><br><span class="line">	&lt;div&gt;</span><br><span class="line">		//这里的“&#123;&#125;”就是插值,可以用在clss和内容里</span><br><span class="line">		&lt;h1 title=&#123;titletxt&#125;&gt;&#123;title&#125;&lt;/h1&gt;</span><br><span class="line">		//插的值可以直接是html标签</span><br><span class="line">		&lt;div&gt;&#123;html&#125;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">	&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="列表渲染"><a href="#列表渲染" class="headerlink" title="列表渲染"></a>列表渲染</h2><p>使用arr.map方法遍历数组并返回处理后的数组</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//按照之前学习的标准es6箭头函数写法:&quot;()=&gt;&#123;&#125;&quot;</span><br><span class="line">var arrlist=arr.map((item)=&gt;&#123;</span><br><span class="line">	&lt;li key=&#123;item&#125;&gt;&#123;item&#125;&lt;/li&gt;</span><br><span class="line">&#125;)</span><br><span class="line">//有问题,不渲染</span><br><span class="line">//因为箭头函数会隐式地返回位于 `=&gt;` 之后的表达式，所以可以省略 `return` 语句</span><br><span class="line">//不过，如果 `=&gt;` 后面跟了一对花括号 `&#123;` ，那你必须使用 `return` 来指定返回值!</span><br><span class="line">//所以应改为:</span><br><span class="line">var arrlist=arr.map((item)=&gt;&#123;</span><br><span class="line"></span><br><span class="line">return(</span><br><span class="line"></span><br><span class="line">&lt;li key=&#123;item&#125;&gt;&#123;item&#125;&lt;/li&gt;</span><br><span class="line"></span><br><span class="line">)&#125;)</span><br><span class="line">//或者简写:</span><br><span class="line">var arrlist=arr.map((item)=&gt;&lt;li key=&#123;item&#125;&gt;&#123;item&#125;&lt;/li&gt;)</span><br><span class="line">//每个元素要有一个key</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">export default function About() &#123;</span><br><span class="line"></span><br><span class="line">// const &#123; oneS &#125; = oneStore()</span><br><span class="line"></span><br><span class="line">var arr = [1,2,3,4,5,6,7,8,9,0]</span><br><span class="line"></span><br><span class="line">var arrlist=arr.map((item)=&gt;&lt;li key=&#123;item&#125;&gt;&#123;item&#125;&lt;/li&gt;)</span><br><span class="line">//jsx中只能有有个根元素,如果要在添加一个元素的话,需要用&lt;Fragment&gt;组件包裹,没有绑定值的要求可以简写为:&lt;&gt;&lt;/&gt;</span><br><span class="line">var arrlist=arrtwo.map((item)=&gt;(</span><br><span class="line"></span><br><span class="line">	&lt;Fragment key=&#123;item.id&#125;&gt;</span><br><span class="line"></span><br><span class="line">		&lt;li key=&#123;item.id&#125;&gt;&#123;item.name&#125;&lt;/li&gt;</span><br><span class="line"></span><br><span class="line">		&lt;li&gt;-------------------------&lt;/li&gt;</span><br><span class="line"></span><br><span class="line">	&lt;/Fragment&gt;</span><br><span class="line"></span><br><span class="line">))</span><br><span class="line"></span><br><span class="line">return (</span><br><span class="line"></span><br><span class="line">&lt;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;ul&gt;&#123;arrlist&#125;&lt;/ul&gt;</span><br><span class="line"></span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="状态管理-响应式"><a href="#状态管理-响应式" class="headerlink" title="状态管理(响应式)"></a>状态管理(响应式)</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">export default function About() &#123;</span><br><span class="line"></span><br><span class="line">//解构不是固定的,也可以是[user,userData][active,activeData]</span><br><span class="line">const [data,setData]=useState(&#123;</span><br><span class="line"></span><br><span class="line">title:&quot;i am title&quot;,</span><br><span class="line"></span><br><span class="line">cotent:&quot;i am cotent&quot;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">const [arr,setArr]=useState([1,2,3,4,5])</span><br><span class="line"></span><br><span class="line">function btnFun(e)&#123;</span><br><span class="line"></span><br><span class="line">//仅修改cotent,不改其他属性</span><br><span class="line">setData(&#123;</span><br><span class="line"></span><br><span class="line">...data,</span><br><span class="line"></span><br><span class="line">cotent:&quot;i am new cotent&quot;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line">//如果是数组操作,添加/删除某项</span><br><span class="line">//添加,这里的...arr不能是...data,固定写法只是...,后面是原变量</span><br><span class="line">setArr([</span><br><span class="line">	...arr,</span><br><span class="line">	6</span><br><span class="line">])</span><br><span class="line">//删除(过滤),使用js语法💦</span><br><span class="line">setArr(arr.filter(item=&gt;item!=2))</span><br><span class="line"></span><br><span class="line">return (</span><br><span class="line"></span><br><span class="line">&lt;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;h1 title=&#123;data.title&#125;&gt;&#123;data.cotent&#125;&lt;/h1&gt;</span><br><span class="line"></span><br><span class="line">&lt;button onClick=&#123;btnFun&#125;&gt;onClick&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="组件传值"><a href="#组件传值" class="headerlink" title="组件传值"></a>组件传值</h2><p>父传子(props)</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//父组件About</span><br><span class="line">export default function About() &#123;</span><br><span class="line"></span><br><span class="line">const [arr,setArr]=useState([1,2,3,4])</span><br><span class="line">return (</span><br><span class="line">	&lt;div&gt;</span><br><span class="line">		&lt;Contact ctx=&#123;arr&#125;&gt;&lt;/Contact&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">)&#125;</span><br><span class="line">//子组件Contact</span><br><span class="line">export default function Contact(props)&#123;//这里也可以用解构,Contact(&#123;ctx&#125;)&#123;</span><br><span class="line">return(</span><br><span class="line">	&lt;div&gt;&#123;props.ctx&#125;&lt;/div&gt;//渲染成功</span><br><span class="line">)&#125;</span><br></pre></td></tr></table></figure>
-<p>子传父</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//父组件About</span><br><span class="line">export default function About() &#123;</span><br><span class="line">	const porp=&quot;&quot;</span><br><span class="line">	function porpFun(porps)&#123;</span><br><span class="line">		porp=porps</span><br><span class="line">	&#125;</span><br><span class="line">return (</span><br><span class="line">&lt;&gt;</span><br><span class="line">&lt;Contact porpFunBox=&#123;porpFun&#125;&gt;&lt;/Contact&gt;</span><br><span class="line">&lt;div&gt;父组件拿到的参数:&#123;porp&#125;&lt;/div&gt;</span><br><span class="line">&lt;/&gt;</span><br><span class="line">)&#125;</span><br><span class="line">//子组件Contact</span><br><span class="line">export default function Contact(&#123;porpFunBox&#125;)&#123;</span><br><span class="line"></span><br><span class="line">function contactClik()&#123;</span><br><span class="line">console.log(&quot;子组件拿到的参数:&quot;+porpFunBox);</span><br><span class="line">porpFun(&quot;参数1&quot;)</span><br><span class="line">&#125;</span><br><span class="line">return(</span><br><span class="line">	&lt;button onClick=&#123;contactClik&#125;&gt;onClick&lt;/button&gt;</span><br><span class="line">)&#125;</span><br></pre></td></tr></table></figure>
-<p>同级传值,利用父组件中转<br>跨层级</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-<p>children</p>
-<h2 id="mobx"><a href="#mobx" class="headerlink" title="mobx"></a>mobx</h2><h2 id="Hooks"><a href="#Hooks" class="headerlink" title="Hooks"></a>Hooks</h2><h3 id="useState-状态管理钩子"><a href="#useState-状态管理钩子" class="headerlink" title="useState()状态管理钩子"></a>useState()状态管理钩子</h3><p>上面已经用到了,状态管理(响应式)</p>
-<h3 id="useContext-共享状态钩子"><a href="#useContext-共享状态钩子" class="headerlink" title="useContext()共享状态钩子"></a>useContext()共享状态钩子</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import &#123; createContext &#125; from &quot;react&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">const ContextBox=createContext()//创建状态容器</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">export default function Father()&#123;//父组件</span><br><span class="line"></span><br><span class="line">const data=&quot;i am data&quot;//定义数据</span><br><span class="line"></span><br><span class="line">return(</span><br><span class="line"></span><br><span class="line">&lt;&gt;</span><br><span class="line"></span><br><span class="line">&lt;ContextBox.Provider value=&#123;data&#125;&gt;//用固定语法包裹并传值</span><br><span class="line"></span><br><span class="line">&lt;Son&gt;&lt;/Son&gt;</span><br><span class="line"></span><br><span class="line">&lt;/ContextBox.Provider&gt;</span><br><span class="line"></span><br><span class="line">&lt;/&gt;</span><br><span class="line"></span><br><span class="line">)&#125;</span><br><span class="line"></span><br><span class="line">function Son()&#123;//儿组件</span><br><span class="line"></span><br><span class="line">return(</span><br><span class="line"></span><br><span class="line">&lt;&gt;</span><br><span class="line"></span><br><span class="line">&lt;Grandson&gt;&lt;/Grandson&gt;</span><br><span class="line"></span><br><span class="line">&lt;/&gt;</span><br><span class="line"></span><br><span class="line">)&#125;</span><br><span class="line"></span><br><span class="line">function Grandson()&#123;//孙组件</span><br><span class="line"></span><br><span class="line">const getData=useContext(ContextBox)</span><br><span class="line"></span><br><span class="line">return(</span><br><span class="line"></span><br><span class="line">&lt;&gt;</span><br><span class="line"></span><br><span class="line">&lt;p&gt;&#123;getData&#125;&lt;/p&gt;//获取数据</span><br><span class="line"></span><br><span class="line">&lt;/&gt;</span><br><span class="line"></span><br><span class="line">)&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="useReducer-action-钩子"><a href="#useReducer-action-钩子" class="headerlink" title="useReducer()action 钩子"></a>useReducer()action 钩子</h3><h3 id="useEffect-副作用钩子"><a href="#useEffect-副作用钩子" class="headerlink" title="useEffect()## 副作用钩子"></a>useEffect()## 副作用钩子</h3><h3 id="自定义Hooks"><a href="#自定义Hooks" class="headerlink" title="自定义Hooks"></a>自定义Hooks</h3>]]></content>
-      <categories>
-        <category>React.js</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>arm架构macos部署sqlserver</title>
-    <url>/2025/08/02/arm%E6%9E%B6%E6%9E%84macos%E9%83%A8%E7%BD%B2sqlserver/</url>
-    <content><![CDATA[<h2 id="安装docker"><a href="#安装docker" class="headerlink" title="安装docker"></a>安装docker</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install docker.io</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="启动docker"><a href="#启动docker" class="headerlink" title="启动docker"></a>启动docker</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo systemctl start docker</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="docker开机自启"><a href="#docker开机自启" class="headerlink" title="docker开机自启"></a>docker开机自启</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo systemctl enable docker</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="用户加组"><a href="#用户加组" class="headerlink" title="用户加组"></a>用户加组</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo usermod -aG docker $USER</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="拉取-Azure-SQL-Edge-镜像"><a href="#拉取-Azure-SQL-Edge-镜像" class="headerlink" title="拉取 Azure SQL Edge 镜像"></a>拉取 Azure SQL Edge 镜像</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker pull mcr.microsoft.com/azure-sql-edge</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="运行容器"><a href="#运行容器" class="headerlink" title="运行容器"></a>运行容器</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker run -e &#x27;ACCEPT_EULA=1&#x27; -e &#x27;MSSQL_SA_PASSWORD=SAsa991((!&#x27; \</span><br><span class="line">   -p 1433:1433 --name azuresqledge \</span><br><span class="line">   -d mcr.microsoft.com/azure-sql-edge</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="查看容器状态"><a href="#查看容器状态" class="headerlink" title="查看容器状态"></a>查看容器状态</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker ps</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="连接sql（使用DBeaver-ARM-社区构建版）"><a href="#连接sql（使用DBeaver-ARM-社区构建版）" class="headerlink" title="连接sql（使用DBeaver ARM 社区构建版）"></a>连接sql（使用DBeaver ARM 社区构建版）</h2><h3 id="java环境"><a href="#java环境" class="headerlink" title="java环境"></a>java环境</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install default-jre -y</span><br><span class="line">java -version</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wget https://dbeaver.io/files/ea/dbeaver-ce-25.1.0-linux.gtk.aarch64-nojdk.tar.gz</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="解压并运行"><a href="#解压并运行" class="headerlink" title="解压并运行"></a>解压并运行</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tar -xvzf dbeaver-ce-25.1.0-linux.gtk.aarch64-nojdk.tar.gz</span><br><span class="line">cd dbeaver</span><br><span class="line">./dbeaver</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>arm架构macos部署sqlserver</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>网站与博客部署全记录</title>
-    <url>/2025/08/02/%E7%BD%91%E7%AB%99%E4%B8%8E%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%85%A8%E8%AE%B0%E5%BD%95%EF%BC%9A%E5%B0%9D%E8%AF%95%E5%A4%9A%E7%A7%8D%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%B8%8E%E9%83%A8%E7%BD%B2%E6%B5%81%E7%A8%8B%E7%9A%84%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<h1 id="hexo-git"><a href="#hexo-git" class="headerlink" title="hexo+git"></a>hexo+git</h1><p>— 博客，音译，英文名为Blogger，它的正式名称为网络日记；是使用特定的软件，在网络上出版、发表和张贴个人文章的人，或者是一种通常由个人管理、不定期张贴新的文章的网站。博客是继MSN、BBS、ICQ之后出现的第4种网络交流方式，是网络时代的个人“读者文摘”，它代表着新的生活、工作和学习方式。</p>
-<p>— 在本人搭建博客的过程中，发现互联网上的教程大多数的发布时间是几年甚至十几年之前，有些软件的版本和操作方式都已经有所改变。许多新手小白如果按照之前的教程来操作的话会产生各种各样的问题。教程中所使用的专业名词也会使小白们一头雾水，影响操作效率。</p>
-<p>— 于是在2021年4月10日发布了这篇面向纯新手小白的保姆级搭建教程，手把手教你搭建属于自己的个人博客</p>
-<p>— 教程步骤框架来自hojun.cn发布的教程，使用工具包含node.js、github、gitforwin、Git、sublime、Hexo侵删</p>
-<h2 id="node的下载与安装"><a href="#node的下载与安装" class="headerlink" title="node的下载与安装"></a>node的下载与安装</h2><p>① Node.js官网下载并打开安装包</p>
-<p>② 更改安装位置</p>
-<p>③ 是否安装必要的环境，我选的安装</p>
-<p>④ 安装完成</p>
-<p>⑤ Win+R打开运行窗口，输入cmd</p>
-<p>⑥ node -v查看版本</p>
-<h2 id="github注册"><a href="#github注册" class="headerlink" title="github注册"></a>github注册</h2><p>① 打开github官网 GitHub: Where the world builds software · GitHub</p>
-<p>② 右上角注册</p>
-<p>③ 注册流程走完后回首页，右上角加号第一个选项，传建一个新的存储库</p>
-<p>④ 存储库名称为 <a href="http://用户名+.github+.io/">用户名+.github+.io</a>，其他默认，创建</p>
-<h2 id="gitforwin的下载与安装"><a href="#gitforwin的下载与安装" class="headerlink" title="gitforwin的下载与安装"></a>gitforwin的下载与安装</h2><p>① 浏览器输入 Git for Windows，下载gitforwin安装包</p>
-<p>② 安装git</p>
-<p>③ 更改安装位置</p>
-<p>④ 创建开始菜单快捷方式，随意，我选择不创建</p>
-<p>⑤ 点下一步全部默认就可以，到这一步选择第二个</p>
-<p>⑥ 安装完成</p>
-<p>⑦ 桌面没有新的快捷方式不要慌，正常现象，有需要的话可以在开始菜单和软件安装路径里找到并创建快捷方式</p>
-<p>⑧ 验证是否安装完成 Win+R，输入cmd，输入命令git</p>
-<h2 id="githubSHH配置"><a href="#githubSHH配置" class="headerlink" title="githubSHH配置"></a>githubSHH配置</h2><p>① 打开git的安装路径，找到git bash.exe 双击运行</p>
-<p>② 输入命令ssh-keygen -t rsa -C “<a href="mailto:991270685@qq.com">991270685@qq.com</a>“，引号内是github注册邮箱地址，回车</p>
-<p>③ 无特殊提示就回车，有（y&#x2F;n）就输入y回车</p>
-<p>④ 打开github，点击右上角头像选择 设置</p>
-<p>⑤ 选择shh和密钥选项，添加新密钥</p>
-<p>⑥ 标题就用户名+tech吧（tech技术），填到第一栏</p>
-<p>在C盘找到id_rsa.pub这个文件，以记事本形式打开，复制内容填到第二栏</p>
-<p>⑦ 提交，创建完成</p>
-<h2 id="hexo的本地使用"><a href="#hexo的本地使用" class="headerlink" title="hexo的本地使用"></a>hexo的本地使用</h2><p>① 浏览器输入 Hexo 进入hexo官网</p>
-<p>② 在合适的位置新建一个文件夹blog，关于博客的文件基本都在这里面，我选择D盘根目录</p>
-<p>③ 进入bolg文件，点击路径输入cmd，回车进入（也可以win+R，输入cmd，再用cd命令一级一级切到blog文件下）</p>
-<p>④ 回到hexo官网，复制命令 npm install hexo-cli -g 到运行窗口回车</p>
-<p>⑤ 网站下拉会有使用命令行，blog为你的博客名</p>
-<p>⑥ 输入 hexo init +博客名 回车运行</p>
-<p>⑦ 输入命令cd 博客名，进入博客文件，回到网站复制命令行 npm install 并运行</p>
-<p>⑧ 完成后输入命令 hexo s 生成本地预览，最后会生成一个4000端口的网址，复制到浏览器进入，就能看到我们的博客了</p>
-<h2 id="sublime的下载与安装"><a href="#sublime的下载与安装" class="headerlink" title="sublime的下载与安装"></a>sublime的下载与安装</h2><p>① 浏览器输入Download - Sublime Text 进去官网下载，选择自己的系统，我选择windows64位</p>
-<p>② 下载完成运行，更改安装路径</p>
-<p>③ 默认选项就可以，一直下一步。安装完成</p>
-<p>④ 打开sublime</p>
-<p>⑤ 打开sublime，在左边栏source——-posts —— hello-world.md中输入文字，ctrl+s保存</p>
-<p>⑥ 在blog路径中右击运行git bash，输入命令hexo cl清理缓存，hexo g hexo s生成本地预览</p>
-<p>⑦ 浏览器打开本地预览，更改已生效</p>
-<h2 id="将hexo发布至github"><a href="#将hexo发布至github" class="headerlink" title="将hexo发布至github"></a>将hexo发布至github</h2><p>① 打开浏览器，进入github之前新建的存储库，进入库，复制地址</p>
-<p>② 在sublime中打开-config.yml文件更改配置信息</p>
-<p>更改参数 author：名字，我的是maohuifei</p>
-<p>更改参数 ur1： 后面为github存储库的地址中的一部分（<a href="http://xxxx.github.io/">XXXX.github.io</a>）</p>
-<p>更改参数 type：git，</p>
-<p>添加新参数 branch: gh-pages</p>
-<p>添加新参数 repo：后面为github存储库的地址</p>
-<p>保存</p>
-<p>③ 进入hexo一键部署网站部署 | Hexo ，复制hexo-deployer-git的安装命令 npm install hexo-deployer-git –save 进入git bash 运行安装</p>
-<p>④ 命令 hexo cl 清理hexo g生成 hexo d提交</p>
-<p>⑤ 浏览器输入 <a href="http://用户名+github.io/">用户名+github.Io</a> <a href="http://我的是maohuifei.github.io/">我的是maohuifei.github.io</a></p>
-<p>⑥ 博客搭建完成!</p>
-<h2 id="hexo主题的使用"><a href="#hexo主题的使用" class="headerlink" title="hexo主题的使用"></a>hexo主题的使用</h2><p>① 进入hexo主题官网Themes | Hexo 选择主题，以next为例</p>
-<p>② 进入主题详情，有详细安装步骤教程，每个主题进入位置不同</p>
-<h3 id="matery主题"><a href="#matery主题" class="headerlink" title="matery主题"></a><code>matery</code>主题</h3><h3 id="全局css样式修改"><a href="#全局css样式修改" class="headerlink" title="全局css样式修改"></a>全局css样式修改</h3><p>css文件地址路径<code>themes/hexo-thieme-matery/source/css/matery.css</code></p>
-<h3 id="新建文章配置"><a href="#新建文章配置" class="headerlink" title="新建文章配置"></a>新建文章配置</h3><table>
-<thead>
-<tr>
-<th>配置选项</th>
-<th>默认值</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>title</td>
-<td>Markdown 的文件标题</td>
-<td>文章标题，强烈建议填写此选项</td>
-</tr>
-<tr>
-<td>date</td>
-<td>文件创建时的日期时间</td>
-<td>发布时间，强烈建议填写此选项，且最好保证全局唯一</td>
-</tr>
-<tr>
-<td>author</td>
-<td>根 _config.yml 中的 author</td>
-<td>文章作者</td>
-</tr>
-<tr>
-<td>img</td>
-<td>featureImages 中的某个值</td>
-<td>文章特征图，推荐使用图床(腾讯云、七牛云、又拍云等)来做图片的路径.</td>
-</tr>
-<tr>
-<td>top</td>
-<td>true</td>
-<td>推荐文章（文章是否置顶），如果 top 值为 true，则会作为首页推荐文章</td>
-</tr>
-<tr>
-<td>cover</td>
-<td>false</td>
-<td>v1.0.2版本新增，表示该文章是否需要加入到首页轮播封面中</td>
-</tr>
-<tr>
-<td>coverImg</td>
-<td>无</td>
-<td>v1.0.2版本新增，表示该文章在首页轮播封面需要显示的图片路径，如果没有，则默认使用文章的特色图片</td>
-</tr>
-<tr>
-<td>password</td>
-<td>无</td>
-<td>文章阅读密码，如果要对文章设置阅读验证密码的话，就可以设置 password 的值，该值必须是用 SHA256 加密后的密码，防止被他人识破。前提是在主题的 config.yml 中激活了 verifyPassword 选项</td>
-</tr>
-<tr>
-<td>toc</td>
-<td>true</td>
-<td>是否开启 TOC，可以针对某篇文章单独关闭 TOC 的功能。前提是在主题的 config.yml 中激活了 toc 选项</td>
-</tr>
-<tr>
-<td>mathjax</td>
-<td>false</td>
-<td>是否开启数学公式支持 ，本文章是否开启 mathjax，且需要在主题的 _config.yml 文件中也需要开启才行</td>
-</tr>
-<tr>
-<td>summary</td>
-<td>无</td>
-<td>文章摘要，自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要</td>
-</tr>
-<tr>
-<td>categories</td>
-<td>无</td>
-<td>文章分类，本主题的分类表示宏观上大的分类，只建议一篇文章一个分类</td>
-</tr>
-<tr>
-<td>tags</td>
-<td>无</td>
-<td>文章标签，一篇文章可以多个标签</td>
-</tr>
-</tbody></table>
-<p>默认配置文件路径：</p>
-<p><code>根目录/scaffolds/post</code></p>
-<h2 id="Hugo"><a href="#Hugo" class="headerlink" title="Hugo"></a>Hugo</h2>]]></content>
       <categories>
         <category>个人网站</category>
       </categories>
@@ -1231,6 +1087,150 @@
 ]]></content>
       <categories>
         <category>开发规范</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>网站与博客部署全记录</title>
+    <url>/2025/08/02/%E7%BD%91%E7%AB%99%E4%B8%8E%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%85%A8%E8%AE%B0%E5%BD%95%EF%BC%9A%E5%B0%9D%E8%AF%95%E5%A4%9A%E7%A7%8D%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%B8%8E%E9%83%A8%E7%BD%B2%E6%B5%81%E7%A8%8B%E7%9A%84%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<h1 id="hexo-git"><a href="#hexo-git" class="headerlink" title="hexo+git"></a>hexo+git</h1><p>— 博客，音译，英文名为Blogger，它的正式名称为网络日记；是使用特定的软件，在网络上出版、发表和张贴个人文章的人，或者是一种通常由个人管理、不定期张贴新的文章的网站。博客是继MSN、BBS、ICQ之后出现的第4种网络交流方式，是网络时代的个人“读者文摘”，它代表着新的生活、工作和学习方式。</p>
+<p>— 在本人搭建博客的过程中，发现互联网上的教程大多数的发布时间是几年甚至十几年之前，有些软件的版本和操作方式都已经有所改变。许多新手小白如果按照之前的教程来操作的话会产生各种各样的问题。教程中所使用的专业名词也会使小白们一头雾水，影响操作效率。</p>
+<p>— 于是在2021年4月10日发布了这篇面向纯新手小白的保姆级搭建教程，手把手教你搭建属于自己的个人博客</p>
+<p>— 教程步骤框架来自hojun.cn发布的教程，使用工具包含node.js、github、gitforwin、Git、sublime、Hexo侵删</p>
+<h2 id="node的下载与安装"><a href="#node的下载与安装" class="headerlink" title="node的下载与安装"></a>node的下载与安装</h2><p>① Node.js官网下载并打开安装包</p>
+<p>② 更改安装位置</p>
+<p>③ 是否安装必要的环境，我选的安装</p>
+<p>④ 安装完成</p>
+<p>⑤ Win+R打开运行窗口，输入cmd</p>
+<p>⑥ node -v查看版本</p>
+<h2 id="github注册"><a href="#github注册" class="headerlink" title="github注册"></a>github注册</h2><p>① 打开github官网 GitHub: Where the world builds software · GitHub</p>
+<p>② 右上角注册</p>
+<p>③ 注册流程走完后回首页，右上角加号第一个选项，传建一个新的存储库</p>
+<p>④ 存储库名称为 <a href="http://用户名+.github+.io/">用户名+.github+.io</a>，其他默认，创建</p>
+<h2 id="gitforwin的下载与安装"><a href="#gitforwin的下载与安装" class="headerlink" title="gitforwin的下载与安装"></a>gitforwin的下载与安装</h2><p>① 浏览器输入 Git for Windows，下载gitforwin安装包</p>
+<p>② 安装git</p>
+<p>③ 更改安装位置</p>
+<p>④ 创建开始菜单快捷方式，随意，我选择不创建</p>
+<p>⑤ 点下一步全部默认就可以，到这一步选择第二个</p>
+<p>⑥ 安装完成</p>
+<p>⑦ 桌面没有新的快捷方式不要慌，正常现象，有需要的话可以在开始菜单和软件安装路径里找到并创建快捷方式</p>
+<p>⑧ 验证是否安装完成 Win+R，输入cmd，输入命令git</p>
+<h2 id="githubSHH配置"><a href="#githubSHH配置" class="headerlink" title="githubSHH配置"></a>githubSHH配置</h2><p>① 打开git的安装路径，找到git bash.exe 双击运行</p>
+<p>② 输入命令ssh-keygen -t rsa -C “<a href="mailto:991270685@qq.com">991270685@qq.com</a>“，引号内是github注册邮箱地址，回车</p>
+<p>③ 无特殊提示就回车，有（y&#x2F;n）就输入y回车</p>
+<p>④ 打开github，点击右上角头像选择 设置</p>
+<p>⑤ 选择shh和密钥选项，添加新密钥</p>
+<p>⑥ 标题就用户名+tech吧（tech技术），填到第一栏</p>
+<p>在C盘找到id_rsa.pub这个文件，以记事本形式打开，复制内容填到第二栏</p>
+<p>⑦ 提交，创建完成</p>
+<h2 id="hexo的本地使用"><a href="#hexo的本地使用" class="headerlink" title="hexo的本地使用"></a>hexo的本地使用</h2><p>① 浏览器输入 Hexo 进入hexo官网</p>
+<p>② 在合适的位置新建一个文件夹blog，关于博客的文件基本都在这里面，我选择D盘根目录</p>
+<p>③ 进入bolg文件，点击路径输入cmd，回车进入（也可以win+R，输入cmd，再用cd命令一级一级切到blog文件下）</p>
+<p>④ 回到hexo官网，复制命令 npm install hexo-cli -g 到运行窗口回车</p>
+<p>⑤ 网站下拉会有使用命令行，blog为你的博客名</p>
+<p>⑥ 输入 hexo init +博客名 回车运行</p>
+<p>⑦ 输入命令cd 博客名，进入博客文件，回到网站复制命令行 npm install 并运行</p>
+<p>⑧ 完成后输入命令 hexo s 生成本地预览，最后会生成一个4000端口的网址，复制到浏览器进入，就能看到我们的博客了</p>
+<h2 id="sublime的下载与安装"><a href="#sublime的下载与安装" class="headerlink" title="sublime的下载与安装"></a>sublime的下载与安装</h2><p>① 浏览器输入Download - Sublime Text 进去官网下载，选择自己的系统，我选择windows64位</p>
+<p>② 下载完成运行，更改安装路径</p>
+<p>③ 默认选项就可以，一直下一步。安装完成</p>
+<p>④ 打开sublime</p>
+<p>⑤ 打开sublime，在左边栏source——-posts —— hello-world.md中输入文字，ctrl+s保存</p>
+<p>⑥ 在blog路径中右击运行git bash，输入命令hexo cl清理缓存，hexo g hexo s生成本地预览</p>
+<p>⑦ 浏览器打开本地预览，更改已生效</p>
+<h2 id="将hexo发布至github"><a href="#将hexo发布至github" class="headerlink" title="将hexo发布至github"></a>将hexo发布至github</h2><p>① 打开浏览器，进入github之前新建的存储库，进入库，复制地址</p>
+<p>② 在sublime中打开-config.yml文件更改配置信息</p>
+<p>更改参数 author：名字，我的是maohuifei</p>
+<p>更改参数 ur1： 后面为github存储库的地址中的一部分（<a href="http://xxxx.github.io/">XXXX.github.io</a>）</p>
+<p>更改参数 type：git，</p>
+<p>添加新参数 branch: gh-pages</p>
+<p>添加新参数 repo：后面为github存储库的地址</p>
+<p>保存</p>
+<p>③ 进入hexo一键部署网站部署 | Hexo ，复制hexo-deployer-git的安装命令 npm install hexo-deployer-git –save 进入git bash 运行安装</p>
+<p>④ 命令 hexo cl 清理hexo g生成 hexo d提交</p>
+<p>⑤ 浏览器输入 <a href="http://用户名+github.io/">用户名+github.Io</a> <a href="http://我的是maohuifei.github.io/">我的是maohuifei.github.io</a></p>
+<p>⑥ 博客搭建完成!</p>
+<h2 id="hexo主题的使用"><a href="#hexo主题的使用" class="headerlink" title="hexo主题的使用"></a>hexo主题的使用</h2><p>① 进入hexo主题官网Themes | Hexo 选择主题，以next为例</p>
+<p>② 进入主题详情，有详细安装步骤教程，每个主题进入位置不同</p>
+<h3 id="matery主题"><a href="#matery主题" class="headerlink" title="matery主题"></a><code>matery</code>主题</h3><h3 id="全局css样式修改"><a href="#全局css样式修改" class="headerlink" title="全局css样式修改"></a>全局css样式修改</h3><p>css文件地址路径<code>themes/hexo-thieme-matery/source/css/matery.css</code></p>
+<h3 id="新建文章配置"><a href="#新建文章配置" class="headerlink" title="新建文章配置"></a>新建文章配置</h3><table>
+<thead>
+<tr>
+<th>配置选项</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>title</td>
+<td>Markdown 的文件标题</td>
+<td>文章标题，强烈建议填写此选项</td>
+</tr>
+<tr>
+<td>date</td>
+<td>文件创建时的日期时间</td>
+<td>发布时间，强烈建议填写此选项，且最好保证全局唯一</td>
+</tr>
+<tr>
+<td>author</td>
+<td>根 _config.yml 中的 author</td>
+<td>文章作者</td>
+</tr>
+<tr>
+<td>img</td>
+<td>featureImages 中的某个值</td>
+<td>文章特征图，推荐使用图床(腾讯云、七牛云、又拍云等)来做图片的路径.</td>
+</tr>
+<tr>
+<td>top</td>
+<td>true</td>
+<td>推荐文章（文章是否置顶），如果 top 值为 true，则会作为首页推荐文章</td>
+</tr>
+<tr>
+<td>cover</td>
+<td>false</td>
+<td>v1.0.2版本新增，表示该文章是否需要加入到首页轮播封面中</td>
+</tr>
+<tr>
+<td>coverImg</td>
+<td>无</td>
+<td>v1.0.2版本新增，表示该文章在首页轮播封面需要显示的图片路径，如果没有，则默认使用文章的特色图片</td>
+</tr>
+<tr>
+<td>password</td>
+<td>无</td>
+<td>文章阅读密码，如果要对文章设置阅读验证密码的话，就可以设置 password 的值，该值必须是用 SHA256 加密后的密码，防止被他人识破。前提是在主题的 config.yml 中激活了 verifyPassword 选项</td>
+</tr>
+<tr>
+<td>toc</td>
+<td>true</td>
+<td>是否开启 TOC，可以针对某篇文章单独关闭 TOC 的功能。前提是在主题的 config.yml 中激活了 toc 选项</td>
+</tr>
+<tr>
+<td>mathjax</td>
+<td>false</td>
+<td>是否开启数学公式支持 ，本文章是否开启 mathjax，且需要在主题的 _config.yml 文件中也需要开启才行</td>
+</tr>
+<tr>
+<td>summary</td>
+<td>无</td>
+<td>文章摘要，自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要</td>
+</tr>
+<tr>
+<td>categories</td>
+<td>无</td>
+<td>文章分类，本主题的分类表示宏观上大的分类，只建议一篇文章一个分类</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>无</td>
+<td>文章标签，一篇文章可以多个标签</td>
+</tr>
+</tbody></table>
+<p>默认配置文件路径：</p>
+<p><code>根目录/scaffolds/post</code></p>
+<h2 id="Hugo"><a href="#Hugo" class="headerlink" title="Hugo"></a>Hugo</h2>]]></content>
+      <categories>
+        <category>个人网站</category>
       </categories>
   </entry>
   <entry>
