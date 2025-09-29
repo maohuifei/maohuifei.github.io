@@ -1000,20 +1000,26 @@
   <entry>
     <title>泛微二开标准代码模板</title>
     <url>/2025/08/02/%E6%B3%9B%E5%BE%AE%E4%BA%8C%E5%BC%80%E6%A0%87%E5%87%86%E4%BB%A3%E7%A0%81%E6%A8%A1%E6%9D%BF/</url>
-    <content><![CDATA[<h1 id="E9"><a href="#E9" class="headerlink" title="E9"></a>E9</h1><h2 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h2><h3 id="触发时机"><a href="#触发时机" class="headerlink" title="触发时机"></a>触发时机</h3><h4 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a>jQuery</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"> $(<span class="variable language_">document</span>).<span class="title function_">ready</span>(<span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;DOMContentLoaded 代码执行&quot;</span>);</span><br><span class="line"> &#125;)</span><br></pre></td></tr></table></figure>
-<h4 id="JS原生"><a href="#JS原生" class="headerlink" title="JS原生"></a>JS原生</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;DOMContentLoaded&#x27;</span>, <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">   <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;DOMContentLoaded 代码执行&quot;</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+    <content><![CDATA[<h1 id="E9"><a href="#E9" class="headerlink" title="E9"></a>E9</h1><h2 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h2><h3 id="触发时机"><a href="#触发时机" class="headerlink" title="触发时机"></a>触发时机</h3><h4 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a>jQuery</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//页面挂载触发</span></span><br><span class="line"> $(<span class="variable language_">document</span>).<span class="title function_">ready</span>(<span class="keyword">function</span> (<span class="params"></span>) &#123;&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="JS原生"><a href="#JS原生" class="headerlink" title="JS原生"></a>JS原生</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//dom挂载触发</span></span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;DOMContentLoaded&#x27;</span>, <span class="keyword">function</span>)</span><br><span class="line"><span class="comment">//hash路径变化触发</span></span><br><span class="line"><span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;hashchange&#x27;</span>, <span class="keyword">function</span>)</span><br><span class="line"><span class="comment">// 监听页面可见性变化</span></span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">addEventListener</span>(<span class="string">&quot;visibilitychange&quot;</span>, <span class="keyword">function</span>);</span><br></pre></td></tr></table></figure>
 <h3 id="限定范围"><a href="#限定范围" class="headerlink" title="限定范围"></a>限定范围</h3><h4 id="ecodeSDK-checkLPath"><a href="#ecodeSDK-checkLPath" class="headerlink" title="ecodeSDK.checkLPath"></a>ecodeSDK.checkLPath</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (!ecodeSDK.<span class="title function_">checkLPath</span>(<span class="string">&quot;/spa/workflow/static4form/index.html&quot;</span>)) <span class="keyword">return</span>;</span><br></pre></td></tr></table></figure>
 <h4 id="JS原生-1"><a href="#JS原生-1" class="headerlink" title="JS原生"></a>JS原生</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//全路径</span></span><br><span class="line"><span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">pathname</span> === <span class="string">&#x27;/sp/integration/loginSingle/freepass&#x27;</span></span><br><span class="line"><span class="comment">//路径包含</span></span><br><span class="line"><span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">href</span>.<span class="title function_">includes</span>(<span class="string">&quot;/workflow/request/&quot;</span>)</span><br></pre></td></tr></table></figure>
 
 <h3 id="组件复写"><a href="#组件复写" class="headerlink" title="组件复写"></a>组件复写</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">ecodeSDK.<span class="title function_">overwritePropsFnQueueMapSet</span>(<span class="string">&#x27;WeaTop&#x27;</span>,&#123;</span><br><span class="line">  <span class="attr">fn</span>:<span class="function">(<span class="params">newProps</span>)=&gt;</span>&#123;</span><br><span class="line">	 newProps.<span class="property">title</span>=<span class="string">&quot;666&quot;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">order</span>:<span class="number">1</span>,</span><br><span class="line">  <span class="attr">desc</span>:<span class="string">&#x27;成绩公示的重新计算按钮&#x27;</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <h3 id="组件重写"><a href="#组件重写" class="headerlink" title="组件重写"></a>组件重写</h3><h3 id="请求接口"><a href="#请求接口" class="headerlink" title="请求接口"></a>请求接口</h3><h4 id="WeaTools"><a href="#WeaTools" class="headerlink" title="WeaTools"></a>WeaTools</h4><figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123; <span class="title class_">WeaTools</span> &#125; =ecCom;</span><br><span class="line">  <span class="title class_">WeaTools</span>.<span class="title function_">callApi</span>(<span class="string">&#x27;/api/MedicalEthicsExamination/gradeInquiry/calculateGrades&#x27;</span>,<span class="string">&#x27;GET&#x27;</span>).<span class="title function_">then</span>(<span class="function">(<span class="params">response</span>) =&gt;</span> &#123;</span><br><span class="line">	<span class="keyword">if</span>(response)&#123;</span><br><span class="line">		<span class="comment">//console.log(&quot;接口逻辑成功&quot;)</span></span><br><span class="line">		<span class="comment">//window.location.reload()刷新页面</span></span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		<span class="comment">//console.log(&quot;接口逻辑失败&quot;)</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br><span class="line">.<span class="title function_">catch</span>(<span class="function">(<span class="params">error</span>)=&gt;</span>&#123;</span><br><span class="line">	<span class="comment">//console.log(&quot;接口请求失败&quot;,error)</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h4 id="jQuery-1"><a href="#jQuery-1" class="headerlink" title="jQuery"></a>jQuery</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">$.<span class="title function_">ajax</span>(&#123;</span><br><span class="line"></span><br><span class="line">      <span class="attr">url</span>: <span class="string">&quot;/interface/JZW/ListeningModelSave.jsp&quot;</span>,</span><br><span class="line"></span><br><span class="line">      <span class="attr">async</span>: <span class="literal">false</span>,</span><br><span class="line"></span><br><span class="line">      <span class="attr">type</span>: <span class="string">&quot;POST&quot;</span>,</span><br><span class="line"></span><br><span class="line">      <span class="attr">data</span>: paramsObj,</span><br><span class="line"></span><br><span class="line">      <span class="attr">traditional</span>: <span class="literal">true</span>,</span><br><span class="line"></span><br><span class="line">      <span class="attr">success</span>: <span class="keyword">function</span> (<span class="params">res</span>) &#123;</span><br><span class="line"></span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;ListeningModelASave响应结果:&quot;</span>, res);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="jQuery-1"><a href="#jQuery-1" class="headerlink" title="jQuery"></a>jQuery</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">$.<span class="title function_">ajax</span>(&#123;</span><br><span class="line">      <span class="attr">url</span>: <span class="string">&quot;/interface/JZW/ListeningModelSave.jsp&quot;</span>,</span><br><span class="line">      <span class="attr">async</span>: <span class="literal">false</span>,</span><br><span class="line">      <span class="attr">type</span>: <span class="string">&quot;POST&quot;</span>,</span><br><span class="line">      <span class="attr">data</span>: paramsObj,</span><br><span class="line">      <span class="attr">traditional</span>: <span class="literal">true</span>,</span><br><span class="line">      <span class="attr">success</span>: <span class="keyword">function</span> (<span class="params">res</span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;ListeningModelASave响应结果:&quot;</span>, res);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
 
-<h3 id="接口拦截"><a href="#接口拦截" class="headerlink" title="接口拦截"></a>接口拦截</h3><h4 id="拦截请求"><a href="#拦截请求" class="headerlink" title="拦截请求"></a>拦截请求</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">ecodeSDK.<span class="title function_">rewriteApiParamsQueueSet</span>(&#123;</span><br><span class="line"></span><br><span class="line">  <span class="attr">fn</span>: <span class="function">(<span class="params">url, method, params</span>) =&gt;</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (url.<span class="title function_">indexOf</span>(<span class="string">&quot;/api/cube/mode/mode/saveBatchImportInfo&quot;</span>) !== -<span class="number">1</span>) &#123;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">return</span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="attr">url</span>: url,</span><br><span class="line"></span><br><span class="line">        <span class="attr">method</span>: method,</span><br><span class="line"></span><br><span class="line">        <span class="attr">params</span>: &#123; ...params, <span class="attr">fname</span>: wenjianname &#125;,</span><br><span class="line"></span><br><span class="line">      &#125;;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> &#123; url, method, params &#125;;</span><br><span class="line"></span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="attr">desc</span>: <span class="string">&quot;修改流程分页接口的默认查询条件&quot;</span>, <span class="comment">// 描述用途</span></span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h4 id="拦截响应"><a href="#拦截响应" class="headerlink" title="拦截响应"></a>拦截响应</h4><figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="comment">//拦截获取</span></span><br><span class="line"></span><br><span class="line">ecodeSDK.<span class="title function_">rewriteApiDataQueueSet</span>(&#123;</span><br><span class="line"></span><br><span class="line">  <span class="attr">fn</span>: <span class="keyword">function</span> (<span class="params">url, params, data</span>) &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (url.<span class="title function_">indexOf</span>(<span class="string">&quot;/api/hrm/kq/group/getForm&quot;</span>) &gt; -<span class="number">1</span>) &#123;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">const</span> newData = <span class="title class_">JSON</span>.<span class="title function_">parse</span>(<span class="title class_">JSON</span>.<span class="title function_">stringify</span>(data));</span><br><span class="line"></span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;拦截到接口：&quot;</span>, newData);</span><br><span class="line"></span><br><span class="line">      <span class="keyword">return</span> newData;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> data;</span><br><span class="line"></span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="attr">desc</span>: <span class="string">&quot;拦截接口响应给对话框添加HIS选项&quot;</span>,</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="接口拦截"><a href="#接口拦截" class="headerlink" title="接口拦截"></a>接口拦截</h3><h4 id="拦截请求"><a href="#拦截请求" class="headerlink" title="拦截请求"></a>拦截请求</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">ecodeSDK.<span class="title function_">rewriteApiParamsQueueSet</span>(&#123;</span><br><span class="line">  <span class="attr">fn</span>: <span class="function">(<span class="params">url, method, params</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (url.<span class="title function_">indexOf</span>(<span class="string">&quot;/api/cube/mode/mode/saveBatchImportInfo&quot;</span>) !== -<span class="number">1</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> &#123;</span><br><span class="line">        <span class="attr">url</span>: url,</span><br><span class="line">        <span class="attr">method</span>: method,</span><br><span class="line">        <span class="attr">params</span>: &#123; ...params, <span class="attr">fname</span>: wenjianname &#125;,</span><br><span class="line">      &#125;;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> &#123; url, method, params &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">desc</span>: <span class="string">&quot;修改流程分页接口的默认查询条件&quot;</span>, <span class="comment">// 描述用途</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="拦截响应"><a href="#拦截响应" class="headerlink" title="拦截响应"></a>拦截响应</h4><figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="comment">//拦截接口响应</span></span><br><span class="line">ecodeSDK.<span class="title function_">rewriteApiDataQueueSet</span>(&#123;</span><br><span class="line">  <span class="attr">fn</span>: <span class="keyword">function</span> (<span class="params">url, params, data</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (url.<span class="title function_">indexOf</span>(<span class="string">&quot;/api/hrm/kq/group/getForm&quot;</span>) &gt; -<span class="number">1</span>) &#123;</span><br><span class="line">      <span class="keyword">const</span> newData = <span class="title class_">JSON</span>.<span class="title function_">parse</span>(<span class="title class_">JSON</span>.<span class="title function_">stringify</span>(data));</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;拦截到接口：&quot;</span>, newData);</span><br><span class="line">      <span class="keyword">return</span> newData;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> data;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">desc</span>: <span class="string">&quot;拦截接口响应&quot;</span>,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <h3 id="提醒"><a href="#提醒" class="headerlink" title="提醒"></a>提醒</h3><h4 id="原生"><a href="#原生" class="headerlink" title="原生"></a>原生</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
 <h4 id="交互"><a href="#交互" class="headerlink" title="交互"></a>交互</h4><figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="property">antd</span>.<span class="property">Modal</span>.<span class="title function_">info</span>(&#123;</span><br><span class="line"></span><br><span class="line">      <span class="attr">title</span>: <span class="string">&quot;提示&quot;</span>,</span><br><span class="line"></span><br><span class="line">      <span class="attr">content</span>: <span class="string">&quot;您本次测试成绩为：&quot;</span>+df+<span class="string">&quot;分&quot;</span>,</span><br><span class="line"></span><br><span class="line">      <span class="title function_">onOk</span>(<span class="params"></span>) &#123;</span><br><span class="line"></span><br><span class="line">        <span class="title function_">callback</span>();</span><br><span class="line"></span><br><span class="line">      &#125;,</span><br><span class="line"></span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
-<h4 id="气泡"><a href="#气泡" class="headerlink" title="气泡"></a>气泡</h4><figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="title class_">WfForm</span>.<span class="title function_">showMessage</span>(<span class="string">&quot;这里是自定义提示内容&quot;</span>); </span><br></pre></td></tr></table></figure>
+<h4 id="气泡"><a href="#气泡" class="headerlink" title="气泡"></a>气泡</h4><figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="comment">//流程表单</span></span><br><span class="line"><span class="title class_">WfForm</span>.<span class="title function_">showMessage</span>(<span class="string">&quot;这里是自定义提示内容&quot;</span>); </span><br><span class="line"><span class="comment">//建模表单</span></span><br><span class="line"><span class="title class_">ModeForm</span>.<span class="title function_">showMessage</span>(<span class="string">&quot;这里是自定义提示内容&quot;</span>); </span><br><span class="line"><span class="comment">//全局</span></span><br><span class="line"><span class="keyword">const</span> &#123; message &#125; = antd;</span><br><span class="line">message.<span class="title function_">success</span>(content, duration)  </span><br><span class="line">message.<span class="title function_">error</span>(content, duration)</span><br><span class="line">message.<span class="title function_">info</span>(content, duration)  </span><br><span class="line">message.<span class="title function_">warning</span>(content, duration)</span><br><span class="line">message.<span class="title function_">warn</span>(content, duration)</span><br><span class="line">message.<span class="title function_">loading</span>(content, duration)</span><br></pre></td></tr></table></figure>
+<h3 id="获取用户信息"><a href="#获取用户信息" class="headerlink" title="获取用户信息"></a>获取用户信息</h3><h4 id="ecode"><a href="#ecode" class="headerlink" title="ecode"></a>ecode</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> userInfo = <span class="title class_">JSON</span>.<span class="title function_">parse</span>(<span class="variable language_">localStorage</span>.<span class="title function_">getItem</span>(<span class="string">&quot;theme-account&quot;</span>));</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">1. **`subcompanyid`: &quot;0&quot;**  </span></span><br><span class="line"><span class="comment">    → 所属子公司的 ID，&quot;0&quot; 可能表示“无”或“总公司/默认公司”。</span></span><br><span class="line"><span class="comment">2. **`jobs`: &quot;&quot;**  </span></span><br><span class="line"><span class="comment">    → 用户职位/岗位，当前为空字符串，可能未设置或无职位。</span></span><br><span class="line"><span class="comment">3. **`icon`: &quot;/messager/images/icon_m_wev8.jpg&quot;**  </span></span><br><span class="line"><span class="comment">    → 用户头像或默认图标路径，用于前端显示。</span></span><br><span class="line"><span class="comment">4. **`deptid`: &quot;0&quot;**  </span></span><br><span class="line"><span class="comment">    → 所属部门 ID，&quot;0&quot; 同样可能表示“无部门”或“顶级部门”。</span></span><br><span class="line"><span class="comment">5. **`subcompanyname`: &quot;&quot;**  </span></span><br><span class="line"><span class="comment">    → 子公司名称，当前为空。</span></span><br><span class="line"><span class="comment">6. **`iscurrent`: &quot;1&quot;**  </span></span><br><span class="line"><span class="comment">    → 是否为当前激活账户，&quot;1&quot; 通常表示“是”。</span></span><br><span class="line"><span class="comment">7. **`userid`: &quot;1&quot;**  </span></span><br><span class="line"><span class="comment">    → 用户唯一 ID，这里是 1，通常系统管理员默认为 1。</span></span><br><span class="line"><span class="comment">8. **`deptname`: &quot;&quot;**  </span></span><br><span class="line"><span class="comment">    → 部门名称，当前为空</span></span><br><span class="line"><span class="comment">9. **`userLanguage`: &quot;7&quot;**  </span></span><br><span class="line"><span class="comment">    → 用户界面语言设置，&quot;7&quot; 可能代表某种语言编码（如中文、英文等），需查系统语言映射表。</span></span><br><span class="line"><span class="comment">10. **`showSearch`: false**  </span></span><br><span class="line"><span class="comment">    → 是否显示搜索功能，false 表示隐藏。</span></span><br><span class="line"><span class="comment">11. **`showMore`: true**  </span></span><br><span class="line"><span class="comment">    → 是否显示“更多”按钮或菜单，true 表示显示。</span></span><br><span class="line"><span class="comment">12. **`username`: &quot;系统管理员&quot;**  </span></span><br><span class="line"><span class="comment">    → 用户显示名称。</span></span><br><span class="line"><span class="comment">13. **`fontSetting`: false**  </span></span><br><span class="line"><span class="comment">    → 是否启用字体设置功能，false 表示未启用或隐藏。</span></span><br><span class="line"><span class="comment">`accountlist` 数组（多账户支持）</span></span><br><span class="line"><span class="comment">**/</span></span><br></pre></td></tr></table></figure>
+
+
+<hr>
+<h3 id="检测元素是否已渲染"><a href="#检测元素是否已渲染" class="headerlink" title="检测元素是否已渲染"></a>检测元素是否已渲染</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"> * 持续轮询查找元素，支持超时</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">string</span>&#125; <span class="variable">selector</span> - CSS选择器</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">function</span>&#125; <span class="variable">callback</span> - 找到后执行的方法</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">number</span>&#125; <span class="variable">interval</span> - 轮询间隔（毫秒）</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">number</span>&#125; <span class="variable">timeout</span> - 超时时间（毫秒）</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">WatchElementReady</span>(<span class="params">selector, callback, interval = <span class="number">500</span>, timeout = <span class="number">10000</span></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> startTime = <span class="title class_">Date</span>.<span class="title function_">now</span>();</span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">check</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> el = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(selector);</span><br><span class="line">    <span class="keyword">if</span> (el) &#123;</span><br><span class="line">      <span class="comment">//console.log(`元素已渲染，执行回调`);</span></span><br><span class="line">      <span class="keyword">if</span> (callback &amp;&amp; <span class="keyword">typeof</span> callback === <span class="string">&#x27;function&#x27;</span>) &#123;</span><br><span class="line">        <span class="title function_">callback</span>();</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`未指定回调，执行默认打印`</span>);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">const</span> elapsed = <span class="title class_">Date</span>.<span class="title function_">now</span>() - startTime;</span><br><span class="line">      <span class="keyword">if</span> (elapsed &gt;= timeout) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`超时（<span class="subst">$&#123;timeout&#125;</span>ms），停止重试`</span>);</span><br><span class="line">        <span class="keyword">return</span>; <span class="comment">// 停止重试</span></span><br><span class="line">      &#125;</span><br><span class="line">      <span class="built_in">setTimeout</span>(check, interval); <span class="comment">// 继续重试</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">check</span>(); <span class="comment">// 立即执行第一次检查</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="检测变量是否已就绪"><a href="#检测变量是否已就绪" class="headerlink" title="检测变量是否已就绪"></a>检测变量是否已就绪</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 轮询检测某个变量或条件是否就绪</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">Function</span>&#125; <span class="variable">conditionFn</span> - 返回要检测的值的函数，当返回 truthy 值时视为就绪</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">Function</span>&#125; <span class="variable">callback</span> - 就绪后回调，传入就绪的值</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">Object</span>&#125; <span class="variable">options</span> - 配置项</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">number</span>&#125; [options.interval=100] - 轮询间隔（ms）</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">number</span>&#125; [options.timeout=10000] - 超时时间（ms）</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">WatchVariableReady</span>(<span class="params">conditionFn, callback, &#123; interval = <span class="number">100</span>, timeout = <span class="number">10000</span> &#125; = &#123;&#125;</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> startTime = <span class="title class_">Date</span>.<span class="title function_">now</span>();</span><br><span class="line"></span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">check</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      <span class="keyword">const</span> value = <span class="title function_">conditionFn</span>();</span><br><span class="line">      <span class="keyword">if</span> (value) &#123;</span><br><span class="line">        <span class="title function_">callback</span>(value);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&#x27;WatchVariableReady conditionFn 报错:&#x27;</span>, e);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> elapsed = <span class="title class_">Date</span>.<span class="title function_">now</span>() - startTime;</span><br><span class="line">    <span class="keyword">if</span> (elapsed &gt;= timeout) &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`WatchVariableReady 超时（<span class="subst">$&#123;timeout&#125;</span>ms），停止重试`</span>);</span><br><span class="line">      <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">setTimeout</span>(check, interval);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">check</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="后端"><a href="#后端" class="headerlink" title="后端"></a>后端</h2><h3 id="自定义API"><a href="#自定义API" class="headerlink" title="自定义API"></a>自定义API</h3><h4 id="泛微标准"><a href="#泛微标准" class="headerlink" title="泛微标准"></a>泛微标准</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.api.MedicalEthicsExamination;  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;  </span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;  </span><br><span class="line"><span class="keyword">import</span> javax.ws.rs.GET;  </span><br><span class="line"><span class="keyword">import</span> javax.ws.rs.Path;  </span><br><span class="line"><span class="keyword">import</span> javax.ws.rs.core.Context;  </span><br><span class="line"><span class="keyword">import</span> java.util.HashMap;  </span><br><span class="line"><span class="keyword">import</span> java.util.Map; </span><br><span class="line"><span class="keyword">import</span> com.alibaba.fastjson.JSONObject;  </span><br><span class="line"><span class="keyword">import</span> weaver.general.BaseBean;  </span><br><span class="line"><span class="keyword">import</span> weaver.conn.RecordSet;  </span><br><span class="line">  </span><br><span class="line"><span class="meta">@Path(&quot;/MedicalEthicsExamination/Organization&quot;)</span>  </span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">GetLeader</span> &#123;  </span><br><span class="line">    <span class="meta">@GET</span>  </span><br><span class="line">    <span class="meta">@Path(&quot;/getData&quot;)</span>  </span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">updateScorePublicAction</span><span class="params">(<span class="meta">@Context</span> HttpServletRequest request, <span class="meta">@Context</span> HttpServletResponse response)</span>&#123;  </span><br><span class="line">		<span class="comment">//打印日志</span></span><br><span class="line">        <span class="type">BaseBean</span> <span class="variable">log</span> <span class="operator">=</span><span class="keyword">new</span> <span class="title class_">BaseBean</span>();  </span><br><span class="line">        log.writeLog(<span class="string">&quot;自定义XXX接口开始执行&quot;</span>);  </span><br><span class="line">        </span><br><span class="line">        <span class="comment">//获取前端传参：userId  </span></span><br><span class="line">        <span class="type">String</span> <span class="variable">userIdParam</span> <span class="operator">=</span> request.getParameter(<span class="string">&quot;userId&quot;</span>);  </span><br><span class="line"></span><br><span class="line">		<span class="comment">//。。。代码逻辑。。。</span></span><br><span class="line">		</span><br><span class="line">        <span class="comment">//构建返回结构  </span></span><br><span class="line">        Map&lt;String, Object&gt; dataMap = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();  </span><br><span class="line">        dataMap.put(<span class="string">&quot;ascription&quot;</span>, ascription);  </span><br><span class="line">        dataMap.put(<span class="string">&quot;kpdyId&quot;</span>, kpdyId);  </span><br><span class="line">  </span><br><span class="line">        <span class="type">JSONObject</span> <span class="variable">responseData</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">JSONObject</span>();  </span><br><span class="line">        responseData.put(<span class="string">&quot;code&quot;</span>, <span class="number">200</span>);  </span><br><span class="line">        responseData.put(<span class="string">&quot;msg&quot;</span>, <span class="string">&quot;success&quot;</span>);  </span><br><span class="line">        responseData.put(<span class="string">&quot;data&quot;</span>, dataMap);</span><br><span class="line">  </span><br><span class="line">        <span class="keyword">return</span> responseData.toJSONString();  </span><br><span class="line">    &#125;&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="JSP"><a href="#JSP" class="headerlink" title="JSP"></a>JSP</h4><figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;%@ page <span class="keyword">import</span>=<span class="string">&quot;java.util.*&quot;</span> %&gt;</span><br><span class="line"></span><br><span class="line">&lt;%@ page <span class="keyword">import</span>=<span class="string">&quot;com.alibaba.fastjson.JSONObject&quot;</span> %&gt;</span><br><span class="line"></span><br><span class="line">&lt;%@ page <span class="keyword">import</span>=<span class="string">&quot;com.weaver.general.BaseBean&quot;</span> %&gt;</span><br><span class="line"></span><br><span class="line">&lt;%@ page <span class="keyword">import</span>=<span class="string">&quot;weaver.conn.RecordSet&quot;</span> %&gt;</span><br><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">&lt;%@ page contentType=<span class="string">&quot;application/json;charset=UTF-8&quot;</span> language=<span class="string">&quot;java&quot;</span> %&gt;</span><br><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">&lt;%</span><br><span class="line"></span><br><span class="line">    <span class="comment">//初始化打印日志对象</span></span><br><span class="line"></span><br><span class="line">    <span class="type">BaseBean</span> <span class="variable">log</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BaseBean</span>();</span><br><span class="line"></span><br><span class="line">    log.writeLog(<span class="string">&quot;删除HIS排班jsp逻辑开始执行&quot;</span>);</span><br><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">    <span class="comment">//获取前端传参</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// String[] ids = request.getParameterValues(&quot;ids&quot;);</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// String kqzID = request.getParameter(&quot;kqzid&quot;);</span></span><br><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">    <span class="comment">//sql操作</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// RecordSet rs = new RecordSet();</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// String sql = &quot;SELECT * FROM tableName&quot;;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// rs.executeQuery(sql);</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// while (rs.next()) &#123;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//     String bcid = rs.getString(&quot;bcid&quot;)</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// &#125;</span></span><br><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">    <span class="comment">//初始化返回结构</span></span><br><span class="line"></span><br><span class="line">    <span class="type">JSONObject</span> <span class="variable">res</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">JSONObject</span>();</span><br><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">    res.put(<span class="string">&quot;data&quot;</span>, <span class="string">&quot;666&quot;</span>);</span><br><span class="line"></span><br><span class="line">    out.print(res.toString());</span><br><span class="line"></span><br><span class="line">%&gt;</span><br></pre></td></tr></table></figure>
 <h3 id="节后附加操作"><a href="#节后附加操作" class="headerlink" title="节后附加操作"></a>节后附加操作</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> weaver.workflow.MedicalEthicsExamination;  </span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> weaver.interfaces.workflow.action.Action;  </span><br><span class="line"><span class="keyword">import</span> weaver.soa.workflow.request.Property;  </span><br><span class="line"><span class="keyword">import</span> weaver.soa.workflow.request.RequestInfo;  </span><br><span class="line"><span class="keyword">import</span> com.weaver.general.BaseBean;  </span><br><span class="line"><span class="keyword">import</span> java.util.HashMap;  </span><br><span class="line"><span class="keyword">import</span> java.util.Map;  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MedicalEthicsExaminationUpdateScoreAi</span> <span class="keyword">implements</span> <span class="title class_">Action</span> &#123;  </span><br><span class="line">    <span class="meta">@Override</span>  </span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">execute</span><span class="params">(RequestInfo requestInfo)</span> &#123;  </span><br><span class="line">        <span class="type">BaseBean</span> <span class="variable">log</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BaseBean</span>();  </span><br><span class="line">        log.writeLog(<span class="string">&quot;XXX节点附加操作开始执行&quot;</span>);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 获取主表数据  </span></span><br><span class="line">		Property[] props = requestInfo.getMainTableInfo().getProperty();  </span><br><span class="line">		Map&lt;String, String&gt; fieldMap = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();  </span><br><span class="line">		<span class="keyword">for</span> (Property prop : props) &#123;  </span><br><span class="line">		    fieldMap.put(prop.getName(), prop.getValue());  </span><br><span class="line">		&#125;  </span><br><span class="line">		<span class="type">String</span> <span class="variable">scorePrams</span> <span class="operator">=</span> fieldMap.get(<span class="string">&quot;df&quot;</span>);  </span><br><span class="line">		<span class="type">String</span> <span class="variable">userIdPrams</span> <span class="operator">=</span> fieldMap.get(<span class="string">&quot;cpr&quot;</span>);  </span><br><span class="line">		</span><br><span class="line">		<span class="comment">//获取流程id</span></span><br><span class="line">		<span class="type">String</span> <span class="variable">workflowid</span> <span class="operator">=</span> requestInfo.getWorkflowid();</span><br><span class="line"></span><br><span class="line">		<span class="comment">//。。。代码逻辑。。。</span></span><br><span class="line">	</span><br><span class="line">		<span class="keyword">return</span> Action.SUCCESS;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -1025,7 +1031,7 @@
 <h4 id="构建明细表"><a href="#构建明细表" class="headerlink" title="构建明细表"></a>构建明细表</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">WorkflowDetailTableInfo[] workflowDetailTableInfo = <span class="keyword">new</span> <span class="title class_">WorkflowDetailTableInfo</span>[<span class="number">1</span>];  </span><br><span class="line">WorkflowRequestTableRecord[] workflowRequestTableRecord = <span class="keyword">new</span> <span class="title class_">WorkflowRequestTableRecord</span>[allData.size()];  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; allData.size(); i++) &#123;  </span><br><span class="line">    <span class="type">TranscriptStructure</span> <span class="variable">ts</span> <span class="operator">=</span> allData.get(i);  </span><br><span class="line">    WorkflowRequestTableField[] WorkflowRequestTableField = <span class="keyword">new</span> <span class="title class_">WorkflowRequestTableField</span>[<span class="number">3</span>];  <span class="comment">//数据总数</span></span><br><span class="line">  </span><br><span class="line">    WorkflowRequestTableField[<span class="number">0</span>] = createTableField(<span class="string">&quot;xm&quot;</span>, String.valueOf(ts.getXm()));  </span><br><span class="line">    WorkflowRequestTableField[<span class="number">1</span>] = createTableField(<span class="string">&quot;zggh&quot;</span>, String.valueOf(ts.getZggh()));  </span><br><span class="line">    WorkflowRequestTableField[<span class="number">2</span>] = createTableField(<span class="string">&quot;kpdc&quot;</span>, String.valueOf(ts.getKpdc()));  </span><br><span class="line">  </span><br><span class="line">    workflowRequestTableRecord[i] = <span class="keyword">new</span> <span class="title class_">WorkflowRequestTableRecord</span>();  </span><br><span class="line">    workflowRequestTableRecord[i].setWorkflowRequestTableFields(WorkflowRequestTableField);  </span><br><span class="line">&#125;  </span><br><span class="line">  </span><br><span class="line">workflowDetailTableInfo[<span class="number">0</span>] = <span class="keyword">new</span> <span class="title class_">WorkflowDetailTableInfo</span>();  </span><br><span class="line">workflowDetailTableInfo[<span class="number">0</span>].setWorkflowRequestTableRecords(workflowRequestTableRecord);</span><br></pre></td></tr></table></figure>
 <h4 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">log.writeLog(<span class="string">&quot;开始为人员创建流程，人员信息：&quot;</span> + currentPerson.getXm());  </span><br><span class="line">  </span><br><span class="line"><span class="comment">// 创建流程信息  </span></span><br><span class="line"><span class="type">WorkflowRequestInfo</span> <span class="variable">workflowRequestInfo</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">WorkflowRequestInfo</span>();  </span><br><span class="line">workflowRequestInfo.setRequestName(<span class="string">&quot;医德考评成绩确认单&quot;</span>);  </span><br><span class="line">workflowRequestInfo.setCreatorId(userId);  </span><br><span class="line">  </span><br><span class="line"><span class="type">WorkflowBaseInfo</span> <span class="variable">workflowBaseInfo</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">WorkflowBaseInfo</span>();  </span><br><span class="line">workflowBaseInfo.setWorkflowId(<span class="string">&quot;25&quot;</span>);  </span><br><span class="line">workflowRequestInfo.setWorkflowBaseInfo(workflowBaseInfo);  </span><br><span class="line">  </span><br><span class="line"><span class="comment">// 构建主表  </span></span><br><span class="line"><span class="type">WorkflowMainTableInfo</span> <span class="variable">workflowMainTableInfo</span> <span class="operator">=</span> buildMainTableInfo(currentPerson);  </span><br><span class="line">workflowRequestInfo.setWorkflowMainTableInfo(workflowMainTableInfo);  </span><br><span class="line">  </span><br><span class="line"><span class="comment">// 构建明细表  </span></span><br><span class="line">WorkflowDetailTableInfo[] workflowDetailTableInfo = buildDetailTableInfo(allData);  </span><br><span class="line">workflowRequestInfo.setWorkflowDetailTableInfos(workflowDetailTableInfo);  </span><br><span class="line">  </span><br><span class="line"><span class="comment">// 创建流程  </span></span><br><span class="line"><span class="type">WorkflowServiceImpl</span> <span class="variable">wsi</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">WorkflowServiceImpl</span>();  </span><br><span class="line"><span class="type">String</span> <span class="variable">requestId</span> <span class="operator">=</span> wsi.doCreateWorkflowRequest(workflowRequestInfo, userIdInt);  </span><br><span class="line"></span><br><span class="line">log.writeLog(<span class="string">&quot;创建流程成功，流程ID：&quot;</span> + requestId);</span><br></pre></td></tr></table></figure>
 <h3 id="流程干预"><a href="#流程干预" class="headerlink" title="流程干预"></a>流程干预</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;  </span><br><span class="line">    <span class="comment">// 获取干预服务  </span></span><br><span class="line">    <span class="type">WorkflowRequestOperatePAImpl</span> <span class="variable">service</span> <span class="operator">=</span> ServiceUtil.getService(WorkflowRequestOperatePAImpl.class);  </span><br><span class="line">    <span class="comment">// 使用有权限的用户（这里使用admin用户）  </span></span><br><span class="line">    <span class="type">User</span> <span class="variable">user</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">User</span>(<span class="number">1</span>);  </span><br><span class="line">  </span><br><span class="line">    <span class="comment">// 遍历所有需要干预的流程  </span></span><br><span class="line">    <span class="keyword">for</span> (Map&lt;String, String&gt; item : newRequestList) &#123;  </span><br><span class="line">        <span class="type">String</span> <span class="variable">requestId</span> <span class="operator">=</span> item.get(<span class="string">&quot;requestId&quot;</span>);  </span><br><span class="line">        <span class="type">String</span> <span class="variable">xm</span> <span class="operator">=</span> item.get(<span class="string">&quot;xm&quot;</span>);  </span><br><span class="line">  </span><br><span class="line">        <span class="keyword">try</span> &#123;  </span><br><span class="line">            log.writeLog(<span class="string">&quot;开始干预流程，requestId: &quot;</span> + requestId + <span class="string">&quot;, 接收人: &quot;</span> + xm);  </span><br><span class="line">  </span><br><span class="line">            <span class="comment">// 设置干预参数  </span></span><br><span class="line">            <span class="type">ReqOperateRequestEntity</span> <span class="variable">requestParam</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ReqOperateRequestEntity</span>();  </span><br><span class="line">            requestParam.setRequestId(Integer.parseInt(requestId)); <span class="comment">// 流程实例ID  </span></span><br><span class="line">            requestParam.setSubmitNodeId(<span class="number">94</span>); <span class="comment">// 目标节点ID（独立打印节点）  </span></span><br><span class="line">            requestParam.setIntervenorid(xm); <span class="comment">// 设置接收人为当前xm  </span></span><br><span class="line">  </span><br><span class="line">            <span class="comment">// 执行干预  </span></span><br><span class="line">            <span class="type">PAResponseEntity</span> <span class="variable">result</span> <span class="operator">=</span> service.doIntervenor(user, requestParam);  </span><br><span class="line">  </span><br><span class="line">            <span class="comment">// 检查干预结果 - 修改为正确的枚举比较方式  </span></span><br><span class="line">            <span class="keyword">if</span> (PAResponseCode.SUCCESS.equals(result.getCode())) &#123;  </span><br><span class="line">                log.writeLog(<span class="string">&quot;干预成功，requestId: &quot;</span> + requestId);  </span><br><span class="line">                successCount++;  </span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;  </span><br><span class="line">                log.writeLog(<span class="string">&quot;干预失败，requestId: &quot;</span> + requestId +  </span><br><span class="line">                        <span class="string">&quot;, 错误码: &quot;</span> + result.getCode().name() +  </span><br><span class="line">                        <span class="string">&quot;, 错误信息: &quot;</span> + result.getErrMsg());  </span><br><span class="line">                allSuccess = <span class="literal">false</span>;  </span><br><span class="line">                failCount++;  </span><br><span class="line">                failedRequests.add(requestId);  </span><br><span class="line">            &#125;        &#125; <span class="keyword">catch</span> (Exception e) &#123;  </span><br><span class="line">            log.writeLog(<span class="string">&quot;干预流程异常，requestId: &quot;</span> + requestId + <span class="string">&quot;, 异常信息: &quot;</span> + e.getMessage());  </span><br><span class="line">            allSuccess = <span class="literal">false</span>;  </span><br><span class="line">            failCount++;  </span><br><span class="line">            failedRequests.add(requestId);  </span><br><span class="line">        &#125;    &#125;  </span><br><span class="line">    <span class="comment">// 记录总体干预结果  </span></span><br><span class="line">    log.writeLog(<span class="string">&quot;流程干预完成，成功: &quot;</span> + successCount + <span class="string">&quot;个，失败: &quot;</span> + failCount + <span class="string">&quot;个&quot;</span>);  </span><br><span class="line">    <span class="keyword">if</span> (!failedRequests.isEmpty()) &#123;  </span><br><span class="line">        log.writeLog(<span class="string">&quot;失败的requestIds: &quot;</span> + failedRequests);  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125; <span class="keyword">catch</span> (Exception e) &#123;  </span><br><span class="line">    log.writeLog(<span class="string">&quot;获取干预服务或初始化用户异常: &quot;</span> + e.getMessage());  </span><br><span class="line">    allSuccess = <span class="literal">false</span>;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<h2 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">//禁用过滤调试打印</span><br><span class="line">src4js-pctool-v1/config/webpack.config.prod里面的drop_console改为false</span><br><span class="line">//安装依赖</span><br><span class="line">yarn install</span><br><span class="line"></span><br><span class="line">//新建spa文件夹，把项目的spa/moduleConfig.js放到下面，这是版本文件，打包的时候需要</span><br><span class="line"></span><br><span class="line">//不开启eslint打包流程模块</span><br><span class="line">yarn build --noeslint  --pubModule=workflow</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h1 id="E10"><a href="#E10" class="headerlink" title="E10"></a>E10</h1><h2 id="前端-1"><a href="#前端-1" class="headerlink" title="前端"></a>前端</h2><h3 id="组件复写-1"><a href="#组件复写-1" class="headerlink" title="组件复写"></a>组件复写</h3><figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="title function_">regOvProps</span>(<span class="string">&#x27;weappUi&#x27;</span>, <span class="string">&#x27;Title&#x27;</span>, <span class="function">(<span class="params">props</span>) =&gt;</span> &#123;</span><br><span class="line"></span><br><span class="line"> <span class="keyword">const</span> &#123;weId=<span class="string">&#x27;&#x27;</span>&#125; = props;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//console.log(&quot;拿到的参数：&quot;,props)</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span>(weId &amp;&amp; weId.<span class="title function_">endsWith</span>(<span class="string">&quot;_pnhv5o&quot;</span>))&#123;</span><br><span class="line"></span><br><span class="line">    props.<span class="property">title</span>=<span class="string">&quot;自定义标题23333&quot;</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> props;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="组件重写-1"><a href="#组件重写-1" class="headerlink" title="组件重写"></a>组件重写</h3><figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span> <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; regOvComponent &#125; <span class="keyword">from</span> <span class="string">&#x27;@weapp/utils&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; asyncImport &#125; <span class="keyword">from</span> <span class="string">&#x27;@weapp/ecodesdk&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">NewHelp</span> = <span class="title class_">React</span>.<span class="title function_">lazy</span>(<span class="function">() =&gt;</span> <span class="title function_">asyncImport</span>(<span class="string">&#x27;$&#123;appId&#125;&#x27;</span>, <span class="string">&#x27;NewHelp&#x27;</span>));</span><br><span class="line"></span><br><span class="line"><span class="title function_">regOvComponent</span>(<span class="string">&#x27;weappUi&#x27;</span>, <span class="string">&#x27;Help&#x27;</span>, <span class="function">(<span class="params">Com</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span>(<span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">pathname</span> === <span class="string">&#x27;/sp/integration/loginSingle/freepass&#x27;</span>)&#123;</span><br><span class="line">	  <span class="keyword">return</span> <span class="title class_">React</span>.<span class="title function_">forwardRef</span>(<span class="function">(<span class="params">props, ref</span>) =&gt;</span> &#123;</span><br><span class="line">		  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;获取的help参数&quot;</span>,props)</span><br><span class="line">		  <span class="keyword">return</span> (</span><br><span class="line">		    <span class="language-xml"><span class="tag">&lt;<span class="name">React.Suspense</span> <span class="attr">fallback</span>=<span class="string">&#123;()</span> =&gt;</span> &#123;&#125;&#125;&gt;</span></span><br><span class="line"><span class="language-xml">		      <span class="tag">&lt;<span class="name">NewHelp</span> &#123;<span class="attr">...props</span>&#125; <span class="attr">OriginCom</span>=<span class="string">&#123;Com&#125;</span> <span class="attr">ref</span>=<span class="string">&#123;ref&#125;</span> <span class="attr">forwardedRef</span>=<span class="string">&#123;ref&#125;/</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">		    <span class="tag">&lt;/<span class="name">React.Suspense</span>&gt;</span></span></span><br><span class="line">		  )</span><br><span class="line">	  &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;, <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
 <h3 id="请求接口-1"><a href="#请求接口-1" class="headerlink" title="请求接口"></a>请求接口</h3><h3 id="接口拦截-1"><a href="#接口拦截-1" class="headerlink" title="接口拦截"></a>接口拦截</h3><figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="comment">//拦截请求</span></span><br><span class="line">axios.<span class="property">interceptors</span>.<span class="property">request</span>.<span class="title function_">use</span>(<span class="function">(<span class="params">request</span>) =&gt;</span> &#123;  </span><br><span class="line">  <span class="keyword">if</span> (request.<span class="property">url</span> === <span class="string">&#x27;/api/ebuilder/coms/list/getData&#x27;</span>) &#123;  </span><br><span class="line">    <span class="keyword">const</span> params = <span class="keyword">new</span> <span class="title class_">URLSearchParams</span>(request.<span class="property">data</span>);  </span><br><span class="line">    params.<span class="title function_">set</span>(<span class="string">&#x27;pageSize&#x27;</span>, <span class="string">&#x27;10000&#x27;</span>);  </span><br><span class="line">    request.<span class="property">data</span> = params.<span class="title function_">toString</span>();  </span><br><span class="line">  &#125;  </span><br><span class="line">  <span class="keyword">return</span> request;  </span><br><span class="line">&#125;);  </span><br><span class="line"><span class="comment">//拦截响应</span></span><br><span class="line">axios.<span class="property">interceptors</span>.<span class="property">response</span>.<span class="title function_">use</span>(<span class="function">(<span class="params">response</span>) =&gt;</span> &#123;  </span><br><span class="line">  <span class="keyword">if</span> (response.<span class="property">config</span>.<span class="property">url</span> === <span class="string">&#x27;/api/ebuilder/coms/list/getData&#x27;</span>) &#123;  </span><br><span class="line">    <span class="keyword">const</span> reversedData = response.<span class="property">data</span>.<span class="property">data</span>.<span class="property">list</span>.<span class="title function_">reverse</span>();  </span><br><span class="line">    response.<span class="property">data</span>.<span class="property">data</span>.<span class="property">list</span> = reversedData  </span><br><span class="line">  &#125;  </span><br><span class="line">  <span class="keyword">return</span> response;  </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
@@ -1279,5 +1285,727 @@
       <categories>
         <category>个人网站</category>
       </categories>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2025/09/17/moduleConfig/</url>
+    <content><![CDATA[/*
+  每个模块依赖的静态资源文件配置
+*/
+window.e9ModuleConfig = [
+    // 个性化设置
+    {
+        title: '个性化设置',
+        name: 'f_customSetting',
+        page: '/spa/customSetting/index.html',
+        lib: [
+            '/spa/customSetting/index.css?v=1561347144670',
+            '/spa/customSetting/index.js?v=1561347144670',
+        ]
+    },
+    // 流程
+    {
+        title: '流程前台',
+        name: 'f_workflow',
+        page: '/spa/workflow/static/index.html',
+        lib: [
+            '/spa/workflow/static/index.css?v=1758076213040',
+            '/spa/workflow/static/index.js?v=1758076213040',
+        ]
+    }, {
+        title: '流程后台',
+        name: 'b_workflow',
+        page: '/spa/workflow/static4engine/engine.html',
+        lib: [
+            '/spa/workflow/static4engine/engine.css?v=1561348156140',
+            '/spa/workflow/static4engine/engine.js?v=1561348156140',
+        ]
+    }, {
+        title: '流程后台表单设计器',
+        name: 'b_excelDesign',
+        page: '/spa/workflow/excelDesign/engine.html',
+        lib: [
+            '/spa/workflow/excelDesign/engine.css?v=1561348156140',
+            '/spa/workflow/excelDesign/engine.js?v=1561348156140',
+        ]
+    }, {
+        title: '流程公共模块',
+        name: 'workfolwPublic',
+        page: '/spa/workflow/index_form.jsp',
+        lib: [
+            '/spa/workflow/static4public/index.js?v=1561347313549',
+            '/spa/workflow/static4public/index.css?v=1561347313549',
+        ]
+    }, {
+        title: '流程表单',
+        name: 'workfolwForm',
+        page: '/spa/workflow/index_form.jsp',
+        lib: [
+            '/spa/workflow/static4form/index.js?v=1561347339552',
+            '/spa/workflow/static4form/index.css?v=1561347339552',
+        ]
+    },
+    // 引擎二开
+    {
+        title: '引擎二开',
+        name: 'b_customizationDev',
+        page: '/spa/customizationDev/static4engine/engine.html',
+        lib: [
+            '/spa/customizationDev/static4engine/engine.js?v=1561347731565',
+            '/spa/customizationDev/static4engine/engine.css?v=1561347731565',
+        ]
+    },
+    // 人力
+    {
+        title: '人力前台',
+        name: 'f_hrm',
+        page: '/spa/hrm/index_mobx.html',
+        lib: [
+            '/spa/hrm/static/index.css?v=1695624112148',
+            '/spa/hrm/static/index.js?v=1695624112148',
+        ]
+    }, {
+        title: '人力登录',
+        name: 'f_hrmLogin',
+        page: '/spa/hrm/staticLoginNew/index.html',
+        lib: [
+            '/spa/hrm/staticLoginNew/loginNew.js?v=1651195788883',
+        ]
+    }, {
+        title: '人力后台',
+        name: 'b_hrm',
+        page: '/spa/hrm/engine.html',
+        lib: [
+            '/spa/hrm/static4engine/engine.css?v=1611042994780',
+            '/spa/hrm/static4engine/engine.js?v=1611042994780',
+        ]
+    }, {
+        title: '考勤前台',
+        name: 'f_attendance',
+        page: '/spa/hrm/static4attendance/index.html',
+        lib: [
+            '/spa/hrm/static4attendance/index.css?v=1599823339998',
+            '/spa/hrm/static4attendance/index.js?v=1599823339998',
+        ]
+    }, {
+        title: '考勤后台',
+        name: 'b_attendance',
+        page: '/spa/hrm/staticAttendance4engine/engine.html',
+        lib: [
+            '/spa/hrm/staticAttendance4engine/engine.css?v=1606964265500',
+            '/spa/hrm/staticAttendance4engine/engine.js?v=1606964265500',
+        ]
+    }, {
+        title: '新个税前台',
+        name: 'f_tax',
+        page: '/spa/hrm/static4Tax/index.html',
+        lib: [
+            '/spa/hrm/static4Tax/index.css?v=1600827881605',
+            '/spa/hrm/static4Tax/index.js?v=1600827881605',
+        ]
+    }, {
+        title: '新个税后台',
+        name: 'b_tax',
+        page: '/spa/hrm/staticTax4engine/engine.html',
+        lib: [
+            '/spa/hrm/staticTax4engine/engine.css?v=1558660509297',
+            '/spa/hrm/staticTax4engine/engine.js?v=1558660509297',
+        ]
+    }, {
+        title: '四川航空通讯录',
+        name: 'f_addressBook',
+        page: '/spa/e9DevModules/hrm/static/index.html',
+        lib: [
+            '/spa/e9DevModules/hrm/static/index.css?v=1555920453602',
+            '/spa/e9DevModules/hrm/static/index.js?v=1555920453602',
+        ]
+    },
+    //会议
+    {
+        title: '会议前台',
+        name: 'f_meeting',
+        page: '/spa/meeting/static/index.html',
+        lib: [
+            '/spa/meeting/static/index.css?v=1561347055997',
+            '/spa/meeting/static/index.js?v=1561347055997',
+        ]
+    }, {
+        title: '会议后台',
+        name: 'b_meeting',
+        page: '/spa/meeting/static4engine/engine.html',
+        lib: [
+            '/spa/meeting/static4engine/engine.css?v=1561347632862',
+            '/spa/meeting/static4engine/engine.js?v=1561347632862',
+        ]
+    },
+    //日程
+    {
+        title: '日程前台',
+        name: 'f_workplan',
+        page: '/spa/workplan/static/index.html',
+        lib: [
+            '/spa/workplan/static/index.css?v=1561347226919',
+            '/spa/workplan/static/index.js?v=1561347226919',
+        ]
+    }, {
+        title: '日程后台',
+        name: 'b_workplan',
+        page: '/spa/workplan/static4engine/engine.html',
+        lib: [
+            '/spa/workplan/static4engine/engine.css?v=1561348081571',
+            '/spa/workplan/static4engine/engine.js?v=1561348081571',
+        ]
+    },
+    //门户
+    {
+        title: '门户前台',
+        name: 'f_portal',
+        page: '/spa/portal/static/index.html',
+        lib: [
+            '/spa/portal/public/index.css?v=1561346408146',
+            '/spa/portal/public/index.js?v=1561346408146',
+            '/spa/portal/index.css?v=1561346598585',
+            '/spa/portal/index.js?v=1561346598585',
+        ]
+    }, {
+        title: '门户后台',
+        name: 'b_portal',
+        page: '/spa/portal/static4engine/engine.html',
+        lib: [
+            '/spa/portal/public/index.css?v=1561346408146',
+            '/spa/portal/public/index.js?v=1561346408146',
+            '/spa/portal/index.css?v=1561346598585',
+            '/spa/portal/index.js?v=1561346598585',
+            '/spa/portal/static4engine/engine.css?v=1561347440389',
+            '/spa/portal/static4engine/engine.js?v=1561347440389',
+        ]
+    },
+    //协作
+    {
+        title: '协作前台',
+        name: 'f_cowork',
+        page: '/spa/cowork/static/index.html',
+        lib: [
+            '/blog/js/weaverImgZoom/weaverImgZoom_wev8.css',
+            '/blog/js/weaverImgZoom/weaverImgZoom_wev8.js',
+            '/spa/cowork/static/index.css?v=1561346852320',
+            '/spa/cowork/static/index.js?v=1561346852320',
+        ]
+    }, {
+        title: '协作后台',
+        name: 'b_cowork',
+        page: '/spa/cowork/static4engine/engine.html',
+        lib: [
+            '/spa/cowork/static4engine/engine.css?v=1561347642553',
+            '/spa/cowork/static4engine/engine.js?v=1561347642553',
+        ],
+    },
+    //邮件
+    {
+        title: '邮件前台',
+        name: 'f_email',
+        page: '/spa/email/static/index.html',
+        lib: [
+            '/spa/email/static/index.css?v=1731047691521',
+            '/spa/email/static/index.js?v=1731047691521',
+        ]
+    }, {
+        title: '邮件后台',
+        name: 'b_email',
+        page: '/spa/email/static4engine/engine.html',
+        lib: [
+            '/spa/email/static4engine/engine.css?v=1731047529740',
+            '/spa/email/static4engine/engine.js?v=1731047529740',
+        ]
+    },
+    //资产
+    {
+        title: '资产前台',
+        name: 'f_cpt',
+        page: '/spa/cpt/index.html',
+        lib: [
+            '/spa/cpt/static/index.css?v=1561346784374',
+            '/spa/cpt/static/index.js?v=1561346784374',
+        ]
+    }, {
+        title: '资产后台',
+        name: 'b_cpt',
+        page: '/spa/cpt/engine.html',
+        lib: [
+            '/spa/cpt/static4engine/engine.css?v=1561347491342',
+            '/spa/cpt/static4engine/engine.js?v=1561347491342',
+        ]
+    },
+    //项目
+    {
+        title: '项目前台',
+        name: 'f_prj',
+        page: '/spa/prj/index.html',
+        lib: [
+            '/spa/prj/static/index.css?v=1561347127349',
+            '/spa/prj/static/index.js?v=1561347127349',
+        ]
+    }, {
+        title: '项目后台',
+        name: 'b_prj',
+        page: '/spa/prj/engine.html',
+        lib: [
+            '/spa/prj/static4engine/engine.css?v=1561347966448',
+            '/spa/prj/static4engine/engine.js?v=1561347966448',
+        ]
+    },
+    //集成
+    {
+        title: '集成前台',
+        name: 'f_inte',
+        page: '/spa/inte/index.html',
+        lib: [
+            '/spa/inte/static/index.css?v=1561347030761',
+            '/spa/inte/static/index.js?v=1561347030761',
+        ]
+    }, {
+        title: '集成后台',
+        name: 'b_integration',
+        page: '/spa/integration/static4engine/engine.html',
+        lib: [
+            '/spa/integration/static4engine/engine.css?v=1561347785716',
+            '/spa/integration/static4engine/engine.js?v=1561347785716',
+        ]
+    },
+    //ESB
+    {
+        title: 'ESB中心',
+        name: 'b_esb',
+        page: '/spa/esb/static4engine/engine.html',
+        lib: [
+            '/spa/esb/static4engine/engine.css?v=1561347823228',
+            '/spa/esb/static4engine/engine.js?v=1561347823228',
+        ]
+    },
+    //建模
+    {
+        title: '建模前台',
+        name: 'f_cube',
+        page: '/spa/cube/index.html',
+        lib: [
+            '/spa/cube/static/index.tsx.css?v=1561346762808',
+            '/spa/cube/static/index.tsx.js?v=1561346762808',
+            '/formmode/e9resource/css/iconapp.css',
+        ]
+    }, {
+        title: '建模后台',
+        name: 'b_cube',
+        page: '/spa/cube/engine.html',
+        lib: [
+            '/spa/cube/static4engine/engine.css?v=1705308828362',
+            '/spa/cube/static4engine/engine.js?v=1705308828362',
+            '/formmode/e9resource/css/iconapp.css',
+        ]
+    },
+    //知识
+    {
+        title: '知识前台',
+        name: 'f_document',
+        page: '/spa/document/static/index.html',
+        lib: [
+            '/spa/document/static/index.css?v=1561346906320',
+            '/spa/document/static/index.js?v=1561346906320',
+        ]
+    }, {
+        title: '知识后台',
+        name: 'b_document',
+        page: '/spa/document/static4engine/engine.html',
+        lib: [
+            '/spa/document/static4engine/engine.css?v=1561347537504',
+            '/spa/document/static4engine/engine.js?v=1561347537504',
+        ]
+    }, {
+        title: '文档详情页',
+        name: 'docDetail',
+        page: '/spa/document/index.jsp',
+        lib: [
+            '/spa/document/static4Detail/index.css?v=1561346919657',
+            '/spa/document/static4Detail/index.js?v=1561346919657',
+        ]
+    },
+    //微博
+    {
+        title: '微博前台',
+        name: 'f_blog',
+        page: '/spa/blog/static/index.html',
+        lib: [
+            '/blog/js/weaverImgZoom/weaverImgZoom_wev8.css',
+            '/blog/js/weaverImgZoom/weaverImgZoom_wev8.js',
+            '/spa/blog/static/index.css?v=1561346833678',
+            '/spa/blog/static/index.js?v=1561346833678',
+        ]
+    }, {
+        title: '微博后台',
+        name: 'b_blog',
+        page: '/spa/blog/static4engine/engine.html',
+        lib: [
+            '/spa/blog/static4engine/engine.css?v=1561347652748',
+            '/spa/blog/static4engine/engine.js?v=1561347652748',
+        ]
+    },
+    //小应用
+    {
+        title: '小应用前台',
+        name: 'f_smallApp',
+        page: '/spa/smallApp/static/index.html',
+        lib: [
+            '/spa/smallApp/static/index.css?v=1561346722943',
+            '/spa/smallApp/static/index.js?v=1561346722943',
+        ]
+    }, {
+        title: '小应用后台',
+        name: 'b_smallApp',
+        page: '/spa/smallApp/static4engine/engine.html',
+        lib: [
+            '/spa/smallApp/static4engine/engine.css?v=1561347465992',
+            '/spa/smallApp/static4engine/engine.js?v=1561347465992',
+        ]
+    },
+    //微搜
+    {
+        title: '微搜前台',
+        name: 'f_esearch',
+        page: '/spa/esearch/static/index.html',
+        lib: [
+            '/spa/esearch/static/index.css?v=1561347238201',
+            '/spa/esearch/static/index.js?v=1561347238201',
+        ]
+    },
+    //财务
+    {
+        title: '财务前台',
+        name: 'f_fna',
+        page: '/spa/fna/static/index.html',
+        lib: [
+            '/spa/fna/static/index.css?v=1561346964548',
+            '/spa/fna/static/index.js?v=1561346964548',
+        ]
+    }, {
+        title: '财务后台',
+        name: 'b_fna',
+        page: '/spa/fna/static4engine/engine.html',
+        lib: [
+            '/spa/fna/static4engine/engine.css?v=1561347878927',
+            '/spa/fna/static4engine/engine.js?v=1561347878927',
+        ]
+    }, {
+        title: '财务多维度预算前台',
+        name: 'f_fnaMulit',
+        page: '/spa/fnaMulDimensions/static/index.html',
+        lib: [
+            '/spa/fnaMulDimensions/static/index.css?v=1561346982321',
+            '/spa/fnaMulDimensions/static/index.js?v=1561346982321',
+        ]
+    }, {
+        title: '财务多维度预算后台',
+        name: 'b_fnaMulit',
+        page: '/spa/fnaMulDimensions/static4engine/engine.html',
+        lib: [
+            '/spa/fnaMulDimensions/static4engine/engine.css?v=1561347918158',
+            '/spa/fnaMulDimensions/static4engine/engine.js?v=1561347918158',
+        ]
+    },
+    //公文
+    {
+        title: '公文前台',
+        name: 'f_odoc',
+        page: '/spa/odoc/static/index.html',
+        lib: [
+            '/spa/odoc/static/index.css?v=1561347076302',
+            '/spa/odoc/static/index.js?v=1561347076302',
+        ]
+    }, {
+        title: '公文后台',
+        name: 'b_odoc',
+        page: '/spa/odoc/static4engine/engine.html',
+        lib: [
+            '/spa/odoc/static4engine/engine.css?v=1561347937346',
+            '/spa/odoc/static4engine/engine.js?v=1561347937346',
+        ]
+    },
+    //客户
+    {
+        title: '客户前台',
+        page: '/spa/crm/static/index.html',
+        name: 'f_crm',
+        lib: [
+            '/spa/crm/static/index.css?v=1731047771111',
+            '/spa/crm/static/index.js?v=1731047771111'
+        ]
+    }, {
+        title: '客户后台',
+        name: 'b_crm',
+        page: '/spa/crm/static4engine/engine.html',
+        lib: [
+            '/spa/crm/static4engine/engine.css?v=1731047615125',
+            '/spa/crm/static4engine/engine.js?v=1731047615125',
+        ]
+    },
+    //客户报表
+    {
+        title: '客户报表前台',
+        name: 'f_crmReport',
+        page: '',
+        lib: [
+            '/spa/crm/static4report/index.css?v=1561346862881',
+            '/spa/crm/static4report/index.js?v=1561346862881',
+        ]
+    },
+    //客户门户
+    {
+        title: '客户门户前台',
+        name: 'f_crmPortal',
+        page: '',
+        lib: [
+            '/spa/crmPortal/mobx/index.css?v=1552370451008',
+            '/spa/crmPortal/mobx/index.js?v=1552370451008',
+        ]
+    },
+    //执行力
+    {
+        title: '执行力前台',
+        name: 'f_workrelate',
+        page: '/spa/workrelate/index_mobx.html',
+        lib: [
+            '/spa/workrelate/static/index.css?v=1561347165838',
+            '/spa/workrelate/static/index.js?v=1561347165838',
+        ]
+    }, {
+        title: '执行力后台',
+        name: 'b_workrelate',
+        page: '/spa/workrelate/static4engine/engine.html',
+        lib: [
+            '/spa/workrelate/static4engine/engine.css?v=1565588359063',
+            '/spa/workrelate/static4engine/engine.js?v=1565588359063',
+        ]
+    },
+    //组织画像
+    {
+        title: '组织画像前台',
+        name: 'f_portrait',
+        page: '/spa/portrait/statis/index.html',
+        lib: [
+            '/spa/portrait/static/index.css?v=1561347165838',
+            '/spa/portrait/static/index.js?v=1561347165838',
+        ]
+    }, {
+        title: '组织画像后台',
+        name: 'b_portrait',
+        page: '/spa/portrait/static4engine/engine.html',
+        lib: [
+            '/spa/portrait/static4engine/engine.css?v=1565588359063',
+            '/spa/portrait/static4engine/engine.js?v=1565588359063',
+        ]
+    },
+    //车辆
+    {
+        title: '车辆前台',
+        name: 'f_car',
+        page: '/spa/car/index.html',
+        lib: [
+            '/spa/car/static/index.css?v=1561347183127',
+            '/spa/car/static/index.js?v=1561347183127',
+        ]
+    }, {
+        title: '车辆后台',
+        name: 'b_car',
+        page: '/spa/car/index.html',
+        lib: [
+            '/spa/car/static/index.css?v=1561347183127',
+            '/spa/car/static/index.js?v=1561347183127',
+        ]
+    },
+    //移动引擎
+    {
+        title: '移动引擎',
+        name: 'b_mobilemode',
+        page: '',
+        lib: [
+            '/font/mobilemode/plugin/iconfont.css?v=1548071365860',
+            '/spa/mobilemode/static4engine/engine.css?v=1561347682616',
+            '/spa/mobilemode/static4engine/engine.js?v=1561347682616',
+        ]
+    },
+    //demo
+    {
+        title: 'demo',
+        name: 'f_demo',
+        page: '',
+        lib: [
+            '/spa/demo/static/index.css?v=1561346871120',
+            '/spa/demo/static/index.js?v=1561346871120',
+        ]
+    },
+    //督查督办前台
+    {
+        title: '督查督办前台',
+        name: 'f_govern',
+        page: '/spa/govern/statis/index.html',
+        lib: [
+            '/spa/govern/static/index.css?v=1561347203566',
+            '/spa/govern/static/index.js?v=1561347203566',
+        ]
+    },
+    //督查督办后台
+    {
+        title: '督查督办后台',
+        name: 'b_govern',
+        page: '/spa/govern/static4engine/engine.html',
+        lib: [
+            '/spa/govern/static4engine/engine.css?v=1561348065730',
+            '/spa/govern/static4engine/engine.js?v=1561348065730',
+        ]
+    },
+    //信息采编前台
+    {
+        title: '信息采编前台',
+        name: 'f_info',
+        page: '/spa/info/statis/index.html',
+        lib: [
+            '/spa/info/static/index.css?v=1561346886249',
+            '/spa/info/static/index.js?v=1561346886249',
+        ]
+    },
+    //信息采编后台
+    {
+        title: '信息采编后台',
+        name: 'b_info',
+        page: '/spa/info/static4engine/engine.html',
+        lib: [
+            '/spa/info/static4engine/engine.css?v=1561347724254',
+            '/spa/info/static4engine/engine.js?v=1561347724254',
+        ]
+    },
+    //集成中心-SAP集成
+    {
+        title: 'SAP集成',
+        name: 'b_sapIntegration',
+        page: '',
+        lib: [
+            '/spa/sapIntegration/static4engine/engine.css?v=1561348171685',
+            '/spa/sapIntegration/static4engine/engine.js?v=1561348171685',
+        ]
+    },
+    //集成中心-SAP集成
+    {
+        title: 'SAP集成',
+        name: 'b_sapIntegrationPublic',
+        page: '',
+        lib: [
+            '/spa/sapIntegration/static4public/index.css?v=1561348185470',
+            '/spa/sapIntegration/static4public/index.js?v=1561348185470',
+        ]
+    },
+    {
+        title: '数据中心前台',
+        name: 'edc_app',
+        page: '',
+        lib: [
+            '/spa/edc/static/app/index.css?v=1563864581949',
+            '/spa/edc/static/app/index.js?v=1563864581949',
+        ]
+    },
+    {
+        title: '数据中心前台',
+        name: 'edc_app_v2',
+        page: '',
+        lib: [
+            '/spa/edc/static/app_v2/index.css?v=1563864351398',
+            '/spa/edc/static/app_v2/index.js?v=1563864351398',
+        ]
+    },
+    {
+        title: '数据中心看板',
+        name: 'bs_edc_board',
+        page: '',
+        lib: [
+            '/spa/edc/static4engine/board/engine.css?v=1548055744567',
+            '/spa/edc/static4engine/board/engine.js?v=1548055744567',
+        ]
+    },
+    {
+        title: '数据中心看板组件',
+        name: 'bs_edc_board4com',
+        page: '/spa/edc/static/app/index.html',
+        lib: [
+            '/spa/edc/static4engine/board4com/index.css?v=1548055744567',
+            '/spa/edc/static4engine/board4com/index.js?v=1548055744567',
+        ]
+    }, {
+        title: '数据中心看板组件mobile',
+        name: 'bs_edc_board4mobile',
+        page: '',
+        lib: [
+            '/spa/edc/static4engine/board4mobile/index.css?v=1548055744567',
+            '/spa/edc/static4engine/board4mobile/index.js?v=1548055744567',
+        ]
+    }, {
+        title: '数据中心后端应用',
+        name: 'bs_edc_app',
+        page: '',
+        lib: [
+            '/spa/edc/static4engine/app/engine.css?v=1561348452555',
+            '/spa/edc/static4engine/app/engine.js?v=1561348452555',
+        ]
+    }, {
+        title: '数据中心后端报表',
+        name: 'bs_edc_report',
+        page: '',
+        lib: [
+            '/spa/edc/static4engine/report/engine.css?v=1561348452555',
+            '/spa/edc/static4engine/report/engine.js?v=1561348452555',
+        ]
+    }, {
+        title: '系统导入导出',
+        name: 'b_systemei',
+        page: '/spa/systemExpAndImp/static4engine/engine.html',
+        lib: [
+            '/spa/systemExpAndImp/static4engine/engine.css?v=1561347785755',
+            '/spa/systemExpAndImp/static4engine/engine.js?v=1561347785755',
+        ]
+    }, {
+        title: '文档对比',
+        name: 'f_compared',
+        page: '/spa/compared/static/index.html',
+        lib: [
+            '/spa/compared/static/index.css?v=1601176456255',
+            '/spa/compared/static/index.js?v=1601176456255',
+        ]
+    }, {
+        title: '文档对比',
+        name: 'b_compared',
+        page: '/spa/compared/static4engine/engine.html',
+        lib: [
+            '/spa/compared/static4engine/engine.css?v=1601013369188',
+            '/spa/compared/static4engine/engine.js?v=1601013369188',
+        ]
+    }, {
+        title: '数据安全后端应用',
+        name: 'b_dataSecurity',
+        page: '/spa/dataSecurity/static4engine/engine.html',
+        lib: [
+            '/spa/dataSecurity/static4engine/engine.css?v=1561348452555',
+            '/spa/dataSecurity/static4engine/engine.js?v=1561348452555',
+        ]
+    }, {
+        title: '财务公用组件',
+        name: 'b_fnaComPublic',
+        page: '/spa/fnaComPublic/static4engine/engine.html',
+        lib: [
+            '/spa/fnaComPublic/static4engine/engine.css?v=1606442240521',
+            '/spa/fnaComPublic/static4engine/engine.js?v=1606442240521',
+        ]
+    }
+]]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2025/09/27/%E6%B3%9B%E5%BE%AE%E5%AE%B9%E5%99%A8%E5%8C%96%E9%83%A8%E7%BD%B2/</url>
+    <content><![CDATA[]]></content>
   </entry>
 </search>
