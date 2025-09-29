@@ -1,6 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Git学习笔记</title>
+    <url>/2025/08/02/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h2 id="Git的下载与安装"><a href="#Git的下载与安装" class="headerlink" title="Git的下载与安装"></a>Git的下载与安装</h2><p>官网：<a href="https://git-scm.com/">https://git-scm.com/</a></p>
+<p>根据需要安装即可，如遇英文界面，可使用截屏翻译辅助理解。</p>
+<p>安装完成后，会有以下三个环境：</p>
+<ul>
+<li><strong>Git bash</strong>：Unix与Linux风格的命令行，推荐使用。</li>
+<li><strong>Git CMD</strong>：Windows风格命令行。</li>
+<li><strong>Git GUI</strong>：图形界面的Git，不推荐新手使用，建议先熟悉命令行操作。</li>
+</ul>
+<h2 id="常用的Linux命令"><a href="#常用的Linux命令" class="headerlink" title="常用的Linux命令"></a>常用的Linux命令</h2><p><img src="http://1.94.0.101/wp-content/uploads/2024/03/%E5%9F%BA%E6%9C%ACLinux%E5%91%BD%E4%BB%A4-528x295.jpg" alt="基本Linux命令"></p>
+<h2 id="Git工作区域（运行原理）"><a href="#Git工作区域（运行原理）" class="headerlink" title="Git工作区域（运行原理）"></a>Git工作区域（运行原理）</h2><p>工作区——暂存区——本地库——远程库</p>
+<p><img src="http://1.94.0.101/wp-content/uploads/2024/03/Git%E5%B7%A5%E4%BD%9C%E5%8C%BA%E5%9F%9F.jpg" alt="Git工作区域"></p>
+<h2 id="Git文件的四种状态"><a href="#Git文件的四种状态" class="headerlink" title="Git文件的四种状态"></a>Git文件的四种状态</h2><p>版本控制的核心是对文件的版本进行管理。在进行文件的修改和提交等操作前，首先需要了解文件当前的状态。</p>
+<ul>
+<li><strong>Untracked</strong>：未跟踪状态，文件存在于文件夹中，但尚未提交到Git库，不参与版本控制。通过<code>git add</code>命令可将其转变为staged状态。</li>
+<li><strong>Unmodify</strong>：已入库且未修改状态，即库中的文件与文件夹中的内容完全一致。若被修改，则变为Modified状态。使用<code>git rm</code>移除版本库，变为Untracked状态。</li>
+<li><strong>Modified</strong>：已修改状态，文件已被修改，但尚未进行其他操作。有两种处理方式：通过<code>git add</code>进入暂存区staged状态；通过<code>git checkout</code>丢弃修改，变回Unmodify状态。</li>
+<li><strong>staged</strong>：暂存状态，使用<code>git commit</code>将修改同步到库中，此时库文件和本地文件一致，文件变为Unmodify状态。使用<code>git reset HEAD filename</code>可取消暂存，文件变为Modified状态。</li>
+</ul>
+<h2 id="Git的使用"><a href="#Git的使用" class="headerlink" title="Git的使用"></a>Git的使用</h2><h3 id="创建及提交"><a href="#创建及提交" class="headerlink" title="创建及提交"></a>创建及提交</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ git init                 <span class="comment"># 初始化，会新建一个名为.git的隐藏文件</span></span><br><span class="line">git remote add origin [url] <span class="comment"># 指定提交的远程存储库的链接</span></span><br><span class="line">git <span class="built_in">clone</span> [url]            <span class="comment"># 克隆远端仓库到本地</span></span><br><span class="line">git status                 <span class="comment"># 查看所有文件状态</span></span><br><span class="line">git add .                  <span class="comment"># 添加所有文件到暂存区</span></span><br><span class="line">git commit -m <span class="string">&quot;消息内容&quot;</span>   <span class="comment"># 提交暂存区内容到本地仓库，-m后接提交信息/备注信息</span></span><br><span class="line">git push                   <span class="comment"># 提交到远程仓库</span></span><br></pre></td></tr></table></figure>
+<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git pull origin master     # 下载代码及快速合并</span><br><span class="line">git push origin master     # 上传代码及快速合并</span><br><span class="line">git fetch origin           # 从远程库获取代码</span><br><span class="line">git branch                 # 显示所有分支</span><br><span class="line">git checkout master        # 切换到master分支</span><br><span class="line">git checkout -b dev        # 创建并切换到dev分支</span><br><span class="line">git status                 # 查看状态</span><br><span class="line">git log                    # 查看提交历史</span><br><span class="line">git init                   # 初始化本地代码仓</span><br><span class="line">git add .                  # 添加本地代码</span><br><span class="line">git commit -m &quot;add local source&quot; # 提交本地代码</span><br><span class="line">git pull origin master     # 下载远程代码</span><br><span class="line">git merge master           # 合并master分支</span><br><span class="line">git push -u origin master  # 上传代码</span><br></pre></td></tr></table></figure>
+<h3 id="忽略文件（指定某些文件不提交）"><a href="#忽略文件（指定某些文件不提交）" class="headerlink" title="忽略文件（指定某些文件不提交）"></a>忽略文件（指定某些文件不提交）</h3><p>有时我们不想将某些文件纳入版本控制中，如数据库文件、临时文件、设计文件等。<br>在主目录下新建<code>.gitignore</code>文件，此文件遵循以下规则：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 为注释</span><br><span class="line">*.txt                      # 忽略所有后缀为.txt的文件</span><br><span class="line">!lib.txt                   # 除了lib.txt以外的文件</span><br><span class="line">/tempbulid/                # 忽略bulid项目下的所有文件</span><br><span class="line">doc/*.txt                  # 忽略doc根目录下的.txt文件，不包括doc/ect/001.txt</span><br></pre></td></tr></table></figure>
+<h2 id="报错及解决方法"><a href="#报错及解决方法" class="headerlink" title="报错及解决方法"></a>报错及解决方法</h2><h3 id="本地远程冲突"><a href="#本地远程冲突" class="headerlink" title="本地远程冲突"></a>本地远程冲突</h3><ul>
+<li><strong>报错</strong>：&#96;&#96;&#96;<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">! [rejected] main -&gt; main (non-fast-forward) error: failed to push some refs to &#x27;&lt;https://gitee.com/maohuifei/WebSiteTest.git&#x27;&gt;</span><br></pre></td></tr></table></figure></li>
+<li><strong>原因</strong>：他人上传至远程仓库后，未及时同步（拉取）至本地，同时你又添加了一些内容（提交），导致提交时检测到本地仓库状态与远程仓库不一致，出于安全考虑拒绝提交。</li>
+<li><strong>解决方法</strong>：</li>
+<li>先拉取：<code>git pull --rebase origin master</code>，</li>
+<li>再上传：<code>git push -u origin master</code>。</li>
+</ul>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="Gitee-Github的免密码登录"><a href="#Gitee-Github的免密码登录" class="headerlink" title="Gitee&#x2F;Github的免密码登录"></a>Gitee&#x2F;Github的免密码登录</h3><ul>
+<li>Gitee：<a href="https://gitee.com/">https://gitee.com/</a></li>
+<li>Github：<a href="https://github.com/">https://github.com/</a></li>
+</ul>
+<p>进入<code>C:\Users\用户名\.ssh</code>目录，使用Git Bash输入命令<code>ssh-keygen -t rsa</code>生成公钥。</p>
+<p>生成两个文件：<code>id_rsa.pub</code>（公钥）和<code>id_rsa</code>（私钥）。</p>
+<p>登录Gitee&#x2F;Github，进入“设置”——“SSH公钥”——填写<code>id_rsa.pub</code>文件内容——保存。</p>
+<h3 id="Git使用代理网络问题"><a href="#Git使用代理网络问题" class="headerlink" title="Git使用代理网络问题"></a>Git使用代理网络问题</h3><p>配置Git代理：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git config --global https.proxy http://127.0.0.1:1080</span></span><br><span class="line">git config --global https.proxy https://127.0.0.1:1080</span><br><span class="line">git config --global http.proxy &#x27;socks5://127.0.0.1:1080&#x27;</span><br><span class="line">git config --global https.proxy &#x27;socks5://127.0.0.1:1080&#x27; # ip和端口根据代理软件不同可能有所不同</span><br></pre></td></tr></table></figure>
+<h3 id="Git配置文件路径"><a href="#Git配置文件路径" class="headerlink" title="Git配置文件路径"></a>Git配置文件路径</h3><h4 id="Git配置文件"><a href="#Git配置文件" class="headerlink" title="Git配置文件"></a>Git配置文件</h4><p>GIt安装目录下的<code>etc</code>文件夹里的<code>gitconfig</code>文件。路径示例：<code>F:\Git\etc\gitconfig</code>。</p>
+<p>内容示例：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[diff &quot;astextplain&quot;]</span><br><span class="line">    textconv = astextplain</span><br><span class="line">[filter &quot;lfs&quot;]</span><br><span class="line">    clean = git-lfs clean -- %f</span><br><span class="line">    smudge = git-lfs smudge -- %f</span><br><span class="line">    process = git-lfs filter-process</span><br><span class="line">    required = true</span><br><span class="line">[http]</span><br><span class="line">    sslBackend = openssl</span><br><span class="line">    sslCAInfo = F:/Git/mingw64/ssl/certs/ca-bundle.crt</span><br><span class="line">[core]</span><br><span class="line">    autocrlf = true</span><br><span class="line">    fscache = true</span><br><span class="line">    symlinks = true</span><br><span class="line">[pull]</span><br><span class="line">    rebase = false</span><br><span class="line">[credential]</span><br><span class="line">    helper = manager-core</span><br><span class="line">[credential &quot;&lt;https://dev.azure.com&gt;&quot;]</span><br><span class="line">    useHttpPath = true</span><br><span class="line">[init]</span><br><span class="line">    defaultBranch = master</span><br></pre></td></tr></table></figure>
+<h4 id="全局配置文件"><a href="#全局配置文件" class="headerlink" title="全局配置文件"></a>全局配置文件</h4><p>C盘用户目录下的<code>.gitconfig</code>文件。路径示例：<code>C:\Users\用户名\.gitconfig</code>。</p>
+<p>内容示例：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[user]</span><br><span class="line">    email = 991270685@qq.com</span><br><span class="line">    name = maohuifei</span><br><span class="line">[init]</span><br><span class="line">    defaultBranch = main</span><br><span class="line">[https]</span><br><span class="line">    proxy = http://192.168.43.1:10809</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="新建的-git配置文件"><a href="#新建的-git配置文件" class="headerlink" title="新建的.git配置文件"></a>新建的.git配置文件</h4><p>执行<code>git init</code>后，</p>
+]]></content>
+      <categories>
+        <category>Git</category>
+      </categories>
+  </entry>
+  <entry>
     <title>CSS</title>
     <url>/2025/08/02/CSS/</url>
     <content><![CDATA[<h2 id="CSS3-模块化"><a href="#CSS3-模块化" class="headerlink" title="CSS3 模块化"></a>CSS3 模块化</h2><p>CSS3 采用模块化设计，将旧规范拆分并新增多个模块，主要模块包括：</p>
@@ -281,59 +334,6 @@
       </categories>
   </entry>
   <entry>
-    <title>Git学习笔记</title>
-    <url>/2025/08/02/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h2 id="Git的下载与安装"><a href="#Git的下载与安装" class="headerlink" title="Git的下载与安装"></a>Git的下载与安装</h2><p>官网：<a href="https://git-scm.com/">https://git-scm.com/</a></p>
-<p>根据需要安装即可，如遇英文界面，可使用截屏翻译辅助理解。</p>
-<p>安装完成后，会有以下三个环境：</p>
-<ul>
-<li><strong>Git bash</strong>：Unix与Linux风格的命令行，推荐使用。</li>
-<li><strong>Git CMD</strong>：Windows风格命令行。</li>
-<li><strong>Git GUI</strong>：图形界面的Git，不推荐新手使用，建议先熟悉命令行操作。</li>
-</ul>
-<h2 id="常用的Linux命令"><a href="#常用的Linux命令" class="headerlink" title="常用的Linux命令"></a>常用的Linux命令</h2><p><img src="http://1.94.0.101/wp-content/uploads/2024/03/%E5%9F%BA%E6%9C%ACLinux%E5%91%BD%E4%BB%A4-528x295.jpg" alt="基本Linux命令"></p>
-<h2 id="Git工作区域（运行原理）"><a href="#Git工作区域（运行原理）" class="headerlink" title="Git工作区域（运行原理）"></a>Git工作区域（运行原理）</h2><p>工作区——暂存区——本地库——远程库</p>
-<p><img src="http://1.94.0.101/wp-content/uploads/2024/03/Git%E5%B7%A5%E4%BD%9C%E5%8C%BA%E5%9F%9F.jpg" alt="Git工作区域"></p>
-<h2 id="Git文件的四种状态"><a href="#Git文件的四种状态" class="headerlink" title="Git文件的四种状态"></a>Git文件的四种状态</h2><p>版本控制的核心是对文件的版本进行管理。在进行文件的修改和提交等操作前，首先需要了解文件当前的状态。</p>
-<ul>
-<li><strong>Untracked</strong>：未跟踪状态，文件存在于文件夹中，但尚未提交到Git库，不参与版本控制。通过<code>git add</code>命令可将其转变为staged状态。</li>
-<li><strong>Unmodify</strong>：已入库且未修改状态，即库中的文件与文件夹中的内容完全一致。若被修改，则变为Modified状态。使用<code>git rm</code>移除版本库，变为Untracked状态。</li>
-<li><strong>Modified</strong>：已修改状态，文件已被修改，但尚未进行其他操作。有两种处理方式：通过<code>git add</code>进入暂存区staged状态；通过<code>git checkout</code>丢弃修改，变回Unmodify状态。</li>
-<li><strong>staged</strong>：暂存状态，使用<code>git commit</code>将修改同步到库中，此时库文件和本地文件一致，文件变为Unmodify状态。使用<code>git reset HEAD filename</code>可取消暂存，文件变为Modified状态。</li>
-</ul>
-<h2 id="Git的使用"><a href="#Git的使用" class="headerlink" title="Git的使用"></a>Git的使用</h2><h3 id="创建及提交"><a href="#创建及提交" class="headerlink" title="创建及提交"></a>创建及提交</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ git init                 <span class="comment"># 初始化，会新建一个名为.git的隐藏文件</span></span><br><span class="line">git remote add origin [url] <span class="comment"># 指定提交的远程存储库的链接</span></span><br><span class="line">git <span class="built_in">clone</span> [url]            <span class="comment"># 克隆远端仓库到本地</span></span><br><span class="line">git status                 <span class="comment"># 查看所有文件状态</span></span><br><span class="line">git add .                  <span class="comment"># 添加所有文件到暂存区</span></span><br><span class="line">git commit -m <span class="string">&quot;消息内容&quot;</span>   <span class="comment"># 提交暂存区内容到本地仓库，-m后接提交信息/备注信息</span></span><br><span class="line">git push                   <span class="comment"># 提交到远程仓库</span></span><br></pre></td></tr></table></figure>
-<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git pull origin master     # 下载代码及快速合并</span><br><span class="line">git push origin master     # 上传代码及快速合并</span><br><span class="line">git fetch origin           # 从远程库获取代码</span><br><span class="line">git branch                 # 显示所有分支</span><br><span class="line">git checkout master        # 切换到master分支</span><br><span class="line">git checkout -b dev        # 创建并切换到dev分支</span><br><span class="line">git status                 # 查看状态</span><br><span class="line">git log                    # 查看提交历史</span><br><span class="line">git init                   # 初始化本地代码仓</span><br><span class="line">git add .                  # 添加本地代码</span><br><span class="line">git commit -m &quot;add local source&quot; # 提交本地代码</span><br><span class="line">git pull origin master     # 下载远程代码</span><br><span class="line">git merge master           # 合并master分支</span><br><span class="line">git push -u origin master  # 上传代码</span><br></pre></td></tr></table></figure>
-<h3 id="忽略文件（指定某些文件不提交）"><a href="#忽略文件（指定某些文件不提交）" class="headerlink" title="忽略文件（指定某些文件不提交）"></a>忽略文件（指定某些文件不提交）</h3><p>有时我们不想将某些文件纳入版本控制中，如数据库文件、临时文件、设计文件等。<br>在主目录下新建<code>.gitignore</code>文件，此文件遵循以下规则：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 为注释</span><br><span class="line">*.txt                      # 忽略所有后缀为.txt的文件</span><br><span class="line">!lib.txt                   # 除了lib.txt以外的文件</span><br><span class="line">/tempbulid/                # 忽略bulid项目下的所有文件</span><br><span class="line">doc/*.txt                  # 忽略doc根目录下的.txt文件，不包括doc/ect/001.txt</span><br></pre></td></tr></table></figure>
-<h2 id="报错及解决方法"><a href="#报错及解决方法" class="headerlink" title="报错及解决方法"></a>报错及解决方法</h2><h3 id="本地远程冲突"><a href="#本地远程冲突" class="headerlink" title="本地远程冲突"></a>本地远程冲突</h3><ul>
-<li><strong>报错</strong>：&#96;&#96;&#96;<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">! [rejected] main -&gt; main (non-fast-forward) error: failed to push some refs to &#x27;&lt;https://gitee.com/maohuifei/WebSiteTest.git&#x27;&gt;</span><br></pre></td></tr></table></figure></li>
-<li><strong>原因</strong>：他人上传至远程仓库后，未及时同步（拉取）至本地，同时你又添加了一些内容（提交），导致提交时检测到本地仓库状态与远程仓库不一致，出于安全考虑拒绝提交。</li>
-<li><strong>解决方法</strong>：</li>
-<li>先拉取：<code>git pull --rebase origin master</code>，</li>
-<li>再上传：<code>git push -u origin master</code>。</li>
-</ul>
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="Gitee-Github的免密码登录"><a href="#Gitee-Github的免密码登录" class="headerlink" title="Gitee&#x2F;Github的免密码登录"></a>Gitee&#x2F;Github的免密码登录</h3><ul>
-<li>Gitee：<a href="https://gitee.com/">https://gitee.com/</a></li>
-<li>Github：<a href="https://github.com/">https://github.com/</a></li>
-</ul>
-<p>进入<code>C:\Users\用户名\.ssh</code>目录，使用Git Bash输入命令<code>ssh-keygen -t rsa</code>生成公钥。</p>
-<p>生成两个文件：<code>id_rsa.pub</code>（公钥）和<code>id_rsa</code>（私钥）。</p>
-<p>登录Gitee&#x2F;Github，进入“设置”——“SSH公钥”——填写<code>id_rsa.pub</code>文件内容——保存。</p>
-<h3 id="Git使用代理网络问题"><a href="#Git使用代理网络问题" class="headerlink" title="Git使用代理网络问题"></a>Git使用代理网络问题</h3><p>配置Git代理：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git config --global https.proxy http://127.0.0.1:1080</span></span><br><span class="line">git config --global https.proxy https://127.0.0.1:1080</span><br><span class="line">git config --global http.proxy &#x27;socks5://127.0.0.1:1080&#x27;</span><br><span class="line">git config --global https.proxy &#x27;socks5://127.0.0.1:1080&#x27; # ip和端口根据代理软件不同可能有所不同</span><br></pre></td></tr></table></figure>
-<h3 id="Git配置文件路径"><a href="#Git配置文件路径" class="headerlink" title="Git配置文件路径"></a>Git配置文件路径</h3><h4 id="Git配置文件"><a href="#Git配置文件" class="headerlink" title="Git配置文件"></a>Git配置文件</h4><p>GIt安装目录下的<code>etc</code>文件夹里的<code>gitconfig</code>文件。路径示例：<code>F:\Git\etc\gitconfig</code>。</p>
-<p>内容示例：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[diff &quot;astextplain&quot;]</span><br><span class="line">    textconv = astextplain</span><br><span class="line">[filter &quot;lfs&quot;]</span><br><span class="line">    clean = git-lfs clean -- %f</span><br><span class="line">    smudge = git-lfs smudge -- %f</span><br><span class="line">    process = git-lfs filter-process</span><br><span class="line">    required = true</span><br><span class="line">[http]</span><br><span class="line">    sslBackend = openssl</span><br><span class="line">    sslCAInfo = F:/Git/mingw64/ssl/certs/ca-bundle.crt</span><br><span class="line">[core]</span><br><span class="line">    autocrlf = true</span><br><span class="line">    fscache = true</span><br><span class="line">    symlinks = true</span><br><span class="line">[pull]</span><br><span class="line">    rebase = false</span><br><span class="line">[credential]</span><br><span class="line">    helper = manager-core</span><br><span class="line">[credential &quot;&lt;https://dev.azure.com&gt;&quot;]</span><br><span class="line">    useHttpPath = true</span><br><span class="line">[init]</span><br><span class="line">    defaultBranch = master</span><br></pre></td></tr></table></figure>
-<h4 id="全局配置文件"><a href="#全局配置文件" class="headerlink" title="全局配置文件"></a>全局配置文件</h4><p>C盘用户目录下的<code>.gitconfig</code>文件。路径示例：<code>C:\Users\用户名\.gitconfig</code>。</p>
-<p>内容示例：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[user]</span><br><span class="line">    email = 991270685@qq.com</span><br><span class="line">    name = maohuifei</span><br><span class="line">[init]</span><br><span class="line">    defaultBranch = main</span><br><span class="line">[https]</span><br><span class="line">    proxy = http://192.168.43.1:10809</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h4 id="新建的-git配置文件"><a href="#新建的-git配置文件" class="headerlink" title="新建的.git配置文件"></a>新建的.git配置文件</h4><p>执行<code>git init</code>后，</p>
-]]></content>
-      <categories>
-        <category>Git</category>
-      </categories>
-  </entry>
-  <entry>
     <title>JavaScript</title>
     <url>/2025/08/02/JavaScript/</url>
     <content><![CDATA[<h2 id="数组对象"><a href="#数组对象" class="headerlink" title="数组对象"></a>数组对象</h2><h3 id="检测是否为数组：instanceof-isArray"><a href="#检测是否为数组：instanceof-isArray" class="headerlink" title="检测是否为数组：instanceof &#x2F; isArray"></a>检测是否为数组：instanceof &#x2F; isArray</h3><p><strong>方法一：</strong><br>使用 <code>instanceof Array</code> 运算符检测：</p>
@@ -482,81 +482,6 @@
 ]]></content>
       <categories>
         <category>MacOS</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>React.js</title>
-    <url>/2025/08/02/React.js/</url>
-    <content><![CDATA[<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>前置环境: node<br>next</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npx create-next-app@latest</span><br></pre></td></tr></table></figure>
-<p>mobx</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install mobx mobx-react-lite</span><br></pre></td></tr></table></figure>
-<h3 id="1-mobx-react-lite-vs-mobx-react"><a href="#1-mobx-react-lite-vs-mobx-react" class="headerlink" title="1. mobx-react-lite vs mobx-react"></a><strong>1. <code>mobx-react-lite</code> vs <code>mobx-react</code></strong></h3><table>
-<thead>
-<tr>
-<th>特性</th>
-<th><code>mobx-react-lite</code> (轻量版)</th>
-<th><code>mobx-react</code> (完整版)</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>体积</strong></td>
-<td>~1.5KB (更小)</td>
-<td>~5KB (更大)</td>
-</tr>
-<tr>
-<td><strong>支持组件类型</strong></td>
-<td>仅函数组件 + Hooks</td>
-<td>类组件 + 函数组件</td>
-</tr>
-<tr>
-<td><strong>API 复杂度</strong></td>
-<td>更简单（只有 <code>observer</code>）</td>
-<td>包含 <code>Provider</code>&#x2F;<code>inject</code> 等旧 API</td>
-</tr>
-<tr>
-<td><strong>性能</strong></td>
-<td>更高（无类组件开销）</td>
-<td>略低</td>
-</tr>
-<tr>
-<td><strong>Next.js 兼容性</strong></td>
-<td>更适合 App Router</td>
-<td>需要额外配置</td>
-</tr>
-</tbody></table>
-<hr>
-<h3 id="2-为什么推荐-mobx-react-lite？"><a href="#2-为什么推荐-mobx-react-lite？" class="headerlink" title="2. 为什么推荐 mobx-react-lite？"></a><strong>2. 为什么推荐 <code>mobx-react-lite</code>？</strong></h3><ul>
-<li><p><strong>现代 React 的标配</strong>：<br>  如果你只用函数组件（99% 的新项目），<code>mobx-react-lite</code> 的 <code>observer</code> 配合 <code>useContext</code> 完全够用。</p>
-</li>
-<li><p><strong>更小的包体积</strong>：<br>  减少最终打包体积，提升加载速度。</p>
-</li>
-<li><p><strong>更简单的心智模型</strong>：<br>  无需处理类组件的 <code>inject</code>&#x2F;<code>Provider</code> 复杂逻辑。</p>
-</li>
-</ul>
-<h1 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h1><h2 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h2><p>react组件是返回标签的js函数</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">function MyButton()&#123;</span><br><span class="line">	return(</span><br><span class="line">		&lt;button&gt;my buton&lt;/button&gt;</span><br><span class="line">	)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>React 组件必须以大写字母开头<br>组件内只能有一个根元素</p>
-<h2 id="插值"><a href="#插值" class="headerlink" title="插值"></a>插值</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">export default function About() &#123;</span><br><span class="line"></span><br><span class="line">	var start = false</span><br><span class="line">	titletxt=&quot;666&quot;</span><br><span class="line"></span><br><span class="line">	var title = &quot;&quot;</span><br><span class="line"></span><br><span class="line">	var html = &quot;&quot;</span><br><span class="line"></span><br><span class="line">	if (start) &#123;</span><br><span class="line"></span><br><span class="line">		title = &quot;i am about&quot;</span><br><span class="line"></span><br><span class="line">		html = &lt;span&gt;i am span&lt;/span&gt;</span><br><span class="line"></span><br><span class="line">	&#125; else &#123;</span><br><span class="line"></span><br><span class="line">		title = &quot;i am upabout&quot;</span><br><span class="line"></span><br><span class="line">		html = &lt;p&gt;i am p&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">return (</span><br><span class="line"></span><br><span class="line">	&lt;div&gt;</span><br><span class="line">		//这里的“&#123;&#125;”就是插值,可以用在clss和内容里</span><br><span class="line">		&lt;h1 title=&#123;titletxt&#125;&gt;&#123;title&#125;&lt;/h1&gt;</span><br><span class="line">		//插的值可以直接是html标签</span><br><span class="line">		&lt;div&gt;&#123;html&#125;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">	&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="列表渲染"><a href="#列表渲染" class="headerlink" title="列表渲染"></a>列表渲染</h2><p>使用arr.map方法遍历数组并返回处理后的数组</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//按照之前学习的标准es6箭头函数写法:&quot;()=&gt;&#123;&#125;&quot;</span><br><span class="line">var arrlist=arr.map((item)=&gt;&#123;</span><br><span class="line">	&lt;li key=&#123;item&#125;&gt;&#123;item&#125;&lt;/li&gt;</span><br><span class="line">&#125;)</span><br><span class="line">//有问题,不渲染</span><br><span class="line">//因为箭头函数会隐式地返回位于 `=&gt;` 之后的表达式，所以可以省略 `return` 语句</span><br><span class="line">//不过，如果 `=&gt;` 后面跟了一对花括号 `&#123;` ，那你必须使用 `return` 来指定返回值!</span><br><span class="line">//所以应改为:</span><br><span class="line">var arrlist=arr.map((item)=&gt;&#123;</span><br><span class="line"></span><br><span class="line">return(</span><br><span class="line"></span><br><span class="line">&lt;li key=&#123;item&#125;&gt;&#123;item&#125;&lt;/li&gt;</span><br><span class="line"></span><br><span class="line">)&#125;)</span><br><span class="line">//或者简写:</span><br><span class="line">var arrlist=arr.map((item)=&gt;&lt;li key=&#123;item&#125;&gt;&#123;item&#125;&lt;/li&gt;)</span><br><span class="line">//每个元素要有一个key</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">export default function About() &#123;</span><br><span class="line"></span><br><span class="line">// const &#123; oneS &#125; = oneStore()</span><br><span class="line"></span><br><span class="line">var arr = [1,2,3,4,5,6,7,8,9,0]</span><br><span class="line"></span><br><span class="line">var arrlist=arr.map((item)=&gt;&lt;li key=&#123;item&#125;&gt;&#123;item&#125;&lt;/li&gt;)</span><br><span class="line">//jsx中只能有有个根元素,如果要在添加一个元素的话,需要用&lt;Fragment&gt;组件包裹,没有绑定值的要求可以简写为:&lt;&gt;&lt;/&gt;</span><br><span class="line">var arrlist=arrtwo.map((item)=&gt;(</span><br><span class="line"></span><br><span class="line">	&lt;Fragment key=&#123;item.id&#125;&gt;</span><br><span class="line"></span><br><span class="line">		&lt;li key=&#123;item.id&#125;&gt;&#123;item.name&#125;&lt;/li&gt;</span><br><span class="line"></span><br><span class="line">		&lt;li&gt;-------------------------&lt;/li&gt;</span><br><span class="line"></span><br><span class="line">	&lt;/Fragment&gt;</span><br><span class="line"></span><br><span class="line">))</span><br><span class="line"></span><br><span class="line">return (</span><br><span class="line"></span><br><span class="line">&lt;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;ul&gt;&#123;arrlist&#125;&lt;/ul&gt;</span><br><span class="line"></span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="状态管理-响应式"><a href="#状态管理-响应式" class="headerlink" title="状态管理(响应式)"></a>状态管理(响应式)</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">export default function About() &#123;</span><br><span class="line"></span><br><span class="line">//解构不是固定的,也可以是[user,userData][active,activeData]</span><br><span class="line">const [data,setData]=useState(&#123;</span><br><span class="line"></span><br><span class="line">title:&quot;i am title&quot;,</span><br><span class="line"></span><br><span class="line">cotent:&quot;i am cotent&quot;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">const [arr,setArr]=useState([1,2,3,4,5])</span><br><span class="line"></span><br><span class="line">function btnFun(e)&#123;</span><br><span class="line"></span><br><span class="line">//仅修改cotent,不改其他属性</span><br><span class="line">setData(&#123;</span><br><span class="line"></span><br><span class="line">...data,</span><br><span class="line"></span><br><span class="line">cotent:&quot;i am new cotent&quot;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line">//如果是数组操作,添加/删除某项</span><br><span class="line">//添加,这里的...arr不能是...data,固定写法只是...,后面是原变量</span><br><span class="line">setArr([</span><br><span class="line">	...arr,</span><br><span class="line">	6</span><br><span class="line">])</span><br><span class="line">//删除(过滤),使用js语法💦</span><br><span class="line">setArr(arr.filter(item=&gt;item!=2))</span><br><span class="line"></span><br><span class="line">return (</span><br><span class="line"></span><br><span class="line">&lt;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;h1 title=&#123;data.title&#125;&gt;&#123;data.cotent&#125;&lt;/h1&gt;</span><br><span class="line"></span><br><span class="line">&lt;button onClick=&#123;btnFun&#125;&gt;onClick&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="组件传值"><a href="#组件传值" class="headerlink" title="组件传值"></a>组件传值</h2><p>父传子(props)</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//父组件About</span><br><span class="line">export default function About() &#123;</span><br><span class="line"></span><br><span class="line">const [arr,setArr]=useState([1,2,3,4])</span><br><span class="line">return (</span><br><span class="line">	&lt;div&gt;</span><br><span class="line">		&lt;Contact ctx=&#123;arr&#125;&gt;&lt;/Contact&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">)&#125;</span><br><span class="line">//子组件Contact</span><br><span class="line">export default function Contact(props)&#123;//这里也可以用解构,Contact(&#123;ctx&#125;)&#123;</span><br><span class="line">return(</span><br><span class="line">	&lt;div&gt;&#123;props.ctx&#125;&lt;/div&gt;//渲染成功</span><br><span class="line">)&#125;</span><br></pre></td></tr></table></figure>
-<p>子传父</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//父组件About</span><br><span class="line">export default function About() &#123;</span><br><span class="line">	const porp=&quot;&quot;</span><br><span class="line">	function porpFun(porps)&#123;</span><br><span class="line">		porp=porps</span><br><span class="line">	&#125;</span><br><span class="line">return (</span><br><span class="line">&lt;&gt;</span><br><span class="line">&lt;Contact porpFunBox=&#123;porpFun&#125;&gt;&lt;/Contact&gt;</span><br><span class="line">&lt;div&gt;父组件拿到的参数:&#123;porp&#125;&lt;/div&gt;</span><br><span class="line">&lt;/&gt;</span><br><span class="line">)&#125;</span><br><span class="line">//子组件Contact</span><br><span class="line">export default function Contact(&#123;porpFunBox&#125;)&#123;</span><br><span class="line"></span><br><span class="line">function contactClik()&#123;</span><br><span class="line">console.log(&quot;子组件拿到的参数:&quot;+porpFunBox);</span><br><span class="line">porpFun(&quot;参数1&quot;)</span><br><span class="line">&#125;</span><br><span class="line">return(</span><br><span class="line">	&lt;button onClick=&#123;contactClik&#125;&gt;onClick&lt;/button&gt;</span><br><span class="line">)&#125;</span><br></pre></td></tr></table></figure>
-<p>同级传值,利用父组件中转<br>跨层级</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-<p>children</p>
-<h2 id="mobx"><a href="#mobx" class="headerlink" title="mobx"></a>mobx</h2><h2 id="Hooks"><a href="#Hooks" class="headerlink" title="Hooks"></a>Hooks</h2><h3 id="useState-状态管理钩子"><a href="#useState-状态管理钩子" class="headerlink" title="useState()状态管理钩子"></a>useState()状态管理钩子</h3><p>上面已经用到了,状态管理(响应式)</p>
-<h3 id="useContext-共享状态钩子"><a href="#useContext-共享状态钩子" class="headerlink" title="useContext()共享状态钩子"></a>useContext()共享状态钩子</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import &#123; createContext &#125; from &quot;react&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">const ContextBox=createContext()//创建状态容器</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">export default function Father()&#123;//父组件</span><br><span class="line"></span><br><span class="line">const data=&quot;i am data&quot;//定义数据</span><br><span class="line"></span><br><span class="line">return(</span><br><span class="line"></span><br><span class="line">&lt;&gt;</span><br><span class="line"></span><br><span class="line">&lt;ContextBox.Provider value=&#123;data&#125;&gt;//用固定语法包裹并传值</span><br><span class="line"></span><br><span class="line">&lt;Son&gt;&lt;/Son&gt;</span><br><span class="line"></span><br><span class="line">&lt;/ContextBox.Provider&gt;</span><br><span class="line"></span><br><span class="line">&lt;/&gt;</span><br><span class="line"></span><br><span class="line">)&#125;</span><br><span class="line"></span><br><span class="line">function Son()&#123;//儿组件</span><br><span class="line"></span><br><span class="line">return(</span><br><span class="line"></span><br><span class="line">&lt;&gt;</span><br><span class="line"></span><br><span class="line">&lt;Grandson&gt;&lt;/Grandson&gt;</span><br><span class="line"></span><br><span class="line">&lt;/&gt;</span><br><span class="line"></span><br><span class="line">)&#125;</span><br><span class="line"></span><br><span class="line">function Grandson()&#123;//孙组件</span><br><span class="line"></span><br><span class="line">const getData=useContext(ContextBox)</span><br><span class="line"></span><br><span class="line">return(</span><br><span class="line"></span><br><span class="line">&lt;&gt;</span><br><span class="line"></span><br><span class="line">&lt;p&gt;&#123;getData&#125;&lt;/p&gt;//获取数据</span><br><span class="line"></span><br><span class="line">&lt;/&gt;</span><br><span class="line"></span><br><span class="line">)&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="useReducer-action-钩子"><a href="#useReducer-action-钩子" class="headerlink" title="useReducer()action 钩子"></a>useReducer()action 钩子</h3><h3 id="useEffect-副作用钩子"><a href="#useEffect-副作用钩子" class="headerlink" title="useEffect()## 副作用钩子"></a>useEffect()## 副作用钩子</h3><h3 id="自定义Hooks"><a href="#自定义Hooks" class="headerlink" title="自定义Hooks"></a>自定义Hooks</h3>]]></content>
-      <categories>
-        <category>React.js</category>
       </categories>
   </entry>
   <entry>
@@ -819,6 +744,335 @@
       </categories>
   </entry>
   <entry>
+    <title>huafengWeb项目部署过程记录</title>
+    <url>/2025/08/02/huafengWeb%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E8%BF%87%E7%A8%8B%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><ol>
+<li>后端项目文件：huafengServer（koa+ts）</li>
+<li>前端项目文件：<ol>
+<li>huafengWeb（vue3+ts）</li>
+<li>huafengWebAdmin（vue3+ts+elementPlus）</li>
+</ol>
+</li>
+<li>数据库文件：huafengMySql</li>
+<li>云服务器：腾讯云Ubunto24</li>
+<li>其他：nginx、node、pm2、docter、k8s</li>
+</ol>
+<h2 id="本地运行项目"><a href="#本地运行项目" class="headerlink" title="本地运行项目"></a>本地运行项目</h2><h3 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h3><p>安装软件包管理器Homebrew</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">/bin/zsh -c <span class="string">&quot;<span class="subst">$(curl -fsSL &lt;https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh&gt;)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>使用homebrew安装node、mysql（这里node自带npm）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">brew install node mysql</span><br></pre></td></tr></table></figure>
+
+<p>更换npm镜像源（淘宝）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm config set registry &lt;https://registry.npmmirror.com&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="启动并设置mysql"><a href="#启动并设置mysql" class="headerlink" title="启动并设置mysql"></a>启动并设置mysql</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 启动</span></span><br><span class="line">mysql.server <span class="keyword">start</span></span><br><span class="line"><span class="comment">-- 初始化设置</span></span><br><span class="line">mysql_secure_installation</span><br><span class="line"><span class="comment">-- 停止</span></span><br><span class="line">mysql.server stop</span><br><span class="line"><span class="comment">-- 重启</span></span><br><span class="line">mysql.server restart</span><br><span class="line"><span class="comment">-- 查看当前状态</span></span><br><span class="line">mysql.server status</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>数据库配置</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 新建一个用户：huafeng，密码：HFhf991((!</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">USER</span> <span class="string">&#x27;huafeng&#x27;</span>@<span class="string">&#x27;localhost&#x27;</span> IDENTIFIED <span class="keyword">BY</span> <span class="string">&#x27;HFhf991((!&#x27;</span>;</span><br><span class="line"><span class="comment">-- 新建一个数据库：huafengSQL</span></span><br><span class="line"><span class="keyword">CREATE</span> DATABASE huafengSQL;</span><br><span class="line"><span class="comment">-- 授予huafeng用户huafengSQL的权限</span></span><br><span class="line"><span class="keyword">GRANT</span> <span class="keyword">ALL</span> PRIVILEGES <span class="keyword">ON</span> huafengSQL.<span class="operator">*</span> <span class="keyword">TO</span> <span class="string">&#x27;huafeng&#x27;</span>@<span class="string">&#x27;localhost&#x27;</span>;</span><br><span class="line"><span class="comment">-- 刷新权限</span></span><br><span class="line">FLUSH PRIVILEGES;</span><br><span class="line"><span class="comment">-- 退出mysql</span></span><br><span class="line">exit</span><br></pre></td></tr></table></figure>
+
+<h3 id="后端项目"><a href="#后端项目" class="headerlink" title="后端项目"></a>后端项目</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 启动项目</span><br><span class="line">npm start</span><br><span class="line">-- 生成typeorm数据库结构迁移文件</span><br><span class="line">npm run migration:generate</span><br><span class="line">-- 编译TS（按照配置文件tsconfig.json编译）</span><br><span class="line">tsc</span><br></pre></td></tr></table></figure>
+
+<p>PS： 这里在tsconfig.json中修改了输出路径为.&#x2F;huafengserver&#x2F;src， 再复制一份package.json，因为后面需要运行数据结构迁移文件，而原package.json里面路径还是ts文件，所以要修改package.json这几行的后缀ts为js 最后把修改后的package.json放入huafengserver文件夹</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line"></span><br><span class="line"><span class="attr">&quot;migration:run&quot;</span><span class="punctuation">:</span> <span class="string">&quot;typeorm-ts-node-commonjs migration:run -d src/data-source.ts&quot;</span><span class="punctuation">,</span></span><br><span class="line"></span><br><span class="line"><span class="attr">&quot;migration:revert&quot;</span><span class="punctuation">:</span> <span class="string">&quot;typeorm-ts-node-commonjs migration:revert -d src/data-source.ts&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
+
+<p>最后打包后的项目结构：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">huafengserver</span><br><span class="line">	-src</span><br><span class="line">		- controllers</span><br><span class="line">		- migrations</span><br><span class="line">		- models</span><br><span class="line">		- routes</span><br><span class="line">		- utils</span><br><span class="line">		- app.js</span><br><span class="line">		- data-source.js</span><br><span class="line">	-packsge.json</span><br></pre></td></tr></table></figure>
+
+<h3 id="前端项目"><a href="#前端项目" class="headerlink" title="前端项目"></a>前端项目</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 启动项目</span><br><span class="line">npm run dev</span><br><span class="line">-- 打包</span><br><span class="line">npm build</span><br><span class="line">-- 分别将打包后的dist文件夹重命名为huafeng和huafengadmin</span><br></pre></td></tr></table></figure>
+
+<p>最后打包好的项目结构：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">huafeng/huafengadmin</span><br><span class="line">	- assets</span><br><span class="line">	- favicon.ico</span><br><span class="line">	- index.html</span><br><span class="line">	- 其他图片资源</span><br></pre></td></tr></table></figure>
+
+<h2 id="初始云服务器（Ubuntu）"><a href="#初始云服务器（Ubuntu）" class="headerlink" title="初始云服务器（Ubuntu）"></a>初始云服务器（Ubuntu）</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">用户名：ubunto</span><br><span class="line">密码：</span><br></pre></td></tr></table></figure>
+
+<p>设置防火墙端口白名单</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">22：用于远程登录</span><br><span class="line">443: 用于ssl</span><br></pre></td></tr></table></figure>
+
+<h2 id="远程ssh连接（mac终端）"><a href="#远程ssh连接（mac终端）" class="headerlink" title="远程ssh连接（mac终端）"></a>远程ssh连接（mac终端）</h2><p>连接命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh （用户名）@（IP地址）</span><br></pre></td></tr></table></figure>
+
+<p><strong>Ps可能要用到的命令：</strong> 连接显示密钥匹配失败？</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 重置密钥</span><br><span class="line">ssh-keygen -R （IP地址）</span><br></pre></td></tr></table></figure>
+
+<p>如何进入root模式？</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo -i</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装软件包（apt）"><a href="#安装软件包（apt）" class="headerlink" title="安装软件包（apt）"></a>安装软件包（apt）</h2><p>使用前先更新apt：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">apt update</span><br></pre></td></tr></table></figure>
+
+<p>使用命令下载安装nginx、node、npm 、mysql-server、pm2</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">apt install （软件名）</span><br></pre></td></tr></table></figure>
+
+<p>更换npm镜像源（淘宝）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm config set registry &lt;https://registry.npmmirror.com&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="上传项目文件"><a href="#上传项目文件" class="headerlink" title="上传项目文件"></a>上传项目文件</h2><p>上传项目文件夹到服务器并改名</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">scp -r 本地文件 ubuntu@140.143.143.80:/tmp</span><br></pre></td></tr></table></figure>
+
+<p>服务器web项目文件夹路径：var&#x2F;www&#x2F;huafengWeb</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 移动刚刚上传到tmp里面的huafeng、huafengadmin、huafengserver到目的文件夹</span><br><span class="line">mv huafeng huafengadmin huafengserver /var/www/huafengWeb</span><br><span class="line"></span><br><span class="line">-- 不能覆盖，必须先删除目标文件</span><br><span class="line">cd /var/www/huafengWeb</span><br><span class="line">rm -r huafeng huafengamdin</span><br></pre></td></tr></table></figure>
+
+<h2 id="启动项目"><a href="#启动项目" class="headerlink" title="启动项目"></a>启动项目</h2><h3 id="nginx"><a href="#nginx" class="headerlink" title="nginx"></a>nginx</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 启动nginx</span><br><span class="line">systemctl start nginx</span><br><span class="line">-- 查看nginx状态</span><br><span class="line">systemctl status nginx</span><br><span class="line">-- 修改nginx配置文件</span><br><span class="line">nano /etc/nginx/sites-available/default</span><br><span class="line">（配置文件内容查看下面的其他）</span><br><span class="line">-- 重启nginx</span><br><span class="line">systemctl restart nginx</span><br><span class="line">-- 设置开机自启</span><br><span class="line">systemctl enable nginx</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>此时应该已经能访问到网页资源</p>
+<h3 id="mysql"><a href="#mysql" class="headerlink" title="mysql"></a>mysql</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">步骤参考上面本地部署，命令有所区别</span><br><span class="line">--启动命令</span><br><span class="line">systemctl start mysql</span><br><span class="line">-- 查看状态</span><br><span class="line">systemctl status mysql</span><br><span class="line">-- 登录控制台</span><br><span class="line">mysql -u root -p</span><br><span class="line">设置密码</span><br><span class="line">ALTER USER &#x27;root&#x27;@&#x27;localhost&#x27; IDENTIFIED WITH mysql_native_password BY &#x27;密码&#x27;;</span><br><span class="line">-- 初始化安全配置</span><br><span class="line">mysql_secure_installation</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">-- 设置开机自启</span><br><span class="line">systemctl enable mysql</span><br></pre></td></tr></table></figure>
+
+<h3 id="运行数据结构迁移文件"><a href="#运行数据结构迁移文件" class="headerlink" title="运行数据结构迁移文件"></a>运行数据结构迁移文件</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm run migration:run</span><br></pre></td></tr></table></figure>
+
+<h3 id="pm2"><a href="#pm2" class="headerlink" title="pm2"></a>pm2</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 使用pm2启动后端项目入口文件</span><br><span class="line">pm2 start app.js --name huafnegserver</span><br><span class="line">-- 查看进程列表</span><br><span class="line">pm2 list</span><br><span class="line">-- 删除进程</span><br><span class="line">pm2 delete 进程名</span><br></pre></td></tr></table></figure>
+
+<p>后端项目已启动，测试接口是否正常</p>
+<h2 id="部署完成"><a href="#部署完成" class="headerlink" title="部署完成"></a>部署完成</h2><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="nginx配置"><a href="#nginx配置" class="headerlink" title="nginx配置"></a>nginx配置</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 将 HTTP 重定向到 HTTPS</span></span><br><span class="line"></span><br><span class="line">server &#123;</span><br><span class="line"></span><br><span class="line">    listen 80;</span><br><span class="line"></span><br><span class="line">    server_name huafeng.website www.huafeng.website;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">return</span> 301 https://$server_name<span class="variable">$request_uri</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># HTTPS 服务器配置</span></span><br><span class="line"></span><br><span class="line">server &#123;</span><br><span class="line"></span><br><span class="line">    listen 443 ssl;</span><br><span class="line"></span><br><span class="line">    server_name huafeng.website www.huafeng.website;</span><br><span class="line"></span><br><span class="line">    ssl_certificate /etc/nginx/ssl/huafeng.website_bundle.crt;    <span class="comment"># 修改这里，使用正确的证书文件名</span></span><br><span class="line"></span><br><span class="line">    ssl_certificate_key /etc/nginx/ssl/huafeng.website.key;      <span class="comment"># 这个是对的，不用改</span></span><br><span class="line"></span><br><span class="line">    ssl_session_timeout 5m;</span><br><span class="line"></span><br><span class="line">    ssl_protocols TLSv1.2 TLSv1.3;</span><br><span class="line"></span><br><span class="line">    ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;</span><br><span class="line"></span><br><span class="line">    ssl_prefer_server_ciphers on;</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 前端服务 - 个人主页</span></span><br><span class="line"></span><br><span class="line">    location /huafeng &#123;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">alias</span> /var/www/huafengWeb/huafeng/;</span><br><span class="line"></span><br><span class="line">        try_files <span class="variable">$uri</span> <span class="variable">$uri</span>/ /huafeng/index.html;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 前端服务 - 管理后台</span></span><br><span class="line"></span><br><span class="line">    location /huafengadmin &#123;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">alias</span> /var/www/huafengWeb/huafengadmin/;</span><br><span class="line"></span><br><span class="line">        try_files <span class="variable">$uri</span> <span class="variable">$uri</span>/ /huafengadmin/index.html;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 后端服务</span></span><br><span class="line"></span><br><span class="line">    location /api/ &#123;</span><br><span class="line"></span><br><span class="line">        proxy_pass &lt;http://localhost:3000/api/&gt;;  <span class="comment"># 这个保持 http 因为是本地代理</span></span><br><span class="line"></span><br><span class="line">        proxy_http_version 1.1;</span><br><span class="line"></span><br><span class="line">        proxy_set_header X-Forwarded-Proto <span class="variable">$scheme</span>;  <span class="comment"># 添加这行</span></span><br><span class="line"></span><br><span class="line">        proxy_set_header X-Forwarded-For <span class="variable">$proxy_add_x_forwarded_for</span>;  <span class="comment"># 添加这行</span></span><br><span class="line"></span><br><span class="line">        proxy_set_header Upgrade <span class="variable">$http_upgrade</span>;</span><br><span class="line"></span><br><span class="line">        proxy_set_header Connection <span class="string">&#x27;upgrade&#x27;</span>;</span><br><span class="line"></span><br><span class="line">        proxy_set_header Host <span class="variable">$host</span>;</span><br><span class="line"></span><br><span class="line">        proxy_cache_bypass <span class="variable">$http_upgrade</span>;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 静态资源</span></span><br><span class="line"></span><br><span class="line">    location /huafeng/assets/ &#123;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">alias</span> /var/www/huafengWeb/huafeng/assets/;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    location /huafengadmin/assets/ &#123;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">alias</span> /var/www/huafengWeb/huafengadmin/assets/;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="日志查看"><a href="#日志查看" class="headerlink" title="日志查看"></a>日志查看</h3><h3 id="nginx-1"><a href="#nginx-1" class="headerlink" title="nginx"></a>nginx</h3><p>日志文件路径 &#x2F;var&#x2F;log&#x2F;nginx&#x2F;</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 错误日志</span><br><span class="line">cat /var/log/nginx/error.log</span><br><span class="line">-- 访问日志</span><br><span class="line">cat /var/log/nginx/access.log</span><br><span class="line">-- 实时查看日志</span><br><span class="line">tail -f /var/log/nginx/access.log</span><br></pre></td></tr></table></figure>
+
+<h3 id="pm2-1"><a href="#pm2-1" class="headerlink" title="pm2"></a>pm2</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 查看最后200行日志</span><br><span class="line">pm2 logs --lines 200</span><br><span class="line">-- 查看错误日志</span><br><span class="line">pm2 logs --err</span><br></pre></td></tr></table></figure>
+<h2 id="技术升级-宝塔面板部署"><a href="#技术升级-宝塔面板部署" class="headerlink" title="技术升级-宝塔面板部署"></a>技术升级-宝塔面板部署</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">下载宝塔、修改配置</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>个人网站</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>React.js</title>
+    <url>/2025/08/02/React.js/</url>
+    <content><![CDATA[<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>前置环境: node<br>next</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npx create-next-app@latest</span><br></pre></td></tr></table></figure>
+<p>mobx</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install mobx mobx-react-lite</span><br></pre></td></tr></table></figure>
+<h3 id="1-mobx-react-lite-vs-mobx-react"><a href="#1-mobx-react-lite-vs-mobx-react" class="headerlink" title="1. mobx-react-lite vs mobx-react"></a><strong>1. <code>mobx-react-lite</code> vs <code>mobx-react</code></strong></h3><table>
+<thead>
+<tr>
+<th>特性</th>
+<th><code>mobx-react-lite</code> (轻量版)</th>
+<th><code>mobx-react</code> (完整版)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>体积</strong></td>
+<td>~1.5KB (更小)</td>
+<td>~5KB (更大)</td>
+</tr>
+<tr>
+<td><strong>支持组件类型</strong></td>
+<td>仅函数组件 + Hooks</td>
+<td>类组件 + 函数组件</td>
+</tr>
+<tr>
+<td><strong>API 复杂度</strong></td>
+<td>更简单（只有 <code>observer</code>）</td>
+<td>包含 <code>Provider</code>&#x2F;<code>inject</code> 等旧 API</td>
+</tr>
+<tr>
+<td><strong>性能</strong></td>
+<td>更高（无类组件开销）</td>
+<td>略低</td>
+</tr>
+<tr>
+<td><strong>Next.js 兼容性</strong></td>
+<td>更适合 App Router</td>
+<td>需要额外配置</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="2-为什么推荐-mobx-react-lite？"><a href="#2-为什么推荐-mobx-react-lite？" class="headerlink" title="2. 为什么推荐 mobx-react-lite？"></a><strong>2. 为什么推荐 <code>mobx-react-lite</code>？</strong></h3><ul>
+<li><p><strong>现代 React 的标配</strong>：<br>  如果你只用函数组件（99% 的新项目），<code>mobx-react-lite</code> 的 <code>observer</code> 配合 <code>useContext</code> 完全够用。</p>
+</li>
+<li><p><strong>更小的包体积</strong>：<br>  减少最终打包体积，提升加载速度。</p>
+</li>
+<li><p><strong>更简单的心智模型</strong>：<br>  无需处理类组件的 <code>inject</code>&#x2F;<code>Provider</code> 复杂逻辑。</p>
+</li>
+</ul>
+<h1 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h1><h2 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h2><p>react组件是返回标签的js函数</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">function MyButton()&#123;</span><br><span class="line">	return(</span><br><span class="line">		&lt;button&gt;my buton&lt;/button&gt;</span><br><span class="line">	)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>React 组件必须以大写字母开头<br>组件内只能有一个根元素</p>
+<h2 id="插值"><a href="#插值" class="headerlink" title="插值"></a>插值</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">export default function About() &#123;</span><br><span class="line"></span><br><span class="line">	var start = false</span><br><span class="line">	titletxt=&quot;666&quot;</span><br><span class="line"></span><br><span class="line">	var title = &quot;&quot;</span><br><span class="line"></span><br><span class="line">	var html = &quot;&quot;</span><br><span class="line"></span><br><span class="line">	if (start) &#123;</span><br><span class="line"></span><br><span class="line">		title = &quot;i am about&quot;</span><br><span class="line"></span><br><span class="line">		html = &lt;span&gt;i am span&lt;/span&gt;</span><br><span class="line"></span><br><span class="line">	&#125; else &#123;</span><br><span class="line"></span><br><span class="line">		title = &quot;i am upabout&quot;</span><br><span class="line"></span><br><span class="line">		html = &lt;p&gt;i am p&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">return (</span><br><span class="line"></span><br><span class="line">	&lt;div&gt;</span><br><span class="line">		//这里的“&#123;&#125;”就是插值,可以用在clss和内容里</span><br><span class="line">		&lt;h1 title=&#123;titletxt&#125;&gt;&#123;title&#125;&lt;/h1&gt;</span><br><span class="line">		//插的值可以直接是html标签</span><br><span class="line">		&lt;div&gt;&#123;html&#125;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">	&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="列表渲染"><a href="#列表渲染" class="headerlink" title="列表渲染"></a>列表渲染</h2><p>使用arr.map方法遍历数组并返回处理后的数组</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//按照之前学习的标准es6箭头函数写法:&quot;()=&gt;&#123;&#125;&quot;</span><br><span class="line">var arrlist=arr.map((item)=&gt;&#123;</span><br><span class="line">	&lt;li key=&#123;item&#125;&gt;&#123;item&#125;&lt;/li&gt;</span><br><span class="line">&#125;)</span><br><span class="line">//有问题,不渲染</span><br><span class="line">//因为箭头函数会隐式地返回位于 `=&gt;` 之后的表达式，所以可以省略 `return` 语句</span><br><span class="line">//不过，如果 `=&gt;` 后面跟了一对花括号 `&#123;` ，那你必须使用 `return` 来指定返回值!</span><br><span class="line">//所以应改为:</span><br><span class="line">var arrlist=arr.map((item)=&gt;&#123;</span><br><span class="line"></span><br><span class="line">return(</span><br><span class="line"></span><br><span class="line">&lt;li key=&#123;item&#125;&gt;&#123;item&#125;&lt;/li&gt;</span><br><span class="line"></span><br><span class="line">)&#125;)</span><br><span class="line">//或者简写:</span><br><span class="line">var arrlist=arr.map((item)=&gt;&lt;li key=&#123;item&#125;&gt;&#123;item&#125;&lt;/li&gt;)</span><br><span class="line">//每个元素要有一个key</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">export default function About() &#123;</span><br><span class="line"></span><br><span class="line">// const &#123; oneS &#125; = oneStore()</span><br><span class="line"></span><br><span class="line">var arr = [1,2,3,4,5,6,7,8,9,0]</span><br><span class="line"></span><br><span class="line">var arrlist=arr.map((item)=&gt;&lt;li key=&#123;item&#125;&gt;&#123;item&#125;&lt;/li&gt;)</span><br><span class="line">//jsx中只能有有个根元素,如果要在添加一个元素的话,需要用&lt;Fragment&gt;组件包裹,没有绑定值的要求可以简写为:&lt;&gt;&lt;/&gt;</span><br><span class="line">var arrlist=arrtwo.map((item)=&gt;(</span><br><span class="line"></span><br><span class="line">	&lt;Fragment key=&#123;item.id&#125;&gt;</span><br><span class="line"></span><br><span class="line">		&lt;li key=&#123;item.id&#125;&gt;&#123;item.name&#125;&lt;/li&gt;</span><br><span class="line"></span><br><span class="line">		&lt;li&gt;-------------------------&lt;/li&gt;</span><br><span class="line"></span><br><span class="line">	&lt;/Fragment&gt;</span><br><span class="line"></span><br><span class="line">))</span><br><span class="line"></span><br><span class="line">return (</span><br><span class="line"></span><br><span class="line">&lt;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;ul&gt;&#123;arrlist&#125;&lt;/ul&gt;</span><br><span class="line"></span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="状态管理-响应式"><a href="#状态管理-响应式" class="headerlink" title="状态管理(响应式)"></a>状态管理(响应式)</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">export default function About() &#123;</span><br><span class="line"></span><br><span class="line">//解构不是固定的,也可以是[user,userData][active,activeData]</span><br><span class="line">const [data,setData]=useState(&#123;</span><br><span class="line"></span><br><span class="line">title:&quot;i am title&quot;,</span><br><span class="line"></span><br><span class="line">cotent:&quot;i am cotent&quot;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">const [arr,setArr]=useState([1,2,3,4,5])</span><br><span class="line"></span><br><span class="line">function btnFun(e)&#123;</span><br><span class="line"></span><br><span class="line">//仅修改cotent,不改其他属性</span><br><span class="line">setData(&#123;</span><br><span class="line"></span><br><span class="line">...data,</span><br><span class="line"></span><br><span class="line">cotent:&quot;i am new cotent&quot;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line">//如果是数组操作,添加/删除某项</span><br><span class="line">//添加,这里的...arr不能是...data,固定写法只是...,后面是原变量</span><br><span class="line">setArr([</span><br><span class="line">	...arr,</span><br><span class="line">	6</span><br><span class="line">])</span><br><span class="line">//删除(过滤),使用js语法💦</span><br><span class="line">setArr(arr.filter(item=&gt;item!=2))</span><br><span class="line"></span><br><span class="line">return (</span><br><span class="line"></span><br><span class="line">&lt;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;h1 title=&#123;data.title&#125;&gt;&#123;data.cotent&#125;&lt;/h1&gt;</span><br><span class="line"></span><br><span class="line">&lt;button onClick=&#123;btnFun&#125;&gt;onClick&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="组件传值"><a href="#组件传值" class="headerlink" title="组件传值"></a>组件传值</h2><p>父传子(props)</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//父组件About</span><br><span class="line">export default function About() &#123;</span><br><span class="line"></span><br><span class="line">const [arr,setArr]=useState([1,2,3,4])</span><br><span class="line">return (</span><br><span class="line">	&lt;div&gt;</span><br><span class="line">		&lt;Contact ctx=&#123;arr&#125;&gt;&lt;/Contact&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">)&#125;</span><br><span class="line">//子组件Contact</span><br><span class="line">export default function Contact(props)&#123;//这里也可以用解构,Contact(&#123;ctx&#125;)&#123;</span><br><span class="line">return(</span><br><span class="line">	&lt;div&gt;&#123;props.ctx&#125;&lt;/div&gt;//渲染成功</span><br><span class="line">)&#125;</span><br></pre></td></tr></table></figure>
+<p>子传父</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//父组件About</span><br><span class="line">export default function About() &#123;</span><br><span class="line">	const porp=&quot;&quot;</span><br><span class="line">	function porpFun(porps)&#123;</span><br><span class="line">		porp=porps</span><br><span class="line">	&#125;</span><br><span class="line">return (</span><br><span class="line">&lt;&gt;</span><br><span class="line">&lt;Contact porpFunBox=&#123;porpFun&#125;&gt;&lt;/Contact&gt;</span><br><span class="line">&lt;div&gt;父组件拿到的参数:&#123;porp&#125;&lt;/div&gt;</span><br><span class="line">&lt;/&gt;</span><br><span class="line">)&#125;</span><br><span class="line">//子组件Contact</span><br><span class="line">export default function Contact(&#123;porpFunBox&#125;)&#123;</span><br><span class="line"></span><br><span class="line">function contactClik()&#123;</span><br><span class="line">console.log(&quot;子组件拿到的参数:&quot;+porpFunBox);</span><br><span class="line">porpFun(&quot;参数1&quot;)</span><br><span class="line">&#125;</span><br><span class="line">return(</span><br><span class="line">	&lt;button onClick=&#123;contactClik&#125;&gt;onClick&lt;/button&gt;</span><br><span class="line">)&#125;</span><br></pre></td></tr></table></figure>
+<p>同级传值,利用父组件中转<br>跨层级</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<p>children</p>
+<h2 id="mobx"><a href="#mobx" class="headerlink" title="mobx"></a>mobx</h2><h2 id="Hooks"><a href="#Hooks" class="headerlink" title="Hooks"></a>Hooks</h2><h3 id="useState-状态管理钩子"><a href="#useState-状态管理钩子" class="headerlink" title="useState()状态管理钩子"></a>useState()状态管理钩子</h3><p>上面已经用到了,状态管理(响应式)</p>
+<h3 id="useContext-共享状态钩子"><a href="#useContext-共享状态钩子" class="headerlink" title="useContext()共享状态钩子"></a>useContext()共享状态钩子</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import &#123; createContext &#125; from &quot;react&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">const ContextBox=createContext()//创建状态容器</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">export default function Father()&#123;//父组件</span><br><span class="line"></span><br><span class="line">const data=&quot;i am data&quot;//定义数据</span><br><span class="line"></span><br><span class="line">return(</span><br><span class="line"></span><br><span class="line">&lt;&gt;</span><br><span class="line"></span><br><span class="line">&lt;ContextBox.Provider value=&#123;data&#125;&gt;//用固定语法包裹并传值</span><br><span class="line"></span><br><span class="line">&lt;Son&gt;&lt;/Son&gt;</span><br><span class="line"></span><br><span class="line">&lt;/ContextBox.Provider&gt;</span><br><span class="line"></span><br><span class="line">&lt;/&gt;</span><br><span class="line"></span><br><span class="line">)&#125;</span><br><span class="line"></span><br><span class="line">function Son()&#123;//儿组件</span><br><span class="line"></span><br><span class="line">return(</span><br><span class="line"></span><br><span class="line">&lt;&gt;</span><br><span class="line"></span><br><span class="line">&lt;Grandson&gt;&lt;/Grandson&gt;</span><br><span class="line"></span><br><span class="line">&lt;/&gt;</span><br><span class="line"></span><br><span class="line">)&#125;</span><br><span class="line"></span><br><span class="line">function Grandson()&#123;//孙组件</span><br><span class="line"></span><br><span class="line">const getData=useContext(ContextBox)</span><br><span class="line"></span><br><span class="line">return(</span><br><span class="line"></span><br><span class="line">&lt;&gt;</span><br><span class="line"></span><br><span class="line">&lt;p&gt;&#123;getData&#125;&lt;/p&gt;//获取数据</span><br><span class="line"></span><br><span class="line">&lt;/&gt;</span><br><span class="line"></span><br><span class="line">)&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="useReducer-action-钩子"><a href="#useReducer-action-钩子" class="headerlink" title="useReducer()action 钩子"></a>useReducer()action 钩子</h3><h3 id="useEffect-副作用钩子"><a href="#useEffect-副作用钩子" class="headerlink" title="useEffect()## 副作用钩子"></a>useEffect()## 副作用钩子</h3><h3 id="自定义Hooks"><a href="#自定义Hooks" class="headerlink" title="自定义Hooks"></a>自定义Hooks</h3>]]></content>
+      <categories>
+        <category>React.js</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>arm架构macos部署sqlserver</title>
+    <url>/2025/08/02/arm%E6%9E%B6%E6%9E%84macos%E9%83%A8%E7%BD%B2sqlserver/</url>
+    <content><![CDATA[<h2 id="安装docker"><a href="#安装docker" class="headerlink" title="安装docker"></a>安装docker</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install docker.io</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="启动docker"><a href="#启动docker" class="headerlink" title="启动docker"></a>启动docker</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo systemctl start docker</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="docker开机自启"><a href="#docker开机自启" class="headerlink" title="docker开机自启"></a>docker开机自启</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo systemctl enable docker</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="用户加组"><a href="#用户加组" class="headerlink" title="用户加组"></a>用户加组</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo usermod -aG docker $USER</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="拉取-Azure-SQL-Edge-镜像"><a href="#拉取-Azure-SQL-Edge-镜像" class="headerlink" title="拉取 Azure SQL Edge 镜像"></a>拉取 Azure SQL Edge 镜像</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker pull mcr.microsoft.com/azure-sql-edge</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="运行容器"><a href="#运行容器" class="headerlink" title="运行容器"></a>运行容器</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker run -e &#x27;ACCEPT_EULA=1&#x27; -e &#x27;MSSQL_SA_PASSWORD=SAsa991((!&#x27; \</span><br><span class="line">   -p 1433:1433 --name azuresqledge \</span><br><span class="line">   -d mcr.microsoft.com/azure-sql-edge</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="查看容器状态"><a href="#查看容器状态" class="headerlink" title="查看容器状态"></a>查看容器状态</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker ps</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="连接sql（使用DBeaver-ARM-社区构建版）"><a href="#连接sql（使用DBeaver-ARM-社区构建版）" class="headerlink" title="连接sql（使用DBeaver ARM 社区构建版）"></a>连接sql（使用DBeaver ARM 社区构建版）</h2><h3 id="java环境"><a href="#java环境" class="headerlink" title="java环境"></a>java环境</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install default-jre -y</span><br><span class="line">java -version</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wget https://dbeaver.io/files/ea/dbeaver-ce-25.1.0-linux.gtk.aarch64-nojdk.tar.gz</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="解压并运行"><a href="#解压并运行" class="headerlink" title="解压并运行"></a>解压并运行</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tar -xvzf dbeaver-ce-25.1.0-linux.gtk.aarch64-nojdk.tar.gz</span><br><span class="line">cd dbeaver</span><br><span class="line">./dbeaver</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>arm架构macos部署sqlserver</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>网站与博客部署全记录</title>
+    <url>/2025/08/02/%E7%BD%91%E7%AB%99%E4%B8%8E%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%85%A8%E8%AE%B0%E5%BD%95%EF%BC%9A%E5%B0%9D%E8%AF%95%E5%A4%9A%E7%A7%8D%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%B8%8E%E9%83%A8%E7%BD%B2%E6%B5%81%E7%A8%8B%E7%9A%84%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<h1 id="hexo-git"><a href="#hexo-git" class="headerlink" title="hexo+git"></a>hexo+git</h1><p>— 博客，音译，英文名为Blogger，它的正式名称为网络日记；是使用特定的软件，在网络上出版、发表和张贴个人文章的人，或者是一种通常由个人管理、不定期张贴新的文章的网站。博客是继MSN、BBS、ICQ之后出现的第4种网络交流方式，是网络时代的个人“读者文摘”，它代表着新的生活、工作和学习方式。</p>
+<p>— 在本人搭建博客的过程中，发现互联网上的教程大多数的发布时间是几年甚至十几年之前，有些软件的版本和操作方式都已经有所改变。许多新手小白如果按照之前的教程来操作的话会产生各种各样的问题。教程中所使用的专业名词也会使小白们一头雾水，影响操作效率。</p>
+<p>— 于是在2021年4月10日发布了这篇面向纯新手小白的保姆级搭建教程，手把手教你搭建属于自己的个人博客</p>
+<p>— 教程步骤框架来自hojun.cn发布的教程，使用工具包含node.js、github、gitforwin、Git、sublime、Hexo侵删</p>
+<h2 id="node的下载与安装"><a href="#node的下载与安装" class="headerlink" title="node的下载与安装"></a>node的下载与安装</h2><p>① Node.js官网下载并打开安装包</p>
+<p>② 更改安装位置</p>
+<p>③ 是否安装必要的环境，我选的安装</p>
+<p>④ 安装完成</p>
+<p>⑤ Win+R打开运行窗口，输入cmd</p>
+<p>⑥ node -v查看版本</p>
+<h2 id="github注册"><a href="#github注册" class="headerlink" title="github注册"></a>github注册</h2><p>① 打开github官网 GitHub: Where the world builds software · GitHub</p>
+<p>② 右上角注册</p>
+<p>③ 注册流程走完后回首页，右上角加号第一个选项，传建一个新的存储库</p>
+<p>④ 存储库名称为 <a href="http://用户名+.github+.io/">用户名+.github+.io</a>，其他默认，创建</p>
+<h2 id="gitforwin的下载与安装"><a href="#gitforwin的下载与安装" class="headerlink" title="gitforwin的下载与安装"></a>gitforwin的下载与安装</h2><p>① 浏览器输入 Git for Windows，下载gitforwin安装包</p>
+<p>② 安装git</p>
+<p>③ 更改安装位置</p>
+<p>④ 创建开始菜单快捷方式，随意，我选择不创建</p>
+<p>⑤ 点下一步全部默认就可以，到这一步选择第二个</p>
+<p>⑥ 安装完成</p>
+<p>⑦ 桌面没有新的快捷方式不要慌，正常现象，有需要的话可以在开始菜单和软件安装路径里找到并创建快捷方式</p>
+<p>⑧ 验证是否安装完成 Win+R，输入cmd，输入命令git</p>
+<h2 id="githubSHH配置"><a href="#githubSHH配置" class="headerlink" title="githubSHH配置"></a>githubSHH配置</h2><p>① 打开git的安装路径，找到git bash.exe 双击运行</p>
+<p>② 输入命令ssh-keygen -t rsa -C “<a href="mailto:991270685@qq.com">991270685@qq.com</a>“，引号内是github注册邮箱地址，回车</p>
+<p>③ 无特殊提示就回车，有（y&#x2F;n）就输入y回车</p>
+<p>④ 打开github，点击右上角头像选择 设置</p>
+<p>⑤ 选择shh和密钥选项，添加新密钥</p>
+<p>⑥ 标题就用户名+tech吧（tech技术），填到第一栏</p>
+<p>在C盘找到id_rsa.pub这个文件，以记事本形式打开，复制内容填到第二栏</p>
+<p>⑦ 提交，创建完成</p>
+<h2 id="hexo的本地使用"><a href="#hexo的本地使用" class="headerlink" title="hexo的本地使用"></a>hexo的本地使用</h2><p>① 浏览器输入 Hexo 进入hexo官网</p>
+<p>② 在合适的位置新建一个文件夹blog，关于博客的文件基本都在这里面，我选择D盘根目录</p>
+<p>③ 进入bolg文件，点击路径输入cmd，回车进入（也可以win+R，输入cmd，再用cd命令一级一级切到blog文件下）</p>
+<p>④ 回到hexo官网，复制命令 npm install hexo-cli -g 到运行窗口回车</p>
+<p>⑤ 网站下拉会有使用命令行，blog为你的博客名</p>
+<p>⑥ 输入 hexo init +博客名 回车运行</p>
+<p>⑦ 输入命令cd 博客名，进入博客文件，回到网站复制命令行 npm install 并运行</p>
+<p>⑧ 完成后输入命令 hexo s 生成本地预览，最后会生成一个4000端口的网址，复制到浏览器进入，就能看到我们的博客了</p>
+<h2 id="sublime的下载与安装"><a href="#sublime的下载与安装" class="headerlink" title="sublime的下载与安装"></a>sublime的下载与安装</h2><p>① 浏览器输入Download - Sublime Text 进去官网下载，选择自己的系统，我选择windows64位</p>
+<p>② 下载完成运行，更改安装路径</p>
+<p>③ 默认选项就可以，一直下一步。安装完成</p>
+<p>④ 打开sublime</p>
+<p>⑤ 打开sublime，在左边栏source——-posts —— hello-world.md中输入文字，ctrl+s保存</p>
+<p>⑥ 在blog路径中右击运行git bash，输入命令hexo cl清理缓存，hexo g hexo s生成本地预览</p>
+<p>⑦ 浏览器打开本地预览，更改已生效</p>
+<h2 id="将hexo发布至github"><a href="#将hexo发布至github" class="headerlink" title="将hexo发布至github"></a>将hexo发布至github</h2><p>① 打开浏览器，进入github之前新建的存储库，进入库，复制地址</p>
+<p>② 在sublime中打开-config.yml文件更改配置信息</p>
+<p>更改参数 author：名字，我的是maohuifei</p>
+<p>更改参数 ur1： 后面为github存储库的地址中的一部分（<a href="http://xxxx.github.io/">XXXX.github.io</a>）</p>
+<p>更改参数 type：git，</p>
+<p>添加新参数 branch: gh-pages</p>
+<p>添加新参数 repo：后面为github存储库的地址</p>
+<p>保存</p>
+<p>③ 进入hexo一键部署网站部署 | Hexo ，复制hexo-deployer-git的安装命令 npm install hexo-deployer-git –save 进入git bash 运行安装</p>
+<p>④ 命令 hexo cl 清理hexo g生成 hexo d提交</p>
+<p>⑤ 浏览器输入 <a href="http://用户名+github.io/">用户名+github.Io</a> <a href="http://我的是maohuifei.github.io/">我的是maohuifei.github.io</a></p>
+<p>⑥ 博客搭建完成!</p>
+<h2 id="hexo主题的使用"><a href="#hexo主题的使用" class="headerlink" title="hexo主题的使用"></a>hexo主题的使用</h2><p>① 进入hexo主题官网Themes | Hexo 选择主题，以next为例</p>
+<p>② 进入主题详情，有详细安装步骤教程，每个主题进入位置不同</p>
+<h3 id="matery主题"><a href="#matery主题" class="headerlink" title="matery主题"></a><code>matery</code>主题</h3><h3 id="全局css样式修改"><a href="#全局css样式修改" class="headerlink" title="全局css样式修改"></a>全局css样式修改</h3><p>css文件地址路径<code>themes/hexo-thieme-matery/source/css/matery.css</code></p>
+<h3 id="新建文章配置"><a href="#新建文章配置" class="headerlink" title="新建文章配置"></a>新建文章配置</h3><table>
+<thead>
+<tr>
+<th>配置选项</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>title</td>
+<td>Markdown 的文件标题</td>
+<td>文章标题，强烈建议填写此选项</td>
+</tr>
+<tr>
+<td>date</td>
+<td>文件创建时的日期时间</td>
+<td>发布时间，强烈建议填写此选项，且最好保证全局唯一</td>
+</tr>
+<tr>
+<td>author</td>
+<td>根 _config.yml 中的 author</td>
+<td>文章作者</td>
+</tr>
+<tr>
+<td>img</td>
+<td>featureImages 中的某个值</td>
+<td>文章特征图，推荐使用图床(腾讯云、七牛云、又拍云等)来做图片的路径.</td>
+</tr>
+<tr>
+<td>top</td>
+<td>true</td>
+<td>推荐文章（文章是否置顶），如果 top 值为 true，则会作为首页推荐文章</td>
+</tr>
+<tr>
+<td>cover</td>
+<td>false</td>
+<td>v1.0.2版本新增，表示该文章是否需要加入到首页轮播封面中</td>
+</tr>
+<tr>
+<td>coverImg</td>
+<td>无</td>
+<td>v1.0.2版本新增，表示该文章在首页轮播封面需要显示的图片路径，如果没有，则默认使用文章的特色图片</td>
+</tr>
+<tr>
+<td>password</td>
+<td>无</td>
+<td>文章阅读密码，如果要对文章设置阅读验证密码的话，就可以设置 password 的值，该值必须是用 SHA256 加密后的密码，防止被他人识破。前提是在主题的 config.yml 中激活了 verifyPassword 选项</td>
+</tr>
+<tr>
+<td>toc</td>
+<td>true</td>
+<td>是否开启 TOC，可以针对某篇文章单独关闭 TOC 的功能。前提是在主题的 config.yml 中激活了 toc 选项</td>
+</tr>
+<tr>
+<td>mathjax</td>
+<td>false</td>
+<td>是否开启数学公式支持 ，本文章是否开启 mathjax，且需要在主题的 _config.yml 文件中也需要开启才行</td>
+</tr>
+<tr>
+<td>summary</td>
+<td>无</td>
+<td>文章摘要，自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要</td>
+</tr>
+<tr>
+<td>categories</td>
+<td>无</td>
+<td>文章分类，本主题的分类表示宏观上大的分类，只建议一篇文章一个分类</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>无</td>
+<td>文章标签，一篇文章可以多个标签</td>
+</tr>
+</tbody></table>
+<p>默认配置文件路径：</p>
+<p><code>根目录/scaffolds/post</code></p>
+<h2 id="Hugo"><a href="#Hugo" class="headerlink" title="Hugo"></a>Hugo</h2>]]></content>
+      <categories>
+        <category>个人网站</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Web开发规范</title>
     <url>/2025/08/02/Web%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/</url>
     <content><![CDATA[<h1 id="REST风格设计规范"><a href="#REST风格设计规范" class="headerlink" title="REST风格设计规范"></a>REST风格设计规范</h1><hr>
@@ -980,116 +1234,6 @@
       </categories>
   </entry>
   <entry>
-    <title>arm架构macos部署sqlserver</title>
-    <url>/2025/08/02/arm%E6%9E%B6%E6%9E%84macos%E9%83%A8%E7%BD%B2sqlserver/</url>
-    <content><![CDATA[<h2 id="安装docker"><a href="#安装docker" class="headerlink" title="安装docker"></a>安装docker</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install docker.io</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="启动docker"><a href="#启动docker" class="headerlink" title="启动docker"></a>启动docker</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo systemctl start docker</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="docker开机自启"><a href="#docker开机自启" class="headerlink" title="docker开机自启"></a>docker开机自启</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo systemctl enable docker</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="用户加组"><a href="#用户加组" class="headerlink" title="用户加组"></a>用户加组</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo usermod -aG docker $USER</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="拉取-Azure-SQL-Edge-镜像"><a href="#拉取-Azure-SQL-Edge-镜像" class="headerlink" title="拉取 Azure SQL Edge 镜像"></a>拉取 Azure SQL Edge 镜像</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker pull mcr.microsoft.com/azure-sql-edge</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="运行容器"><a href="#运行容器" class="headerlink" title="运行容器"></a>运行容器</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker run -e &#x27;ACCEPT_EULA=1&#x27; -e &#x27;MSSQL_SA_PASSWORD=SAsa991((!&#x27; \</span><br><span class="line">   -p 1433:1433 --name azuresqledge \</span><br><span class="line">   -d mcr.microsoft.com/azure-sql-edge</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="查看容器状态"><a href="#查看容器状态" class="headerlink" title="查看容器状态"></a>查看容器状态</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker ps</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="连接sql（使用DBeaver-ARM-社区构建版）"><a href="#连接sql（使用DBeaver-ARM-社区构建版）" class="headerlink" title="连接sql（使用DBeaver ARM 社区构建版）"></a>连接sql（使用DBeaver ARM 社区构建版）</h2><h3 id="java环境"><a href="#java环境" class="headerlink" title="java环境"></a>java环境</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install default-jre -y</span><br><span class="line">java -version</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wget https://dbeaver.io/files/ea/dbeaver-ce-25.1.0-linux.gtk.aarch64-nojdk.tar.gz</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="解压并运行"><a href="#解压并运行" class="headerlink" title="解压并运行"></a>解压并运行</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tar -xvzf dbeaver-ce-25.1.0-linux.gtk.aarch64-nojdk.tar.gz</span><br><span class="line">cd dbeaver</span><br><span class="line">./dbeaver</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>arm架构macos部署sqlserver</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>huafengWeb项目部署过程记录</title>
-    <url>/2025/08/02/huafengWeb%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E8%BF%87%E7%A8%8B%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><ol>
-<li>后端项目文件：huafengServer（koa+ts）</li>
-<li>前端项目文件：<ol>
-<li>huafengWeb（vue3+ts）</li>
-<li>huafengWebAdmin（vue3+ts+elementPlus）</li>
-</ol>
-</li>
-<li>数据库文件：huafengMySql</li>
-<li>云服务器：腾讯云Ubunto24</li>
-<li>其他：nginx、node、pm2、docter、k8s</li>
-</ol>
-<h2 id="本地运行项目"><a href="#本地运行项目" class="headerlink" title="本地运行项目"></a>本地运行项目</h2><h3 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h3><p>安装软件包管理器Homebrew</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">/bin/zsh -c <span class="string">&quot;<span class="subst">$(curl -fsSL &lt;https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh&gt;)</span>&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>使用homebrew安装node、mysql（这里node自带npm）</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">brew install node mysql</span><br></pre></td></tr></table></figure>
-
-<p>更换npm镜像源（淘宝）</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm config set registry &lt;https://registry.npmmirror.com&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="启动并设置mysql"><a href="#启动并设置mysql" class="headerlink" title="启动并设置mysql"></a>启动并设置mysql</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 启动</span></span><br><span class="line">mysql.server <span class="keyword">start</span></span><br><span class="line"><span class="comment">-- 初始化设置</span></span><br><span class="line">mysql_secure_installation</span><br><span class="line"><span class="comment">-- 停止</span></span><br><span class="line">mysql.server stop</span><br><span class="line"><span class="comment">-- 重启</span></span><br><span class="line">mysql.server restart</span><br><span class="line"><span class="comment">-- 查看当前状态</span></span><br><span class="line">mysql.server status</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>数据库配置</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 新建一个用户：huafeng，密码：HFhf991((!</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">USER</span> <span class="string">&#x27;huafeng&#x27;</span>@<span class="string">&#x27;localhost&#x27;</span> IDENTIFIED <span class="keyword">BY</span> <span class="string">&#x27;HFhf991((!&#x27;</span>;</span><br><span class="line"><span class="comment">-- 新建一个数据库：huafengSQL</span></span><br><span class="line"><span class="keyword">CREATE</span> DATABASE huafengSQL;</span><br><span class="line"><span class="comment">-- 授予huafeng用户huafengSQL的权限</span></span><br><span class="line"><span class="keyword">GRANT</span> <span class="keyword">ALL</span> PRIVILEGES <span class="keyword">ON</span> huafengSQL.<span class="operator">*</span> <span class="keyword">TO</span> <span class="string">&#x27;huafeng&#x27;</span>@<span class="string">&#x27;localhost&#x27;</span>;</span><br><span class="line"><span class="comment">-- 刷新权限</span></span><br><span class="line">FLUSH PRIVILEGES;</span><br><span class="line"><span class="comment">-- 退出mysql</span></span><br><span class="line">exit</span><br></pre></td></tr></table></figure>
-
-<h3 id="后端项目"><a href="#后端项目" class="headerlink" title="后端项目"></a>后端项目</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 启动项目</span><br><span class="line">npm start</span><br><span class="line">-- 生成typeorm数据库结构迁移文件</span><br><span class="line">npm run migration:generate</span><br><span class="line">-- 编译TS（按照配置文件tsconfig.json编译）</span><br><span class="line">tsc</span><br></pre></td></tr></table></figure>
-
-<p>PS： 这里在tsconfig.json中修改了输出路径为.&#x2F;huafengserver&#x2F;src， 再复制一份package.json，因为后面需要运行数据结构迁移文件，而原package.json里面路径还是ts文件，所以要修改package.json这几行的后缀ts为js 最后把修改后的package.json放入huafengserver文件夹</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line"></span><br><span class="line"><span class="attr">&quot;migration:run&quot;</span><span class="punctuation">:</span> <span class="string">&quot;typeorm-ts-node-commonjs migration:run -d src/data-source.ts&quot;</span><span class="punctuation">,</span></span><br><span class="line"></span><br><span class="line"><span class="attr">&quot;migration:revert&quot;</span><span class="punctuation">:</span> <span class="string">&quot;typeorm-ts-node-commonjs migration:revert -d src/data-source.ts&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
-
-<p>最后打包后的项目结构：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">huafengserver</span><br><span class="line">	-src</span><br><span class="line">		- controllers</span><br><span class="line">		- migrations</span><br><span class="line">		- models</span><br><span class="line">		- routes</span><br><span class="line">		- utils</span><br><span class="line">		- app.js</span><br><span class="line">		- data-source.js</span><br><span class="line">	-packsge.json</span><br></pre></td></tr></table></figure>
-
-<h3 id="前端项目"><a href="#前端项目" class="headerlink" title="前端项目"></a>前端项目</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 启动项目</span><br><span class="line">npm run dev</span><br><span class="line">-- 打包</span><br><span class="line">npm build</span><br><span class="line">-- 分别将打包后的dist文件夹重命名为huafeng和huafengadmin</span><br></pre></td></tr></table></figure>
-
-<p>最后打包好的项目结构：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">huafeng/huafengadmin</span><br><span class="line">	- assets</span><br><span class="line">	- favicon.ico</span><br><span class="line">	- index.html</span><br><span class="line">	- 其他图片资源</span><br></pre></td></tr></table></figure>
-
-<h2 id="初始云服务器（Ubuntu）"><a href="#初始云服务器（Ubuntu）" class="headerlink" title="初始云服务器（Ubuntu）"></a>初始云服务器（Ubuntu）</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">用户名：ubunto</span><br><span class="line">密码：</span><br></pre></td></tr></table></figure>
-
-<p>设置防火墙端口白名单</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">22：用于远程登录</span><br><span class="line">443: 用于ssl</span><br></pre></td></tr></table></figure>
-
-<h2 id="远程ssh连接（mac终端）"><a href="#远程ssh连接（mac终端）" class="headerlink" title="远程ssh连接（mac终端）"></a>远程ssh连接（mac终端）</h2><p>连接命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh （用户名）@（IP地址）</span><br></pre></td></tr></table></figure>
-
-<p><strong>Ps可能要用到的命令：</strong> 连接显示密钥匹配失败？</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 重置密钥</span><br><span class="line">ssh-keygen -R （IP地址）</span><br></pre></td></tr></table></figure>
-
-<p>如何进入root模式？</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo -i</span><br></pre></td></tr></table></figure>
-
-<h2 id="安装软件包（apt）"><a href="#安装软件包（apt）" class="headerlink" title="安装软件包（apt）"></a>安装软件包（apt）</h2><p>使用前先更新apt：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">apt update</span><br></pre></td></tr></table></figure>
-
-<p>使用命令下载安装nginx、node、npm 、mysql-server、pm2</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">apt install （软件名）</span><br></pre></td></tr></table></figure>
-
-<p>更换npm镜像源（淘宝）</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm config set registry &lt;https://registry.npmmirror.com&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="上传项目文件"><a href="#上传项目文件" class="headerlink" title="上传项目文件"></a>上传项目文件</h2><p>上传项目文件夹到服务器并改名</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">scp -r 本地文件 ubuntu@140.143.143.80:/tmp</span><br></pre></td></tr></table></figure>
-
-<p>服务器web项目文件夹路径：var&#x2F;www&#x2F;huafengWeb</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 移动刚刚上传到tmp里面的huafeng、huafengadmin、huafengserver到目的文件夹</span><br><span class="line">mv huafeng huafengadmin huafengserver /var/www/huafengWeb</span><br><span class="line"></span><br><span class="line">-- 不能覆盖，必须先删除目标文件</span><br><span class="line">cd /var/www/huafengWeb</span><br><span class="line">rm -r huafeng huafengamdin</span><br></pre></td></tr></table></figure>
-
-<h2 id="启动项目"><a href="#启动项目" class="headerlink" title="启动项目"></a>启动项目</h2><h3 id="nginx"><a href="#nginx" class="headerlink" title="nginx"></a>nginx</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 启动nginx</span><br><span class="line">systemctl start nginx</span><br><span class="line">-- 查看nginx状态</span><br><span class="line">systemctl status nginx</span><br><span class="line">-- 修改nginx配置文件</span><br><span class="line">nano /etc/nginx/sites-available/default</span><br><span class="line">（配置文件内容查看下面的其他）</span><br><span class="line">-- 重启nginx</span><br><span class="line">systemctl restart nginx</span><br><span class="line">-- 设置开机自启</span><br><span class="line">systemctl enable nginx</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>此时应该已经能访问到网页资源</p>
-<h3 id="mysql"><a href="#mysql" class="headerlink" title="mysql"></a>mysql</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">步骤参考上面本地部署，命令有所区别</span><br><span class="line">--启动命令</span><br><span class="line">systemctl start mysql</span><br><span class="line">-- 查看状态</span><br><span class="line">systemctl status mysql</span><br><span class="line">-- 登录控制台</span><br><span class="line">mysql -u root -p</span><br><span class="line">设置密码</span><br><span class="line">ALTER USER &#x27;root&#x27;@&#x27;localhost&#x27; IDENTIFIED WITH mysql_native_password BY &#x27;密码&#x27;;</span><br><span class="line">-- 初始化安全配置</span><br><span class="line">mysql_secure_installation</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">-- 设置开机自启</span><br><span class="line">systemctl enable mysql</span><br></pre></td></tr></table></figure>
-
-<h3 id="运行数据结构迁移文件"><a href="#运行数据结构迁移文件" class="headerlink" title="运行数据结构迁移文件"></a>运行数据结构迁移文件</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm run migration:run</span><br></pre></td></tr></table></figure>
-
-<h3 id="pm2"><a href="#pm2" class="headerlink" title="pm2"></a>pm2</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 使用pm2启动后端项目入口文件</span><br><span class="line">pm2 start app.js --name huafnegserver</span><br><span class="line">-- 查看进程列表</span><br><span class="line">pm2 list</span><br><span class="line">-- 删除进程</span><br><span class="line">pm2 delete 进程名</span><br></pre></td></tr></table></figure>
-
-<p>后端项目已启动，测试接口是否正常</p>
-<h2 id="部署完成"><a href="#部署完成" class="headerlink" title="部署完成"></a>部署完成</h2><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="nginx配置"><a href="#nginx配置" class="headerlink" title="nginx配置"></a>nginx配置</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 将 HTTP 重定向到 HTTPS</span></span><br><span class="line"></span><br><span class="line">server &#123;</span><br><span class="line"></span><br><span class="line">    listen 80;</span><br><span class="line"></span><br><span class="line">    server_name huafeng.website www.huafeng.website;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">return</span> 301 https://$server_name<span class="variable">$request_uri</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># HTTPS 服务器配置</span></span><br><span class="line"></span><br><span class="line">server &#123;</span><br><span class="line"></span><br><span class="line">    listen 443 ssl;</span><br><span class="line"></span><br><span class="line">    server_name huafeng.website www.huafeng.website;</span><br><span class="line"></span><br><span class="line">    ssl_certificate /etc/nginx/ssl/huafeng.website_bundle.crt;    <span class="comment"># 修改这里，使用正确的证书文件名</span></span><br><span class="line"></span><br><span class="line">    ssl_certificate_key /etc/nginx/ssl/huafeng.website.key;      <span class="comment"># 这个是对的，不用改</span></span><br><span class="line"></span><br><span class="line">    ssl_session_timeout 5m;</span><br><span class="line"></span><br><span class="line">    ssl_protocols TLSv1.2 TLSv1.3;</span><br><span class="line"></span><br><span class="line">    ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;</span><br><span class="line"></span><br><span class="line">    ssl_prefer_server_ciphers on;</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 前端服务 - 个人主页</span></span><br><span class="line"></span><br><span class="line">    location /huafeng &#123;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">alias</span> /var/www/huafengWeb/huafeng/;</span><br><span class="line"></span><br><span class="line">        try_files <span class="variable">$uri</span> <span class="variable">$uri</span>/ /huafeng/index.html;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 前端服务 - 管理后台</span></span><br><span class="line"></span><br><span class="line">    location /huafengadmin &#123;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">alias</span> /var/www/huafengWeb/huafengadmin/;</span><br><span class="line"></span><br><span class="line">        try_files <span class="variable">$uri</span> <span class="variable">$uri</span>/ /huafengadmin/index.html;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 后端服务</span></span><br><span class="line"></span><br><span class="line">    location /api/ &#123;</span><br><span class="line"></span><br><span class="line">        proxy_pass &lt;http://localhost:3000/api/&gt;;  <span class="comment"># 这个保持 http 因为是本地代理</span></span><br><span class="line"></span><br><span class="line">        proxy_http_version 1.1;</span><br><span class="line"></span><br><span class="line">        proxy_set_header X-Forwarded-Proto <span class="variable">$scheme</span>;  <span class="comment"># 添加这行</span></span><br><span class="line"></span><br><span class="line">        proxy_set_header X-Forwarded-For <span class="variable">$proxy_add_x_forwarded_for</span>;  <span class="comment"># 添加这行</span></span><br><span class="line"></span><br><span class="line">        proxy_set_header Upgrade <span class="variable">$http_upgrade</span>;</span><br><span class="line"></span><br><span class="line">        proxy_set_header Connection <span class="string">&#x27;upgrade&#x27;</span>;</span><br><span class="line"></span><br><span class="line">        proxy_set_header Host <span class="variable">$host</span>;</span><br><span class="line"></span><br><span class="line">        proxy_cache_bypass <span class="variable">$http_upgrade</span>;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 静态资源</span></span><br><span class="line"></span><br><span class="line">    location /huafeng/assets/ &#123;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">alias</span> /var/www/huafengWeb/huafeng/assets/;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    location /huafengadmin/assets/ &#123;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">alias</span> /var/www/huafengWeb/huafengadmin/assets/;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="日志查看"><a href="#日志查看" class="headerlink" title="日志查看"></a>日志查看</h3><h3 id="nginx-1"><a href="#nginx-1" class="headerlink" title="nginx"></a>nginx</h3><p>日志文件路径 &#x2F;var&#x2F;log&#x2F;nginx&#x2F;</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 错误日志</span><br><span class="line">cat /var/log/nginx/error.log</span><br><span class="line">-- 访问日志</span><br><span class="line">cat /var/log/nginx/access.log</span><br><span class="line">-- 实时查看日志</span><br><span class="line">tail -f /var/log/nginx/access.log</span><br></pre></td></tr></table></figure>
-
-<h3 id="pm2-1"><a href="#pm2-1" class="headerlink" title="pm2"></a>pm2</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 查看最后200行日志</span><br><span class="line">pm2 logs --lines 200</span><br><span class="line">-- 查看错误日志</span><br><span class="line">pm2 logs --err</span><br></pre></td></tr></table></figure>
-<h2 id="技术升级-宝塔面板部署"><a href="#技术升级-宝塔面板部署" class="headerlink" title="技术升级-宝塔面板部署"></a>技术升级-宝塔面板部署</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">下载宝塔、修改配置</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>个人网站</category>
-      </categories>
-  </entry>
-  <entry>
     <title>泛微二开标准代码模板</title>
     <url>/2025/08/02/%E6%B3%9B%E5%BE%AE%E4%BA%8C%E5%BC%80%E6%A0%87%E5%87%86%E4%BB%A3%E7%A0%81%E6%A8%A1%E6%9D%BF/</url>
     <content><![CDATA[<h1 id="E9"><a href="#E9" class="headerlink" title="E9"></a>E9</h1><h2 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h2><h3 id="触发时机"><a href="#触发时机" class="headerlink" title="触发时机"></a>触发时机</h3><h4 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a>jQuery</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//页面挂载触发</span></span><br><span class="line"> $(<span class="variable language_">document</span>).<span class="title function_">ready</span>(<span class="keyword">function</span> (<span class="params"></span>) &#123;&#125;)</span><br></pre></td></tr></table></figure>
@@ -1140,155 +1284,6 @@
 ]]></content>
       <categories>
         <category>泛微</category>
-      </categories>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/2025/09/27/%E6%B3%9B%E5%BE%AE%E5%AE%B9%E5%99%A8%E5%8C%96%E9%83%A8%E7%BD%B2/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>网站与博客部署全记录</title>
-    <url>/2025/08/02/%E7%BD%91%E7%AB%99%E4%B8%8E%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%85%A8%E8%AE%B0%E5%BD%95%EF%BC%9A%E5%B0%9D%E8%AF%95%E5%A4%9A%E7%A7%8D%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%B8%8E%E9%83%A8%E7%BD%B2%E6%B5%81%E7%A8%8B%E7%9A%84%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<h1 id="hexo-git"><a href="#hexo-git" class="headerlink" title="hexo+git"></a>hexo+git</h1><p>— 博客，音译，英文名为Blogger，它的正式名称为网络日记；是使用特定的软件，在网络上出版、发表和张贴个人文章的人，或者是一种通常由个人管理、不定期张贴新的文章的网站。博客是继MSN、BBS、ICQ之后出现的第4种网络交流方式，是网络时代的个人“读者文摘”，它代表着新的生活、工作和学习方式。</p>
-<p>— 在本人搭建博客的过程中，发现互联网上的教程大多数的发布时间是几年甚至十几年之前，有些软件的版本和操作方式都已经有所改变。许多新手小白如果按照之前的教程来操作的话会产生各种各样的问题。教程中所使用的专业名词也会使小白们一头雾水，影响操作效率。</p>
-<p>— 于是在2021年4月10日发布了这篇面向纯新手小白的保姆级搭建教程，手把手教你搭建属于自己的个人博客</p>
-<p>— 教程步骤框架来自hojun.cn发布的教程，使用工具包含node.js、github、gitforwin、Git、sublime、Hexo侵删</p>
-<h2 id="node的下载与安装"><a href="#node的下载与安装" class="headerlink" title="node的下载与安装"></a>node的下载与安装</h2><p>① Node.js官网下载并打开安装包</p>
-<p>② 更改安装位置</p>
-<p>③ 是否安装必要的环境，我选的安装</p>
-<p>④ 安装完成</p>
-<p>⑤ Win+R打开运行窗口，输入cmd</p>
-<p>⑥ node -v查看版本</p>
-<h2 id="github注册"><a href="#github注册" class="headerlink" title="github注册"></a>github注册</h2><p>① 打开github官网 GitHub: Where the world builds software · GitHub</p>
-<p>② 右上角注册</p>
-<p>③ 注册流程走完后回首页，右上角加号第一个选项，传建一个新的存储库</p>
-<p>④ 存储库名称为 <a href="http://用户名+.github+.io/">用户名+.github+.io</a>，其他默认，创建</p>
-<h2 id="gitforwin的下载与安装"><a href="#gitforwin的下载与安装" class="headerlink" title="gitforwin的下载与安装"></a>gitforwin的下载与安装</h2><p>① 浏览器输入 Git for Windows，下载gitforwin安装包</p>
-<p>② 安装git</p>
-<p>③ 更改安装位置</p>
-<p>④ 创建开始菜单快捷方式，随意，我选择不创建</p>
-<p>⑤ 点下一步全部默认就可以，到这一步选择第二个</p>
-<p>⑥ 安装完成</p>
-<p>⑦ 桌面没有新的快捷方式不要慌，正常现象，有需要的话可以在开始菜单和软件安装路径里找到并创建快捷方式</p>
-<p>⑧ 验证是否安装完成 Win+R，输入cmd，输入命令git</p>
-<h2 id="githubSHH配置"><a href="#githubSHH配置" class="headerlink" title="githubSHH配置"></a>githubSHH配置</h2><p>① 打开git的安装路径，找到git bash.exe 双击运行</p>
-<p>② 输入命令ssh-keygen -t rsa -C “<a href="mailto:991270685@qq.com">991270685@qq.com</a>“，引号内是github注册邮箱地址，回车</p>
-<p>③ 无特殊提示就回车，有（y&#x2F;n）就输入y回车</p>
-<p>④ 打开github，点击右上角头像选择 设置</p>
-<p>⑤ 选择shh和密钥选项，添加新密钥</p>
-<p>⑥ 标题就用户名+tech吧（tech技术），填到第一栏</p>
-<p>在C盘找到id_rsa.pub这个文件，以记事本形式打开，复制内容填到第二栏</p>
-<p>⑦ 提交，创建完成</p>
-<h2 id="hexo的本地使用"><a href="#hexo的本地使用" class="headerlink" title="hexo的本地使用"></a>hexo的本地使用</h2><p>① 浏览器输入 Hexo 进入hexo官网</p>
-<p>② 在合适的位置新建一个文件夹blog，关于博客的文件基本都在这里面，我选择D盘根目录</p>
-<p>③ 进入bolg文件，点击路径输入cmd，回车进入（也可以win+R，输入cmd，再用cd命令一级一级切到blog文件下）</p>
-<p>④ 回到hexo官网，复制命令 npm install hexo-cli -g 到运行窗口回车</p>
-<p>⑤ 网站下拉会有使用命令行，blog为你的博客名</p>
-<p>⑥ 输入 hexo init +博客名 回车运行</p>
-<p>⑦ 输入命令cd 博客名，进入博客文件，回到网站复制命令行 npm install 并运行</p>
-<p>⑧ 完成后输入命令 hexo s 生成本地预览，最后会生成一个4000端口的网址，复制到浏览器进入，就能看到我们的博客了</p>
-<h2 id="sublime的下载与安装"><a href="#sublime的下载与安装" class="headerlink" title="sublime的下载与安装"></a>sublime的下载与安装</h2><p>① 浏览器输入Download - Sublime Text 进去官网下载，选择自己的系统，我选择windows64位</p>
-<p>② 下载完成运行，更改安装路径</p>
-<p>③ 默认选项就可以，一直下一步。安装完成</p>
-<p>④ 打开sublime</p>
-<p>⑤ 打开sublime，在左边栏source——-posts —— hello-world.md中输入文字，ctrl+s保存</p>
-<p>⑥ 在blog路径中右击运行git bash，输入命令hexo cl清理缓存，hexo g hexo s生成本地预览</p>
-<p>⑦ 浏览器打开本地预览，更改已生效</p>
-<h2 id="将hexo发布至github"><a href="#将hexo发布至github" class="headerlink" title="将hexo发布至github"></a>将hexo发布至github</h2><p>① 打开浏览器，进入github之前新建的存储库，进入库，复制地址</p>
-<p>② 在sublime中打开-config.yml文件更改配置信息</p>
-<p>更改参数 author：名字，我的是maohuifei</p>
-<p>更改参数 ur1： 后面为github存储库的地址中的一部分（<a href="http://xxxx.github.io/">XXXX.github.io</a>）</p>
-<p>更改参数 type：git，</p>
-<p>添加新参数 branch: gh-pages</p>
-<p>添加新参数 repo：后面为github存储库的地址</p>
-<p>保存</p>
-<p>③ 进入hexo一键部署网站部署 | Hexo ，复制hexo-deployer-git的安装命令 npm install hexo-deployer-git –save 进入git bash 运行安装</p>
-<p>④ 命令 hexo cl 清理hexo g生成 hexo d提交</p>
-<p>⑤ 浏览器输入 <a href="http://用户名+github.io/">用户名+github.Io</a> <a href="http://我的是maohuifei.github.io/">我的是maohuifei.github.io</a></p>
-<p>⑥ 博客搭建完成!</p>
-<h2 id="hexo主题的使用"><a href="#hexo主题的使用" class="headerlink" title="hexo主题的使用"></a>hexo主题的使用</h2><p>① 进入hexo主题官网Themes | Hexo 选择主题，以next为例</p>
-<p>② 进入主题详情，有详细安装步骤教程，每个主题进入位置不同</p>
-<h3 id="matery主题"><a href="#matery主题" class="headerlink" title="matery主题"></a><code>matery</code>主题</h3><h3 id="全局css样式修改"><a href="#全局css样式修改" class="headerlink" title="全局css样式修改"></a>全局css样式修改</h3><p>css文件地址路径<code>themes/hexo-thieme-matery/source/css/matery.css</code></p>
-<h3 id="新建文章配置"><a href="#新建文章配置" class="headerlink" title="新建文章配置"></a>新建文章配置</h3><table>
-<thead>
-<tr>
-<th>配置选项</th>
-<th>默认值</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>title</td>
-<td>Markdown 的文件标题</td>
-<td>文章标题，强烈建议填写此选项</td>
-</tr>
-<tr>
-<td>date</td>
-<td>文件创建时的日期时间</td>
-<td>发布时间，强烈建议填写此选项，且最好保证全局唯一</td>
-</tr>
-<tr>
-<td>author</td>
-<td>根 _config.yml 中的 author</td>
-<td>文章作者</td>
-</tr>
-<tr>
-<td>img</td>
-<td>featureImages 中的某个值</td>
-<td>文章特征图，推荐使用图床(腾讯云、七牛云、又拍云等)来做图片的路径.</td>
-</tr>
-<tr>
-<td>top</td>
-<td>true</td>
-<td>推荐文章（文章是否置顶），如果 top 值为 true，则会作为首页推荐文章</td>
-</tr>
-<tr>
-<td>cover</td>
-<td>false</td>
-<td>v1.0.2版本新增，表示该文章是否需要加入到首页轮播封面中</td>
-</tr>
-<tr>
-<td>coverImg</td>
-<td>无</td>
-<td>v1.0.2版本新增，表示该文章在首页轮播封面需要显示的图片路径，如果没有，则默认使用文章的特色图片</td>
-</tr>
-<tr>
-<td>password</td>
-<td>无</td>
-<td>文章阅读密码，如果要对文章设置阅读验证密码的话，就可以设置 password 的值，该值必须是用 SHA256 加密后的密码，防止被他人识破。前提是在主题的 config.yml 中激活了 verifyPassword 选项</td>
-</tr>
-<tr>
-<td>toc</td>
-<td>true</td>
-<td>是否开启 TOC，可以针对某篇文章单独关闭 TOC 的功能。前提是在主题的 config.yml 中激活了 toc 选项</td>
-</tr>
-<tr>
-<td>mathjax</td>
-<td>false</td>
-<td>是否开启数学公式支持 ，本文章是否开启 mathjax，且需要在主题的 _config.yml 文件中也需要开启才行</td>
-</tr>
-<tr>
-<td>summary</td>
-<td>无</td>
-<td>文章摘要，自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要</td>
-</tr>
-<tr>
-<td>categories</td>
-<td>无</td>
-<td>文章分类，本主题的分类表示宏观上大的分类，只建议一篇文章一个分类</td>
-</tr>
-<tr>
-<td>tags</td>
-<td>无</td>
-<td>文章标签，一篇文章可以多个标签</td>
-</tr>
-</tbody></table>
-<p>默认配置文件路径：</p>
-<p><code>根目录/scaffolds/post</code></p>
-<h2 id="Hugo"><a href="#Hugo" class="headerlink" title="Hugo"></a>Hugo</h2>]]></content>
-      <categories>
-        <category>个人网站</category>
       </categories>
   </entry>
 </search>
