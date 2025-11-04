@@ -86,7 +86,7 @@
   </entry>
   <entry>
     <title>网站与博客部署全记录</title>
-    <url>/2025/08/02/%E7%BD%91%E7%AB%99%E4%B8%8E%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%85%A8%E8%AE%B0%E5%BD%95%EF%BC%9A%E5%B0%9D%E8%AF%95%E5%A4%9A%E7%A7%8D%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%B8%8E%E9%83%A8%E7%BD%B2%E6%B5%81%E7%A8%8B%E7%9A%84%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/</url>
+    <url>/2025/08/02/%E7%BD%91%E7%AB%99%E4%B8%8E%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%85%A8%E8%AE%B0%E5%BD%95/</url>
     <content><![CDATA[<h1 id="hexo-git"><a href="#hexo-git" class="headerlink" title="hexo+git"></a>hexo+git</h1><p>— 博客，音译，英文名为Blogger，它的正式名称为网络日记；是使用特定的软件，在网络上出版、发表和张贴个人文章的人，或者是一种通常由个人管理、不定期张贴新的文章的网站。博客是继MSN、BBS、ICQ之后出现的第4种网络交流方式，是网络时代的个人“读者文摘”，它代表着新的生活、工作和学习方式。</p>
 <p>— 在本人搭建博客的过程中，发现互联网上的教程大多数的发布时间是几年甚至十几年之前，有些软件的版本和操作方式都已经有所改变。许多新手小白如果按照之前的教程来操作的话会产生各种各样的问题。教程中所使用的专业名词也会使小白们一头雾水，影响操作效率。</p>
 <p>— 于是在2021年4月10日发布了这篇面向纯新手小白的保姆级搭建教程，手把手教你搭建属于自己的个人博客</p>
@@ -225,8 +225,19 @@
 <p><code>根目录/scaffolds/post</code></p>
 <h2 id="Hugo"><a href="#Hugo" class="headerlink" title="Hugo"></a>Hugo</h2>]]></content>
       <categories>
-        <category>个人网站</category>
+        <category>过程记录</category>
       </categories>
+  </entry>
+  <entry>
+    <title>工具使用笔记</title>
+    <url>/2025/11/04/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h1 id="Obsdian"><a href="#Obsdian" class="headerlink" title="Obsdian"></a>Obsdian</h1><h1 id="IDEA"><a href="#IDEA" class="headerlink" title="IDEA"></a>IDEA</h1><h1 id="VScode"><a href="#VScode" class="headerlink" title="VScode"></a>VScode</h1>]]></content>
+      <categories>
+        <category>使用笔记</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+      </tags>
   </entry>
   <entry>
     <title>huafengWeb项目部署过程记录</title>
@@ -318,7 +329,70 @@
 <h2 id="技术升级-宝塔面板部署"><a href="#技术升级-宝塔面板部署" class="headerlink" title="技术升级-宝塔面板部署"></a>技术升级-宝塔面板部署</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">下载宝塔、修改配置</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>个人网站</category>
+        <category>过程记录</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Git使用笔记</title>
+    <url>/2025/08/02/Git%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h2 id="Git的下载与安装"><a href="#Git的下载与安装" class="headerlink" title="Git的下载与安装"></a>Git的下载与安装</h2><p>官网：<a href="https://git-scm.com/">https://git-scm.com/</a></p>
+<p>根据需要安装即可，如遇英文界面，可使用截屏翻译辅助理解。</p>
+<p>安装完成后，会有以下三个环境：</p>
+<ul>
+<li><strong>Git bash</strong>：Unix与Linux风格的命令行，推荐使用。</li>
+<li><strong>Git CMD</strong>：Windows风格命令行。</li>
+<li><strong>Git GUI</strong>：图形界面的Git，不推荐新手使用，建议先熟悉命令行操作。</li>
+</ul>
+<h2 id="常用的Linux命令"><a href="#常用的Linux命令" class="headerlink" title="常用的Linux命令"></a>常用的Linux命令</h2><p><img src="http://1.94.0.101/wp-content/uploads/2024/03/%E5%9F%BA%E6%9C%ACLinux%E5%91%BD%E4%BB%A4-528x295.jpg" alt="基本Linux命令"></p>
+<h2 id="Git工作区域（运行原理）"><a href="#Git工作区域（运行原理）" class="headerlink" title="Git工作区域（运行原理）"></a>Git工作区域（运行原理）</h2><p>工作区——暂存区——本地库——远程库</p>
+<p><img src="http://1.94.0.101/wp-content/uploads/2024/03/Git%E5%B7%A5%E4%BD%9C%E5%8C%BA%E5%9F%9F.jpg" alt="Git工作区域"></p>
+<h2 id="Git文件的四种状态"><a href="#Git文件的四种状态" class="headerlink" title="Git文件的四种状态"></a>Git文件的四种状态</h2><p>版本控制的核心是对文件的版本进行管理。在进行文件的修改和提交等操作前，首先需要了解文件当前的状态。</p>
+<ul>
+<li><strong>Untracked</strong>：未跟踪状态，文件存在于文件夹中，但尚未提交到Git库，不参与版本控制。通过<code>git add</code>命令可将其转变为staged状态。</li>
+<li><strong>Unmodify</strong>：已入库且未修改状态，即库中的文件与文件夹中的内容完全一致。若被修改，则变为Modified状态。使用<code>git rm</code>移除版本库，变为Untracked状态。</li>
+<li><strong>Modified</strong>：已修改状态，文件已被修改，但尚未进行其他操作。有两种处理方式：通过<code>git add</code>进入暂存区staged状态；通过<code>git checkout</code>丢弃修改，变回Unmodify状态。</li>
+<li><strong>staged</strong>：暂存状态，使用<code>git commit</code>将修改同步到库中，此时库文件和本地文件一致，文件变为Unmodify状态。使用<code>git reset HEAD filename</code>可取消暂存，文件变为Modified状态。</li>
+</ul>
+<h2 id="Git的使用"><a href="#Git的使用" class="headerlink" title="Git的使用"></a>Git的使用</h2><h3 id="创建及提交"><a href="#创建及提交" class="headerlink" title="创建及提交"></a>创建及提交</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ git init                 <span class="comment"># 初始化，会新建一个名为.git的隐藏文件</span></span><br><span class="line">git remote add origin [url] <span class="comment"># 指定提交的远程存储库的链接</span></span><br><span class="line">git <span class="built_in">clone</span> [url]            <span class="comment"># 克隆远端仓库到本地</span></span><br><span class="line">git status                 <span class="comment"># 查看所有文件状态</span></span><br><span class="line">git add .                  <span class="comment"># 添加所有文件到暂存区</span></span><br><span class="line">git commit -m <span class="string">&quot;消息内容&quot;</span>   <span class="comment"># 提交暂存区内容到本地仓库，-m后接提交信息/备注信息</span></span><br><span class="line">git push                   <span class="comment"># 提交到远程仓库</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git pull origin master     # 下载代码及快速合并</span><br><span class="line">git push origin master     # 上传代码及快速合并</span><br><span class="line">git fetch origin           # 从远程库获取代码</span><br><span class="line">git branch                 # 显示所有分支</span><br><span class="line">git checkout master        # 切换到master分支</span><br><span class="line">git checkout -b dev        # 创建并切换到dev分支</span><br><span class="line">git status                 # 查看状态</span><br><span class="line">git log                    # 查看提交历史</span><br><span class="line">git init                   # 初始化本地代码仓</span><br><span class="line">git add .                  # 添加本地代码</span><br><span class="line">git commit -m &quot;add local source&quot; # 提交本地代码</span><br><span class="line">git pull origin master     # 下载远程代码</span><br><span class="line">git merge master           # 合并master分支</span><br><span class="line">git push -u origin master  # 上传代码</span><br></pre></td></tr></table></figure>
+
+<h3 id="忽略文件（指定某些文件不提交）"><a href="#忽略文件（指定某些文件不提交）" class="headerlink" title="忽略文件（指定某些文件不提交）"></a>忽略文件（指定某些文件不提交）</h3><p>有时我们不想将某些文件纳入版本控制中，如数据库文件、临时文件、设计文件等。<br>在主目录下新建<code>.gitignore</code>文件，此文件遵循以下规则：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 为注释</span><br><span class="line">*.txt                      # 忽略所有后缀为.txt的文件</span><br><span class="line">!lib.txt                   # 除了lib.txt以外的文件</span><br><span class="line">/tempbulid/                # 忽略bulid项目下的所有文件</span><br><span class="line">doc/*.txt                  # 忽略doc根目录下的.txt文件，不包括doc/ect/001.txt</span><br></pre></td></tr></table></figure>
+
+<h2 id="报错及解决方法"><a href="#报错及解决方法" class="headerlink" title="报错及解决方法"></a>报错及解决方法</h2><h3 id="本地远程冲突"><a href="#本地远程冲突" class="headerlink" title="本地远程冲突"></a>本地远程冲突</h3><ul>
+<li><strong>报错</strong>：&#96;&#96;&#96;</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">! [rejected] main -&gt; main (non-fast-forward) error: failed to push some refs to &#x27;&lt;https://gitee.com/maohuifei/WebSiteTest.git&#x27;&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>原因</strong>：他人上传至远程仓库后，未及时同步（拉取）至本地，同时你又添加了一些内容（提交），导致提交时检测到本地仓库状态与远程仓库不一致，出于安全考虑拒绝提交。</li>
+<li><strong>解决方法</strong>：</li>
+<li>先拉取：<code>git pull --rebase origin master</code>，</li>
+<li>再上传：<code>git push -u origin master</code>。</li>
+</ul>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="Gitee-Github的免密码登录"><a href="#Gitee-Github的免密码登录" class="headerlink" title="Gitee&#x2F;Github的免密码登录"></a>Gitee&#x2F;Github的免密码登录</h3><ul>
+<li>Gitee：<a href="https://gitee.com/">https://gitee.com/</a></li>
+<li>Github：<a href="https://github.com/">https://github.com/</a></li>
+</ul>
+<p>进入<code>C:\Users\用户名\.ssh</code>目录，使用Git Bash输入命令<code>ssh-keygen -t rsa</code>生成公钥。</p>
+<p>生成两个文件：<code>id_rsa.pub</code>（公钥）和<code>id_rsa</code>（私钥）。</p>
+<p>登录Gitee&#x2F;Github，进入“设置”——“SSH公钥”——填写<code>id_rsa.pub</code>文件内容——保存。</p>
+<h3 id="Git使用代理网络问题"><a href="#Git使用代理网络问题" class="headerlink" title="Git使用代理网络问题"></a>Git使用代理网络问题</h3><p>配置Git代理：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git config --global https.proxy http://127.0.0.1:1080</span></span><br><span class="line">git config --global https.proxy https://127.0.0.1:1080</span><br><span class="line">git config --global http.proxy &#x27;socks5://127.0.0.1:1080&#x27;</span><br><span class="line">git config --global https.proxy &#x27;socks5://127.0.0.1:1080&#x27; # ip和端口根据代理软件不同可能有所不同</span><br></pre></td></tr></table></figure>
+
+<h3 id="Git配置文件路径"><a href="#Git配置文件路径" class="headerlink" title="Git配置文件路径"></a>Git配置文件路径</h3><h4 id="Git配置文件"><a href="#Git配置文件" class="headerlink" title="Git配置文件"></a>Git配置文件</h4><p>GIt安装目录下的<code>etc</code>文件夹里的<code>gitconfig</code>文件。路径示例：<code>F:\Git\etc\gitconfig</code>。</p>
+<p>内容示例：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[diff &quot;astextplain&quot;]</span><br><span class="line">    textconv = astextplain</span><br><span class="line">[filter &quot;lfs&quot;]</span><br><span class="line">    clean = git-lfs clean -- %f</span><br><span class="line">    smudge = git-lfs smudge -- %f</span><br><span class="line">    process = git-lfs filter-process</span><br><span class="line">    required = true</span><br><span class="line">[http]</span><br><span class="line">    sslBackend = openssl</span><br><span class="line">    sslCAInfo = F:/Git/mingw64/ssl/certs/ca-bundle.crt</span><br><span class="line">[core]</span><br><span class="line">    autocrlf = true</span><br><span class="line">    fscache = true</span><br><span class="line">    symlinks = true</span><br><span class="line">[pull]</span><br><span class="line">    rebase = false</span><br><span class="line">[credential]</span><br><span class="line">    helper = manager-core</span><br><span class="line">[credential &quot;&lt;https://dev.azure.com&gt;&quot;]</span><br><span class="line">    useHttpPath = true</span><br><span class="line">[init]</span><br><span class="line">    defaultBranch = master</span><br></pre></td></tr></table></figure>
+
+<h4 id="全局配置文件"><a href="#全局配置文件" class="headerlink" title="全局配置文件"></a>全局配置文件</h4><p>C盘用户目录下的<code>.gitconfig</code>文件。路径示例：<code>C:\Users\用户名\.gitconfig</code>。</p>
+<p>内容示例：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[user]</span><br><span class="line">    email = 991270685@qq.com</span><br><span class="line">    name = maohuifei</span><br><span class="line">[init]</span><br><span class="line">    defaultBranch = main</span><br><span class="line">[https]</span><br><span class="line">    proxy = http://192.168.43.1:10809</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="新建的-git配置文件"><a href="#新建的-git配置文件" class="headerlink" title="新建的.git配置文件"></a>新建的.git配置文件</h4><p>执行<code>git init</code>后，</p>
+]]></content>
+      <categories>
+        <category>使用笔记</category>
       </categories>
   </entry>
   <entry>
@@ -440,99 +514,7 @@
 </tbody></table>
 ]]></content>
       <categories>
-        <category>JavaScript</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Git使用笔记</title>
-    <url>/2025/08/02/Git%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h2 id="Git的下载与安装"><a href="#Git的下载与安装" class="headerlink" title="Git的下载与安装"></a>Git的下载与安装</h2><p>官网：<a href="https://git-scm.com/">https://git-scm.com/</a></p>
-<p>根据需要安装即可，如遇英文界面，可使用截屏翻译辅助理解。</p>
-<p>安装完成后，会有以下三个环境：</p>
-<ul>
-<li><strong>Git bash</strong>：Unix与Linux风格的命令行，推荐使用。</li>
-<li><strong>Git CMD</strong>：Windows风格命令行。</li>
-<li><strong>Git GUI</strong>：图形界面的Git，不推荐新手使用，建议先熟悉命令行操作。</li>
-</ul>
-<h2 id="常用的Linux命令"><a href="#常用的Linux命令" class="headerlink" title="常用的Linux命令"></a>常用的Linux命令</h2><p><img src="http://1.94.0.101/wp-content/uploads/2024/03/%E5%9F%BA%E6%9C%ACLinux%E5%91%BD%E4%BB%A4-528x295.jpg" alt="基本Linux命令"></p>
-<h2 id="Git工作区域（运行原理）"><a href="#Git工作区域（运行原理）" class="headerlink" title="Git工作区域（运行原理）"></a>Git工作区域（运行原理）</h2><p>工作区——暂存区——本地库——远程库</p>
-<p><img src="http://1.94.0.101/wp-content/uploads/2024/03/Git%E5%B7%A5%E4%BD%9C%E5%8C%BA%E5%9F%9F.jpg" alt="Git工作区域"></p>
-<h2 id="Git文件的四种状态"><a href="#Git文件的四种状态" class="headerlink" title="Git文件的四种状态"></a>Git文件的四种状态</h2><p>版本控制的核心是对文件的版本进行管理。在进行文件的修改和提交等操作前，首先需要了解文件当前的状态。</p>
-<ul>
-<li><strong>Untracked</strong>：未跟踪状态，文件存在于文件夹中，但尚未提交到Git库，不参与版本控制。通过<code>git add</code>命令可将其转变为staged状态。</li>
-<li><strong>Unmodify</strong>：已入库且未修改状态，即库中的文件与文件夹中的内容完全一致。若被修改，则变为Modified状态。使用<code>git rm</code>移除版本库，变为Untracked状态。</li>
-<li><strong>Modified</strong>：已修改状态，文件已被修改，但尚未进行其他操作。有两种处理方式：通过<code>git add</code>进入暂存区staged状态；通过<code>git checkout</code>丢弃修改，变回Unmodify状态。</li>
-<li><strong>staged</strong>：暂存状态，使用<code>git commit</code>将修改同步到库中，此时库文件和本地文件一致，文件变为Unmodify状态。使用<code>git reset HEAD filename</code>可取消暂存，文件变为Modified状态。</li>
-</ul>
-<h2 id="Git的使用"><a href="#Git的使用" class="headerlink" title="Git的使用"></a>Git的使用</h2><h3 id="创建及提交"><a href="#创建及提交" class="headerlink" title="创建及提交"></a>创建及提交</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ git init                 <span class="comment"># 初始化，会新建一个名为.git的隐藏文件</span></span><br><span class="line">git remote add origin [url] <span class="comment"># 指定提交的远程存储库的链接</span></span><br><span class="line">git <span class="built_in">clone</span> [url]            <span class="comment"># 克隆远端仓库到本地</span></span><br><span class="line">git status                 <span class="comment"># 查看所有文件状态</span></span><br><span class="line">git add .                  <span class="comment"># 添加所有文件到暂存区</span></span><br><span class="line">git commit -m <span class="string">&quot;消息内容&quot;</span>   <span class="comment"># 提交暂存区内容到本地仓库，-m后接提交信息/备注信息</span></span><br><span class="line">git push                   <span class="comment"># 提交到远程仓库</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git pull origin master     # 下载代码及快速合并</span><br><span class="line">git push origin master     # 上传代码及快速合并</span><br><span class="line">git fetch origin           # 从远程库获取代码</span><br><span class="line">git branch                 # 显示所有分支</span><br><span class="line">git checkout master        # 切换到master分支</span><br><span class="line">git checkout -b dev        # 创建并切换到dev分支</span><br><span class="line">git status                 # 查看状态</span><br><span class="line">git log                    # 查看提交历史</span><br><span class="line">git init                   # 初始化本地代码仓</span><br><span class="line">git add .                  # 添加本地代码</span><br><span class="line">git commit -m &quot;add local source&quot; # 提交本地代码</span><br><span class="line">git pull origin master     # 下载远程代码</span><br><span class="line">git merge master           # 合并master分支</span><br><span class="line">git push -u origin master  # 上传代码</span><br></pre></td></tr></table></figure>
-
-<h3 id="忽略文件（指定某些文件不提交）"><a href="#忽略文件（指定某些文件不提交）" class="headerlink" title="忽略文件（指定某些文件不提交）"></a>忽略文件（指定某些文件不提交）</h3><p>有时我们不想将某些文件纳入版本控制中，如数据库文件、临时文件、设计文件等。<br>在主目录下新建<code>.gitignore</code>文件，此文件遵循以下规则：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 为注释</span><br><span class="line">*.txt                      # 忽略所有后缀为.txt的文件</span><br><span class="line">!lib.txt                   # 除了lib.txt以外的文件</span><br><span class="line">/tempbulid/                # 忽略bulid项目下的所有文件</span><br><span class="line">doc/*.txt                  # 忽略doc根目录下的.txt文件，不包括doc/ect/001.txt</span><br></pre></td></tr></table></figure>
-
-<h2 id="报错及解决方法"><a href="#报错及解决方法" class="headerlink" title="报错及解决方法"></a>报错及解决方法</h2><h3 id="本地远程冲突"><a href="#本地远程冲突" class="headerlink" title="本地远程冲突"></a>本地远程冲突</h3><ul>
-<li><strong>报错</strong>：&#96;&#96;&#96;</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">! [rejected] main -&gt; main (non-fast-forward) error: failed to push some refs to &#x27;&lt;https://gitee.com/maohuifei/WebSiteTest.git&#x27;&gt;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><strong>原因</strong>：他人上传至远程仓库后，未及时同步（拉取）至本地，同时你又添加了一些内容（提交），导致提交时检测到本地仓库状态与远程仓库不一致，出于安全考虑拒绝提交。</li>
-<li><strong>解决方法</strong>：</li>
-<li>先拉取：<code>git pull --rebase origin master</code>，</li>
-<li>再上传：<code>git push -u origin master</code>。</li>
-</ul>
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="Gitee-Github的免密码登录"><a href="#Gitee-Github的免密码登录" class="headerlink" title="Gitee&#x2F;Github的免密码登录"></a>Gitee&#x2F;Github的免密码登录</h3><ul>
-<li>Gitee：<a href="https://gitee.com/">https://gitee.com/</a></li>
-<li>Github：<a href="https://github.com/">https://github.com/</a></li>
-</ul>
-<p>进入<code>C:\Users\用户名\.ssh</code>目录，使用Git Bash输入命令<code>ssh-keygen -t rsa</code>生成公钥。</p>
-<p>生成两个文件：<code>id_rsa.pub</code>（公钥）和<code>id_rsa</code>（私钥）。</p>
-<p>登录Gitee&#x2F;Github，进入“设置”——“SSH公钥”——填写<code>id_rsa.pub</code>文件内容——保存。</p>
-<h3 id="Git使用代理网络问题"><a href="#Git使用代理网络问题" class="headerlink" title="Git使用代理网络问题"></a>Git使用代理网络问题</h3><p>配置Git代理：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git config --global https.proxy http://127.0.0.1:1080</span></span><br><span class="line">git config --global https.proxy https://127.0.0.1:1080</span><br><span class="line">git config --global http.proxy &#x27;socks5://127.0.0.1:1080&#x27;</span><br><span class="line">git config --global https.proxy &#x27;socks5://127.0.0.1:1080&#x27; # ip和端口根据代理软件不同可能有所不同</span><br></pre></td></tr></table></figure>
-
-<h3 id="Git配置文件路径"><a href="#Git配置文件路径" class="headerlink" title="Git配置文件路径"></a>Git配置文件路径</h3><h4 id="Git配置文件"><a href="#Git配置文件" class="headerlink" title="Git配置文件"></a>Git配置文件</h4><p>GIt安装目录下的<code>etc</code>文件夹里的<code>gitconfig</code>文件。路径示例：<code>F:\Git\etc\gitconfig</code>。</p>
-<p>内容示例：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[diff &quot;astextplain&quot;]</span><br><span class="line">    textconv = astextplain</span><br><span class="line">[filter &quot;lfs&quot;]</span><br><span class="line">    clean = git-lfs clean -- %f</span><br><span class="line">    smudge = git-lfs smudge -- %f</span><br><span class="line">    process = git-lfs filter-process</span><br><span class="line">    required = true</span><br><span class="line">[http]</span><br><span class="line">    sslBackend = openssl</span><br><span class="line">    sslCAInfo = F:/Git/mingw64/ssl/certs/ca-bundle.crt</span><br><span class="line">[core]</span><br><span class="line">    autocrlf = true</span><br><span class="line">    fscache = true</span><br><span class="line">    symlinks = true</span><br><span class="line">[pull]</span><br><span class="line">    rebase = false</span><br><span class="line">[credential]</span><br><span class="line">    helper = manager-core</span><br><span class="line">[credential &quot;&lt;https://dev.azure.com&gt;&quot;]</span><br><span class="line">    useHttpPath = true</span><br><span class="line">[init]</span><br><span class="line">    defaultBranch = master</span><br></pre></td></tr></table></figure>
-
-<h4 id="全局配置文件"><a href="#全局配置文件" class="headerlink" title="全局配置文件"></a>全局配置文件</h4><p>C盘用户目录下的<code>.gitconfig</code>文件。路径示例：<code>C:\Users\用户名\.gitconfig</code>。</p>
-<p>内容示例：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[user]</span><br><span class="line">    email = 991270685@qq.com</span><br><span class="line">    name = maohuifei</span><br><span class="line">[init]</span><br><span class="line">    defaultBranch = main</span><br><span class="line">[https]</span><br><span class="line">    proxy = http://192.168.43.1:10809</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h4 id="新建的-git配置文件"><a href="#新建的-git配置文件" class="headerlink" title="新建的.git配置文件"></a>新建的.git配置文件</h4><p>执行<code>git init</code>后，</p>
-]]></content>
-      <categories>
-        <category>Git</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>MacOS使用笔记</title>
-    <url>/2025/08/02/MacOS%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h2 id="Homebrew"><a href="#Homebrew" class="headerlink" title="Homebrew"></a>Homebrew</h2><p>安装(镜像、国内第三方脚本)</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/bin/zsh -c &quot;$(curl -fsSL &lt;https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh&gt;)&quot;</span><br></pre></td></tr></table></figure>
-
-<p>卸载</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/bin/zsh -c &quot;$(curl -fsSL &lt;https://gitee.com/cunkai/HomebrewCN/raw/master/HomebrewUninstall.sh&gt;)&quot;</span><br></pre></td></tr></table></figure>
-
-<p>默认命令行安装的软件包路径：usr&#x2F;local Homebrew安装的路径：opt&#x2F;homebrew</p>
-<h2 id="偏好设置"><a href="#偏好设置" class="headerlink" title="偏好设置"></a>偏好设置</h2><h2 id="终端"><a href="#终端" class="headerlink" title="终端"></a>终端</h2><h3 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h3><p><code>查找目录下所有名字包含666的所有文件及目录 查找：sudo find /usr/local -type d -name &quot;*666*&quot; 删除：sudo find /usr/local -type d -name &quot;*666*&quot; -exec rm -rf &#123;&#125; +</code></p>
-<h3 id="权限操作"><a href="#权限操作" class="headerlink" title="权限操作"></a>权限操作</h3><p><code>sudo -s</code></p>
-<h3 id="端口操作"><a href="#端口操作" class="headerlink" title="端口操作"></a>端口操作</h3><p>查看端口被哪个程序占用</p>
-<p><code>sudo lsof -i tcp:port</code></p>
-<p>示例：</p>
-<p><code>sudo lsof -i tcp:8080 查看8080端口是否被占用</code></p>
-<ol start="2">
-<li>看到进程的PID，可以将进程杀死。</li>
-</ol>
-<p><code>sudo kill -9 PID</code></p>
-<p>示例：</p>
-<p><code>sudo kill -9 3210</code></p>
-<h2 id="用户权限"><a href="#用户权限" class="headerlink" title="用户权限"></a>用户权限</h2><h3 id="VScode编辑文件提示权限不足"><a href="#VScode编辑文件提示权限不足" class="headerlink" title="VScode编辑文件提示权限不足"></a>VScode编辑文件提示权限不足</h3><p>原因：目前看来是创建项目时使用root权限</p>
-<p>解决方案：右击项目文件夹，选择“查看简介”，在简介界面下方“共享与权限”中添加当前用户”读与写“权限，并且点击“···”应用到包含的所有项目</p>
-]]></content>
-      <categories>
-        <category>MacOS</category>
+        <category>学习笔记</category>
       </categories>
   </entry>
   <entry>
@@ -720,7 +702,36 @@
 <h3 id="解压并运行"><a href="#解压并运行" class="headerlink" title="解压并运行"></a>解压并运行</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tar -xvzf dbeaver-ce-25.1.0-linux.gtk.aarch64-nojdk.tar.gz</span><br><span class="line">cd dbeaver</span><br><span class="line">./dbeaver</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>arm架构macos部署sqlserver</category>
+        <category>过程记录</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>操作系统使用笔记</title>
+    <url>/2025/08/02/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h1 id="MacOS"><a href="#MacOS" class="headerlink" title="MacOS"></a>MacOS</h1><h2 id="Homebrew"><a href="#Homebrew" class="headerlink" title="Homebrew"></a>Homebrew</h2><p>安装(镜像、国内第三方脚本)</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/bin/zsh -c &quot;$(curl -fsSL &lt;https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh&gt;)&quot;</span><br></pre></td></tr></table></figure>
+
+<p>卸载</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/bin/zsh -c &quot;$(curl -fsSL &lt;https://gitee.com/cunkai/HomebrewCN/raw/master/HomebrewUninstall.sh&gt;)&quot;</span><br></pre></td></tr></table></figure>
+
+<p>默认命令行安装的软件包路径：usr&#x2F;local Homebrew安装的路径：opt&#x2F;homebrew</p>
+<h2 id="偏好设置"><a href="#偏好设置" class="headerlink" title="偏好设置"></a>偏好设置</h2><h2 id="终端"><a href="#终端" class="headerlink" title="终端"></a>终端</h2><h3 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h3><p><code>查找目录下所有名字包含666的所有文件及目录 查找：sudo find /usr/local -type d -name &quot;*666*&quot; 删除：sudo find /usr/local -type d -name &quot;*666*&quot; -exec rm -rf &#123;&#125; +</code></p>
+<h3 id="权限操作"><a href="#权限操作" class="headerlink" title="权限操作"></a>权限操作</h3><p><code>sudo -s</code></p>
+<h3 id="端口操作"><a href="#端口操作" class="headerlink" title="端口操作"></a>端口操作</h3><p>查看端口被哪个程序占用</p>
+<p><code>sudo lsof -i tcp:port</code></p>
+<p>示例：</p>
+<p><code>sudo lsof -i tcp:8080 查看8080端口是否被占用</code></p>
+<ol start="2">
+<li>看到进程的PID，可以将进程杀死。</li>
+</ol>
+<p><code>sudo kill -9 PID</code></p>
+<p>示例：</p>
+<p><code>sudo kill -9 3210</code></p>
+<h2 id="用户权限"><a href="#用户权限" class="headerlink" title="用户权限"></a>用户权限</h2><h3 id="VScode编辑文件提示权限不足"><a href="#VScode编辑文件提示权限不足" class="headerlink" title="VScode编辑文件提示权限不足"></a>VScode编辑文件提示权限不足</h3><p>原因：目前看来是创建项目时使用root权限</p>
+<p>解决方案：右击项目文件夹，选择“查看简介”，在简介界面下方“共享与权限”中添加当前用户”读与写“权限，并且点击“···”应用到包含的所有项目</p>
+<h1 id="Windowns"><a href="#Windowns" class="headerlink" title="Windowns"></a>Windowns</h1><h1 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h1>]]></content>
+      <categories>
+        <category>使用笔记</category>
       </categories>
   </entry>
 </search>
