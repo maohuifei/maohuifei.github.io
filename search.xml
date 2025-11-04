@@ -89,147 +89,164 @@
       </categories>
   </entry>
   <entry>
-    <title>网站与博客部署全记录</title>
-    <url>/2025/08/02/%E7%BD%91%E7%AB%99%E4%B8%8E%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%85%A8%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<h1 id="hexo-git"><a href="#hexo-git" class="headerlink" title="hexo+git"></a>hexo+git</h1><p>— 博客，音译，英文名为Blogger，它的正式名称为网络日记；是使用特定的软件，在网络上出版、发表和张贴个人文章的人，或者是一种通常由个人管理、不定期张贴新的文章的网站。博客是继MSN、BBS、ICQ之后出现的第4种网络交流方式，是网络时代的个人“读者文摘”，它代表着新的生活、工作和学习方式。</p>
-<p>— 在本人搭建博客的过程中，发现互联网上的教程大多数的发布时间是几年甚至十几年之前，有些软件的版本和操作方式都已经有所改变。许多新手小白如果按照之前的教程来操作的话会产生各种各样的问题。教程中所使用的专业名词也会使小白们一头雾水，影响操作效率。</p>
-<p>— 于是在2021年4月10日发布了这篇面向纯新手小白的保姆级搭建教程，手把手教你搭建属于自己的个人博客</p>
-<p>— 教程步骤框架来自hojun.cn发布的教程，使用工具包含node.js、github、gitforwin、Git、sublime、Hexo侵删</p>
-<h2 id="node的下载与安装"><a href="#node的下载与安装" class="headerlink" title="node的下载与安装"></a>node的下载与安装</h2><p>① Node.js官网下载并打开安装包</p>
-<p>② 更改安装位置</p>
-<p>③ 是否安装必要的环境，我选的安装</p>
-<p>④ 安装完成</p>
-<p>⑤ Win+R打开运行窗口，输入cmd</p>
-<p>⑥ node -v查看版本</p>
-<h2 id="github注册"><a href="#github注册" class="headerlink" title="github注册"></a>github注册</h2><p>① 打开github官网 GitHub: Where the world builds software · GitHub</p>
-<p>② 右上角注册</p>
-<p>③ 注册流程走完后回首页，右上角加号第一个选项，传建一个新的存储库</p>
-<p>④ 存储库名称为 <a href="http://用户名+.github+.io/">用户名+.github+.io</a>，其他默认，创建</p>
-<h2 id="gitforwin的下载与安装"><a href="#gitforwin的下载与安装" class="headerlink" title="gitforwin的下载与安装"></a>gitforwin的下载与安装</h2><p>① 浏览器输入 Git for Windows，下载gitforwin安装包</p>
-<p>② 安装git</p>
-<p>③ 更改安装位置</p>
-<p>④ 创建开始菜单快捷方式，随意，我选择不创建</p>
-<p>⑤ 点下一步全部默认就可以，到这一步选择第二个</p>
-<p>⑥ 安装完成</p>
-<p>⑦ 桌面没有新的快捷方式不要慌，正常现象，有需要的话可以在开始菜单和软件安装路径里找到并创建快捷方式</p>
-<p>⑧ 验证是否安装完成 Win+R，输入cmd，输入命令git</p>
-<h2 id="githubSHH配置"><a href="#githubSHH配置" class="headerlink" title="githubSHH配置"></a>githubSHH配置</h2><p>① 打开git的安装路径，找到git bash.exe 双击运行</p>
-<p>② 输入命令ssh-keygen -t rsa -C “<a href="mailto:991270685@qq.com">991270685@qq.com</a>“，引号内是github注册邮箱地址，回车</p>
-<p>③ 无特殊提示就回车，有（y&#x2F;n）就输入y回车</p>
-<p>④ 打开github，点击右上角头像选择 设置</p>
-<p>⑤ 选择shh和密钥选项，添加新密钥</p>
-<p>⑥ 标题就用户名+tech吧（tech技术），填到第一栏</p>
-<p>在C盘找到id_rsa.pub这个文件，以记事本形式打开，复制内容填到第二栏</p>
-<p>⑦ 提交，创建完成</p>
-<h2 id="hexo的本地使用"><a href="#hexo的本地使用" class="headerlink" title="hexo的本地使用"></a>hexo的本地使用</h2><p>① 浏览器输入 Hexo 进入hexo官网</p>
-<p>② 在合适的位置新建一个文件夹blog，关于博客的文件基本都在这里面，我选择D盘根目录</p>
-<p>③ 进入bolg文件，点击路径输入cmd，回车进入（也可以win+R，输入cmd，再用cd命令一级一级切到blog文件下）</p>
-<p>④ 回到hexo官网，复制命令 npm install hexo-cli -g 到运行窗口回车</p>
-<p>⑤ 网站下拉会有使用命令行，blog为你的博客名</p>
-<p>⑥ 输入 hexo init +博客名 回车运行</p>
-<p>⑦ 输入命令cd 博客名，进入博客文件，回到网站复制命令行 npm install 并运行</p>
-<p>⑧ 完成后输入命令 hexo s 生成本地预览，最后会生成一个4000端口的网址，复制到浏览器进入，就能看到我们的博客了</p>
-<h2 id="sublime的下载与安装"><a href="#sublime的下载与安装" class="headerlink" title="sublime的下载与安装"></a>sublime的下载与安装</h2><p>① 浏览器输入Download - Sublime Text 进去官网下载，选择自己的系统，我选择windows64位</p>
-<p>② 下载完成运行，更改安装路径</p>
-<p>③ 默认选项就可以，一直下一步。安装完成</p>
-<p>④ 打开sublime</p>
-<p>⑤ 打开sublime，在左边栏source——-posts —— hello-world.md中输入文字，ctrl+s保存</p>
-<p>⑥ 在blog路径中右击运行git bash，输入命令hexo cl清理缓存，hexo g hexo s生成本地预览</p>
-<p>⑦ 浏览器打开本地预览，更改已生效</p>
-<h2 id="将hexo发布至github"><a href="#将hexo发布至github" class="headerlink" title="将hexo发布至github"></a>将hexo发布至github</h2><p>① 打开浏览器，进入github之前新建的存储库，进入库，复制地址</p>
-<p>② 在sublime中打开-config.yml文件更改配置信息</p>
-<p>更改参数 author：名字，我的是maohuifei</p>
-<p>更改参数 ur1： 后面为github存储库的地址中的一部分（<a href="http://xxxx.github.io/">XXXX.github.io</a>）</p>
-<p>更改参数 type：git，</p>
-<p>添加新参数 branch: gh-pages</p>
-<p>添加新参数 repo：后面为github存储库的地址</p>
-<p>保存</p>
-<p>③ 进入hexo一键部署网站部署 | Hexo ，复制hexo-deployer-git的安装命令 npm install hexo-deployer-git –save 进入git bash 运行安装</p>
-<p>④ 命令 hexo cl 清理hexo g生成 hexo d提交</p>
-<p>⑤ 浏览器输入 <a href="http://用户名+github.io/">用户名+github.Io</a> <a href="http://我的是maohuifei.github.io/">我的是maohuifei.github.io</a></p>
-<p>⑥ 博客搭建完成!</p>
-<h2 id="hexo主题的使用"><a href="#hexo主题的使用" class="headerlink" title="hexo主题的使用"></a>hexo主题的使用</h2><p>① 进入hexo主题官网Themes | Hexo 选择主题，以next为例</p>
-<p>② 进入主题详情，有详细安装步骤教程，每个主题进入位置不同</p>
-<h3 id="matery主题"><a href="#matery主题" class="headerlink" title="matery主题"></a><code>matery</code>主题</h3><h3 id="全局css样式修改"><a href="#全局css样式修改" class="headerlink" title="全局css样式修改"></a>全局css样式修改</h3><p>css文件地址路径<code>themes/hexo-thieme-matery/source/css/matery.css</code></p>
-<h3 id="新建文章配置"><a href="#新建文章配置" class="headerlink" title="新建文章配置"></a>新建文章配置</h3><table>
+    <title>Web开发规范</title>
+    <url>/2025/08/02/Web%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/</url>
+    <content><![CDATA[<h1 id="REST风格设计规范"><a href="#REST风格设计规范" class="headerlink" title="REST风格设计规范"></a>REST风格设计规范</h1><hr>
+<h2 id="核心原则（Roy-Fielding定义）"><a href="#核心原则（Roy-Fielding定义）" class="headerlink" title="核心原则（Roy Fielding定义）"></a>核心原则（Roy Fielding定义）</h2><h3 id="1-CS架构（Client-Server）"><a href="#1-CS架构（Client-Server）" class="headerlink" title="1. CS架构（Client&#x2F;Server）"></a>1. CS架构（Client&#x2F;Server）</h3><ul>
+<li><strong>关注点分离</strong>：客户端与服务器职责解耦</li>
+<li><strong>服务端职责</strong>：专注数据存储、业务逻辑和安全性<br>✅ 优势：简化服务端逻辑，提升稳定性</li>
+<li><strong>客户端职责</strong>：专注用户交互与数据展示<br>✅ 优势：支持多终端（Web&#x2F;App&#x2F;桌面）兼容，提升可移植性</li>
+</ul>
+<h3 id="2-无状态（Stateless）"><a href="#2-无状态（Stateless）" class="headerlink" title="2. 无状态（Stateless）"></a>2. 无状态（Stateless）</h3><ul>
+<li>每个请求必须包含<strong>所有必要上下文信息</strong>（如身份令牌、参数）</li>
+<li>服务端<strong>不存储客户端会话状态</strong><br>✅ 优势：提升可扩展性，降低服务器资源消耗</li>
+</ul>
+<h3 id="3-缓存（Cacheable）"><a href="#3-缓存（Cacheable）" class="headerlink" title="3. 缓存（Cacheable）"></a>3. 缓存（Cacheable）</h3><ul>
+<li>通过<code>Cache-Control</code>、<code>ETag</code>、<code>Last-Modified</code>等HTTP头控制缓存<br>✅ 优势：减少重复请求，提升性能<br>⚠️ 注意：敏感数据需标记为<code>no-store</code></li>
+</ul>
+<h3 id="4-统一接口（Uniform-Interface）"><a href="#4-统一接口（Uniform-Interface）" class="headerlink" title="4. 统一接口（Uniform Interface）"></a>4. 统一接口（Uniform Interface）</h3><ul>
+<li><strong>资源标识</strong>：URI唯一标识资源（如<code>/users/123</code>）</li>
+<li><strong>表述操作</strong>：通过JSON&#x2F;XML等格式操作资源</li>
+<li><strong>自描述消息</strong>：使用标准HTTP方法（GET&#x2F;POST&#x2F;PUT&#x2F;DELETE）</li>
+<li><strong>HATEOAS</strong>：响应中返回下一步操作的超链接（如分页导航）</li>
+</ul>
+<h3 id="5-分层系统（Layered-System）"><a href="#5-分层系统（Layered-System）" class="headerlink" title="5. 分层系统（Layered System）"></a>5. 分层系统（Layered System）</h3><ul>
+<li>客户端无需感知是否直连服务器（可能经过CDN&#x2F;代理&#x2F;防火墙）<br>✅ 优势：提升安全性和可扩展性</li>
+</ul>
+<hr>
+<h2 id="命名与结构规范"><a href="#命名与结构规范" class="headerlink" title="命名与结构规范"></a>命名与结构规范</h2><h3 id="命名规则"><a href="#命名规则" class="headerlink" title="命名规则"></a>命名规则</h3><ul>
+<li><strong>URI使用名词复数</strong>：<code>/users</code>而非<code>/user</code></li>
+<li><strong>关联资源嵌套</strong>：<code>/users/&#123;uid&#125;/orders/&#123;oid&#125;</code></li>
+<li><strong>连字符命名</strong>：<code>/api/v1/user-roles</code>（非下划线或驼峰）</li>
+<li><strong>版本控制</strong>：URL路径（<code>/v1/users</code>）或请求头（<code>Accept: application/vnd.myapi.v1+json</code>）</li>
+</ul>
+<h3 id="目录结构示例"><a href="#目录结构示例" class="headerlink" title="目录结构示例"></a>目录结构示例</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">/src</span><br><span class="line">/controllers # 请求处理逻辑</span><br><span class="line">/models # 数据模型定义</span><br><span class="line">/routes # API路由配置</span><br><span class="line">/middlewares # 鉴权/日志等中间件</span><br><span class="line">/utils # 通用工具类</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="请求设计规范"><a href="#请求设计规范" class="headerlink" title="请求设计规范"></a>请求设计规范</h2><h3 id="URI设计"><a href="#URI设计" class="headerlink" title="URI设计"></a>URI设计</h3><ul>
+<li><strong>资源定位</strong>：<code>GET /users/123</code></li>
+<li><strong>过滤&#x2F;排序</strong>：<code>GET /users?role=admin&amp;sort=-created_at</code></li>
+<li><strong>搜索</strong>：<code>GET /users?q=John+email:gmail.com</code></li>
+</ul>
+<h3 id="HTTP方法规范"><a href="#HTTP方法规范" class="headerlink" title="HTTP方法规范"></a>HTTP方法规范</h3><table>
 <thead>
 <tr>
-<th>配置选项</th>
-<th>默认值</th>
-<th>描述</th>
+<th>方法</th>
+<th>幂等性</th>
+<th>用途</th>
+<th>示例</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>title</td>
-<td>Markdown 的文件标题</td>
-<td>文章标题，强烈建议填写此选项</td>
+<td>GET</td>
+<td>✔️</td>
+<td>获取资源</td>
+<td><code>GET /users</code></td>
 </tr>
 <tr>
-<td>date</td>
-<td>文件创建时的日期时间</td>
-<td>发布时间，强烈建议填写此选项，且最好保证全局唯一</td>
+<td>POST</td>
+<td>❌</td>
+<td>创建资源</td>
+<td><code>POST /users</code></td>
 </tr>
 <tr>
-<td>author</td>
-<td>根 _config.yml 中的 author</td>
-<td>文章作者</td>
+<td>PUT</td>
+<td>✔️</td>
+<td>全量更新资源</td>
+<td><code>PUT /users/123</code></td>
 </tr>
 <tr>
-<td>img</td>
-<td>featureImages 中的某个值</td>
-<td>文章特征图，推荐使用图床(腾讯云、七牛云、又拍云等)来做图片的路径.</td>
+<td>PATCH</td>
+<td>❌</td>
+<td>部分更新资源</td>
+<td><code>PATCH /users/123</code></td>
 </tr>
 <tr>
-<td>top</td>
-<td>true</td>
-<td>推荐文章（文章是否置顶），如果 top 值为 true，则会作为首页推荐文章</td>
-</tr>
-<tr>
-<td>cover</td>
-<td>false</td>
-<td>v1.0.2版本新增，表示该文章是否需要加入到首页轮播封面中</td>
-</tr>
-<tr>
-<td>coverImg</td>
-<td>无</td>
-<td>v1.0.2版本新增，表示该文章在首页轮播封面需要显示的图片路径，如果没有，则默认使用文章的特色图片</td>
-</tr>
-<tr>
-<td>password</td>
-<td>无</td>
-<td>文章阅读密码，如果要对文章设置阅读验证密码的话，就可以设置 password 的值，该值必须是用 SHA256 加密后的密码，防止被他人识破。前提是在主题的 config.yml 中激活了 verifyPassword 选项</td>
-</tr>
-<tr>
-<td>toc</td>
-<td>true</td>
-<td>是否开启 TOC，可以针对某篇文章单独关闭 TOC 的功能。前提是在主题的 config.yml 中激活了 toc 选项</td>
-</tr>
-<tr>
-<td>mathjax</td>
-<td>false</td>
-<td>是否开启数学公式支持 ，本文章是否开启 mathjax，且需要在主题的 _config.yml 文件中也需要开启才行</td>
-</tr>
-<tr>
-<td>summary</td>
-<td>无</td>
-<td>文章摘要，自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要</td>
-</tr>
-<tr>
-<td>categories</td>
-<td>无</td>
-<td>文章分类，本主题的分类表示宏观上大的分类，只建议一篇文章一个分类</td>
-</tr>
-<tr>
-<td>tags</td>
-<td>无</td>
-<td>文章标签，一篇文章可以多个标签</td>
+<td>DELETE</td>
+<td>✔️</td>
+<td>删除资源</td>
+<td><code>DELETE /users/123</code></td>
 </tr>
 </tbody></table>
-<p>默认配置文件路径：</p>
-<p><code>根目录/scaffolds/post</code></p>
-<h2 id="Hugo"><a href="#Hugo" class="headerlink" title="Hugo"></a>Hugo</h2>]]></content>
+<hr>
+<h2 id="响应设计规范"><a href="#响应设计规范" class="headerlink" title="响应设计规范"></a>响应设计规范</h2><h3 id="数据格式"><a href="#数据格式" class="headerlink" title="数据格式"></a>数据格式</h3><ul>
+<li><strong>统一响应体</strong>：  <figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;code&quot;</span><span class="punctuation">:</span> <span class="number">200</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;data&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="comment">/* 主数据 */</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;pagination&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="comment">/* 分页信息 */</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;links&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="comment">/* HATEOAS超链接 */</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="分页设计"><a href="#分页设计" class="headerlink" title="分页设计"></a>分页设计</h3><ul>
+<li><strong>请求参数</strong>：<code>GET /users?page=2&amp;per_page=20</code></li>
+<li><strong>响应元数据</strong>：  <figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;pagination&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;total&quot;</span><span class="punctuation">:</span> <span class="number">100</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;current_page&quot;</span><span class="punctuation">:</span> <span class="number">2</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;per_page&quot;</span><span class="punctuation">:</span> <span class="number">20</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;total_pages&quot;</span><span class="punctuation">:</span> <span class="number">5</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="状态码规范"><a href="#状态码规范" class="headerlink" title="状态码规范"></a>状态码规范</h3><table>
+<thead>
+<tr>
+<th>状态码</th>
+<th>场景</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>200</td>
+<td>常规成功</td>
+</tr>
+<tr>
+<td>201</td>
+<td>资源创建成功</td>
+</tr>
+<tr>
+<td>204</td>
+<td>无内容（如DELETE成功）</td>
+</tr>
+<tr>
+<td>400</td>
+<td>客户端请求错误</td>
+</tr>
+<tr>
+<td>401</td>
+<td>未授权</td>
+</tr>
+<tr>
+<td>403</td>
+<td>禁止访问</td>
+</tr>
+<tr>
+<td>404</td>
+<td>资源不存在</td>
+</tr>
+<tr>
+<td>429</td>
+<td>请求过于频繁（限流触发）</td>
+</tr>
+<tr>
+<td>500</td>
+<td>服务端内部错误</td>
+</tr>
+</tbody></table>
+<h3 id="错误处理示例"><a href="#错误处理示例" class="headerlink" title="错误处理示例"></a>错误处理示例</h3><figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;code&quot;</span><span class="punctuation">:</span> <span class="number">40001</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;message&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Invalid email format&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;details&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Email must contain @ symbol&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="安全规范"><a href="#安全规范" class="headerlink" title="安全规范"></a>安全规范</h2><h3 id="1-HTTPS强制"><a href="#1-HTTPS强制" class="headerlink" title="1. HTTPS强制"></a>1. HTTPS强制</h3><ul>
+<li>所有API必须通过<strong>HTTPS</strong>传输</li>
+<li>HTTP请求返回<code>301 Moved Permanently</code></li>
+</ul>
+<h3 id="2-鉴权方案"><a href="#2-鉴权方案" class="headerlink" title="2. 鉴权方案"></a>2. 鉴权方案</h3><ul>
+<li><strong>OAuth 2.0</strong>：<code>Authorization: Bearer &lt;token&gt;</code></li>
+<li><strong>API Key</strong>：<code>X-API-Key: your_key</code></li>
+<li><strong>JWT</strong>：<code>Authorization: Bearer &lt;JWT&gt;</code></li>
+</ul>
+<h3 id="3-限流策略"><a href="#3-限流策略" class="headerlink" title="3. 限流策略"></a>3. 限流策略</h3><ul>
+<li><strong>速率限制</strong>：<code>X-RateLimit-Limit: 100</code>（总配额）</li>
+<li><strong>剩余配额</strong>：<code>X-RateLimit-Remaining: 95</code></li>
+<li><strong>重置时间</strong>：<code>X-RateLimit-Reset: 1661345678</code></li>
+</ul>
+<hr>
+<h2 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h2><ol>
+<li><strong>版本控制</strong>：通过URL或Header维护API版本</li>
+<li><strong>内容协商</strong>：支持<code>Accept</code>头指定返回格式（JSON&#x2F;XML）</li>
+<li><strong>文档化</strong>：使用OpenAPI&#x2F;Swagger生成交互式文档</li>
+<li><strong>兼容性</strong>：通过添加新字段而非修改旧字段保持向后兼容</li>
+</ol>
+]]></content>
       <categories>
-        <category>过程记录</category>
+        <category>开发规范</category>
       </categories>
   </entry>
   <entry>
@@ -522,167 +539,6 @@
       </categories>
   </entry>
   <entry>
-    <title>Web开发规范</title>
-    <url>/2025/08/02/Web%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/</url>
-    <content><![CDATA[<h1 id="REST风格设计规范"><a href="#REST风格设计规范" class="headerlink" title="REST风格设计规范"></a>REST风格设计规范</h1><hr>
-<h2 id="核心原则（Roy-Fielding定义）"><a href="#核心原则（Roy-Fielding定义）" class="headerlink" title="核心原则（Roy Fielding定义）"></a>核心原则（Roy Fielding定义）</h2><h3 id="1-CS架构（Client-Server）"><a href="#1-CS架构（Client-Server）" class="headerlink" title="1. CS架构（Client&#x2F;Server）"></a>1. CS架构（Client&#x2F;Server）</h3><ul>
-<li><strong>关注点分离</strong>：客户端与服务器职责解耦</li>
-<li><strong>服务端职责</strong>：专注数据存储、业务逻辑和安全性<br>✅ 优势：简化服务端逻辑，提升稳定性</li>
-<li><strong>客户端职责</strong>：专注用户交互与数据展示<br>✅ 优势：支持多终端（Web&#x2F;App&#x2F;桌面）兼容，提升可移植性</li>
-</ul>
-<h3 id="2-无状态（Stateless）"><a href="#2-无状态（Stateless）" class="headerlink" title="2. 无状态（Stateless）"></a>2. 无状态（Stateless）</h3><ul>
-<li>每个请求必须包含<strong>所有必要上下文信息</strong>（如身份令牌、参数）</li>
-<li>服务端<strong>不存储客户端会话状态</strong><br>✅ 优势：提升可扩展性，降低服务器资源消耗</li>
-</ul>
-<h3 id="3-缓存（Cacheable）"><a href="#3-缓存（Cacheable）" class="headerlink" title="3. 缓存（Cacheable）"></a>3. 缓存（Cacheable）</h3><ul>
-<li>通过<code>Cache-Control</code>、<code>ETag</code>、<code>Last-Modified</code>等HTTP头控制缓存<br>✅ 优势：减少重复请求，提升性能<br>⚠️ 注意：敏感数据需标记为<code>no-store</code></li>
-</ul>
-<h3 id="4-统一接口（Uniform-Interface）"><a href="#4-统一接口（Uniform-Interface）" class="headerlink" title="4. 统一接口（Uniform Interface）"></a>4. 统一接口（Uniform Interface）</h3><ul>
-<li><strong>资源标识</strong>：URI唯一标识资源（如<code>/users/123</code>）</li>
-<li><strong>表述操作</strong>：通过JSON&#x2F;XML等格式操作资源</li>
-<li><strong>自描述消息</strong>：使用标准HTTP方法（GET&#x2F;POST&#x2F;PUT&#x2F;DELETE）</li>
-<li><strong>HATEOAS</strong>：响应中返回下一步操作的超链接（如分页导航）</li>
-</ul>
-<h3 id="5-分层系统（Layered-System）"><a href="#5-分层系统（Layered-System）" class="headerlink" title="5. 分层系统（Layered System）"></a>5. 分层系统（Layered System）</h3><ul>
-<li>客户端无需感知是否直连服务器（可能经过CDN&#x2F;代理&#x2F;防火墙）<br>✅ 优势：提升安全性和可扩展性</li>
-</ul>
-<hr>
-<h2 id="命名与结构规范"><a href="#命名与结构规范" class="headerlink" title="命名与结构规范"></a>命名与结构规范</h2><h3 id="命名规则"><a href="#命名规则" class="headerlink" title="命名规则"></a>命名规则</h3><ul>
-<li><strong>URI使用名词复数</strong>：<code>/users</code>而非<code>/user</code></li>
-<li><strong>关联资源嵌套</strong>：<code>/users/&#123;uid&#125;/orders/&#123;oid&#125;</code></li>
-<li><strong>连字符命名</strong>：<code>/api/v1/user-roles</code>（非下划线或驼峰）</li>
-<li><strong>版本控制</strong>：URL路径（<code>/v1/users</code>）或请求头（<code>Accept: application/vnd.myapi.v1+json</code>）</li>
-</ul>
-<h3 id="目录结构示例"><a href="#目录结构示例" class="headerlink" title="目录结构示例"></a>目录结构示例</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">/src</span><br><span class="line">/controllers # 请求处理逻辑</span><br><span class="line">/models # 数据模型定义</span><br><span class="line">/routes # API路由配置</span><br><span class="line">/middlewares # 鉴权/日志等中间件</span><br><span class="line">/utils # 通用工具类</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="请求设计规范"><a href="#请求设计规范" class="headerlink" title="请求设计规范"></a>请求设计规范</h2><h3 id="URI设计"><a href="#URI设计" class="headerlink" title="URI设计"></a>URI设计</h3><ul>
-<li><strong>资源定位</strong>：<code>GET /users/123</code></li>
-<li><strong>过滤&#x2F;排序</strong>：<code>GET /users?role=admin&amp;sort=-created_at</code></li>
-<li><strong>搜索</strong>：<code>GET /users?q=John+email:gmail.com</code></li>
-</ul>
-<h3 id="HTTP方法规范"><a href="#HTTP方法规范" class="headerlink" title="HTTP方法规范"></a>HTTP方法规范</h3><table>
-<thead>
-<tr>
-<th>方法</th>
-<th>幂等性</th>
-<th>用途</th>
-<th>示例</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>GET</td>
-<td>✔️</td>
-<td>获取资源</td>
-<td><code>GET /users</code></td>
-</tr>
-<tr>
-<td>POST</td>
-<td>❌</td>
-<td>创建资源</td>
-<td><code>POST /users</code></td>
-</tr>
-<tr>
-<td>PUT</td>
-<td>✔️</td>
-<td>全量更新资源</td>
-<td><code>PUT /users/123</code></td>
-</tr>
-<tr>
-<td>PATCH</td>
-<td>❌</td>
-<td>部分更新资源</td>
-<td><code>PATCH /users/123</code></td>
-</tr>
-<tr>
-<td>DELETE</td>
-<td>✔️</td>
-<td>删除资源</td>
-<td><code>DELETE /users/123</code></td>
-</tr>
-</tbody></table>
-<hr>
-<h2 id="响应设计规范"><a href="#响应设计规范" class="headerlink" title="响应设计规范"></a>响应设计规范</h2><h3 id="数据格式"><a href="#数据格式" class="headerlink" title="数据格式"></a>数据格式</h3><ul>
-<li><strong>统一响应体</strong>：  <figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;code&quot;</span><span class="punctuation">:</span> <span class="number">200</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;data&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="comment">/* 主数据 */</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;pagination&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="comment">/* 分页信息 */</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;links&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="comment">/* HATEOAS超链接 */</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-<h3 id="分页设计"><a href="#分页设计" class="headerlink" title="分页设计"></a>分页设计</h3><ul>
-<li><strong>请求参数</strong>：<code>GET /users?page=2&amp;per_page=20</code></li>
-<li><strong>响应元数据</strong>：  <figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;pagination&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;total&quot;</span><span class="punctuation">:</span> <span class="number">100</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;current_page&quot;</span><span class="punctuation">:</span> <span class="number">2</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;per_page&quot;</span><span class="punctuation">:</span> <span class="number">20</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;total_pages&quot;</span><span class="punctuation">:</span> <span class="number">5</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-<h3 id="状态码规范"><a href="#状态码规范" class="headerlink" title="状态码规范"></a>状态码规范</h3><table>
-<thead>
-<tr>
-<th>状态码</th>
-<th>场景</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>200</td>
-<td>常规成功</td>
-</tr>
-<tr>
-<td>201</td>
-<td>资源创建成功</td>
-</tr>
-<tr>
-<td>204</td>
-<td>无内容（如DELETE成功）</td>
-</tr>
-<tr>
-<td>400</td>
-<td>客户端请求错误</td>
-</tr>
-<tr>
-<td>401</td>
-<td>未授权</td>
-</tr>
-<tr>
-<td>403</td>
-<td>禁止访问</td>
-</tr>
-<tr>
-<td>404</td>
-<td>资源不存在</td>
-</tr>
-<tr>
-<td>429</td>
-<td>请求过于频繁（限流触发）</td>
-</tr>
-<tr>
-<td>500</td>
-<td>服务端内部错误</td>
-</tr>
-</tbody></table>
-<h3 id="错误处理示例"><a href="#错误处理示例" class="headerlink" title="错误处理示例"></a>错误处理示例</h3><figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;code&quot;</span><span class="punctuation">:</span> <span class="number">40001</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;message&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Invalid email format&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;details&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Email must contain @ symbol&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="安全规范"><a href="#安全规范" class="headerlink" title="安全规范"></a>安全规范</h2><h3 id="1-HTTPS强制"><a href="#1-HTTPS强制" class="headerlink" title="1. HTTPS强制"></a>1. HTTPS强制</h3><ul>
-<li>所有API必须通过<strong>HTTPS</strong>传输</li>
-<li>HTTP请求返回<code>301 Moved Permanently</code></li>
-</ul>
-<h3 id="2-鉴权方案"><a href="#2-鉴权方案" class="headerlink" title="2. 鉴权方案"></a>2. 鉴权方案</h3><ul>
-<li><strong>OAuth 2.0</strong>：<code>Authorization: Bearer &lt;token&gt;</code></li>
-<li><strong>API Key</strong>：<code>X-API-Key: your_key</code></li>
-<li><strong>JWT</strong>：<code>Authorization: Bearer &lt;JWT&gt;</code></li>
-</ul>
-<h3 id="3-限流策略"><a href="#3-限流策略" class="headerlink" title="3. 限流策略"></a>3. 限流策略</h3><ul>
-<li><strong>速率限制</strong>：<code>X-RateLimit-Limit: 100</code>（总配额）</li>
-<li><strong>剩余配额</strong>：<code>X-RateLimit-Remaining: 95</code></li>
-<li><strong>重置时间</strong>：<code>X-RateLimit-Reset: 1661345678</code></li>
-</ul>
-<hr>
-<h2 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h2><ol>
-<li><strong>版本控制</strong>：通过URL或Header维护API版本</li>
-<li><strong>内容协商</strong>：支持<code>Accept</code>头指定返回格式（JSON&#x2F;XML）</li>
-<li><strong>文档化</strong>：使用OpenAPI&#x2F;Swagger生成交互式文档</li>
-<li><strong>兼容性</strong>：通过添加新字段而非修改旧字段保持向后兼容</li>
-</ol>
-]]></content>
-      <categories>
-        <category>开发规范</category>
-      </categories>
-  </entry>
-  <entry>
     <title>arm架构macos部署sqlserver</title>
     <url>/2025/08/02/arm%E6%9E%B6%E6%9E%84macos%E9%83%A8%E7%BD%B2sqlserver/</url>
     <content><![CDATA[<h2 id="安装docker"><a href="#安装docker" class="headerlink" title="安装docker"></a>安装docker</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install docker.io</span><br><span class="line"></span><br></pre></td></tr></table></figure>
@@ -736,6 +592,150 @@
 <h1 id="Windowns"><a href="#Windowns" class="headerlink" title="Windowns"></a>Windowns</h1><h1 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h1>]]></content>
       <categories>
         <category>使用笔记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>网站与博客部署全记录</title>
+    <url>/2025/08/02/%E7%BD%91%E7%AB%99%E4%B8%8E%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%85%A8%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<h1 id="hexo-git"><a href="#hexo-git" class="headerlink" title="hexo+git"></a>hexo+git</h1><p>— 博客，音译，英文名为Blogger，它的正式名称为网络日记；是使用特定的软件，在网络上出版、发表和张贴个人文章的人，或者是一种通常由个人管理、不定期张贴新的文章的网站。博客是继MSN、BBS、ICQ之后出现的第4种网络交流方式，是网络时代的个人“读者文摘”，它代表着新的生活、工作和学习方式。</p>
+<p>— 在本人搭建博客的过程中，发现互联网上的教程大多数的发布时间是几年甚至十几年之前，有些软件的版本和操作方式都已经有所改变。许多新手小白如果按照之前的教程来操作的话会产生各种各样的问题。教程中所使用的专业名词也会使小白们一头雾水，影响操作效率。</p>
+<p>— 于是在2021年4月10日发布了这篇面向纯新手小白的保姆级搭建教程，手把手教你搭建属于自己的个人博客</p>
+<p>— 教程步骤框架来自hojun.cn发布的教程，使用工具包含node.js、github、gitforwin、Git、sublime、Hexo侵删</p>
+<h2 id="node的下载与安装"><a href="#node的下载与安装" class="headerlink" title="node的下载与安装"></a>node的下载与安装</h2><p>① Node.js官网下载并打开安装包</p>
+<p>② 更改安装位置</p>
+<p>③ 是否安装必要的环境，我选的安装</p>
+<p>④ 安装完成</p>
+<p>⑤ Win+R打开运行窗口，输入cmd</p>
+<p>⑥ node -v查看版本</p>
+<h2 id="github注册"><a href="#github注册" class="headerlink" title="github注册"></a>github注册</h2><p>① 打开github官网 GitHub: Where the world builds software · GitHub</p>
+<p>② 右上角注册</p>
+<p>③ 注册流程走完后回首页，右上角加号第一个选项，传建一个新的存储库</p>
+<p>④ 存储库名称为 <a href="http://用户名+.github+.io/">用户名+.github+.io</a>，其他默认，创建</p>
+<h2 id="gitforwin的下载与安装"><a href="#gitforwin的下载与安装" class="headerlink" title="gitforwin的下载与安装"></a>gitforwin的下载与安装</h2><p>① 浏览器输入 Git for Windows，下载gitforwin安装包</p>
+<p>② 安装git</p>
+<p>③ 更改安装位置</p>
+<p>④ 创建开始菜单快捷方式，随意，我选择不创建</p>
+<p>⑤ 点下一步全部默认就可以，到这一步选择第二个</p>
+<p>⑥ 安装完成</p>
+<p>⑦ 桌面没有新的快捷方式不要慌，正常现象，有需要的话可以在开始菜单和软件安装路径里找到并创建快捷方式</p>
+<p>⑧ 验证是否安装完成 Win+R，输入cmd，输入命令git</p>
+<h2 id="githubSHH配置"><a href="#githubSHH配置" class="headerlink" title="githubSHH配置"></a>githubSHH配置</h2><p>① 打开git的安装路径，找到git bash.exe 双击运行</p>
+<p>② 输入命令ssh-keygen -t rsa -C “<a href="mailto:991270685@qq.com">991270685@qq.com</a>“，引号内是github注册邮箱地址，回车</p>
+<p>③ 无特殊提示就回车，有（y&#x2F;n）就输入y回车</p>
+<p>④ 打开github，点击右上角头像选择 设置</p>
+<p>⑤ 选择shh和密钥选项，添加新密钥</p>
+<p>⑥ 标题就用户名+tech吧（tech技术），填到第一栏</p>
+<p>在C盘找到id_rsa.pub这个文件，以记事本形式打开，复制内容填到第二栏</p>
+<p>⑦ 提交，创建完成</p>
+<h2 id="hexo的本地使用"><a href="#hexo的本地使用" class="headerlink" title="hexo的本地使用"></a>hexo的本地使用</h2><p>① 浏览器输入 Hexo 进入hexo官网</p>
+<p>② 在合适的位置新建一个文件夹blog，关于博客的文件基本都在这里面，我选择D盘根目录</p>
+<p>③ 进入bolg文件，点击路径输入cmd，回车进入（也可以win+R，输入cmd，再用cd命令一级一级切到blog文件下）</p>
+<p>④ 回到hexo官网，复制命令 npm install hexo-cli -g 到运行窗口回车</p>
+<p>⑤ 网站下拉会有使用命令行，blog为你的博客名</p>
+<p>⑥ 输入 hexo init +博客名 回车运行</p>
+<p>⑦ 输入命令cd 博客名，进入博客文件，回到网站复制命令行 npm install 并运行</p>
+<p>⑧ 完成后输入命令 hexo s 生成本地预览，最后会生成一个4000端口的网址，复制到浏览器进入，就能看到我们的博客了</p>
+<h2 id="sublime的下载与安装"><a href="#sublime的下载与安装" class="headerlink" title="sublime的下载与安装"></a>sublime的下载与安装</h2><p>① 浏览器输入Download - Sublime Text 进去官网下载，选择自己的系统，我选择windows64位</p>
+<p>② 下载完成运行，更改安装路径</p>
+<p>③ 默认选项就可以，一直下一步。安装完成</p>
+<p>④ 打开sublime</p>
+<p>⑤ 打开sublime，在左边栏source——-posts —— hello-world.md中输入文字，ctrl+s保存</p>
+<p>⑥ 在blog路径中右击运行git bash，输入命令hexo cl清理缓存，hexo g hexo s生成本地预览</p>
+<p>⑦ 浏览器打开本地预览，更改已生效</p>
+<h2 id="将hexo发布至github"><a href="#将hexo发布至github" class="headerlink" title="将hexo发布至github"></a>将hexo发布至github</h2><p>① 打开浏览器，进入github之前新建的存储库，进入库，复制地址</p>
+<p>② 在sublime中打开-config.yml文件更改配置信息</p>
+<p>更改参数 author：名字，我的是maohuifei</p>
+<p>更改参数 ur1： 后面为github存储库的地址中的一部分（<a href="http://xxxx.github.io/">XXXX.github.io</a>）</p>
+<p>更改参数 type：git，</p>
+<p>添加新参数 branch: gh-pages</p>
+<p>添加新参数 repo：后面为github存储库的地址</p>
+<p>保存</p>
+<p>③ 进入hexo一键部署网站部署 | Hexo ，复制hexo-deployer-git的安装命令 npm install hexo-deployer-git –save 进入git bash 运行安装</p>
+<p>④ 命令 hexo cl 清理hexo g生成 hexo d提交</p>
+<p>⑤ 浏览器输入 <a href="http://用户名+github.io/">用户名+github.Io</a> <a href="http://我的是maohuifei.github.io/">我的是maohuifei.github.io</a></p>
+<p>⑥ 博客搭建完成!</p>
+<h2 id="hexo主题的使用"><a href="#hexo主题的使用" class="headerlink" title="hexo主题的使用"></a>hexo主题的使用</h2><p>① 进入hexo主题官网Themes | Hexo 选择主题，以next为例</p>
+<p>② 进入主题详情，有详细安装步骤教程，每个主题进入位置不同</p>
+<h3 id="matery主题"><a href="#matery主题" class="headerlink" title="matery主题"></a><code>matery</code>主题</h3><h3 id="全局css样式修改"><a href="#全局css样式修改" class="headerlink" title="全局css样式修改"></a>全局css样式修改</h3><p>css文件地址路径<code>themes/hexo-thieme-matery/source/css/matery.css</code></p>
+<h3 id="新建文章配置"><a href="#新建文章配置" class="headerlink" title="新建文章配置"></a>新建文章配置</h3><table>
+<thead>
+<tr>
+<th>配置选项</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>title</td>
+<td>Markdown 的文件标题</td>
+<td>文章标题，强烈建议填写此选项</td>
+</tr>
+<tr>
+<td>date</td>
+<td>文件创建时的日期时间</td>
+<td>发布时间，强烈建议填写此选项，且最好保证全局唯一</td>
+</tr>
+<tr>
+<td>author</td>
+<td>根 _config.yml 中的 author</td>
+<td>文章作者</td>
+</tr>
+<tr>
+<td>img</td>
+<td>featureImages 中的某个值</td>
+<td>文章特征图，推荐使用图床(腾讯云、七牛云、又拍云等)来做图片的路径.</td>
+</tr>
+<tr>
+<td>top</td>
+<td>true</td>
+<td>推荐文章（文章是否置顶），如果 top 值为 true，则会作为首页推荐文章</td>
+</tr>
+<tr>
+<td>cover</td>
+<td>false</td>
+<td>v1.0.2版本新增，表示该文章是否需要加入到首页轮播封面中</td>
+</tr>
+<tr>
+<td>coverImg</td>
+<td>无</td>
+<td>v1.0.2版本新增，表示该文章在首页轮播封面需要显示的图片路径，如果没有，则默认使用文章的特色图片</td>
+</tr>
+<tr>
+<td>password</td>
+<td>无</td>
+<td>文章阅读密码，如果要对文章设置阅读验证密码的话，就可以设置 password 的值，该值必须是用 SHA256 加密后的密码，防止被他人识破。前提是在主题的 config.yml 中激活了 verifyPassword 选项</td>
+</tr>
+<tr>
+<td>toc</td>
+<td>true</td>
+<td>是否开启 TOC，可以针对某篇文章单独关闭 TOC 的功能。前提是在主题的 config.yml 中激活了 toc 选项</td>
+</tr>
+<tr>
+<td>mathjax</td>
+<td>false</td>
+<td>是否开启数学公式支持 ，本文章是否开启 mathjax，且需要在主题的 _config.yml 文件中也需要开启才行</td>
+</tr>
+<tr>
+<td>summary</td>
+<td>无</td>
+<td>文章摘要，自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要</td>
+</tr>
+<tr>
+<td>categories</td>
+<td>无</td>
+<td>文章分类，本主题的分类表示宏观上大的分类，只建议一篇文章一个分类</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>无</td>
+<td>文章标签，一篇文章可以多个标签</td>
+</tr>
+</tbody></table>
+<p>默认配置文件路径：</p>
+<p><code>根目录/scaffolds/post</code></p>
+<h2 id="Hugo"><a href="#Hugo" class="headerlink" title="Hugo"></a>Hugo</h2>]]></content>
+      <categories>
+        <category>过程记录</category>
       </categories>
   </entry>
 </search>
